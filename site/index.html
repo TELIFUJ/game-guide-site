@@ -5,23 +5,25 @@
   <title>Board Game Guide</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-    body{font:16px/1.5 system-ui;margin:20px}
-    .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-    .card{border:1px solid #ddd;padding:10px;border-radius:8px;background:#fff}
-    .card img{width:100%;height:160px;object-fit:cover;border-radius:4px;background:#f7f7f7}
+    body{font:16px/1.5 system-ui;margin:20px;background:#fafafa;color:#222}
+    .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+    .card{border:1px solid #e5e7eb;padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px;background:#f3f4f6}
     .row{display:flex;gap:8px;align-items:center}
-    .price{font-weight:700}
-    .note{font-size:12px;color:#555;margin-top:4px}
-    input,select{padding:6px 8px;border:1px solid #ccc;border-radius:6px}
-    .chip{display:inline-block;padding:2px 8px;margin-right:6px;margin-top:4px;border:1px solid #ccc;border-radius:999px;font-size:12px}
+    .price{font-weight:700;margin-top:6px}
+    .price small{font-weight:400;color:#6b7280}
+    input,select{padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
+    .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+    .chip{display:inline-block;font-size:12px;padding:3px 8px;border:1px solid #e5e7eb;border-radius:999px;background:#f8fafc}
+    .muted{color:#6b7280}
   </style>
 </head>
 <body>
 
 <form class="filters" autocomplete="off" onsubmit="return false">
   <input id="q" name="q_no_autofill"
-         placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:200px"
+         placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
   <select id="cat"><option value="">全部分類</option></select>
   <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價"
@@ -37,73 +39,61 @@
 </form>
 
 <div id="grid" class="grid"></div>
-<div id="err" style="color:#c00;margin-top:12px;"></div>
 
 <script>
-  // 動態更名避免瀏覽器自動填入
-  document.getElementById('q')
-    .setAttribute('name','q_'+Math.random().toString(36).slice(2));
+  // 避免瀏覽器沿用舊自動填入
+  document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  const G   = document.getElementById("grid");
-  const ERR = document.getElementById("err");
-  const Q   = document.getElementById("q");
-  const C   = document.getElementById("cat");
-  const S   = document.getElementById("sort");
-  const PMIN= document.getElementById("pmin");
-  const PMAX= document.getElementById("pmax");
+  // 英→中備援映射（後端若還沒寫 categories_zh 就用它）
+  const CAT_MAP = {
+    "Economic":"經濟","Trains":"鐵道","Transportation":"交通",
+    "Adventure":"冒險","Fantasy":"奇幻","Fighting":"戰鬥","Miniatures":"微縮模型",
+    "City Building":"城市建設","Renaissance":"文藝復興","Ancient":"古代",
+    "Card Game":"卡牌","Civilization":"文明","Family Game":"家庭","Party Game":"派對",
+    "Strategy":"策略","Abstract Strategy":"抽象策略","Science Fiction":"科幻",
+    "Thematic":"主題","Negotiation":"談判","Bluffing":"唬人","Deduction":"推理",
+    "Wargame":"戰棋","Children's Game":"兒童"
+  };
 
-  // 依所在路徑自動決定 JSON 位置（根目錄或 /site/ 都能用）
-  const DATA_URL = (location.pathname.includes('/site/')
-        ? '../data/games_full.json'
-        : 'data/games_full.json') + '?ts=' + Date.now();
-
-  let DATA = [];
-
-  // 取分類（中文優先，退回英文），最多 10 個
-  const getCats = (x) => (x.categories_zh && x.categories_zh.length
-                        ? x.categories_zh
-                        : (x.categories || []))
-                        .slice(0, 10);
-
-  // 價格塊
-  function priceBlock(x){
-    const msrp = x.price_msrp_twd, price = x.price_twd, used = x.used_price_twd;
-    let lines = [];
-    if (price != null) lines.push(`$${price.toLocaleString()}`);
-    if (used  != null) lines.push(`｜二手 $${used.toLocaleString()}`);
-    const main = lines.join(' ');
-    const notes = [x.price_note, x.used_note].filter(Boolean).join('；');
-    const msrpNote = (msrp!=null) ? `新品參考價（未打折）$${msrp.toLocaleString()}` : '';
-    return `
-      <div class="price">${main}</div>
-      ${msrpNote ? `<div class="note">${msrpNote}</div>` : ''}
-      ${notes ? `<div class="note">${notes}</div>` : ''}
-    `;
+  // 取「中文分類」：優先 categories_zh，否則把英文 categories 映射成中文；最多 10 個
+  function getCatsZh(x){
+    if (Array.isArray(x.categories_zh) && x.categories_zh.length)
+      return x.categories_zh.slice(0,10);
+    const en = Array.isArray(x.categories) ? x.categories : [];
+    return en.map(s => CAT_MAP[s] || s).slice(0,10);
   }
 
-  // 初始化
-  fetch(DATA_URL).then(r=>{
-    if(!r.ok) throw new Error(`HTTP ${r.status}`);
-    return r.json();
-  }).then(d=>{
-    DATA = d;
-    // 下拉分類（中文優先）
-    const cats = [...new Set(DATA.flatMap(getCats))].sort();
-    cats.forEach(c=>{
+  let DATA=[];
+  const G = document.getElementById("grid"),
+        Q = document.getElementById("q"),
+        C = document.getElementById("cat"),
+        S = document.getElementById("sort"),
+        PMIN = document.getElementById("pmin"),
+        PMAX = document.getElementById("pmax");
+
+  // 依照是否位於 /site/ 決定讀檔路徑
+  const prefix = location.pathname.includes('/site/') ? '../' : '';
+  const DATA_URL = prefix + 'data/games_full.json?ts=' + Date.now();
+
+  fetch(DATA_URL).then(r=>r.json()).then(d=>{ DATA=d; init(); });
+
+  function init(){
+    // 建立分類下拉（中文）
+    const allCats = new Set();
+    DATA.forEach(x => getCatsZh(x).forEach(c => allCats.add(c)));
+    [...allCats].sort().forEach(c=>{
       const o=document.createElement('option');
       o.value=c; o.textContent=c; C.appendChild(o);
     });
+
     render();
     [Q,C,S,PMIN,PMAX].forEach(el=>el.addEventListener('input',render));
-  }).catch(e=>{
-    console.error('載入資料失敗：', e);
-    ERR.textContent = '讀取資料失敗：' + e.message + '（請確認 /data/games_full.json 是否存在，或路徑是否正確）';
-  });
+  }
 
   function render(){
     let list = DATA.slice();
 
-    // 搜尋
+    // 關鍵字（中文/英文/別名/關鍵詞）
     const q = Q.value.trim().toLowerCase();
     if(q){
       list = list.filter(x=>{
@@ -115,9 +105,11 @@
       });
     }
 
-    // 分類（中文優先）
-    const cat = C.value;
-    if(cat) list = list.filter(x => getCats(x).includes(cat));
+    // 分類（用中文比較）
+    const chosen = C.value;
+    if(chosen){
+      list = list.filter(x => getCatsZh(x).includes(chosen));
+    }
 
     // 價格區間（售價）
     const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
@@ -131,23 +123,30 @@
 
     // 卡片
     G.innerHTML = list.map(x => {
-      const img = (x.image||'').startsWith('http') ? x.image
-                 : ((location.pathname.includes('/site/') ? '../' : '') + (x.image||''));
-      const cats = getCats(x).map(t=>`<span class="chip">${t}</span>`).join('');
+      const cz = getCatsZh(x); // 中文 chips（最多 10 個）
+      const imgSrc = (x.image||'').startsWith('http') ? x.image : (prefix+(x.image||''));
       return `
         <div class="card">
-          <img loading="lazy"
-               src="${img}"
+          <img loading="lazy" src="${imgSrc}"
                alt="${x.name_zh||x.name_en||''}"
-               onerror="this.src='https://via.placeholder.com/300x160?text=No+Image'">
-          <h3>${x.name_zh||x.name_en||''}</h3>
-          <div>${x.name_en?`<small>${x.name_en}</small>`:''}</div>
-          <div>${cats}</div>
-          ${priceBlock(x)}
-          <div class="note">${x.description||''}</div>
-          <div><a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a></div>
-        </div>
-      `;
+               onerror="this.src='https://via.placeholder.com/560x300?text=No+Image'">
+          <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
+          ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
+
+          <div class="chips">${cz.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+
+          <div class="price">
+            ${x.price_msrp_twd?`<small>新品參考價（未折）$${x.price_msrp_twd}</small><br>`:''}
+            ${x.price_twd?`$${x.price_twd}`:''}
+            ${x.used_price_twd?` ｜二手 $${x.used_price_twd}`:''}
+          </div>
+          ${x.price_note?`<div class="muted" style="margin-top:4px">${x.price_note}</div>`:''}
+          ${x.used_note?`<div class="muted" style="margin-top:2px">${x.used_note}</div>`:''}
+
+          <div style="margin-top:6px">
+            <a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a>
+          </div>
+        </div>`;
     }).join('');
   }
 </script>
