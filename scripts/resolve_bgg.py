@@ -1,15 +1,61 @@
 # scripts/resolve_bgg.py
-import os, json
+import csv, json, requests, xml.etree.ElementTree as ET
+from pathlib import Path
 
-os.makedirs("data", exist_ok=True)
+MANUAL = Path("data/manual.csv")
+OUT    = Path("data/bgg_ids.json")
 
-# 建立一個測試資料
-rows = [
-    {"name_zh": "璀璨寶石", "bgg_query": "Splendor", "price_twd": 1200, "used_price_twd": 800, "bgg_id": 148228},
-    {"name_zh": "七大奇蹟", "bgg_query": "7 Wonders", "price_twd": 1900, "used_price_twd": 1200, "bgg_id": 68448}
-]
+def bgg_search_to_id(q: str):
+    url = f"https://boardgamegeek.com/xmlapi2/search?type=boardgame&query={requests.utils.quote(q)}"
+    r = requests.get(url, timeout=30)
+    while r.status_code == 202:
+        r = requests.get(url, timeout=30)
+    r.raise_for_status()
+    root = ET.fromstring(r.text)
+    best = None
+    for it in root.findall("item"):
+        if it.get("type") != "boardgame":
+            continue
+        names = [n.get("value") for n in it.findall("name") if n.get("type") == "primary"]
+        if names and names[0].lower() == q.lower():
+            return int(it.get("id"))
+        if best is None:
+            best = int(it.get("id"))
+    return best
 
-with open("data/bgg_ids.json", "w", encoding="utf-8") as f:
-    json.dump(rows, f, ensure_ascii=False, indent=2)
+def main():
+    rows = []
+    if not MANUAL.exists():
+        OUT.write_text("[]", encoding="utf-8")
+        print("No manual.csv → 0"); return
 
-print(f"Resolved {len(rows)} entries → data/bgg_ids.json")
+    with MANUAL.open(encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            entry = {
+                k: r.get(k) for k in [
+                    "name_zh","name_en_override","alias_zh","category_zh",
+                    "price_msrp_twd","price_twd","used_price_twd",
+                    "price_note","used_note","manual_override",
+                    "stock","description","image_override"
+                ]
+            }
+            bid = (r.get("bgg_id") or "").strip()
+            q   = (r.get("bgg_query") or "").strip()
+            if not bid and q:
+                try:
+                    bid = bgg_search_to_id(q)
+                except Exception:
+                    bid = None
+            if bid:
+                entry["bgg_id"] = int(bid)
+            if q:
+                entry["bgg_query"] = q
+            rows.append(entry)
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Resolved {len(rows)} entries → {OUT}")
+
+if __name__ == "__main__":
+    main()
