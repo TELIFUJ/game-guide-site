@@ -28,275 +28,137 @@ jobs:
         run: |
           mkdir -p scripts
 
-          # --- fetch_bgg.py（versions=1；20筆/批；含202輪詢） ---
+          # --- fetch_bgg.py ---
           cat <<'PY' > scripts/fetch_bgg.py
           import requests, time, json, xml.etree.ElementTree as ET
           from pathlib import Path
-
-          INPUT = Path("data/bgg_ids.json")   # 由 resolve_bgg.py 產生（含 bgg_id）
+          INPUT = Path("data/bgg_ids.json")
           OUTPUT = Path("data/bgg_data.json")
-
           API_BASE = "https://boardgamegeek.com/xmlapi2/thing?stats=1&versions=1&id="
-          BATCH = 20  # 實務上單次最多 20
-
+          BATCH = 20
           def fetch_batch(ids):
               url = API_BASE + ",".join(str(i) for i in ids)
               r = requests.get(url, timeout=60)
               while r.status_code == 202:
-                  time.sleep(2)
-                  r = requests.get(url, timeout=60)
-              r.raise_for_status()
-              return ET.fromstring(r.text)
-
+                  time.sleep(2); r = requests.get(url, timeout=60)
+              r.raise_for_status(); return ET.fromstring(r.text)
           def parse_items(root):
-              out = []
+              out=[]
               for item in root.findall("item"):
-                  try:
-                      bid = int(item.get("id"))
-                  except:
-                      continue
-                  # primary EN
-                  name_en = None
+                  try: bid=int(item.get("id"))
+                  except: continue
+                  name_en=None
                   for n in item.findall("name"):
-                      if n.get("type") == "primary":
-                          name_en = n.get("value"); break
-
+                      if n.get("type")=="primary": name_en=n.get("value"); break
                   def val(tag, attr="value"):
-                      el = item.find(tag)
-                      return el.get(attr) if el is not None and el.get(attr) is not None else None
-
-                  year = val("yearpublished")
-                  minp = val("minplayers"); maxp = val("maxplayers")
-                  minT = val("minplaytime"); maxT = val("maxplaytime")
-
-                  avgw = item.find("statistics/ratings/averageweight")
-                  weight = float(avgw.get("value")) if avgw is not None and avgw.get("value") not in (None, "NaN") else None
-
-                  image_el = item.find("image"); thumb_el = item.find("thumbnail")
-                  image_url = image_el.text if image_el is not None else None
-                  thumb_url = thumb_el.text if thumb_el is not None else None
-
-                  categories = [l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
-                  mechanics  = [l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
-
-                  versions_el = item.find("versions")
-                  versions_count = len(versions_el.findall("item")) if versions_el is not None else 0
-
+                      el=item.find(tag); return el.get(attr) if el is not None and el.get(attr) is not None else None
+                  avgw=item.find("statistics/ratings/averageweight")
+                  weight=float(avgw.get("value")) if avgw is not None and avgw.get("value") not in (None,"NaN") else None
+                  image_el=item.find("image"); thumb_el=item.find("thumbnail")
+                  image_url=image_el.text if image_el is not None else None
+                  thumb_url=thumb_el.text if thumb_el is not None else None
+                  categories=[l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
+                  mechanics=[l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
+                  versions_el=item.find("versions"); versions_count=len(versions_el.findall("item")) if versions_el is not None else 0
                   out.append({
-                      "bgg_id": bid,
-                      "name_en": name_en,
-                      "year": int(year) if year else None,
-                      "players": [int(minp) if minp else None, int(maxp) if maxp else None],
-                      "time_min": int(minT) if minT else None,
-                      "time_max": int(maxT) if maxT else None,
-                      "weight": weight,
-                      "categories": categories,
-                      "mechanics": mechanics,
-                      "image_url": image_url or thumb_url,
-                      "thumb_url": thumb_url or image_url,
+                      "bgg_id": bid, "name_en": name_en,
+                      "year": int(val("yearpublished")) if val("yearpublished") else None,
+                      "players": [int(val("minplayers")) if val("minplayers") else None, int(val("maxplayers")) if val("maxplayers") else None],
+                      "time_min": int(val("minplaytime")) if val("minplaytime") else None,
+                      "time_max": int(val("maxplaytime")) if val("maxplaytime") else None,
+                      "weight": weight, "categories": categories, "mechanics": mechanics,
+                      "image_url": image_url or thumb_url, "thumb_url": thumb_url or image_url,
                       "versions_count": versions_count,
                   })
               return out
-
           def main():
               if not INPUT.exists():
-                  print("No data/bgg_ids.json; nothing to fetch.")
-                  return
-              base_rows = json.loads(INPUT.read_text(encoding="utf-8"))
-              by_id = {}; ids = []
+                  print("No data/bgg_ids.json; nothing to fetch."); return
+              base_rows=json.loads(INPUT.read_text(encoding="utf-8"))
+              by_id,ids={},[]
               for r in base_rows:
-                  bid = r.get("bgg_id")
-                  if not bid: continue
-                  ids.append(int(bid))
-                  by_id[int(bid)] = r
-
-              results = []
-              for i in range(0, len(ids), BATCH):
-                  chunk = ids[i:i+BATCH]
+                  bid=r.get("bgg_id"); if not bid: continue
+                  bid=int(bid); ids.append(bid); by_id[bid]=r
+              results=[]
+              for i in range(0,len(ids),BATCH):
+                  chunk=ids[i:i+BATCH]
                   try:
-                      root = fetch_batch(chunk)
-                      parsed = parse_items(root)
+                      root=fetch_batch(chunk); parsed=parse_items(root)
                       for p in parsed:
-                          src = by_id.get(int(p["bgg_id"]), {})
-                          merged = {**src, **p}
-                          results.append(merged)
-                  except Exception as e:
-                      print(f"Batch {chunk} failed: {e}")
-                  time.sleep(3)  # 禮貌性限流
-
+                          src=by_id.get(int(p["bgg_id"]),{}); results.append({**src,**p})
+                  except Exception as e: print(f"Batch {chunk} failed: {e}")
+                  time.sleep(3)
               OUTPUT.parent.mkdir(parents=True, exist_ok=True)
               OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
               print(f"Fetched {len(results)} entries → {OUTPUT}")
-
-          if __name__ == "__main__":
-              main()
+          if __name__ == "__main__": main()
           PY
 
-          # --- apply_taxonomy_and_price.py（中文分類映射＋合併手動欄；utf-8-sig 讀CSV） ---
+          # --- apply_taxonomy_and_price.py ---
           cat <<'PY' > scripts/apply_taxonomy_and_price.py
           import csv, json
           from pathlib import Path
-
-          MANUAL_CSV = Path("data/manual.csv")
-          BGG_IN     = Path("data/bgg_data.json")
-          BGG_OUT    = Path("data/bgg_data.json")  # 覆蓋
-          CATMAP_CSV = Path("data/category_map_zh.csv")
-
+          MANUAL_CSV=Path("data/manual.csv"); BGG_IN=Path("data/bgg_data.json"); BGG_OUT=BGG_IN; CATMAP_CSV=Path("data/category_map_zh.csv")
           def load_manual():
-              items = {}
-              if not MANUAL_CSV.exists(): return items
+              d={}
+              if not MANUAL_CSV.exists(): return d
               with MANUAL_CSV.open(encoding="utf-8-sig") as f:
-                  r = csv.DictReader(f)
+                  r=csv.DictReader(f)
                   for row in r:
-                      key = str(row.get("bgg_id") or row.get("name_zh") or row.get("bgg_query"))
+                      key=str(row.get("bgg_id") or row.get("name_zh") or row.get("bgg_query"))
                       if not key: continue
-                      def to_int_or_none(v):
-                          if v is None: return None
-                          s = str(v).strip()
-                          if s == "" or s.lower() == "none": return None
+                      def I(x):
+                          if x is None: return None
+                          s=str(x).strip()
+                          if s=="" or s.lower()=="none": return None
                           try: return int(float(s))
                           except: return None
-                      row["manual_override"] = int(row.get("manual_override") or 0)
-                      row["price_msrp_twd"] = to_int_or_none(row.get("price_msrp_twd"))
-                      row["price_twd"]      = to_int_or_none(row.get("price_twd"))
-                      row["used_price_twd"] = to_int_or_none(row.get("used_price_twd"))
-                      items[key] = row
-              return items
-
+                      row["manual_override"]=int(row.get("manual_override") or 0)
+                      row["price_msrp_twd"]=I(row.get("price_msrp_twd"))
+                      row["price_twd"]=I(row.get("price_twd"))
+                      row["used_price_twd"]=I(row.get("used_price_twd"))
+                      d[key]=row
+              return d
           def load_catmap():
-              m = {}
+              m={}
               if not CATMAP_CSV.exists(): return m
               with CATMAP_CSV.open(encoding="utf-8-sig") as f:
-                  r = csv.DictReader(f)
+                  r=csv.DictReader(f)
                   for row in r:
-                      en = (row.get("bgg_category_en") or "").strip()
-                      zh = (row.get("category_zh") or "").strip()
-                      if en: m[en] = zh or en
+                      en=(row.get("bgg_category_en") or "").strip()
+                      zh=(row.get("category_zh") or "").strip()
+                      if en: m[en]=zh or en
               return m
-
           def main():
               if not BGG_IN.exists():
-                  print("No data/bgg_data.json; skip apply.")
-                  return
-
-              manual = load_manual()
-              catmap = load_catmap()
-
-              rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
-              out = []
+                  print("No data/bgg_data.json; skip apply."); return
+              manual=load_manual(); catmap=load_catmap()
+              rows=json.loads(BGG_IN.read_text(encoding="utf-8")); out=[]
               for r in rows:
-                  # 合併 manual 欄位（若存在）
-                  key_opts = [str(r.get("bgg_id") or ""), str(r.get("name_zh") or ""), str(r.get("bgg_query") or "")]
-                  m = None
-                  for k in key_opts:
-                      if k and k in manual:
-                          m = manual[k]; break
-
+                  m=None
+                  for k in [str(r.get("bgg_id") or ""), str(r.get("name_zh") or ""), str(r.get("bgg_query") or "")]:
+                      if k and k in manual: m=manual[k]; break
                   if m:
-                      for fld in ["name_zh","name_en_override","alias_zh","category_zh","price_msrp_twd",
-                                  "price_twd","used_price_twd","price_note","used_note","manual_override",
-                                  "stock","description","image_override"]:
-                          if fld in m and m[fld] not in (None, ""):
-                              r[fld] = m[fld]
-
-                  # 中文分類：manual.category_zh 優先；否則 EN→ZH 對照
+                      for fld in ["name_zh","name_en_override","alias_zh","category_zh","price_msrp_twd","price_twd","used_price_twd","price_note","used_note","manual_override","stock","description","image_override"]:
+                          if fld in m and m[fld] not in (None,""): r[fld]=m[fld]
                   if r.get("category_zh"):
-                      r["categories_zh"] = [x.strip() for x in str(r["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
+                      r["categories_zh"]=[x.strip() for x in str(r["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
                   else:
-                      en = r.get("categories") or []
-                      r["categories_zh"] = [catmap.get(x, x) for x in en]
-
-                  # 別名（搜尋）
+                      en=r.get("categories") or []; r["categories_zh"]=[catmap.get(x,x) for x in en]
                   if r.get("alias_zh"):
-                      r["aliases_zh"] = [x.strip() for x in str(r["alias_zh"]).split(";") if x.strip()]
-
-                  # 價格：你要全手動 → manual_override=1 時完全保留；未填就留 None（不套規則）
-                  # 圖片：若有 image_override，替換為自定連結
-                  if r.get("image_override"):
-                      r["image_url"] = r["image_override"]
-
+                      r["aliases_zh"]=[x.strip() for x in str(r["alias_zh"]).split(";") if x.strip()]
+                  if r.get("image_override"): r["image_url"]=r["image_override"]
                   out.append(r)
-
               BGG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
               print(f"apply_taxonomy_and_price: total {len(out)}; manual merged & categories_zh applied.")
-          if __name__ == "__main__":
-              main()
+          if __name__ == "__main__": main()
           PY
 
-          # --- build_json.py（輸出完整欄位到 data/games_full.json） ---
+          # --- build_json.py ---
           cat <<'PY' > scripts/build_json.py
           import json, datetime
           from pathlib import Path
-
-          INPUT = Path("data/bgg_data.json")
-          OUTPUT = Path("data/games_full.json")
-
+          INPUT=Path("data/bgg_data.json"); OUTPUT=Path("data/games_full.json")
           if not INPUT.exists():
-              print("No data/bgg_data.json; skip build_json.")
-              raise SystemExit(0)
-
-          rows = json.loads(INPUT.read_text(encoding="utf-8"))
-          items = []
-          today = datetime.date.today().isoformat()
-
-          for r in rows:
-              bid = r.get("bgg_id")
-              bgg_url = f"https://boardgamegeek.com/boardgame/{bid}" if bid else None
-              name_zh = r.get("name_zh")
-              name_en = r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
-
-              image = r.get("image") or r.get("image_url") or r.get("thumb_url")
-
-              search_keywords = []
-              if name_zh: search_keywords.append(f"{name_zh} BGG")
-              if name_en: search_keywords.append(f"{name_en} BGG")
-
-              items.append({
-                  "id": (name_en or name_zh or f"bgg_{bid}").lower().replace(" ", "_") if (name_en or name_zh) else f"bgg_{bid}",
-                  "name_zh": name_zh,
-                  "name_en": name_en,
-                  "aliases_zh": r.get("aliases_zh", []),
-                  "bgg_id": bid,
-                  "bgg_url": bgg_url,
-                  "year": r.get("year"),
-                  "players": r.get("players"),
-                  "time_min": r.get("time_min"),
-                  "time_max": r.get("time_max"),
-                  "weight": r.get("weight"),
-                  "categories": r.get("categories") or [],
-                  "categories_zh": r.get("categories_zh") or [],
-                  "mechanics": r.get("mechanics") or [],
-                  "versions_count": r.get("versions_count", 0),
-                  "image": image,
-                  "price_msrp_twd": r.get("price_msrp_twd"),
-                  "price_twd": r.get("price_twd"),
-                  "used_price_twd": r.get("used_price_twd"),
-                  "price_note": r.get("price_note"),
-                  "used_note": r.get("used_note"),
-                  "stock": r.get("stock"),
-                  "description": r.get("description"),
-                  "search_keywords": search_keywords,
-                  "updated_at": today
-              })
-
-          OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
-          print(f"Built {len(items)} entries → {OUTPUT}")
-          PY
-
-      - name: Run scripts
-        run: |
-          python scripts/resolve_bgg.py
-          python scripts/fetch_bgg.py
-          python scripts/apply_taxonomy_and_price.py
-          python scripts/download_images.py
-          python scripts/build_json.py
-
-            - name: Commit changes
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/games_full.json || true
-          git add assets/img/* || true
-          git commit -m "Auto-update game data" || echo "No changes to commit"
-          git push || echo "No changes to push"
-
+              print("No data/bgg_data.json; skip build_json."); raise SystemExit(0)
+          rows=json.loads(INPUT.read_text(encoding="utf-8")); items=[]; today=datetime.date.today().isoformat()
