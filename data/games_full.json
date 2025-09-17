@@ -1,5 +1,146 @@
 [
   {
+    "id": "zip_zap",
+    "name_zh": "ZIP ZAP",
+    "name_en": "Zip Zap",
+    "aliases_zh": [],
+    "bgg_id": 117814,
+    "bgg_url": "https://boardgamegeek.com/boardgame/117814",
+    "year": 2012,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Number",
+      "Real-time"
+    ],
+    "mechanics": [],
+    "editions": [],
+    "image": "assets/img/117814.jpg",
+    "price_twd": 450,
+    "used_price_twd": 250,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "ZIP ZAP BGG",
+      "Zip Zap BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-17"
+  },
+  {
+    "id": "vye:_the_card_game_of_capture_and_control",
+    "name_zh": "VYE",
+    "name_en": "Vye: The Card Game of Capture and Control",
+    "aliases_zh": [],
+    "bgg_id": 142239,
+    "bgg_url": "https://boardgamegeek.com/boardgame/142239",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.6176,
+    "categories": [
+      "Abstract Strategy",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management"
+    ],
+    "editions": [],
+    "image": "assets/img/142239.jpg",
+    "price_twd": null,
+    "used_price_twd": null,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "VYE BGG",
+      "Vye: The Card Game of Capture and Control BGG"
+    ],
+    "stock": "",
+    "updated_at": "2025-09-17"
+  },
+  {
+    "id": "uno_stacko",
+    "name_zh": "Uno疊疊樂",
+    "name_en": "UNO Stacko",
+    "aliases_zh": [],
+    "bgg_id": 2821,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2821",
+    "year": 1994,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.1304,
+    "categories": [
+      "Action / Dexterity",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Stacking and Balancing"
+    ],
+    "editions": [],
+    "image": "assets/img/2821.jpg",
+    "price_twd": 799,
+    "used_price_twd": 350,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "Uno疊疊樂 BGG",
+      "UNO Stacko BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-17"
+  },
+  {
+    "id": "uno:_show_'em_no_mercy",
+    "name_zh": "UNO SHOW'EM NO MERCY",
+    "name_en": "UNO: Show 'Em No Mercy",
+    "aliases_zh": [],
+    "bgg_id": 399088,
+    "bgg_url": "https://boardgamegeek.com/boardgame/399088",
+    "year": 2023,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 30,
+    "weight": 1.4762,
+    "categories": [
+      "Card Game"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Lose a Turn",
+      "Matching",
+      "Player Elimination",
+      "Take That"
+    ],
+    "editions": [],
+    "image": "assets/img/399088.jpg",
+    "price_twd": 469,
+    "used_price_twd": 300,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "UNO SHOW'EM NO MERCY BGG",
+      "UNO: Show 'Em No Mercy BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-17"
+  },
+  {
     "id": "steam",
     "name_zh": "蒸氣",
     "name_en": "Steam",
