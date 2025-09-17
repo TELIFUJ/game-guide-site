@@ -291,7 +291,12 @@ jobs:
           python scripts/download_images.py
           python scripts/build_json.py
 
-      - name: Commit changes
+            - name: Commit changes
         run: |
           git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/games_full.json || true
+          git add assets/img/* || true
+          git commit -m "Auto-update game data" || echo "No changes to commit"
+          git push || echo "No changes to push"
+
