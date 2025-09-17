@@ -9,21 +9,16 @@
     .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{border:1px solid #e5e7eb;padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    .card img{
-  width: 100%;
-  height: auto;        /* 依原始比例顯示（不裁切） */
-  object-fit: contain; /* 保險：即使設了高度也不裁切 */
-  background: #f3f4f6;
-  border-radius: 8px;
-}
-
+    .card img{width:100%;height:auto;object-fit:contain;background:#f3f4f6;border-radius:8px}
     .row{display:flex;gap:8px;align-items:center}
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:#6b7280}
+    input,select,label{font:inherit}
     input,select{padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
     .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
     .chip{display:inline-block;font-size:12px;padding:3px 8px;border:1px solid #e5e7eb;border-radius:999px;background:#f8fafc}
     .muted{color:#6b7280}
+    .checkbox{display:flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
   </style>
 </head>
 <body>
@@ -32,14 +27,20 @@
   <input id="q" name="q_no_autofill"
          placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
   <select id="cat"><option value="">全部分類</option></select>
-  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價"
+
+  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）"
          autocomplete="off" inputmode="numeric" spellcheck="false">
-  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價"
+  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）"
          autocomplete="off" inputmode="numeric" spellcheck="false">
+
+  <label class="checkbox"><input type="checkbox" id="inclUsed" checked> 含二手價</label>
+
   <select id="sort">
     <option value="">排序</option>
-    <option value="price">售價（低→高）</option>
+    <option value="min_price">最低價格（含二手）</option>
+    <option value="price">售價（僅新品，低→高）</option>
     <option value="used">二手價（低→高）</option>
     <option value="weight">策略強度（低→高）</option>
   </select>
@@ -51,7 +52,7 @@
   // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  // 英→中備援映射（後端若還沒寫 categories_zh 就用它）
+  // 英→中備援映射
   const CAT_MAP = {
     "Economic":"經濟","Trains":"鐵道","Transportation":"交通",
     "Adventure":"冒險","Fantasy":"奇幻","Fighting":"戰鬥","Miniatures":"微縮模型",
@@ -62,12 +63,24 @@
     "Wargame":"戰棋","Children's Game":"兒童"
   };
 
-  // 取「中文分類」：優先 categories_zh，否則把英文 categories 映射成中文；最多 10 個
+  // 取中文分類：優先 categories_zh，否則映射英文；最多 10 個
   function getCatsZh(x){
     if (Array.isArray(x.categories_zh) && x.categories_zh.length)
       return x.categories_zh.slice(0,10);
     const en = Array.isArray(x.categories) ? x.categories : [];
     return en.map(s => CAT_MAP[s] || s).slice(0,10);
+  }
+
+  // 取價格候選（含/不含二手）
+  function priceCandidates(x, includeUsed=true){
+    const out=[];
+    if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
+    if (includeUsed && x.used_price_twd!=null && x.used_price_twd!=="") out.push(Number(x.used_price_twd));
+    return out;
+  }
+  function minPrice(x, includeUsed=true){
+    const c=priceCandidates(x, includeUsed);
+    return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
   }
 
   let DATA=[];
@@ -76,16 +89,17 @@
         C = document.getElementById("cat"),
         S = document.getElementById("sort"),
         PMIN = document.getElementById("pmin"),
-        PMAX = document.getElementById("pmax");
+        PMAX = document.getElementById("pmax"),
+        INCL = document.getElementById("inclUsed");
 
-  // 依照是否位於 /site/ 決定讀檔路徑
+  // 依所在路徑決定資料路徑
   const prefix = location.pathname.includes('/site/') ? '../' : '';
   const DATA_URL = prefix + 'data/games_full.json?ts=' + Date.now();
 
   fetch(DATA_URL).then(r=>r.json()).then(d=>{ DATA=d; init(); });
 
   function init(){
-    // 建立分類下拉（中文）
+    // 建立中文分類下拉
     const allCats = new Set();
     DATA.forEach(x => getCatsZh(x).forEach(c => allCats.add(c)));
     [...allCats].sort().forEach(c=>{
@@ -94,13 +108,13 @@
     });
 
     render();
-    [Q,C,S,PMIN,PMAX].forEach(el=>el.addEventListener('input',render));
+    [Q,C,S,PMIN,PMAX,INCL].forEach(el=>el.addEventListener('input',render));
   }
 
   function render(){
     let list = DATA.slice();
 
-    // 關鍵字（中文/英文/別名/關鍵詞）
+    // 關鍵字
     const q = Q.value.trim().toLowerCase();
     if(q){
       list = list.filter(x=>{
@@ -112,25 +126,32 @@
       });
     }
 
-    // 分類（用中文比較）
+    // 分類（中文）
     const chosen = C.value;
     if(chosen){
       list = list.filter(x => getCatsZh(x).includes(chosen));
     }
 
-    // 價格區間（售價）
+    // 價格區間（含二手勾選控制）
+    const includeUsed = INCL.checked;
     const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
-    if(pmin>0) list = list.filter(x => (x.price_twd??1e12) >= pmin);
-    if(pmax>0) list = list.filter(x => (x.price_twd??1e12) <= pmax);
+    if (pmin>0 || pmax>0){
+      list = list.filter(x=>{
+        const cand = priceCandidates(x, includeUsed);
+        if (cand.length===0) return false;
+        return cand.some(p => (pmin>0 ? p>=pmin : true) && (pmax>0 ? p<=pmax : true));
+      });
+    }
 
     // 排序
-    if(S.value==="price")  list.sort((a,b)=>(a.price_twd??1e12)-(b.price_twd??1e12));
-    if(S.value==="used")   list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12));
-    if(S.value==="weight") list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12));
+    if (S.value==="min_price") list.sort((a,b)=> minPrice(a, INCL.checked) - minPrice(b, INCL.checked));
+    if (S.value==="price")     list.sort((a,b)=>(a.price_twd??1e12)-(b.price_twd??1e12));
+    if (S.value==="used")      list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12));
+    if (S.value==="weight")    list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12));
 
     // 卡片
     G.innerHTML = list.map(x => {
-      const cz = getCatsZh(x); // 中文 chips（最多 10 個）
+      const cz = getCatsZh(x);
       const imgSrc = (x.image||'').startsWith('http') ? x.image : (prefix+(x.image||''));
       return `
         <div class="card">
