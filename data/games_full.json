@@ -1,90 +1,87 @@
 [
   {
-    "id": "splendor",
-    "name_zh": "璀璨寶石",
-    "name_en": "Splendor",
+    "id": "steam",
+    "name_zh": "蒸氣",
+    "name_en": "Steam",
     "aliases_zh": [],
-    "bgg_id": 148228,
-    "bgg_url": "https://boardgamegeek.com/boardgame/148228",
-    "year": 2014,
+    "bgg_id": 27833,
+    "bgg_url": "https://boardgamegeek.com/boardgame/27833",
+    "year": 2009,
     "players": [
-      2,
-      4
+      3,
+      6
     ],
-    "time_min": 30,
-    "time_max": 30,
-    "weight": 1.7789,
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.4528,
     "categories": [
-      "Card Game",
       "Economic",
-      "Renaissance"
+      "Trains",
+      "Transportation"
     ],
     "mechanics": [
-      "Contracts",
-      "Open Drafting",
-      "Race",
-      "Set Collection"
+      "Auction / Bidding",
+      "Loans",
+      "Network and Route Building",
+      "Ownership",
+      "Pick-up and Deliver",
+      "Tile Placement"
     ],
     "editions": [],
-    "image": "assets/img/148228.jpg",
-    "price_twd": 1200,
-    "used_price_twd": 700,
+    "image": "assets/img/27833.jpg",
+    "price_twd": 800,
+    "used_price_twd": 500,
     "price_usd_amz": null,
     "search_keywords": [
-      "璀璨寶石 BGG",
-      "Splendor BGG"
+      "蒸氣 BGG",
+      "Steam BGG"
     ],
-    "stock": null,
+    "stock": "",
     "updated_at": "2025-09-17"
   },
   {
-    "id": "7_wonders",
-    "name_zh": "七大奇蹟",
-    "name_en": "7 Wonders",
+    "id": "descent:_legends_of_the_dark",
+    "name_zh": "深入絕地: 暗黑世界傳說",
+    "name_en": "Descent: Legends of the Dark",
     "aliases_zh": [],
-    "bgg_id": 68448,
-    "bgg_url": "https://boardgamegeek.com/boardgame/68448",
-    "year": 2010,
+    "bgg_id": 322708,
+    "bgg_url": "https://boardgamegeek.com/boardgame/322708",
+    "year": 2021,
     "players": [
-      2,
-      7
+      1,
+      4
     ],
-    "time_min": 30,
-    "time_max": 30,
-    "weight": 2.315,
+    "time_min": 120,
+    "time_max": 180,
+    "weight": 2.6994,
     "categories": [
-      "Ancient",
-      "Card Game",
-      "City Building",
-      "Civilization",
-      "Economic"
+      "Adventure",
+      "Fantasy",
+      "Fighting",
+      "Miniatures"
     ],
     "mechanics": [
-      "Closed Drafting",
-      "End Game Bonuses",
-      "Hand Management",
-      "Melding and Splaying",
-      "Multi-Use Cards",
-      "Neighbor Scope",
-      "Once-Per-Game Abilities",
-      "Score-and-Reset Game",
-      "Set Collection",
-      "Simultaneous Action Selection",
-      "Tags",
-      "Tech Trees / Tech Tracks",
-      "Variable Player Powers",
-      "Variable Set-up"
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Modular Board",
+      "Movement Points",
+      "Role Playing",
+      "Scenario / Mission / Campaign Game",
+      "Solo / Solitaire Game",
+      "Square Grid",
+      "Variable Player Powers"
     ],
     "editions": [],
-    "image": "assets/img/68448.jpg",
-    "price_twd": 1900,
-    "used_price_twd": 1200,
+    "image": "assets/img/322708.jpg",
+    "price_twd": 5200,
+    "used_price_twd": 3000,
     "price_usd_amz": null,
     "search_keywords": [
-      "七大奇蹟 BGG",
-      "7 Wonders BGG"
+      "深入絕地: 暗黑世界傳說 BGG",
+      "Descent: Legends of the Dark BGG"
     ],
-    "stock": null,
+    "stock": "",
     "updated_at": "2025-09-17"
   }
 ]
