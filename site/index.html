@@ -170,6 +170,8 @@
           </div>
           ${x.price_note?`<div class="muted" style="margin-top:4px">${x.price_note}</div>`:''}
           ${x.used_note?`<div class="muted" style="margin-top:2px">${x.used_note}</div>`:''}
+          ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
+
 
           <div style="margin-top:6px">
             <a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a>
