@@ -1,3 +1,3 @@
-name_zh,bgg_query,price_twd,used_price_twd
-璀璨寶石,Splendor,1200,800
-七大奇蹟,7 Wonders,1900,1200
+name_zh,bgg_id,bgg_query,name_en_override,category_zh,alias_zh,price_msrp_twd,price_twd,used_price_twd,price_note,used_note,manual_override,stock,description,image_override
+蒸氣,27833,,,,,800,800,500,,,1,,,
+深入絕地: 暗黑世界傳說,322708,,,,,5200,5200,3000,,,1,,,
