@@ -1,40 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <title>Board Game Guide</title>
-  <style>
-    body { font-family: sans-serif; margin: 20px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-    .card { border: 1px solid #ddd; border-radius: 8px; padding: 10px; }
-    .card img { width: 100%; border-radius: 6px; }
-    .name { font-weight: bold; margin: 8px 0; }
-    .price { color: #b22222; }
-  </style>
-</head>
-<body>
-  <h1>桌遊導覽站</h1>
-  <div id="games" class="grid"></div>
-
-  <script>
-    fetch('data/games_full.json')
-      .then(r => r.json())
-      .then(data => {
-        const container = document.getElementById('games');
-        data.forEach(g => {
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.innerHTML = `
-            <img src="${g.image || ''}" alt="${g.name_zh || g.name_en}">
-            <div class="name">${g.name_zh || g.name_en}</div>
-            <div>BGG: <a href="${g.bgg_url}" target="_blank">連結</a></div>
-            <div class="price">NT$ ${g.price_twd || '-'} (二手 ${g.used_price_twd || '-'})</div>
-            <div>分類: ${(g.categories || []).join(', ')}</div>
-            <div>玩家數: ${g.players ? g.players.join('–') : '-'}</div>
-          `;
-          container.appendChild(card);
-        });
-      });
-  </script>
-</body>
-</html>
+<!doctype html><meta charset="utf-8">
+<title>Redirecting…</title>
+<meta http-equiv="refresh" content="0; url=site/">
+<script>location.href="site/";</script>
+<p>Redirecting to <a href="site/">site/</a>…</p>
