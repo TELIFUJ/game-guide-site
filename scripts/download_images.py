@@ -21,3 +21,14 @@ for row in rows:
     try:
         r = requests.get(url, timeout=15)
         if r.status_code == 200:
+            with open(path, "wb") as f:
+                f.write(r.content)
+            row["image"] = f"assets/img/{filename}"
+            print(f"Downloaded {row['name_zh']} → {path}")
+    except Exception as e:
+        print(f"Failed {row['name_zh']}: {e}")
+
+# 覆蓋回去，讓下一步 build_json.py 用到更新過的 image 路徑
+with open(INPUT, "w", encoding="utf-8") as f:
+    json.dump(rows, f, ensure_ascii=False, indent=2)
+
