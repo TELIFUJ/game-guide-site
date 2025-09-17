@@ -1,0 +1,36 @@
+name: Update Game Data
+
+on:
+  workflow_dispatch:      # 手動執行
+  schedule:
+    - cron: "0 17 * * *"  # 每天台灣時間 01:00 (17:00 UTC)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests pillow
+
+      - name: Run scripts
+        run: |
+          python scripts/resolve_bgg.py
+          python scripts/fetch_bgg.py
+          python scripts/download_images.py
+          python scripts/build_json.py
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/games_full.json assets/img/*
+          git commit -m "Auto-update game data" || echo "No changes"
+          git push
