@@ -31,4 +31,3 @@ for row in rows:
 # 覆蓋回去，讓下一步 build_json.py 用到更新過的 image 路徑
 with open(INPUT, "w", encoding="utf-8") as f:
     json.dump(rows, f, ensure_ascii=False, indent=2)
-
