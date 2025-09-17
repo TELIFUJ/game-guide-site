@@ -20,10 +20,12 @@ jobs:
       - name: Install dependencies
         run: pip install requests pillow
 
+      # 只保留一個 Run scripts，依序執行五支腳本
       - name: Run scripts
         run: |
           python scripts/resolve_bgg.py
           python scripts/fetch_bgg.py
+          python scripts/apply_taxonomy_and_price.py
           python scripts/download_images.py
           python scripts/build_json.py
 
