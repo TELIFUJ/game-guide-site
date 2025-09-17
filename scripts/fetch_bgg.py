@@ -2,85 +2,107 @@
 import time, json, requests, xml.etree.ElementTree as ET
 from pathlib import Path
 
-INPUT = Path("data/bgg_ids.json")
+INPUT  = Path("data/bgg_ids.json")
 OUTPUT = Path("data/bgg_data.json")
 
-API = "https://boardgamegeek.com/xmlapi2/thing?stats=1&id="
+API    = "https://boardgamegeek.com/xmlapi2/thing?stats=1&versions=1&id="
+BATCH  = 20  # 每次最多 20 筆
 
-def fetch_one(bgg_id: int):
-    url = API + str(bgg_id)
-    r = requests.get(url, timeout=30)
-    # BGG 排隊時會回 202，要輪詢
+def fetch_batch(id_list):
+    url = API + ",".join(str(i) for i in id_list)
+    r = requests.get(url, timeout=60)
+    # BGG 202 表示排隊中，要輪詢直到 200
     while r.status_code == 202:
         time.sleep(2)
-        r = requests.get(url, timeout=30)
+        r = requests.get(url, timeout=60)
     r.raise_for_status()
     return ET.fromstring(r.text)
 
-def parse_item(root: ET.Element):
-    item = root.find("item")
-    if item is None:
-        return {}
-    def get_attr(tag, attr="value", default=None):
-        el = item.find(tag)
-        return el.get(attr) if (el is not None and el.get(attr) is not None) else default
+def parse_items(root):
+    out = []
+    for item in root.findall("item"):
+        # bgg_id
+        bid = item.get("id")
+        try:
+            bid = int(bid)
+        except:
+            continue
 
-    # 名稱（primary）
-    name_en = None
-    for n in item.findall("name"):
-        if n.get("type") == "primary":
-            name_en = n.get("value")
-            break
+        # primary 英文名
+        name_en = None
+        for n in item.findall("name"):
+            if n.get("type") == "primary":
+                name_en = n.get("value")
+                break
 
-    # 分類 / 機制
-    categories = [x.get("value") for x in item.findall("link[@type='boardgamecategory']")]
-    mechanics  = [x.get("value") for x in item.findall("link[@type='boardgamemechanic']")]
+        def val(tag, attr="value"):
+            el = item.find(tag)
+            return el.get(attr) if el is not None and el.get(attr) is not None else None
 
-    # 欄位
-    year   = get_attr("yearpublished")
-    min_p  = get_attr("minplayers")
-    max_p  = get_attr("maxplayers")
-    min_t  = get_attr("minplaytime")
-    max_t  = get_attr("maxplaytime")
-    weight = get_attr("statistics/ratings/averageweight")
+        year  = val("yearpublished")
+        minp  = val("minplayers");  maxp  = val("maxplayers")
+        minT  = val("minplaytime"); maxT  = val("maxplaytime")
 
-    image_el = item.find("image")
-    thumb_el = item.find("thumbnail")
-    image_url = image_el.text if image_el is not None else None
-    thumb_url = thumb_el.text if thumb_el is not None else None
+        avgw  = item.find("statistics/ratings/averageweight")
+        weight = float(avgw.get("value")) if avgw is not None and avgw.get("value") not in (None, "NaN") else None
 
-    return {
-        "name_en": name_en,
-        "year": int(year) if year else None,
-        "players": [int(min_p) if min_p else None, int(max_p) if max_p else None],
-        "time_min": int(min_t) if min_t else None,
-        "time_max": int(max_t) if max_t else None,
-        "weight": float(weight) if weight else None,
-        "categories": categories,
-        "mechanics": mechanics,
-        "image_url": image_url or thumb_url,
-        "thumb_url": thumb_url or image_url
-    }
+        image_el = item.find("image");     thumb_el = item.find("thumbnail")
+        image_url = image_el.text if image_el is not None else None
+        thumb_url = thumb_el.text if thumb_el is not None else None
+
+        categories = [l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
+        mechanics  = [l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
+
+        versions_el = item.find("versions")
+        versions_count = len(versions_el.findall("item")) if versions_el is not None else 0
+
+        out.append({
+            "bgg_id": bid,
+            "name_en": name_en,
+            "year": int(year) if year else None,
+            "players": [int(minp) if minp else None, int(maxp) if maxp else None],
+            "time_min": int(minT) if minT else None,
+            "time_max": int(maxT) if maxT else None,
+            "weight": weight,
+            "categories": categories,
+            "mechanics": mechanics,
+            "image_url": image_url or thumb_url,
+            "thumb_url": thumb_url or image_url,
+            "versions_count": versions_count,
+        })
+    return out
 
 def main():
-    rows = json.loads(INPUT.read_text(encoding="utf-8"))
-    out = []
-    for r in rows:
+    if not INPUT.exists():
+        print("No data/bgg_ids.json; nothing to fetch.")
+        return
+
+    base_rows = json.loads(INPUT.read_text(encoding="utf-8"))
+    by_id, ids = {}, []
+    for r in base_rows:
         bid = r.get("bgg_id")
         if not bid:
-            out.append({**r})  # 沒有 bgg_id 就原樣帶過去
             continue
+        bid = int(bid)
+        by_id[bid] = r
+        ids.append(bid)
+
+    results = []
+    for i in range(0, len(ids), BATCH):
+        chunk = ids[i:i+BATCH]
         try:
-            root = fetch_one(int(bid))
-            parsed = parse_item(root)
-            merged = {**r, **parsed}
-            out.append(merged)
-            time.sleep(2.5)  # 禮貌限流
+            root = fetch_batch(chunk)
+            parsed = parse_items(root)
+            for p in parsed:
+                src = by_id.get(int(p["bgg_id"]), {})
+                results.append({**src, **p})
         except Exception as e:
-            print(f"Failed bgg_id={bid}: {e}")
-            out.append({**r})
-    OUTPUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Fetched {len(out)} entries → {OUTPUT}")
+            print(f"Batch {chunk} failed: {e}")
+        time.sleep(3)  # 禮貌性限流
+
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Fetched {len(results)} entries → {OUTPUT}")
 
 if __name__ == "__main__":
     main()
