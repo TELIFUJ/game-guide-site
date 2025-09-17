@@ -1,0 +1,74 @@
+<!doctype html><meta charset="utf-8">
+<title>Board Game Guide</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  body{font:16px/1.5 system-ui;margin:20px}
+  .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .card{border:1px solid #ddd;padding:10px;border-radius:8px;background:#fff}
+  .card img{width:100%;height:160px;object-fit:cover;border-radius:4px;background:#f7f7f7}
+  .row{display:flex;gap:8px;align-items:center}
+  .price{font-weight:700}
+  input,select{padding:6px 8px;border:1px solid #ccc;border-radius:6px}
+</style>
+
+<div class="filters">
+  <input id="q" placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:200px">
+  <select id="cat"><option value="">全部分類</option></select>
+  <div class="row">
+    <input id="pmin" type="number" placeholder="最低價">
+    <input id="pmax" type="number" placeholder="最高價">
+  </div>
+  <select id="sort">
+    <option value="">排序</option>
+    <option value="price">售價（低→高）</option>
+    <option value="used">二手價（低→高）</option>
+    <option value="weight">策略強度（低→高）</option>
+  </select>
+</div>
+
+<div id="grid" class="grid"></div>
+
+<script>
+let DATA=[];const G=document.getElementById("grid"),
+Q=document.getElementById("q"),C=document.getElementById("cat"),
+S=document.getElementById("sort"),PMIN=document.getElementById("pmin"),
+PMAX=document.getElementById("pmax");
+
+fetch("../data/games_full.json").then(r=>r.json()).then(d=>{DATA=d;init();});
+
+function init(){
+  const cats=[...new Set(DATA.flatMap(x=>x.categories||[]))].sort();
+  cats.forEach(c=>{let o=document.createElement('option');o.value=c;o.textContent=c;C.appendChild(o);});
+  render(); [Q,C,S,PMIN,PMAX].forEach(el=>el.addEventListener('input',render));
+}
+
+function render(){
+  let list=DATA.slice();
+  const q=Q.value.trim().toLowerCase();
+  if(q) list=list.filter(x=>{
+    const blob=[x.name_zh||"",x.name_en||"",...(x.aliases_zh||[]),...(x.search_keywords||[])].join(" ").toLowerCase();
+    return blob.includes(q);
+  });
+  const cat=C.value; if(cat) list=list.filter(x=>x.categories?.includes(cat));
+  const pmin=Number(PMIN.value||0), pmax=Number(PMAX.value||0);
+  if(pmin>0) list=list.filter(x=>(x.price_twd??1e12)>=pmin);
+  if(pmax>0) list=list.filter(x=>(x.price_twd??1e12)<=pmax);
+  if(S.value==="price") list.sort((a,b)=>(a.price_twd??1e12)-(b.price_twd??1e12));
+  if(S.value==="used")  list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12));
+  if(S.value==="weight")list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12));
+  G.innerHTML=list.map(x=>`
+  <div class="card">
+    <img src="${(x.image||'').startsWith('http')?x.image:('../'+(x.image||''))}" alt=""
+         onerror="this.src='https://via.placeholder.com/300x160?text=No+Image'">
+    <h3>${x.name_zh||x.name_en||''}</h3>
+    <div>${x.name_en?`<small>${x.name_en}</small>`:''}</div>
+    <div>${(x.categories||[]).slice(0,2).join(' / ')}</div>
+    <div class="price">
+      ${x.price_twd?`$${x.price_twd}`:''}
+      ${x.used_price_twd?`｜二手 $${x.used_price_twd}`:''}
+    </div>
+    <div><a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a></div>
+  </div>`).join('');
+}
+</script>
