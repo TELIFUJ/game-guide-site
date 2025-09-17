@@ -1,33 +1,53 @@
 # scripts/build_json.py
-import json, os
+import json, datetime
+from pathlib import Path
 
-INPUT = "data/bgg_data.json"
-OUTPUT = "data/games_full.json"
+INPUT = Path("data/bgg_data.json")
+OUTPUT = Path("data/games_full.json")
 
-if not os.path.exists(INPUT):
-    print("No input file found. Please run previous scripts first.")
-    exit(1)
+if not INPUT.exists():
+    print("No data/bgg_data.json; skip build_json.")
+    raise SystemExit(0)
 
-with open(INPUT, encoding="utf-8") as f:
-    data = json.load(f)
+rows = json.loads(INPUT.read_text(encoding="utf-8"))
+items = []
+today = datetime.date.today().isoformat()
 
-# 最終輸出格式：只保留必要欄位
-output = []
-for row in data:
-    output.append({
-        "name_zh": row.get("name_zh"),
-        "name_en": row.get("bgg_query"),
-        "bgg_id": row.get("bgg_id"),
-        "bgg_url": f"https://boardgamegeek.com/boardgame/{row['bgg_id']}",
-        "year": row.get("year"),
-        "weight": row.get("weight"),
-        "categories": row.get("categories"),
-        "image": row.get("image"),
-        "price_twd": row.get("price_twd"),
-        "used_price_twd": row.get("used_price_twd")
+for r in rows:
+    bid = r.get("bgg_id")
+    bgg_url = f"https://boardgamegeek.com/boardgame/{bid}" if bid else None
+    name_zh = r.get("name_zh")
+    name_en = r.get("name_en") or r.get("bgg_query")
+    categories = r.get("categories") or []
+    mechanics  = r.get("mechanics") or []
+    # 產生搜尋關鍵字（台灣常用）
+    search_keywords = []
+    if name_zh: search_keywords.append(f"{name_zh} BGG")
+    if name_en: search_keywords.append(f"{name_en} BGG")
+
+    items.append({
+        "id": (name_en or name_zh or f"bgg_{bid}").lower().replace(" ", "_"),
+        "name_zh": name_zh,
+        "name_en": name_en,
+        "aliases_zh": [],  # 後續可由 CSV 增加
+        "bgg_id": bid,
+        "bgg_url": bgg_url,
+        "year": r.get("year"),
+        "players": r.get("players"),
+        "time_min": r.get("time_min"),
+        "time_max": r.get("time_max"),
+        "weight": r.get("weight"),
+        "categories": categories,
+        "mechanics": mechanics,
+        "editions": [],  # 之後可補
+        "image": r.get("image") or r.get("image_url") or r.get("thumb_url"),
+        "price_twd": r.get("price_twd"),
+        "used_price_twd": r.get("used_price_twd"),
+        "price_usd_amz": None,
+        "search_keywords": search_keywords,
+        "stock": r.get("stock"),
+        "updated_at": today
     })
 
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(output, f, ensure_ascii=False, indent=2)
-
-print(f"Built {len(output)} entries → {OUTPUT}")
+OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+print(f"Built {len(items)} entries → {OUTPUT}")
