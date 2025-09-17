@@ -8,16 +8,16 @@
     body{font:16px/1.5 system-ui;margin:20px}
     .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-    .card{border:1px solid #ddd;padding:10px;border-radius:8px;background:#fff}
-    .card img{width:100%;height:160px;object-fit:cover;border-radius:4px;background:#f7f7f7}
+    .card{border:1px solid #ddd;padding:12px;border-radius:10px;background:#fff}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:6px;background:#f7f7f7}
     .row{display:flex;gap:8px;align-items:center}
     .price{font-weight:700}
+    .note{font-size:12px;color:#666}
     input,select{padding:6px 8px;border:1px solid #ccc;border-radius:6px}
   </style>
 </head>
 <body>
 
-<!-- 關閉瀏覽器自動完成；避免出現黑色建議面板 -->
 <form class="filters" autocomplete="off" onsubmit="return false">
   <input id="q" name="q_no_autofill"
          placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:200px"
@@ -38,9 +38,8 @@
 <div id="grid" class="grid"></div>
 
 <script>
-  // 進頁面時動態更名，避免瀏覽器沿用舊的自動填入資料
-  document.getElementById('q')
-    .setAttribute('name','q_'+Math.random().toString(36).slice(2));
+  // 避免瀏覽器沿用舊自動完成
+  document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
   let DATA=[];
   const G = document.getElementById("grid"),
@@ -50,13 +49,18 @@
         PMIN = document.getElementById("pmin"),
         PMAX = document.getElementById("pmax");
 
-  // 注意：此檔位於 /site/，所以讀檔用 ../data/...
-  fetch("../data/games_full.json")
+  // 本檔在「根目錄」→ 直接讀 /data
+  fetch("data/games_full.json?ts="+Date.now())
     .then(r=>r.json())
     .then(d=>{ DATA=d; init(); });
 
+  // 取用分類：優先中文，否則退回英文
+  const getCats = (x) => (x.categories_zh && x.categories_zh.length ? x.categories_zh : (x.categories || []));
+
   function init(){
-    const cats=[...new Set(DATA.flatMap(x=>x.categories||[]))].sort();
+    // 下拉分類用中文（若有）
+    const cats=[...new Set(DATA.flatMap(getCats))]
+      .sort((a,b)=>a.localeCompare(b,'zh-Hant'));
     cats.forEach(c=>{
       const o=document.createElement('option');
       o.value=c; o.textContent=c; C.appendChild(o);
@@ -68,21 +72,23 @@
   function render(){
     let list = DATA.slice();
 
-    // 關鍵字（中文/英文/別名/關鍵詞）
+    // 關鍵字（含中文分類與別名）
     const q = Q.value.trim().toLowerCase();
     if(q){
       list = list.filter(x=>{
         const blob = [
           x.name_zh||"", x.name_en||"",
-          ...(x.aliases_zh||[]), ...(x.search_keywords||[])
+          ...(x.aliases_zh||[]),
+          ...(x.search_keywords||[]),
+          ...getCats(x)
         ].join(" ").toLowerCase();
         return blob.includes(q);
       });
     }
 
-    // 分類
+    // 分類（用中文或回退的英文）
     const cat = C.value;
-    if(cat) list = list.filter(x => x.categories?.includes(cat));
+    if(cat) list = list.filter(x => getCats(x).includes(cat));
 
     // 價格區間（售價）
     const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
@@ -90,28 +96,4 @@
     if(pmax>0) list = list.filter(x => (x.price_twd??1e12) <= pmax);
 
     // 排序
-    if(S.value==="price")  list.sort((a,b)=>(a.price_twd??1e12)-(b.price_twd??1e12));
-    if(S.value==="used")   list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12));
-    if(S.value==="weight") list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12));
-
-    // 繪製卡片
-    G.innerHTML = list.map(x => `
-      <div class="card">
-        <img loading="lazy"
-             src="${(x.image||'').startsWith('http') ? x.image : ('../'+(x.image||''))}"
-             alt="${x.name_zh||x.name_en||''}"
-             onerror="this.src='https://via.placeholder.com/300x160?text=No+Image'">
-        <h3>${x.name_zh||x.name_en||''}</h3>
-        <div>${x.name_en?`<small>${x.name_en}</small>`:''}</div>
-        <div>${(x.categories||[]).slice(0,2).join(' / ')}</div>
-        <div class="price">
-          ${x.price_twd?`$${x.price_twd}`:''}
-          ${x.used_price_twd?`｜二手 $${x.used_price_twd}`:''}
-        </div>
-        <div><a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a></div>
-      </div>
-    `).join('');
-  }
-</script>
-</body>
-</html>
+    if(S.value==="
