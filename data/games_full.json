@@ -1,46 +1,90 @@
 [
   {
-    "id": "splendor_2014",
+    "id": "splendor",
     "name_zh": "璀璨寶石",
     "name_en": "Splendor",
-    "aliases_zh": ["寶石","璀璨寶石(新版)"],
+    "aliases_zh": [],
     "bgg_id": 148228,
     "bgg_url": "https://boardgamegeek.com/boardgame/148228",
     "year": 2014,
-    "players": [2,4],
+    "players": [
+      2,
+      4
+    ],
     "time_min": 30,
-    "weight": 1.8,
-    "categories": ["Card Game","Economic"],
-    "mechanics": ["Set Collection","Engine-Building"],
+    "time_max": 30,
+    "weight": 1.7789,
+    "categories": [
+      "Card Game",
+      "Economic",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Contracts",
+      "Open Drafting",
+      "Race",
+      "Set Collection"
+    ],
     "editions": [],
-    "image": "https://cf.geekdo-images.com/GEj0c5dA3uJ0J5c4lA7d4w__itemrep/img/some.jpg", 
+    "image": "assets/img/148228.jpg",
     "price_twd": 1200,
-    "used_price_twd": 800,
+    "used_price_twd": 700,
     "price_usd_amz": null,
-    "search_keywords": ["璀璨寶石 BGG","Splendor BGG","寶石 桌遊"],
-    "stock": 3,
+    "search_keywords": [
+      "璀璨寶石 BGG",
+      "Splendor BGG"
+    ],
+    "stock": null,
     "updated_at": "2025-09-17"
   },
   {
-    "id": "7wonders",
+    "id": "7_wonders",
     "name_zh": "七大奇蹟",
     "name_en": "7 Wonders",
     "aliases_zh": [],
     "bgg_id": 68448,
     "bgg_url": "https://boardgamegeek.com/boardgame/68448",
     "year": 2010,
-    "players": [2,7],
+    "players": [
+      2,
+      7
+    ],
     "time_min": 30,
-    "weight": 2.3,
-    "categories": ["Card Game","Civilization"],
-    "mechanics": ["Drafting"],
+    "time_max": 30,
+    "weight": 2.315,
+    "categories": [
+      "Ancient",
+      "Card Game",
+      "City Building",
+      "Civilization",
+      "Economic"
+    ],
+    "mechanics": [
+      "Closed Drafting",
+      "End Game Bonuses",
+      "Hand Management",
+      "Melding and Splaying",
+      "Multi-Use Cards",
+      "Neighbor Scope",
+      "Once-Per-Game Abilities",
+      "Score-and-Reset Game",
+      "Set Collection",
+      "Simultaneous Action Selection",
+      "Tags",
+      "Tech Trees / Tech Tracks",
+      "Variable Player Powers",
+      "Variable Set-up"
+    ],
     "editions": [],
-    "image": "https://via.placeholder.com/300x160?text=7+Wonders",
+    "image": "assets/img/68448.jpg",
     "price_twd": 1900,
     "used_price_twd": 1200,
     "price_usd_amz": null,
-    "search_keywords": ["七大奇蹟 BGG","7 Wonders BGG"],
-    "stock": 2,
+    "search_keywords": [
+      "七大奇蹟 BGG",
+      "7 Wonders BGG"
+    ],
+    "stock": null,
     "updated_at": "2025-09-17"
   }
 ]
