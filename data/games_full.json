@@ -31,7 +31,7 @@
       "Zip Zap BGG"
     ],
     "stock": "1",
-    "updated_at": "2025-09-17"
+    "updated_at": "2025-09-18"
   },
   {
     "id": "vye:_the_card_game_of_capture_and_control",
@@ -66,7 +66,7 @@
       "Vye: The Card Game of Capture and Control BGG"
     ],
     "stock": "",
-    "updated_at": "2025-09-17"
+    "updated_at": "2025-09-18"
   },
   {
     "id": "uno_stacko",
@@ -101,7 +101,7 @@
       "UNO Stacko BGG"
     ],
     "stock": "1",
-    "updated_at": "2025-09-17"
+    "updated_at": "2025-09-18"
   },
   {
     "id": "uno:_show_'em_no_mercy",
@@ -138,7 +138,7 @@
       "UNO: Show 'Em No Mercy BGG"
     ],
     "stock": "1",
-    "updated_at": "2025-09-17"
+    "updated_at": "2025-09-18"
   },
   {
     "id": "steam",
@@ -178,7 +178,7 @@
       "Steam BGG"
     ],
     "stock": "",
-    "updated_at": "2025-09-17"
+    "updated_at": "2025-09-18"
   },
   {
     "id": "descent:_legends_of_the_dark",
@@ -223,6 +223,6 @@
       "Descent: Legends of the Dark BGG"
     ],
     "stock": "",
-    "updated_at": "2025-09-17"
+    "updated_at": "2025-09-18"
   }
 ]
