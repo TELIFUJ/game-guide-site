@@ -1438,7 +1438,7 @@
     "used_note": "",
     "manual_override": 1,
     "stock": "1",
-    "description": "",
+    "description": "Chinese edition",
     "image_override": "",
     "bgg_id": 438,
     "name_en": "Scotland Yard",
@@ -1463,6 +1463,7 @@
     "image_url": "https://cf.geekdo-images.com/yEhaXszPTy5N4hiY469DPA__original/img/uko6rePMJGd9B8XZMi6DcHLJA_0=/0x0/filters:format(jpeg)/pic8377405.jpg",
     "thumb_url": "https://cf.geekdo-images.com/yEhaXszPTy5N4hiY469DPA__small/img/vDtUEdMUid0w4RKHmlwxz9a-Beo=/fit-in/200x150/filters:strip_icc()/pic8377405.jpg",
     "versions_count": 63,
+    "image_version_id": "617304",
     "categories_zh": [
       "Deduction",
       "Travel"
