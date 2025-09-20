@@ -1,0 +1,1572 @@
+[
+  {
+    "name_zh": "ZIP ZAP",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 450,
+    "price_twd": 450,
+    "used_price_twd": 250,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 117814,
+    "name_en": "Zip Zap",
+    "year": 2012,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Number",
+      "Real-time"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/GTHf9tPKcyy86QjEvNX_zQ__original/img/lQ9IUtwHH5ZvafyKpewGDbe3VWc=/0x0/filters:format(jpeg)/pic1200445.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/GTHf9tPKcyy86QjEvNX_zQ__small/img/XhXelwuvTT7PrN3eM5tswPaJXuE=/fit-in/200x150/filters:strip_icc()/pic1200445.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "Number",
+      "Real-time"
+    ],
+    "image": "assets/img/117814.jpg"
+  },
+  {
+    "name_zh": "VYE",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 0,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 142239,
+    "name_en": "Vye: The Card Game of Capture and Control",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.6176,
+    "categories": [
+      "Abstract Strategy",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/I1GC39iZmZy3MlZtob7lMQ__original/img/C76Ak3TGORqnx8_XKYcpiaHAnaA=/0x0/filters:format(jpeg)/pic2626312.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/I1GC39iZmZy3MlZtob7lMQ__small/img/w-E2bPzQw4cjtMsyStcgY0Yg6l4=/fit-in/200x150/filters:strip_icc()/pic2626312.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "抽象策略",
+      "卡牌"
+    ],
+    "image": "assets/img/142239.jpg"
+  },
+  {
+    "name_zh": "Uno疊疊樂",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 799,
+    "price_twd": 799,
+    "used_price_twd": 350,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 2821,
+    "name_en": "UNO Stacko",
+    "year": 1994,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.1304,
+    "categories": [
+      "Action / Dexterity",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Stacking and Balancing"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1LDxwSgfgaToomANL3x26A__original/img/dHf--621o_mY-jxp681eQAO4MME=/0x0/filters:format(png)/pic4657127.png",
+    "thumb_url": "https://cf.geekdo-images.com/1LDxwSgfgaToomANL3x26A__small/img/2u888XUT8VZjnvJ1oNsFVZ67Ro0=/fit-in/200x150/filters:strip_icc()/pic4657127.png",
+    "versions_count": 22,
+    "categories_zh": [
+      "Action / Dexterity",
+      "派對"
+    ],
+    "image": "assets/img/2821.jpg"
+  },
+  {
+    "name_zh": "UNO SHOW'EM NO MERCY",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 469,
+    "price_twd": 469,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 399088,
+    "name_en": "UNO: Show 'Em No Mercy",
+    "year": 2023,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 30,
+    "weight": 1.4762,
+    "categories": [
+      "Card Game"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Lose a Turn",
+      "Matching",
+      "Player Elimination",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/BrmN9uBYLBf9qzlqtQUhTg__original/img/Wz1TpseAsLyzf065Wfl5RHDmuYc=/0x0/filters:format(jpeg)/pic7762353.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/BrmN9uBYLBf9qzlqtQUhTg__small/img/_hEs-7kw3PYDJ1UPCXdWAtqN2j4=/fit-in/200x150/filters:strip_icc()/pic7762353.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "卡牌"
+    ],
+    "image": "assets/img/399088.jpg"
+  },
+  {
+    "name_zh": "UNO",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 269,
+    "price_twd": 269,
+    "used_price_twd": 150,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 2223,
+    "name_en": "UNO",
+    "year": 1971,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.1017,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Comic Book / Strip",
+      "Movies / TV / Radio theme",
+      "Number"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Lose a Turn",
+      "Matching",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-DHiHBBSnvaLu0Do8CIykQ__original/img/fRfoyWezpQsumExNKVxf1cwtJfg=/0x0/filters:format(jpeg)/pic8204165.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/-DHiHBBSnvaLu0Do8CIykQ__small/img/AUkAjClJAk3BX1vEpk7EasSh_44=/fit-in/200x150/filters:strip_icc()/pic8204165.jpg",
+    "versions_count": 146,
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "Comic Book / Strip",
+      "Movies / TV / Radio theme",
+      "Number"
+    ],
+    "image": "assets/img/2223.jpg"
+  },
+  {
+    "name_zh": "Whoa dominoes",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 625,
+    "price_twd": 625,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 2394,
+    "name_en": "Dominoes",
+    "year": 1500,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.3667,
+    "categories": [
+      "Abstract Strategy",
+      "Game System"
+    ],
+    "mechanics": [
+      "Matching",
+      "Pattern Building",
+      "Pattern Recognition",
+      "Team-Based Game",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/7YdY99fgAanc04jyhqQ66w__original/img/kGD-mE3oqtGiFU4OVic7pCZk-QI=/0x0/filters:format(jpeg)/pic90585.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/7YdY99fgAanc04jyhqQ66w__small/img/AnLOv6xw_qtmOXh0koArhrO2kFU=/fit-in/200x150/filters:strip_icc()/pic90585.jpg",
+    "versions_count": 269,
+    "categories_zh": [
+      "抽象策略",
+      "Game System"
+    ],
+    "image": "assets/img/2394.jpg"
+  },
+  {
+    "name_zh": "驢橋",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1490,
+    "price_twd": 1490,
+    "used_price_twd": 894,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 90009,
+    "name_en": "Eselsbrücke",
+    "year": 2011,
+    "players": [
+      3,
+      12
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.6957,
+    "categories": [
+      "Memory"
+    ],
+    "mechanics": [
+      "Memory",
+      "Storytelling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/5wUihqBZxAh7vGbzsq1ZTw__original/img/_TVCM-KPHR_WWVcIFROpj2wG5us=/0x0/filters:format(jpeg)/pic889772.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/5wUihqBZxAh7vGbzsq1ZTw__small/img/P4pGA-mZwvnGSVAFWQN6vydUnc0=/fit-in/200x150/filters:strip_icc()/pic889772.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "Memory"
+    ],
+    "image": "assets/img/90009.jpg"
+  },
+  {
+    "name_zh": "靈能偵探",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1280,
+    "price_twd": 1280,
+    "used_price_twd": 768,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 280136,
+    "name_en": "Paranormal Detectives",
+    "year": 2019,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 50,
+    "weight": 1.6739,
+    "categories": [
+      "Deduction",
+      "Horror",
+      "Murder / Mystery",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Acting",
+      "Cooperative Game",
+      "Hand Management",
+      "Line Drawing",
+      "Pattern Recognition",
+      "Questions and Answers",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/2eV2FXx4DaSPpNJzG-eung__original/img/GfIfcXqpHqSU2K1hEGg6gX5atCI=/0x0/filters:format(png)/pic4746947.png",
+    "thumb_url": "https://cf.geekdo-images.com/2eV2FXx4DaSPpNJzG-eung__small/img/yJzP6LRlRzw0qaiXMsk3T2zkKqc=/fit-in/200x150/filters:strip_icc()/pic4746947.png",
+    "versions_count": 19,
+    "categories_zh": [
+      "Deduction",
+      "Horror",
+      "Murder / Mystery",
+      "派對"
+    ],
+    "image": "assets/img/280136.jpg"
+  },
+  {
+    "name_zh": "靈光同線",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 450,
+    "price_twd": 450,
+    "used_price_twd": 270,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 244992,
+    "name_en": "The Mind",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.0759,
+    "categories": [
+      "Card Game",
+      "Number"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Cooperative Game",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/q_JGK291hrhnhiRB0667oA__original/img/8VjZEG278faO9JZwzce3v3EKssI=/0x0/filters:format(png)/pic3979766.png",
+    "thumb_url": "https://cf.geekdo-images.com/q_JGK291hrhnhiRB0667oA__small/img/PUrzEmTo5kOcK5BOb4cbOOcH86I=/fit-in/200x150/filters:strip_icc()/pic3979766.png",
+    "versions_count": 39,
+    "categories_zh": [
+      "卡牌",
+      "Number"
+    ],
+    "image": "assets/img/244992.jpg"
+  },
+  {
+    "name_zh": "驚爆倫敦 危機進化",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 590,
+    "price_twd": 590,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 231748,
+    "name_en": "Time Bomb Evolution",
+    "year": 2016,
+    "players": [
+      4,
+      6
+    ],
+    "time_min": 25,
+    "time_max": 30,
+    "weight": 1.6,
+    "categories": [
+      "Card Game",
+      "Spies / Secret Agents"
+    ],
+    "mechanics": [
+      "Betting and Bluffing",
+      "Deduction",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/yU8CtWKysxxZ62nFT2uqPA__original/img/Rd0cVf7QGedurfnoVNuHZFPn634=/0x0/filters:format(jpeg)/pic5397704.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/yU8CtWKysxxZ62nFT2uqPA__small/img/MwFdoRo42gwOmC5bdlx2PptSca8=/fit-in/200x150/filters:strip_icc()/pic5397704.jpg",
+    "versions_count": 9,
+    "categories_zh": [
+      "卡牌",
+      "Spies / Secret Agents"
+    ],
+    "image": "assets/img/231748.jpg"
+  },
+  {
+    "name_zh": "驚爆倫敦 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 650,
+    "price_twd": 650,
+    "used_price_twd": 390,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 236217,
+    "name_en": "Time Bomb",
+    "year": 2016,
+    "players": [
+      4,
+      8
+    ],
+    "time_min": 1,
+    "time_max": 30,
+    "weight": 1.0714,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Party Game",
+      "Spies / Secret Agents"
+    ],
+    "mechanics": [
+      "Hidden Roles",
+      "Role Playing",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/hweNbBZPFWup4oNyQWjhFQ__original/img/SS1PSUOxdOyFsExhAwRwi9ajJK0=/0x0/filters:format(jpeg)/pic4314256.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/hweNbBZPFWup4oNyQWjhFQ__small/img/KSGV1kmoXyGVwCdaI7Zlfpe7xKo=/fit-in/200x150/filters:strip_icc()/pic4314256.jpg",
+    "versions_count": 9,
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "派對",
+      "Spies / Secret Agents"
+    ],
+    "image": "assets/img/236217.jpg"
+  },
+  {
+    "name_zh": "驚魂星期五",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1890,
+    "price_twd": 1890,
+    "used_price_twd": 1134,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 192927,
+    "name_en": "Last Friday",
+    "year": 2016,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 120,
+    "weight": 2.2593,
+    "categories": [
+      "Deduction",
+      "Fighting",
+      "Horror",
+      "Movies / TV / Radio theme",
+      "Murder / Mystery"
+    ],
+    "mechanics": [
+      "Campaign / Battle Card Driven",
+      "Hidden Movement",
+      "Memory",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/_qJ5n-V3ByCDZTu0XEvLvg__original/img/sWZ9rYipVnM-WQR-B37YsrRHvcw=/0x0/filters:format(jpeg)/pic6234210.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/_qJ5n-V3ByCDZTu0XEvLvg__small/img/2C-kguI_1OvdOcBh49hpSeT-9yk=/fit-in/200x150/filters:strip_icc()/pic6234210.jpg",
+    "versions_count": 10,
+    "categories_zh": [
+      "Deduction",
+      "戰鬥",
+      "Horror",
+      "Movies / TV / Radio theme",
+      "Murder / Mystery"
+    ],
+    "image": "assets/img/192927.jpg"
+  },
+  {
+    "name_zh": "變臉魔方",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 640,
+    "price_twd": 640,
+    "used_price_twd": 384,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 241492,
+    "name_en": "Cubeez",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "image_url": "https://cf.geekdo-images.com/bTRuUCLOSpvoCHijulBfOw__original/img/0tmsRi4iG2HO6JL1l9_tKb0TCCQ=/0x0/filters:format(jpeg)/pic3915225.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/bTRuUCLOSpvoCHijulBfOw__small/img/FhYKQAVD7mtibm9OhjDzB3nqNfA=/fit-in/200x150/filters:strip_icc()/pic3915225.jpg",
+    "versions_count": 9,
+    "categories_zh": [
+      "Action / Dexterity",
+      "兒童"
+    ],
+    "image": "assets/img/241492.jpg"
+  },
+  {
+    "name_zh": "變色龍",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 500,
+    "price_twd": 500,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 5782,
+    "name_en": "Coloretto",
+    "year": 2003,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.2701,
+    "categories": [
+      "Animals",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Push Your Luck",
+      "Set Collection",
+      "Turn Order: Pass Order"
+    ],
+    "image_url": "https://cf.geekdo-images.com/pd3qaiROSgTJ5js_0e4Nhw__original/img/W1cSDjB5Bi9bGhl3VRxQSP_Vw54=/0x0/filters:format(png)/pic6653783.png",
+    "thumb_url": "https://cf.geekdo-images.com/pd3qaiROSgTJ5js_0e4Nhw__small/img/SveyL9J1DT0hX4ucYWjRR6DMrbk=/fit-in/200x150/filters:strip_icc()/pic6653783.png",
+    "versions_count": 38,
+    "categories_zh": [
+      "Animals",
+      "卡牌"
+    ],
+    "image": "assets/img/5782.jpg"
+  },
+  {
+    "name_zh": "籤籤入扣",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 890,
+    "price_twd": 890,
+    "used_price_twd": 534,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 204734,
+    "name_en": "Stick Stack",
+    "year": 2016,
+    "players": [
+      2,
+      99
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity"
+    ],
+    "mechanics": [
+      "Pattern Building"
+    ],
+    "image_url": "https://cf.geekdo-images.com/CFYHrg61ph-Et4YQkedWnA__original/img/v0uO6tolsMEc7GXdv1L0SJv9IfQ=/0x0/filters:format(jpeg)/pic3107661.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/CFYHrg61ph-Et4YQkedWnA__small/img/W2fs8ZJSiwXfXRkasIzs1cMmRro=/fit-in/200x150/filters:strip_icc()/pic3107661.jpg",
+    "versions_count": 8,
+    "categories_zh": [
+      "Action / Dexterity"
+    ],
+    "image": "assets/img/204734.jpg"
+  },
+  {
+    "name_zh": "歡樂彈跳球:進階搖滾版 ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 899,
+    "price_twd": 999,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 214276,
+    "name_en": "Bounce-Off Rock 'N' Rollz!",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Pattern Building"
+    ],
+    "image_url": "https://cf.geekdo-images.com/P4JzWM1DxFU07uOPA1dvfA__original/img/T1wSwUPeFGBet2dWWJCnbGdEDHU=/0x0/filters:format(jpeg)/pic3344670.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/P4JzWM1DxFU07uOPA1dvfA__small/img/UncCoS2PNH1jtTna1qK-wsBn8R0=/fit-in/200x150/filters:strip_icc()/pic3344670.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "Action / Dexterity",
+      "派對"
+    ],
+    "image": "assets/img/214276.jpg"
+  },
+  {
+    "name_zh": "歡迎來到地下城(外文版)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 680,
+    "price_twd": 680,
+    "used_price_twd": 408,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 150312,
+    "name_en": "Welcome to the Dungeon",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.2336,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Fantasy",
+      "Fighting"
+    ],
+    "mechanics": [
+      "Betting and Bluffing",
+      "Memory",
+      "Player Elimination",
+      "Push Your Luck"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6eQXDEMIWldaut9w7jXihg__original/img/E_d5wpS2jEaH7mdO6humOGULycA=/0x0/filters:format(jpeg)/pic6771265.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6eQXDEMIWldaut9w7jXihg__small/img/CpRGL9nRUlwYERQzds6WyXRvJ4Y=/fit-in/200x150/filters:strip_icc()/pic6771265.jpg",
+    "versions_count": 22,
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "奇幻",
+      "戰鬥"
+    ],
+    "image": "assets/img/150312.jpg"
+  },
+  {
+    "name_zh": "歡迎來到",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 850,
+    "price_twd": 850,
+    "used_price_twd": 510,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 233867,
+    "name_en": "Welcome To...",
+    "year": 2018,
+    "players": [
+      1,
+      100
+    ],
+    "time_min": 25,
+    "time_max": 25,
+    "weight": 1.8411,
+    "categories": [
+      "City Building"
+    ],
+    "mechanics": [
+      "Bingo",
+      "Contracts",
+      "End Game Bonuses",
+      "Multi-Use Cards",
+      "Open Drafting",
+      "Paper-and-Pencil",
+      "Pattern Building",
+      "Simultaneous Action Selection",
+      "Solo / Solitaire Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/g4XmxyKhNVdhC3QPd1purQ__original/img/pb6XFQZFUNOr6OPysOHB3usVDFk=/0x0/filters:format(jpeg)/pic3761012.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/g4XmxyKhNVdhC3QPd1purQ__small/img/e3bCyIvM1IOGFYnKGj2jIn5mbKY=/fit-in/200x150/filters:strip_icc()/pic3761012.jpg",
+    "versions_count": 22,
+    "categories_zh": [
+      "城市建設"
+    ],
+    "image": "assets/img/233867.jpg"
+  },
+  {
+    "name_zh": "歡迎回到地下城 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 195043,
+    "name_en": "Welcome Back to the Dungeon",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.3043,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Fantasy",
+      "Fighting"
+    ],
+    "mechanics": [
+      "Bids As Wagers",
+      "Memory",
+      "Player Elimination",
+      "Push Your Luck"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Tu5hFjeX1-5EwnwjdNTaHg__original/img/V0R6BWwAtKsGrfLHDIhsN0claJY=/0x0/filters:format(jpeg)/pic3060124.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Tu5hFjeX1-5EwnwjdNTaHg__small/img/y8At3p87JcNiUuHTiRIKgUvKOks=/fit-in/200x150/filters:strip_icc()/pic3060124.jpg",
+    "versions_count": 14,
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "奇幻",
+      "戰鬥"
+    ],
+    "image": "assets/img/195043.jpg"
+  },
+  {
+    "name_zh": "權力的遊戲 :卡坦 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 3200,
+    "price_twd": 3200,
+    "used_price_twd": 1920,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 229218,
+    "name_en": "A Game of Thrones: Catan – Brotherhood of the Watch",
+    "year": 2017,
+    "players": [
+      3,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 75,
+    "weight": 2.5556,
+    "categories": [
+      "Civilization",
+      "Negotiation",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hand Management",
+      "Modular Board",
+      "Network and Route Building",
+      "Trading"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6cT3pVSblsXXbh4u49h77A__original/img/mvDtQpHX7xbcq7Ck_u78jWEB6l8=/0x0/filters:format(jpeg)/pic3764169.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6cT3pVSblsXXbh4u49h77A__small/img/PB2PU7tdRh7KLJMmg3GMFIIbHMI=/fit-in/200x150/filters:strip_icc()/pic3764169.jpg",
+    "versions_count": 13,
+    "categories_zh": [
+      "文明",
+      "Negotiation",
+      "Novel-based"
+    ],
+    "image": "assets/img/229218.jpg"
+  },
+  {
+    "name_zh": "黯影魔城",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 200,
+    "price_twd": 200,
+    "used_price_twd": 120,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 205542,
+    "name_en": "Dark Castle",
+    "year": 2016,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 0.0,
+    "categories": [
+      "Card Game",
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Area Majority / Influence",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/LMBEnPGSxaSYGlfff2I3kA__original/img/T4Ys_JTJv9KZxhwLoKV6lZo7hWw=/0x0/filters:format(jpeg)/pic3170435.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/LMBEnPGSxaSYGlfff2I3kA__small/img/NfJfnnw4evHi_7Cko_vH4Pa_k4U=/fit-in/200x150/filters:strip_icc()/pic3170435.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "卡牌",
+      "奇幻"
+    ],
+    "image": "assets/img/205542.jpg"
+  },
+  {
+    "name_zh": "魔城馬車黑暗預言擴充",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 131452,
+    "name_en": "Die dunkle Prophezeiung",
+    "year": 2012,
+    "players": [
+      3,
+      10
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.6,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Expansion for Base-game"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Role Playing",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/5m-zcmB7YMtvg1OPvB2M0A__original/img/f54iGOdaMUgSfW9T_vBzQp7pbFc=/0x0/filters:format(jpeg)/pic1435270.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/5m-zcmB7YMtvg1OPvB2M0A__small/img/NPv6Fb1ADUxT1LuXpBE50f_koUc=/fit-in/200x150/filters:strip_icc()/pic1435270.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "Deduction",
+      "Expansion for Base-game"
+    ],
+    "image": "assets/img/131452.jpg"
+  },
+  {
+    "name_zh": "魔城馬車",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 590,
+    "price_twd": 590,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 168839,
+    "name_en": "Die Kutschfahrt zur Teufelsburg",
+    "year": 2006,
+    "players": [
+      3,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.0698,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Negotiation"
+    ],
+    "mechanics": [
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/i8P6A9IZZZB0L4dna1qAqw__original/img/IHUK_ZXT3BvBFtOJDFSbVfWZxYM=/0x0/filters:format(jpeg)/pic153683.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/i8P6A9IZZZB0L4dna1qAqw__small/img/UZPYl5fkvGYNaKY9DnDFabJWHjg=/fit-in/200x150/filters:strip_icc()/pic153683.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "Deduction",
+      "Negotiation"
+    ],
+    "image": "assets/img/168839.jpg"
+  },
+  {
+    "name_zh": "魔法廚房",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1300,
+    "price_twd": 1300,
+    "used_price_twd": 780,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 85245,
+    "name_en": "Magician's Kitchen",
+    "year": 2010,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 25,
+    "weight": 1.1111,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game",
+      "Fantasy"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/mSBjOchdd6sWlf22Mfw09A__original/img/YD0TIpwWL9OP5vELGLv0-L9NC60=/0x0/filters:format(jpeg)/pic953205.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mSBjOchdd6sWlf22Mfw09A__small/img/WVoJqLB1fqnWPw4kS7W8y5k4YEY=/fit-in/200x150/filters:strip_icc()/pic953205.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "Action / Dexterity",
+      "兒童",
+      "奇幻"
+    ],
+    "image": "assets/img/85245.jpg"
+  },
+  {
+    "name_zh": "魔法賓果",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1000,
+    "price_twd": 1000,
+    "used_price_twd": 600,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 300936,
+    "name_en": "Via Magica",
+    "year": 2020,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.4894,
+    "categories": [
+      "Card Game"
+    ],
+    "mechanics": [
+      "Bingo",
+      "Open Drafting",
+      "Push Your Luck",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/a1oAJngPovEoTopMY6fJOg__original/img/ffFASPAU_iYmsG4IFf_NnQFvY8A=/0x0/filters:format(jpeg)/pic5381155.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/a1oAJngPovEoTopMY6fJOg__small/img/BCYZjCXEcwzr-MKHomDbDk-J_KM=/fit-in/200x150/filters:strip_icc()/pic5381155.jpg",
+    "versions_count": 8,
+    "categories_zh": [
+      "卡牌"
+    ],
+    "image": "assets/img/300936.jpg"
+  },
+  {
+    "name_zh": "魔法秘笈",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1050,
+    "price_twd": 1050,
+    "used_price_twd": 630,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 391834,
+    "name_en": "SpellBook",
+    "year": 2023,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.0204,
+    "categories": [
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Set Collection",
+      "Solo / Solitaire Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/FCjsAGFzJxWOfkWVxBA-gw__original/img/zQq7m0nkFk147eB53mHh_8c2L7Y=/0x0/filters:format(jpeg)/pic7568929.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/FCjsAGFzJxWOfkWVxBA-gw__small/img/Vk1reBV4r-WBLS67TW99WKWGLFA=/fit-in/200x150/filters:strip_icc()/pic7568929.jpg",
+    "versions_count": 10,
+    "categories_zh": [
+      "奇幻"
+    ],
+    "image": "assets/img/391834.jpg"
+  },
+  {
+    "name_zh": "魔戒擴充:暗影之路",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 2750,
+    "price_twd": 2750,
+    "used_price_twd": 1650,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 299597,
+    "name_en": "The Lord of the Rings: Journeys in Middle-earth – Shadowed Paths Expansion",
+    "year": 2020,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 2.9688,
+    "categories": [
+      "Expansion for Base-game",
+      "Adventure",
+      "Fantasy",
+      "Fighting",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Deck, Bag, and Pool Building",
+      "Modular Board",
+      "Role Playing",
+      "Solo / Solitaire Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/8SZmGiL31jvXofRwuoFDdw__original/img/7MIWW6-8IHS1mtOktddI5Z87uv4=/0x0/filters:format(png)/pic5873467.png",
+    "thumb_url": "https://cf.geekdo-images.com/8SZmGiL31jvXofRwuoFDdw__small/img/AjxrsXdhlSCNqIX7kiBsSCiLWgw=/fit-in/200x150/filters:strip_icc()/pic5873467.png",
+    "versions_count": 12,
+    "categories_zh": [
+      "Expansion for Base-game",
+      "冒險",
+      "奇幻",
+      "戰鬥",
+      "Novel-based"
+    ],
+    "image": "assets/img/299597.jpg"
+  },
+  {
+    "name_zh": "魔戒：中洲征途 - 黑暗中的棲身者擴充 (擴/ 中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 750,
+    "price_twd": 750,
+    "used_price_twd": 450,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 316630,
+    "name_en": "The Lord of the Rings: Journeys in Middle-earth – Dwellers in Darkness Figure Pack",
+    "year": 2020,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 2.9333,
+    "categories": [
+      "Expansion for Base-game",
+      "Adventure",
+      "Fantasy",
+      "Fighting",
+      "Miniatures",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Deck, Bag, and Pool Building",
+      "Modular Board",
+      "Role Playing",
+      "Scenario / Mission / Campaign Game",
+      "Solo / Solitaire Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/BbsGcVULOhD8qIFXCyp3Lw__original/img/2jnErAkZ1PbX1FASLGgtYS8PPDs=/0x0/filters:format(jpeg)/pic5871000.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/BbsGcVULOhD8qIFXCyp3Lw__small/img/5cjELCTcsTx0A_ty1JEz9zuzYqg=/fit-in/200x150/filters:strip_icc()/pic5871000.jpg",
+    "versions_count": 12,
+    "categories_zh": [
+      "Expansion for Base-game",
+      "冒險",
+      "奇幻",
+      "戰鬥",
+      "微縮模型",
+      "Novel-based"
+    ],
+    "image": "assets/img/316630.jpg"
+  },
+  {
+    "name_zh": "魔戒: 中洲征途 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 3490,
+    "price_twd": 3490,
+    "used_price_twd": 2094,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 269385,
+    "name_en": "The Lord of the Rings: Journeys in Middle-Earth",
+    "year": 2019,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 2.6889,
+    "categories": [
+      "Adventure",
+      "Exploration",
+      "Fantasy",
+      "Fighting",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Movement",
+      "Campaign / Battle Card Driven",
+      "Cooperative Game",
+      "Deck, Bag, and Pool Building",
+      "Map Addition",
+      "Modular Board",
+      "Role Playing",
+      "Scenario / Mission / Campaign Game",
+      "Solo / Solitaire Game",
+      "Stat Check Resolution",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1XA2-niwTBa0HEB7hOz3Dw__original/img/MIJgG_K2IS1QT2mE0dyRFiWLSpg=/0x0/filters:format(jpeg)/pic4530974.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/1XA2-niwTBa0HEB7hOz3Dw__small/img/iMrsSq7nICZjz1DBXkefq-8E9Js=/fit-in/200x150/filters:strip_icc()/pic4530974.jpg",
+    "versions_count": 13,
+    "categories_zh": [
+      "冒險",
+      "Exploration",
+      "奇幻",
+      "戰鬥",
+      "Novel-based"
+    ],
+    "image": "assets/img/269385.jpg"
+  },
+  {
+    "name_zh": "霹靂投石車",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1280,
+    "price_twd": 1280,
+    "used_price_twd": 768,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 310789,
+    "name_en": "Catapult Feud",
+    "year": 2021,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 1.0698,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Events",
+      "Movement Template"
+    ],
+    "image_url": "https://cf.geekdo-images.com/xGBfcwwpk6qW4FfPryGbBQ__original/img/y0ZhveTgMipzEYr0sqgUicKHz8M=/0x0/filters:format(jpeg)/pic8365828.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/xGBfcwwpk6qW4FfPryGbBQ__small/img/IHLMRZQU3O-zpI6yIDuv6e0-Tdc=/fit-in/200x150/filters:strip_icc()/pic8365828.jpg",
+    "versions_count": 17,
+    "categories_zh": [
+      "Action / Dexterity",
+      "兒童",
+      "Medieval"
+    ],
+    "image": "assets/img/310789.jpg"
+  },
+  {
+    "name_zh": "鐵道任務 歐洲 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1650,
+    "price_twd": 1650,
+    "used_price_twd": 990,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 14996,
+    "name_en": "Ticket to Ride: Europe",
+    "year": 2005,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 1.9174,
+    "categories": [
+      "Trains"
+    ],
+    "mechanics": [
+      "Connections",
+      "Contracts",
+      "End Game Bonuses",
+      "Hand Management",
+      "Network and Route Building",
+      "Open Drafting",
+      "Push Your Luck",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/0K1AOciqlMVUWFPLTJSiww__original/img/O37sCRSJLq4S8EpCxFDNVsNBuxE=/0x0/filters:format(jpeg)/pic66668.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/0K1AOciqlMVUWFPLTJSiww__small/img/RDvu2FvsYVVH8icp1VsilUlqUGI=/fit-in/200x150/filters:strip_icc()/pic66668.jpg",
+    "versions_count": 62,
+    "categories_zh": [
+      "鐵道"
+    ],
+    "image": "assets/img/14996.jpg"
+  },
+  {
+    "name_zh": "鐵道任務 美國 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 2200,
+    "price_twd": 2200,
+    "used_price_twd": 1320,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 9209,
+    "name_en": "Ticket to Ride",
+    "year": 2004,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 1.8221,
+    "categories": [
+      "Trains"
+    ],
+    "mechanics": [
+      "Connections",
+      "Contracts",
+      "End Game Bonuses",
+      "Hand Management",
+      "Network and Route Building",
+      "Open Drafting",
+      "Push Your Luck",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/kdWYkW-7AqG63HhqPL6ekA__original/img/rWF8r4JXXCQQ7QhiWHhmT-rQ3Pc=/0x0/filters:format(jpeg)/pic8937637.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/kdWYkW-7AqG63HhqPL6ekA__small/img/5G46jv8MFh_BfX67iMSouTMhKxc=/fit-in/200x150/filters:strip_icc()/pic8937637.jpg",
+    "versions_count": 64,
+    "categories_zh": [
+      "鐵道"
+    ],
+    "image": "assets/img/9209.jpg"
+  },
+  {
+    "name_zh": "蘇格蘭特警",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1800,
+    "price_twd": 1800,
+    "used_price_twd": 1080,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 438,
+    "name_en": "Scotland Yard",
+    "year": 1983,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.9446,
+    "categories": [
+      "Deduction",
+      "Travel"
+    ],
+    "mechanics": [
+      "Hidden Movement",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/yEhaXszPTy5N4hiY469DPA__original/img/uko6rePMJGd9B8XZMi6DcHLJA_0=/0x0/filters:format(jpeg)/pic8377405.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/yEhaXszPTy5N4hiY469DPA__small/img/vDtUEdMUid0w4RKHmlwxz9a-Beo=/fit-in/200x150/filters:strip_icc()/pic8377405.jpg",
+    "versions_count": 63,
+    "categories_zh": [
+      "Deduction",
+      "Travel"
+    ],
+    "image": "assets/img/438.jpg"
+  },
+  {
+    "name_zh": "蒸氣",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 800,
+    "price_twd": 800,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 27833,
+    "name_en": "Steam",
+    "year": 2009,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.4528,
+    "categories": [
+      "Economic",
+      "Trains",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Loans",
+      "Network and Route Building",
+      "Ownership",
+      "Pick-up and Deliver",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/IB38fOp0mTvFuvfdHczf0Q__original/img/SN5DSgS5Z0GOEzTBulGgX3faHCA=/0x0/filters:format(jpeg)/pic392515.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/IB38fOp0mTvFuvfdHczf0Q__small/img/UpyU-hvpdn3Q2b4Y486w2M3CO8I=/fit-in/200x150/filters:strip_icc()/pic392515.jpg",
+    "versions_count": 9,
+    "categories_zh": [
+      "經濟",
+      "鐵道",
+      "交通"
+    ],
+    "image": "assets/img/27833.jpg"
+  },
+  {
+    "name_zh": "深入絕地: 暗黑世界傳說",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 5200,
+    "price_twd": 5200,
+    "used_price_twd": 3000,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 322708,
+    "name_en": "Descent: Legends of the Dark",
+    "year": 2021,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 120,
+    "time_max": 180,
+    "weight": 2.6994,
+    "categories": [
+      "Adventure",
+      "Fantasy",
+      "Fighting",
+      "Miniatures"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Modular Board",
+      "Movement Points",
+      "Role Playing",
+      "Scenario / Mission / Campaign Game",
+      "Solo / Solitaire Game",
+      "Square Grid",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Q96PxRVbrDxS9_4ZPTJtHQ__original/img/kGU8ligha3fyP0LuVTwmLMK9yEQ=/0x0/filters:format(png)/pic5941333.png",
+    "thumb_url": "https://cf.geekdo-images.com/Q96PxRVbrDxS9_4ZPTJtHQ__small/img/hXnjkvD7KiLk2fon8tbvsXNtT_k=/fit-in/200x150/filters:strip_icc()/pic5941333.png",
+    "versions_count": 11,
+    "categories_zh": [
+      "冒險",
+      "奇幻",
+      "戰鬥",
+      "微縮模型"
+    ],
+    "image": "assets/img/322708.jpg"
+  }
+]

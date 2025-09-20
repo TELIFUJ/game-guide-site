@@ -20,17 +20,26 @@
       "Number",
       "Real-time"
     ],
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "Number",
+      "Real-time"
+    ],
     "mechanics": [],
-    "editions": [],
+    "versions_count": 1,
     "image": "assets/img/117814.jpg",
+    "price_msrp_twd": 450,
     "price_twd": 450,
     "used_price_twd": 250,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "ZIP ZAP BGG",
       "Zip Zap BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -52,20 +61,27 @@
       "Abstract Strategy",
       "Card Game"
     ],
+    "categories_zh": [
+      "抽象策略",
+      "卡牌"
+    ],
     "mechanics": [
       "Area Majority / Influence",
       "Hand Management"
     ],
-    "editions": [],
+    "versions_count": 5,
     "image": "assets/img/142239.jpg",
-    "price_twd": null,
-    "used_price_twd": null,
-    "price_usd_amz": null,
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "VYE BGG",
       "Vye: The Card Game of Capture and Control BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -87,20 +103,27 @@
       "Action / Dexterity",
       "Party Game"
     ],
+    "categories_zh": [
+      "Action / Dexterity",
+      "派對"
+    ],
     "mechanics": [
       "Dice Rolling",
       "Stacking and Balancing"
     ],
-    "editions": [],
+    "versions_count": 22,
     "image": "assets/img/2821.jpg",
+    "price_msrp_twd": 799,
     "price_twd": 799,
     "used_price_twd": 350,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "Uno疊疊樂 BGG",
       "UNO Stacko BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -121,6 +144,9 @@
     "categories": [
       "Card Game"
     ],
+    "categories_zh": [
+      "卡牌"
+    ],
     "mechanics": [
       "Hand Management",
       "Lose a Turn",
@@ -128,16 +154,19 @@
       "Player Elimination",
       "Take That"
     ],
-    "editions": [],
+    "versions_count": 6,
     "image": "assets/img/399088.jpg",
+    "price_msrp_twd": 469,
     "price_twd": 469,
     "used_price_twd": 300,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "UNO SHOW'EM NO MERCY BGG",
       "UNO: Show 'Em No Mercy BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -154,10 +183,17 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.1018,
+    "weight": 1.1017,
     "categories": [
       "Card Game",
       "Children's Game",
+      "Comic Book / Strip",
+      "Movies / TV / Radio theme",
+      "Number"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "兒童",
       "Comic Book / Strip",
       "Movies / TV / Radio theme",
       "Number"
@@ -168,16 +204,19 @@
       "Matching",
       "Take That"
     ],
-    "editions": [],
+    "versions_count": 146,
     "image": "assets/img/2223.jpg",
+    "price_msrp_twd": 269,
     "price_twd": 269,
     "used_price_twd": 150,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "UNO BGG",
       "UNO BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -199,6 +238,10 @@
       "Abstract Strategy",
       "Game System"
     ],
+    "categories_zh": [
+      "抽象策略",
+      "Game System"
+    ],
     "mechanics": [
       "Matching",
       "Pattern Building",
@@ -206,16 +249,19 @@
       "Team-Based Game",
       "Tile Placement"
     ],
-    "editions": [],
+    "versions_count": 269,
     "image": "assets/img/2394.jpg",
+    "price_msrp_twd": 625,
     "price_twd": 625,
     "used_price_twd": 500,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "Whoa dominoes BGG",
       "Dominoes BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -236,20 +282,26 @@
     "categories": [
       "Memory"
     ],
+    "categories_zh": [
+      "Memory"
+    ],
     "mechanics": [
       "Memory",
       "Storytelling"
     ],
-    "editions": [],
+    "versions_count": 3,
     "image": "assets/img/90009.jpg",
+    "price_msrp_twd": 1490,
     "price_twd": 1490,
     "used_price_twd": 894,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "驢橋 BGG",
       "Eselsbrücke BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -273,6 +325,12 @@
       "Murder / Mystery",
       "Party Game"
     ],
+    "categories_zh": [
+      "Deduction",
+      "Horror",
+      "Murder / Mystery",
+      "派對"
+    ],
     "mechanics": [
       "Acting",
       "Cooperative Game",
@@ -282,16 +340,19 @@
       "Questions and Answers",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 19,
     "image": "assets/img/280136.jpg",
+    "price_msrp_twd": 1280,
     "price_twd": 1280,
     "used_price_twd": 768,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "靈能偵探 BGG",
       "Paranormal Detectives BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -313,21 +374,28 @@
       "Card Game",
       "Number"
     ],
+    "categories_zh": [
+      "卡牌",
+      "Number"
+    ],
     "mechanics": [
       "Communication Limits",
       "Cooperative Game",
       "Hand Management"
     ],
-    "editions": [],
+    "versions_count": 39,
     "image": "assets/img/244992.jpg",
+    "price_msrp_twd": 450,
     "price_twd": 450,
     "used_price_twd": 270,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "靈光同線 BGG",
       "The Mind BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -349,22 +417,29 @@
       "Card Game",
       "Spies / Secret Agents"
     ],
+    "categories_zh": [
+      "卡牌",
+      "Spies / Secret Agents"
+    ],
     "mechanics": [
       "Betting and Bluffing",
       "Deduction",
       "Team-Based Game",
       "Traitor Game"
     ],
-    "editions": [],
+    "versions_count": 9,
     "image": "assets/img/231748.jpg",
+    "price_msrp_twd": 590,
     "price_twd": 590,
     "used_price_twd": 354,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "驚爆倫敦 危機進化 BGG",
       "Time Bomb Evolution BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -388,22 +463,31 @@
       "Party Game",
       "Spies / Secret Agents"
     ],
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "派對",
+      "Spies / Secret Agents"
+    ],
     "mechanics": [
       "Hidden Roles",
       "Role Playing",
       "Team-Based Game",
       "Traitor Game"
     ],
-    "editions": [],
+    "versions_count": 9,
     "image": "assets/img/236217.jpg",
+    "price_msrp_twd": 650,
     "price_twd": 650,
     "used_price_twd": 390,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
     "search_keywords": [
       "驚爆倫敦 (主/中文) BGG",
       "Time Bomb BGG"
     ],
-    "stock": "2",
     "updated_at": "2025-09-20"
   },
   {
@@ -428,6 +512,13 @@
       "Movies / TV / Radio theme",
       "Murder / Mystery"
     ],
+    "categories_zh": [
+      "Deduction",
+      "戰鬥",
+      "Horror",
+      "Movies / TV / Radio theme",
+      "Murder / Mystery"
+    ],
     "mechanics": [
       "Campaign / Battle Card Driven",
       "Hidden Movement",
@@ -437,16 +528,19 @@
       "Team-Based Game",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 10,
     "image": "assets/img/192927.jpg",
+    "price_msrp_twd": 1890,
     "price_twd": 1890,
     "used_price_twd": 1134,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "驚魂星期五 BGG",
       "Last Friday BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -468,19 +562,26 @@
       "Action / Dexterity",
       "Children's Game"
     ],
+    "categories_zh": [
+      "Action / Dexterity",
+      "兒童"
+    ],
     "mechanics": [
       "Pattern Recognition"
     ],
-    "editions": [],
+    "versions_count": 9,
     "image": "assets/img/241492.jpg",
+    "price_msrp_twd": 640,
     "price_twd": 640,
     "used_price_twd": 384,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "變臉魔方 BGG",
       "Cubeez BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -502,22 +603,29 @@
       "Animals",
       "Card Game"
     ],
+    "categories_zh": [
+      "Animals",
+      "卡牌"
+    ],
     "mechanics": [
       "Open Drafting",
       "Push Your Luck",
       "Set Collection",
       "Turn Order: Pass Order"
     ],
-    "editions": [],
+    "versions_count": 38,
     "image": "assets/img/5782.jpg",
+    "price_msrp_twd": 500,
     "price_twd": 500,
     "used_price_twd": 300,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
     "search_keywords": [
       "變色龍 BGG",
       "Coloretto BGG"
     ],
-    "stock": "2",
     "updated_at": "2025-09-20"
   },
   {
@@ -538,19 +646,25 @@
     "categories": [
       "Action / Dexterity"
     ],
+    "categories_zh": [
+      "Action / Dexterity"
+    ],
     "mechanics": [
       "Pattern Building"
     ],
-    "editions": [],
+    "versions_count": 8,
     "image": "assets/img/204734.jpg",
+    "price_msrp_twd": 890,
     "price_twd": 890,
     "used_price_twd": 534,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "籤籤入扣 BGG",
       "Stick Stack BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -572,19 +686,26 @@
       "Action / Dexterity",
       "Party Game"
     ],
+    "categories_zh": [
+      "Action / Dexterity",
+      "派對"
+    ],
     "mechanics": [
       "Pattern Building"
     ],
-    "editions": [],
+    "versions_count": 1,
     "image": "assets/img/214276.jpg",
+    "price_msrp_twd": 899,
     "price_twd": 999,
     "used_price_twd": 400,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "歡樂彈跳球:進階搖滾版  BGG",
       "Bounce-Off Rock 'N' Rollz! BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -601,12 +722,18 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.2342,
+    "weight": 1.2336,
     "categories": [
       "Bluffing",
       "Card Game",
       "Fantasy",
       "Fighting"
+    ],
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "奇幻",
+      "戰鬥"
     ],
     "mechanics": [
       "Betting and Bluffing",
@@ -614,16 +741,19 @@
       "Player Elimination",
       "Push Your Luck"
     ],
-    "editions": [],
+    "versions_count": 22,
     "image": "assets/img/150312.jpg",
+    "price_msrp_twd": 680,
     "price_twd": 680,
     "used_price_twd": 408,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "歡迎來到地下城(外文版) BGG",
       "Welcome to the Dungeon BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -640,9 +770,12 @@
     ],
     "time_min": 25,
     "time_max": 25,
-    "weight": 1.8409,
+    "weight": 1.8411,
     "categories": [
       "City Building"
+    ],
+    "categories_zh": [
+      "城市建設"
     ],
     "mechanics": [
       "Bingo",
@@ -655,16 +788,19 @@
       "Simultaneous Action Selection",
       "Solo / Solitaire Game"
     ],
-    "editions": [],
+    "versions_count": 22,
     "image": "assets/img/233867.jpg",
+    "price_msrp_twd": 850,
     "price_twd": 850,
     "used_price_twd": 510,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "歡迎來到 BGG",
       "Welcome To... BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -688,22 +824,31 @@
       "Fantasy",
       "Fighting"
     ],
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "奇幻",
+      "戰鬥"
+    ],
     "mechanics": [
       "Bids As Wagers",
       "Memory",
       "Player Elimination",
       "Push Your Luck"
     ],
-    "editions": [],
+    "versions_count": 14,
     "image": "assets/img/195043.jpg",
+    "price_msrp_twd": 690,
     "price_twd": 690,
     "used_price_twd": 414,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "歡迎回到地下城 (主/中文) BGG",
       "Welcome Back to the Dungeon BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -726,6 +871,11 @@
       "Negotiation",
       "Novel-based"
     ],
+    "categories_zh": [
+      "文明",
+      "Negotiation",
+      "Novel-based"
+    ],
     "mechanics": [
       "Dice Rolling",
       "Hand Management",
@@ -733,16 +883,19 @@
       "Network and Route Building",
       "Trading"
     ],
-    "editions": [],
+    "versions_count": 13,
     "image": "assets/img/229218.jpg",
+    "price_msrp_twd": 3200,
     "price_twd": 3200,
     "used_price_twd": 1920,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "權力的遊戲 :卡坦 (主/中文) BGG",
       "A Game of Thrones: Catan – Brotherhood of the Watch BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -764,21 +917,28 @@
       "Card Game",
       "Fantasy"
     ],
+    "categories_zh": [
+      "卡牌",
+      "奇幻"
+    ],
     "mechanics": [
       "Action Queue",
       "Area Majority / Influence",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 2,
     "image": "assets/img/205542.jpg",
+    "price_msrp_twd": 200,
     "price_twd": 200,
     "used_price_twd": 120,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "黯影魔城 BGG",
       "Dark Castle BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -802,21 +962,30 @@
       "Deduction",
       "Expansion for Base-game"
     ],
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "Deduction",
+      "Expansion for Base-game"
+    ],
     "mechanics": [
       "Hand Management",
       "Role Playing",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 2,
     "image": "assets/img/131452.jpg",
+    "price_msrp_twd": 490,
     "price_twd": 490,
     "used_price_twd": 294,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔城馬車黑暗預言擴充 BGG",
       "Die dunkle Prophezeiung BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -840,19 +1009,28 @@
       "Deduction",
       "Negotiation"
     ],
+    "categories_zh": [
+      "Bluffing",
+      "卡牌",
+      "Deduction",
+      "Negotiation"
+    ],
     "mechanics": [
       "Hand Management"
     ],
-    "editions": [],
+    "versions_count": 3,
     "image": "assets/img/168839.jpg",
+    "price_msrp_twd": 590,
     "price_twd": 590,
     "used_price_twd": 354,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔城馬車 BGG",
       "Die Kutschfahrt zur Teufelsburg BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -875,17 +1053,25 @@
       "Children's Game",
       "Fantasy"
     ],
+    "categories_zh": [
+      "Action / Dexterity",
+      "兒童",
+      "奇幻"
+    ],
     "mechanics": [],
-    "editions": [],
+    "versions_count": 3,
     "image": "assets/img/85245.jpg",
+    "price_msrp_twd": 1300,
     "price_twd": 1300,
     "used_price_twd": 780,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔法廚房 BGG",
       "Magician's Kitchen BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -906,22 +1092,28 @@
     "categories": [
       "Card Game"
     ],
+    "categories_zh": [
+      "卡牌"
+    ],
     "mechanics": [
       "Bingo",
       "Open Drafting",
       "Push Your Luck",
       "Set Collection"
     ],
-    "editions": [],
+    "versions_count": 8,
     "image": "assets/img/300936.jpg",
+    "price_msrp_twd": 1000,
     "price_twd": 1000,
     "used_price_twd": 600,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔法賓果 BGG",
       "Via Magica BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -942,21 +1134,27 @@
     "categories": [
       "Fantasy"
     ],
+    "categories_zh": [
+      "奇幻"
+    ],
     "mechanics": [
       "Hand Management",
       "Set Collection",
       "Solo / Solitaire Game"
     ],
-    "editions": [],
+    "versions_count": 10,
     "image": "assets/img/391834.jpg",
+    "price_msrp_twd": 1050,
     "price_twd": 1050,
     "used_price_twd": 630,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔法秘笈 BGG",
       "SpellBook BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -981,6 +1179,13 @@
       "Fighting",
       "Novel-based"
     ],
+    "categories_zh": [
+      "Expansion for Base-game",
+      "冒險",
+      "奇幻",
+      "戰鬥",
+      "Novel-based"
+    ],
     "mechanics": [
       "Cooperative Game",
       "Deck, Bag, and Pool Building",
@@ -989,16 +1194,19 @@
       "Solo / Solitaire Game",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 12,
     "image": "assets/img/299597.jpg",
+    "price_msrp_twd": 2750,
     "price_twd": 2750,
     "used_price_twd": 1650,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔戒擴充:暗影之路 BGG",
       "The Lord of the Rings: Journeys in Middle-earth – Shadowed Paths Expansion BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -1024,6 +1232,14 @@
       "Miniatures",
       "Novel-based"
     ],
+    "categories_zh": [
+      "Expansion for Base-game",
+      "冒險",
+      "奇幻",
+      "戰鬥",
+      "微縮模型",
+      "Novel-based"
+    ],
     "mechanics": [
       "Cooperative Game",
       "Deck, Bag, and Pool Building",
@@ -1033,16 +1249,19 @@
       "Solo / Solitaire Game",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 12,
     "image": "assets/img/316630.jpg",
+    "price_msrp_twd": 750,
     "price_twd": 750,
     "used_price_twd": 450,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔戒：中洲征途 - 黑暗中的棲身者擴充 (擴/ 中文) BGG",
       "The Lord of the Rings: Journeys in Middle-earth – Dwellers in Darkness Figure Pack BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -1067,6 +1286,13 @@
       "Fighting",
       "Novel-based"
     ],
+    "categories_zh": [
+      "冒險",
+      "Exploration",
+      "奇幻",
+      "戰鬥",
+      "Novel-based"
+    ],
     "mechanics": [
       "Action Points",
       "Area Movement",
@@ -1081,16 +1307,19 @@
       "Stat Check Resolution",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 13,
     "image": "assets/img/269385.jpg",
+    "price_msrp_twd": 3490,
     "price_twd": 3490,
     "used_price_twd": 2094,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "魔戒: 中洲征途 (主/中文) BGG",
       "The Lord of the Rings: Journeys in Middle-Earth BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -1113,20 +1342,28 @@
       "Children's Game",
       "Medieval"
     ],
+    "categories_zh": [
+      "Action / Dexterity",
+      "兒童",
+      "Medieval"
+    ],
     "mechanics": [
       "Events",
       "Movement Template"
     ],
-    "editions": [],
+    "versions_count": 17,
     "image": "assets/img/310789.jpg",
+    "price_msrp_twd": 1280,
     "price_twd": 1280,
     "used_price_twd": 768,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
     "search_keywords": [
       "霹靂投石車 BGG",
       "Catapult Feud BGG"
     ],
-    "stock": "2",
     "updated_at": "2025-09-20"
   },
   {
@@ -1147,6 +1384,9 @@
     "categories": [
       "Trains"
     ],
+    "categories_zh": [
+      "鐵道"
+    ],
     "mechanics": [
       "Connections",
       "Contracts",
@@ -1157,16 +1397,19 @@
       "Push Your Luck",
       "Set Collection"
     ],
-    "editions": [],
+    "versions_count": 62,
     "image": "assets/img/14996.jpg",
+    "price_msrp_twd": 1650,
     "price_twd": 1650,
     "used_price_twd": 990,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "鐵道任務 歐洲 (主/中文) BGG",
       "Ticket to Ride: Europe BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -1187,6 +1430,9 @@
     "categories": [
       "Trains"
     ],
+    "categories_zh": [
+      "鐵道"
+    ],
     "mechanics": [
       "Connections",
       "Contracts",
@@ -1197,16 +1443,19 @@
       "Push Your Luck",
       "Set Collection"
     ],
-    "editions": [],
+    "versions_count": 64,
     "image": "assets/img/9209.jpg",
+    "price_msrp_twd": 2200,
     "price_twd": 2200,
     "used_price_twd": 1320,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "鐵道任務 美國 (主/中文) BGG",
       "Ticket to Ride BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -1228,22 +1477,29 @@
       "Deduction",
       "Travel"
     ],
+    "categories_zh": [
+      "Deduction",
+      "Travel"
+    ],
     "mechanics": [
       "Hidden Movement",
       "Point to Point Movement",
       "Secret Unit Deployment",
       "Team-Based Game"
     ],
-    "editions": [],
+    "versions_count": 63,
     "image": "assets/img/438.jpg",
+    "price_msrp_twd": 1800,
     "price_twd": 1800,
     "used_price_twd": 1080,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
     "search_keywords": [
       "蘇格蘭特警 BGG",
       "Scotland Yard BGG"
     ],
-    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -1266,6 +1522,11 @@
       "Trains",
       "Transportation"
     ],
+    "categories_zh": [
+      "經濟",
+      "鐵道",
+      "交通"
+    ],
     "mechanics": [
       "Auction / Bidding",
       "Loans",
@@ -1274,16 +1535,19 @@
       "Pick-up and Deliver",
       "Tile Placement"
     ],
-    "editions": [],
+    "versions_count": 9,
     "image": "assets/img/27833.jpg",
+    "price_msrp_twd": 800,
     "price_twd": 800,
     "used_price_twd": 500,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "",
+    "description": "",
     "search_keywords": [
       "蒸氣 BGG",
       "Steam BGG"
     ],
-    "stock": "",
     "updated_at": "2025-09-20"
   },
   {
@@ -1307,6 +1571,12 @@
       "Fighting",
       "Miniatures"
     ],
+    "categories_zh": [
+      "冒險",
+      "奇幻",
+      "戰鬥",
+      "微縮模型"
+    ],
     "mechanics": [
       "Cooperative Game",
       "Dice Rolling",
@@ -1319,16 +1589,19 @@
       "Square Grid",
       "Variable Player Powers"
     ],
-    "editions": [],
+    "versions_count": 11,
     "image": "assets/img/322708.jpg",
+    "price_msrp_twd": 5200,
     "price_twd": 5200,
     "used_price_twd": 3000,
-    "price_usd_amz": null,
+    "price_note": "",
+    "used_note": "",
+    "stock": "",
+    "description": "",
     "search_keywords": [
       "深入絕地: 暗黑世界傳說 BGG",
       "Descent: Legends of the Dark BGG"
     ],
-    "stock": "",
     "updated_at": "2025-09-20"
   }
 ]
