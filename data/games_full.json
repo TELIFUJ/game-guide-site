@@ -23,8 +23,8 @@
     "categories_zh": [
       "卡牌",
       "兒童",
-      "Number",
-      "Real-time"
+      "數字",
+      "即時制"
     ],
     "mechanics": [],
     "versions_count": 1,
@@ -104,7 +104,7 @@
       "Party Game"
     ],
     "categories_zh": [
-      "Action / Dexterity",
+      "動作／巧手",
       "派對"
     ],
     "mechanics": [
@@ -194,9 +194,9 @@
     "categories_zh": [
       "卡牌",
       "兒童",
-      "Comic Book / Strip",
-      "Movies / TV / Radio theme",
-      "Number"
+      "漫畫",
+      "影視／廣播主題",
+      "數字"
     ],
     "mechanics": [
       "Hand Management",
@@ -240,7 +240,7 @@
     ],
     "categories_zh": [
       "抽象策略",
-      "Game System"
+      "遊戲系統"
     ],
     "mechanics": [
       "Matching",
@@ -283,7 +283,7 @@
       "Memory"
     ],
     "categories_zh": [
-      "Memory"
+      "記憶"
     ],
     "mechanics": [
       "Memory",
@@ -326,8 +326,8 @@
       "Party Game"
     ],
     "categories_zh": [
-      "Deduction",
-      "Horror",
+      "推理",
+      "恐怖",
       "Murder / Mystery",
       "派對"
     ],
@@ -376,7 +376,7 @@
     ],
     "categories_zh": [
       "卡牌",
-      "Number"
+      "數字"
     ],
     "mechanics": [
       "Communication Limits",
@@ -464,7 +464,7 @@
       "Spies / Secret Agents"
     ],
     "categories_zh": [
-      "Bluffing",
+      "唬人",
       "卡牌",
       "派對",
       "Spies / Secret Agents"
@@ -513,10 +513,10 @@
       "Murder / Mystery"
     ],
     "categories_zh": [
-      "Deduction",
+      "推理",
       "戰鬥",
-      "Horror",
-      "Movies / TV / Radio theme",
+      "恐怖",
+      "影視／廣播主題",
       "Murder / Mystery"
     ],
     "mechanics": [
@@ -563,7 +563,7 @@
       "Children's Game"
     ],
     "categories_zh": [
-      "Action / Dexterity",
+      "動作／巧手",
       "兒童"
     ],
     "mechanics": [
@@ -604,7 +604,7 @@
       "Card Game"
     ],
     "categories_zh": [
-      "Animals",
+      "動物",
       "卡牌"
     ],
     "mechanics": [
@@ -647,7 +647,7 @@
       "Action / Dexterity"
     ],
     "categories_zh": [
-      "Action / Dexterity"
+      "動作／巧手"
     ],
     "mechanics": [
       "Pattern Building"
@@ -687,7 +687,7 @@
       "Party Game"
     ],
     "categories_zh": [
-      "Action / Dexterity",
+      "動作／巧手",
       "派對"
     ],
     "mechanics": [
@@ -730,7 +730,7 @@
       "Fighting"
     ],
     "categories_zh": [
-      "Bluffing",
+      "唬人",
       "卡牌",
       "奇幻",
       "戰鬥"
@@ -825,7 +825,7 @@
       "Fighting"
     ],
     "categories_zh": [
-      "Bluffing",
+      "唬人",
       "卡牌",
       "奇幻",
       "戰鬥"
@@ -873,8 +873,8 @@
     ],
     "categories_zh": [
       "文明",
-      "Negotiation",
-      "Novel-based"
+      "談判",
+      "小說改編"
     ],
     "mechanics": [
       "Dice Rolling",
@@ -963,10 +963,10 @@
       "Expansion for Base-game"
     ],
     "categories_zh": [
-      "Bluffing",
+      "唬人",
       "卡牌",
-      "Deduction",
-      "Expansion for Base-game"
+      "推理",
+      "擴充"
     ],
     "mechanics": [
       "Hand Management",
@@ -1010,10 +1010,10 @@
       "Negotiation"
     ],
     "categories_zh": [
-      "Bluffing",
+      "唬人",
       "卡牌",
-      "Deduction",
-      "Negotiation"
+      "推理",
+      "談判"
     ],
     "mechanics": [
       "Hand Management"
@@ -1054,7 +1054,7 @@
       "Fantasy"
     ],
     "categories_zh": [
-      "Action / Dexterity",
+      "動作／巧手",
       "兒童",
       "奇幻"
     ],
@@ -1180,11 +1180,11 @@
       "Novel-based"
     ],
     "categories_zh": [
-      "Expansion for Base-game",
+      "擴充",
       "冒險",
       "奇幻",
       "戰鬥",
-      "Novel-based"
+      "小說改編"
     ],
     "mechanics": [
       "Cooperative Game",
@@ -1233,12 +1233,12 @@
       "Novel-based"
     ],
     "categories_zh": [
-      "Expansion for Base-game",
+      "擴充",
       "冒險",
       "奇幻",
       "戰鬥",
       "微縮模型",
-      "Novel-based"
+      "小說改編"
     ],
     "mechanics": [
       "Cooperative Game",
@@ -1288,10 +1288,10 @@
     ],
     "categories_zh": [
       "冒險",
-      "Exploration",
+      "探索",
       "奇幻",
       "戰鬥",
-      "Novel-based"
+      "小說改編"
     ],
     "mechanics": [
       "Action Points",
@@ -1343,9 +1343,9 @@
       "Medieval"
     ],
     "categories_zh": [
-      "Action / Dexterity",
+      "動作／巧手",
       "兒童",
-      "Medieval"
+      "中世紀"
     ],
     "mechanics": [
       "Events",
@@ -1478,8 +1478,8 @@
       "Travel"
     ],
     "categories_zh": [
-      "Deduction",
-      "Travel"
+      "推理",
+      "旅行"
     ],
     "mechanics": [
       "Hidden Movement",
