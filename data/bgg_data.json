@@ -1024,40 +1024,45 @@
     "stock": "1",
     "description": "",
     "image_override": "",
-    "bgg_id": 85245,
-    "name_en": "Magician's Kitchen",
-    "year": 2010,
+    "bgg_id": 166510,
+    "name_en": "Magi Kitchen",
+    "year": 2014,
     "players": [
-      2,
-      4
+      4,
+      8
     ],
-    "time_min": 20,
-    "time_max": 25,
-    "weight": 1.1111,
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.25,
     "categories": [
       "Action / Dexterity",
-      "Children's Game",
-      "Fantasy"
+      "Card Game",
+      "Party Game",
+      "Real-time"
     ],
-    "mechanics": [],
-    "image_url": "https://cf.geekdo-images.com/mSBjOchdd6sWlf22Mfw09A__original/img/YD0TIpwWL9OP5vELGLv0-L9NC60=/0x0/filters:format(jpeg)/pic953205.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/mSBjOchdd6sWlf22Mfw09A__small/img/WVoJqLB1fqnWPw4kS7W8y5k4YEY=/fit-in/200x150/filters:strip_icc()/pic953205.jpg",
-    "versions_count": 3,
+    "mechanics": [
+      "Action Queue",
+      "Pattern Recognition"
+    ],
+    "image_url": "https://cf.geekdo-images.com/kO8KQ5ReJQkLnbzCaQA9fQ__original/img/6kcsQ_WwTERBqi9tj9JewS1Ck4A=/0x0/filters:format(jpeg)/pic2254475.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/kO8KQ5ReJQkLnbzCaQA9fQ__small/img/qfR8m6tjeakJ7U-ZOBGIRL0Vk30=/fit-in/200x150/filters:strip_icc()/pic2254475.jpg",
+    "versions_count": 2,
     "categories_zh": [
       "動作／巧手",
-      "兒童",
-      "奇幻"
+      "卡牌",
+      "派對",
+      "即時制"
     ],
-    "image": "assets/img/85245.jpg"
+    "image": "assets/img/166510.jpg"
   },
   {
     "name_zh": "魔法賓果",
     "name_en_override": "",
     "alias_zh": "",
     "category_zh": "",
-    "price_msrp_twd": 1000,
-    "price_twd": 1000,
-    "used_price_twd": 600,
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 420,
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
@@ -1305,8 +1310,8 @@
     "used_note": "",
     "manual_override": 1,
     "stock": "2",
-    "description": "",
-    "image_override": "",
+    "description": "Traditional Chinese edition",
+    "image_override": "https://cf.geekdo-images.com/RZolzx6FNWrbyYv3AJPmDQ__small@2x/img/Q05y8v-59OZj4XjVHlJ-pBU5Q9w=/fit-in/400x300/filters:strip_icc()/pic7216139.jpg",
     "bgg_id": 310789,
     "name_en": "Catapult Feud",
     "year": 2021,
@@ -1329,6 +1334,7 @@
     "image_url": "https://cf.geekdo-images.com/xGBfcwwpk6qW4FfPryGbBQ__original/img/y0ZhveTgMipzEYr0sqgUicKHz8M=/0x0/filters:format(jpeg)/pic8365828.jpg",
     "thumb_url": "https://cf.geekdo-images.com/xGBfcwwpk6qW4FfPryGbBQ__small/img/IHLMRZQU3O-zpI6yIDuv6e0-Tdc=/fit-in/200x150/filters:strip_icc()/pic8365828.jpg",
     "versions_count": 17,
+    "image_version_id": "642394",
     "categories_zh": [
       "動作／巧手",
       "兒童",
@@ -1386,15 +1392,15 @@
     "name_en_override": "",
     "alias_zh": "",
     "category_zh": "",
-    "price_msrp_twd": 2200,
-    "price_twd": 2200,
-    "used_price_twd": 1320,
+    "price_msrp_twd": 1650,
+    "price_twd": 1650,
+    "used_price_twd": 990,
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
     "stock": "1",
-    "description": "",
-    "image_override": "",
+    "description": "Traditional Chinese edition",
+    "image_override": "https://cf.geekdo-images.com/K0ADX2pEftW_GzO6FECDWg__small@2x/img/gi_K4q_HI-8ZPUl_We3XEDXGy1A=/fit-in/400x300/filters:strip_icc()/pic3089350.jpg",
     "bgg_id": 9209,
     "name_en": "Ticket to Ride",
     "year": 2004,
@@ -1421,6 +1427,7 @@
     "image_url": "https://cf.geekdo-images.com/kdWYkW-7AqG63HhqPL6ekA__original/img/rWF8r4JXXCQQ7QhiWHhmT-rQ3Pc=/0x0/filters:format(jpeg)/pic8937637.jpg",
     "thumb_url": "https://cf.geekdo-images.com/kdWYkW-7AqG63HhqPL6ekA__small/img/5G46jv8MFh_BfX67iMSouTMhKxc=/fit-in/200x150/filters:strip_icc()/pic8937637.jpg",
     "versions_count": 64,
+    "image_version_id": "486432",
     "categories_zh": [
       "鐵道"
     ],
@@ -1469,6 +1476,267 @@
       "旅行"
     ],
     "image": "assets/img/438.jpg"
+  },
+  {
+    "name_zh": "爆珠發明",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1080,
+    "price_twd": 1080,
+    "used_price_twd": 648,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/h4hp3ssq0sYK-XrHVPli-w__small@2x/img/fX50irGSZVZjzidstgWhhAJeO6M=/fit-in/400x300/filters:strip_icc()/pic4323588.png",
+    "bgg_id": 246192,
+    "name_en": "Gizmos",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 40,
+    "time_max": 50,
+    "weight": 2.048,
+    "categories": [
+      "Card Game",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Contracts",
+      "Open Drafting",
+      "Race"
+    ],
+    "image_url": "https://cf.geekdo-images.com/zin82Hg4MXck86t8fzbsdA__original/img/_S-XINN0voB1OzExPPgePrOWurM=/0x0/filters:format(png)/pic4169718.png",
+    "thumb_url": "https://cf.geekdo-images.com/zin82Hg4MXck86t8fzbsdA__small/img/e-UqOrMfsLCh2T_igK3wkoFrOu8=/fit-in/200x150/filters:strip_icc()/pic4169718.png",
+    "versions_count": 19,
+    "image_version_id": "423216",
+    "categories_zh": [
+      "卡牌",
+      "科幻"
+    ],
+    "image": "assets/img/246192.jpg"
+  },
+  {
+    "name_zh": "龐氏騙局",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1500,
+    "price_twd": 1500,
+    "used_price_twd": 900,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/erI19kvOG0wMIti6U-pK7g__small@2x/img/UMYCMalt5emoDTwqYjGAF6YxdGo=/fit-in/400x300/filters:strip_icc()/pic3468123.jpg",
+    "bgg_id": 180899,
+    "name_en": "Ponzi Scheme",
+    "year": 2015,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 2.4533,
+    "categories": [
+      "Economic"
+    ],
+    "mechanics": [
+      "Loans",
+      "Set Collection",
+      "Trading"
+    ],
+    "image_url": "https://cf.geekdo-images.com/c7eDqWqXn1Gxb3R8nmQkgA__original/img/uM8t9FDCb0YlByDKx4DbTvjmLdI=/0x0/filters:format(png)/pic7647050.png",
+    "thumb_url": "https://cf.geekdo-images.com/c7eDqWqXn1Gxb3R8nmQkgA__small/img/C5Ll5quZC5FAOWQVV4Qym0aHQRs=/fit-in/200x150/filters:strip_icc()/pic7647050.png",
+    "versions_count": 6,
+    "image_version_id": "396354",
+    "categories_zh": [
+      "經濟"
+    ],
+    "image": "assets/img/180899.jpg"
+  },
+  {
+    "name_zh": "鯊魚警報",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/vyouNxp_AKyhO2_towbF-A__small@2x/img/WKWurgPM_I-gAyV3aZQolj8NMiI=/fit-in/400x300/filters:strip_icc()/pic2598882.png",
+    "bgg_id": 32968,
+    "name_en": "Shark Alarm!!!",
+    "year": 2008,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 15,
+    "weight": 1.1333,
+    "categories": [
+      "Animals",
+      "Bluffing",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Memory",
+      "Open Drafting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mvUd8bERsBp80Xwf0OcQQA__original/img/fyP2ggWeSRLnUPtR-aCH-gEb-OE=/0x0/filters:format(jpeg)/pic270470.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mvUd8bERsBp80Xwf0OcQQA__small/img/NtPiPHtmhfP6cE4S3d8pwcVG3VM=/fit-in/200x150/filters:strip_icc()/pic270470.jpg",
+    "versions_count": 2,
+    "image_version_id": "280022",
+    "categories_zh": [
+      "動物",
+      "唬人",
+      "卡牌"
+    ],
+    "image": "assets/img/32968.jpg"
+  },
+  {
+    "name_zh": "鯊魚來襲",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 590,
+    "price_twd": 590,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 130556,
+    "name_en": "Shark Attacks!",
+    "year": 2012,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Dice"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Push Your Luck",
+      "Re-rolling and Locking"
+    ],
+    "image_url": "https://cf.geekdo-images.com/k8Asertla3f3i6aJwMLpHg__original/img/eDO3i_xykboKJ1sG9eQeRo7udmU=/0x0/filters:format(jpeg)/pic1416665.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/k8Asertla3f3i6aJwMLpHg__small/img/rD4bH2YdkYQ2bCcya9p67PNoNwk=/fit-in/200x150/filters:strip_icc()/pic1416665.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "動物",
+      "Dice"
+    ],
+    "image": "assets/img/130556.jpg"
+  },
+  {
+    "name_zh": "鯊口餘生",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "2",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/MwCLB3od8VC_jWveHj92wA__small@2x/img/qvgECaOWLA8YlTX8rGYqTgWvgtE=/fit-in/400x300/filters:strip_icc()/pic5531445.jpg",
+    "bgg_id": 30539,
+    "name_en": "Get Bit!",
+    "year": 2007,
+    "players": [
+      2,
+      7
+    ],
+    "time_min": 10,
+    "time_max": 20,
+    "weight": 1.1182,
+    "categories": [
+      "Animals",
+      "Bluffing",
+      "Party Game",
+      "Pirates"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Player Elimination",
+      "Race",
+      "Relative Movement",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/km1bBsWSyml95EFxcx5JWw__original/img/gd4oxx55xzh2vy5cDCcokTONNLA=/0x0/filters:format(png)/pic8104136.png",
+    "thumb_url": "https://cf.geekdo-images.com/km1bBsWSyml95EFxcx5JWw__small/img/O_LMwf86Ybtc-ThsPXMPJ0kDfkA=/fit-in/200x150/filters:strip_icc()/pic8104136.png",
+    "versions_count": 16,
+    "image_version_id": "174457",
+    "categories_zh": [
+      "動物",
+      "唬人",
+      "派對",
+      "Pirates"
+    ],
+    "image": "assets/img/30539.jpg"
+  },
+  {
+    "name_zh": "雙胞胎 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1050,
+    "price_twd": 1050,
+    "used_price_twd": 630,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": "1",
+    "description": "",
+    "image_override": "https://shoplineimg.com/57fba1b061706917080d8c00/59bbd892d4e3959f8300042c/800x.webp?source_format=jpg",
+    "bgg_id": 121041,
+    "name_en": "Pluckin' Pairs",
+    "year": 2012,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 50,
+    "time_max": 50,
+    "weight": 1.0769,
+    "categories": [
+      "Party Game"
+    ],
+    "mechanics": [
+      "Simultaneous Action Selection",
+      "Storytelling",
+      "Voting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DVdB_n1B1VvZmqQk4WcQ_g__original/img/RW-NjiFMeU0e8C4TNTiKXDUnjiM=/0x0/filters:format(jpeg)/pic1245374.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/DVdB_n1B1VvZmqQk4WcQ_g__small/img/jgHYRMmUVnl5Zby57JKyN3zZPcU=/fit-in/200x150/filters:strip_icc()/pic1245374.jpg",
+    "versions_count": 8,
+    "categories_zh": [
+      "派對"
+    ],
+    "image": "assets/img/121041.jpg"
   },
   {
     "name_zh": "蒸氣",
