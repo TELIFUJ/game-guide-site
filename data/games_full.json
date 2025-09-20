@@ -65,7 +65,7 @@
       "VYE BGG",
       "Vye: The Card Game of Capture and Control BGG"
     ],
-    "stock": "",
+    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
@@ -138,6 +138,181 @@
       "UNO: Show 'Em No Mercy BGG"
     ],
     "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "uno",
+    "name_zh": "UNO",
+    "name_en": "UNO",
+    "aliases_zh": [],
+    "bgg_id": 2223,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2223",
+    "year": 1971,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.1018,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Comic Book / Strip",
+      "Movies / TV / Radio theme",
+      "Number"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Lose a Turn",
+      "Matching",
+      "Take That"
+    ],
+    "editions": [],
+    "image": "assets/img/2223.jpg",
+    "price_twd": 269,
+    "used_price_twd": 150,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "UNO BGG",
+      "UNO BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "dominoes",
+    "name_zh": "Whoa dominoes",
+    "name_en": "Dominoes",
+    "aliases_zh": [],
+    "bgg_id": 2394,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2394",
+    "year": 1500,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.3667,
+    "categories": [
+      "Abstract Strategy",
+      "Game System"
+    ],
+    "mechanics": [
+      "Matching",
+      "Pattern Building",
+      "Pattern Recognition",
+      "Team-Based Game",
+      "Tile Placement"
+    ],
+    "editions": [],
+    "image": "assets/img/2394.jpg",
+    "price_twd": 625,
+    "used_price_twd": 500,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "Whoa dominoes BGG",
+      "Dominoes BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "cutting_edge_machinesmith",
+    "name_zh": "驢橋",
+    "name_en": "Cutting Edge Machinesmith",
+    "aliases_zh": [],
+    "bgg_id": 265126,
+    "bgg_url": "https://boardgamegeek.com/boardgame/265126",
+    "year": 2013,
+    "players": [
+      null,
+      null
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "editions": [],
+    "image": "assets/img/265126.jpg",
+    "price_twd": 1490,
+    "used_price_twd": 894,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "驢橋 BGG",
+      "Cutting Edge Machinesmith BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "time_bomb_evolution",
+    "name_zh": "驚爆倫敦 危機進化",
+    "name_en": "Time Bomb Evolution",
+    "aliases_zh": [],
+    "bgg_id": 231748,
+    "bgg_url": "https://boardgamegeek.com/boardgame/231748",
+    "year": 2016,
+    "players": [
+      4,
+      6
+    ],
+    "time_min": 25,
+    "time_max": 30,
+    "weight": 1.6,
+    "categories": [
+      "Card Game",
+      "Spies / Secret Agents"
+    ],
+    "mechanics": [
+      "Betting and Bluffing",
+      "Deduction",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
+    "editions": [],
+    "image": "assets/img/231748.jpg",
+    "price_twd": 590,
+    "used_price_twd": 354,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "驚爆倫敦 危機進化 BGG",
+      "Time Bomb Evolution BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "reazioni_emotive",
+    "name_zh": "驚爆倫敦 (主/中文)",
+    "name_en": "Reazioni Emotive",
+    "aliases_zh": [],
+    "bgg_id": 414337,
+    "bgg_url": "https://boardgamegeek.com/boardgame/414337",
+    "year": 0,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Party Game"
+    ],
+    "mechanics": [],
+    "editions": [],
+    "image": "assets/img/414337.jpg",
+    "price_twd": 650,
+    "used_price_twd": 390,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "驚爆倫敦 (主/中文) BGG",
+      "Reazioni Emotive BGG"
+    ],
+    "stock": "2",
     "updated_at": "2025-09-20"
   },
   {
