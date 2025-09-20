@@ -219,30 +219,113 @@
     "updated_at": "2025-09-20"
   },
   {
-    "id": "cutting_edge_machinesmith",
+    "id": "eselsbrücke",
     "name_zh": "驢橋",
-    "name_en": "Cutting Edge Machinesmith",
+    "name_en": "Eselsbrücke",
     "aliases_zh": [],
-    "bgg_id": 265126,
-    "bgg_url": "https://boardgamegeek.com/boardgame/265126",
-    "year": 2013,
+    "bgg_id": 90009,
+    "bgg_url": "https://boardgamegeek.com/boardgame/90009",
+    "year": 2011,
     "players": [
-      null,
-      null
+      3,
+      12
     ],
-    "time_min": null,
-    "time_max": null,
-    "weight": 0.0,
-    "categories": [],
-    "mechanics": [],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.6957,
+    "categories": [
+      "Memory"
+    ],
+    "mechanics": [
+      "Memory",
+      "Storytelling"
+    ],
     "editions": [],
-    "image": "assets/img/265126.jpg",
+    "image": "assets/img/90009.jpg",
     "price_twd": 1490,
     "used_price_twd": 894,
     "price_usd_amz": null,
     "search_keywords": [
       "驢橋 BGG",
-      "Cutting Edge Machinesmith BGG"
+      "Eselsbrücke BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "paranormal_detectives",
+    "name_zh": "靈能偵探",
+    "name_en": "Paranormal Detectives",
+    "aliases_zh": [],
+    "bgg_id": 280136,
+    "bgg_url": "https://boardgamegeek.com/boardgame/280136",
+    "year": 2019,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 50,
+    "weight": 1.6739,
+    "categories": [
+      "Deduction",
+      "Horror",
+      "Murder / Mystery",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Acting",
+      "Cooperative Game",
+      "Hand Management",
+      "Line Drawing",
+      "Pattern Recognition",
+      "Questions and Answers",
+      "Variable Player Powers"
+    ],
+    "editions": [],
+    "image": "assets/img/280136.jpg",
+    "price_twd": 1280,
+    "used_price_twd": 768,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "靈能偵探 BGG",
+      "Paranormal Detectives BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "the_mind",
+    "name_zh": "靈光同線",
+    "name_en": "The Mind",
+    "aliases_zh": [],
+    "bgg_id": 244992,
+    "bgg_url": "https://boardgamegeek.com/boardgame/244992",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.0759,
+    "categories": [
+      "Card Game",
+      "Number"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Cooperative Game",
+      "Hand Management"
+    ],
+    "editions": [],
+    "image": "assets/img/244992.jpg",
+    "price_twd": 450,
+    "used_price_twd": 270,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "靈光同線 BGG",
+      "The Mind BGG"
     ],
     "stock": "1",
     "updated_at": "2025-09-20"
@@ -285,34 +368,223 @@
     "updated_at": "2025-09-20"
   },
   {
-    "id": "reazioni_emotive",
+    "id": "time_bomb",
     "name_zh": "驚爆倫敦 (主/中文)",
-    "name_en": "Reazioni Emotive",
+    "name_en": "Time Bomb",
     "aliases_zh": [],
-    "bgg_id": 414337,
-    "bgg_url": "https://boardgamegeek.com/boardgame/414337",
-    "year": 0,
+    "bgg_id": 236217,
+    "bgg_url": "https://boardgamegeek.com/boardgame/236217",
+    "year": 2016,
     "players": [
-      2,
-      6
+      4,
+      8
     ],
-    "time_min": 30,
+    "time_min": 1,
     "time_max": 30,
-    "weight": 1.0,
+    "weight": 1.0714,
     "categories": [
-      "Party Game"
+      "Bluffing",
+      "Card Game",
+      "Party Game",
+      "Spies / Secret Agents"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "Hidden Roles",
+      "Role Playing",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
     "editions": [],
-    "image": "assets/img/414337.jpg",
+    "image": "assets/img/236217.jpg",
     "price_twd": 650,
     "used_price_twd": 390,
     "price_usd_amz": null,
     "search_keywords": [
       "驚爆倫敦 (主/中文) BGG",
-      "Reazioni Emotive BGG"
+      "Time Bomb BGG"
     ],
     "stock": "2",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "last_friday",
+    "name_zh": "驚魂星期五",
+    "name_en": "Last Friday",
+    "aliases_zh": [],
+    "bgg_id": 192927,
+    "bgg_url": "https://boardgamegeek.com/boardgame/192927",
+    "year": 2016,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 120,
+    "weight": 2.2593,
+    "categories": [
+      "Deduction",
+      "Fighting",
+      "Horror",
+      "Movies / TV / Radio theme",
+      "Murder / Mystery"
+    ],
+    "mechanics": [
+      "Campaign / Battle Card Driven",
+      "Hidden Movement",
+      "Memory",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "editions": [],
+    "image": "assets/img/192927.jpg",
+    "price_twd": 1890,
+    "used_price_twd": 1134,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "驚魂星期五 BGG",
+      "Last Friday BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "cubeez",
+    "name_zh": "變臉魔方",
+    "name_en": "Cubeez",
+    "aliases_zh": [],
+    "bgg_id": 241492,
+    "bgg_url": "https://boardgamegeek.com/boardgame/241492",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "editions": [],
+    "image": "assets/img/241492.jpg",
+    "price_twd": 640,
+    "used_price_twd": 384,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "變臉魔方 BGG",
+      "Cubeez BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "coloretto",
+    "name_zh": "變色龍",
+    "name_en": "Coloretto",
+    "aliases_zh": [],
+    "bgg_id": 5782,
+    "bgg_url": "https://boardgamegeek.com/boardgame/5782",
+    "year": 2003,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.2701,
+    "categories": [
+      "Animals",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Push Your Luck",
+      "Set Collection",
+      "Turn Order: Pass Order"
+    ],
+    "editions": [],
+    "image": "assets/img/5782.jpg",
+    "price_twd": 500,
+    "used_price_twd": 300,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "變色龍 BGG",
+      "Coloretto BGG"
+    ],
+    "stock": "2",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "stick_stack",
+    "name_zh": "籤籤入扣",
+    "name_en": "Stick Stack",
+    "aliases_zh": [],
+    "bgg_id": 204734,
+    "bgg_url": "https://boardgamegeek.com/boardgame/204734",
+    "year": 2016,
+    "players": [
+      2,
+      99
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity"
+    ],
+    "mechanics": [
+      "Pattern Building"
+    ],
+    "editions": [],
+    "image": "assets/img/204734.jpg",
+    "price_twd": 890,
+    "used_price_twd": 534,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "籤籤入扣 BGG",
+      "Stick Stack BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "bounce-off_rock_'n'_rollz!",
+    "name_zh": "歡樂彈跳球:進階搖滾版 ",
+    "name_en": "Bounce-Off Rock 'N' Rollz!",
+    "aliases_zh": [],
+    "bgg_id": 214276,
+    "bgg_url": "https://boardgamegeek.com/boardgame/214276",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Pattern Building"
+    ],
+    "editions": [],
+    "image": "assets/img/214276.jpg",
+    "price_twd": 999,
+    "used_price_twd": 400,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "歡樂彈跳球:進階搖滾版  BGG",
+      "Bounce-Off Rock 'N' Rollz! BGG"
+    ],
+    "stock": "1",
     "updated_at": "2025-09-20"
   },
   {
