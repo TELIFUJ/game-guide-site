@@ -21,18 +21,19 @@ def to_int_or_none(v):
 def load_manual():
     items = {}
     if not MANUAL_CSV.exists(): return items
-    # 用 utf-8-sig 以容忍有 BOM 的 CSV
-    with MANUAL_CSV.open(encoding="utf-8-sig") as f:
+    with MANUAL_CSV.open(encoding="utf-8-sig") as f:  # 容忍 BOM
         r = csv.DictReader(f)
         for row in r:
             key = row.get("bgg_id") or row.get("name_zh") or row.get("bgg_query")
             if not key: continue
-            # 正規化
             row["manual_override"] = int(row.get("manual_override") or 0)
             row["price_twd"]       = to_int_or_none(row.get("price_twd"))
             row["used_price_twd"]  = to_int_or_none(row.get("used_price_twd"))
             row["price_msrp_twd"]  = to_int_or_none(row.get("price_msrp_twd"))
             row["stock"]           = to_int_or_none(row.get("stock"))
+            # 直接保留字串欄位（例如 image_version_id）
+            if row.get("image_version_id") is not None:
+                row["image_version_id"] = str(row["image_version_id"]).strip()
             items[str(key)] = row
     return items
 
@@ -61,13 +62,10 @@ def match_rule(rule, row):
     return ok
 
 def apply_rules(row, rules, default_used_pct, round_step):
-    # 若手動覆寫，直接返回
     if row.get("manual_override") == 1:
         return row
-
     price = row.get("price_twd")
     used  = row.get("used_price_twd")
-
     for r in rules:
         if not match_rule(r, row): 
             continue
@@ -77,11 +75,8 @@ def apply_rules(row, rules, default_used_pct, round_step):
             used = int(r["used_set"])
         if "used_pct" in r and price is not None:
             used = round_to_step(price * float(r["used_pct"]), round_step)
-
-    # 若仍無二手價且有售價，走預設折扣
     if used is None and price is not None:
         used = round_to_step(price * float(default_used_pct), round_step)
-
     row["price_twd"] = price
     row["used_price_twd"] = used
     return row
@@ -107,14 +102,12 @@ def main():
         key = str(r.get("bgg_id") or r.get("name_zh") or r.get("bgg_query"))
         m = manual.get(key) or manual.get(str(r.get("bgg_id"))) or {}
 
-        # 1) 合併手動欄位（擴充）
-        # 名稱 / 別名
+        # 合併手動欄位（擴充）
         if m.get("name_zh"): r["name_zh"] = m["name_zh"]
         if m.get("name_en_override"): r["name_en_override"] = m["name_en_override"]
         if m.get("alias_zh"):
             r["aliases_zh"] = [x.strip() for x in str(m["alias_zh"]).replace("；",";").split(";") if x.strip()]
 
-        # 價格 / 備註 / 庫存
         if "price_msrp_twd" in m and m["price_msrp_twd"] is not None: r["price_msrp_twd"] = m["price_msrp_twd"]
         if "price_twd"      in m and m["price_twd"]      is not None: r["price_twd"]      = m["price_twd"]
         if "used_price_twd" in m and m["used_price_twd"] is not None: r["used_price_twd"] = m["used_price_twd"]
@@ -122,25 +115,21 @@ def main():
         if m.get("used_note"):  r["used_note"]  = m["used_note"]
         if m.get("stock") is not None: r["stock"] = m["stock"]
         r["manual_override"] = m.get("manual_override", r.get("manual_override", 0))
-
-        # 說明
         if m.get("description"): r["description"] = m["description"]
 
-        # 圖片覆蓋 / 版本圖片 ID（給 fetch_version_image 用）
-        if m.get("image_override"):    r["image_url"] = m["image_override"]
-        if m.get("image_version_id"):  r["image_version_id"] = m["image_version_id"]
+        # ★ 版本圖欄位／覆蓋圖
+        if m.get("image_override"):   r["image_url"] = m["image_override"]
+        if m.get("image_version_id"): r["image_version_id"] = m["image_version_id"]
 
-        # 2) 中文分類：manual.category_zh 優先，其次用對照表把 BGG 英文分類轉中文
+        # 中文分類
         manual_cat = (m.get("category_zh") or "").strip()
         if manual_cat:
-            # 允許使用「/」或「；」或「;」分隔
             tokens = str(manual_cat).replace("；",";").replace("/", ";").split(";")
             r["categories_zh"] = [x.strip() for x in tokens if x.strip()]
         else:
             en = r.get("categories") or []
             r["categories_zh"] = [catmap.get(x, x) for x in en]
 
-        # 3) 套用價格規則（若 manual_override=1 不改）
         before = (r.get("price_twd"), r.get("used_price_twd"))
         r = apply_rules(r, rules, default_used_pct, round_step)
         after  = (r.get("price_twd"), r.get("used_price_twd"))
