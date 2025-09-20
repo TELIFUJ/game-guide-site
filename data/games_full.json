@@ -31,7 +31,7 @@
       "Zip Zap BGG"
     ],
     "stock": "1",
-    "updated_at": "2025-09-19"
+    "updated_at": "2025-09-20"
   },
   {
     "id": "vye:_the_card_game_of_capture_and_control",
@@ -65,8 +65,8 @@
       "VYE BGG",
       "Vye: The Card Game of Capture and Control BGG"
     ],
-    "stock": "",
-    "updated_at": "2025-09-19"
+    "stock": "1",
+    "updated_at": "2025-09-20"
   },
   {
     "id": "uno_stacko",
@@ -101,7 +101,7 @@
       "UNO Stacko BGG"
     ],
     "stock": "1",
-    "updated_at": "2025-09-19"
+    "updated_at": "2025-09-20"
   },
   {
     "id": "uno:_show_'em_no_mercy",
@@ -138,7 +138,85 @@
       "UNO: Show 'Em No Mercy BGG"
     ],
     "stock": "1",
-    "updated_at": "2025-09-19"
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "uno",
+    "name_zh": "UNO",
+    "name_en": "UNO",
+    "aliases_zh": [],
+    "bgg_id": 2223,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2223",
+    "year": 1971,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.1018,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Comic Book / Strip",
+      "Movies / TV / Radio theme",
+      "Number"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Lose a Turn",
+      "Matching",
+      "Take That"
+    ],
+    "editions": [],
+    "image": "assets/img/2223.jpg",
+    "price_twd": 269,
+    "used_price_twd": 150,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "UNO BGG",
+      "UNO BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
+  },
+  {
+    "id": "dominoes",
+    "name_zh": "Whoa dominoes",
+    "name_en": "Dominoes",
+    "aliases_zh": [],
+    "bgg_id": 2394,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2394",
+    "year": 1500,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.3667,
+    "categories": [
+      "Abstract Strategy",
+      "Game System"
+    ],
+    "mechanics": [
+      "Matching",
+      "Pattern Building",
+      "Pattern Recognition",
+      "Team-Based Game",
+      "Tile Placement"
+    ],
+    "editions": [],
+    "image": "assets/img/2394.jpg",
+    "price_twd": 625,
+    "used_price_twd": 500,
+    "price_usd_amz": null,
+    "search_keywords": [
+      "Whoa dominoes BGG",
+      "Dominoes BGG"
+    ],
+    "stock": "1",
+    "updated_at": "2025-09-20"
   },
   {
     "id": "steam",
@@ -178,7 +256,7 @@
       "Steam BGG"
     ],
     "stock": "",
-    "updated_at": "2025-09-19"
+    "updated_at": "2025-09-20"
   },
   {
     "id": "descent:_legends_of_the_dark",
@@ -223,6 +301,6 @@
       "Descent: Legends of the Dark BGG"
     ],
     "stock": "",
-    "updated_at": "2025-09-19"
+    "updated_at": "2025-09-20"
   }
 ]
