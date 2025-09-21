@@ -13,7 +13,6 @@
     .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{position:relative;border:1px solid var(--border);padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    /* 不裁切海報：吃原圖比例 */
     .poster{width:100%;height:auto;background:#f3f4f6;border-radius:8px;display:block}
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:var(--muted)}
@@ -28,11 +27,8 @@
     .btn{padding:8px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;cursor:pointer}
     .btn:active{transform:translateY(1px)}
     .row{display:flex;gap:8px;align-items:center}
-
-    /* 可愛收藏按鈕（放大約 20%） */
     .fav-btn{
-      position:absolute;top:10px;right:10px;
-      width:40px;height:40px;
+      position:absolute;top:10px;right:10px;width:40px;height:40px;
       display:flex;align-items:center;justify-content:center;
       background:#fff;border:1px solid var(--border);border-radius:999px;
       box-shadow:0 2px 8px rgba(0,0,0,.06);
@@ -47,22 +43,15 @@
 <body>
 
 <form class="filters" autocomplete="off" onsubmit="return false">
-  <input id="q" name="q_no_autofill"
-         placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
+  <input id="q" name="q_no_autofill" placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-
   <select id="catSel"><option value="">全部分類</option></select>
   <select id="mechSel"><option value="">全部機制</option></select>
-
-  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）"
-         autocomplete="off" inputmode="numeric" spellcheck="false">
-  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）"
-         autocomplete="off" inputmode="numeric" spellcheck="false">
-
+  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）" autocomplete="off" inputmode="numeric" spellcheck="false">
+  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）" autocomplete="off" inputmode="numeric" spellcheck="false">
   <label class="checkbox"><input type="checkbox" id="inclUsed" checked> 含二手價</label>
   <label class="checkbox"><input type="checkbox" id="hotCat" checked> 熱門分類（≥10）</label>
   <label class="checkbox"><input type="checkbox" id="hotMech" checked> 熱門機制（≥10）</label>
-
   <select id="sort">
     <option value="">排序</option>
     <option value="min_price">最低價格（含二手）</option>
@@ -96,7 +85,7 @@
   // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  // ====== 英→中備援映射（前端備援；後端仍以 *_zh 欄位優先）======
+  // ====== 英→中備援映射（前端備援；後端仍以 *_zh 優先）======
   const CAT_MAP = {
     "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
     "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
@@ -117,6 +106,7 @@
     "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
   };
 
+  // —— 機制映射（含別名）——
   const MECH_MAP = {
     "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
     "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"劇本／戰役卡驅動",
@@ -134,13 +124,12 @@
     "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
     "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
     "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人",
-    "Deck, Bag, and Pool Building": "卡／袋／池構築",
-    "Different Worker Types": "不同工種工人",
-    "Worker Placement, Different Worker Types": "多工種工人放置"
-    "Deck, Bag, and Pool Building": "卡／袋／池構築",
-    "Deck, Bag and Pool Building":  "卡／袋／池構築",   // 無逗號版本的別名
-    "Different Worker Types":       "不同工種工人",
-  "Worker Placement, Different Worker Types": "多工種工人放置",
+
+    // 補：漏網之魚與別名
+    "Deck, Bag, and Pool Building":"卡／袋／池構築",
+    "Deck, Bag and Pool Building":"卡／袋／池構築",        // 無逗號版本
+    "Different Worker Types":"不同工種工人",
+    "Worker Placement, Different Worker Types":"多工種工人放置"
   };
 
   // ====== 工具 ======
@@ -182,23 +171,20 @@
     const en = Array.isArray(x.categories) ? x.categories : [];
     return en.map(s => CAT_MAP[s] || s).slice(0,10);
   }
+
+  // 先正規化再比對（處理空白、不同逗號版本）
   function getMechsZh(x){
-  // 若後端已有 mechanics_zh，仍優先用
-  if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice();
-
-  // 前端備援：正規化字串 → 再查表
-  const en = Array.isArray(x.mechanics) ? x.mechanics : [];
-  const normalize = s => (s || "")
-    .replace(/\u00A0/g, " ")      // non-breaking space → 空白
-    .replace(/\s+/g, " ")         // 多重空白壓成 1 個
-    .trim();
-
-  return [...new Set(en.map(s => {
-    const key = normalize(s);
-    return MECH_MAP[key] || key;  // 查不到就回原文
-  }))];
-}
-
+    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice();
+    const en = Array.isArray(x.mechanics) ? x.mechanics : [];
+    const normalize = s => (s || "")
+      .replace(/\u00A0/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    return [...new Set(en.map(s => {
+      const key = normalize(s);
+      return MECH_MAP[key] || key;
+    }))];
+  }
 
   // 價格
   function priceCandidates(x, includeUsed=true){
@@ -289,7 +275,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
 
-  // 篩選（CSV/Email 會用到不分頁）
+  // 篩選
   function filtered(noPaging=false){
     let list = DATA.slice();
 
@@ -340,14 +326,12 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 
   function toggleFav(id){
     if (favs.has(id)) favs.delete(id); else favs.add(id);
-    saveFavs(); render(); // 星星/統計同步更新
+    saveFavs(); render();
   }
 
   function render(){
     const {total, pages, pageRows} = filtered();
-    const allFavCount = favs.size;
-
-    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
+    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${favs.size}`;
     PAGE_INFO.textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
     PREV.disabled = (page<=1);
     NEXT.disabled = (page>=pages);
@@ -373,11 +357,10 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
         ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
 
-        <!-- 分類 -->
         <div class="chips" aria-label="categories">
           ${cz.map(t=>`<a href="#" class="chip cat" data-cat="${t}">${t===chosenCat?`<b>${t}</b>`:t}</a>`).join('')}
         </div>
-        <!-- 機制（全部顯示、中文） -->
+
         <div class="chips" aria-label="mechanics">
           ${mz.map(t=>`<a href="#" class="chip mech ${t===chosenMech?'active':''}" data-mech="${t}">${t}</a>`).join('')}
         </div>
@@ -397,7 +380,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       </div>`;
     }).join('');
 
-    // 事件代理：收藏／點 chip 篩選
+    // 事件代理
     G.querySelectorAll('.fav-btn').forEach(btn=>{
       btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
     });
