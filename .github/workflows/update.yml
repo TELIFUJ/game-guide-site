@@ -187,7 +187,7 @@ jobs:
                       en=r.get("categories") or []
                       r["categories_zh"]=[catmap.get(x,x) for x in en]
 
-                  # 機制中文（保留所有）
+                  # 機制中文
                   mechs=r.get("mechanics") or []
                   r["mechanics_zh"]=[mechmap.get(x,x) for x in mechs]
 
@@ -250,7 +250,7 @@ jobs:
           if __name__ == "__main__": main()
           PY
 
-          # --- make_mechanism_map.py（產出候選清單，方便補翻譯） ---
+          # --- make_mechanism_map.py ---
           cat <<'PY' > scripts/make_mechanism_map.py
           import csv, json
           from pathlib import Path
@@ -348,12 +348,11 @@ jobs:
           python scripts/build_json.py
 
       - name: Commit changes
-  run: |
-    git config --local user.name "github-actions[bot]"
-    git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-    git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
-    git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
-    git add assets/img/* || true
-    git commit -m "Auto-update game data" || echo "No changes to commit"
-    git push || echo "No changes to push"
-
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
+          git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
+          git add assets/img/* || true
+          git commit -m "Auto-update game data" || echo "No changes to commit"
+          git push || echo "No changes to push"
