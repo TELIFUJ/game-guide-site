@@ -391,6 +391,137 @@
     "updated_at": "2025-09-21"
   },
   {
+    "id": "qwinto",
+    "name_zh": "QWINTO",
+    "name_en": "Qwinto",
+    "aliases_zh": [],
+    "bgg_id": 183006,
+    "bgg_url": "https://boardgamegeek.com/boardgame/183006",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.3333,
+    "categories": [
+      "Dice",
+      "Number"
+    ],
+    "categories_zh": [
+      "骰子",
+      "數字"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Follow",
+      "Paper-and-Pencil",
+      "Pattern Building"
+    ],
+    "versions_count": 9,
+    "image": "assets/img/183006.jpg",
+    "price_msrp_twd": 600,
+    "price_twd": 600,
+    "used_price_twd": 360,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
+    "search_keywords": [
+      "QWINTO BGG",
+      "Qwinto BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "king_frog",
+    "name_zh": "Quibbit",
+    "name_en": "King Frog",
+    "aliases_zh": [],
+    "bgg_id": 209849,
+    "bgg_url": "https://boardgamegeek.com/boardgame/209849",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Children's Game",
+      "Racing"
+    ],
+    "categories_zh": [
+      "兒童",
+      "競速"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Player Elimination",
+      "Simultaneous Action Selection"
+    ],
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/Me6h25HoQnUagVTweBRu1g__small@2x/img/D12LcObNnFSCIICj-uzsUoMNXZU=/fit-in/400x300/filters:strip_icc()/pic3198237.jpg",
+    "price_msrp_twd": 650,
+    "price_twd": 650,
+    "used_price_twd": 390,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "Quibbit BGG",
+      "King Frog BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "pony_run",
+    "name_zh": "pony run",
+    "name_en": "Pony Run",
+    "aliases_zh": [],
+    "bgg_id": 224993,
+    "bgg_url": "https://boardgamegeek.com/boardgame/224993",
+    "year": 2017,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 25,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "兒童"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Team-Based Game"
+    ],
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/yH0Ayf6TgZSjAFMxiGds9A__small/img/F37koiy_5xcdAybqf9QZvNqqj7U=/fit-in/200x150/filters:strip_icc()/pic3504334.jpg",
+    "price_msrp_twd": 550,
+    "price_twd": 550,
+    "used_price_twd": 330,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "pony run BGG",
+      "Pony Run BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
     "id": "eselsbrücke",
     "name_zh": "驢橋",
     "name_en": "Eselsbrücke",
@@ -2793,7 +2924,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "8",
+    "stock": "4",
     "description": "",
     "search_keywords": [
       "龍牙勇者 BGG",
@@ -2837,9 +2968,9 @@
     ],
     "versions_count": 20,
     "image": "https://cf.geekdo-images.com/_VGX0L0SkLdK9UxWrs7tOw__small@2x/img/RbeYvYFF-oJP_5DGIuFxoehnmyA=/fit-in/400x300/filters:strip_icc()/pic5510181.jpg",
-    "price_msrp_twd": 1350,
-    "price_twd": 1350,
-    "used_price_twd": 610,
+    "price_msrp_twd": 1490,
+    "price_twd": 1490,
+    "used_price_twd": 894,
     "price_note": "",
     "used_note": "",
     "stock": "1",
@@ -4169,7 +4300,7 @@
       "Pattern Building"
     ],
     "versions_count": 15,
-    "image": "https://boardgamegeek.com/image/2616068/splash",
+    "image": "https://cf.geekdo-images.com/dpAidU3yqwNaSNO2EHehcA__imagepage/img/bew4Jz-GkyCtTSpqh0Zzvhkiedw=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2616068.png",
     "price_msrp_twd": 390,
     "price_twd": 390,
     "used_price_twd": 240,
@@ -5191,6 +5322,1868 @@
     "search_keywords": [
       "摺足先登 BGG",
       "Fold-it BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "decrypto:_expansion_#01_–_laserdrive",
+    "name_zh": "截碼戰+光碟播放器擴充套組",
+    "name_en": "Decrypto: Expansion #01 – Laserdrive",
+    "aliases_zh": [],
+    "bgg_id": 273938,
+    "bgg_url": "https://boardgamegeek.com/boardgame/273938",
+    "year": 2019,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 15,
+    "time_max": 45,
+    "weight": 1.8571,
+    "categories": [
+      "Deduction",
+      "Expansion for Base-game",
+      "Party Game",
+      "Word Game"
+    ],
+    "categories_zh": [
+      "推理",
+      "基本款擴充",
+      "派對",
+      "字詞"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Targeted Clues",
+      "Team-Based Game"
+    ],
+    "versions_count": 8,
+    "image": "https://bghut.com/images/201909/goods_img/7735_G_1568177111476.jpg",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "截碼戰+光碟播放器擴充套組 BGG",
+      "Decrypto: Expansion #01 – Laserdrive BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "decrypto",
+    "name_zh": "截碼戰 (主/中文)",
+    "name_en": "Decrypto",
+    "aliases_zh": [],
+    "bgg_id": 225694,
+    "bgg_url": "https://boardgamegeek.com/boardgame/225694",
+    "year": 2018,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 15,
+    "time_max": 45,
+    "weight": 1.8273,
+    "categories": [
+      "Deduction",
+      "Party Game",
+      "Spies / Secret Agents",
+      "Word Game"
+    ],
+    "categories_zh": [
+      "推理",
+      "派對",
+      "間諜",
+      "字詞"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Paper-and-Pencil",
+      "Targeted Clues",
+      "Team-Based Game"
+    ],
+    "versions_count": 41,
+    "image": "https://cf.geekdo-images.com/QN7fc4_zxoGGO9L1T-jOUQ__small@2x/img/gwiqj6a5-QP5uglrI14zR5zWD3s=/fit-in/400x300/filters:strip_icc()/pic4163204.png",
+    "price_msrp_twd": 850,
+    "price_twd": 850,
+    "used_price_twd": 510,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "截碼戰 (主/中文) BGG",
+      "Decrypto BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "you're_bluffing!",
+    "name_zh": "幕後交易",
+    "name_en": "You're Bluffing!",
+    "aliases_zh": [],
+    "bgg_id": 1117,
+    "bgg_url": "https://boardgamegeek.com/boardgame/1117",
+    "year": 1985,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.6283,
+    "categories": [
+      "Animals",
+      "Bluffing",
+      "Card Game",
+      "Humor"
+    ],
+    "categories_zh": [
+      "動物",
+      "唬人",
+      "卡牌",
+      "幽默"
+    ],
+    "mechanics": [
+      "Auction: Turn Order Until Pass",
+      "Betting and Bluffing",
+      "Hand Management",
+      "Memory",
+      "Set Collection",
+      "Simultaneous Action Selection",
+      "Trading"
+    ],
+    "versions_count": 34,
+    "image": "https://cf.geekdo-images.com/gYZXJ0ogktykTZkNIkqvrQ__small@2x/img/SMz8MsdYirTlJgP5tFqjPZNXe60=/fit-in/400x300/filters:strip_icc()/pic6617922.jpg",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "幕後交易 BGG",
+      "You're Bluffing! BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "forest",
+    "name_zh": "察顏觀7",
+    "name_en": "Forest",
+    "aliases_zh": [],
+    "bgg_id": 235251,
+    "bgg_url": "https://boardgamegeek.com/boardgame/235251",
+    "year": 2017,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Card Game"
+    ],
+    "categories_zh": [
+      "卡牌"
+    ],
+    "mechanics": [
+      "Set Collection"
+    ],
+    "versions_count": 4,
+    "image": "https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/N01/128/44/N011284499.jpg&v=5b91d063k&w=375&h=375",
+    "price_msrp_twd": 450,
+    "price_twd": 450,
+    "used_price_twd": 270,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
+    "search_keywords": [
+      "察顏觀7 BGG",
+      "Forest BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "dream_home",
+    "name_zh": "夢想家園 (主/中文)",
+    "name_en": "Dream Home",
+    "aliases_zh": [],
+    "bgg_id": 194880,
+    "bgg_url": "https://boardgamegeek.com/boardgame/194880",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.6582,
+    "categories": [
+      "Card Game"
+    ],
+    "categories_zh": [
+      "卡牌"
+    ],
+    "mechanics": [
+      "Memory",
+      "Open Drafting",
+      "Pattern Building",
+      "Set Collection",
+      "Variable Phase Order"
+    ],
+    "versions_count": 22,
+    "image": "https://cf.geekdo-images.com/IZAMD2Z-B72dzgrfJXi5TQ__small@2x/img/6dmWDcFVLglqKgwRRRFl8dmgqm0=/fit-in/400x300/filters:strip_icc()/pic8367367.jpg",
+    "price_msrp_twd": 900,
+    "price_twd": 900,
+    "used_price_twd": 540,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "夢想家園 (主/中文) BGG",
+      "Dream Home BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "turing_machine",
+    "name_zh": "圖靈解密",
+    "name_en": "Turing Machine",
+    "aliases_zh": [],
+    "bgg_id": 356123,
+    "bgg_url": "https://boardgamegeek.com/boardgame/356123",
+    "year": 2022,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 2.5234,
+    "categories": [
+      "Deduction",
+      "Math",
+      "Spies / Secret Agents"
+    ],
+    "categories_zh": [
+      "推理",
+      "數學",
+      "間諜"
+    ],
+    "mechanics": [
+      "Deduction",
+      "Solo / Solitaire Game"
+    ],
+    "versions_count": 16,
+    "image": "https://img.gokids.com.tw/GoodPic/94/big/166752407219494.png",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 840,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "圖靈解密 BGG",
+      "Turing Machine BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "x-machina",
+    "name_zh": "圖騰快手",
+    "name_en": "X-Machina",
+    "aliases_zh": [],
+    "bgg_id": 8089,
+    "bgg_url": "https://boardgamegeek.com/boardgame/8089",
+    "year": 2003,
+    "players": [
+      4,
+      8
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.1538,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Humor",
+      "Industry / Manufacturing",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "唬人",
+      "卡牌",
+      "幽默",
+      "工業／製造",
+      "派對"
+    ],
+    "mechanics": [
+      "Storytelling"
+    ],
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/PH12swoaUo_yi_Q6Nb-vdA__small@2x/img/GweBljbwgN_8IKU_aS_up1m9A1M=/fit-in/400x300/filters:strip_icc()/pic2428373.jpg",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "圖騰快手 BGG",
+      "X-Machina BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "mmm!",
+    "name_zh": "鼠國英雄",
+    "name_en": "Mmm!",
+    "aliases_zh": [],
+    "bgg_id": 172507,
+    "bgg_url": "https://boardgamegeek.com/boardgame/172507",
+    "year": 2015,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 20,
+    "weight": 1.2941,
+    "categories": [
+      "Animals",
+      "Children's Game",
+      "Dice"
+    ],
+    "categories_zh": [
+      "動物",
+      "兒童",
+      "骰子"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Push Your Luck"
+    ],
+    "versions_count": 12,
+    "image": "https://cf.geekdo-images.com/ry-Uv3S79DePm_LQmecCLw__small@2x/img/tLEo20xmA_QVUqNXHZ8yYSTcTg4=/fit-in/400x300/filters:strip_icc()/pic5448699.jpg",
+    "price_msrp_twd": 1160,
+    "price_twd": 1160,
+    "used_price_twd": 696,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
+    "search_keywords": [
+      "鼠國英雄 BGG",
+      "Mmm! BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "trambahn",
+    "name_zh": "電車大亨",
+    "name_en": "Trambahn",
+    "aliases_zh": [],
+    "bgg_id": 175293,
+    "bgg_url": "https://boardgamegeek.com/boardgame/175293",
+    "year": 2015,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.798,
+    "categories": [
+      "Card Game",
+      "Trains",
+      "Transportation"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "鐵道",
+      "交通"
+    ],
+    "mechanics": [
+      "Multi-Use Cards",
+      "Open Drafting",
+      "Ordering",
+      "Score-and-Reset Game",
+      "Set Collection"
+    ],
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/mf125uHI9w5KW6nTrHXONQ__small@2x/img/-emLr23UQIWHlDsw_e6W-hKs5lI=/fit-in/400x300/filters:strip_icc()/pic3020087.png",
+    "price_msrp_twd": 700,
+    "price_twd": 700,
+    "used_price_twd": 420,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "電車大亨 BGG",
+      "Trambahn BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "power_grid",
+    "name_zh": "電力公司2020版",
+    "name_en": "Power Grid",
+    "aliases_zh": [],
+    "bgg_id": 2651,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2651",
+    "year": 2004,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.2485,
+    "categories": [
+      "Economic",
+      "Industry / Manufacturing"
+    ],
+    "categories_zh": [
+      "經濟",
+      "工業／製造"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Auction: Turn Order Until Pass",
+      "Catch the Leader",
+      "Income",
+      "Market",
+      "Network and Route Building",
+      "Turn Order: Stat-Based",
+      "Variable Set-up"
+    ],
+    "versions_count": 47,
+    "image": "https://cf.geekdo-images.com/X6j13eS_XDm-lRJPtWyu3g__small@2x/img/DUQsBktqN1JNdcFomMAJmuss_aU=/fit-in/400x300/filters:strip_icc()/pic6241474.jpg",
+    "price_msrp_twd": 1690,
+    "price_twd": 1690,
+    "used_price_twd": 1014,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "電力公司2020版 BGG",
+      "Power Grid BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "river_dragons",
+    "name_zh": "過河拆橋",
+    "name_en": "River Dragons",
+    "aliases_zh": [],
+    "bgg_id": 634,
+    "bgg_url": "https://boardgamegeek.com/boardgame/634",
+    "year": 2000,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.7188,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Point to Point Movement",
+      "Simultaneous Action Selection"
+    ],
+    "versions_count": 15,
+    "image": "https://cf.geekdo-images.com/dK6xCJADWkUna0OC3NA8Lg__small@2x/img/nZ5Hne895R5myD64AUqY614URxo=/fit-in/400x300/filters:strip_icc()/pic5531536.jpg",
+    "price_msrp_twd": 1320,
+    "price_twd": 1320,
+    "used_price_twd": 792,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "過河拆橋 BGG",
+      "River Dragons BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "animal_upon_animal",
+    "name_zh": "農場動物疊疊樂",
+    "name_en": "Animal Upon Animal",
+    "aliases_zh": [],
+    "bgg_id": 17329,
+    "bgg_url": "https://boardgamegeek.com/boardgame/17329",
+    "year": 2005,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0388,
+    "categories": [
+      "Action / Dexterity",
+      "Animals",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "動物",
+      "兒童"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Stacking and Balancing",
+      "Take That"
+    ],
+    "versions_count": 27,
+    "image": "https://cf.geekdo-images.com/29I0znYeLcbJhw0cLYWOIw__small@2x/img/R_UofUuFhi5EPKZlQn7aitUT04Q=/fit-in/400x300/filters:strip_icc()/pic3087414.jpg",
+    "price_msrp_twd": 1290,
+    "price_twd": 1290,
+    "used_price_twd": 774,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
+    "search_keywords": [
+      "農場動物疊疊樂 BGG",
+      "Animal Upon Animal BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "skippity",
+    "name_zh": "跳跳棋 (主/中文)",
+    "name_en": "Skippity",
+    "aliases_zh": [],
+    "bgg_id": 85563,
+    "bgg_url": "https://boardgamegeek.com/boardgame/85563",
+    "year": 2010,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.0,
+    "categories": [
+      "Abstract Strategy",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "抽象策略",
+      "兒童"
+    ],
+    "mechanics": [
+      "Point to Point Movement",
+      "Set Collection"
+    ],
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/35BfYZUMBLwMp7296XqScA__small@2x/img/0ZRoGslqqe5KKXLvDArS37nF1sU=/fit-in/400x300/filters:strip_icc()/pic2313813.jpg",
+    "price_msrp_twd": 890,
+    "price_twd": 890,
+    "used_price_twd": 534,
+    "price_note": "",
+    "used_note": "",
+    "stock": "3",
+    "description": "",
+    "search_keywords": [
+      "跳跳棋 (主/中文) BGG",
+      "Skippity BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "cryptid",
+    "name_zh": "詭影尋蹤",
+    "name_en": "Cryptid",
+    "aliases_zh": [],
+    "bgg_id": 246784,
+    "bgg_url": "https://boardgamegeek.com/boardgame/246784",
+    "year": 2018,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 50,
+    "weight": 2.2615,
+    "categories": [
+      "Deduction"
+    ],
+    "categories_zh": [
+      "推理"
+    ],
+    "mechanics": [
+      "Deduction",
+      "Hexagon Grid",
+      "Modular Board",
+      "Pattern Recognition"
+    ],
+    "versions_count": 12,
+    "image": "https://cf.geekdo-images.com/oOB-nguIsjw5GH8rOSdMVQ__small@2x/img/Zw90JLHGbCZC3TIftkHOlxn7CJM=/fit-in/400x300/filters:strip_icc()/pic4918679.png",
+    "price_msrp_twd": 1800,
+    "price_twd": 1800,
+    "used_price_twd": 1080,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "詭影尋蹤 BGG",
+      "Cryptid BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "mysterium",
+    "name_zh": "詭秘莊園 (主/中文)",
+    "name_en": "Mysterium",
+    "aliases_zh": [],
+    "bgg_id": 181304,
+    "bgg_url": "https://boardgamegeek.com/boardgame/181304",
+    "year": 2015,
+    "players": [
+      2,
+      7
+    ],
+    "time_min": 42,
+    "time_max": 42,
+    "weight": 1.8914,
+    "categories": [
+      "Deduction",
+      "Murder / Mystery",
+      "Party Game",
+      "Real-time"
+    ],
+    "categories_zh": [
+      "推理",
+      "懸疑／推理",
+      "派對",
+      "即時制"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Cooperative Game",
+      "Deduction",
+      "Finale Ending",
+      "Hand Management",
+      "Pattern Recognition",
+      "Real-Time",
+      "Storytelling",
+      "Voting"
+    ],
+    "versions_count": 50,
+    "image": "https://cf.geekdo-images.com/YHdWoJaODmqw2R6QC5Cczw__small@2x/img/-ptT5uQoQkXmw-bOma4EFlrpi_c=/fit-in/400x300/filters:strip_icc()/pic6112689.png",
+    "price_msrp_twd": 1650,
+    "price_twd": 1650,
+    "used_price_twd": 990,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "詭秘莊園 (主/中文) BGG",
+      "Mysterium BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "we_didn't_playtest_this_at_all",
+    "name_zh": "試個好遊戲",
+    "name_en": "We Didn't Playtest This at All",
+    "aliases_zh": [],
+    "bgg_id": 31016,
+    "bgg_url": "https://boardgamegeek.com/boardgame/31016",
+    "year": 2007,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 1,
+    "time_max": 10,
+    "weight": 1.0811,
+    "categories": [
+      "Card Game",
+      "Humor",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "幽默",
+      "派對"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Memory",
+      "Player Elimination",
+      "Rock-Paper-Scissors",
+      "Take That"
+    ],
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/WO2fpPMzP2-W-stt-4m90g__small@2x/img/odf2R0rfYisMnvxcaonnZzpHvgE=/fit-in/400x300/filters:strip_icc()/pic7763336.jpg",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "試個好遊戲 BGG",
+      "We Didn't Playtest This at All BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "on_a_scale_of_one_to_t-rex",
+    "name_zh": "裝龍作啞 (主/中文)",
+    "name_en": "On a Scale of One to T-Rex",
+    "aliases_zh": [],
+    "bgg_id": 289018,
+    "bgg_url": "https://boardgamegeek.com/boardgame/289018",
+    "year": 2019,
+    "players": [
+      2,
+      8
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Humor",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "幽默",
+      "派對"
+    ],
+    "mechanics": [
+      "Acting"
+    ],
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/Z_MxpLoQTezawqQ9oTRd0Q__small@2x/img/EQxBPYxSwLVXlzXJi1mqlt9yAkE=/fit-in/400x300/filters:strip_icc()/pic6465403.jpg",
+    "price_msrp_twd": 800,
+    "price_twd": 800,
+    "used_price_twd": 480,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "裝龍作啞 (主/中文) BGG",
+      "On a Scale of One to T-Rex BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "i.a.:_installation_artist",
+    "name_zh": "裝置譯述家",
+    "name_en": "I.A.: Installation Artist",
+    "aliases_zh": [],
+    "bgg_id": 414829,
+    "bgg_url": "https://boardgamegeek.com/boardgame/414829",
+    "year": 2022,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 2.0,
+    "categories": [
+      "Party Game"
+    ],
+    "categories_zh": [
+      "派對"
+    ],
+    "mechanics": [],
+    "versions_count": 1,
+    "image": "https://cf.geekdo-images.com/7EmHenj5PV6ZtmrPp8C5HQ__small@2x/img/9ykBvR_PRl9H2Sa1lPX9V6NRB3k=/fit-in/400x300/filters:strip_icc()/pic8038318.jpg",
+    "price_msrp_twd": 1490,
+    "price_twd": 1490,
+    "used_price_twd": 894,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "裝置譯述家 BGG",
+      "I.A.: Installation Artist BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "top_ten",
+    "name_zh": "腦洞量表",
+    "name_en": "Top Ten",
+    "aliases_zh": [],
+    "bgg_id": 300905,
+    "bgg_url": "https://boardgamegeek.com/boardgame/300905",
+    "year": 2020,
+    "players": [
+      4,
+      9
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0741,
+    "categories": [
+      "Party Game"
+    ],
+    "categories_zh": [
+      "派對"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Deduction",
+      "Ordering",
+      "Player Judge",
+      "Targeted Clues"
+    ],
+    "versions_count": 18,
+    "image": "https://cf.geekdo-images.com/1LlHqFqzUJGpTiXORzk6CA__small@2x/img/0V-wDzqIf_Ye4wmFY-bLrak7j5A=/fit-in/400x300/filters:strip_icc()/pic6243188.png",
+    "price_msrp_twd": 750,
+    "price_twd": 750,
+    "used_price_twd": 450,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
+    "search_keywords": [
+      "腦洞量表 BGG",
+      "Top Ten BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "bible_hunter",
+    "name_zh": "聖經尋寶獵人",
+    "name_en": "Bible Hunter",
+    "aliases_zh": [],
+    "bgg_id": 175427,
+    "bgg_url": "https://boardgamegeek.com/boardgame/175427",
+    "year": 2014,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 0,
+    "weight": 0.0,
+    "categories": [
+      "Card Game",
+      "Religious"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "宗教"
+    ],
+    "mechanics": [
+      "Set Collection"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/175427.jpg",
+    "price_msrp_twd": 400,
+    "price_twd": 400,
+    "used_price_twd": 240,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "聖經尋寶獵人 BGG",
+      "Bible Hunter BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "sagrada",
+    "name_zh": "聖家族大教堂",
+    "name_en": "Sagrada",
+    "aliases_zh": [],
+    "bgg_id": 199561,
+    "bgg_url": "https://boardgamegeek.com/boardgame/199561",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.9173,
+    "categories": [
+      "Dice",
+      "Puzzle"
+    ],
+    "categories_zh": [
+      "骰子",
+      "益智／拼圖"
+    ],
+    "mechanics": [
+      "Contracts",
+      "Dice Rolling",
+      "End Game Bonuses",
+      "Grid Coverage",
+      "Open Drafting",
+      "Pattern Building",
+      "Set Collection",
+      "Solo / Solitaire Game",
+      "Turn Order: Progressive",
+      "Variable Set-up"
+    ],
+    "versions_count": 34,
+    "image": "https://cf.geekdo-images.com/fL8tV3WEktWPHcWRwLeeyw__small@2x/img/FHygNYBMuzIbxk-UrhMimfsARyw=/fit-in/400x300/filters:strip_icc()/pic4153403.jpg",
+    "price_msrp_twd": 1350,
+    "price_twd": 1350,
+    "used_price_twd": 810,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "聖家族大教堂 BGG",
+      "Sagrada BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "san_juan",
+    "name_zh": "聖胡安",
+    "name_en": "San Juan",
+    "aliases_zh": [],
+    "bgg_id": 8217,
+    "bgg_url": "https://boardgamegeek.com/boardgame/8217",
+    "year": 2004,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 2.2845,
+    "categories": [
+      "Card Game",
+      "City Building",
+      "Economic"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "城市建設",
+      "經濟"
+    ],
+    "mechanics": [
+      "Action Drafting",
+      "Follow",
+      "Hand Management",
+      "Market",
+      "Multi-Use Cards",
+      "Open Drafting",
+      "Set Collection",
+      "Turn Order: Progressive",
+      "Variable Phase Order"
+    ],
+    "versions_count": 8,
+    "image": "assets/img/8217.jpg",
+    "price_msrp_twd": 990,
+    "price_twd": 990,
+    "used_price_twd": 594,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "聖胡安 BGG",
+      "San Juan BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "saint_petersburg_(second_edition)",
+    "name_zh": "聖彼得堡",
+    "name_en": "Saint Petersburg (Second Edition)",
+    "aliases_zh": [],
+    "bgg_id": 156943,
+    "bgg_url": "https://boardgamegeek.com/boardgame/156943",
+    "year": 2014,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.6694,
+    "categories": [
+      "Age of Reason",
+      "Card Game",
+      "City Building",
+      "Economic"
+    ],
+    "categories_zh": [
+      "啟蒙時代",
+      "卡牌",
+      "城市建設",
+      "經濟"
+    ],
+    "mechanics": [
+      "Income",
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "versions_count": 7,
+    "image": "assets/img/156943.jpg",
+    "price_msrp_twd": 1650,
+    "price_twd": 1650,
+    "used_price_twd": 990,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "聖彼得堡 BGG",
+      "Saint Petersburg (Second Edition) BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "othello",
+    "name_zh": "經典黑白棋",
+    "name_en": "Othello",
+    "aliases_zh": [],
+    "bgg_id": 2389,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2389",
+    "year": 1883,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.0627,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics": [
+      "Enclosure",
+      "Square Grid",
+      "Tile Placement"
+    ],
+    "versions_count": 145,
+    "image": "https://cf.geekdo-images.com/TcAq-1tyBq8ZQ5xFWIDUhg__small@2x/img/yxecUd2zzJYaFgbdcu1Ar3iMw30=/fit-in/400x300/filters:strip_icc()/pic4446213.png",
+    "price_msrp_twd": 650,
+    "price_twd": 650,
+    "used_price_twd": 360,
+    "price_note": "",
+    "used_note": "",
+    "stock": "3",
+    "description": "",
+    "search_keywords": [
+      "經典黑白棋 BGG",
+      "Othello BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "länder_toppen!",
+    "name_zh": "萬國爭鋒",
+    "name_en": "Länder toppen!",
+    "aliases_zh": [],
+    "bgg_id": 209450,
+    "bgg_url": "https://boardgamegeek.com/boardgame/209450",
+    "year": 2016,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.5714,
+    "categories": [
+      "Card Game",
+      "Educational"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "教育"
+    ],
+    "mechanics": [
+      "Set Collection",
+      "Simultaneous Action Selection",
+      "Trick-taking"
+    ],
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/R5wpqzQjQK20K7KY8E3I2w__small@2x/img/eyoei0ihCt9PVUKnLnyPcudu0p8=/fit-in/400x300/filters:strip_icc()/pic6222853.jpg",
+    "price_msrp_twd": 590,
+    "price_twd": 590,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "萬國爭鋒 BGG",
+      "Länder toppen! BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "ricochet_robots",
+    "name_zh": "碰撞機器人",
+    "name_en": "Ricochet Robots",
+    "aliases_zh": [],
+    "bgg_id": 51,
+    "bgg_url": "https://boardgamegeek.com/boardgame/51",
+    "year": 1999,
+    "players": [
+      1,
+      99
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.3776,
+    "categories": [
+      "Abstract Strategy",
+      "Maze",
+      "Puzzle",
+      "Real-time"
+    ],
+    "categories_zh": [
+      "抽象策略",
+      "迷宮",
+      "益智／拼圖",
+      "即時制"
+    ],
+    "mechanics": [
+      "Grid Movement",
+      "Modular Board",
+      "Real-Time",
+      "Square Grid",
+      "Turn Order: Stat-Based",
+      "Variable Set-up"
+    ],
+    "versions_count": 15,
+    "image": "https://cf.geekdo-images.com/uryZ7ONnbxAGY9M8Qe5y5A__small/img/JJa4tDjwj20dvvyqQVrl3OOdnxo=/fit-in/200x150/filters:strip_icc()/pic2376605.png",
+    "price_msrp_twd": 1690,
+    "price_twd": 1690,
+    "used_price_twd": 1014,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "碰撞機器人 BGG",
+      "Ricochet Robots BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "saboteur",
+    "name_zh": "矮人礦坑",
+    "name_en": "Saboteur",
+    "aliases_zh": [],
+    "bgg_id": 9220,
+    "bgg_url": "https://boardgamegeek.com/boardgame/9220",
+    "year": 2004,
+    "players": [
+      3,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.319,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Exploration",
+      "Fantasy",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "唬人",
+      "卡牌",
+      "推理",
+      "探索",
+      "奇幻",
+      "派對"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Hidden Roles",
+      "Hidden Victory Points",
+      "Map Addition",
+      "Network and Route Building",
+      "Score-and-Reset Game",
+      "Take That",
+      "Traitor Game"
+    ],
+    "versions_count": 58,
+    "image": "https://cf.geekdo-images.com/WbT4pDP7IzjBZcpapVBJMQ__small@2x/img/in4lSNA_rzKcgLPLc4781nttoks=/fit-in/400x300/filters:strip_icc()/pic684123.jpg",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "stock": "3",
+    "description": "",
+    "search_keywords": [
+      "矮人礦坑 BGG",
+      "Saboteur BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "dwarves_and_dice",
+    "name_zh": "矮人骰子樂",
+    "name_en": "Dwarves and Dice",
+    "aliases_zh": [],
+    "bgg_id": 12267,
+    "bgg_url": "https://boardgamegeek.com/boardgame/12267",
+    "year": 1999,
+    "players": [
+      2,
+      8
+    ],
+    "time_min": 5,
+    "time_max": 5,
+    "weight": 1.0,
+    "categories": [
+      "Children's Game",
+      "Dice",
+      "Fantasy"
+    ],
+    "categories_zh": [
+      "兒童",
+      "骰子",
+      "奇幻"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Pattern Recognition"
+    ],
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/HJFZp-hkX4QZTOyf7Mo7Mw__small@2x/img/0OxzV4ZGuBoib_U3JZSWVlLNomw=/fit-in/400x300/filters:strip_icc()/pic2576277.png",
+    "price_msrp_twd": 890,
+    "price_twd": 890,
+    "used_price_twd": 534,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "矮人骰子樂 BGG",
+      "Dwarves and Dice BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "minecraft:_portal_dash",
+    "name_zh": "當個創世神：衝出地獄門",
+    "name_en": "Minecraft: Portal Dash",
+    "aliases_zh": [],
+    "bgg_id": 368956,
+    "bgg_url": "https://boardgamegeek.com/boardgame/368956",
+    "year": 2022,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.0,
+    "categories": [
+      "Video Game Theme"
+    ],
+    "categories_zh": [
+      "電玩主題"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Modular Board",
+      "Point to Point Movement",
+      "Solo / Solitaire Game"
+    ],
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/yhqsVLsIt6Pz9rVgP50PKA__small@2x/img/YrQguiRZHYxYcgQSlBgguKtKq0g=/fit-in/400x300/filters:strip_icc()/pic7017508.jpg",
+    "price_msrp_twd": 1980,
+    "price_twd": 1980,
+    "used_price_twd": 1188,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "當個創世神：衝出地獄門 BGG",
+      "Minecraft: Portal Dash BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "minecraft:_builders_&_biomes",
+    "name_zh": "當個創世神",
+    "name_en": "Minecraft: Builders & Biomes",
+    "aliases_zh": [],
+    "bgg_id": 269603,
+    "bgg_url": "https://boardgamegeek.com/boardgame/269603",
+    "year": 2019,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 1.9872,
+    "categories": [
+      "Video Game Theme"
+    ],
+    "categories_zh": [
+      "電玩主題"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Deck, Bag, and Pool Building",
+      "End Game Bonuses",
+      "Grid Movement",
+      "Layering",
+      "Tile Placement",
+      "Variable Set-up"
+    ],
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/lAvfCCEBDeyoa1CpdgOFCg__small@2x/img/8A_fF1wa6eo-HaWTsdHKJ8mN2aU=/fit-in/400x300/filters:strip_icc()/pic4975740.jpg",
+    "price_msrp_twd": 1690,
+    "price_twd": 1690,
+    "used_price_twd": 1014,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "當個創世神 BGG",
+      "Minecraft: Builders & Biomes BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "leo",
+    "name_zh": "獅子剪髮大冒險",
+    "name_en": "Leo",
+    "aliases_zh": [],
+    "bgg_id": 191538,
+    "bgg_url": "https://boardgamegeek.com/boardgame/191538",
+    "year": 2016,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.1471,
+    "categories": [
+      "Children's Game",
+      "Mythology"
+    ],
+    "categories_zh": [
+      "兒童",
+      "神話"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Hand Management",
+      "Memory"
+    ],
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/XlxmRNQwFgktGYd__pT-kA__small@2x/img/HRzOGhKvpbHxLc6ZRmxWSTO6_Zg=/fit-in/400x300/filters:strip_icc()/pic3014785.jpg",
+    "price_msrp_twd": 950,
+    "price_twd": 950,
+    "used_price_twd": 570,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "獅子剪髮大冒險 BGG",
+      "Leo BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "alchemists",
+    "name_zh": "煉金術士",
+    "name_en": "Alchemists",
+    "aliases_zh": [],
+    "bgg_id": 161970,
+    "bgg_url": "https://boardgamegeek.com/boardgame/161970",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.9249,
+    "categories": [
+      "Deduction",
+      "Fantasy",
+      "Puzzle"
+    ],
+    "categories_zh": [
+      "推理",
+      "奇幻",
+      "益智／拼圖"
+    ],
+    "mechanics": [
+      "Action Drafting",
+      "Action Queue",
+      "Constrained Bidding",
+      "Deduction",
+      "End Game Bonuses",
+      "Events",
+      "Hand Management",
+      "Open Drafting",
+      "Turn Order: Progressive",
+      "Worker Placement"
+    ],
+    "versions_count": 19,
+    "image": "https://cf.geekdo-images.com/krinbSABMlrrJelqwiZ7HA__small@2x/img/3eKQTpR2kCkqdEQ3CAN-6nCkZKg=/fit-in/400x300/filters:strip_icc()/pic4170805.jpg",
+    "price_msrp_twd": 1850,
+    "price_twd": 1850,
+    "used_price_twd": 1110,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "煉金術士 BGG",
+      "Alchemists BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "leg_los!",
+    "name_zh": "極簡大師",
+    "name_en": "Leg los!",
+    "aliases_zh": [],
+    "bgg_id": 153479,
+    "bgg_url": "https://boardgamegeek.com/boardgame/153479",
+    "year": 2014,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Party Game",
+      "Real-time"
+    ],
+    "categories_zh": [
+      "派對",
+      "即時制"
+    ],
+    "mechanics": [
+      "Pattern Building",
+      "Pattern Recognition"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/153479.jpg",
+    "price_msrp_twd": 1690,
+    "price_twd": 1690,
+    "used_price_twd": 1014,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "極簡大師 BGG",
+      "Leg los! BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "beat_the_8_ball",
+    "name_zh": "極限一發",
+    "name_en": "Beat the 8 Ball",
+    "aliases_zh": [],
+    "bgg_id": 9539,
+    "bgg_url": "https://boardgamegeek.com/boardgame/9539",
+    "year": 1975,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童",
+      "派對"
+    ],
+    "mechanics": [
+      "Simultaneous Action Selection"
+    ],
+    "versions_count": 9,
+    "image": "https://shoplineimg.com/60a74ede7b095a005dafd838/649bd126fbde7f0020460fb7/800x.webp?source_format=png",
+    "price_msrp_twd": 750,
+    "price_twd": 750,
+    "used_price_twd": 450,
+    "price_note": "",
+    "used_note": "",
+    "stock": "2",
+    "description": "",
+    "search_keywords": [
+      "極限一發 BGG",
+      "Beat the 8 Ball BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "coconuts",
+    "name_zh": "椰子猴王",
+    "name_en": "Coconuts",
+    "aliases_zh": [],
+    "bgg_id": 145639,
+    "bgg_url": "https://boardgamegeek.com/boardgame/145639",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.0437,
+    "categories": [
+      "Action / Dexterity",
+      "Animals",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "動物",
+      "兒童"
+    ],
+    "mechanics": [
+      "Push Your Luck",
+      "Take That"
+    ],
+    "versions_count": 16,
+    "image": "https://shoplineimg.com/60a74ede7b095a005dafd838/612f25596c1565002c4b3224/800x.webp?source_format=png",
+    "price_msrp_twd": 750,
+    "price_twd": 750,
+    "used_price_twd": 450,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "椰子猴王 BGG",
+      "Coconuts BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "shadow_hunters",
+    "name_zh": "暗影獵人",
+    "name_en": "Shadow Hunters",
+    "aliases_zh": [],
+    "bgg_id": 24068,
+    "bgg_url": "https://boardgamegeek.com/boardgame/24068",
+    "year": 2005,
+    "players": [
+      4,
+      8
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.8225,
+    "categories": [
+      "Adventure",
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Horror",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "冒險",
+      "唬人",
+      "卡牌",
+      "推理",
+      "恐怖",
+      "派對"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hidden Roles",
+      "Player Elimination",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "versions_count": 10,
+    "image": "https://pic.pimg.tw/punchboardgame/1540962137-1387765022_n.jpg?v=1540963101",
+    "price_msrp_twd": 990,
+    "price_twd": 990,
+    "used_price_twd": 594,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "暗影獵人 BGG",
+      "Shadow Hunters BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "shadow_raiders",
+    "name_zh": "暗影奇襲",
+    "name_en": "Shadow Raiders",
+    "aliases_zh": [],
+    "bgg_id": 288098,
+    "bgg_url": "https://boardgamegeek.com/boardgame/288098",
+    "year": 2018,
+    "players": [
+      4,
+      8
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.6667,
+    "categories": [
+      "Adventure",
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Dice",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "冒險",
+      "唬人",
+      "卡牌",
+      "推理",
+      "骰子",
+      "派對"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Modular Board",
+      "Player Elimination",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/oteSpWBtWFZgajLe5uvgGw__small@2x/img/aNFAzOC9R1CxrxBwS2s76P4f6bQ=/fit-in/400x300/filters:strip_icc()/pic5957596.jpg",
+    "price_msrp_twd": 890,
+    "price_twd": 890,
+    "used_price_twd": 534,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "暗影奇襲 BGG",
+      "Shadow Raiders BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "buzzer_f*cker",
+    "name_zh": "搶鈴詞王",
+    "name_en": "Buzzer F*cker",
+    "aliases_zh": [],
+    "bgg_id": 415773,
+    "bgg_url": "https://boardgamegeek.com/boardgame/415773",
+    "year": 0,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Party Game",
+      "Word Game"
+    ],
+    "categories_zh": [
+      "派對",
+      "字詞"
+    ],
+    "mechanics": [
+      "Dice Rolling"
+    ],
+    "versions_count": 2,
+    "image": "https://img.gokids.com.tw/GoodPic/61/big/17400426625261.png",
+    "price_msrp_twd": 750,
+    "price_twd": 750,
+    "used_price_twd": 450,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "搶鈴詞王 BGG",
+      "Buzzer F*cker BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "help_peggy",
+    "name_zh": "搶救派琪",
+    "name_en": "Help Peggy",
+    "aliases_zh": [],
+    "bgg_id": 187113,
+    "bgg_url": "https://boardgamegeek.com/boardgame/187113",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 40,
+    "weight": 2.0,
+    "categories": [
+      "Memory"
+    ],
+    "categories_zh": [
+      "記憶"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Memory"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/187113.jpg",
+    "price_msrp_twd": 500,
+    "price_twd": 500,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "搶救派琪 BGG",
+      "Help Peggy BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "shokoba",
+    "name_zh": "搜捕農場動物 (主/中文)",
+    "name_en": "Shokoba",
+    "aliases_zh": [],
+    "bgg_id": 33964,
+    "bgg_url": "https://boardgamegeek.com/boardgame/33964",
+    "year": 2007,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.1667,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Children's Game",
+      "Number"
+    ],
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "兒童",
+      "數字"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Set Collection"
+    ],
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/ikUVg39J2M-EuW8H5QUQfA__small@2x/img/CZBFmDq1B__4C4NwAJwiDNrg1_k=/fit-in/400x300/filters:strip_icc()/pic2293201.jpg",
+    "price_msrp_twd": 440,
+    "price_twd": 440,
+    "used_price_twd": 264,
+    "price_note": "",
+    "used_note": "",
+    "stock": "3",
+    "description": "",
+    "search_keywords": [
+      "搜捕農場動物 (主/中文) BGG",
+      "Shokoba BGG"
+    ],
+    "updated_at": "2025-09-21"
+  },
+  {
+    "id": "mamma_mia!",
+    "name_zh": "媽媽咪呀!",
+    "name_en": "Mamma Mia!",
+    "aliases_zh": [],
+    "bgg_id": 49,
+    "bgg_url": "https://boardgamegeek.com/boardgame/49",
+    "year": 1998,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.3618,
+    "categories": [
+      "Card Game",
+      "Memory"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "記憶"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Memory"
+    ],
+    "versions_count": 27,
+    "image": "https://cf.geekdo-images.com/tyE2q8WSdBeUtUy8TWGGgQ__small@2x/img/pM9Hq9l9p5-UQ54QFOmQCz53UvU=/fit-in/400x300/filters:strip_icc()/pic4111336.jpg",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "stock": "1",
+    "description": "",
+    "search_keywords": [
+      "媽媽咪呀! BGG",
+      "Mamma Mia! BGG"
     ],
     "updated_at": "2025-09-21"
   },
