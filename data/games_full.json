@@ -118,7 +118,7 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Stacking and Balancing"
+      "疊放平衡"
     ],
     "versions_count": 22,
     "image": "assets/img/2821.jpg",
@@ -165,9 +165,9 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Lose a Turn",
-      "Matching",
-      "Player Elimination",
+      "失去回合",
+      "配對",
+      "玩家淘汰",
       "互害"
     ],
     "versions_count": 6,
@@ -222,8 +222,8 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Lose a Turn",
-      "Matching",
+      "失去回合",
+      "配對",
       "互害"
     ],
     "versions_count": 146,
@@ -272,10 +272,10 @@
       "Tile Placement"
     ],
     "mechanics_zh": [
-      "Matching",
-      "Pattern Building",
+      "配對",
+      "圖樣建構",
       "圖形辨識",
-      "Team-Based Game",
+      "團隊",
       "板塊擺放"
     ],
     "versions_count": 269,
@@ -322,8 +322,8 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Lose a Turn",
-      "Matching",
+      "失去回合",
+      "配對",
       "互害"
     ],
     "versions_count": 21,
@@ -415,8 +415,8 @@
       "Voting"
     ],
     "mechanics_zh": [
-      "Storytelling",
-      "Voting"
+      "說故事",
+      "投票"
     ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/ybE6_MilIX9a0yXKSx8WWA__small@2x/img/7AUcnLjAdRU9Az2YmPp6K3j13UU=/fit-in/400x300/filters:strip_icc()/pic819469.jpg",
@@ -464,9 +464,9 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Follow",
-      "Paper-and-Pencil",
-      "Pattern Building"
+      "跟隨行動",
+      "紙筆",
+      "圖樣建構"
     ],
     "versions_count": 9,
     "image": "assets/img/183006.jpg",
@@ -512,8 +512,8 @@
       "Simultaneous Action Selection"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "Player Elimination",
+      "行動序列",
+      "玩家淘汰",
       "同時選擇行動"
     ],
     "versions_count": 2,
@@ -562,7 +562,7 @@
     ],
     "mechanics_zh": [
       "合作",
-      "Team-Based Game"
+      "團隊"
     ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/yH0Ayf6TgZSjAFMxiGds9A__small/img/F37koiy_5xcdAybqf9QZvNqqj7U=/fit-in/200x150/filters:strip_icc()/pic3504334.jpg",
@@ -606,7 +606,7 @@
     ],
     "mechanics_zh": [
       "記憶",
-      "Storytelling"
+      "說故事"
     ],
     "versions_count": 3,
     "image": "assets/img/90009.jpg",
@@ -660,10 +660,10 @@
       "Variable Player Powers"
     ],
     "mechanics_zh": [
-      "Acting",
+      "演出/扮演",
       "合作",
       "手牌管理",
-      "連線",
+      "連線/畫線",
       "圖形辨識",
       "Questions and Answers",
       "角色能力"
@@ -712,7 +712,7 @@
       "Hand Management"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
       "手牌管理"
     ],
@@ -761,9 +761,9 @@
       "Traitor Game"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
-      "Deduction",
-      "Team-Based Game",
+      "下注與詐唬",
+      "推理",
+      "團隊",
       "Traitor Game"
     ],
     "versions_count": 9,
@@ -815,9 +815,9 @@
       "Traitor Game"
     ],
     "mechanics_zh": [
-      "Hidden Roles",
+      "隱藏身份",
       "角色扮演",
-      "Team-Based Game",
+      "團隊",
       "Traitor Game"
     ],
     "versions_count": 9,
@@ -874,12 +874,12 @@
       "Variable Player Powers"
     ],
     "mechanics_zh": [
-      "戰役/卡驅動",
+      "戰役/卡牌驅動",
       "隱藏移動",
       "記憶",
-      "Point to Point Movement",
-      "Secret Unit Deployment",
-      "Team-Based Game",
+      "點到點移動",
+      "秘密部署",
+      "團隊",
       "角色能力"
     ],
     "versions_count": 10,
@@ -974,7 +974,7 @@
       "公開選牌",
       "Push Your Luck",
       "收集套組",
-      "Turn Order: Pass Order"
+      "PASS 順序決定"
     ],
     "versions_count": 38,
     "image": "assets/img/5782.jpg",
@@ -1016,7 +1016,7 @@
       "Pattern Building"
     ],
     "mechanics_zh": [
-      "Pattern Building"
+      "圖樣建構"
     ],
     "versions_count": 8,
     "image": "assets/img/204734.jpg",
@@ -1060,7 +1060,7 @@
       "Pattern Building"
     ],
     "mechanics_zh": [
-      "Pattern Building"
+      "圖樣建構"
     ],
     "versions_count": 1,
     "image": "assets/img/214276.jpg",
@@ -1111,9 +1111,9 @@
       "Push Your Luck"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "記憶",
-      "Player Elimination",
+      "玩家淘汰",
       "Push Your Luck"
     ],
     "versions_count": 22,
@@ -1164,13 +1164,13 @@
       "Solo / Solitaire Game"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "合約",
+      "賓果",
+      "Contracts",
       "終局加分",
-      "Multi-Use Cards",
+      "多用途牌",
       "公開選牌",
-      "Paper-and-Pencil",
-      "Pattern Building",
+      "紙筆",
+      "圖樣建構",
       "同時選擇行動",
       "單人"
     ],
@@ -1223,9 +1223,9 @@
       "Push Your Luck"
     ],
     "mechanics_zh": [
-      "Bids As Wagers",
+      "賭注式出價",
       "記憶",
-      "Player Elimination",
+      "玩家淘汰",
       "Push Your Luck"
     ],
     "versions_count": 14,
@@ -1278,7 +1278,7 @@
     "mechanics_zh": [
       "擲骰",
       "手牌管理",
-      "模組地圖",
+      "模組化地圖",
       "路網建設",
       "交易"
     ],
@@ -1326,7 +1326,7 @@
       "Variable Player Powers"
     ],
     "mechanics_zh": [
-      "Action Queue",
+      "行動序列",
       "區域控制",
       "角色能力"
     ],
@@ -1477,7 +1477,7 @@
       "Pattern Recognition"
     ],
     "mechanics_zh": [
-      "Action Queue",
+      "行動序列",
       "圖形辨識"
     ],
     "versions_count": 2,
@@ -1523,7 +1523,7 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "Bingo",
+      "賓果",
       "公開選牌",
       "Push Your Luck",
       "收集套組"
@@ -1629,7 +1629,7 @@
     "mechanics_zh": [
       "合作",
       "Deck, Bag, and Pool Building",
-      "模組地圖",
+      "模組化地圖",
       "角色扮演",
       "單人",
       "角色能力"
@@ -1692,7 +1692,7 @@
     "mechanics_zh": [
       "合作",
       "Deck, Bag, and Pool Building",
-      "模組地圖",
+      "模組化地圖",
       "角色扮演",
       "劇本/任務/戰役",
       "單人",
@@ -1759,11 +1759,11 @@
     "mechanics_zh": [
       "行動點",
       "區域移動",
-      "戰役/卡驅動",
+      "戰役/卡牌驅動",
       "合作",
       "Deck, Bag, and Pool Building",
-      "Map Addition",
-      "模組地圖",
+      "地圖擴增",
+      "模組化地圖",
       "角色扮演",
       "劇本/任務/戰役",
       "單人",
@@ -1815,7 +1815,7 @@
       "Movement Template"
     ],
     "mechanics_zh": [
-      "Events",
+      "事件",
       "Movement Template"
     ],
     "versions_count": 17,
@@ -1865,8 +1865,8 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "Connections",
-      "合約",
+      "連結/連線",
+      "Contracts",
       "終局加分",
       "手牌管理",
       "路網建設",
@@ -1921,8 +1921,8 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "Connections",
-      "合約",
+      "連結/連線",
+      "Contracts",
       "終局加分",
       "手牌管理",
       "路網建設",
@@ -1976,9 +1976,9 @@
     ],
     "mechanics_zh": [
       "隱藏移動",
-      "Point to Point Movement",
-      "Secret Unit Deployment",
-      "Team-Based Game"
+      "點到點移動",
+      "秘密部署",
+      "團隊"
     ],
     "versions_count": 63,
     "image": "https://cf.geekdo-images.com/OQN5djW-SB3cTjMxP5BorA__small@2x/img/hP4j3DEtSXzAsWA5iGd9aDZWk-Q=/fit-in/400x300/filters:strip_icc()/pic8935030.jpg",
@@ -2025,8 +2025,8 @@
       "Race"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "合約",
+      "行動序列",
+      "Contracts",
       "公開選牌",
       "Race"
     ],
@@ -2225,7 +2225,7 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Player Elimination",
+      "玩家淘汰",
       "Race",
       "Relative Movement",
       "同時選擇行動"
@@ -2273,8 +2273,8 @@
     ],
     "mechanics_zh": [
       "同時選擇行動",
-      "Storytelling",
-      "Voting"
+      "說故事",
+      "投票"
     ],
     "versions_count": 8,
     "image": "https://shoplineimg.com/57fba1b061706917080d8c00/59bbd892d4e3959f8300042c/800x.webp?source_format=jpg",
@@ -2414,10 +2414,10 @@
       "Tile Placement"
     ],
     "mechanics_zh": [
-      "Enclosure",
+      "圍地",
       "格子移動",
-      "Hexagon Grid",
-      "Pattern Movement",
+      "六角格",
+      "圖樣移動",
       "Pieces as Map",
       "Three Dimensional Movement",
       "板塊擺放"
@@ -2515,9 +2515,9 @@
       "Tile Placement"
     ],
     "mechanics_zh": [
-      "Follow",
-      "Pattern Building",
-      "Score-and-Reset Game",
+      "跟隨行動",
+      "圖樣建構",
+      "計分後重置",
       "收集套組",
       "單人",
       "板塊擺放"
@@ -2575,10 +2575,10 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Hidden Roles",
-      "Player Elimination",
+      "隱藏身份",
+      "玩家淘汰",
       "Traitor Game",
-      "Voting"
+      "投票"
     ],
     "versions_count": 10,
     "image": "https://bghut.com/images/201810/goods_img/7045_P_1539475008931.JPG",
@@ -2625,7 +2625,7 @@
       "Slide / Push"
     ],
     "mechanics_zh": [
-      "Bias",
+      "偏好/偏倚",
       "手牌管理",
       "取貨運送",
       "收集套組",
@@ -2676,7 +2676,7 @@
       "Action Queue"
     ],
     "mechanics_zh": [
-      "Action Queue"
+      "行動序列"
     ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/uT84-aecpR6hKzwi1OExhw__small@2x/img/Rdd9cYnRjUK5_3p68G8SRck-UzQ=/fit-in/400x300/filters:strip_icc()/pic5450727.png",
@@ -2826,7 +2826,7 @@
     "mechanics_zh": [
       "手牌管理",
       "剪刀石頭布",
-      "Voting"
+      "投票"
     ],
     "versions_count": 2,
     "image": "https://bghut.com/images/202007/goods_img/8393_G_1593838153041.jpg",
@@ -2921,10 +2921,10 @@
       "Track Movement"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "擲骰",
       "Real-Time",
-      "Track Movement"
+      "軌道移動"
     ],
     "versions_count": 14,
     "image": "https://cf.geekdo-images.com/iMz-jlMj_-VtDzwrxtR7pw__small@2x/img/bVZ9_Trt1-AHnWBUZzO9qox9oNI=/fit-in/400x300/filters:strip_icc()/pic7467747.png",
@@ -2973,7 +2973,7 @@
       "Variable Set-up"
     ],
     "mechanics_zh": [
-      "Roll / Spin and Move",
+      "擲骰/旋轉前進",
       "可變設置"
     ],
     "versions_count": 12,
@@ -3029,12 +3029,12 @@
     "mechanics_zh": [
       "擲骰",
       "終局加分",
-      "Hexagon Grid",
-      "Income",
+      "六角格",
+      "收益",
       "板塊擺放",
       "搶先手",
       "可變設置",
-      "工人放置"
+      "Turn Order"
     ],
     "versions_count": 3,
     "image": "https://cf.geekdo-images.com/dbUiEzam0DTdV_rO6dhTvA__small@2x/img/sJQOrErgmUcNdRI5rKceZu9IhbE=/fit-in/400x300/filters:strip_icc()/pic6977896.png",
@@ -3086,15 +3086,15 @@
     ],
     "mechanics_zh": [
       "競標",
-      "Auction: Fixed Placement",
-      "Betting and Bluffing",
-      "Commodity Speculation",
-      "Constrained Bidding",
-      "Investment",
-      "Market",
+      "固定位置競標",
+      "下注與詐唬",
+      "商品投機",
+      "限制競標",
+      "投資",
+      "市場",
       "公開選牌",
-      "Stock Holding",
-      "Victory Points as a Resource"
+      "持股",
+      "分數作為資源"
     ],
     "versions_count": 7,
     "image": "https://cf.geekdo-images.com/jEwIBYVRHCqWkQpWerV2Wg__small@2x/img/_J905RwcsOd1UnVqWZYKeoEfPxI=/fit-in/400x300/filters:strip_icc()/pic3067380.jpg",
@@ -3189,7 +3189,7 @@
       "Simultaneous Action Selection"
     ],
     "mechanics_zh": [
-      "Auction: Sealed Bid",
+      "暗標",
       "同時選擇行動"
     ],
     "versions_count": 36,
@@ -3240,9 +3240,9 @@
       "Simultaneous Action Selection"
     ],
     "mechanics_zh": [
-      "Closed Drafting",
+      "暗抽選牌",
       "擲骰",
-      "Die Icon Resolution",
+      "骰面圖示結算",
       "收集套組",
       "同時選擇行動"
     ],
@@ -3342,10 +3342,10 @@
       "Variable Set-up"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "擲骰",
-      "Roll / Spin and Move",
-      "Track Movement",
+      "擲骰/旋轉前進",
+      "軌道移動",
       "可變設置"
     ],
     "versions_count": 20,
@@ -3499,10 +3499,10 @@
       "Storytelling"
     ],
     "mechanics_zh": [
-      "Acting",
+      "演出/扮演",
       "角色扮演",
       "Single Loser Game",
-      "Storytelling"
+      "說故事"
     ],
     "versions_count": 29,
     "image": "https://cf.geekdo-images.com/PjENQ-XWCdV-gMiLzeEuEw__small@2x/img/2mrXSyqOGHFJRXgQ-ZNwXOz3Ok4=/fit-in/400x300/filters:strip_icc()/pic5510354.jpg",
@@ -3549,7 +3549,7 @@
       "Hand Management"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "手牌管理"
     ],
     "versions_count": 23,
@@ -3610,8 +3610,8 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
-      "Bribery",
+      "下注與詐唬",
+      "賄賂",
       "手牌管理",
       "談判",
       "公開選牌",
@@ -3661,9 +3661,9 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "合約",
-      "Income",
-      "Market",
+      "Contracts",
+      "收益",
+      "市場",
       "收集套組"
     ],
     "versions_count": 6,
@@ -3713,10 +3713,10 @@
       "Score-and-Reset Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
-      "Deduction",
-      "Score-and-Reset Game"
+      "推理",
+      "計分後重置"
     ],
     "versions_count": 44,
     "image": "https://img.gokids.com.tw/GoodPic/50/big/17400395458850.png",
@@ -3766,7 +3766,7 @@
     ],
     "mechanics_zh": [
       "合作",
-      "Voting"
+      "投票"
     ],
     "versions_count": 9,
     "image": "https://cf.geekdo-images.com/UZBzGHiV8N8mhBS37xlExA__small@2x/img/5M_Fmq9SoFmMqY3JipD-e0TppAM=/fit-in/400x300/filters:strip_icc()/pic7094758.png",
@@ -3908,7 +3908,7 @@
       "Memory"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
       "記憶"
     ],
@@ -3960,9 +3960,9 @@
       "Team-Based Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "記憶",
-      "Team-Based Game"
+      "團隊"
     ],
     "versions_count": 31,
     "image": "https://bghut.com/images/201805/goods_img/6812_G_1526908633572.jpg",
@@ -4016,11 +4016,11 @@
       "Team-Based Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
-      "Deduction",
+      "限制溝通",
+      "推理",
       "記憶",
       "Race",
-      "Team-Based Game"
+      "團隊"
     ],
     "versions_count": 78,
     "image": "https://cf.geekdo-images.com/isfQxtHhFMdUHEfEHIQ5Kw__small@2x/img/4MuKaSkZ7fXPVlvnGZPb6S3DJso=/fit-in/400x300/filters:strip_icc()/pic3693575.png",
@@ -4078,7 +4078,7 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Die Icon Resolution",
+      "骰面圖示結算",
       "Push Your Luck",
       "Re-rolling and Locking",
       "收集套組",
@@ -4133,8 +4133,8 @@
       "Team-Based Game"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
-      "Team-Based Game"
+      "下注與詐唬",
+      "團隊"
     ],
     "versions_count": 7,
     "image": "https://img.gokids.com.tw/GoodPic/07/big/165836675919707.png",
@@ -4185,9 +4185,9 @@
     ],
     "mechanics_zh": [
       "競標",
-      "Bids As Wagers",
+      "賭注式出價",
       "手牌管理",
-      "Player Elimination",
+      "玩家淘汰",
       "Predictive Bid"
     ],
     "versions_count": 44,
@@ -4237,13 +4237,13 @@
       "Worker Placement with Dice Workers"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "擲骰",
       "終局加分",
       "公開選牌",
       "搶先手",
       "可變設置",
-      "工人放置",
+      "Turn Order",
       "骰子工人"
     ],
     "versions_count": 15,
@@ -4291,7 +4291,7 @@
       "Push Your Luck"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "Push Your Luck"
     ],
     "versions_count": 4,
@@ -4339,11 +4339,11 @@
       "Race"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "Connections",
-      "連線",
+      "賓果",
+      "連結/連線",
+      "連線/畫線",
       "路網建設",
-      "Paper-and-Pencil",
+      "紙筆",
       "Race"
     ],
     "versions_count": 15,
@@ -4391,7 +4391,7 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Score-and-Reset Game",
+      "計分後重置",
       "同時選擇行動"
     ],
     "versions_count": 12,
@@ -4577,7 +4577,7 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "公開選牌",
       "Race",
       "收集套組"
@@ -4629,7 +4629,7 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "公開選牌",
       "Race",
       "收集套組"
@@ -4681,7 +4681,7 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "公開選牌",
       "Race",
       "收集套組"
@@ -4734,9 +4734,9 @@
       "Tile Placement"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "Layering",
-      "Pattern Building",
+      "賓果",
+      "圖層疊加",
+      "圖樣建構",
       "同時選擇行動",
       "板塊擺放"
     ],
@@ -4791,7 +4791,7 @@
     ],
     "mechanics_zh": [
       "Flicking",
-      "模組地圖",
+      "模組化地圖",
       "Race"
     ],
     "versions_count": 9,
@@ -4838,7 +4838,7 @@
       "Pattern Building"
     ],
     "mechanics_zh": [
-      "Pattern Building"
+      "圖樣建構"
     ],
     "versions_count": 15,
     "image": "https://cf.geekdo-images.com/dpAidU3yqwNaSNO2EHehcA__imagepage/img/bew4Jz-GkyCtTSpqh0Zzvhkiedw=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2616068.png",
@@ -4884,8 +4884,8 @@
       "Tile Placement"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "Pattern Building",
+      "賓果",
+      "圖樣建構",
       "板塊擺放"
     ],
     "versions_count": 27,
@@ -4981,12 +4981,12 @@
       "Team-Based Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
-      "Hidden Roles",
+      "限制溝通",
+      "隱藏身份",
       "記憶",
       "角色扮演",
-      "Storytelling",
-      "Team-Based Game"
+      "說故事",
+      "團隊"
     ],
     "versions_count": 23,
     "image": "https://cf.geekdo-images.com/kfp8EJrlTcDnhZU9q8GW7Q__small@2x/img/MAq4sVSgK7hc1NpGQ6EaBCZMqrY=/fit-in/400x300/filters:strip_icc()/pic4229314.jpg",
@@ -5035,7 +5035,7 @@
       "Cooperative Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作"
     ],
     "versions_count": 11,
@@ -5084,9 +5084,9 @@
       "Team-Based Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "Race",
-      "Team-Based Game"
+      "團隊"
     ],
     "versions_count": 42,
     "image": "https://cf.geekdo-images.com/ItTurQyarLsUcY-HaccQ3g__small@2x/img/7-ZRS69t6VrLpqbbDjPJ6yvL2qA=/fit-in/400x300/filters:strip_icc()/pic2220430.jpg",
@@ -5215,10 +5215,10 @@
       "Modular Board"
     ],
     "mechanics_zh": [
-      "Enclosure",
+      "圍地",
       "格子移動",
-      "Hexagon Grid",
-      "模組地圖"
+      "六角格",
+      "模組化地圖"
     ],
     "versions_count": 17,
     "image": "https://cf.geekdo-images.com/LXHQypt-1L-OUB9enqxc1w__small@2x/img/W0mJOrPuXAD0O5LCK_Wo62MRESQ=/fit-in/400x300/filters:strip_icc()/pic2538532.jpg",
@@ -5262,9 +5262,9 @@
       "Worker Placement"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "Betting and Bluffing",
-      "工人放置"
+      "行動序列",
+      "下注與詐唬",
+      "Turn Order"
     ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/JljWkiGv2YyBR5aCpQ-tIA__small@2x/img/dTs6uw8w_vT0vKb-6laDRgkkTPY=/fit-in/400x300/filters:strip_icc()/pic3342886.png",
@@ -5314,7 +5314,7 @@
       "手牌管理",
       "路網建設",
       "公開選牌",
-      "Point to Point Movement"
+      "點到點移動"
     ],
     "versions_count": 6,
     "image": "https://cdn.prod.website-files.com/575714cc825e8dbc6c83b98a/5ab8f770326fa984a0e9f9cd_Elfenland_Box_3D-p-800.jpeg",
@@ -5413,7 +5413,7 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Multi-Use Cards",
+      "多用途牌",
       "談判",
       "收集套組",
       "交易"
@@ -5472,7 +5472,7 @@
       "格子移動",
       "記憶",
       "路網建設",
-      "Roll / Spin and Move"
+      "擲骰/旋轉前進"
     ],
     "versions_count": 27,
     "image": "https://cf.geekdo-images.com/l6ma7rpw3i0DyT5Yww7oUA__small@2x/img/BOAbTsBuuCJAHB-NOPpp-Pu3tbE=/fit-in/400x300/filters:strip_icc()/pic2445099.png",
@@ -5542,9 +5542,9 @@
       "合作",
       "擲骰",
       "手牌管理",
-      "模組地圖",
+      "模組化地圖",
       "角色扮演",
-      "Team-Based Game",
+      "團隊",
       "Traitor Game",
       "角色能力"
     ],
@@ -5621,8 +5621,8 @@
       "合作",
       "擲骰",
       "手牌管理",
-      "Map Addition",
-      "模組地圖",
+      "地圖擴增",
+      "模組化地圖",
       "角色扮演",
       "劇本/任務/戰役",
       "單人",
@@ -5674,7 +5674,7 @@
     "mechanics_zh": [
       "競標",
       "吃墩",
-      "工人放置"
+      "Turn Order"
     ],
     "versions_count": 2,
     "image": "assets/img/274688.jpg",
@@ -5780,7 +5780,7 @@
     ],
     "mechanics_zh": [
       "Grid Coverage",
-      "模組地圖",
+      "模組化地圖",
       "公開選牌",
       "收集套組",
       "方格",
@@ -5831,9 +5831,9 @@
       "Tile Placement"
     ],
     "mechanics_zh": [
-      "Layering",
+      "圖層疊加",
       "公開選牌",
-      "Pattern Building",
+      "圖樣建構",
       "板塊擺放"
     ],
     "versions_count": 3,
@@ -5980,7 +5980,7 @@
     ],
     "mechanics_zh": [
       "圖形辨識",
-      "Player Elimination"
+      "玩家淘汰"
     ],
     "versions_count": 9,
     "image": "https://cf.geekdo-images.com/2TejZGVqieHWeVJ05-Szzw__small@2x/img/Cw6aI8GLHPqWQTbg74dh7x3zPCY=/fit-in/400x300/filters:strip_icc()/pic3342862.png",
@@ -6030,9 +6030,9 @@
       "Team-Based Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "Targeted Clues",
-      "Team-Based Game"
+      "團隊"
     ],
     "versions_count": 8,
     "image": "https://bghut.com/images/201909/goods_img/7735_G_1568177111476.jpg",
@@ -6083,12 +6083,12 @@
       "Team-Based Game"
     ],
     "mechanics_zh": [
-      "Communication Limits",
-      "Paper-and-Pencil",
+      "限制溝通",
+      "紙筆",
       "Targeted Clues",
-      "Team-Based Game"
+      "團隊"
     ],
-    "versions_count": 41,
+    "versions_count": 42,
     "image": "https://cf.geekdo-images.com/QN7fc4_zxoGGO9L1T-jOUQ__small@2x/img/gwiqj6a5-QP5uglrI14zR5zWD3s=/fit-in/400x300/filters:strip_icc()/pic4163204.png",
     "price_msrp_twd": 850,
     "price_twd": 850,
@@ -6140,8 +6140,8 @@
       "Trading"
     ],
     "mechanics_zh": [
-      "Auction: Turn Order Until Pass",
-      "Betting and Bluffing",
+      "輪流加價直到PASS",
+      "下注與詐唬",
       "手牌管理",
       "記憶",
       "收集套組",
@@ -6236,7 +6236,7 @@
     "mechanics_zh": [
       "記憶",
       "公開選牌",
-      "Pattern Building",
+      "圖樣建構",
       "收集套組",
       "可變階段順序"
     ],
@@ -6285,7 +6285,7 @@
       "Solo / Solitaire Game"
     ],
     "mechanics_zh": [
-      "Deduction",
+      "推理",
       "單人"
     ],
     "versions_count": 16,
@@ -6336,7 +6336,7 @@
       "Storytelling"
     ],
     "mechanics_zh": [
-      "Storytelling"
+      "說故事"
     ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/PH12swoaUo_yi_Q6Nb-vdA__small@2x/img/GweBljbwgN_8IKU_aS_up1m9A1M=/fit-in/400x300/filters:strip_icc()/pic2428373.jpg",
@@ -6436,10 +6436,10 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "Multi-Use Cards",
+      "多用途牌",
       "公開選牌",
       "Ordering",
-      "Score-and-Reset Game",
+      "計分後重置",
       "收集套組"
     ],
     "versions_count": 6,
@@ -6492,12 +6492,12 @@
     ],
     "mechanics_zh": [
       "競標",
-      "Auction: Turn Order Until Pass",
-      "Catch the Leader",
-      "Income",
-      "Market",
+      "輪流加價直到PASS",
+      "追趕領先者",
+      "收益",
+      "市場",
       "路網建設",
-      "Turn Order: Stat-Based",
+      "屬性決定手順",
       "可變設置"
     ],
     "versions_count": 47,
@@ -6542,8 +6542,8 @@
       "Simultaneous Action Selection"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "Point to Point Movement",
+      "行動序列",
+      "點到點移動",
       "同時選擇行動"
     ],
     "versions_count": 15,
@@ -6593,7 +6593,7 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Stacking and Balancing",
+      "疊放平衡",
       "互害"
     ],
     "versions_count": 27,
@@ -6639,7 +6639,7 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "Point to Point Movement",
+      "點到點移動",
       "收集套組"
     ],
     "versions_count": 5,
@@ -6685,9 +6685,9 @@
       "Pattern Recognition"
     ],
     "mechanics_zh": [
-      "Deduction",
-      "Hexagon Grid",
-      "模組地圖",
+      "推理",
+      "六角格",
+      "模組化地圖",
       "圖形辨識"
     ],
     "versions_count": 12,
@@ -6744,15 +6744,15 @@
       "Voting"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
-      "Deduction",
+      "推理",
       "Finale Ending",
       "手牌管理",
       "圖形辨識",
       "Real-Time",
-      "Storytelling",
-      "Voting"
+      "說故事",
+      "投票"
     ],
     "versions_count": 50,
     "image": "https://cf.geekdo-images.com/YHdWoJaODmqw2R6QC5Cczw__small@2x/img/-ptT5uQoQkXmw-bOma4EFlrpi_c=/fit-in/400x300/filters:strip_icc()/pic6112689.png",
@@ -6804,7 +6804,7 @@
     "mechanics_zh": [
       "手牌管理",
       "記憶",
-      "Player Elimination",
+      "玩家淘汰",
       "剪刀石頭布",
       "互害"
     ],
@@ -6850,7 +6850,7 @@
       "Acting"
     ],
     "mechanics_zh": [
-      "Acting"
+      "演出/扮演"
     ],
     "versions_count": 8,
     "image": "https://cf.geekdo-images.com/Z_MxpLoQTezawqQ9oTRd0Q__small@2x/img/EQxBPYxSwLVXlzXJi1mqlt9yAkE=/fit-in/400x300/filters:strip_icc()/pic6465403.jpg",
@@ -6935,7 +6935,7 @@
     ],
     "mechanics_zh": [
       "合作",
-      "Deduction",
+      "推理",
       "Ordering",
       "Player Judge",
       "Targeted Clues"
@@ -7035,15 +7035,15 @@
       "Variable Set-up"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "擲骰",
       "終局加分",
       "Grid Coverage",
       "公開選牌",
-      "Pattern Building",
+      "圖樣建構",
       "收集套組",
       "單人",
-      "Turn Order: Progressive",
+      "遞進手順",
       "可變設置"
     ],
     "versions_count": 34,
@@ -7099,13 +7099,13 @@
     ],
     "mechanics_zh": [
       "Action Drafting",
-      "Follow",
+      "跟隨行動",
       "手牌管理",
-      "Market",
-      "Multi-Use Cards",
+      "市場",
+      "多用途牌",
       "公開選牌",
       "收集套組",
-      "Turn Order: Progressive",
+      "遞進手順",
       "可變階段順序"
     ],
     "versions_count": 8,
@@ -7156,7 +7156,7 @@
       "Set Collection"
     ],
     "mechanics_zh": [
-      "Income",
+      "收益",
       "公開選牌",
       "收集套組"
     ],
@@ -7202,7 +7202,7 @@
       "Tile Placement"
     ],
     "mechanics_zh": [
-      "Enclosure",
+      "圍地",
       "方格",
       "板塊擺放"
     ],
@@ -7306,10 +7306,10 @@
     ],
     "mechanics_zh": [
       "格子移動",
-      "模組地圖",
+      "模組化地圖",
       "Real-Time",
       "方格",
-      "Turn Order: Stat-Based",
+      "屬性決定手順",
       "可變設置"
     ],
     "versions_count": 15,
@@ -7370,11 +7370,11 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Hidden Roles",
+      "隱藏身份",
       "Hidden Victory Points",
-      "Map Addition",
+      "地圖擴增",
       "路網建設",
-      "Score-and-Reset Game",
+      "計分後重置",
       "互害",
       "Traitor Game"
     ],
@@ -7476,8 +7476,8 @@
       "合作",
       "擲骰",
       "格子移動",
-      "模組地圖",
-      "Point to Point Movement",
+      "模組化地圖",
+      "點到點移動",
       "單人"
     ],
     "versions_count": 6,
@@ -7530,7 +7530,7 @@
       "Deck, Bag, and Pool Building",
       "終局加分",
       "格子移動",
-      "Layering",
+      "圖層疊加",
       "板塊擺放",
       "可變設置"
     ],
@@ -7636,15 +7636,15 @@
     ],
     "mechanics_zh": [
       "Action Drafting",
-      "Action Queue",
-      "Constrained Bidding",
-      "Deduction",
+      "行動序列",
+      "限制競標",
+      "推理",
       "終局加分",
-      "Events",
+      "事件",
       "手牌管理",
       "公開選牌",
-      "Turn Order: Progressive",
-      "工人放置"
+      "遞進手順",
+      "Turn Order"
     ],
     "versions_count": 19,
     "image": "https://cf.geekdo-images.com/krinbSABMlrrJelqwiZ7HA__small@2x/img/3eKQTpR2kCkqdEQ3CAN-6nCkZKg=/fit-in/400x300/filters:strip_icc()/pic4170805.jpg",
@@ -7689,7 +7689,7 @@
       "Pattern Recognition"
     ],
     "mechanics_zh": [
-      "Pattern Building",
+      "圖樣建構",
       "圖形辨識"
     ],
     "versions_count": 1,
@@ -7841,9 +7841,9 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Hidden Roles",
-      "Player Elimination",
-      "Team-Based Game",
+      "隱藏身份",
+      "玩家淘汰",
+      "團隊",
       "角色能力"
     ],
     "versions_count": 10,
@@ -7901,9 +7901,9 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "模組地圖",
-      "Player Elimination",
-      "Team-Based Game",
+      "模組化地圖",
+      "玩家淘汰",
+      "團隊",
       "角色能力"
     ],
     "versions_count": 3,
@@ -8148,7 +8148,7 @@
       "合作",
       "擲骰",
       "格子移動",
-      "模組地圖",
+      "模組化地圖",
       "移動點",
       "角色扮演",
       "劇本/任務/戰役",

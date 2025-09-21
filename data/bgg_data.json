@@ -128,7 +128,7 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Stacking and Balancing"
+      "疊放平衡"
     ],
     "image": "assets/img/2821.jpg"
   },
@@ -174,9 +174,9 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Lose a Turn",
-      "Matching",
-      "Player Elimination",
+      "失去回合",
+      "配對",
+      "玩家淘汰",
       "互害"
     ],
     "image": "assets/img/399088.jpg"
@@ -230,8 +230,8 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Lose a Turn",
-      "Matching",
+      "失去回合",
+      "配對",
       "互害"
     ],
     "image": "assets/img/2223.jpg"
@@ -279,10 +279,10 @@
       "遊戲系統"
     ],
     "mechanics_zh": [
-      "Matching",
-      "Pattern Building",
+      "配對",
+      "圖樣建構",
       "圖形辨識",
-      "Team-Based Game",
+      "團隊",
       "板塊擺放"
     ],
     "image": "assets/img/2394.jpg"
@@ -329,8 +329,8 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Lose a Turn",
-      "Matching",
+      "失去回合",
+      "配對",
       "互害"
     ],
     "image": "assets/img/3347.jpg"
@@ -422,8 +422,8 @@
       "幽默"
     ],
     "mechanics_zh": [
-      "Storytelling",
-      "Voting"
+      "說故事",
+      "投票"
     ],
     "image": "assets/img/80942.jpg"
   },
@@ -470,9 +470,9 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Follow",
-      "Paper-and-Pencil",
-      "Pattern Building"
+      "跟隨行動",
+      "紙筆",
+      "圖樣建構"
     ],
     "image": "assets/img/183006.jpg"
   },
@@ -517,8 +517,8 @@
       "競速"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "Player Elimination",
+      "行動序列",
+      "玩家淘汰",
       "同時選擇行動"
     ],
     "image": "assets/img/209849.jpg"
@@ -566,7 +566,7 @@
     ],
     "mechanics_zh": [
       "合作",
-      "Team-Based Game"
+      "團隊"
     ],
     "image": "assets/img/224993.jpg"
   },
@@ -609,7 +609,7 @@
     ],
     "mechanics_zh": [
       "記憶",
-      "Storytelling"
+      "說故事"
     ],
     "image": "assets/img/90009.jpg"
   },
@@ -662,10 +662,10 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Acting",
+      "演出/扮演",
       "合作",
       "手牌管理",
-      "連線",
+      "連線/畫線",
       "圖形辨識",
       "Questions and Answers",
       "角色能力"
@@ -713,7 +713,7 @@
       "數字"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
       "手牌管理"
     ],
@@ -761,9 +761,9 @@
       "間諜"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
-      "Deduction",
-      "Team-Based Game",
+      "下注與詐唬",
+      "推理",
+      "團隊",
       "Traitor Game"
     ],
     "image": "assets/img/231748.jpg"
@@ -814,9 +814,9 @@
       "間諜"
     ],
     "mechanics_zh": [
-      "Hidden Roles",
+      "隱藏身份",
       "角色扮演",
-      "Team-Based Game",
+      "團隊",
       "Traitor Game"
     ],
     "image": "assets/img/236217.jpg"
@@ -872,12 +872,12 @@
       "懸疑／推理"
     ],
     "mechanics_zh": [
-      "戰役/卡驅動",
+      "戰役/卡牌驅動",
       "隱藏移動",
       "記憶",
-      "Point to Point Movement",
-      "Secret Unit Deployment",
-      "Team-Based Game",
+      "點到點移動",
+      "秘密部署",
+      "團隊",
       "角色能力"
     ],
     "image": "assets/img/192927.jpg"
@@ -970,7 +970,7 @@
       "公開選牌",
       "Push Your Luck",
       "收集套組",
-      "Turn Order: Pass Order"
+      "PASS 順序決定"
     ],
     "image": "assets/img/5782.jpg"
   },
@@ -1011,7 +1011,7 @@
       "動作／敏捷"
     ],
     "mechanics_zh": [
-      "Pattern Building"
+      "圖樣建構"
     ],
     "image": "assets/img/204734.jpg"
   },
@@ -1054,7 +1054,7 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Pattern Building"
+      "圖樣建構"
     ],
     "image": "assets/img/214276.jpg"
   },
@@ -1104,9 +1104,9 @@
       "戰鬥"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "記憶",
-      "Player Elimination",
+      "玩家淘汰",
       "Push Your Luck"
     ],
     "image": "assets/img/150312.jpg"
@@ -1156,13 +1156,13 @@
       "城市建設"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "合約",
+      "賓果",
+      "Contracts",
       "終局加分",
-      "Multi-Use Cards",
+      "多用途牌",
       "公開選牌",
-      "Paper-and-Pencil",
-      "Pattern Building",
+      "紙筆",
+      "圖樣建構",
       "同時選擇行動",
       "單人"
     ],
@@ -1214,9 +1214,9 @@
       "戰鬥"
     ],
     "mechanics_zh": [
-      "Bids As Wagers",
+      "賭注式出價",
       "記憶",
-      "Player Elimination",
+      "玩家淘汰",
       "Push Your Luck"
     ],
     "image": "assets/img/195043.jpg"
@@ -1268,7 +1268,7 @@
     "mechanics_zh": [
       "擲骰",
       "手牌管理",
-      "模組地圖",
+      "模組化地圖",
       "路網建設",
       "交易"
     ],
@@ -1315,7 +1315,7 @@
       "奇幻"
     ],
     "mechanics_zh": [
-      "Action Queue",
+      "行動序列",
       "區域控制",
       "角色能力"
     ],
@@ -1463,7 +1463,7 @@
       "即時制"
     ],
     "mechanics_zh": [
-      "Action Queue",
+      "行動序列",
       "圖形辨識"
     ],
     "image": "assets/img/166510.jpg"
@@ -1508,7 +1508,7 @@
       "卡牌"
     ],
     "mechanics_zh": [
-      "Bingo",
+      "賓果",
       "公開選牌",
       "Push Your Luck",
       "收集套組"
@@ -1612,7 +1612,7 @@
     "mechanics_zh": [
       "合作",
       "Deck, Bag, and Pool Building",
-      "模組地圖",
+      "模組化地圖",
       "角色扮演",
       "單人",
       "角色能力"
@@ -1674,7 +1674,7 @@
     "mechanics_zh": [
       "合作",
       "Deck, Bag, and Pool Building",
-      "模組地圖",
+      "模組化地圖",
       "角色扮演",
       "劇本/任務/戰役",
       "單人",
@@ -1740,11 +1740,11 @@
     "mechanics_zh": [
       "行動點",
       "區域移動",
-      "戰役/卡驅動",
+      "戰役/卡牌驅動",
       "合作",
       "Deck, Bag, and Pool Building",
-      "Map Addition",
-      "模組地圖",
+      "地圖擴增",
+      "模組化地圖",
       "角色扮演",
       "劇本/任務/戰役",
       "單人",
@@ -1796,7 +1796,7 @@
       "中世紀"
     ],
     "mechanics_zh": [
-      "Events",
+      "事件",
       "Movement Template"
     ],
     "image": "assets/img/310789.jpg"
@@ -1845,8 +1845,8 @@
       "鐵道"
     ],
     "mechanics_zh": [
-      "Connections",
-      "合約",
+      "連結/連線",
+      "Contracts",
       "終局加分",
       "手牌管理",
       "路網建設",
@@ -1901,8 +1901,8 @@
       "鐵道"
     ],
     "mechanics_zh": [
-      "Connections",
-      "合約",
+      "連結/連線",
+      "Contracts",
       "終局加分",
       "手牌管理",
       "路網建設",
@@ -1956,9 +1956,9 @@
     ],
     "mechanics_zh": [
       "隱藏移動",
-      "Point to Point Movement",
-      "Secret Unit Deployment",
-      "Team-Based Game"
+      "點到點移動",
+      "秘密部署",
+      "團隊"
     ],
     "image": "assets/img/438.jpg"
   },
@@ -2005,8 +2005,8 @@
       "科幻"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "合約",
+      "行動序列",
+      "Contracts",
       "公開選牌",
       "Race"
     ],
@@ -2204,7 +2204,7 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Player Elimination",
+      "玩家淘汰",
       "Race",
       "Relative Movement",
       "同時選擇行動"
@@ -2251,8 +2251,8 @@
     ],
     "mechanics_zh": [
       "同時選擇行動",
-      "Storytelling",
-      "Voting"
+      "說故事",
+      "投票"
     ],
     "image": "assets/img/121041.jpg"
   },
@@ -2392,10 +2392,10 @@
       "動物"
     ],
     "mechanics_zh": [
-      "Enclosure",
+      "圍地",
       "格子移動",
-      "Hexagon Grid",
-      "Pattern Movement",
+      "六角格",
+      "圖樣移動",
       "Pieces as Map",
       "Three Dimensional Movement",
       "板塊擺放"
@@ -2493,9 +2493,9 @@
       "益智／拼圖"
     ],
     "mechanics_zh": [
-      "Follow",
-      "Pattern Building",
-      "Score-and-Reset Game",
+      "跟隨行動",
+      "圖樣建構",
+      "計分後重置",
       "收集套組",
       "單人",
       "板塊擺放"
@@ -2552,10 +2552,10 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Hidden Roles",
-      "Player Elimination",
+      "隱藏身份",
+      "玩家淘汰",
       "Traitor Game",
-      "Voting"
+      "投票"
     ],
     "image": "assets/img/175549.jpg"
   },
@@ -2602,7 +2602,7 @@
       "航海"
     ],
     "mechanics_zh": [
-      "Bias",
+      "偏好/偏倚",
       "手牌管理",
       "取貨運送",
       "收集套組",
@@ -2653,7 +2653,7 @@
       "教育"
     ],
     "mechanics_zh": [
-      "Action Queue"
+      "行動序列"
     ],
     "image": "assets/img/201006.jpg"
   },
@@ -2802,7 +2802,7 @@
     "mechanics_zh": [
       "手牌管理",
       "剪刀石頭布",
-      "Voting"
+      "投票"
     ],
     "image": "assets/img/42448.jpg"
   },
@@ -2897,10 +2897,10 @@
       "運動"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "擲骰",
       "Real-Time",
-      "Track Movement"
+      "軌道移動"
     ],
     "image": "assets/img/351040.jpg"
   },
@@ -2949,7 +2949,7 @@
       "電子"
     ],
     "mechanics_zh": [
-      "Roll / Spin and Move",
+      "擲骰/旋轉前進",
       "可變設置"
     ],
     "image": "assets/img/137909.jpg"
@@ -3005,12 +3005,12 @@
     "mechanics_zh": [
       "擲骰",
       "終局加分",
-      "Hexagon Grid",
-      "Income",
+      "六角格",
+      "收益",
       "板塊擺放",
       "搶先手",
       "可變設置",
-      "工人放置"
+      "Turn Order"
     ],
     "image": "assets/img/359009.jpg"
   },
@@ -3062,15 +3062,15 @@
     ],
     "mechanics_zh": [
       "競標",
-      "Auction: Fixed Placement",
-      "Betting and Bluffing",
-      "Commodity Speculation",
-      "Constrained Bidding",
-      "Investment",
-      "Market",
+      "固定位置競標",
+      "下注與詐唬",
+      "商品投機",
+      "限制競標",
+      "投資",
+      "市場",
       "公開選牌",
-      "Stock Holding",
-      "Victory Points as a Resource"
+      "持股",
+      "分數作為資源"
     ],
     "image": "assets/img/161614.jpg"
   },
@@ -3164,7 +3164,7 @@
       "卡牌"
     ],
     "mechanics_zh": [
-      "Auction: Sealed Bid",
+      "暗標",
       "同時選擇行動"
     ],
     "image": "assets/img/175.jpg"
@@ -3215,9 +3215,9 @@
       "科幻"
     ],
     "mechanics_zh": [
-      "Closed Drafting",
+      "暗抽選牌",
       "擲骰",
-      "Die Icon Resolution",
+      "骰面圖示結算",
       "收集套組",
       "同時選擇行動"
     ],
@@ -3316,10 +3316,10 @@
       "競速"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "擲骰",
-      "Roll / Spin and Move",
-      "Track Movement",
+      "擲骰/旋轉前進",
+      "軌道移動",
       "可變設置"
     ],
     "image": "assets/img/260605.jpg"
@@ -3473,10 +3473,10 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Acting",
+      "演出/扮演",
       "角色扮演",
       "Single Loser Game",
-      "Storytelling"
+      "說故事"
     ],
     "image": "assets/img/18723.jpg"
   },
@@ -3523,7 +3523,7 @@
       "卡牌"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "手牌管理"
     ],
     "image": "assets/img/299169.jpg"
@@ -3584,8 +3584,8 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
-      "Bribery",
+      "下注與詐唬",
+      "賄賂",
       "手牌管理",
       "談判",
       "公開選牌",
@@ -3634,9 +3634,9 @@
       "抽象策略"
     ],
     "mechanics_zh": [
-      "合約",
-      "Income",
-      "Market",
+      "Contracts",
+      "收益",
+      "市場",
       "收集套組"
     ],
     "image": "assets/img/341256.jpg"
@@ -3685,10 +3685,10 @@
       "字詞"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
-      "Deduction",
-      "Score-and-Reset Game"
+      "推理",
+      "計分後重置"
     ],
     "image": "assets/img/254640.jpg"
   },
@@ -3738,7 +3738,7 @@
     ],
     "mechanics_zh": [
       "合作",
-      "Voting"
+      "投票"
     ],
     "image": "assets/img/366067.jpg"
   },
@@ -3879,7 +3879,7 @@
       "字詞"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
       "記憶"
     ],
@@ -3930,9 +3930,9 @@
       "間諜"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "記憶",
-      "Team-Based Game"
+      "團隊"
     ],
     "image": "assets/img/198773.jpg"
   },
@@ -3986,11 +3986,11 @@
       "字詞"
     ],
     "mechanics_zh": [
-      "Communication Limits",
-      "Deduction",
+      "限制溝通",
+      "推理",
       "記憶",
       "Race",
-      "Team-Based Game"
+      "團隊"
     ],
     "image": "assets/img/178900.jpg"
   },
@@ -4047,7 +4047,7 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Die Icon Resolution",
+      "骰面圖示結算",
       "Push Your Luck",
       "Re-rolling and Locking",
       "收集套組",
@@ -4101,8 +4101,8 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
-      "Team-Based Game"
+      "下注與詐唬",
+      "團隊"
     ],
     "image": "assets/img/367512.jpg"
   },
@@ -4153,9 +4153,9 @@
     ],
     "mechanics_zh": [
       "競標",
-      "Bids As Wagers",
+      "賭注式出價",
       "手牌管理",
-      "Player Elimination",
+      "玩家淘汰",
       "Predictive Bid"
     ],
     "image": "assets/img/92415.jpg"
@@ -4205,13 +4205,13 @@
       "文藝復興"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "擲骰",
       "終局加分",
       "公開選牌",
       "搶先手",
       "可變設置",
-      "工人放置",
+      "Turn Order",
       "骰子工人"
     ],
     "image": "assets/img/203993.jpg"
@@ -4259,7 +4259,7 @@
       "幽默"
     ],
     "mechanics_zh": [
-      "Betting and Bluffing",
+      "下注與詐唬",
       "Push Your Luck"
     ],
     "image": "assets/img/179245.jpg"
@@ -4307,11 +4307,11 @@
       "交通"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "Connections",
-      "連線",
+      "賓果",
+      "連結/連線",
+      "連線/畫線",
       "路網建設",
-      "Paper-and-Pencil",
+      "紙筆",
       "Race"
     ],
     "image": "assets/img/347013.jpg"
@@ -4359,7 +4359,7 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Score-and-Reset Game",
+      "計分後重置",
       "同時選擇行動"
     ],
     "image": "assets/img/268586.jpg"
@@ -4544,7 +4544,7 @@
       "電玩主題"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "公開選牌",
       "Race",
       "收集套組"
@@ -4596,7 +4596,7 @@
       "經濟"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "公開選牌",
       "Race",
       "收集套組"
@@ -4648,7 +4648,7 @@
       "文藝復興"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "公開選牌",
       "Race",
       "收集套組"
@@ -4701,9 +4701,9 @@
       "益智／拼圖"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "Layering",
-      "Pattern Building",
+      "賓果",
+      "圖層疊加",
+      "圖樣建構",
       "同時選擇行動",
       "板塊擺放"
     ],
@@ -4757,7 +4757,7 @@
     ],
     "mechanics_zh": [
       "Flicking",
-      "模組地圖",
+      "模組化地圖",
       "Race"
     ],
     "image": "assets/img/150.jpg"
@@ -4804,7 +4804,7 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Pattern Building"
+      "圖樣建構"
     ],
     "image": "assets/img/170041.jpg"
   },
@@ -4849,8 +4849,8 @@
       "益智／拼圖"
     ],
     "mechanics_zh": [
-      "Bingo",
-      "Pattern Building",
+      "賓果",
+      "圖樣建構",
       "板塊擺放"
     ],
     "image": "assets/img/128.jpg"
@@ -4944,12 +4944,12 @@
       "字詞"
     ],
     "mechanics_zh": [
-      "Communication Limits",
-      "Hidden Roles",
+      "限制溝通",
+      "隱藏身份",
       "記憶",
       "角色扮演",
-      "Storytelling",
-      "Team-Based Game"
+      "說故事",
+      "團隊"
     ],
     "image": "assets/img/198454.jpg"
   },
@@ -4997,7 +4997,7 @@
       "推理"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作"
     ],
     "image": "assets/img/247314.jpg"
@@ -5045,9 +5045,9 @@
       "字詞"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "Race",
-      "Team-Based Game"
+      "團隊"
     ],
     "image": "assets/img/147151.jpg"
   },
@@ -5173,10 +5173,10 @@
       "動物"
     ],
     "mechanics_zh": [
-      "Enclosure",
+      "圍地",
       "格子移動",
-      "Hexagon Grid",
-      "模組地圖"
+      "六角格",
+      "模組化地圖"
     ],
     "image": "assets/img/54137.jpg"
   },
@@ -5219,9 +5219,9 @@
       "航海"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "Betting and Bluffing",
-      "工人放置"
+      "行動序列",
+      "下注與詐唬",
+      "Turn Order"
     ],
     "image": "assets/img/192334.jpg"
   },
@@ -5270,7 +5270,7 @@
       "手牌管理",
       "路網建設",
       "公開選牌",
-      "Point to Point Movement"
+      "點到點移動"
     ],
     "image": "assets/img/180325.jpg"
   },
@@ -5367,7 +5367,7 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Multi-Use Cards",
+      "多用途牌",
       "談判",
       "收集套組",
       "交易"
@@ -5425,7 +5425,7 @@
       "格子移動",
       "記憶",
       "路網建設",
-      "Roll / Spin and Move"
+      "擲骰/旋轉前進"
     ],
     "image": "assets/img/41916.jpg"
   },
@@ -5494,9 +5494,9 @@
       "合作",
       "擲骰",
       "手牌管理",
-      "模組地圖",
+      "模組化地圖",
       "角色扮演",
-      "Team-Based Game",
+      "團隊",
       "Traitor Game",
       "角色能力"
     ],
@@ -5572,8 +5572,8 @@
       "合作",
       "擲骰",
       "手牌管理",
-      "Map Addition",
-      "模組地圖",
+      "地圖擴增",
+      "模組化地圖",
       "角色扮演",
       "劇本/任務/戰役",
       "單人",
@@ -5624,7 +5624,7 @@
     "mechanics_zh": [
       "競標",
       "吃墩",
-      "工人放置"
+      "Turn Order"
     ],
     "image": "assets/img/274688.jpg"
   },
@@ -5728,7 +5728,7 @@
     ],
     "mechanics_zh": [
       "Grid Coverage",
-      "模組地圖",
+      "模組化地圖",
       "公開選牌",
       "收集套組",
       "方格",
@@ -5778,9 +5778,9 @@
       "領地建設"
     ],
     "mechanics_zh": [
-      "Layering",
+      "圖層疊加",
       "公開選牌",
-      "Pattern Building",
+      "圖樣建構",
       "板塊擺放"
     ],
     "image": "assets/img/286145.jpg"
@@ -5924,7 +5924,7 @@
     ],
     "mechanics_zh": [
       "圖形辨識",
-      "Player Elimination"
+      "玩家淘汰"
     ],
     "image": "assets/img/206844.jpg"
   },
@@ -5973,9 +5973,9 @@
       "字詞"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "Targeted Clues",
-      "Team-Based Game"
+      "團隊"
     ],
     "image": "assets/img/273938.jpg"
   },
@@ -6017,7 +6017,7 @@
     ],
     "image_url": "https://cf.geekdo-images.com/hHZWXnUTMYDd_KTAM6Jwlw__original/img/lL6QJ69UmZT7CeljUcjyA47b-e0=/0x0/filters:format(jpeg)/pic3759421.jpg",
     "thumb_url": "https://cf.geekdo-images.com/hHZWXnUTMYDd_KTAM6Jwlw__small/img/O5XHaPOALYquS058qcXWVm5b_k4=/fit-in/200x150/filters:strip_icc()/pic3759421.jpg",
-    "versions_count": 41,
+    "versions_count": 42,
     "categories_zh": [
       "推理",
       "派對",
@@ -6025,10 +6025,10 @@
       "字詞"
     ],
     "mechanics_zh": [
-      "Communication Limits",
-      "Paper-and-Pencil",
+      "限制溝通",
+      "紙筆",
       "Targeted Clues",
-      "Team-Based Game"
+      "團隊"
     ],
     "image": "assets/img/225694.jpg"
   },
@@ -6081,8 +6081,8 @@
       "幽默"
     ],
     "mechanics_zh": [
-      "Auction: Turn Order Until Pass",
-      "Betting and Bluffing",
+      "輪流加價直到PASS",
+      "下注與詐唬",
       "手牌管理",
       "記憶",
       "收集套組",
@@ -6175,7 +6175,7 @@
     "mechanics_zh": [
       "記憶",
       "公開選牌",
-      "Pattern Building",
+      "圖樣建構",
       "收集套組",
       "可變階段順序"
     ],
@@ -6223,7 +6223,7 @@
       "間諜"
     ],
     "mechanics_zh": [
-      "Deduction",
+      "推理",
       "單人"
     ],
     "image": "assets/img/356123.jpg"
@@ -6273,7 +6273,7 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Storytelling"
+      "說故事"
     ],
     "image": "assets/img/8089.jpg"
   },
@@ -6371,10 +6371,10 @@
       "交通"
     ],
     "mechanics_zh": [
-      "Multi-Use Cards",
+      "多用途牌",
       "公開選牌",
       "Ordering",
-      "Score-and-Reset Game",
+      "計分後重置",
       "收集套組"
     ],
     "image": "assets/img/175293.jpg"
@@ -6426,12 +6426,12 @@
     ],
     "mechanics_zh": [
       "競標",
-      "Auction: Turn Order Until Pass",
-      "Catch the Leader",
-      "Income",
-      "Market",
+      "輪流加價直到PASS",
+      "追趕領先者",
+      "收益",
+      "市場",
       "路網建設",
-      "Turn Order: Stat-Based",
+      "屬性決定手順",
       "可變設置"
     ],
     "image": "assets/img/2651.jpg"
@@ -6475,8 +6475,8 @@
       "抽象策略"
     ],
     "mechanics_zh": [
-      "Action Queue",
-      "Point to Point Movement",
+      "行動序列",
+      "點到點移動",
       "同時選擇行動"
     ],
     "image": "assets/img/634.jpg"
@@ -6525,7 +6525,7 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Stacking and Balancing",
+      "疊放平衡",
       "互害"
     ],
     "image": "assets/img/17329.jpg"
@@ -6570,7 +6570,7 @@
       "兒童"
     ],
     "mechanics_zh": [
-      "Point to Point Movement",
+      "點到點移動",
       "收集套組"
     ],
     "image": "assets/img/85563.jpg"
@@ -6615,9 +6615,9 @@
       "推理"
     ],
     "mechanics_zh": [
-      "Deduction",
-      "Hexagon Grid",
-      "模組地圖",
+      "推理",
+      "六角格",
+      "模組化地圖",
       "圖形辨識"
     ],
     "image": "assets/img/246784.jpg"
@@ -6673,15 +6673,15 @@
       "即時制"
     ],
     "mechanics_zh": [
-      "Communication Limits",
+      "限制溝通",
       "合作",
-      "Deduction",
+      "推理",
       "Finale Ending",
       "手牌管理",
       "圖形辨識",
       "Real-Time",
-      "Storytelling",
-      "Voting"
+      "說故事",
+      "投票"
     ],
     "image": "assets/img/181304.jpg"
   },
@@ -6732,7 +6732,7 @@
     "mechanics_zh": [
       "手牌管理",
       "記憶",
-      "Player Elimination",
+      "玩家淘汰",
       "剪刀石頭布",
       "互害"
     ],
@@ -6777,7 +6777,7 @@
       "派對"
     ],
     "mechanics_zh": [
-      "Acting"
+      "演出/扮演"
     ],
     "image": "assets/img/289018.jpg"
   },
@@ -6860,7 +6860,7 @@
     ],
     "mechanics_zh": [
       "合作",
-      "Deduction",
+      "推理",
       "Ordering",
       "Player Judge",
       "Targeted Clues"
@@ -6958,15 +6958,15 @@
       "益智／拼圖"
     ],
     "mechanics_zh": [
-      "合約",
+      "Contracts",
       "擲骰",
       "終局加分",
       "Grid Coverage",
       "公開選牌",
-      "Pattern Building",
+      "圖樣建構",
       "收集套組",
       "單人",
-      "Turn Order: Progressive",
+      "遞進手順",
       "可變設置"
     ],
     "image": "assets/img/199561.jpg"
@@ -7021,13 +7021,13 @@
     ],
     "mechanics_zh": [
       "Action Drafting",
-      "Follow",
+      "跟隨行動",
       "手牌管理",
-      "Market",
-      "Multi-Use Cards",
+      "市場",
+      "多用途牌",
       "公開選牌",
       "收集套組",
-      "Turn Order: Progressive",
+      "遞進手順",
       "可變階段順序"
     ],
     "image": "assets/img/8217.jpg"
@@ -7077,7 +7077,7 @@
       "經濟"
     ],
     "mechanics_zh": [
-      "Income",
+      "收益",
       "公開選牌",
       "收集套組"
     ],
@@ -7122,7 +7122,7 @@
       "抽象策略"
     ],
     "mechanics_zh": [
-      "Enclosure",
+      "圍地",
       "方格",
       "板塊擺放"
     ],
@@ -7224,10 +7224,10 @@
     ],
     "mechanics_zh": [
       "格子移動",
-      "模組地圖",
+      "模組化地圖",
       "Real-Time",
       "方格",
-      "Turn Order: Stat-Based",
+      "屬性決定手順",
       "可變設置"
     ],
     "image": "assets/img/51.jpg"
@@ -7287,11 +7287,11 @@
     ],
     "mechanics_zh": [
       "手牌管理",
-      "Hidden Roles",
+      "隱藏身份",
       "Hidden Victory Points",
-      "Map Addition",
+      "地圖擴增",
       "路網建設",
-      "Score-and-Reset Game",
+      "計分後重置",
       "互害",
       "Traitor Game"
     ],
@@ -7391,8 +7391,8 @@
       "合作",
       "擲骰",
       "格子移動",
-      "模組地圖",
-      "Point to Point Movement",
+      "模組化地圖",
+      "點到點移動",
       "單人"
     ],
     "image": "assets/img/368956.jpg"
@@ -7444,7 +7444,7 @@
       "Deck, Bag, and Pool Building",
       "終局加分",
       "格子移動",
-      "Layering",
+      "圖層疊加",
       "板塊擺放",
       "可變設置"
     ],
@@ -7548,15 +7548,15 @@
     ],
     "mechanics_zh": [
       "Action Drafting",
-      "Action Queue",
-      "Constrained Bidding",
-      "Deduction",
+      "行動序列",
+      "限制競標",
+      "推理",
       "終局加分",
-      "Events",
+      "事件",
       "手牌管理",
       "公開選牌",
-      "Turn Order: Progressive",
-      "工人放置"
+      "遞進手順",
+      "Turn Order"
     ],
     "image": "assets/img/161970.jpg"
   },
@@ -7600,7 +7600,7 @@
       "即時制"
     ],
     "mechanics_zh": [
-      "Pattern Building",
+      "圖樣建構",
       "圖形辨識"
     ],
     "image": "assets/img/153479.jpg"
@@ -7749,9 +7749,9 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "Hidden Roles",
-      "Player Elimination",
-      "Team-Based Game",
+      "隱藏身份",
+      "玩家淘汰",
+      "團隊",
       "角色能力"
     ],
     "image": "assets/img/24068.jpg"
@@ -7808,9 +7808,9 @@
     ],
     "mechanics_zh": [
       "擲骰",
-      "模組地圖",
-      "Player Elimination",
-      "Team-Based Game",
+      "模組化地圖",
+      "玩家淘汰",
+      "團隊",
       "角色能力"
     ],
     "image": "assets/img/288098.jpg"
@@ -8050,7 +8050,7 @@
       "合作",
       "擲骰",
       "格子移動",
-      "模組地圖",
+      "模組化地圖",
       "移動點",
       "角色扮演",
       "劇本/任務/戰役",
