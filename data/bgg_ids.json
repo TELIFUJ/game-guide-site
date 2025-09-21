@@ -4788,15 +4788,16 @@
     "name_en_override": "",
     "alias_zh": "",
     "category_zh": "",
-    "price_msrp_twd": "",
-    "price_twd": "",
-    "used_price_twd": "",
+    "price_msrp_twd": "990",
+    "price_twd": "990",
+    "used_price_twd": "594",
     "price_note": "",
     "used_note": "",
-    "manual_override": "",
-    "stock": "",
+    "manual_override": "1",
+    "stock": "4",
     "description": "",
-    "image_override": ""
+    "image_override": "https://cf.geekdo-images.com/T27pOSV4o3HlFPSibHFWUA__small@2x/img/ap_HeWFrqTlfRAtcN3w0P9DqouA=/fit-in/400x300/filters:strip_icc()/pic3884764.jpg",
+    "bgg_id": 217449
   },
   {
     "name_zh": "數字九乘塔 (主/中文)",
@@ -4968,15 +4969,16 @@
     "name_en_override": "",
     "alias_zh": "",
     "category_zh": "",
-    "price_msrp_twd": "",
-    "price_twd": "",
-    "used_price_twd": "",
+    "price_msrp_twd": "2550",
+    "price_twd": "2550",
+    "used_price_twd": "1530",
     "price_note": "",
     "used_note": "",
-    "manual_override": "",
-    "stock": "",
+    "manual_override": "1",
+    "stock": "2",
     "description": "",
-    "image_override": ""
+    "image_override": "",
+    "bgg_id": 150
   },
   {
     "name_zh": "彈指賽車",
@@ -5179,15 +5181,16 @@
     "name_en_override": "",
     "alias_zh": "",
     "category_zh": "",
-    "price_msrp_twd": "",
-    "price_twd": "",
-    "used_price_twd": "",
+    "price_msrp_twd": "1090",
+    "price_twd": "1090",
+    "used_price_twd": "654",
     "price_note": "",
     "used_note": "",
-    "manual_override": "",
-    "stock": "",
+    "manual_override": "1",
+    "stock": "3",
     "description": "",
-    "image_override": ""
+    "image_override": "https://cf.geekdo-images.com/aoH0KLMXtBo7-AnHx6wceg__small@2x/img/o1hcy71-5PyWZOKRQafURwqyH78=/fit-in/400x300/filters:strip_icc()/pic3089347.jpg",
+    "bgg_id": 128
   },
   {
     "name_zh": "輕鬆放",
@@ -5232,7 +5235,8 @@
     "manual_override": "",
     "stock": "",
     "description": "",
-    "image_override": ""
+    "image_override": "",
+    "bgg_id": 162915
   },
   {
     "name_zh": "說夢人(主/中文)",
