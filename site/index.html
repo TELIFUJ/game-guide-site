@@ -183,10 +183,22 @@
     return en.map(s => CAT_MAP[s] || s).slice(0,10);
   }
   function getMechsZh(x){
-    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice(); // 全部顯示
-    const en = Array.isArray(x.mechanics) ? x.mechanics : [];
-    return [...new Set(en.map(s => MECH_MAP[s] || s))];
-  }
+  // 若後端已有 mechanics_zh，仍優先用
+  if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice();
+
+  // 前端備援：正規化字串 → 再查表
+  const en = Array.isArray(x.mechanics) ? x.mechanics : [];
+  const normalize = s => (s || "")
+    .replace(/\u00A0/g, " ")      // non-breaking space → 空白
+    .replace(/\s+/g, " ")         // 多重空白壓成 1 個
+    .trim();
+
+  return [...new Set(en.map(s => {
+    const key = normalize(s);
+    return MECH_MAP[key] || key;  // 查不到就回原文
+  }))];
+}
+
 
   // 價格
   function priceCandidates(x, includeUsed=true){
