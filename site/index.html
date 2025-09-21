@@ -9,7 +9,7 @@
     .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{border:1px solid #e5e7eb;padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    /* 不裁切—吃原圖比例 */
+    /* 不裁切：吃原圖比例 */
     .poster{width:100%;height:auto;background:#f3f4f6;border-radius:8px;display:block}
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:#6b7280}
@@ -17,6 +17,8 @@
     input,select{padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
     .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
     .chip{display:inline-block;font-size:12px;padding:3px 8px;border:1px solid #e5e7eb;border-radius:999px;background:#f8fafc}
+    .chip{cursor:pointer;text-decoration:none;color:inherit}
+    .chip.active{background:#eef2ff;border-color:#c7d2fe}
     .muted{color:#6b7280}
     .checkbox{display:flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
   </style>
@@ -50,6 +52,7 @@
 <div id="grid" class="grid"></div>
 
 <script>
+  // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
   // BGG 類別英→中（備援；後端 categories_zh 仍優先）
@@ -109,7 +112,28 @@
   const prefix = location.pathname.includes('/site/') ? '../' : '';
   const DATA_URL = prefix + 'data/games_full.json?ts=' + Date.now();
 
-  fetch(DATA_URL).then(r=>r.json()).then(d=>{ DATA=d; buildCategoryOptions(); render(); });
+  fetch(DATA_URL).then(r=>r.json()).then(d=>{
+    DATA=d;
+    buildCategoryOptions();
+    // URL 初始類別 (?cat=分類)
+    const u = new URL(location.href);
+    const catQ = u.searchParams.get('cat');
+    if (catQ){
+      HOT.checked = false; // 若熱門檔掉了分類，先關閉
+      buildCategoryOptions();
+      ensureCatOption(catQ);
+      C.value = catQ;
+    }
+    render();
+  });
+
+  // 確保某分類存在於下拉（熱門關掉或新分類時會用到）
+  function ensureCatOption(cat){
+    if (![...C.options].some(o=>o.value===cat)){
+      const o=document.createElement('option');
+      o.value=cat; o.textContent=cat; C.appendChild(o);
+    }
+  }
 
   // 下拉分類（只熱門或全部）
   function buildCategoryOptions(){
@@ -132,6 +156,26 @@
 
   [Q,C,S,PMIN,PMAX,INCL].forEach(el=>el.addEventListener('input',render));
   HOT.addEventListener('change', ()=>{ buildCategoryOptions(); render(); });
+
+  // 點 chip => 直接選分類（事件代理）
+  function selectCategory(cat){
+    if (HOT.checked){ // 熱門模式可能隱藏了目標分類
+      HOT.checked = false;
+      buildCategoryOptions();
+    }
+    ensureCatOption(cat);
+    C.value = cat;
+    render();
+    history.replaceState(null,"",location.pathname+"?cat="+encodeURIComponent(cat));
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  G.addEventListener('click', (e)=>{
+    const a = e.target.closest('.cat-link');
+    if (!a) return;
+    e.preventDefault();
+    const cat = a.dataset.cat;
+    if (cat) selectCategory(cat);
+  });
 
   function render(){
     let list = DATA.slice();
@@ -175,6 +219,7 @@
     G.innerHTML = list.map(x => {
       const cz = getCatsZh(x);
       const imgSrc = (x.image||'').startsWith('http') ? x.image : (prefix+(x.image||''));
+      const chosen = C.value;
       return `
         <div class="card">
           <img class="poster" loading="lazy" src="${imgSrc}"
@@ -184,7 +229,9 @@
           <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
           ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
 
-          <div class="chips">${cz.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+          <div class="chips">
+            ${cz.map(t=>`<a href="#" class="chip cat-link ${t===chosen?'active':''}" data-cat="${t}">${t}</a>`).join('')}
+          </div>
 
           <div class="price">
             ${x.price_msrp_twd?`<small>新品參考價（未折）$${x.price_msrp_twd}</small><br>`:''}
