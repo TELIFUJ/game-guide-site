@@ -13,6 +13,7 @@
     .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{position:relative;border:1px solid var(--border);padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    /* 不裁切海報：吃原圖比例 */
     .poster{width:100%;height:auto;background:#f3f4f6;border-radius:8px;display:block}
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:var(--muted)}
@@ -26,9 +27,21 @@
     .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
     .btn{padding:8px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;cursor:pointer}
     .btn:active{transform:translateY(1px)}
-    .star{position:absolute;top:10px;right:10px;border:none;background:transparent;cursor:pointer;font-size:22px;line-height:1}
-    .star.fav{color:#f59e0b} /* 金色 */
     .row{display:flex;gap:8px;align-items:center}
+
+    /* 可愛收藏按鈕（放大約 20%） */
+    .fav-btn{
+      position:absolute;top:10px;right:10px;
+      width:40px;height:40px;             /* 大一點 */
+      display:flex;align-items:center;justify-content:center;
+      background:#fff;border:1px solid var(--border);border-radius:999px;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+    }
+    .fav-btn .star{font-size:22px;line-height:1}
+    .fav-btn:hover{ transform:scale(1.06); box-shadow:0 4px 14px rgba(0,0,0,.08) }
+    .fav-btn.active{ background:#fff7cc; border-color:#facc15 } /* 選取時淡黃 */
   </style>
 </head>
 <body>
@@ -83,7 +96,7 @@
   // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  // ====== 英→中備援映射 ======
+  // ====== 英→中備援映射（前端備援；後端仍以 *_zh 欄位優先）======
   const CAT_MAP = {
     "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
     "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
@@ -104,13 +117,12 @@
     "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
   };
 
-  // 常見機制英→中（備援；若後端將來提供 mechanics_zh 會優先）
   const MECH_MAP = {
     "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
     "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"劇本／戰役卡驅動",
-    "Card Drafting":"選牌","Cooperative Game":"合作","Contracts":"合約","Deck Construction":"牌庫構築",
-    "Dice Rolling":"擲骰","End Game Bonuses":"終局加分","Grid Movement":"格子移動",
-    "Hand Management":"手牌管理","Hidden Movement":"隱藏移動","Humor":"幽默",
+    "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
+    "Contracts":"合約","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","End Game Bonuses":"終局加分",
+    "Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
     "Line Drawing":"連線","Loans":"借貸","Memory":"記憶","Modular Board":"模組化地圖",
     "Movement Points":"移動點","Network and Route Building":"路網建設","Negotiation":"談判",
     "Open Drafting":"公開選牌","Ownership":"所有權","Pattern Recognition":"圖形辨識",
@@ -149,21 +161,25 @@
 
   let DATA=[], page=1;
 
+  // 收藏儲存
   const favKey = 'bg_favs';
   const favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
   function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
+  function idOf(x){ return x.id || String(x.bgg_id || (x.name_zh||x.name_en)); }
 
+  // 類別 / 機制中文
   function getCatsZh(x){
     if (Array.isArray(x.categories_zh) && x.categories_zh.length) return x.categories_zh.slice(0,10);
     const en = Array.isArray(x.categories) ? x.categories : [];
     return en.map(s => CAT_MAP[s] || s).slice(0,10);
   }
   function getMechsZh(x){
-    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice(); // 全部
+    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice(); // 全部顯示
     const en = Array.isArray(x.mechanics) ? x.mechanics : [];
-    // 全部轉中文，不裁切
     return [...new Set(en.map(s => MECH_MAP[s] || s))];
   }
+
+  // 價格
   function priceCandidates(x, includeUsed=true){
     const out=[]; if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
     if (includeUsed && x.used_price_twd!=null && x.used_price_twd!=="") out.push(Number(x.used_price_twd));
@@ -174,7 +190,7 @@
     return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
   }
 
-  // 下載 CSV（目前列表／或只看收藏時就匯出收藏）
+  // 匯出
   function downloadCSV(rows){
     const headers = ["name_zh","name_en","categories_zh","mechanics_zh","price_twd","used_price_twd","stock","bgg_url"];
     const lines = [headers.join(",")];
@@ -198,10 +214,10 @@
 
   function emailFavList(rows){
     const body = rows.map((x,i)=>`${i+1}. ${x.name_zh||x.name_en||""}
-  ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
-  機制：${getMechsZh(x).join(" / ")}
-  價格：${x.price_twd??"-"}｜二手：${x.used_price_twd??"-"}
-  連結：${x.bgg_url||""}\n`).join("\n");
+${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
+機制：${getMechsZh(x).join(" / ")}
+價格：${x.price_twd??"-"}｜二手：${x.used_price_twd??"-"}
+連結：${x.bgg_url||""}\n`).join("\n");
     const mailto = `mailto:?subject=${encodeURIComponent("收藏清單")}&body=${encodeURIComponent(body)}`;
     location.href = mailto;
   }
@@ -209,8 +225,8 @@
   // ====== 載入資料 ======
   fetch(DATA_URL).then(r=>r.json()).then(d=>{
     DATA=d;
-    buildOptions(); // 下拉
-    // 初始 URL 參數
+    buildOptions();
+    // URL 預設
     const u = new URL(location.href);
     const catQ = u.searchParams.get('cat'), mechQ = u.searchParams.get('mech');
     if (catQ){ HOTC.checked=false; buildOptions(); ensureOption(CAT, catQ); CAT.value=catQ; }
@@ -252,7 +268,7 @@
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
 
-  // 取得篩選後資料（也提供不分頁的版本給 CSV/Email）
+  // 篩選（CSV/Email 會用到不分頁）
   function filtered(noPaging=false){
     let list = DATA.slice();
 
@@ -301,19 +317,21 @@
     return {total, pages, pageRows, pagedAll:list};
   }
 
-  function idOf(x){ return x.id || String(x.bgg_id || (x.name_zh||x.name_en)); }
-
   function toggleFav(id){
     if (favs.has(id)) favs.delete(id); else favs.add(id);
-    saveFavs(); render(); // 重新畫，星星與統計會更新
+    saveFavs(); render(); // 星星/統計同步更新
   }
 
   function render(){
     const {total, pages, pageRows} = filtered();
     const allFavCount = favs.size;
-    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
-    PAGE_INFO.textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
-    PREV.disabled = (page<=1); NEXT.disabled = (page>=pages);
+    // 總數顯示用 DATA.length（全庫），目前顯示用 total
+    document.getElementById("stats").textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
+    document.getElementById("pageInfo").textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
+    document.getElementById("prev").disabled = (page<=1);
+    document.getElementById("next").disabled = (page>=pages);
+
+    const prefix = location.pathname.includes('/site/') ? '../' : '';
 
     G.innerHTML = pageRows.map(x=>{
       const cz = getCatsZh(x);
@@ -325,8 +343,8 @@
 
       return `
       <div class="card">
-        <button class="star ${fav?'fav':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite">
-          ${fav?'★':'☆'}
+        <button class="fav-btn ${fav?'active':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite">
+          <span class="star">${fav?'⭐':'☆'}</span>
         </button>
 
         <img class="poster" loading="lazy" src="${imgSrc}"
@@ -361,7 +379,7 @@
     }).join('');
 
     // 事件代理：收藏／點 chip 篩選
-    G.querySelectorAll('.star').forEach(btn=>{
+    G.querySelectorAll('.fav-btn').forEach(btn=>{
       btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
     });
     G.querySelectorAll('.chip.cat').forEach(a=>{
