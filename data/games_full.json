@@ -369,7 +369,7 @@
     "categories_zh": [
       "唬人",
       "推理",
-      "Humor"
+      "幽默"
     ],
     "mechanics": [
       "Storytelling",
@@ -454,7 +454,7 @@
     "categories_zh": [
       "推理",
       "恐怖",
-      "Murder / Mystery",
+      "推理/謀殺",
       "派對"
     ],
     "mechanics": [
@@ -545,7 +545,7 @@
     ],
     "categories_zh": [
       "卡牌",
-      "Spies / Secret Agents"
+      "間諜"
     ],
     "mechanics": [
       "Betting and Bluffing",
@@ -593,7 +593,7 @@
       "唬人",
       "卡牌",
       "派對",
-      "Spies / Secret Agents"
+      "間諜"
     ],
     "mechanics": [
       "Hidden Roles",
@@ -643,7 +643,7 @@
       "戰鬥",
       "恐怖",
       "影視／廣播主題",
-      "Murder / Mystery"
+      "推理/謀殺"
     ],
     "mechanics": [
       "Campaign / Battle Card Driven",
@@ -1831,7 +1831,7 @@
       "動物",
       "唬人",
       "派對",
-      "Pirates"
+      "海盜"
     ],
     "mechanics": [
       "Hand Management",
@@ -2090,7 +2090,7 @@
     "categories_zh": [
       "抽象策略",
       "動物",
-      "Puzzle"
+      "益智"
     ],
     "mechanics": [
       "Follow",
@@ -2142,7 +2142,7 @@
       "卡牌",
       "推理",
       "派對",
-      "Print & Play"
+      "自印版"
     ],
     "mechanics": [
       "Hand Management",
@@ -2185,7 +2185,7 @@
       "Nautical"
     ],
     "categories_zh": [
-      "Nautical"
+      "航海"
     ],
     "mechanics": [
       "Bias",
@@ -2233,7 +2233,7 @@
     "categories_zh": [
       "抽象策略",
       "動物",
-      "Educational"
+      "教育"
     ],
     "mechanics": [
       "Action Queue"
@@ -2320,7 +2320,7 @@
       "Ancient",
       "Dice",
       "奇幻",
-      "Mythology"
+      "神話"
     ],
     "mechanics": [
       "Deck, Bag, and Pool Building",
@@ -2365,7 +2365,7 @@
     ],
     "categories_zh": [
       "卡牌",
-      "Humor",
+      "幽默",
       "派對"
     ],
     "mechanics": [
@@ -2454,9 +2454,9 @@
     "categories_zh": [
       "動物",
       "派對",
-      "Racing",
+      "競速",
       "即時制",
-      "Sports"
+      "運動"
     ],
     "mechanics": [
       "Betting and Bluffing",
@@ -2504,7 +2504,7 @@
       "動作／巧手",
       "動物",
       "兒童",
-      "Electronic"
+      "電子"
     ],
     "mechanics": [
       "Roll / Spin and Move",
@@ -2547,8 +2547,8 @@
     ],
     "categories_zh": [
       "Dice",
-      "Territory Building",
-      "Video Game Theme"
+      "領地建設",
+      "電玩主題"
     ],
     "mechanics": [
       "Dice Rolling",
@@ -2647,7 +2647,7 @@
     "categories_zh": [
       "冒險",
       "小說改編",
-      "Racing",
+      "競速",
       "交通"
     ],
     "mechanics": [
@@ -2733,7 +2733,7 @@
     ],
     "categories_zh": [
       "動物",
-      "Prehistoric",
+      "史前",
       "科幻"
     ],
     "mechanics": [
@@ -2826,7 +2826,7 @@
       "動物",
       "Arabian",
       "Dice",
-      "Racing"
+      "競速"
     ],
     "mechanics": [
       "Betting and Bluffing",
@@ -2918,7 +2918,7 @@
     "categories_zh": [
       "唬人",
       "卡牌",
-      "Humor",
+      "幽默",
       "談判",
       "即時制"
     ],
@@ -2966,7 +2966,7 @@
     "categories_zh": [
       "卡牌",
       "奇幻",
-      "Humor",
+      "幽默",
       "派對"
     ],
     "mechanics": [
@@ -3061,7 +3061,7 @@
     "categories_zh": [
       "唬人",
       "卡牌",
-      "Humor",
+      "幽默",
       "中世紀",
       "談判",
       "小說改編",
@@ -3156,7 +3156,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "Word Game"
+      "文字"
     ],
     "mechanics": [
       "Communication Limits",
@@ -3202,8 +3202,8 @@
     ],
     "categories_zh": [
       "卡牌",
-      "Humor",
-      "Music",
+      "幽默",
+      "音樂",
       "派對"
     ],
     "mechanics": [
@@ -3289,7 +3289,7 @@
     "categories_zh": [
       "動作／巧手",
       "派對",
-      "Puzzle"
+      "益智"
     ],
     "mechanics": [
       "Pattern Recognition"
@@ -3333,8 +3333,8 @@
     "categories_zh": [
       "卡牌",
       "推理",
-      "Spies / Secret Agents",
-      "Word Game"
+      "間諜",
+      "文字"
     ],
     "mechanics": [
       "Communication Limits",
@@ -3381,7 +3381,7 @@
       "卡牌",
       "推理",
       "派對",
-      "Spies / Secret Agents"
+      "間諜"
     ],
     "mechanics": [
       "Communication Limits",
@@ -3429,8 +3429,8 @@
       "卡牌",
       "推理",
       "派對",
-      "Spies / Secret Agents",
-      "Word Game"
+      "間諜",
+      "文字"
     ],
     "mechanics": [
       "Communication Limits",
@@ -3481,8 +3481,8 @@
       "Ancient",
       "Dice",
       "中世紀",
-      "Political",
-      "Territory Building",
+      "政治",
+      "領地建設",
       "戰棋"
     ],
     "mechanics": [
@@ -3672,7 +3672,7 @@
     "categories_zh": [
       "唬人",
       "卡牌",
-      "Humor"
+      "幽默"
     ],
     "mechanics": [
       "Betting and Bluffing",
@@ -3929,7 +3929,7 @@
       "卡牌",
       "經濟",
       "影視／廣播主題",
-      "Video Game Theme"
+      "電玩主題"
     ],
     "mechanics": [
       "Contracts",
@@ -4067,7 +4067,7 @@
     "categories_zh": [
       "抽象策略",
       "數字",
-      "Puzzle"
+      "益智"
     ],
     "mechanics": [
       "Bingo",
@@ -4117,8 +4117,8 @@
       "動作／巧手",
       "兒童",
       "派對",
-      "Racing",
-      "Sports"
+      "競速",
+      "運動"
     ],
     "mechanics": [
       "Flicking",
@@ -4204,7 +4204,7 @@
     ],
     "categories_zh": [
       "抽象策略",
-      "Puzzle"
+      "益智"
     ],
     "mechanics": [
       "Bingo",
@@ -4290,7 +4290,7 @@
       "推理",
       "派對",
       "即時制",
-      "Word Game"
+      "文字"
     ],
     "mechanics": [
       "Communication Limits",
@@ -4384,7 +4384,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "Word Game"
+      "文字"
     ],
     "mechanics": [
       "Communication Limits",
@@ -4546,7 +4546,7 @@
       "Nautical"
     ],
     "categories_zh": [
-      "Nautical"
+      "航海"
     ],
     "mechanics": [
       "Action Queue",
@@ -4678,7 +4678,7 @@
     ],
     "categories_zh": [
       "卡牌",
-      "Farming",
+      "農場",
       "談判"
     ],
     "mechanics": [
@@ -4727,7 +4727,7 @@
     "categories_zh": [
       "兒童",
       "奇幻",
-      "Maze",
+      "迷宮",
       "記憶"
     ],
     "mechanics": [
@@ -4786,8 +4786,8 @@
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "Murder / Mystery",
-      "Puzzle"
+      "推理/謀殺",
+      "益智"
     ],
     "mechanics": [
       "Area Movement",
@@ -4849,10 +4849,10 @@
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "Murder / Mystery",
-      "Mythology",
+      "推理/謀殺",
+      "神話",
       "小說改編",
-      "Puzzle"
+      "益智"
     ],
     "mechanics": [
       "Area Movement",
@@ -4993,7 +4993,7 @@
     ],
     "categories_zh": [
       "動物",
-      "Puzzle"
+      "益智"
     ],
     "mechanics": [
       "Grid Coverage",
@@ -5039,7 +5039,7 @@
     ],
     "categories_zh": [
       "卡牌",
-      "Territory Building"
+      "領地建設"
     ],
     "mechanics": [
       "Layering",
@@ -5128,7 +5128,7 @@
     ],
     "categories_zh": [
       "推理",
-      "Music",
+      "音樂",
       "小說改編"
     ],
     "mechanics": [
@@ -5172,7 +5172,7 @@
     ],
     "categories_zh": [
       "動作／巧手",
-      "Puzzle",
+      "益智",
       "即時制"
     ],
     "mechanics": [

@@ -380,7 +380,7 @@
     "categories_zh": [
       "唬人",
       "推理",
-      "Humor"
+      "幽默"
     ],
     "image": "assets/img/80942.jpg"
   },
@@ -468,7 +468,7 @@
     "categories_zh": [
       "推理",
       "恐怖",
-      "Murder / Mystery",
+      "推理/謀殺",
       "派對"
     ],
     "image": "assets/img/280136.jpg"
@@ -554,7 +554,7 @@
     "versions_count": 9,
     "categories_zh": [
       "卡牌",
-      "Spies / Secret Agents"
+      "間諜"
     ],
     "image": "assets/img/231748.jpg"
   },
@@ -601,7 +601,7 @@
       "唬人",
       "卡牌",
       "派對",
-      "Spies / Secret Agents"
+      "間諜"
     ],
     "image": "assets/img/236217.jpg"
   },
@@ -653,7 +653,7 @@
       "戰鬥",
       "恐怖",
       "影視／廣播主題",
-      "Murder / Mystery"
+      "推理/謀殺"
     ],
     "image": "assets/img/192927.jpg"
   },
@@ -1820,7 +1820,7 @@
       "動物",
       "唬人",
       "派對",
-      "Pirates"
+      "海盜"
     ],
     "image": "assets/img/30539.jpg"
   },
@@ -2079,7 +2079,7 @@
     "categories_zh": [
       "抽象策略",
       "動物",
-      "Puzzle"
+      "益智"
     ],
     "image": "assets/img/339484.jpg"
   },
@@ -2129,7 +2129,7 @@
       "卡牌",
       "推理",
       "派對",
-      "Print & Play"
+      "自印版"
     ],
     "image": "assets/img/175549.jpg"
   },
@@ -2173,7 +2173,7 @@
     "versions_count": 13,
     "image_version_id": "517748",
     "categories_zh": [
-      "Nautical"
+      "航海"
     ],
     "image": "assets/img/13308.jpg"
   },
@@ -2216,7 +2216,7 @@
     "categories_zh": [
       "抽象策略",
       "動物",
-      "Educational"
+      "教育"
     ],
     "image": "assets/img/201006.jpg"
   },
@@ -2306,7 +2306,7 @@
       "Ancient",
       "Dice",
       "奇幻",
-      "Mythology"
+      "神話"
     ],
     "image": "assets/img/194594.jpg"
   },
@@ -2349,7 +2349,7 @@
     "versions_count": 2,
     "categories_zh": [
       "卡牌",
-      "Humor",
+      "幽默",
       "派對"
     ],
     "image": "assets/img/42448.jpg"
@@ -2439,9 +2439,9 @@
     "categories_zh": [
       "動物",
       "派對",
-      "Racing",
+      "競速",
       "即時制",
-      "Sports"
+      "運動"
     ],
     "image": "assets/img/351040.jpg"
   },
@@ -2487,7 +2487,7 @@
       "動作／巧手",
       "動物",
       "兒童",
-      "Electronic"
+      "電子"
     ],
     "image": "assets/img/137909.jpg"
   },
@@ -2536,8 +2536,8 @@
     "image_version_id": "603904",
     "categories_zh": [
       "Dice",
-      "Territory Building",
-      "Video Game Theme"
+      "領地建設",
+      "電玩主題"
     ],
     "image": "assets/img/359009.jpg"
   },
@@ -2629,7 +2629,7 @@
     "categories_zh": [
       "冒險",
       "小說改編",
-      "Racing",
+      "競速",
       "交通"
     ],
     "image": "assets/img/204599.jpg"
@@ -2718,7 +2718,7 @@
     "image_version_id": "602572",
     "categories_zh": [
       "動物",
-      "Prehistoric",
+      "史前",
       "科幻"
     ],
     "image": "assets/img/264055.jpg"
@@ -2810,7 +2810,7 @@
       "動物",
       "Arabian",
       "Dice",
-      "Racing"
+      "競速"
     ],
     "image": "assets/img/260605.jpg"
   },
@@ -2900,7 +2900,7 @@
     "categories_zh": [
       "唬人",
       "卡牌",
-      "Humor",
+      "幽默",
       "談判",
       "即時制"
     ],
@@ -2949,7 +2949,7 @@
     "categories_zh": [
       "卡牌",
       "奇幻",
-      "Humor",
+      "幽默",
       "派對"
     ],
     "image": "assets/img/18723.jpg"
@@ -3047,7 +3047,7 @@
     "categories_zh": [
       "唬人",
       "卡牌",
-      "Humor",
+      "幽默",
       "中世紀",
       "談判",
       "小說改編",
@@ -3137,7 +3137,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "Word Game"
+      "文字"
     ],
     "image": "assets/img/254640.jpg"
   },
@@ -3181,8 +3181,8 @@
     "image_version_id": "633698",
     "categories_zh": [
       "卡牌",
-      "Humor",
-      "Music",
+      "幽默",
+      "音樂",
       "派對"
     ],
     "image": "assets/img/366067.jpg"
@@ -3267,7 +3267,7 @@
     "categories_zh": [
       "動作／巧手",
       "派對",
-      "Puzzle"
+      "益智"
     ],
     "image": "assets/img/218637.jpg"
   },
@@ -3312,8 +3312,8 @@
     "categories_zh": [
       "卡牌",
       "推理",
-      "Spies / Secret Agents",
-      "Word Game"
+      "間諜",
+      "文字"
     ],
     "image": "assets/img/224037.jpg"
   },
@@ -3359,7 +3359,7 @@
       "卡牌",
       "推理",
       "派對",
-      "Spies / Secret Agents"
+      "間諜"
     ],
     "image": "assets/img/198773.jpg"
   },
@@ -3409,8 +3409,8 @@
       "卡牌",
       "推理",
       "派對",
-      "Spies / Secret Agents",
-      "Word Game"
+      "間諜",
+      "文字"
     ],
     "image": "assets/img/178900.jpg"
   },
@@ -3461,8 +3461,8 @@
       "Ancient",
       "Dice",
       "中世紀",
-      "Political",
-      "Territory Building",
+      "政治",
+      "領地建設",
       "戰棋"
     ],
     "image": "assets/img/28086.jpg"
@@ -3647,7 +3647,7 @@
     "categories_zh": [
       "唬人",
       "卡牌",
-      "Humor"
+      "幽默"
     ],
     "image": "assets/img/179245.jpg"
   },
@@ -3905,7 +3905,7 @@
       "卡牌",
       "經濟",
       "影視／廣播主題",
-      "Video Game Theme"
+      "電玩主題"
     ],
     "image": "assets/img/406291.jpg"
   },
@@ -4044,7 +4044,7 @@
     "categories_zh": [
       "抽象策略",
       "數字",
-      "Puzzle"
+      "益智"
     ],
     "image": "assets/img/217449.jpg"
   },
@@ -4091,8 +4091,8 @@
       "動作／巧手",
       "兒童",
       "派對",
-      "Racing",
-      "Sports"
+      "競速",
+      "運動"
     ],
     "image": "assets/img/150.jpg"
   },
@@ -4177,7 +4177,7 @@
     "versions_count": 27,
     "categories_zh": [
       "抽象策略",
-      "Puzzle"
+      "益智"
     ],
     "image": "assets/img/128.jpg"
   },
@@ -4264,7 +4264,7 @@
       "推理",
       "派對",
       "即時制",
-      "Word Game"
+      "文字"
     ],
     "image": "assets/img/198454.jpg"
   },
@@ -4353,7 +4353,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "Word Game"
+      "文字"
     ],
     "image": "assets/img/147151.jpg"
   },
@@ -4511,7 +4511,7 @@
     "thumb_url": "https://cf.geekdo-images.com/L__E-r0-UraNl8839Mcpfg__small/img/BTRW7S-tKn2syvtBeVO3zRwlb-w=/fit-in/200x150/filters:strip_icc()/pic3013002.png",
     "versions_count": 5,
     "categories_zh": [
-      "Nautical"
+      "航海"
     ],
     "image": "assets/img/192334.jpg"
   },
@@ -4642,7 +4642,7 @@
     "versions_count": 65,
     "categories_zh": [
       "卡牌",
-      "Farming",
+      "農場",
       "談判"
     ],
     "image": "assets/img/11.jpg"
@@ -4690,7 +4690,7 @@
     "categories_zh": [
       "兒童",
       "奇幻",
-      "Maze",
+      "迷宮",
       "記憶"
     ],
     "image": "assets/img/41916.jpg"
@@ -4752,8 +4752,8 @@
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "Murder / Mystery",
-      "Puzzle"
+      "推理/謀殺",
+      "益智"
     ],
     "image": "assets/img/255823.jpg"
   },
@@ -4817,10 +4817,10 @@
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "Murder / Mystery",
-      "Mythology",
+      "推理/謀殺",
+      "神話",
       "小說改編",
-      "Puzzle"
+      "益智"
     ],
     "image": "assets/img/205059.jpg"
   },
@@ -4952,7 +4952,7 @@
     "versions_count": 18,
     "categories_zh": [
       "動物",
-      "Puzzle"
+      "益智"
     ],
     "image": "assets/img/219513.jpg"
   },
@@ -4995,7 +4995,7 @@
     "versions_count": 3,
     "categories_zh": [
       "卡牌",
-      "Territory Building"
+      "領地建設"
     ],
     "image": "assets/img/286145.jpg"
   },
@@ -5080,7 +5080,7 @@
     "versions_count": 1,
     "categories_zh": [
       "推理",
-      "Music",
+      "音樂",
       "小說改編"
     ],
     "image": "assets/img/145645.jpg"
@@ -5123,7 +5123,7 @@
     "versions_count": 9,
     "categories_zh": [
       "動作／巧手",
-      "Puzzle",
+      "益智",
       "即時制"
     ],
     "image": "assets/img/206844.jpg"
