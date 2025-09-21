@@ -1,26 +1,26 @@
 bgg_mechanism_en,mechanism_zh
-Acting,演出/扮演
-Action Drafting,
+Acting,演技／表演
+Action Drafting,行動選擇（輪抽）
 Action Points,行動點
 Action Queue,行動序列
 Area Majority / Influence,區域控制
 Area Movement,區域移動
 Auction / Bidding,競標
-Auction: Fixed Placement,固定位置競標
-Auction: Sealed Bid,暗標
-Auction: Turn Order Until Pass,輪流加價直到PASS
-Betting and Bluffing,下注與詐唬
-Bias,偏好/偏倚
-Bids As Wagers,賭注式出價
+Auction: Fixed Placement,固定出價位
+Auction: Sealed Bid,密封標
+Auction: Turn Order Until Pass,依序出價至棄權
+Betting and Bluffing,下注與唬人
+Bias,偏誤
+Bids As Wagers,下注式出價
 Bingo,賓果
 Bribery,賄賂
-Campaign / Battle Card Driven,戰役/卡牌驅動
+Campaign / Battle Card Driven,戰役／卡驅動
 Catch the Leader,追趕領先者
-Closed Drafting,暗抽選牌
+Closed Drafting,封閉輪抽
 Commodity Speculation,商品投機
-Communication Limits,限制溝通
-Connections,連結/連線
-Constrained Bidding,限制競標
+Communication Limits,溝通限制
+Connections,連線／連結
+Constrained Bidding,限制式競標
 Contracts,合約
 Cooperative Game,合作
 "Deck, Bag, and Pool Building",
@@ -30,87 +30,87 @@ Die Icon Resolution,骰面圖示結算
 Enclosure,圍地
 End Game Bonuses,終局加分
 Events,事件
-Finale Ending,
-Flicking,
-Follow,跟隨行動
-Grid Coverage,
+Finale Ending,終章結束
+Flicking,彈射
+Follow,跟隨
+Grid Coverage,格面覆蓋
 Grid Movement,格子移動
 Hand Management,手牌管理
 Hexagon Grid,六角格
 Hidden Movement,隱藏移動
-Hidden Roles,隱藏身份
-Hidden Victory Points,
-Income,收益
+Hidden Roles,隱藏身分
+Hidden Victory Points,隱藏分數
+Income,收入
 Investment,投資
-Layering,圖層疊加
-Line Drawing,連線/畫線
+Layering,疊放
+Line Drawing,連線描繪
 Loans,借貸
 Lose a Turn,失去回合
 Map Addition,地圖擴增
-Market,市場
+Market,市集
 Matching,配對
-Melding and Splaying,
+Melding and Splaying,攤牌與扇形
 Memory,記憶
-Modular Board,模組化地圖
+Modular Board,模組地圖
 Movement Points,移動點
-Movement Template,
-Multi-Use Cards,多用途牌
+Movement Template,移動模板
+Multi-Use Cards,多用途卡
 Negotiation,談判
 Network and Route Building,路網建設
-Open Drafting,公開選牌
-Ordering,
+Open Drafting,公開輪抽
+Ordering,排序
 Ownership,所有權
 Paper-and-Pencil,紙筆
-Pattern Building,圖樣建構
-Pattern Movement,圖樣移動
+Pattern Building,圖案建構
+Pattern Movement,圖案移動
 Pattern Recognition,圖形辨識
 Pick-up and Deliver,取貨運送
-Pieces as Map,
+Pieces as Map,棋子即地圖
 Player Elimination,玩家淘汰
-Player Judge,
-Point to Point Movement,點到點移動
-Predictive Bid,
-Push Your Luck,
-Questions and Answers,
-Race,
-Random Production,
-Re-rolling and Locking,
-Real-Time,
-Relative Movement,
-Resource to Move,
+Player Judge,玩家裁決
+Point to Point Movement,點對點移動
+Predictive Bid,預測出價
+Push Your Luck,押注碰運氣
+Questions and Answers,問與答
+Race,競速
+Random Production,隨機生產
+Re-rolling and Locking,重擲與鎖骰
+Real-Time,即時制
+Relative Movement,相對移動
+Resource to Move,資源換移動
 Rock-Paper-Scissors,剪刀石頭布
 Role Playing,角色扮演
-Roll / Spin and Move,擲骰/旋轉前進
-Scenario / Mission / Campaign Game,劇本/任務/戰役
-Score-and-Reset Game,計分後重置
+Roll / Spin and Move,擲骰／轉盤移動
+Scenario / Mission / Campaign Game,劇本／任務／戰役
+Score-and-Reset Game,記分重置
 Secret Unit Deployment,秘密部署
 Set Collection,收集套組
 Simultaneous Action Selection,同時選擇行動
-Single Loser Game,
-Slide / Push,
+Single Loser Game,單敗者遊戲
+Slide / Push,滑動／推移
 Solo / Solitaire Game,單人
 Square Grid,方格
 Stacking and Balancing,疊放平衡
-Stat Check Resolution,
-Stock Holding,持股
+Stat Check Resolution,屬性檢定
+Stock Holding,持股／股權
 Storytelling,說故事
 Take That,互害
-Targeted Clues,
+Targeted Clues,定向線索
 Team-Based Game,團隊
-Three Dimensional Movement,
+Three Dimensional Movement,三維移動
 Tile Placement,板塊擺放
 Track Movement,軌道移動
 Trading,交易
-Traitor Game,
+Traitor Game,內鬼
 Trick-taking,吃墩
 Turn Order: Claim Action,搶先手
-Turn Order: Pass Order,PASS 順序決定
-Turn Order: Progressive,遞進手順
-Turn Order: Stat-Based,屬性決定手順
+Turn Order: Pass Order,回合順序：棄權順序
+Turn Order: Progressive,回合順序：逐步
+Turn Order: Stat-Based,回合順序：能力值
 Variable Phase Order,可變階段順序
 Variable Player Powers,角色能力
 Variable Set-up,可變設置
 Victory Points as a Resource,分數作為資源
 Voting,投票
-Worker Placement,Turn Order
+Worker Placement,Different Worker Types
 Worker Placement with Dice Workers,骰子工人
