@@ -1,95 +1,54 @@
-# scripts/fetch_bgg.py
-import time, json, requests, xml.etree.ElementTree as ET
+# scripts/fetch_bgg.py（只示範修改重點）
+import os, requests, time, json, xml.etree.ElementTree as ET
 from pathlib import Path
 
 INPUT  = Path("data/bgg_ids.json")
-OUTPUT = Path("data/bgg_data.json")
+OUTDIR = Path("data")
+API_BASE = "https://boardgamegeek.com/xmlapi2/thing?stats=1&versions=1&id="
+BATCH = 20
 
-API    = "https://boardgamegeek.com/xmlapi2/thing?stats=1&versions=1&id="
-BATCH  = 20  # 每次最多 20 筆
+SHARD_INDEX = int(os.getenv("SHARD_INDEX", "0"))
+SHARD_COUNT = int(os.getenv("SHARD_COUNT", "1"))
+OUTFILE = OUTDIR / (f"bgg_data_shard_{SHARD_INDEX}.json" if SHARD_COUNT>1 else "bgg_data.json")
 
-def fetch_batch(id_list):
-    url = API + ",".join(str(i) for i in id_list)
-    r = requests.get(url, timeout=60)
-    # BGG 202 表示排隊中，要輪詢直到 200
-    while r.status_code == 202:
-        time.sleep(2)
-        r = requests.get(url, timeout=60)
-    r.raise_for_status()
+def get_with_backoff(url, timeout=60, max_sleep=60):
+    sleep = 2
+    while True:
+        r = requests.get(url, timeout=timeout)
+        if r.status_code == 202:
+            time.sleep(2); continue
+        if r.status_code in (429, 500, 502, 503, 504):
+            time.sleep(sleep); sleep = min(max_sleep, sleep*2); continue
+        r.raise_for_status()
+        return r
+
+def fetch_batch(ids):
+    url = API_BASE + ",".join(str(i) for i in ids)
+    r = get_with_backoff(url)
     return ET.fromstring(r.text)
 
-def parse_items(root):
-    out = []
-    for item in root.findall("item"):
-        # bgg_id
-        bid = item.get("id")
-        try:
-            bid = int(bid)
-        except:
-            continue
-
-        # primary 英文名
-        name_en = None
-        for n in item.findall("name"):
-            if n.get("type") == "primary":
-                name_en = n.get("value")
-                break
-
-        def val(tag, attr="value"):
-            el = item.find(tag)
-            return el.get(attr) if el is not None and el.get(attr) is not None else None
-
-        year  = val("yearpublished")
-        minp  = val("minplayers");  maxp  = val("maxplayers")
-        minT  = val("minplaytime"); maxT  = val("maxplaytime")
-
-        avgw  = item.find("statistics/ratings/averageweight")
-        weight = float(avgw.get("value")) if avgw is not None and avgw.get("value") not in (None, "NaN") else None
-
-        image_el = item.find("image");     thumb_el = item.find("thumbnail")
-        image_url = image_el.text if image_el is not None else None
-        thumb_url = thumb_el.text if thumb_el is not None else None
-
-        categories = [l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
-        mechanics  = [l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
-
-        versions_el = item.find("versions")
-        versions_count = len(versions_el.findall("item")) if versions_el is not None else 0
-
-        out.append({
-            "bgg_id": bid,
-            "name_en": name_en,
-            "year": int(year) if year else None,
-            "players": [int(minp) if minp else None, int(maxp) if maxp else None],
-            "time_min": int(minT) if minT else None,
-            "time_max": int(maxT) if maxT else None,
-            "weight": weight,
-            "categories": categories,
-            "mechanics": mechanics,
-            "image_url": image_url or thumb_url,
-            "thumb_url": thumb_url or image_url,
-            "versions_count": versions_count,
-        })
-    return out
+# ...（parse_items 與你原本相同）...
 
 def main():
     if not INPUT.exists():
-        print("No data/bgg_ids.json; nothing to fetch.")
-        return
+        print("No data/bgg_ids.json; nothing to fetch."); return
 
     base_rows = json.loads(INPUT.read_text(encoding="utf-8"))
     by_id, ids = {}, []
     for r in base_rows:
         bid = r.get("bgg_id")
-        if not bid:
-            continue
+        if not bid: continue
         bid = int(bid)
-        by_id[bid] = r
         ids.append(bid)
+        by_id[bid] = r
 
-    results = []
-    for i in range(0, len(ids), BATCH):
-        chunk = ids[i:i+BATCH]
+    # 依 shard 取子集合（按索引取餘數）
+    ids_shard = [bid for idx, bid in enumerate(ids) if idx % SHARD_COUNT == SHARD_INDEX]
+    print(f"Total IDs={len(ids)}; shard[{SHARD_INDEX}/{SHARD_COUNT}] -> {len(ids_shard)}")
+
+    results=[]
+    for i in range(0, len(ids_shard), BATCH):
+        chunk = ids_shard[i:i+BATCH]
         try:
             root = fetch_batch(chunk)
             parsed = parse_items(root)
@@ -97,12 +56,12 @@ def main():
                 src = by_id.get(int(p["bgg_id"]), {})
                 results.append({**src, **p})
         except Exception as e:
-            print(f"Batch {chunk} failed: {e}")
-        time.sleep(3)  # 禮貌性限流
+            print(f"Batch {chunk[:3]}.. len={len(chunk)} failed: {e}")
+        time.sleep(2)  # 禮貌等待
 
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Fetched {len(results)} entries → {OUTPUT}")
+    OUTDIR.mkdir(parents=True, exist_ok=True)
+    OUTFILE.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Fetched {len(results)} entries → {OUTFILE}")
 
 if __name__ == "__main__":
     main()
