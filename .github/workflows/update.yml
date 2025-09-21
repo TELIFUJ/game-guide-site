@@ -26,7 +26,11 @@ jobs:
       - name: Create scripts (in-memory)
         shell: bash
         run: |
-          mkdir -p scripts
+          mkdir -p scripts data
+          # 若沒有機制對照檔，先建表頭
+          if [ ! -f data/mechanism_map_zh.csv ]; then
+            printf 'bgg_mechanism_en,mechanism_zh\n' > data/mechanism_map_zh.csv
+          fi
 
           # --- fetch_bgg.py ---
           cat <<'PY' > scripts/fetch_bgg.py
@@ -110,7 +114,7 @@ jobs:
           if __name__ == "__main__": main()
           PY
 
-          # --- apply_taxonomy_and_price.py ---
+          # --- apply_taxonomy_and_price.py（含機制中文化） ---
           cat <<'PY' > scripts/apply_taxonomy_and_price.py
           import csv, json
           from pathlib import Path
@@ -118,6 +122,14 @@ jobs:
           BGG_IN=Path("data/bgg_data.json")
           BGG_OUT=BGG_IN
           CATMAP_CSV=Path("data/category_map_zh.csv")
+          MECHMAP_CSV=Path("data/mechanism_map_zh.csv")
+
+          def _int_or_none(x):
+              if x is None: return None
+              s=str(x).strip()
+              if s=="" or s.lower()=="none": return None
+              try: return int(float(s))
+              except: return None
 
           def load_manual():
               d={}
@@ -127,27 +139,24 @@ jobs:
                   for row in r:
                       key=str(row.get("bgg_id") or row.get("name_zh") or row.get("bgg_query"))
                       if not key: continue
-                      def I(x):
-                          if x is None: return None
-                          s=str(x).strip()
-                          if s=="" or s.lower()=="none": return None
-                          try: return int(float(s))
-                          except: return None
                       row["manual_override"]=int(row.get("manual_override") or 0)
-                      row["price_msrp_twd"]=I(row.get("price_msrp_twd"))
-                      row["price_twd"]=I(row.get("price_twd"))
-                      row["used_price_twd"]=I(row.get("used_price_twd"))
+                      row["price_msrp_twd"]=_int_or_none(row.get("price_msrp_twd"))
+                      row["price_twd"]=_int_or_none(row.get("price_twd"))
+                      row["used_price_twd"]=_int_or_none(row.get("used_price_twd"))
+                      row["stock"]=_int_or_none(row.get("stock"))
+                      if row.get("image_version_id") is not None:
+                          row["image_version_id"]=str(row["image_version_id"]).strip()
                       d[key]=row
               return d
 
-          def load_catmap():
+          def load_map(csv_path, key_en, key_zh):
               m={}
-              if not CATMAP_CSV.exists(): return m
-              with CATMAP_CSV.open(encoding="utf-8-sig") as f:
+              if not csv_path.exists(): return m
+              with csv_path.open(encoding="utf-8-sig") as f:
                   r=csv.DictReader(f)
                   for row in r:
-                      en=(row.get("bgg_category_en") or "").strip()
-                      zh=(row.get("category_zh") or "").strip()
+                      en=(row.get(key_en) or "").strip()
+                      zh=(row.get(key_zh) or "").strip()
                       if en: m[en]=zh or en
               return m
 
@@ -155,7 +164,8 @@ jobs:
               if not BGG_IN.exists():
                   print("No data/bgg_data.json; skip apply."); return
               manual=load_manual()
-              catmap=load_catmap()
+              catmap=load_map(CATMAP_CSV,"bgg_category_en","category_zh")
+              mechmap=load_map(MECHMAP_CSV,"bgg_mechanism_en","mechanism_zh")
               rows=json.loads(BGG_IN.read_text(encoding="utf-8"))
               out=[]
               for r in rows:
@@ -170,22 +180,24 @@ jobs:
                           if fld in m and m[fld] not in (None,""):
                               r[fld]=m[fld]
 
-                  # 中文分類：manual 優先；否則 EN→ZH 對照
+                  # 中文分類
                   if r.get("category_zh"):
                       r["categories_zh"]=[x.strip() for x in str(r["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
                   else:
                       en=r.get("categories") or []
                       r["categories_zh"]=[catmap.get(x,x) for x in en]
 
-                  # 別名（搜尋）
+                  # 機制中文（保留所有）
+                  mechs=r.get("mechanics") or []
+                  r["mechanics_zh"]=[mechmap.get(x,x) for x in mechs]
+
+                  # 別名
                   if r.get("alias_zh"):
                       r["aliases_zh"]=[x.strip() for x in str(r["alias_zh"]).split(";") if x.strip()]
-
-                  # 圖片覆蓋：image_override 留到下載階段處理；此處只保留欄位
                   out.append(r)
 
               BGG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"apply_taxonomy_and_price: total {len(out)}; manual merged & categories_zh applied.")
+              print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied.")
           if __name__ == "__main__": main()
           PY
 
@@ -237,67 +249,60 @@ jobs:
                   print("fetch_version_image: no change")
           if __name__ == "__main__": main()
           PY
-          build_json.p
-          # --- make_mechanism_map.py ---
-cat <<'PY' > scripts/make_mechanism_map.py
-import csv, json
-from pathlib import Path
 
-BGG = Path("data/bgg_data.json")
-MAP = Path("data/mechanism_map_zh.csv")
-OUT = Path("data/mechanism_map_candidates.csv")
-
-SEED = {
-  "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
-  "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"戰役/卡驅動",
-  "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
-  "Contracts":"合約","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","End Game Bonuses":"終局加分",
-  "Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
-  "Line Drawing":"連線","Loans":"借貸","Memory":"記憶","Modular Board":"模組地圖",
-  "Movement Points":"移動點","Network and Route Building":"路網建設","Negotiation":"談判",
-  "Open Drafting":"公開選牌","Ownership":"所有權","Pattern Recognition":"圖形辨識",
-  "Pick-up and Deliver":"取貨運送","Press Your Luck":"拚運氣","Rock-Paper-Scissors":"剪刀石頭布",
-  "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本/任務/戰役",
-  "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
-  "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
-  "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
-  "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
-  "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
-  "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人"
-}
-
-def load_cur_map():
-  m={}
-  if MAP.exists():
-    with MAP.open(encoding="utf-8-sig") as f:
-      r=csv.DictReader(f)
-      for row in r:
-        en=(row.get("bgg_mechanism_en") or "").strip()
-        zh=(row.get("mechanism_zh") or "").strip()
-        if en: m[en]=zh
-  return m
-
-def main():
-  if not BGG.exists():
-    print("no data/bgg_data.json; skip"); return
-  rows=json.loads(BGG.read_text(encoding="utf-8"))
-  found=set()
-  for r in rows:
-    for m in (r.get("mechanics") or []):
-      if m: found.add(m)
-
-  cur = load_cur_map()
-  all_mechs=sorted(found)
-  OUT.parent.mkdir(parents=True, exist_ok=True)
-  with OUT.open("w", encoding="utf-8", newline="") as f:
-    w=csv.writer(f); w.writerow(["bgg_mechanism_en","mechanism_zh"])
-    for en in all_mechs:
-      w.writerow([en, cur.get(en) or SEED.get(en) or ""])
-  print(f"Collected {len(all_mechs)} unique mechanics → {OUT}")
-  print("Move translations from candidates into mechanism_map_zh.csv to persist.")
-if __name__=="__main__": main()
-PY
-
+          # --- make_mechanism_map.py（產出候選清單，方便補翻譯） ---
+          cat <<'PY' > scripts/make_mechanism_map.py
+          import csv, json
+          from pathlib import Path
+          BGG = Path("data/bgg_data.json")
+          MAP = Path("data/mechanism_map_zh.csv")
+          OUT = Path("data/mechanism_map_candidates.csv")
+          SEED = {
+            "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
+            "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"戰役/卡驅動",
+            "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
+            "Contracts":"合約","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","End Game Bonuses":"終局加分",
+            "Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
+            "Line Drawing":"連線","Loans":"借貸","Memory":"記憶","Modular Board":"模組地圖",
+            "Movement Points":"移動點","Network and Route Building":"路網建設","Negotiation":"談判",
+            "Open Drafting":"公開選牌","Ownership":"所有權","Pattern Recognition":"圖形辨識",
+            "Pick-up and Deliver":"取貨運送","Press Your Luck":"拚運氣","Rock-Paper-Scissors":"剪刀石頭布",
+            "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本/任務/戰役",
+            "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
+            "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
+            "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
+            "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
+            "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
+            "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人"
+          }
+          def load_cur_map():
+              m={}
+              if MAP.exists():
+                  with MAP.open(encoding="utf-8-sig") as f:
+                      r=csv.DictReader(f)
+                      for row in r:
+                          en=(row.get("bgg_mechanism_en") or "").strip()
+                          zh=(row.get("mechanism_zh") or "").strip()
+                          if en: m[en]=zh
+              return m
+          def main():
+              if not BGG.exists():
+                  print("no data/bgg_data.json; skip"); return
+              rows=json.loads(BGG.read_text(encoding="utf-8"))
+              found=set()
+              for r in rows:
+                  for m in (r.get("mechanics") or []):
+                      if m: found.add(m)
+              cur = load_cur_map()
+              all_mechs=sorted(found)
+              OUT.parent.mkdir(parents=True, exist_ok=True)
+              with OUT.open("w", encoding="utf-8", newline="") as f:
+                  w=csv.writer(f); w.writerow(["bgg_mechanism_en","mechanism_zh"])
+                  for en in all_mechs:
+                      w.writerow([en, cur.get(en) or SEED.get(en) or ""])
+              print(f"Collected {len(all_mechs)} unique mechanics → {OUT}")
+          if __name__=="__main__": main()
+          PY
 
           # --- build_json.py ---
           cat <<'PY' > scripts/build_json.py
@@ -311,7 +316,6 @@ PY
               bid=r.get("bgg_id"); bgg_url=f"https://boardgamegeek.com/boardgame/{bid}" if bid else None
               name_zh=r.get("name_zh"); name_en=r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
               image=r.get("image") or r.get("image_url") or r.get("thumb_url")
-              # 強制使用 image_override（若有）
               if r.get("image_override"): image = r["image_override"]
               search_keywords=[]
               if name_zh: search_keywords.append(f"{name_zh} BGG")
@@ -322,7 +326,8 @@ PY
                 "bgg_id": bid, "bgg_url": bgg_url, "year": r.get("year"), "players": r.get("players"),
                 "time_min": r.get("time_min"), "time_max": r.get("time_max"), "weight": r.get("weight"),
                 "categories": r.get("categories") or [], "categories_zh": r.get("categories_zh") or [],
-                "mechanics": r.get("mechanics") or [], "versions_count": r.get("versions_count", 0),
+                "mechanics": r.get("mechanics") or [], "mechanics_zh": r.get("mechanics_zh") or [],
+                "versions_count": r.get("versions_count", 0),
                 "image": image, "price_msrp_twd": r.get("price_msrp_twd"), "price_twd": r.get("price_twd"),
                 "used_price_twd": r.get("used_price_twd"), "price_note": r.get("price_note"),
                 "used_note": r.get("used_note"), "stock": r.get("stock"), "description": r.get("description"),
@@ -337,6 +342,7 @@ PY
           python scripts/resolve_bgg.py
           python scripts/fetch_bgg.py
           python scripts/apply_taxonomy_and_price.py
+          python scripts/make_mechanism_map.py
           python scripts/fetch_version_image.py
           python scripts/download_images.py
           python scripts/build_json.py
@@ -345,7 +351,8 @@ PY
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
+          git add data/games_full.json data/bgg_data.json data/bgg_ids.json \
+                 data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
           git add assets/img/* || true
           git commit -m "Auto-update game data" || echo "No changes to commit"
           git push || echo "No changes to push"
