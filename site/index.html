@@ -32,7 +32,7 @@
     /* 可愛收藏按鈕（放大約 20%） */
     .fav-btn{
       position:absolute;top:10px;right:10px;
-      width:40px;height:40px;             /* 大一點 */
+      width:40px;height:40px;
       display:flex;align-items:center;justify-content:center;
       background:#fff;border:1px solid var(--border);border-radius:999px;
       box-shadow:0 2px 8px rgba(0,0,0,.06);
@@ -41,7 +41,7 @@
     }
     .fav-btn .star{font-size:22px;line-height:1}
     .fav-btn:hover{ transform:scale(1.06); box-shadow:0 4px 14px rgba(0,0,0,.08) }
-    .fav-btn.active{ background:#fff7cc; border-color:#facc15 } /* 選取時淡黃 */
+    .fav-btn.active{ background:#fff7cc; border-color:#facc15 }
   </style>
 </head>
 <body>
@@ -130,12 +130,13 @@
     "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本／任務／戰役",
     "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
     "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
-    "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩","Turn Order: Claim Action":"搶先手",
-    "Variable Phase Order":"可變階段順序","Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
-    "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人""Deck, Bag, and Pool Building": "卡／袋／池構築",
-  "Different Worker Types": "不同工種工人",
-  // 也保留這條以涵蓋完整寫法：
-  "Worker Placement, Different Worker Types": "多工種工人放置",
+    "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
+    "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
+    "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
+    "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人",
+    "Deck, Bag, and Pool Building": "卡／袋／池構築",
+    "Different Worker Types": "不同工種工人",
+    "Worker Placement, Different Worker Types": "多工種工人放置"
   };
 
   // ====== 工具 ======
@@ -143,6 +144,7 @@
   const MIN_MECH_COUNT = 10;
   const prefix = location.pathname.includes('/site/') ? '../' : '';
   const DATA_URL = prefix + 'data/games_full.json?ts=' + Date.now();
+
   const G = document.getElementById("grid"),
         Q = document.getElementById("q"),
         CAT = document.getElementById("catSel"),
@@ -328,13 +330,11 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   function render(){
     const {total, pages, pageRows} = filtered();
     const allFavCount = favs.size;
-    // 總數顯示用 DATA.length（全庫），目前顯示用 total
-    document.getElementById("stats").textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
-    document.getElementById("pageInfo").textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
-    document.getElementById("prev").disabled = (page<=1);
-    document.getElementById("next").disabled = (page>=pages);
 
-    const prefix = location.pathname.includes('/site/') ? '../' : '';
+    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
+    PAGE_INFO.textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
+    PREV.disabled = (page<=1);
+    NEXT.disabled = (page>=pages);
 
     G.innerHTML = pageRows.map(x=>{
       const cz = getCatsZh(x);
