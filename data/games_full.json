@@ -104,7 +104,7 @@
       "Party Game"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "派對"
     ],
     "mechanics": [
@@ -454,7 +454,7 @@
     "categories_zh": [
       "推理",
       "恐怖",
-      "推理/謀殺",
+      "懸疑／推理",
       "派對"
     ],
     "mechanics": [
@@ -643,7 +643,7 @@
       "戰鬥",
       "恐怖",
       "影視／廣播主題",
-      "推理/謀殺"
+      "懸疑／推理"
     ],
     "mechanics": [
       "Campaign / Battle Card Driven",
@@ -689,7 +689,7 @@
       "Children's Game"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童"
     ],
     "mechanics": [
@@ -773,7 +773,7 @@
       "Action / Dexterity"
     ],
     "categories_zh": [
-      "動作／巧手"
+      "動作／敏捷"
     ],
     "mechanics": [
       "Pattern Building"
@@ -813,7 +813,7 @@
       "Party Game"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "派對"
     ],
     "mechanics": [
@@ -1092,7 +1092,7 @@
       "唬人",
       "卡牌",
       "推理",
-      "擴充"
+      "基本款擴充"
     ],
     "mechanics": [
       "Hand Management",
@@ -1181,7 +1181,7 @@
       "Real-time"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "卡牌",
       "派對",
       "即時制"
@@ -1311,7 +1311,7 @@
       "Novel-based"
     ],
     "categories_zh": [
-      "擴充",
+      "基本款擴充",
       "冒險",
       "奇幻",
       "戰鬥",
@@ -1364,7 +1364,7 @@
       "Novel-based"
     ],
     "categories_zh": [
-      "擴充",
+      "基本款擴充",
       "冒險",
       "奇幻",
       "戰鬥",
@@ -1474,7 +1474,7 @@
       "Medieval"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童",
       "中世紀"
     ],
@@ -1610,7 +1610,7 @@
     ],
     "categories_zh": [
       "推理",
-      "旅行"
+      "旅遊"
     ],
     "mechanics": [
       "Hidden Movement",
@@ -1784,7 +1784,7 @@
     ],
     "categories_zh": [
       "動物",
-      "Dice"
+      "骰子"
     ],
     "mechanics": [
       "Dice Rolling",
@@ -1956,7 +1956,7 @@
     ],
     "categories_zh": [
       "動物",
-      "Dice"
+      "骰子"
     ],
     "mechanics": [
       "Dice Rolling",
@@ -2090,7 +2090,7 @@
     "categories_zh": [
       "抽象策略",
       "動物",
-      "益智"
+      "益智／拼圖"
     ],
     "mechanics": [
       "Follow",
@@ -2317,8 +2317,8 @@
       "Mythology"
     ],
     "categories_zh": [
-      "Ancient",
-      "Dice",
+      "古代",
+      "骰子",
       "奇幻",
       "神話"
     ],
@@ -2501,7 +2501,7 @@
       "Electronic"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "動物",
       "兒童",
       "電子"
@@ -2546,7 +2546,7 @@
       "Video Game Theme"
     ],
     "categories_zh": [
-      "Dice",
+      "骰子",
       "領地建設",
       "電玩主題"
     ],
@@ -2824,8 +2824,8 @@
     ],
     "categories_zh": [
       "動物",
-      "Arabian",
-      "Dice",
+      "阿拉伯",
+      "骰子",
       "競速"
     ],
     "mechanics": [
@@ -3156,7 +3156,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "文字"
+      "字詞"
     ],
     "mechanics": [
       "Communication Limits",
@@ -3287,9 +3287,9 @@
       "Puzzle"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "派對",
-      "益智"
+      "益智／拼圖"
     ],
     "mechanics": [
       "Pattern Recognition"
@@ -3334,7 +3334,7 @@
       "卡牌",
       "推理",
       "間諜",
-      "文字"
+      "字詞"
     ],
     "mechanics": [
       "Communication Limits",
@@ -3430,7 +3430,7 @@
       "推理",
       "派對",
       "間諜",
-      "文字"
+      "字詞"
     ],
     "mechanics": [
       "Communication Limits",
@@ -3478,8 +3478,8 @@
       "Wargame"
     ],
     "categories_zh": [
-      "Ancient",
-      "Dice",
+      "古代",
+      "骰子",
       "中世紀",
       "政治",
       "領地建設",
@@ -3882,7 +3882,7 @@
     "categories_zh": [
       "卡牌",
       "經濟",
-      "擴充",
+      "基本款擴充",
       "文藝復興"
     ],
     "mechanics": [
@@ -4067,7 +4067,7 @@
     "categories_zh": [
       "抽象策略",
       "數字",
-      "益智"
+      "益智／拼圖"
     ],
     "mechanics": [
       "Bingo",
@@ -4114,7 +4114,7 @@
       "Sports"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童",
       "派對",
       "競速",
@@ -4161,7 +4161,7 @@
       "Party Game"
     ],
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童",
       "派對"
     ],
@@ -4204,7 +4204,7 @@
     ],
     "categories_zh": [
       "抽象策略",
-      "益智"
+      "益智／拼圖"
     ],
     "mechanics": [
       "Bingo",
@@ -4290,7 +4290,7 @@
       "推理",
       "派對",
       "即時制",
-      "文字"
+      "字詞"
     ],
     "mechanics": [
       "Communication Limits",
@@ -4384,7 +4384,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "文字"
+      "字詞"
     ],
     "mechanics": [
       "Communication Limits",
@@ -4465,7 +4465,7 @@
       "Action / Dexterity"
     ],
     "categories_zh": [
-      "動作／巧手"
+      "動作／敏捷"
     ],
     "mechanics": [],
     "versions_count": 6,
@@ -4589,7 +4589,7 @@
     ],
     "categories_zh": [
       "奇幻",
-      "旅行"
+      "旅遊"
     ],
     "mechanics": [
       "Hand Management",
@@ -4678,7 +4678,7 @@
     ],
     "categories_zh": [
       "卡牌",
-      "農場",
+      "農業",
       "談判"
     ],
     "mechanics": [
@@ -4779,15 +4779,15 @@
       "Puzzle"
     ],
     "categories_zh": [
-      "擴充",
+      "基本款擴充",
       "冒險",
       "探索",
       "奇幻",
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "推理/謀殺",
-      "益智"
+      "懸疑／推理",
+      "益智／拼圖"
     ],
     "mechanics": [
       "Area Movement",
@@ -4849,10 +4849,10 @@
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "推理/謀殺",
+      "懸疑／推理",
       "神話",
       "小說改編",
-      "益智"
+      "益智／拼圖"
     ],
     "mechanics": [
       "Area Movement",
@@ -4993,7 +4993,7 @@
     ],
     "categories_zh": [
       "動物",
-      "益智"
+      "益智／拼圖"
     ],
     "mechanics": [
       "Grid Coverage",
@@ -5171,8 +5171,8 @@
       "Real-time"
     ],
     "categories_zh": [
-      "動作／巧手",
-      "益智",
+      "動作／敏捷",
+      "益智／拼圖",
       "即時制"
     ],
     "mechanics": [

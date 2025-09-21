@@ -118,7 +118,7 @@
     "thumb_url": "https://cf.geekdo-images.com/1LDxwSgfgaToomANL3x26A__small/img/2u888XUT8VZjnvJ1oNsFVZ67Ro0=/fit-in/200x150/filters:strip_icc()/pic4657127.png",
     "versions_count": 22,
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "派對"
     ],
     "image": "assets/img/2821.jpg"
@@ -468,7 +468,7 @@
     "categories_zh": [
       "推理",
       "恐怖",
-      "推理/謀殺",
+      "懸疑／推理",
       "派對"
     ],
     "image": "assets/img/280136.jpg"
@@ -653,7 +653,7 @@
       "戰鬥",
       "恐怖",
       "影視／廣播主題",
-      "推理/謀殺"
+      "懸疑／推理"
     ],
     "image": "assets/img/192927.jpg"
   },
@@ -692,7 +692,7 @@
     "thumb_url": "https://cf.geekdo-images.com/bTRuUCLOSpvoCHijulBfOw__small/img/FhYKQAVD7mtibm9OhjDzB3nqNfA=/fit-in/200x150/filters:strip_icc()/pic3915225.jpg",
     "versions_count": 9,
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童"
     ],
     "image": "assets/img/241492.jpg"
@@ -774,7 +774,7 @@
     "thumb_url": "https://cf.geekdo-images.com/CFYHrg61ph-Et4YQkedWnA__small/img/W2fs8ZJSiwXfXRkasIzs1cMmRro=/fit-in/200x150/filters:strip_icc()/pic3107661.jpg",
     "versions_count": 8,
     "categories_zh": [
-      "動作／巧手"
+      "動作／敏捷"
     ],
     "image": "assets/img/204734.jpg"
   },
@@ -813,7 +813,7 @@
     "thumb_url": "https://cf.geekdo-images.com/P4JzWM1DxFU07uOPA1dvfA__small/img/UncCoS2PNH1jtTna1qK-wsBn8R0=/fit-in/200x150/filters:strip_icc()/pic3344670.jpg",
     "versions_count": 1,
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "派對"
     ],
     "image": "assets/img/214276.jpg"
@@ -1088,7 +1088,7 @@
       "唬人",
       "卡牌",
       "推理",
-      "擴充"
+      "基本款擴充"
     ],
     "image": "assets/img/131452.jpg"
   },
@@ -1174,7 +1174,7 @@
     "thumb_url": "https://cf.geekdo-images.com/kO8KQ5ReJQkLnbzCaQA9fQ__small/img/qfR8m6tjeakJ7U-ZOBGIRL0Vk30=/fit-in/200x150/filters:strip_icc()/pic2254475.jpg",
     "versions_count": 2,
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "卡牌",
       "派對",
       "即時制"
@@ -1305,7 +1305,7 @@
     "thumb_url": "https://cf.geekdo-images.com/8SZmGiL31jvXofRwuoFDdw__small/img/AjxrsXdhlSCNqIX7kiBsSCiLWgw=/fit-in/200x150/filters:strip_icc()/pic5873467.png",
     "versions_count": 12,
     "categories_zh": [
-      "擴充",
+      "基本款擴充",
       "冒險",
       "奇幻",
       "戰鬥",
@@ -1358,7 +1358,7 @@
     "thumb_url": "https://cf.geekdo-images.com/BbsGcVULOhD8qIFXCyp3Lw__small/img/5cjELCTcsTx0A_ty1JEz9zuzYqg=/fit-in/200x150/filters:strip_icc()/pic5871000.jpg",
     "versions_count": 12,
     "categories_zh": [
-      "擴充",
+      "基本款擴充",
       "冒險",
       "奇幻",
       "戰鬥",
@@ -1462,7 +1462,7 @@
     "versions_count": 17,
     "image_version_id": "642394",
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童",
       "中世紀"
     ],
@@ -1599,7 +1599,7 @@
     "image_version_id": "617304",
     "categories_zh": [
       "推理",
-      "旅行"
+      "旅遊"
     ],
     "image": "assets/img/438.jpg"
   },
@@ -1771,7 +1771,7 @@
     "versions_count": 2,
     "categories_zh": [
       "動物",
-      "Dice"
+      "骰子"
     ],
     "image": "assets/img/130556.jpg"
   },
@@ -1943,7 +1943,7 @@
     "image_version_id": "517126",
     "categories_zh": [
       "動物",
-      "Dice"
+      "骰子"
     ],
     "image": "assets/img/15818.jpg"
   },
@@ -2079,7 +2079,7 @@
     "categories_zh": [
       "抽象策略",
       "動物",
-      "益智"
+      "益智／拼圖"
     ],
     "image": "assets/img/339484.jpg"
   },
@@ -2303,8 +2303,8 @@
     "versions_count": 17,
     "image_version_id": "365783",
     "categories_zh": [
-      "Ancient",
-      "Dice",
+      "古代",
+      "骰子",
       "奇幻",
       "神話"
     ],
@@ -2484,7 +2484,7 @@
     "versions_count": 12,
     "image_version_id": "280025",
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "動物",
       "兒童",
       "電子"
@@ -2535,7 +2535,7 @@
     "versions_count": 3,
     "image_version_id": "603904",
     "categories_zh": [
-      "Dice",
+      "骰子",
       "領地建設",
       "電玩主題"
     ],
@@ -2808,8 +2808,8 @@
     "image_version_id": "516703",
     "categories_zh": [
       "動物",
-      "Arabian",
-      "Dice",
+      "阿拉伯",
+      "骰子",
       "競速"
     ],
     "image": "assets/img/260605.jpg"
@@ -3137,7 +3137,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "文字"
+      "字詞"
     ],
     "image": "assets/img/254640.jpg"
   },
@@ -3265,9 +3265,9 @@
     "versions_count": 4,
     "image_version_id": "374467",
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "派對",
-      "益智"
+      "益智／拼圖"
     ],
     "image": "assets/img/218637.jpg"
   },
@@ -3313,7 +3313,7 @@
       "卡牌",
       "推理",
       "間諜",
-      "文字"
+      "字詞"
     ],
     "image": "assets/img/224037.jpg"
   },
@@ -3410,7 +3410,7 @@
       "推理",
       "派對",
       "間諜",
-      "文字"
+      "字詞"
     ],
     "image": "assets/img/178900.jpg"
   },
@@ -3458,8 +3458,8 @@
     "thumb_url": "https://cf.geekdo-images.com/ckMBSPJ-KFsvS_jTXmfcmQ__small/img/0JFF-fSihFY4mld7Vj409oUWB1Y=/fit-in/200x150/filters:strip_icc()/pic1977202.jpg",
     "versions_count": 16,
     "categories_zh": [
-      "Ancient",
-      "Dice",
+      "古代",
+      "骰子",
       "中世紀",
       "政治",
       "領地建設",
@@ -3857,7 +3857,7 @@
     "categories_zh": [
       "卡牌",
       "經濟",
-      "擴充",
+      "基本款擴充",
       "文藝復興"
     ],
     "image": "assets/img/220653.jpg"
@@ -4044,7 +4044,7 @@
     "categories_zh": [
       "抽象策略",
       "數字",
-      "益智"
+      "益智／拼圖"
     ],
     "image": "assets/img/217449.jpg"
   },
@@ -4088,7 +4088,7 @@
     "thumb_url": "https://cf.geekdo-images.com/lvC1qJo4-RQ_zqudi_oRmA__small/img/7IuVc3d0QWtb0eCd6PaYHg8Qg2U=/fit-in/200x150/filters:strip_icc()/pic215555.jpg",
     "versions_count": 9,
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童",
       "派對",
       "競速",
@@ -4133,7 +4133,7 @@
     "versions_count": 15,
     "image_version_id": "281191",
     "categories_zh": [
-      "動作／巧手",
+      "動作／敏捷",
       "兒童",
       "派對"
     ],
@@ -4177,7 +4177,7 @@
     "versions_count": 27,
     "categories_zh": [
       "抽象策略",
-      "益智"
+      "益智／拼圖"
     ],
     "image": "assets/img/128.jpg"
   },
@@ -4264,7 +4264,7 @@
       "推理",
       "派對",
       "即時制",
-      "文字"
+      "字詞"
     ],
     "image": "assets/img/198454.jpg"
   },
@@ -4353,7 +4353,7 @@
     "categories_zh": [
       "推理",
       "派對",
-      "文字"
+      "字詞"
     ],
     "image": "assets/img/147151.jpg"
   },
@@ -4428,7 +4428,7 @@
     "thumb_url": "https://cf.geekdo-images.com/L-fkWs8wBQjBCAizYMD6Zw__small/img/wdWFjnsFuVDZIasq4xRdzDrR-4o=/fit-in/200x150/filters:strip_icc()/pic4982602.jpg",
     "versions_count": 6,
     "categories_zh": [
-      "動作／巧手"
+      "動作／敏捷"
     ],
     "image": "assets/img/245503.jpg"
   },
@@ -4554,7 +4554,7 @@
     "versions_count": 6,
     "categories_zh": [
       "奇幻",
-      "旅行"
+      "旅遊"
     ],
     "image": "assets/img/180325.jpg"
   },
@@ -4642,7 +4642,7 @@
     "versions_count": 65,
     "categories_zh": [
       "卡牌",
-      "農場",
+      "農業",
       "談判"
     ],
     "image": "assets/img/11.jpg"
@@ -4745,15 +4745,15 @@
     "thumb_url": "https://cf.geekdo-images.com/hNnUKtD33BHttK0Ec52gqA__small/img/e9QAiXTkEBJuNjboxeYs_Ys1hjY=/fit-in/200x150/filters:strip_icc()/pic4269709.jpg",
     "versions_count": 12,
     "categories_zh": [
-      "擴充",
+      "基本款擴充",
       "冒險",
       "探索",
       "奇幻",
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "推理/謀殺",
-      "益智"
+      "懸疑／推理",
+      "益智／拼圖"
     ],
     "image": "assets/img/255823.jpg"
   },
@@ -4817,10 +4817,10 @@
       "戰鬥",
       "恐怖",
       "微縮模型",
-      "推理/謀殺",
+      "懸疑／推理",
       "神話",
       "小說改編",
-      "益智"
+      "益智／拼圖"
     ],
     "image": "assets/img/205059.jpg"
   },
@@ -4952,7 +4952,7 @@
     "versions_count": 18,
     "categories_zh": [
       "動物",
-      "益智"
+      "益智／拼圖"
     ],
     "image": "assets/img/219513.jpg"
   },
@@ -5122,8 +5122,8 @@
     "thumb_url": "https://cf.geekdo-images.com/C7n-48iL8l3OzDlpWS175A__small/img/mNMr-m0IbYYXQJetaydS9asutzo=/fit-in/200x150/filters:strip_icc()/pic3143202.png",
     "versions_count": 9,
     "categories_zh": [
-      "動作／巧手",
-      "益智",
+      "動作／敏捷",
+      "益智／拼圖",
       "即時制"
     ],
     "image": "assets/img/206844.jpg"
