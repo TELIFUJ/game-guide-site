@@ -9,7 +9,17 @@
     .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{border:1px solid #e5e7eb;padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    .card img{width:100%;height:auto;object-fit:contain;background:#f3f4f6;border-radius:8px}
+    /* 圖片固定盒，不會撐爆 */
+    .media{
+      width:100%;
+      aspect-ratio:16/9;
+      background:#f3f4f6;
+      border-radius:8px;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    .media img{width:100%;height:100%;object-fit:contain}
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:#6b7280}
     input,select,label{font:inherit}
@@ -49,25 +59,31 @@
 <div id="grid" class="grid"></div>
 
 <script>
+  // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  // 英→中備援映射（這只是前端備援；後端 category_map_zh.csv 還是王道）
+  // BGG 全 85 類別：英→中備援（後端 category_map_zh.csv 仍是主來源）
   const CAT_MAP = {
-    "Economic":"經濟","Trains":"鐵道","Transportation":"交通",
-    "Adventure":"冒險","Fantasy":"奇幻","Fighting":"戰鬥","Miniatures":"微縮模型",
-    "City Building":"城市建設","Renaissance":"文藝復興","Ancient":"古代",
-    "Card Game":"卡牌","Civilization":"文明","Family Game":"家庭","Party Game":"派對",
-    "Strategy":"策略","Abstract Strategy":"抽象策略","Science Fiction":"科幻",
-    "Thematic":"主題","Negotiation":"談判","Bluffing":"唬人","Deduction":"推理",
-    "Wargame":"戰棋","Children's Game":"兒童",
-    // 下面補一些常見的（你也可在後端CSV補上）
-    "Educational":"教育","Electronic":"電子","Farming":"農場","Humor":"幽默","Maze":"迷宮",
-    "Murder / Mystery":"推理/謀殺","Music":"音樂","Mythology":"神話","Nautical":"航海",
-    "Pirates":"海盜","Political":"政治","Prehistoric":"史前","Print & Play":"自印版",
-    "Puzzle":"益智","Racing":"競速","Spies / Secret Agents":"間諜","Sports":"運動",
-    "Territory Building":"領地建設","Video Game Theme":"電玩主題","Word Game":"文字"
+    "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
+    "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
+    "American West":"美國西部","Ancient":"古代","Animals":"動物","Arabian":"阿拉伯","Aviation / Flight":"航空／飛行",
+    "Bluffing":"唬人","Book":"書籍","Card Game":"卡牌","Children's Game":"兒童","City Building":"城市建設","Civil War":"內戰",
+    "Civilization":"文明","Collectible Components":"收藏要素","Comic Book / Strip":"漫畫","Deduction":"推理","Dice":"骰子",
+    "Economic":"經濟","Educational":"教育","Electronic":"電子","Environmental":"環境議題","Expansion for Base-game":"基本款擴充",
+    "Exploration":"探索","Fan Expansion":"玩家自製擴充","Fantasy":"奇幻","Farming":"農業","Fighting":"戰鬥","Game System":"遊戲系統",
+    "Horror":"恐怖","Humor":"幽默","Industry / Manufacturing":"工業／製造","Korean War":"韓戰","Mafia":"黑幫","Math":"數學",
+    "Mature / Adult":"限制級／成人","Maze":"迷宮","Medical":"醫療","Medieval":"中世紀","Memory":"記憶","Miniatures":"微縮模型",
+    "Modern Warfare":"現代戰爭","Movies / TV / Radio theme":"影視／廣播主題","Murder / Mystery":"懸疑／推理","Music":"音樂",
+    "Mythology":"神話","Napoleonic":"拿破崙時代","Nautical":"航海","Negotiation":"談判","Novel-based":"小說改編","Number":"數字",
+    "Party Game":"派對","Pike and Shot":"矛槍與火槍時代","Pirates":"海盜","Political":"政治","Post-Napoleonic":"拿破崙後時代",
+    "Prehistoric":"史前","Print & Play":"自印版","Puzzle":"益智／拼圖","Racing":"競速","Real-time":"即時制","Religious":"宗教",
+    "Renaissance":"文藝復興","Science Fiction":"科幻","Space Exploration":"太空探索","Spies / Secret Agents":"間諜","Sports":"運動",
+    "Territory Building":"領地建設","Third-party Expansion":"第三方擴充","Trains":"鐵道","Transportation":"交通","Travel":"旅遊",
+    "Trivia":"問答","Video Game Theme":"電玩主題","Vietnam War":"越戰","Wargame":"戰棋","Word Game":"字詞",
+    "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
   };
 
+  // 取中文分類：優先 categories_zh，否則映射英文；最多 10 個
   function getCatsZh(x){
     if (Array.isArray(x.categories_zh) && x.categories_zh.length)
       return x.categories_zh.slice(0,10);
@@ -75,6 +91,7 @@
     return en.map(s => CAT_MAP[s] || s).slice(0,10);
   }
 
+  // 取價格候選（含/不含二手）
   function priceCandidates(x, includeUsed=true){
     const out=[];
     if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
@@ -86,7 +103,7 @@
     return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
   }
 
-  // 你可以改這個閾值（例如 10）
+  // 熱門分類的門檻（可調整）
   const MIN_CAT_COUNT = 5;
 
   let DATA=[];
@@ -99,11 +116,13 @@
         INCL = document.getElementById("inclUsed"),
         HOT  = document.getElementById("hotOnly");
 
+  // 依所在路徑決定資料路徑
   const prefix = location.pathname.includes('/site/') ? '../' : '';
   const DATA_URL = prefix + 'data/games_full.json?ts=' + Date.now();
 
   fetch(DATA_URL).then(r=>r.json()).then(d=>{ DATA=d; buildCategoryOptions(); render(); });
 
+  // 下拉分類（可切換只顯示熱門）
   function buildCategoryOptions(){
     const counts = new Map();
     for (const x of DATA){
@@ -111,9 +130,7 @@
         counts.set(c, (counts.get(c)||0)+1);
       }
     }
-    // 先清空
     C.innerHTML = '<option value="">全部分類</option>';
-    // 是否只放熱門
     const onlyHot = HOT.checked;
     const items = [...counts.entries()]
       .filter(([name, cnt]) => !onlyHot || cnt >= MIN_CAT_COUNT)
@@ -130,6 +147,7 @@
   function render(){
     let list = DATA.slice();
 
+    // 關鍵字
     const q = Q.value.trim().toLowerCase();
     if(q){
       list = list.filter(x=>{
@@ -141,11 +159,13 @@
       });
     }
 
+    // 分類（中文）
     const chosen = C.value;
     if(chosen){
       list = list.filter(x => getCatsZh(x).includes(chosen));
     }
 
+    // 價格區間（含二手勾選控制）
     const includeUsed = INCL.checked;
     const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
     if (pmin>0 || pmax>0){
@@ -156,22 +176,29 @@
       });
     }
 
+    // 排序
     if (S.value==="min_price") list.sort((a,b)=> minPrice(a, includeUsed) - minPrice(b, includeUsed));
     if (S.value==="price")     list.sort((a,b)=>(a.price_twd??1e12)-(b.price_twd??1e12));
     if (S.value==="used")      list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12));
     if (S.value==="weight")    list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12));
 
+    // 畫卡片
     G.innerHTML = list.map(x => {
       const cz = getCatsZh(x);
       const imgSrc = (x.image||'').startsWith('http') ? x.image : (prefix+(x.image||''));
       return `
         <div class="card">
-          <img loading="lazy" src="${imgSrc}"
-               alt="${x.name_zh||x.name_en||''}"
-               onerror="this.src='https://via.placeholder.com/560x300?text=No+Image'">
+          <div class="media">
+            <img loading="lazy" src="${imgSrc}"
+                 alt="${x.name_zh||x.name_en||''}"
+                 onerror="this.src='https://via.placeholder.com/560x315?text=No+Image'">
+          </div>
+
           <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
           ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
+
           <div class="chips">${cz.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+
           <div class="price">
             ${x.price_msrp_twd?`<small>新品參考價（未折）$${x.price_msrp_twd}</small><br>`:''}
             ${x.price_twd?`$${x.price_twd}`:''}
@@ -180,6 +207,7 @@
           ${x.price_note?`<div class="muted" style="margin-top:4px">${x.price_note}</div>`:''}
           ${x.used_note?`<div class="muted" style="margin-top:2px">${x.used_note}</div>`:''}
           ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
+
           <div style="margin-top:6px">
             <a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a>
           </div>
