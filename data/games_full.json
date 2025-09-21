@@ -27,6 +27,7 @@
       "即時制"
     ],
     "mechanics": [],
+    "mechanics_zh": [],
     "versions_count": 1,
     "image": "assets/img/117814.jpg",
     "price_msrp_twd": 450,
@@ -34,7 +35,7 @@
     "used_price_twd": 250,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "ZIP ZAP BGG",
@@ -69,6 +70,10 @@
       "Area Majority / Influence",
       "Hand Management"
     ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理"
+    ],
     "versions_count": 5,
     "image": "assets/img/142239.jpg",
     "price_msrp_twd": "",
@@ -76,7 +81,7 @@
     "used_price_twd": "",
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "VYE BGG",
@@ -111,6 +116,10 @@
       "Dice Rolling",
       "Stacking and Balancing"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Stacking and Balancing"
+    ],
     "versions_count": 22,
     "image": "assets/img/2821.jpg",
     "price_msrp_twd": 799,
@@ -118,7 +127,7 @@
     "used_price_twd": 350,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "Uno疊疊樂 BGG",
@@ -154,6 +163,13 @@
       "Player Elimination",
       "Take That"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Lose a Turn",
+      "Matching",
+      "Player Elimination",
+      "互害"
+    ],
     "versions_count": 6,
     "image": "assets/img/399088.jpg",
     "price_msrp_twd": 469,
@@ -161,7 +177,7 @@
     "used_price_twd": 300,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "UNO SHOW'EM NO MERCY BGG",
@@ -204,6 +220,12 @@
       "Matching",
       "Take That"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Lose a Turn",
+      "Matching",
+      "互害"
+    ],
     "versions_count": 146,
     "image": "assets/img/2223.jpg",
     "price_msrp_twd": 269,
@@ -211,7 +233,7 @@
     "used_price_twd": 150,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "UNO BGG",
@@ -249,6 +271,13 @@
       "Team-Based Game",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Matching",
+      "Pattern Building",
+      "圖形辨識",
+      "Team-Based Game",
+      "板塊擺放"
+    ],
     "versions_count": 269,
     "image": "assets/img/2394.jpg",
     "price_msrp_twd": 625,
@@ -256,7 +285,7 @@
     "used_price_twd": 500,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "Whoa dominoes BGG",
@@ -291,6 +320,12 @@
       "Matching",
       "Take That"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Lose a Turn",
+      "Matching",
+      "互害"
+    ],
     "versions_count": 21,
     "image": "https://cf.geekdo-images.com/Q-YgMsvL4P2vWjSx1qHi0w__small/img/wXMxineQZz0mSYBbBmVooyFTvTw=/fit-in/200x150/filters:strip_icc()/pic2390725.png",
     "price_msrp_twd": 250,
@@ -298,7 +333,7 @@
     "used_price_twd": 120,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "Swan Panasia Chinese edition 2013",
     "search_keywords": [
       "Solo BGG",
@@ -331,6 +366,10 @@
       "Memory",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "收集套組"
+    ],
     "versions_count": 3,
     "image": "https://cf.geekdo-images.com/11_4ft9nWaMW9sTrTr-m8w__small@2x/img/g8Bo8c8hrUeWanMi2a7qGWlh0jA=/fit-in/400x300/filters:strip_icc()/pic5531526.jpg",
     "price_msrp_twd": 490,
@@ -338,7 +377,7 @@
     "used_price_twd": 250,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "Chinese edition",
     "search_keywords": [
       "SEVEN! BGG",
@@ -375,6 +414,10 @@
       "Storytelling",
       "Voting"
     ],
+    "mechanics_zh": [
+      "Storytelling",
+      "Voting"
+    ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/ybE6_MilIX9a0yXKSx8WWA__small@2x/img/7AUcnLjAdRU9Az2YmPp6K3j13UU=/fit-in/400x300/filters:strip_icc()/pic819469.jpg",
     "price_msrp_twd": 1280,
@@ -382,7 +425,7 @@
     "used_price_twd": 768,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "Ranking BGG",
@@ -419,6 +462,12 @@
       "Paper-and-Pencil",
       "Pattern Building"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Follow",
+      "Paper-and-Pencil",
+      "Pattern Building"
+    ],
     "versions_count": 9,
     "image": "assets/img/183006.jpg",
     "price_msrp_twd": 600,
@@ -426,7 +475,7 @@
     "used_price_twd": 360,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "QWINTO BGG",
@@ -462,6 +511,11 @@
       "Player Elimination",
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "Player Elimination",
+      "同時選擇行動"
+    ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/Me6h25HoQnUagVTweBRu1g__small@2x/img/D12LcObNnFSCIICj-uzsUoMNXZU=/fit-in/400x300/filters:strip_icc()/pic3198237.jpg",
     "price_msrp_twd": 650,
@@ -469,7 +523,7 @@
     "used_price_twd": 390,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "Quibbit BGG",
@@ -506,6 +560,10 @@
       "Cooperative Game",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Team-Based Game"
+    ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/yH0Ayf6TgZSjAFMxiGds9A__small/img/F37koiy_5xcdAybqf9QZvNqqj7U=/fit-in/200x150/filters:strip_icc()/pic3504334.jpg",
     "price_msrp_twd": 550,
@@ -513,7 +571,7 @@
     "used_price_twd": 330,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "pony run BGG",
@@ -546,6 +604,10 @@
       "Memory",
       "Storytelling"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "Storytelling"
+    ],
     "versions_count": 3,
     "image": "assets/img/90009.jpg",
     "price_msrp_twd": 1490,
@@ -553,7 +615,7 @@
     "used_price_twd": 894,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "驢橋 BGG",
@@ -597,6 +659,15 @@
       "Questions and Answers",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "Acting",
+      "合作",
+      "手牌管理",
+      "連線",
+      "圖形辨識",
+      "Questions and Answers",
+      "角色能力"
+    ],
     "versions_count": 19,
     "image": "assets/img/280136.jpg",
     "price_msrp_twd": 1280,
@@ -604,7 +675,7 @@
     "used_price_twd": 768,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "靈能偵探 BGG",
@@ -640,6 +711,11 @@
       "Cooperative Game",
       "Hand Management"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "手牌管理"
+    ],
     "versions_count": 39,
     "image": "assets/img/244992.jpg",
     "price_msrp_twd": 450,
@@ -647,7 +723,7 @@
     "used_price_twd": 270,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "靈光同線 BGG",
@@ -684,6 +760,12 @@
       "Team-Based Game",
       "Traitor Game"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Deduction",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
     "versions_count": 9,
     "image": "assets/img/231748.jpg",
     "price_msrp_twd": 590,
@@ -691,7 +773,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "驚爆倫敦 危機進化 BGG",
@@ -732,6 +814,12 @@
       "Team-Based Game",
       "Traitor Game"
     ],
+    "mechanics_zh": [
+      "Hidden Roles",
+      "角色扮演",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
     "versions_count": 9,
     "image": "assets/img/236217.jpg",
     "price_msrp_twd": 650,
@@ -739,7 +827,7 @@
     "used_price_twd": 390,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "驚爆倫敦 (主/中文) BGG",
@@ -785,6 +873,15 @@
       "Team-Based Game",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "戰役/卡驅動",
+      "隱藏移動",
+      "記憶",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Team-Based Game",
+      "角色能力"
+    ],
     "versions_count": 10,
     "image": "assets/img/192927.jpg",
     "price_msrp_twd": 1890,
@@ -792,7 +889,7 @@
     "used_price_twd": 1134,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "驚魂星期五 BGG",
@@ -826,6 +923,9 @@
     "mechanics": [
       "Pattern Recognition"
     ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
     "versions_count": 9,
     "image": "assets/img/241492.jpg",
     "price_msrp_twd": 640,
@@ -833,7 +933,7 @@
     "used_price_twd": 384,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "變臉魔方 BGG",
@@ -870,6 +970,12 @@
       "Set Collection",
       "Turn Order: Pass Order"
     ],
+    "mechanics_zh": [
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組",
+      "Turn Order: Pass Order"
+    ],
     "versions_count": 38,
     "image": "assets/img/5782.jpg",
     "price_msrp_twd": 500,
@@ -877,7 +983,7 @@
     "used_price_twd": 300,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "變色龍 BGG",
@@ -909,6 +1015,9 @@
     "mechanics": [
       "Pattern Building"
     ],
+    "mechanics_zh": [
+      "Pattern Building"
+    ],
     "versions_count": 8,
     "image": "assets/img/204734.jpg",
     "price_msrp_twd": 890,
@@ -916,7 +1025,7 @@
     "used_price_twd": 534,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "籤籤入扣 BGG",
@@ -950,6 +1059,9 @@
     "mechanics": [
       "Pattern Building"
     ],
+    "mechanics_zh": [
+      "Pattern Building"
+    ],
     "versions_count": 1,
     "image": "assets/img/214276.jpg",
     "price_msrp_twd": 899,
@@ -957,7 +1069,7 @@
     "used_price_twd": 400,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "歡樂彈跳球:進階搖滾版  BGG",
@@ -998,6 +1110,12 @@
       "Player Elimination",
       "Push Your Luck"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "記憶",
+      "Player Elimination",
+      "Push Your Luck"
+    ],
     "versions_count": 22,
     "image": "assets/img/150312.jpg",
     "price_msrp_twd": 680,
@@ -1005,7 +1123,7 @@
     "used_price_twd": 408,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "歡迎來到地下城(外文版) BGG",
@@ -1045,6 +1163,17 @@
       "Simultaneous Action Selection",
       "Solo / Solitaire Game"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "合約",
+      "終局加分",
+      "Multi-Use Cards",
+      "公開選牌",
+      "Paper-and-Pencil",
+      "Pattern Building",
+      "同時選擇行動",
+      "單人"
+    ],
     "versions_count": 22,
     "image": "assets/img/233867.jpg",
     "price_msrp_twd": 850,
@@ -1052,7 +1181,7 @@
     "used_price_twd": 510,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "歡迎來到 BGG",
@@ -1093,6 +1222,12 @@
       "Player Elimination",
       "Push Your Luck"
     ],
+    "mechanics_zh": [
+      "Bids As Wagers",
+      "記憶",
+      "Player Elimination",
+      "Push Your Luck"
+    ],
     "versions_count": 14,
     "image": "assets/img/195043.jpg",
     "price_msrp_twd": 690,
@@ -1100,7 +1235,7 @@
     "used_price_twd": 414,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "歡迎回到地下城 (主/中文) BGG",
@@ -1140,6 +1275,13 @@
       "Network and Route Building",
       "Trading"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "模組地圖",
+      "路網建設",
+      "交易"
+    ],
     "versions_count": 13,
     "image": "assets/img/229218.jpg",
     "price_msrp_twd": 3200,
@@ -1147,7 +1289,7 @@
     "used_price_twd": 1920,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "權力的遊戲 :卡坦 (主/中文) BGG",
@@ -1183,6 +1325,11 @@
       "Area Majority / Influence",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "區域控制",
+      "角色能力"
+    ],
     "versions_count": 2,
     "image": "assets/img/205542.jpg",
     "price_msrp_twd": 200,
@@ -1190,7 +1337,7 @@
     "used_price_twd": 120,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "黯影魔城 BGG",
@@ -1230,6 +1377,11 @@
       "Role Playing",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "角色扮演",
+      "角色能力"
+    ],
     "versions_count": 2,
     "image": "assets/img/131452.jpg",
     "price_msrp_twd": 490,
@@ -1237,7 +1389,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔城馬車黑暗預言擴充 BGG",
@@ -1275,6 +1427,9 @@
     "mechanics": [
       "Hand Management"
     ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
     "versions_count": 3,
     "image": "assets/img/168839.jpg",
     "price_msrp_twd": 590,
@@ -1282,7 +1437,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔城馬車 BGG",
@@ -1321,6 +1476,10 @@
       "Action Queue",
       "Pattern Recognition"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "圖形辨識"
+    ],
     "versions_count": 2,
     "image": "assets/img/166510.jpg",
     "price_msrp_twd": 1300,
@@ -1328,7 +1487,7 @@
     "used_price_twd": 780,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔法廚房 BGG",
@@ -1363,6 +1522,12 @@
       "Push Your Luck",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組"
+    ],
     "versions_count": 8,
     "image": "assets/img/300936.jpg",
     "price_msrp_twd": 690,
@@ -1370,7 +1535,7 @@
     "used_price_twd": 420,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔法賓果 BGG",
@@ -1404,6 +1569,11 @@
       "Set Collection",
       "Solo / Solitaire Game"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組",
+      "單人"
+    ],
     "versions_count": 10,
     "image": "assets/img/391834.jpg",
     "price_msrp_twd": 1050,
@@ -1411,7 +1581,7 @@
     "used_price_twd": 630,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔法秘笈 BGG",
@@ -1456,6 +1626,14 @@
       "Solo / Solitaire Game",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Deck, Bag, and Pool Building",
+      "模組地圖",
+      "角色扮演",
+      "單人",
+      "角色能力"
+    ],
     "versions_count": 12,
     "image": "assets/img/299597.jpg",
     "price_msrp_twd": 2750,
@@ -1463,7 +1641,7 @@
     "used_price_twd": 1650,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔戒擴充:暗影之路 BGG",
@@ -1511,6 +1689,15 @@
       "Solo / Solitaire Game",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Deck, Bag, and Pool Building",
+      "模組地圖",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "角色能力"
+    ],
     "versions_count": 12,
     "image": "assets/img/316630.jpg",
     "price_msrp_twd": 750,
@@ -1518,7 +1705,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔戒：中洲征途 - 黑暗中的棲身者擴充 (擴/ 中文) BGG",
@@ -1569,6 +1756,20 @@
       "Stat Check Resolution",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "行動點",
+      "區域移動",
+      "戰役/卡驅動",
+      "合作",
+      "Deck, Bag, and Pool Building",
+      "Map Addition",
+      "模組地圖",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "Stat Check Resolution",
+      "角色能力"
+    ],
     "versions_count": 13,
     "image": "assets/img/269385.jpg",
     "price_msrp_twd": 3490,
@@ -1576,7 +1777,7 @@
     "used_price_twd": 2094,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魔戒: 中洲征途 (主/中文) BGG",
@@ -1613,6 +1814,10 @@
       "Events",
       "Movement Template"
     ],
+    "mechanics_zh": [
+      "Events",
+      "Movement Template"
+    ],
     "versions_count": 17,
     "image": "https://cf.geekdo-images.com/RZolzx6FNWrbyYv3AJPmDQ__small@2x/img/Q05y8v-59OZj4XjVHlJ-pBU5Q9w=/fit-in/400x300/filters:strip_icc()/pic7216139.jpg",
     "price_msrp_twd": 1280,
@@ -1620,7 +1825,7 @@
     "used_price_twd": 768,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "Traditional Chinese edition",
     "search_keywords": [
       "霹靂投石車 BGG",
@@ -1659,6 +1864,16 @@
       "Push Your Luck",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "Connections",
+      "合約",
+      "終局加分",
+      "手牌管理",
+      "路網建設",
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組"
+    ],
     "versions_count": 62,
     "image": "assets/img/14996.jpg",
     "price_msrp_twd": 1650,
@@ -1666,7 +1881,7 @@
     "used_price_twd": 990,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "鐵道任務 歐洲 (主/中文) BGG",
@@ -1705,6 +1920,16 @@
       "Push Your Luck",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "Connections",
+      "合約",
+      "終局加分",
+      "手牌管理",
+      "路網建設",
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組"
+    ],
     "versions_count": 64,
     "image": "https://cf.geekdo-images.com/K0ADX2pEftW_GzO6FECDWg__small@2x/img/gi_K4q_HI-8ZPUl_We3XEDXGy1A=/fit-in/400x300/filters:strip_icc()/pic3089350.jpg",
     "price_msrp_twd": 1650,
@@ -1712,7 +1937,7 @@
     "used_price_twd": 990,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "Traditional Chinese edition",
     "search_keywords": [
       "鐵道任務 美國 (主/中文) BGG",
@@ -1749,6 +1974,12 @@
       "Secret Unit Deployment",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "隱藏移動",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Team-Based Game"
+    ],
     "versions_count": 63,
     "image": "https://cf.geekdo-images.com/OQN5djW-SB3cTjMxP5BorA__small@2x/img/hP4j3DEtSXzAsWA5iGd9aDZWk-Q=/fit-in/400x300/filters:strip_icc()/pic8935030.jpg",
     "price_msrp_twd": 1800,
@@ -1756,7 +1987,7 @@
     "used_price_twd": 1080,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "Chinese edition",
     "search_keywords": [
       "蘇格蘭特警 BGG",
@@ -1793,6 +2024,12 @@
       "Open Drafting",
       "Race"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "合約",
+      "公開選牌",
+      "Race"
+    ],
     "versions_count": 19,
     "image": "https://cf.geekdo-images.com/h4hp3ssq0sYK-XrHVPli-w__small@2x/img/fX50irGSZVZjzidstgWhhAJeO6M=/fit-in/400x300/filters:strip_icc()/pic4323588.png",
     "price_msrp_twd": 1080,
@@ -1800,7 +2037,7 @@
     "used_price_twd": 648,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "爆珠發明 BGG",
@@ -1834,6 +2071,11 @@
       "Set Collection",
       "Trading"
     ],
+    "mechanics_zh": [
+      "借貸",
+      "收集套組",
+      "交易"
+    ],
     "versions_count": 6,
     "image": "https://cf.geekdo-images.com/erI19kvOG0wMIti6U-pK7g__small@2x/img/UMYCMalt5emoDTwqYjGAF6YxdGo=/fit-in/400x300/filters:strip_icc()/pic3468123.jpg",
     "price_msrp_twd": 1500,
@@ -1841,7 +2083,7 @@
     "used_price_twd": 900,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "龐氏騙局 BGG",
@@ -1879,6 +2121,11 @@
       "Memory",
       "Open Drafting"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "記憶",
+      "公開選牌"
+    ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/vyouNxp_AKyhO2_towbF-A__small@2x/img/WKWurgPM_I-gAyV3aZQolj8NMiI=/fit-in/400x300/filters:strip_icc()/pic2598882.png",
     "price_msrp_twd": 490,
@@ -1886,7 +2133,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "鯊魚警報 BGG",
@@ -1922,6 +2169,11 @@
       "Push Your Luck",
       "Re-rolling and Locking"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Push Your Luck",
+      "Re-rolling and Locking"
+    ],
     "versions_count": 2,
     "image": "assets/img/130556.jpg",
     "price_msrp_twd": 590,
@@ -1929,7 +2181,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "鯊魚來襲 BGG",
@@ -1971,6 +2223,13 @@
       "Relative Movement",
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Player Elimination",
+      "Race",
+      "Relative Movement",
+      "同時選擇行動"
+    ],
     "versions_count": 16,
     "image": "https://cf.geekdo-images.com/MwCLB3od8VC_jWveHj92wA__small@2x/img/qvgECaOWLA8YlTX8rGYqTgWvgtE=/fit-in/400x300/filters:strip_icc()/pic5531445.jpg",
     "price_msrp_twd": 490,
@@ -1978,7 +2237,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "鯊口餘生 BGG",
@@ -2012,6 +2271,11 @@
       "Storytelling",
       "Voting"
     ],
+    "mechanics_zh": [
+      "同時選擇行動",
+      "Storytelling",
+      "Voting"
+    ],
     "versions_count": 8,
     "image": "https://shoplineimg.com/57fba1b061706917080d8c00/59bbd892d4e3959f8300042c/800x.webp?source_format=jpg",
     "price_msrp_twd": 1050,
@@ -2019,7 +2283,7 @@
     "used_price_twd": 630,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "雙胞胎 (主/中文) BGG",
@@ -2051,6 +2315,7 @@
       "兒童"
     ],
     "mechanics": [],
+    "mechanics_zh": [],
     "versions_count": 7,
     "image": "https://cf.geekdo-images.com/OaVyKQ11J8gEX6tkc8CQww__small@2x/img/CrPn0L14FvJf-GACATGif2EvFao=/fit-in/400x300/filters:strip_icc()/pic7141202.jpg",
     "price_msrp_twd": 390,
@@ -2058,7 +2323,7 @@
     "used_price_twd": 234,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "蹦蹦蛙 BGG",
@@ -2095,6 +2360,12 @@
       "Re-rolling and Locking",
       "Take That"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Push Your Luck",
+      "Re-rolling and Locking",
+      "互害"
+    ],
     "versions_count": 39,
     "image": "https://cf.geekdo-images.com/eyEhxVxHqNPSDkIYvbe1tg__small@2x/img/teG02EBtCEOacmSeYD9SkTFmhog=/fit-in/400x300/filters:strip_icc()/pic3087622.jpg",
     "price_msrp_twd": 790,
@@ -2102,7 +2373,7 @@
     "used_price_twd": 474,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "蟲蟲燒烤派對 BGG",
@@ -2142,6 +2413,15 @@
       "Three Dimensional Movement",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Enclosure",
+      "格子移動",
+      "Hexagon Grid",
+      "Pattern Movement",
+      "Pieces as Map",
+      "Three Dimensional Movement",
+      "板塊擺放"
+    ],
     "versions_count": 31,
     "image": "https://cf.geekdo-images.com/aijsHnfjKgQ8rGyy1dI2Dg__small@2x/img/g6TvodMpcn2JGiLioQp4ZmYL_1s=/fit-in/400x300/filters:strip_icc()/pic4160838.jpg",
     "price_msrp_twd": 850,
@@ -2149,7 +2429,7 @@
     "used_price_twd": 510,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "蟲蟲蜂房 BGG",
@@ -2183,6 +2463,9 @@
     "mechanics": [
       "Pattern Recognition"
     ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/GRyGispzXAJ_NUP1MuAfEQ__small@2x/img/By9LaY9muz7RPVhtW_W_iaEzAhQ=/fit-in/400x300/filters:strip_icc()/pic5531430.jpg",
     "price_msrp_twd": 490,
@@ -2190,7 +2473,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "蟲蟲密碼 BGG",
@@ -2231,6 +2514,14 @@
       "Solo / Solitaire Game",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Follow",
+      "Pattern Building",
+      "Score-and-Reset Game",
+      "收集套組",
+      "單人",
+      "板塊擺放"
+    ],
     "versions_count": 14,
     "image": "https://cf.geekdo-images.com/0-VWzSBT2i8AdoKDS-Q1mA__small@2x/img/Xl-SynPJfHB2xMU79nFzS59FI5k=/fit-in/400x300/filters:strip_icc()/pic6502068.png",
     "price_msrp_twd": 1350,
@@ -2238,7 +2529,7 @@
     "used_price_twd": 810,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "薩凡娜公園 BGG",
@@ -2282,6 +2573,13 @@
       "Traitor Game",
       "Voting"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Hidden Roles",
+      "Player Elimination",
+      "Traitor Game",
+      "Voting"
+    ],
     "versions_count": 10,
     "image": "https://bghut.com/images/201810/goods_img/7045_P_1539475008931.JPG",
     "price_msrp_twd": 850,
@@ -2289,7 +2587,7 @@
     "used_price_twd": 510,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "獵巫鎮 1692 (主/中文) BGG",
@@ -2326,6 +2624,14 @@
       "Simultaneous Action Selection",
       "Slide / Push"
     ],
+    "mechanics_zh": [
+      "Bias",
+      "手牌管理",
+      "取貨運送",
+      "收集套組",
+      "同時選擇行動",
+      "Slide / Push"
+    ],
     "versions_count": 13,
     "image": "https://cf.geekdo-images.com/0bDccG2vXk5X1_bcJ0G4_Q__small@2x/img/56WsWdjkDszUvlL6Tw9LNtlvErk=/fit-in/400x300/filters:strip_icc()/pic3089193.jpg",
     "price_msrp_twd": 2000,
@@ -2333,7 +2639,7 @@
     "used_price_twd": 1200,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "瀑布淘金客 BGG",
@@ -2369,6 +2675,9 @@
     "mechanics": [
       "Action Queue"
     ],
+    "mechanics_zh": [
+      "Action Queue"
+    ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/uT84-aecpR6hKzwi1OExhw__small@2x/img/Rdd9cYnRjUK5_3p68G8SRck-UzQ=/fit-in/400x300/filters:strip_icc()/pic5450727.png",
     "price_msrp_twd": 900,
@@ -2376,7 +2685,7 @@
     "used_price_twd": 540,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "叢林智慧棋 BGG",
@@ -2411,6 +2720,10 @@
       "Hand Management",
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "同時選擇行動"
+    ],
     "versions_count": 8,
     "image": "https://cf.geekdo-images.com/Z1ym7D-3eQO-CW7WvDHs-w__small/img/gmaYjyCxN8l3peRVQzHH04mYiMM=/fit-in/200x150/filters:strip_icc()/pic1703069.jpg",
     "price_msrp_twd": 490,
@@ -2418,7 +2731,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "叢林野宴（附Promo卡） BGG",
@@ -2459,6 +2772,12 @@
       "Open Drafting",
       "Random Production"
     ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "擲骰",
+      "公開選牌",
+      "Random Production"
+    ],
     "versions_count": 17,
     "image": "https://cf.geekdo-images.com/4BTVGQWO0M9ayxyku3FW6Q__small@2x/img/CgXdrnqqO6Jt8R_cyUHcEbUrY3g=/fit-in/400x300/filters:strip_icc()/pic3477004.jpg",
     "price_msrp_twd": 1400,
@@ -2466,7 +2785,7 @@
     "used_price_twd": 840,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "鍛骰物語 (主/中文) BGG",
@@ -2504,6 +2823,11 @@
       "Rock-Paper-Scissors",
       "Voting"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "剪刀石頭布",
+      "Voting"
+    ],
     "versions_count": 2,
     "image": "https://bghut.com/images/202007/goods_img/8393_G_1593838153041.jpg",
     "price_msrp_twd": 599,
@@ -2511,7 +2835,7 @@
     "used_price_twd": 360,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "還試好遊戲 BGG",
@@ -2545,6 +2869,7 @@
       "兒童"
     ],
     "mechanics": [],
+    "mechanics_zh": [],
     "versions_count": 12,
     "image": "https://cf.geekdo-images.com/NwefFi7gYExQOwtYkRVZIg__small@2x/img/I4lWeSfH-syqCS0SMw7tapifgco=/fit-in/400x300/filters:strip_icc()/pic2401263.png",
     "price_msrp_twd": 490,
@@ -2552,7 +2877,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "賽豬俱樂部 BGG",
@@ -2595,6 +2920,12 @@
       "Real-Time",
       "Track Movement"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "擲骰",
+      "Real-Time",
+      "Track Movement"
+    ],
     "versions_count": 14,
     "image": "https://cf.geekdo-images.com/iMz-jlMj_-VtDzwrxtR7pw__small@2x/img/bVZ9_Trt1-AHnWBUZzO9qox9oNI=/fit-in/400x300/filters:strip_icc()/pic7467747.png",
     "price_msrp_twd": 1600,
@@ -2602,7 +2933,7 @@
     "used_price_twd": 960,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "賽馬大亨 BGG",
@@ -2641,6 +2972,10 @@
       "Roll / Spin and Move",
       "Variable Set-up"
     ],
+    "mechanics_zh": [
+      "Roll / Spin and Move",
+      "可變設置"
+    ],
     "versions_count": 12,
     "image": "https://cf.geekdo-images.com/VulTMYesrtYhZbL3aqTRkA__small@2x/img/AZJvza5XZ2XUGhok_Kk6uuj5ii8=/fit-in/400x300/filters:strip_icc()/pic2598902.png",
     "price_msrp_twd": 1650,
@@ -2648,7 +2983,7 @@
     "used_price_twd": 990,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "蟑螂捕手 BGG",
@@ -2691,6 +3026,16 @@
       "Variable Set-up",
       "Worker Placement"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "終局加分",
+      "Hexagon Grid",
+      "Income",
+      "板塊擺放",
+      "搶先手",
+      "可變設置",
+      "工人放置"
+    ],
     "versions_count": 3,
     "image": "https://cf.geekdo-images.com/dbUiEzam0DTdV_rO6dhTvA__small@2x/img/sJQOrErgmUcNdRI5rKceZu9IhbE=/fit-in/400x300/filters:strip_icc()/pic6977896.png",
     "price_msrp_twd": 1190,
@@ -2698,7 +3043,7 @@
     "used_price_twd": 714,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "薑餅人王國 BGG",
@@ -2739,6 +3084,18 @@
       "Stock Holding",
       "Victory Points as a Resource"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Auction: Fixed Placement",
+      "Betting and Bluffing",
+      "Commodity Speculation",
+      "Constrained Bidding",
+      "Investment",
+      "Market",
+      "公開選牌",
+      "Stock Holding",
+      "Victory Points as a Resource"
+    ],
     "versions_count": 7,
     "image": "https://cf.geekdo-images.com/jEwIBYVRHCqWkQpWerV2Wg__small@2x/img/_J905RwcsOd1UnVqWZYKeoEfPxI=/fit-in/400x300/filters:strip_icc()/pic3067380.jpg",
     "price_msrp_twd": 1400,
@@ -2746,7 +3103,7 @@
     "used_price_twd": 840,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "縱橫股海 BGG",
@@ -2785,6 +3142,10 @@
       "Hand Management",
       "Resource to Move"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Resource to Move"
+    ],
     "versions_count": 6,
     "image": "https://bghut.com/images/201612/goods_img/5849_G_1482724638160.jpg",
     "price_msrp_twd": 1300,
@@ -2792,7 +3153,7 @@
     "used_price_twd": 780,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "環遊世界八十天 BGG",
@@ -2827,6 +3188,10 @@
       "Auction: Sealed Bid",
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "Auction: Sealed Bid",
+      "同時選擇行動"
+    ],
     "versions_count": 36,
     "image": "https://cf.geekdo-images.com/JXZFFuM2UW6eg_UJHmENjg__small@2x/img/Q9mh-R-4dh_NqdFafUSOlyGgxgE=/fit-in/400x300/filters:strip_icc()/pic4575449.jpg",
     "price_msrp_twd": 290,
@@ -2834,7 +3199,7 @@
     "used_price_twd": 174,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "獴鷲派對 BGG",
@@ -2874,6 +3239,13 @@
       "Set Collection",
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "Closed Drafting",
+      "擲骰",
+      "Die Icon Resolution",
+      "收集套組",
+      "同時選擇行動"
+    ],
     "versions_count": 20,
     "image": "https://cf.geekdo-images.com/qh-prKwTMJ1F3qTRTIbujQ__small@2x/img/2mS00AuVVRLvAgtISO22-RtXesU=/fit-in/400x300/filters:strip_icc()/pic6726030.png",
     "price_msrp_twd": 750,
@@ -2881,7 +3253,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "龍龍公園 BGG",
@@ -2917,6 +3289,9 @@
     "mechanics": [
       "Push Your Luck"
     ],
+    "mechanics_zh": [
+      "Push Your Luck"
+    ],
     "versions_count": 7,
     "image": "https://bghut.com/images/201703/goods_img/4296_G_1490167581789.jpg",
     "price_msrp_twd": 590,
@@ -2924,7 +3299,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "4",
+    "stock": 4,
     "description": "",
     "search_keywords": [
       "龍牙勇者 BGG",
@@ -2966,6 +3341,13 @@
       "Track Movement",
       "Variable Set-up"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "擲骰",
+      "Roll / Spin and Move",
+      "Track Movement",
+      "可變設置"
+    ],
     "versions_count": 20,
     "image": "https://cf.geekdo-images.com/_VGX0L0SkLdK9UxWrs7tOw__small@2x/img/RbeYvYFF-oJP_5DGIuFxoehnmyA=/fit-in/400x300/filters:strip_icc()/pic5510181.jpg",
     "price_msrp_twd": 1490,
@@ -2973,7 +3355,7 @@
     "used_price_twd": 894,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "駱駝大賽2020年版 BGG",
@@ -3009,6 +3391,11 @@
       "Set Collection",
       "Variable Set-up"
     ],
+    "mechanics_zh": [
+      "公開選牌",
+      "收集套組",
+      "可變設置"
+    ],
     "versions_count": 6,
     "image": "https://cf.geekdo-images.com/M2lr-Q4cc6n5J7MW8lC4kQ__small@2x/img/cqb7GZLsPvssCkAMkqbgc_y0oUI=/fit-in/400x300/filters:strip_icc()/pic4773842.jpg",
     "price_msrp_twd": 1490,
@@ -3016,7 +3403,7 @@
     "used_price_twd": 894,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "頭等艙列車 BGG",
@@ -3058,6 +3445,11 @@
       "Push Your Luck",
       "Variable Phase Order"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Push Your Luck",
+      "可變階段順序"
+    ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/c7XYbY5L2Kg-QAQP2daE4A__small@2x/img/Cvvk7idn03cRqcs08say5yl7mv8=/fit-in/400x300/filters:strip_icc()/pic4229311.jpg",
     "price_msrp_twd": 1280,
@@ -3065,7 +3457,7 @@
     "used_price_twd": 768,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "遺產爭奪戰(貴婦的遺產) BGG",
@@ -3106,6 +3498,12 @@
       "Single Loser Game",
       "Storytelling"
     ],
+    "mechanics_zh": [
+      "Acting",
+      "角色扮演",
+      "Single Loser Game",
+      "Storytelling"
+    ],
     "versions_count": 29,
     "image": "https://cf.geekdo-images.com/PjENQ-XWCdV-gMiLzeEuEw__small@2x/img/2mrXSyqOGHFJRXgQ-ZNwXOz3Ok4=/fit-in/400x300/filters:strip_icc()/pic5510354.jpg",
     "price_msrp_twd": 690,
@@ -3113,7 +3511,7 @@
     "used_price_twd": 414,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "遵命！黑魔王 BGG",
@@ -3150,6 +3548,10 @@
       "Betting and Bluffing",
       "Hand Management"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "手牌管理"
+    ],
     "versions_count": 23,
     "image": "https://cf.geekdo-images.com/xfoUlBIIgzy5-tMZ_jEvsQ__small@2x/img/ise6fDlQREKa7uO67JJAizrc5_8=/fit-in/400x300/filters:strip_icc()/pic5632214.jpg",
     "price_msrp_twd": 490,
@@ -3157,7 +3559,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "貓吃3辣 BGG",
@@ -3207,6 +3609,15 @@
       "Role Playing",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Bribery",
+      "手牌管理",
+      "談判",
+      "公開選牌",
+      "角色扮演",
+      "收集套組"
+    ],
     "versions_count": 20,
     "image": "https://cf.geekdo-images.com/Ooy1E4iddgSBzpGDaAKTNw__small@2x/img/Xtv8Eqw3FE8B-F4yLPfVQxPnkoo=/fit-in/400x300/filters:strip_icc()/pic2596649.jpg",
     "price_msrp_twd": 1350,
@@ -3214,7 +3625,7 @@
     "used_price_twd": 810,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "諾丁漢警長 BGG",
@@ -3249,6 +3660,12 @@
       "Market",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "合約",
+      "Income",
+      "Market",
+      "收集套組"
+    ],
     "versions_count": 6,
     "image": "https://bghut.com/images/202204/goods_img/9845_G_1650853245533.jpg",
     "price_msrp_twd": 1350,
@@ -3256,7 +3673,7 @@
     "used_price_twd": 810,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "穆拉諾-光影大師 BGG",
@@ -3295,6 +3712,12 @@
       "Deduction",
       "Score-and-Reset Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "Deduction",
+      "Score-and-Reset Game"
+    ],
     "versions_count": 44,
     "image": "https://img.gokids.com.tw/GoodPic/50/big/17400395458850.png",
     "price_msrp_twd": 850,
@@ -3302,7 +3725,7 @@
     "used_price_twd": 510,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "獨家暗語 (主/中文) BGG",
@@ -3341,6 +3764,10 @@
       "Cooperative Game",
       "Voting"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Voting"
+    ],
     "versions_count": 9,
     "image": "https://cf.geekdo-images.com/UZBzGHiV8N8mhBS37xlExA__small@2x/img/5M_Fmq9SoFmMqY3JipD-e0TppAM=/fit-in/400x300/filters:strip_icc()/pic7094758.png",
     "price_msrp_twd": 750,
@@ -3348,7 +3775,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "獨家專輯 (主/中文) BGG",
@@ -3382,6 +3809,11 @@
       "Open Drafting",
       "Take That"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "公開選牌",
+      "互害"
+    ],
     "versions_count": 4,
     "image": "https://cf.geekdo-images.com/3QEfHHoXwDB4CCbjIFXNnw__small@2x/img/FAcJYVoy1rN01UAHGJdBdgoKRuw=/fit-in/400x300/filters:strip_icc()/pic1661253.jpg",
     "price_msrp_twd": 590,
@@ -3389,7 +3821,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "燒錢計畫 BGG",
@@ -3425,6 +3857,9 @@
     "mechanics": [
       "Pattern Recognition"
     ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
     "versions_count": 4,
     "image": "https://cf.geekdo-images.com/JC_YWJVef9DC8EepUWCkXg__small@2x/img/VK9XjCWKehtkD_xdJvK7KsA5u-w=/fit-in/400x300/filters:strip_icc()/pic3803198.png",
     "price_msrp_twd": 990,
@@ -3432,7 +3867,7 @@
     "used_price_twd": 594,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "燒杯博士 BGG",
@@ -3472,6 +3907,11 @@
       "Cooperative Game",
       "Memory"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "記憶"
+    ],
     "versions_count": 35,
     "image": "https://bghut.com/images/201805/goods_img/6813_G_1526909339697.jpg",
     "price_msrp_twd": 780,
@@ -3479,7 +3919,7 @@
     "used_price_twd": 468,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "機密代號:裡應外合 BGG",
@@ -3519,6 +3959,11 @@
       "Memory",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "記憶",
+      "Team-Based Game"
+    ],
     "versions_count": 31,
     "image": "https://bghut.com/images/201805/goods_img/6812_G_1526908633572.jpg",
     "price_msrp_twd": 780,
@@ -3526,7 +3971,7 @@
     "used_price_twd": 468,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "機密代號:有圖有真相 BGG",
@@ -3570,6 +4015,13 @@
       "Race",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Deduction",
+      "記憶",
+      "Race",
+      "Team-Based Game"
+    ],
     "versions_count": 78,
     "image": "https://cf.geekdo-images.com/isfQxtHhFMdUHEfEHIQ5Kw__small@2x/img/4MuKaSkZ7fXPVlvnGZPb6S3DJso=/fit-in/400x300/filters:strip_icc()/pic3693575.png",
     "price_msrp_twd": 780,
@@ -3577,7 +4029,7 @@
     "used_price_twd": 468,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "機密代號 BGG",
@@ -3624,6 +4076,14 @@
       "Set Collection",
       "Take That"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Die Icon Resolution",
+      "Push Your Luck",
+      "Re-rolling and Locking",
+      "收集套組",
+      "互害"
+    ],
     "versions_count": 16,
     "image": "https://wobgames.net/wp-content/uploads/2020/08/ageofwar-boardgame-430x430.png",
     "price_msrp_twd": 500,
@@ -3631,7 +4091,7 @@
     "used_price_twd": 300,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "戰國時代 BGG",
@@ -3672,6 +4132,10 @@
       "Betting and Bluffing",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Team-Based Game"
+    ],
     "versions_count": 7,
     "image": "https://img.gokids.com.tw/GoodPic/07/big/165836675919707.png",
     "price_msrp_twd": 990,
@@ -3679,7 +4143,7 @@
     "used_price_twd": 594,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "魷魚遊戲 BGG",
@@ -3719,6 +4183,13 @@
       "Player Elimination",
       "Predictive Bid"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Bids As Wagers",
+      "手牌管理",
+      "Player Elimination",
+      "Predictive Bid"
+    ],
     "versions_count": 44,
     "image": "https://cf.geekdo-images.com/4a1fxiaT4TZgBppBeoPxAQ__small@2x/img/hI7E6eTfUUbvl1-E_bxwyIcd6n4=/fit-in/400x300/filters:strip_icc()/pic5940634.jpg",
     "price_msrp_twd": 750,
@@ -3726,7 +4197,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "骷髏牌 (主/中文) BGG",
@@ -3765,6 +4236,16 @@
       "Worker Placement",
       "Worker Placement with Dice Workers"
     ],
+    "mechanics_zh": [
+      "合約",
+      "擲骰",
+      "終局加分",
+      "公開選牌",
+      "搶先手",
+      "可變設置",
+      "工人放置",
+      "骰子工人"
+    ],
     "versions_count": 15,
     "image": "https://cf.geekdo-images.com/lttmtIkphkYVVRTb9eyxvg__small@2x/img/IX6v8F7hSOQpAwJC3eUQZ4WhvTQ=/fit-in/400x300/filters:strip_icc()/pic5134786.jpg",
     "price_msrp_twd": 1890,
@@ -3772,7 +4253,7 @@
     "used_price_twd": 1134,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "輝煌的羅倫佐 BGG",
@@ -3809,6 +4290,10 @@
       "Betting and Bluffing",
       "Push Your Luck"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Push Your Luck"
+    ],
     "versions_count": 4,
     "image": "https://cf.geekdo-images.com/hSUYEp0Yvuu1548ScuKIvg__small@2x/img/UttYApXXPNvTt5ig1Bze-GZJTBs=/fit-in/400x300/filters:strip_icc()/pic4918688.png",
     "price_msrp_twd": 690,
@@ -3816,7 +4301,7 @@
     "used_price_twd": 414,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "賭命大賽 BGG",
@@ -3853,6 +4338,14 @@
       "Paper-and-Pencil",
       "Race"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "Connections",
+      "連線",
+      "路網建設",
+      "Paper-and-Pencil",
+      "Race"
+    ],
     "versions_count": 15,
     "image": "https://cf.geekdo-images.com/utnKBfODjp-K6bkoOk_QFQ__small@2x/img/LW0Ua8J_oEcD_0FT5HGI7vIWLR8=/fit-in/400x300/filters:strip_icc()/pic6927361.png",
     "price_msrp_twd": 990,
@@ -3860,7 +4353,7 @@
     "used_price_twd": 594,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "請上車 BGG",
@@ -3896,6 +4389,11 @@
       "Score-and-Reset Game",
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Score-and-Reset Game",
+      "同時選擇行動"
+    ],
     "versions_count": 12,
     "image": "https://cf.geekdo-images.com/LkxKan1f2bMiARa8Nb72Uw__small@2x/img/NLsD_lxVAIq8VvtWZLVdz6XnpFU=/fit-in/400x300/filters:strip_icc()/pic5951163.jpg",
     "price_msrp_twd": 590,
@@ -3903,7 +4401,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "誰是牛頭王25週年版 BGG",
@@ -3935,6 +4433,9 @@
     "mechanics": [
       "Player Judge"
     ],
+    "mechanics_zh": [
+      "Player Judge"
+    ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/3srTjQxHARVUQ_0W9rWvoA__imagepage/img/Fu4C4TX0KfUrBaK6hjIqC1Q1PKE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8357487.jpg",
     "price_msrp_twd": 1080,
@@ -3942,7 +4443,7 @@
     "used_price_twd": 648,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "瞎掰王 BGG",
@@ -3974,6 +4475,9 @@
     "mechanics": [
       "Player Judge"
     ],
+    "mechanics_zh": [
+      "Player Judge"
+    ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/3srTjQxHARVUQ_0W9rWvoA__imagepage/img/Fu4C4TX0KfUrBaK6hjIqC1Q1PKE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8357487.jpg",
     "price_msrp_twd": 1080,
@@ -3981,7 +4485,7 @@
     "used_price_twd": 648,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "瞎掰王 BGG",
@@ -4020,6 +4524,10 @@
       "Open Drafting",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "公開選牌",
+      "收集套組"
+    ],
     "versions_count": 16,
     "image": "https://cf.geekdo-images.com/qGFT4WFD86zTBROTQZiErg__imagepage/img/99zlNEy_ktFlYN1Arzxjd2Z0IjU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4480086.jpg",
     "price_msrp_twd": 1350,
@@ -4027,7 +4535,7 @@
     "used_price_twd": 810,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "璀璨寶石擴充: 璀璨之城 (擴/中文) BGG",
@@ -4068,6 +4576,12 @@
       "Race",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "合約",
+      "公開選牌",
+      "Race",
+      "收集套組"
+    ],
     "versions_count": 2,
     "image": "assets/img/406291.jpg",
     "price_msrp_twd": 2160,
@@ -4075,7 +4589,7 @@
     "used_price_twd": 1320,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "璀璨寶石:寶可夢 BGG",
@@ -4114,6 +4628,12 @@
       "Race",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "合約",
+      "公開選牌",
+      "Race",
+      "收集套組"
+    ],
     "versions_count": 15,
     "image": "https://cf.geekdo-images.com/bTTwxCpTpIkIRG4bXUv73w__imagepage/img/hnoLVndgq3oFOGdBj5Gaq3L2RoU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7089383.jpg",
     "price_msrp_twd": 1590,
@@ -4121,7 +4641,7 @@
     "used_price_twd": 954,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "Traditional Chinese edition",
     "search_keywords": [
       "璀璨寶石: 漫威 (主/中文) BGG",
@@ -4160,6 +4680,12 @@
       "Race",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "合約",
+      "公開選牌",
+      "Race",
+      "收集套組"
+    ],
     "versions_count": 76,
     "image": "https://cf.geekdo-images.com/aEipdIPyNfuveSmdV_h8JQ__imagepage/img/4CCsJSmE9QOGUIjdmchUDA3vOgU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2313795.jpg",
     "price_msrp_twd": 1400,
@@ -4167,7 +4693,7 @@
     "used_price_twd": 840,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "GoKid Chinese edition",
     "search_keywords": [
       "璀璨寶石 (主/中文) BGG",
@@ -4207,6 +4733,13 @@
       "Simultaneous Action Selection",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "Layering",
+      "Pattern Building",
+      "同時選擇行動",
+      "板塊擺放"
+    ],
     "versions_count": 17,
     "image": "https://cf.geekdo-images.com/T27pOSV4o3HlFPSibHFWUA__small@2x/img/ap_HeWFrqTlfRAtcN3w0P9DqouA=/fit-in/400x300/filters:strip_icc()/pic3884764.jpg",
     "price_msrp_twd": 990,
@@ -4214,7 +4747,7 @@
     "used_price_twd": 594,
     "price_note": "",
     "used_note": "",
-    "stock": "4",
+    "stock": 4,
     "description": "",
     "search_keywords": [
       "數字九乘塔 (主/中文) BGG",
@@ -4256,6 +4789,11 @@
       "Modular Board",
       "Race"
     ],
+    "mechanics_zh": [
+      "Flicking",
+      "模組地圖",
+      "Race"
+    ],
     "versions_count": 9,
     "image": "assets/img/150.jpg",
     "price_msrp_twd": 2550,
@@ -4263,7 +4801,7 @@
     "used_price_twd": 1530,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "彈指賽車 BGG",
@@ -4299,6 +4837,9 @@
     "mechanics": [
       "Pattern Building"
     ],
+    "mechanics_zh": [
+      "Pattern Building"
+    ],
     "versions_count": 15,
     "image": "https://cf.geekdo-images.com/dpAidU3yqwNaSNO2EHehcA__imagepage/img/bew4Jz-GkyCtTSpqh0Zzvhkiedw=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2616068.png",
     "price_msrp_twd": 390,
@@ -4306,7 +4847,7 @@
     "used_price_twd": 240,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "Chinese/English edition",
     "search_keywords": [
       "嘩啦啦真痛快 BGG",
@@ -4342,6 +4883,11 @@
       "Pattern Building",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "Pattern Building",
+      "板塊擺放"
+    ],
     "versions_count": 27,
     "image": "https://cf.geekdo-images.com/aoH0KLMXtBo7-AnHx6wceg__small@2x/img/o1hcy71-5PyWZOKRQafURwqyH78=/fit-in/400x300/filters:strip_icc()/pic3089347.jpg",
     "price_msrp_twd": 1090,
@@ -4349,7 +4895,7 @@
     "used_price_twd": 654,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "輕鬆放 BGG",
@@ -4381,6 +4927,9 @@
     "mechanics": [
       "Hand Management"
     ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
     "versions_count": 1,
     "image": "assets/img/162915.jpg",
     "price_msrp_twd": 290,
@@ -4388,7 +4937,7 @@
     "used_price_twd": 174,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "說謊小八 BGG",
@@ -4431,6 +4980,14 @@
       "Storytelling",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Hidden Roles",
+      "記憶",
+      "角色扮演",
+      "Storytelling",
+      "Team-Based Game"
+    ],
     "versions_count": 23,
     "image": "https://cf.geekdo-images.com/kfp8EJrlTcDnhZU9q8GW7Q__small@2x/img/MAq4sVSgK7hc1NpGQ6EaBCZMqrY=/fit-in/400x300/filters:strip_icc()/pic4229314.jpg",
     "price_msrp_twd": 1350,
@@ -4438,7 +4995,7 @@
     "used_price_twd": 810,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "說夢人(主/中文) BGG",
@@ -4477,6 +5034,10 @@
       "Communication Limits",
       "Cooperative Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作"
+    ],
     "versions_count": 11,
     "image": "https://cf.geekdo-images.com/ar0PNvoj86S8o-Y_wVHA8g__small@2x/img/ELsKORSpBaTicCzfOKfnr61PtpE=/fit-in/400x300/filters:strip_icc()/pic6126671.png",
     "price_msrp_twd": 1050,
@@ -4484,7 +5045,7 @@
     "used_price_twd": 630,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "語破天機 兒童版 (主/中文) BGG",
@@ -4522,6 +5083,11 @@
       "Race",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Race",
+      "Team-Based Game"
+    ],
     "versions_count": 42,
     "image": "https://cf.geekdo-images.com/ItTurQyarLsUcY-HaccQ3g__small@2x/img/7-ZRS69t6VrLpqbbDjPJ6yvL2qA=/fit-in/400x300/filters:strip_icc()/pic2220430.jpg",
     "price_msrp_twd": 1300,
@@ -4529,7 +5095,7 @@
     "used_price_twd": 780,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "語破天機 (主/中文) BGG",
@@ -4562,6 +5128,10 @@
       "Cooperative Game",
       "Ordering"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Ordering"
+    ],
     "versions_count": 11,
     "image": "https://www.bghut.com/images/202210/goods_img/10116_P_1664841522827.jpg",
     "price_msrp_twd": 790,
@@ -4569,7 +5139,7 @@
     "used_price_twd": 474,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "認清你的朋友 BGG",
@@ -4599,6 +5169,7 @@
       "動作／敏捷"
     ],
     "mechanics": [],
+    "mechanics_zh": [],
     "versions_count": 6,
     "image": "https://cf.geekdo-images.com/c1bXrymsER07fPJKeCoEaA__small@2x/img/xPjA-u4BWtIYoyszch-TKcdlNxk=/fit-in/400x300/filters:strip_icc()/pic4924159.png",
     "price_msrp_twd": 600,
@@ -4606,7 +5177,7 @@
     "used_price_twd": 360,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "舞動魔咒 BGG",
@@ -4643,6 +5214,12 @@
       "Hexagon Grid",
       "Modular Board"
     ],
+    "mechanics_zh": [
+      "Enclosure",
+      "格子移動",
+      "Hexagon Grid",
+      "模組地圖"
+    ],
     "versions_count": 17,
     "image": "https://cf.geekdo-images.com/LXHQypt-1L-OUB9enqxc1w__small@2x/img/W0mJOrPuXAD0O5LCK_Wo62MRESQ=/fit-in/400x300/filters:strip_icc()/pic2538532.jpg",
     "price_msrp_twd": 850,
@@ -4650,7 +5227,7 @@
     "used_price_twd": 510,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "綿羊爭牧場 BGG",
@@ -4684,6 +5261,11 @@
       "Betting and Bluffing",
       "Worker Placement"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "Betting and Bluffing",
+      "工人放置"
+    ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/JljWkiGv2YyBR5aCpQ-tIA__small@2x/img/dTs6uw8w_vT0vKb-6laDRgkkTPY=/fit-in/400x300/filters:strip_icc()/pic3342886.png",
     "price_msrp_twd": 1250,
@@ -4691,7 +5273,7 @@
     "used_price_twd": 750,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "維京襲來 BGG",
@@ -4728,6 +5310,12 @@
       "Open Drafting",
       "Point to Point Movement"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "路網建設",
+      "公開選牌",
+      "Point to Point Movement"
+    ],
     "versions_count": 6,
     "image": "https://cdn.prod.website-files.com/575714cc825e8dbc6c83b98a/5ab8f770326fa984a0e9f9cd_Elfenland_Box_3D-p-800.jpeg",
     "price_msrp_twd": 2190,
@@ -4735,7 +5323,7 @@
     "used_price_twd": 1314,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "精靈國度豪華版 BGG",
@@ -4772,6 +5360,10 @@
       "Memory",
       "Take That"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "互害"
+    ],
     "versions_count": 10,
     "image": "https://cf.geekdo-images.com/4ttMiZ19OyI1PknRt-F09A__small@2x/img/siCPkTblHeGcKCuBr8Fkqf6an2Q=/fit-in/400x300/filters:strip_icc()/pic3289266.png",
     "price_msrp_twd": 690,
@@ -4779,7 +5371,7 @@
     "used_price_twd": 414,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "精靈捕手 BGG",
@@ -4819,6 +5411,13 @@
       "Set Collection",
       "Trading"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Multi-Use Cards",
+      "談判",
+      "收集套組",
+      "交易"
+    ],
     "versions_count": 65,
     "image": "https://cf.geekdo-images.com/ym_ghqbdx8TaLwI5reF0cQ__small@2x/img/dIAzplrvvHyZL1vHUP0JNmTAodk=/fit-in/400x300/filters:strip_icc()/pic3585080.jpg",
     "price_msrp_twd": 590,
@@ -4826,7 +5425,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "種豆 BGG",
@@ -4868,6 +5467,13 @@
       "Network and Route Building",
       "Roll / Spin and Move"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "格子移動",
+      "記憶",
+      "路網建設",
+      "Roll / Spin and Move"
+    ],
     "versions_count": 27,
     "image": "https://cf.geekdo-images.com/l6ma7rpw3i0DyT5Yww7oUA__small@2x/img/BOAbTsBuuCJAHB-NOPpp-Pu3tbE=/fit-in/400x300/filters:strip_icc()/pic2445099.png",
     "price_msrp_twd": 1690,
@@ -4875,7 +5481,7 @@
     "used_price_twd": 1014,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "磁石魔法迷宮 BGG",
@@ -4931,6 +5537,17 @@
       "Traitor Game",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "區域移動",
+      "合作",
+      "擲骰",
+      "手牌管理",
+      "模組地圖",
+      "角色扮演",
+      "Team-Based Game",
+      "Traitor Game",
+      "角色能力"
+    ],
     "versions_count": 12,
     "image": "https://cf.geekdo-images.com/4zJ0imEAaeaNHYFAkJTQWg__small@2x/img/OFNlzJYD9LRpH0te54wD8R1xulc=/fit-in/400x300/filters:strip_icc()/pic5974161.jpg",
     "price_msrp_twd": 3000,
@@ -4938,7 +5555,7 @@
     "used_price_twd": 1800,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "瘋狂詭宅: 驚魂之旅(擴/中文) BGG",
@@ -4999,6 +5616,20 @@
       "Traitor Game",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "區域移動",
+      "合作",
+      "擲骰",
+      "手牌管理",
+      "Map Addition",
+      "模組地圖",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "Stat Check Resolution",
+      "Traitor Game",
+      "角色能力"
+    ],
     "versions_count": 17,
     "image": "https://cf.geekdo-images.com/NlCv9LL1tClkGSxud_L5Lg__small@2x/img/VGY3AAbNAQnRBYTugeKLs0Waok0=/fit-in/400x300/filters:strip_icc()/pic5974141.jpg",
     "price_msrp_twd": 3400,
@@ -5006,7 +5637,7 @@
     "used_price_twd": 2040,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "瘋狂詭宅 第二版(主/中文) BGG",
@@ -5040,6 +5671,11 @@
       "Trick-taking",
       "Worker Placement"
     ],
+    "mechanics_zh": [
+      "競標",
+      "吃墩",
+      "工人放置"
+    ],
     "versions_count": 2,
     "image": "assets/img/274688.jpg",
     "price_msrp_twd": 890,
@@ -5047,7 +5683,7 @@
     "used_price_twd": 534,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "瘋狂桌遊店 BGG",
@@ -5088,6 +5724,14 @@
       "Pick-up and Deliver",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "競標",
+      "借貸",
+      "路網建設",
+      "所有權",
+      "取貨運送",
+      "板塊擺放"
+    ],
     "versions_count": 9,
     "image": "assets/img/27833.jpg",
     "price_msrp_twd": 800,
@@ -5095,7 +5739,7 @@
     "used_price_twd": 500,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "蒸氣 BGG",
@@ -5134,6 +5778,14 @@
       "Square Grid",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Grid Coverage",
+      "模組地圖",
+      "公開選牌",
+      "收集套組",
+      "方格",
+      "板塊擺放"
+    ],
     "versions_count": 18,
     "image": "https://cf.geekdo-images.com/OqHE_-aiRMheW3rWYa-qmA__small@2x/img/e7DmJ6YxPoEZSC2j8oSNxF7l7Wk=/fit-in/400x300/filters:strip_icc()/pic7605848.png",
     "price_msrp_twd": 2000,
@@ -5141,7 +5793,7 @@
     "used_price_twd": 1200,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "熊熊公園 (主/中文) BGG",
@@ -5178,6 +5830,12 @@
       "Pattern Building",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Layering",
+      "公開選牌",
+      "Pattern Building",
+      "板塊擺放"
+    ],
     "versions_count": 3,
     "image": "https://cf.geekdo-images.com/UMH52-Ne7YIXW-HiqrqrYA__small@2x/img/5D9EA_c3WsMlgHtU1gCtqPgURzE=/fit-in/400x300/filters:strip_icc()/pic4884271.png",
     "price_msrp_twd": 550,
@@ -5185,7 +5843,7 @@
     "used_price_twd": 330,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "漫步普羅旺斯 BGG",
@@ -5222,6 +5880,12 @@
       "Melding and Splaying",
       "Take That"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "Melding and Splaying",
+      "互害"
+    ],
     "versions_count": 11,
     "image": "https://cf.geekdo-images.com/zg0yWiKSgAG3_JEOAsNLnw__small@2x/img/RDVGNLGshJ58-TS0CExDUkCKBsM=/fit-in/400x300/filters:strip_icc()/pic2067897.jpg",
     "price_msrp_twd": 490,
@@ -5229,7 +5893,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "演化論:物種起源 BGG",
@@ -5266,6 +5930,10 @@
       "Grid Movement",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "格子移動",
+      "角色能力"
+    ],
     "versions_count": 1,
     "image": "assets/img/145645.jpg",
     "price_msrp_twd": 980,
@@ -5273,7 +5941,7 @@
     "used_price_twd": 588,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "歌劇魅影 BGG",
@@ -5310,6 +5978,10 @@
       "Pattern Recognition",
       "Player Elimination"
     ],
+    "mechanics_zh": [
+      "圖形辨識",
+      "Player Elimination"
+    ],
     "versions_count": 9,
     "image": "https://cf.geekdo-images.com/2TejZGVqieHWeVJ05-Szzw__small@2x/img/Cw6aI8GLHPqWQTbg74dh7x3zPCY=/fit-in/400x300/filters:strip_icc()/pic3342862.png",
     "price_msrp_twd": 890,
@@ -5317,7 +5989,7 @@
     "used_price_twd": 534,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "摺足先登 BGG",
@@ -5357,6 +6029,11 @@
       "Targeted Clues",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Targeted Clues",
+      "Team-Based Game"
+    ],
     "versions_count": 8,
     "image": "https://bghut.com/images/201909/goods_img/7735_G_1568177111476.jpg",
     "price_msrp_twd": 490,
@@ -5364,7 +6041,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "截碼戰+光碟播放器擴充套組 BGG",
@@ -5405,6 +6082,12 @@
       "Targeted Clues",
       "Team-Based Game"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Paper-and-Pencil",
+      "Targeted Clues",
+      "Team-Based Game"
+    ],
     "versions_count": 41,
     "image": "https://cf.geekdo-images.com/QN7fc4_zxoGGO9L1T-jOUQ__small@2x/img/gwiqj6a5-QP5uglrI14zR5zWD3s=/fit-in/400x300/filters:strip_icc()/pic4163204.png",
     "price_msrp_twd": 850,
@@ -5412,7 +6095,7 @@
     "used_price_twd": 510,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "截碼戰 (主/中文) BGG",
@@ -5456,6 +6139,15 @@
       "Simultaneous Action Selection",
       "Trading"
     ],
+    "mechanics_zh": [
+      "Auction: Turn Order Until Pass",
+      "Betting and Bluffing",
+      "手牌管理",
+      "記憶",
+      "收集套組",
+      "同時選擇行動",
+      "交易"
+    ],
     "versions_count": 34,
     "image": "https://cf.geekdo-images.com/gYZXJ0ogktykTZkNIkqvrQ__small@2x/img/SMz8MsdYirTlJgP5tFqjPZNXe60=/fit-in/400x300/filters:strip_icc()/pic6617922.jpg",
     "price_msrp_twd": 490,
@@ -5463,7 +6155,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "幕後交易 BGG",
@@ -5495,6 +6187,9 @@
     "mechanics": [
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "收集套組"
+    ],
     "versions_count": 4,
     "image": "https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/N01/128/44/N011284499.jpg&v=5b91d063k&w=375&h=375",
     "price_msrp_twd": 450,
@@ -5502,7 +6197,7 @@
     "used_price_twd": 270,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "察顏觀7 BGG",
@@ -5538,6 +6233,13 @@
       "Set Collection",
       "Variable Phase Order"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "公開選牌",
+      "Pattern Building",
+      "收集套組",
+      "可變階段順序"
+    ],
     "versions_count": 22,
     "image": "https://cf.geekdo-images.com/IZAMD2Z-B72dzgrfJXi5TQ__small@2x/img/6dmWDcFVLglqKgwRRRFl8dmgqm0=/fit-in/400x300/filters:strip_icc()/pic8367367.jpg",
     "price_msrp_twd": 900,
@@ -5545,7 +6247,7 @@
     "used_price_twd": 540,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "夢想家園 (主/中文) BGG",
@@ -5582,6 +6284,10 @@
       "Deduction",
       "Solo / Solitaire Game"
     ],
+    "mechanics_zh": [
+      "Deduction",
+      "單人"
+    ],
     "versions_count": 16,
     "image": "https://img.gokids.com.tw/GoodPic/94/big/166752407219494.png",
     "price_msrp_twd": 1400,
@@ -5589,7 +6295,7 @@
     "used_price_twd": 840,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "圖靈解密 BGG",
@@ -5629,6 +6335,9 @@
     "mechanics": [
       "Storytelling"
     ],
+    "mechanics_zh": [
+      "Storytelling"
+    ],
     "versions_count": 2,
     "image": "https://cf.geekdo-images.com/PH12swoaUo_yi_Q6Nb-vdA__small@2x/img/GweBljbwgN_8IKU_aS_up1m9A1M=/fit-in/400x300/filters:strip_icc()/pic2428373.jpg",
     "price_msrp_twd": 390,
@@ -5636,7 +6345,7 @@
     "used_price_twd": 234,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "圖騰快手 BGG",
@@ -5674,6 +6383,11 @@
       "Dice Rolling",
       "Push Your Luck"
     ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "Push Your Luck"
+    ],
     "versions_count": 12,
     "image": "https://cf.geekdo-images.com/ry-Uv3S79DePm_LQmecCLw__small@2x/img/tLEo20xmA_QVUqNXHZ8yYSTcTg4=/fit-in/400x300/filters:strip_icc()/pic5448699.jpg",
     "price_msrp_twd": 1160,
@@ -5681,7 +6395,7 @@
     "used_price_twd": 696,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "鼠國英雄 BGG",
@@ -5721,6 +6435,13 @@
       "Score-and-Reset Game",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "Multi-Use Cards",
+      "公開選牌",
+      "Ordering",
+      "Score-and-Reset Game",
+      "收集套組"
+    ],
     "versions_count": 6,
     "image": "https://cf.geekdo-images.com/mf125uHI9w5KW6nTrHXONQ__small@2x/img/-emLr23UQIWHlDsw_e6W-hKs5lI=/fit-in/400x300/filters:strip_icc()/pic3020087.png",
     "price_msrp_twd": 700,
@@ -5728,7 +6449,7 @@
     "used_price_twd": 420,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "電車大亨 BGG",
@@ -5769,6 +6490,16 @@
       "Turn Order: Stat-Based",
       "Variable Set-up"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Auction: Turn Order Until Pass",
+      "Catch the Leader",
+      "Income",
+      "Market",
+      "路網建設",
+      "Turn Order: Stat-Based",
+      "可變設置"
+    ],
     "versions_count": 47,
     "image": "https://cf.geekdo-images.com/X6j13eS_XDm-lRJPtWyu3g__small@2x/img/DUQsBktqN1JNdcFomMAJmuss_aU=/fit-in/400x300/filters:strip_icc()/pic6241474.jpg",
     "price_msrp_twd": 1690,
@@ -5776,7 +6507,7 @@
     "used_price_twd": 1014,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "電力公司2020版 BGG",
@@ -5810,6 +6541,11 @@
       "Point to Point Movement",
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "Point to Point Movement",
+      "同時選擇行動"
+    ],
     "versions_count": 15,
     "image": "https://cf.geekdo-images.com/dK6xCJADWkUna0OC3NA8Lg__small@2x/img/nZ5Hne895R5myD64AUqY614URxo=/fit-in/400x300/filters:strip_icc()/pic5531536.jpg",
     "price_msrp_twd": 1320,
@@ -5817,7 +6553,7 @@
     "used_price_twd": 792,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "過河拆橋 BGG",
@@ -5855,6 +6591,11 @@
       "Stacking and Balancing",
       "Take That"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Stacking and Balancing",
+      "互害"
+    ],
     "versions_count": 27,
     "image": "https://cf.geekdo-images.com/29I0znYeLcbJhw0cLYWOIw__small@2x/img/R_UofUuFhi5EPKZlQn7aitUT04Q=/fit-in/400x300/filters:strip_icc()/pic3087414.jpg",
     "price_msrp_twd": 1290,
@@ -5862,7 +6603,7 @@
     "used_price_twd": 774,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "農場動物疊疊樂 BGG",
@@ -5897,6 +6638,10 @@
       "Point to Point Movement",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "Point to Point Movement",
+      "收集套組"
+    ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/35BfYZUMBLwMp7296XqScA__small@2x/img/0ZRoGslqqe5KKXLvDArS37nF1sU=/fit-in/400x300/filters:strip_icc()/pic2313813.jpg",
     "price_msrp_twd": 890,
@@ -5904,7 +6649,7 @@
     "used_price_twd": 534,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "跳跳棋 (主/中文) BGG",
@@ -5939,6 +6684,12 @@
       "Modular Board",
       "Pattern Recognition"
     ],
+    "mechanics_zh": [
+      "Deduction",
+      "Hexagon Grid",
+      "模組地圖",
+      "圖形辨識"
+    ],
     "versions_count": 12,
     "image": "https://cf.geekdo-images.com/oOB-nguIsjw5GH8rOSdMVQ__small@2x/img/Zw90JLHGbCZC3TIftkHOlxn7CJM=/fit-in/400x300/filters:strip_icc()/pic4918679.png",
     "price_msrp_twd": 1800,
@@ -5946,7 +6697,7 @@
     "used_price_twd": 1080,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "詭影尋蹤 BGG",
@@ -5992,6 +6743,17 @@
       "Storytelling",
       "Voting"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "Deduction",
+      "Finale Ending",
+      "手牌管理",
+      "圖形辨識",
+      "Real-Time",
+      "Storytelling",
+      "Voting"
+    ],
     "versions_count": 50,
     "image": "https://cf.geekdo-images.com/YHdWoJaODmqw2R6QC5Cczw__small@2x/img/-ptT5uQoQkXmw-bOma4EFlrpi_c=/fit-in/400x300/filters:strip_icc()/pic6112689.png",
     "price_msrp_twd": 1650,
@@ -5999,7 +6761,7 @@
     "used_price_twd": 990,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "詭秘莊園 (主/中文) BGG",
@@ -6039,6 +6801,13 @@
       "Rock-Paper-Scissors",
       "Take That"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "記憶",
+      "Player Elimination",
+      "剪刀石頭布",
+      "互害"
+    ],
     "versions_count": 3,
     "image": "https://cf.geekdo-images.com/WO2fpPMzP2-W-stt-4m90g__small@2x/img/odf2R0rfYisMnvxcaonnZzpHvgE=/fit-in/400x300/filters:strip_icc()/pic7763336.jpg",
     "price_msrp_twd": 490,
@@ -6046,7 +6815,7 @@
     "used_price_twd": 294,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "試個好遊戲 BGG",
@@ -6080,6 +6849,9 @@
     "mechanics": [
       "Acting"
     ],
+    "mechanics_zh": [
+      "Acting"
+    ],
     "versions_count": 8,
     "image": "https://cf.geekdo-images.com/Z_MxpLoQTezawqQ9oTRd0Q__small@2x/img/EQxBPYxSwLVXlzXJi1mqlt9yAkE=/fit-in/400x300/filters:strip_icc()/pic6465403.jpg",
     "price_msrp_twd": 800,
@@ -6087,7 +6859,7 @@
     "used_price_twd": 480,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "裝龍作啞 (主/中文) BGG",
@@ -6117,6 +6889,7 @@
       "派對"
     ],
     "mechanics": [],
+    "mechanics_zh": [],
     "versions_count": 1,
     "image": "https://cf.geekdo-images.com/7EmHenj5PV6ZtmrPp8C5HQ__small@2x/img/9ykBvR_PRl9H2Sa1lPX9V6NRB3k=/fit-in/400x300/filters:strip_icc()/pic8038318.jpg",
     "price_msrp_twd": 1490,
@@ -6124,7 +6897,7 @@
     "used_price_twd": 894,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "裝置譯述家 BGG",
@@ -6160,6 +6933,13 @@
       "Player Judge",
       "Targeted Clues"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Deduction",
+      "Ordering",
+      "Player Judge",
+      "Targeted Clues"
+    ],
     "versions_count": 18,
     "image": "https://cf.geekdo-images.com/1LlHqFqzUJGpTiXORzk6CA__small@2x/img/0V-wDzqIf_Ye4wmFY-bLrak7j5A=/fit-in/400x300/filters:strip_icc()/pic6243188.png",
     "price_msrp_twd": 750,
@@ -6167,7 +6947,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "腦洞量表 BGG",
@@ -6201,6 +6981,9 @@
     "mechanics": [
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "收集套組"
+    ],
     "versions_count": 1,
     "image": "assets/img/175427.jpg",
     "price_msrp_twd": 400,
@@ -6208,7 +6991,7 @@
     "used_price_twd": 240,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "聖經尋寶獵人 BGG",
@@ -6251,6 +7034,18 @@
       "Turn Order: Progressive",
       "Variable Set-up"
     ],
+    "mechanics_zh": [
+      "合約",
+      "擲骰",
+      "終局加分",
+      "Grid Coverage",
+      "公開選牌",
+      "Pattern Building",
+      "收集套組",
+      "單人",
+      "Turn Order: Progressive",
+      "可變設置"
+    ],
     "versions_count": 34,
     "image": "https://cf.geekdo-images.com/fL8tV3WEktWPHcWRwLeeyw__small@2x/img/FHygNYBMuzIbxk-UrhMimfsARyw=/fit-in/400x300/filters:strip_icc()/pic4153403.jpg",
     "price_msrp_twd": 1350,
@@ -6258,7 +7053,7 @@
     "used_price_twd": 810,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "聖家族大教堂 BGG",
@@ -6302,6 +7097,17 @@
       "Turn Order: Progressive",
       "Variable Phase Order"
     ],
+    "mechanics_zh": [
+      "Action Drafting",
+      "Follow",
+      "手牌管理",
+      "Market",
+      "Multi-Use Cards",
+      "公開選牌",
+      "收集套組",
+      "Turn Order: Progressive",
+      "可變階段順序"
+    ],
     "versions_count": 8,
     "image": "assets/img/8217.jpg",
     "price_msrp_twd": 990,
@@ -6309,7 +7115,7 @@
     "used_price_twd": 594,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "聖胡安 BGG",
@@ -6349,6 +7155,11 @@
       "Open Drafting",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "Income",
+      "公開選牌",
+      "收集套組"
+    ],
     "versions_count": 7,
     "image": "assets/img/156943.jpg",
     "price_msrp_twd": 1650,
@@ -6356,7 +7167,7 @@
     "used_price_twd": 990,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "聖彼得堡 BGG",
@@ -6390,6 +7201,11 @@
       "Square Grid",
       "Tile Placement"
     ],
+    "mechanics_zh": [
+      "Enclosure",
+      "方格",
+      "板塊擺放"
+    ],
     "versions_count": 145,
     "image": "https://cf.geekdo-images.com/TcAq-1tyBq8ZQ5xFWIDUhg__small@2x/img/yxecUd2zzJYaFgbdcu1Ar3iMw30=/fit-in/400x300/filters:strip_icc()/pic4446213.png",
     "price_msrp_twd": 650,
@@ -6397,7 +7213,7 @@
     "used_price_twd": 360,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "經典黑白棋 BGG",
@@ -6433,6 +7249,11 @@
       "Simultaneous Action Selection",
       "Trick-taking"
     ],
+    "mechanics_zh": [
+      "收集套組",
+      "同時選擇行動",
+      "吃墩"
+    ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/R5wpqzQjQK20K7KY8E3I2w__small@2x/img/eyoei0ihCt9PVUKnLnyPcudu0p8=/fit-in/400x300/filters:strip_icc()/pic6222853.jpg",
     "price_msrp_twd": 590,
@@ -6440,7 +7261,7 @@
     "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "萬國爭鋒 BGG",
@@ -6483,6 +7304,14 @@
       "Turn Order: Stat-Based",
       "Variable Set-up"
     ],
+    "mechanics_zh": [
+      "格子移動",
+      "模組地圖",
+      "Real-Time",
+      "方格",
+      "Turn Order: Stat-Based",
+      "可變設置"
+    ],
     "versions_count": 15,
     "image": "https://cf.geekdo-images.com/uryZ7ONnbxAGY9M8Qe5y5A__small/img/JJa4tDjwj20dvvyqQVrl3OOdnxo=/fit-in/200x150/filters:strip_icc()/pic2376605.png",
     "price_msrp_twd": 1690,
@@ -6490,7 +7319,7 @@
     "used_price_twd": 1014,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "碰撞機器人 BGG",
@@ -6539,6 +7368,16 @@
       "Take That",
       "Traitor Game"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Hidden Roles",
+      "Hidden Victory Points",
+      "Map Addition",
+      "路網建設",
+      "Score-and-Reset Game",
+      "互害",
+      "Traitor Game"
+    ],
     "versions_count": 58,
     "image": "https://cf.geekdo-images.com/WbT4pDP7IzjBZcpapVBJMQ__small@2x/img/in4lSNA_rzKcgLPLc4781nttoks=/fit-in/400x300/filters:strip_icc()/pic684123.jpg",
     "price_msrp_twd": 690,
@@ -6546,7 +7385,7 @@
     "used_price_twd": 414,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "矮人礦坑 BGG",
@@ -6583,6 +7422,10 @@
       "Dice Rolling",
       "Pattern Recognition"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "圖形辨識"
+    ],
     "versions_count": 8,
     "image": "https://cf.geekdo-images.com/HJFZp-hkX4QZTOyf7Mo7Mw__small@2x/img/0OxzV4ZGuBoib_U3JZSWVlLNomw=/fit-in/400x300/filters:strip_icc()/pic2576277.png",
     "price_msrp_twd": 890,
@@ -6590,7 +7433,7 @@
     "used_price_twd": 534,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "矮人骰子樂 BGG",
@@ -6628,6 +7471,15 @@
       "Point to Point Movement",
       "Solo / Solitaire Game"
     ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "擲骰",
+      "格子移動",
+      "模組地圖",
+      "Point to Point Movement",
+      "單人"
+    ],
     "versions_count": 6,
     "image": "https://cf.geekdo-images.com/yhqsVLsIt6Pz9rVgP50PKA__small@2x/img/YrQguiRZHYxYcgQSlBgguKtKq0g=/fit-in/400x300/filters:strip_icc()/pic7017508.jpg",
     "price_msrp_twd": 1980,
@@ -6635,7 +7487,7 @@
     "used_price_twd": 1188,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "當個創世神：衝出地獄門 BGG",
@@ -6673,6 +7525,15 @@
       "Tile Placement",
       "Variable Set-up"
     ],
+    "mechanics_zh": [
+      "行動點",
+      "Deck, Bag, and Pool Building",
+      "終局加分",
+      "格子移動",
+      "Layering",
+      "板塊擺放",
+      "可變設置"
+    ],
     "versions_count": 5,
     "image": "https://cf.geekdo-images.com/lAvfCCEBDeyoa1CpdgOFCg__small@2x/img/8A_fF1wa6eo-HaWTsdHKJ8mN2aU=/fit-in/400x300/filters:strip_icc()/pic4975740.jpg",
     "price_msrp_twd": 1690,
@@ -6680,7 +7541,7 @@
     "used_price_twd": 1014,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "當個創世神 BGG",
@@ -6716,6 +7577,11 @@
       "Hand Management",
       "Memory"
     ],
+    "mechanics_zh": [
+      "合作",
+      "手牌管理",
+      "記憶"
+    ],
     "versions_count": 17,
     "image": "https://cf.geekdo-images.com/XlxmRNQwFgktGYd__pT-kA__small@2x/img/HRzOGhKvpbHxLc6ZRmxWSTO6_Zg=/fit-in/400x300/filters:strip_icc()/pic3014785.jpg",
     "price_msrp_twd": 950,
@@ -6723,7 +7589,7 @@
     "used_price_twd": 570,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "獅子剪髮大冒險 BGG",
@@ -6768,6 +7634,18 @@
       "Turn Order: Progressive",
       "Worker Placement"
     ],
+    "mechanics_zh": [
+      "Action Drafting",
+      "Action Queue",
+      "Constrained Bidding",
+      "Deduction",
+      "終局加分",
+      "Events",
+      "手牌管理",
+      "公開選牌",
+      "Turn Order: Progressive",
+      "工人放置"
+    ],
     "versions_count": 19,
     "image": "https://cf.geekdo-images.com/krinbSABMlrrJelqwiZ7HA__small@2x/img/3eKQTpR2kCkqdEQ3CAN-6nCkZKg=/fit-in/400x300/filters:strip_icc()/pic4170805.jpg",
     "price_msrp_twd": 1850,
@@ -6775,7 +7653,7 @@
     "used_price_twd": 1110,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "煉金術士 BGG",
@@ -6810,6 +7688,10 @@
       "Pattern Building",
       "Pattern Recognition"
     ],
+    "mechanics_zh": [
+      "Pattern Building",
+      "圖形辨識"
+    ],
     "versions_count": 1,
     "image": "assets/img/153479.jpg",
     "price_msrp_twd": 1690,
@@ -6817,7 +7699,7 @@
     "used_price_twd": 1014,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "極簡大師 BGG",
@@ -6853,6 +7735,9 @@
     "mechanics": [
       "Simultaneous Action Selection"
     ],
+    "mechanics_zh": [
+      "同時選擇行動"
+    ],
     "versions_count": 9,
     "image": "https://shoplineimg.com/60a74ede7b095a005dafd838/649bd126fbde7f0020460fb7/800x.webp?source_format=png",
     "price_msrp_twd": 750,
@@ -6860,7 +7745,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "search_keywords": [
       "極限一發 BGG",
@@ -6897,6 +7782,10 @@
       "Push Your Luck",
       "Take That"
     ],
+    "mechanics_zh": [
+      "Push Your Luck",
+      "互害"
+    ],
     "versions_count": 16,
     "image": "https://shoplineimg.com/60a74ede7b095a005dafd838/612f25596c1565002c4b3224/800x.webp?source_format=png",
     "price_msrp_twd": 750,
@@ -6904,7 +7793,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "椰子猴王 BGG",
@@ -6950,6 +7839,13 @@
       "Team-Based Game",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Hidden Roles",
+      "Player Elimination",
+      "Team-Based Game",
+      "角色能力"
+    ],
     "versions_count": 10,
     "image": "https://pic.pimg.tw/punchboardgame/1540962137-1387765022_n.jpg?v=1540963101",
     "price_msrp_twd": 990,
@@ -6957,7 +7853,7 @@
     "used_price_twd": 594,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "暗影獵人 BGG",
@@ -7003,6 +7899,13 @@
       "Team-Based Game",
       "Variable Player Powers"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "模組地圖",
+      "Player Elimination",
+      "Team-Based Game",
+      "角色能力"
+    ],
     "versions_count": 3,
     "image": "https://cf.geekdo-images.com/oteSpWBtWFZgajLe5uvgGw__small@2x/img/aNFAzOC9R1CxrxBwS2s76P4f6bQ=/fit-in/400x300/filters:strip_icc()/pic5957596.jpg",
     "price_msrp_twd": 890,
@@ -7010,7 +7913,7 @@
     "used_price_twd": 534,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "暗影奇襲 BGG",
@@ -7044,6 +7947,9 @@
     "mechanics": [
       "Dice Rolling"
     ],
+    "mechanics_zh": [
+      "擲骰"
+    ],
     "versions_count": 2,
     "image": "https://img.gokids.com.tw/GoodPic/61/big/17400426625261.png",
     "price_msrp_twd": 750,
@@ -7051,7 +7957,7 @@
     "used_price_twd": 450,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "搶鈴詞王 BGG",
@@ -7084,6 +7990,10 @@
       "Cooperative Game",
       "Memory"
     ],
+    "mechanics_zh": [
+      "合作",
+      "記憶"
+    ],
     "versions_count": 1,
     "image": "assets/img/187113.jpg",
     "price_msrp_twd": 500,
@@ -7091,7 +8001,7 @@
     "used_price_twd": 300,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "搶救派琪 BGG",
@@ -7130,6 +8040,10 @@
       "Hand Management",
       "Set Collection"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組"
+    ],
     "versions_count": 4,
     "image": "https://cf.geekdo-images.com/ikUVg39J2M-EuW8H5QUQfA__small@2x/img/CZBFmDq1B__4C4NwAJwiDNrg1_k=/fit-in/400x300/filters:strip_icc()/pic2293201.jpg",
     "price_msrp_twd": 440,
@@ -7137,7 +8051,7 @@
     "used_price_twd": 264,
     "price_note": "",
     "used_note": "",
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "search_keywords": [
       "搜捕農場動物 (主/中文) BGG",
@@ -7172,6 +8086,10 @@
       "Hand Management",
       "Memory"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "記憶"
+    ],
     "versions_count": 27,
     "image": "https://cf.geekdo-images.com/tyE2q8WSdBeUtUy8TWGGgQ__small@2x/img/pM9Hq9l9p5-UQ54QFOmQCz53UvU=/fit-in/400x300/filters:strip_icc()/pic4111336.jpg",
     "price_msrp_twd": 390,
@@ -7179,7 +8097,7 @@
     "used_price_twd": 234,
     "price_note": "",
     "used_note": "",
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "search_keywords": [
       "媽媽咪呀! BGG",
@@ -7225,6 +8143,18 @@
       "Solo / Solitaire Game",
       "Square Grid",
       "Variable Player Powers"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "格子移動",
+      "模組地圖",
+      "移動點",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "方格",
+      "角色能力"
     ],
     "versions_count": 11,
     "image": "assets/img/322708.jpg",

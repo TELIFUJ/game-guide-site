@@ -10,7 +10,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 117814,
@@ -39,6 +39,7 @@
       "數字",
       "即時制"
     ],
+    "mechanics_zh": [],
     "image": "assets/img/117814.jpg"
   },
   {
@@ -52,7 +53,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 0,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 142239,
@@ -80,6 +81,10 @@
       "抽象策略",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理"
+    ],
     "image": "assets/img/142239.jpg"
   },
   {
@@ -93,7 +98,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 2821,
@@ -121,6 +126,10 @@
       "動作／敏捷",
       "派對"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Stacking and Balancing"
+    ],
     "image": "assets/img/2821.jpg"
   },
   {
@@ -134,7 +143,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 399088,
@@ -163,6 +172,13 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Lose a Turn",
+      "Matching",
+      "Player Elimination",
+      "互害"
+    ],
     "image": "assets/img/399088.jpg"
   },
   {
@@ -176,7 +192,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 2223,
@@ -212,6 +228,12 @@
       "影視／廣播主題",
       "數字"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Lose a Turn",
+      "Matching",
+      "互害"
+    ],
     "image": "assets/img/2223.jpg"
   },
   {
@@ -225,7 +247,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 2394,
@@ -256,6 +278,13 @@
       "抽象策略",
       "遊戲系統"
     ],
+    "mechanics_zh": [
+      "Matching",
+      "Pattern Building",
+      "圖形辨識",
+      "Team-Based Game",
+      "板塊擺放"
+    ],
     "image": "assets/img/2394.jpg"
   },
   {
@@ -269,7 +298,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "Swan Panasia Chinese edition 2013",
     "image_override": "https://cf.geekdo-images.com/Q-YgMsvL4P2vWjSx1qHi0w__small/img/wXMxineQZz0mSYBbBmVooyFTvTw=/fit-in/200x150/filters:strip_icc()/pic2390725.png",
     "bgg_id": 3347,
@@ -298,6 +327,12 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Lose a Turn",
+      "Matching",
+      "互害"
+    ],
     "image": "assets/img/3347.jpg"
   },
   {
@@ -311,7 +346,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "Chinese edition",
     "image_override": "https://cf.geekdo-images.com/11_4ft9nWaMW9sTrTr-m8w__small@2x/img/g8Bo8c8hrUeWanMi2a7qGWlh0jA=/fit-in/400x300/filters:strip_icc()/pic5531526.jpg",
     "bgg_id": 105866,
@@ -338,6 +373,10 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "收集套組"
+    ],
     "image": "assets/img/105866.jpg"
   },
   {
@@ -351,7 +390,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/ybE6_MilIX9a0yXKSx8WWA__small@2x/img/7AUcnLjAdRU9Az2YmPp6K3j13UU=/fit-in/400x300/filters:strip_icc()/pic819469.jpg",
     "bgg_id": 80942,
@@ -382,6 +421,10 @@
       "推理",
       "幽默"
     ],
+    "mechanics_zh": [
+      "Storytelling",
+      "Voting"
+    ],
     "image": "assets/img/80942.jpg"
   },
   {
@@ -395,7 +438,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "",
     "bgg_id": 183006,
@@ -425,6 +468,12 @@
       "骰子",
       "數字"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Follow",
+      "Paper-and-Pencil",
+      "Pattern Building"
+    ],
     "image": "assets/img/183006.jpg"
   },
   {
@@ -438,7 +487,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/Me6h25HoQnUagVTweBRu1g__small@2x/img/D12LcObNnFSCIICj-uzsUoMNXZU=/fit-in/400x300/filters:strip_icc()/pic3198237.jpg",
     "bgg_id": 209849,
@@ -467,6 +516,11 @@
       "兒童",
       "競速"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "Player Elimination",
+      "同時選擇行動"
+    ],
     "image": "assets/img/209849.jpg"
   },
   {
@@ -480,7 +534,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/yH0Ayf6TgZSjAFMxiGds9A__small/img/F37koiy_5xcdAybqf9QZvNqqj7U=/fit-in/200x150/filters:strip_icc()/pic3504334.jpg",
     "bgg_id": 224993,
@@ -510,6 +564,10 @@
       "卡牌",
       "兒童"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Team-Based Game"
+    ],
     "image": "assets/img/224993.jpg"
   },
   {
@@ -523,7 +581,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 90009,
@@ -549,6 +607,10 @@
     "categories_zh": [
       "記憶"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "Storytelling"
+    ],
     "image": "assets/img/90009.jpg"
   },
   {
@@ -562,7 +624,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 280136,
@@ -599,6 +661,15 @@
       "懸疑／推理",
       "派對"
     ],
+    "mechanics_zh": [
+      "Acting",
+      "合作",
+      "手牌管理",
+      "連線",
+      "圖形辨識",
+      "Questions and Answers",
+      "角色能力"
+    ],
     "image": "assets/img/280136.jpg"
   },
   {
@@ -612,7 +683,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 244992,
@@ -641,6 +712,11 @@
       "卡牌",
       "數字"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "手牌管理"
+    ],
     "image": "assets/img/244992.jpg"
   },
   {
@@ -654,7 +730,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 231748,
@@ -684,6 +760,12 @@
       "卡牌",
       "間諜"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Deduction",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
     "image": "assets/img/231748.jpg"
   },
   {
@@ -697,7 +779,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "",
     "bgg_id": 236217,
@@ -731,6 +813,12 @@
       "派對",
       "間諜"
     ],
+    "mechanics_zh": [
+      "Hidden Roles",
+      "角色扮演",
+      "Team-Based Game",
+      "Traitor Game"
+    ],
     "image": "assets/img/236217.jpg"
   },
   {
@@ -744,7 +832,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 192927,
@@ -783,6 +871,15 @@
       "影視／廣播主題",
       "懸疑／推理"
     ],
+    "mechanics_zh": [
+      "戰役/卡驅動",
+      "隱藏移動",
+      "記憶",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Team-Based Game",
+      "角色能力"
+    ],
     "image": "assets/img/192927.jpg"
   },
   {
@@ -796,7 +893,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 241492,
@@ -823,6 +920,9 @@
       "動作／敏捷",
       "兒童"
     ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
     "image": "assets/img/241492.jpg"
   },
   {
@@ -836,7 +936,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "",
     "bgg_id": 5782,
@@ -866,6 +966,12 @@
       "動物",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組",
+      "Turn Order: Pass Order"
+    ],
     "image": "assets/img/5782.jpg"
   },
   {
@@ -879,7 +985,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 204734,
@@ -904,6 +1010,9 @@
     "categories_zh": [
       "動作／敏捷"
     ],
+    "mechanics_zh": [
+      "Pattern Building"
+    ],
     "image": "assets/img/204734.jpg"
   },
   {
@@ -917,7 +1026,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 214276,
@@ -944,6 +1053,9 @@
       "動作／敏捷",
       "派對"
     ],
+    "mechanics_zh": [
+      "Pattern Building"
+    ],
     "image": "assets/img/214276.jpg"
   },
   {
@@ -957,7 +1069,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 150312,
@@ -991,6 +1103,12 @@
       "奇幻",
       "戰鬥"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "記憶",
+      "Player Elimination",
+      "Push Your Luck"
+    ],
     "image": "assets/img/150312.jpg"
   },
   {
@@ -1004,7 +1122,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 233867,
@@ -1037,6 +1155,17 @@
     "categories_zh": [
       "城市建設"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "合約",
+      "終局加分",
+      "Multi-Use Cards",
+      "公開選牌",
+      "Paper-and-Pencil",
+      "Pattern Building",
+      "同時選擇行動",
+      "單人"
+    ],
     "image": "assets/img/233867.jpg"
   },
   {
@@ -1050,7 +1179,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 195043,
@@ -1084,6 +1213,12 @@
       "奇幻",
       "戰鬥"
     ],
+    "mechanics_zh": [
+      "Bids As Wagers",
+      "記憶",
+      "Player Elimination",
+      "Push Your Luck"
+    ],
     "image": "assets/img/195043.jpg"
   },
   {
@@ -1097,7 +1232,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 229218,
@@ -1130,6 +1265,13 @@
       "談判",
       "小說改編"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "模組地圖",
+      "路網建設",
+      "交易"
+    ],
     "image": "assets/img/229218.jpg"
   },
   {
@@ -1143,7 +1285,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 205542,
@@ -1172,6 +1314,11 @@
       "卡牌",
       "奇幻"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "區域控制",
+      "角色能力"
+    ],
     "image": "assets/img/205542.jpg"
   },
   {
@@ -1185,7 +1332,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 131452,
@@ -1218,6 +1365,11 @@
       "推理",
       "基本款擴充"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "角色扮演",
+      "角色能力"
+    ],
     "image": "assets/img/131452.jpg"
   },
   {
@@ -1231,7 +1383,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 168839,
@@ -1262,6 +1414,9 @@
       "推理",
       "談判"
     ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
     "image": "assets/img/168839.jpg"
   },
   {
@@ -1275,7 +1430,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 166510,
@@ -1307,6 +1462,10 @@
       "派對",
       "即時制"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "圖形辨識"
+    ],
     "image": "assets/img/166510.jpg"
   },
   {
@@ -1320,7 +1479,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 300936,
@@ -1348,6 +1507,12 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組"
+    ],
     "image": "assets/img/300936.jpg"
   },
   {
@@ -1361,7 +1526,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 391834,
@@ -1388,6 +1553,11 @@
     "categories_zh": [
       "奇幻"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組",
+      "單人"
+    ],
     "image": "assets/img/391834.jpg"
   },
   {
@@ -1401,7 +1571,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 299597,
@@ -1439,6 +1609,14 @@
       "戰鬥",
       "小說改編"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Deck, Bag, and Pool Building",
+      "模組地圖",
+      "角色扮演",
+      "單人",
+      "角色能力"
+    ],
     "image": "assets/img/299597.jpg"
   },
   {
@@ -1452,7 +1630,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 316630,
@@ -1493,6 +1671,15 @@
       "微縮模型",
       "小說改編"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Deck, Bag, and Pool Building",
+      "模組地圖",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "角色能力"
+    ],
     "image": "assets/img/316630.jpg"
   },
   {
@@ -1506,7 +1693,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 269385,
@@ -1550,6 +1737,20 @@
       "戰鬥",
       "小說改編"
     ],
+    "mechanics_zh": [
+      "行動點",
+      "區域移動",
+      "戰役/卡驅動",
+      "合作",
+      "Deck, Bag, and Pool Building",
+      "Map Addition",
+      "模組地圖",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "Stat Check Resolution",
+      "角色能力"
+    ],
     "image": "assets/img/269385.jpg"
   },
   {
@@ -1563,7 +1764,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "Traditional Chinese edition",
     "image_override": "https://cf.geekdo-images.com/RZolzx6FNWrbyYv3AJPmDQ__small@2x/img/Q05y8v-59OZj4XjVHlJ-pBU5Q9w=/fit-in/400x300/filters:strip_icc()/pic7216139.jpg",
     "bgg_id": 310789,
@@ -1594,6 +1795,10 @@
       "兒童",
       "中世紀"
     ],
+    "mechanics_zh": [
+      "Events",
+      "Movement Template"
+    ],
     "image": "assets/img/310789.jpg"
   },
   {
@@ -1607,7 +1812,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 14996,
@@ -1639,6 +1844,16 @@
     "categories_zh": [
       "鐵道"
     ],
+    "mechanics_zh": [
+      "Connections",
+      "合約",
+      "終局加分",
+      "手牌管理",
+      "路網建設",
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組"
+    ],
     "image": "assets/img/14996.jpg"
   },
   {
@@ -1652,7 +1867,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "Traditional Chinese edition",
     "image_override": "https://cf.geekdo-images.com/K0ADX2pEftW_GzO6FECDWg__small@2x/img/gi_K4q_HI-8ZPUl_We3XEDXGy1A=/fit-in/400x300/filters:strip_icc()/pic3089350.jpg",
     "bgg_id": 9209,
@@ -1685,6 +1900,16 @@
     "categories_zh": [
       "鐵道"
     ],
+    "mechanics_zh": [
+      "Connections",
+      "合約",
+      "終局加分",
+      "手牌管理",
+      "路網建設",
+      "公開選牌",
+      "Push Your Luck",
+      "收集套組"
+    ],
     "image": "assets/img/9209.jpg"
   },
   {
@@ -1698,7 +1923,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "Chinese edition",
     "image_override": "https://cf.geekdo-images.com/OQN5djW-SB3cTjMxP5BorA__small@2x/img/hP4j3DEtSXzAsWA5iGd9aDZWk-Q=/fit-in/400x300/filters:strip_icc()/pic8935030.jpg",
     "bgg_id": 438,
@@ -1729,6 +1954,12 @@
       "推理",
       "旅遊"
     ],
+    "mechanics_zh": [
+      "隱藏移動",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Team-Based Game"
+    ],
     "image": "assets/img/438.jpg"
   },
   {
@@ -1742,7 +1973,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/h4hp3ssq0sYK-XrHVPli-w__small@2x/img/fX50irGSZVZjzidstgWhhAJeO6M=/fit-in/400x300/filters:strip_icc()/pic4323588.png",
     "bgg_id": 246192,
@@ -1773,6 +2004,12 @@
       "卡牌",
       "科幻"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "合約",
+      "公開選牌",
+      "Race"
+    ],
     "image": "assets/img/246192.jpg"
   },
   {
@@ -1786,7 +2023,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/erI19kvOG0wMIti6U-pK7g__small@2x/img/UMYCMalt5emoDTwqYjGAF6YxdGo=/fit-in/400x300/filters:strip_icc()/pic3468123.jpg",
     "bgg_id": 180899,
@@ -1814,6 +2051,11 @@
     "categories_zh": [
       "經濟"
     ],
+    "mechanics_zh": [
+      "借貸",
+      "收集套組",
+      "交易"
+    ],
     "image": "assets/img/180899.jpg"
   },
   {
@@ -1827,7 +2069,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/vyouNxp_AKyhO2_towbF-A__small@2x/img/WKWurgPM_I-gAyV3aZQolj8NMiI=/fit-in/400x300/filters:strip_icc()/pic2598882.png",
     "bgg_id": 32968,
@@ -1859,6 +2101,11 @@
       "唬人",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "記憶",
+      "公開選牌"
+    ],
     "image": "assets/img/32968.jpg"
   },
   {
@@ -1872,7 +2119,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 130556,
@@ -1901,6 +2148,11 @@
       "動物",
       "骰子"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Push Your Luck",
+      "Re-rolling and Locking"
+    ],
     "image": "assets/img/130556.jpg"
   },
   {
@@ -1914,7 +2166,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/MwCLB3od8VC_jWveHj92wA__small@2x/img/qvgECaOWLA8YlTX8rGYqTgWvgtE=/fit-in/400x300/filters:strip_icc()/pic5531445.jpg",
     "bgg_id": 30539,
@@ -1950,6 +2202,13 @@
       "派對",
       "海盜"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Player Elimination",
+      "Race",
+      "Relative Movement",
+      "同時選擇行動"
+    ],
     "image": "assets/img/30539.jpg"
   },
   {
@@ -1963,7 +2222,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://shoplineimg.com/57fba1b061706917080d8c00/59bbd892d4e3959f8300042c/800x.webp?source_format=jpg",
     "bgg_id": 121041,
@@ -1990,6 +2249,11 @@
     "categories_zh": [
       "派對"
     ],
+    "mechanics_zh": [
+      "同時選擇行動",
+      "Storytelling",
+      "Voting"
+    ],
     "image": "assets/img/121041.jpg"
   },
   {
@@ -2003,7 +2267,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/OaVyKQ11J8gEX6tkc8CQww__small@2x/img/CrPn0L14FvJf-GACATGif2EvFao=/fit-in/400x300/filters:strip_icc()/pic7141202.jpg",
     "bgg_id": 341914,
@@ -2029,6 +2293,7 @@
       "動物",
       "兒童"
     ],
+    "mechanics_zh": [],
     "image": "assets/img/341914.jpg"
   },
   {
@@ -2042,7 +2307,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/eyEhxVxHqNPSDkIYvbe1tg__small@2x/img/teG02EBtCEOacmSeYD9SkTFmhog=/fit-in/400x300/filters:strip_icc()/pic3087622.jpg",
     "bgg_id": 15818,
@@ -2073,6 +2338,12 @@
       "動物",
       "骰子"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Push Your Luck",
+      "Re-rolling and Locking",
+      "互害"
+    ],
     "image": "assets/img/15818.jpg"
   },
   {
@@ -2086,7 +2357,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/aijsHnfjKgQ8rGyy1dI2Dg__small@2x/img/g6TvodMpcn2JGiLioQp4ZmYL_1s=/fit-in/400x300/filters:strip_icc()/pic4160838.jpg",
     "bgg_id": 2655,
@@ -2120,6 +2391,15 @@
       "抽象策略",
       "動物"
     ],
+    "mechanics_zh": [
+      "Enclosure",
+      "格子移動",
+      "Hexagon Grid",
+      "Pattern Movement",
+      "Pieces as Map",
+      "Three Dimensional Movement",
+      "板塊擺放"
+    ],
     "image": "assets/img/2655.jpg"
   },
   {
@@ -2133,7 +2413,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/GRyGispzXAJ_NUP1MuAfEQ__small@2x/img/By9LaY9muz7RPVhtW_W_iaEzAhQ=/fit-in/400x300/filters:strip_icc()/pic5531430.jpg",
     "bgg_id": 165796,
@@ -2161,6 +2441,9 @@
       "動物",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
     "image": "assets/img/165796.jpg"
   },
   {
@@ -2174,7 +2457,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/0-VWzSBT2i8AdoKDS-Q1mA__small@2x/img/Xl-SynPJfHB2xMU79nFzS59FI5k=/fit-in/400x300/filters:strip_icc()/pic6502068.png",
     "bgg_id": 339484,
@@ -2209,6 +2492,14 @@
       "動物",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "Follow",
+      "Pattern Building",
+      "Score-and-Reset Game",
+      "收集套組",
+      "單人",
+      "板塊擺放"
+    ],
     "image": "assets/img/339484.jpg"
   },
   {
@@ -2222,7 +2513,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://bghut.com/images/201810/goods_img/7045_P_1539475008931.JPG",
     "bgg_id": 175549,
@@ -2259,6 +2550,13 @@
       "派對",
       "自印版"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Hidden Roles",
+      "Player Elimination",
+      "Traitor Game",
+      "Voting"
+    ],
     "image": "assets/img/175549.jpg"
   },
   {
@@ -2272,7 +2570,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/0bDccG2vXk5X1_bcJ0G4_Q__small@2x/img/56WsWdjkDszUvlL6Tw9LNtlvErk=/fit-in/400x300/filters:strip_icc()/pic3089193.jpg",
     "bgg_id": 13308,
@@ -2303,6 +2601,14 @@
     "categories_zh": [
       "航海"
     ],
+    "mechanics_zh": [
+      "Bias",
+      "手牌管理",
+      "取貨運送",
+      "收集套組",
+      "同時選擇行動",
+      "Slide / Push"
+    ],
     "image": "assets/img/13308.jpg"
   },
   {
@@ -2316,7 +2622,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/uT84-aecpR6hKzwi1OExhw__small@2x/img/Rdd9cYnRjUK5_3p68G8SRck-UzQ=/fit-in/400x300/filters:strip_icc()/pic5450727.png",
     "bgg_id": 201006,
@@ -2346,6 +2652,9 @@
       "動物",
       "教育"
     ],
+    "mechanics_zh": [
+      "Action Queue"
+    ],
     "image": "assets/img/201006.jpg"
   },
   {
@@ -2359,7 +2668,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/Z1ym7D-3eQO-CW7WvDHs-w__small/img/gmaYjyCxN8l3peRVQzHH04mYiMM=/fit-in/200x150/filters:strip_icc()/pic1703069.jpg",
     "bgg_id": 130907,
@@ -2388,6 +2697,10 @@
       "動物",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "同時選擇行動"
+    ],
     "image": "assets/img/130907.jpg"
   },
   {
@@ -2401,7 +2714,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/4BTVGQWO0M9ayxyku3FW6Q__small@2x/img/CgXdrnqqO6Jt8R_cyUHcEbUrY3g=/fit-in/400x300/filters:strip_icc()/pic3477004.jpg",
     "bgg_id": 194594,
@@ -2436,6 +2749,12 @@
       "奇幻",
       "神話"
     ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "擲骰",
+      "公開選牌",
+      "Random Production"
+    ],
     "image": "assets/img/194594.jpg"
   },
   {
@@ -2449,7 +2768,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://bghut.com/images/202007/goods_img/8393_G_1593838153041.jpg",
     "bgg_id": 42448,
@@ -2480,6 +2799,11 @@
       "幽默",
       "派對"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "剪刀石頭布",
+      "Voting"
+    ],
     "image": "assets/img/42448.jpg"
   },
   {
@@ -2493,7 +2817,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/NwefFi7gYExQOwtYkRVZIg__small@2x/img/I4lWeSfH-syqCS0SMw7tapifgco=/fit-in/400x300/filters:strip_icc()/pic2401263.png",
     "bgg_id": 485,
@@ -2521,6 +2845,7 @@
       "卡牌",
       "兒童"
     ],
+    "mechanics_zh": [],
     "image": "assets/img/485.jpg"
   },
   {
@@ -2534,7 +2859,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/iMz-jlMj_-VtDzwrxtR7pw__small@2x/img/bVZ9_Trt1-AHnWBUZzO9qox9oNI=/fit-in/400x300/filters:strip_icc()/pic7467747.png",
     "bgg_id": 351040,
@@ -2571,6 +2896,12 @@
       "即時制",
       "運動"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "擲骰",
+      "Real-Time",
+      "Track Movement"
+    ],
     "image": "assets/img/351040.jpg"
   },
   {
@@ -2584,7 +2915,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/VulTMYesrtYhZbL3aqTRkA__small@2x/img/AZJvza5XZ2XUGhok_Kk6uuj5ii8=/fit-in/400x300/filters:strip_icc()/pic2598902.png",
     "bgg_id": 137909,
@@ -2617,6 +2948,10 @@
       "兒童",
       "電子"
     ],
+    "mechanics_zh": [
+      "Roll / Spin and Move",
+      "可變設置"
+    ],
     "image": "assets/img/137909.jpg"
   },
   {
@@ -2630,7 +2965,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/dbUiEzam0DTdV_rO6dhTvA__small@2x/img/sJQOrErgmUcNdRI5rKceZu9IhbE=/fit-in/400x300/filters:strip_icc()/pic6977896.png",
     "bgg_id": 359009,
@@ -2667,6 +3002,16 @@
       "領地建設",
       "電玩主題"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "終局加分",
+      "Hexagon Grid",
+      "Income",
+      "板塊擺放",
+      "搶先手",
+      "可變設置",
+      "工人放置"
+    ],
     "image": "assets/img/359009.jpg"
   },
   {
@@ -2680,7 +3025,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/jEwIBYVRHCqWkQpWerV2Wg__small@2x/img/_J905RwcsOd1UnVqWZYKeoEfPxI=/fit-in/400x300/filters:strip_icc()/pic3067380.jpg",
     "bgg_id": 161614,
@@ -2715,6 +3060,18 @@
     "categories_zh": [
       "經濟"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Auction: Fixed Placement",
+      "Betting and Bluffing",
+      "Commodity Speculation",
+      "Constrained Bidding",
+      "Investment",
+      "Market",
+      "公開選牌",
+      "Stock Holding",
+      "Victory Points as a Resource"
+    ],
     "image": "assets/img/161614.jpg"
   },
   {
@@ -2728,7 +3085,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://bghut.com/images/201612/goods_img/5849_G_1482724638160.jpg",
     "bgg_id": 204599,
@@ -2760,6 +3117,10 @@
       "競速",
       "交通"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Resource to Move"
+    ],
     "image": "assets/img/204599.jpg"
   },
   {
@@ -2773,7 +3134,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/JXZFFuM2UW6eg_UJHmENjg__small@2x/img/Q9mh-R-4dh_NqdFafUSOlyGgxgE=/fit-in/400x300/filters:strip_icc()/pic4575449.jpg",
     "bgg_id": 175,
@@ -2802,6 +3163,10 @@
       "動物",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "Auction: Sealed Bid",
+      "同時選擇行動"
+    ],
     "image": "assets/img/175.jpg"
   },
   {
@@ -2815,7 +3180,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/qh-prKwTMJ1F3qTRTIbujQ__small@2x/img/2mS00AuVVRLvAgtISO22-RtXesU=/fit-in/400x300/filters:strip_icc()/pic6726030.png",
     "bgg_id": 264055,
@@ -2849,6 +3214,13 @@
       "史前",
       "科幻"
     ],
+    "mechanics_zh": [
+      "Closed Drafting",
+      "擲骰",
+      "Die Icon Resolution",
+      "收集套組",
+      "同時選擇行動"
+    ],
     "image": "assets/img/264055.jpg"
   },
   {
@@ -2862,7 +3234,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "4",
+    "stock": 4,
     "description": "",
     "image_override": "https://bghut.com/images/201703/goods_img/4296_G_1490167581789.jpg",
     "bgg_id": 139627,
@@ -2891,6 +3263,9 @@
       "卡牌",
       "奇幻"
     ],
+    "mechanics_zh": [
+      "Push Your Luck"
+    ],
     "image": "assets/img/139627.jpg"
   },
   {
@@ -2904,7 +3279,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/_VGX0L0SkLdK9UxWrs7tOw__small@2x/img/RbeYvYFF-oJP_5DGIuFxoehnmyA=/fit-in/400x300/filters:strip_icc()/pic5510181.jpg",
     "bgg_id": 260605,
@@ -2940,6 +3315,13 @@
       "骰子",
       "競速"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "擲骰",
+      "Roll / Spin and Move",
+      "Track Movement",
+      "可變設置"
+    ],
     "image": "assets/img/260605.jpg"
   },
   {
@@ -2953,7 +3335,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/M2lr-Q4cc6n5J7MW8lC4kQ__small@2x/img/cqb7GZLsPvssCkAMkqbgc_y0oUI=/fit-in/400x300/filters:strip_icc()/pic4773842.jpg",
     "bgg_id": 206941,
@@ -2983,6 +3365,11 @@
       "卡牌",
       "鐵道"
     ],
+    "mechanics_zh": [
+      "公開選牌",
+      "收集套組",
+      "可變設置"
+    ],
     "image": "assets/img/206941.jpg"
   },
   {
@@ -2996,7 +3383,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/c7XYbY5L2Kg-QAQP2daE4A__small@2x/img/Cvvk7idn03cRqcs08say5yl7mv8=/fit-in/400x300/filters:strip_icc()/pic4229311.jpg",
     "bgg_id": 209220,
@@ -3032,6 +3419,11 @@
       "談判",
       "即時制"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Push Your Luck",
+      "可變階段順序"
+    ],
     "image": "assets/img/209220.jpg"
   },
   {
@@ -3045,7 +3437,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/PjENQ-XWCdV-gMiLzeEuEw__small@2x/img/2mrXSyqOGHFJRXgQ-ZNwXOz3Ok4=/fit-in/400x300/filters:strip_icc()/pic5510354.jpg",
     "bgg_id": 18723,
@@ -3080,6 +3472,12 @@
       "幽默",
       "派對"
     ],
+    "mechanics_zh": [
+      "Acting",
+      "角色扮演",
+      "Single Loser Game",
+      "Storytelling"
+    ],
     "image": "assets/img/18723.jpg"
   },
   {
@@ -3093,7 +3491,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/xfoUlBIIgzy5-tMZ_jEvsQ__small@2x/img/ise6fDlQREKa7uO67JJAizrc5_8=/fit-in/400x300/filters:strip_icc()/pic5632214.jpg",
     "bgg_id": 299169,
@@ -3124,6 +3522,10 @@
       "唬人",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "手牌管理"
+    ],
     "image": "assets/img/299169.jpg"
   },
   {
@@ -3137,7 +3539,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/Ooy1E4iddgSBzpGDaAKTNw__small@2x/img/Xtv8Eqw3FE8B-F4yLPfVQxPnkoo=/fit-in/400x300/filters:strip_icc()/pic2596649.jpg",
     "bgg_id": 157969,
@@ -3181,6 +3583,15 @@
       "小說改編",
       "派對"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Bribery",
+      "手牌管理",
+      "談判",
+      "公開選牌",
+      "角色扮演",
+      "收集套組"
+    ],
     "image": "assets/img/157969.jpg"
   },
   {
@@ -3194,7 +3605,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://bghut.com/images/202204/goods_img/9845_G_1650853245533.jpg",
     "bgg_id": 341256,
@@ -3222,6 +3633,12 @@
     "categories_zh": [
       "抽象策略"
     ],
+    "mechanics_zh": [
+      "合約",
+      "Income",
+      "Market",
+      "收集套組"
+    ],
     "image": "assets/img/341256.jpg"
   },
   {
@@ -3235,7 +3652,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://img.gokids.com.tw/GoodPic/50/big/17400395458850.png",
     "bgg_id": 254640,
@@ -3267,6 +3684,12 @@
       "派對",
       "字詞"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "Deduction",
+      "Score-and-Reset Game"
+    ],
     "image": "assets/img/254640.jpg"
   },
   {
@@ -3280,7 +3703,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/UZBzGHiV8N8mhBS37xlExA__small@2x/img/5M_Fmq9SoFmMqY3JipD-e0TppAM=/fit-in/400x300/filters:strip_icc()/pic7094758.png",
     "bgg_id": 366067,
@@ -3313,6 +3736,10 @@
       "音樂",
       "派對"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Voting"
+    ],
     "image": "assets/img/366067.jpg"
   },
   {
@@ -3326,7 +3753,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/3QEfHHoXwDB4CCbjIFXNnw__small@2x/img/FAcJYVoy1rN01UAHGJdBdgoKRuw=/fit-in/400x300/filters:strip_icc()/pic1661253.jpg",
     "bgg_id": 3341,
@@ -3354,6 +3781,11 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "公開選牌",
+      "互害"
+    ],
     "image": "assets/img/3341.jpg"
   },
   {
@@ -3367,7 +3799,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/JC_YWJVef9DC8EepUWCkXg__small@2x/img/VK9XjCWKehtkD_xdJvK7KsA5u-w=/fit-in/400x300/filters:strip_icc()/pic3803198.png",
     "bgg_id": 218637,
@@ -3397,6 +3829,9 @@
       "派對",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
     "image": "assets/img/218637.jpg"
   },
   {
@@ -3410,7 +3845,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://bghut.com/images/201805/goods_img/6813_G_1526909339697.jpg",
     "bgg_id": 224037,
@@ -3443,6 +3878,11 @@
       "間諜",
       "字詞"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "記憶"
+    ],
     "image": "assets/img/224037.jpg"
   },
   {
@@ -3456,7 +3896,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://bghut.com/images/201805/goods_img/6812_G_1526908633572.jpg",
     "bgg_id": 198773,
@@ -3489,6 +3929,11 @@
       "派對",
       "間諜"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "記憶",
+      "Team-Based Game"
+    ],
     "image": "assets/img/198773.jpg"
   },
   {
@@ -3502,7 +3947,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/isfQxtHhFMdUHEfEHIQ5Kw__small@2x/img/4MuKaSkZ7fXPVlvnGZPb6S3DJso=/fit-in/400x300/filters:strip_icc()/pic3693575.png",
     "bgg_id": 178900,
@@ -3540,6 +3985,13 @@
       "間諜",
       "字詞"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Deduction",
+      "記憶",
+      "Race",
+      "Team-Based Game"
+    ],
     "image": "assets/img/178900.jpg"
   },
   {
@@ -3553,7 +4005,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://wobgames.net/wp-content/uploads/2020/08/ageofwar-boardgame-430x430.png",
     "bgg_id": 28086,
@@ -3593,6 +4045,14 @@
       "領地建設",
       "戰棋"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Die Icon Resolution",
+      "Push Your Luck",
+      "Re-rolling and Locking",
+      "收集套組",
+      "互害"
+    ],
     "image": "assets/img/28086.jpg"
   },
   {
@@ -3606,7 +4066,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://img.gokids.com.tw/GoodPic/07/big/165836675919707.png",
     "bgg_id": 367512,
@@ -3640,6 +4100,10 @@
       "影視／廣播主題",
       "派對"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Team-Based Game"
+    ],
     "image": "assets/img/367512.jpg"
   },
   {
@@ -3653,7 +4117,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/4a1fxiaT4TZgBppBeoPxAQ__small@2x/img/hI7E6eTfUUbvl1-E_bxwyIcd6n4=/fit-in/400x300/filters:strip_icc()/pic5940634.jpg",
     "bgg_id": 92415,
@@ -3687,6 +4151,13 @@
       "卡牌",
       "派對"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Bids As Wagers",
+      "手牌管理",
+      "Player Elimination",
+      "Predictive Bid"
+    ],
     "image": "assets/img/92415.jpg"
   },
   {
@@ -3700,7 +4171,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/lttmtIkphkYVVRTb9eyxvg__small@2x/img/IX6v8F7hSOQpAwJC3eUQZ4WhvTQ=/fit-in/400x300/filters:strip_icc()/pic5134786.jpg",
     "bgg_id": 203993,
@@ -3733,6 +4204,16 @@
     "categories_zh": [
       "文藝復興"
     ],
+    "mechanics_zh": [
+      "合約",
+      "擲骰",
+      "終局加分",
+      "公開選牌",
+      "搶先手",
+      "可變設置",
+      "工人放置",
+      "骰子工人"
+    ],
     "image": "assets/img/203993.jpg"
   },
   {
@@ -3746,7 +4227,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/hSUYEp0Yvuu1548ScuKIvg__small@2x/img/UttYApXXPNvTt5ig1Bze-GZJTBs=/fit-in/400x300/filters:strip_icc()/pic4918688.png",
     "bgg_id": 179245,
@@ -3777,6 +4258,10 @@
       "卡牌",
       "幽默"
     ],
+    "mechanics_zh": [
+      "Betting and Bluffing",
+      "Push Your Luck"
+    ],
     "image": "assets/img/179245.jpg"
   },
   {
@@ -3790,7 +4275,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/utnKBfODjp-K6bkoOk_QFQ__small@2x/img/LW0Ua8J_oEcD_0FT5HGI7vIWLR8=/fit-in/400x300/filters:strip_icc()/pic6927361.png",
     "bgg_id": 347013,
@@ -3821,6 +4306,14 @@
     "categories_zh": [
       "交通"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "Connections",
+      "連線",
+      "路網建設",
+      "Paper-and-Pencil",
+      "Race"
+    ],
     "image": "assets/img/347013.jpg"
   },
   {
@@ -3834,7 +4327,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/LkxKan1f2bMiARa8Nb72Uw__small@2x/img/NLsD_lxVAIq8VvtWZLVdz6XnpFU=/fit-in/400x300/filters:strip_icc()/pic5951163.jpg",
     "bgg_id": 268586,
@@ -3864,6 +4357,11 @@
       "卡牌",
       "數字"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Score-and-Reset Game",
+      "同時選擇行動"
+    ],
     "image": "assets/img/268586.jpg"
   },
   {
@@ -3877,7 +4375,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/3srTjQxHARVUQ_0W9rWvoA__imagepage/img/Fu4C4TX0KfUrBaK6hjIqC1Q1PKE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8357487.jpg",
     "bgg_id": 383053,
@@ -3902,6 +4400,9 @@
     "image_version_id": "724273",
     "categories_zh": [
       "派對"
+    ],
+    "mechanics_zh": [
+      "Player Judge"
     ],
     "image": "assets/img/383053.jpg"
   },
@@ -3916,7 +4417,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/3srTjQxHARVUQ_0W9rWvoA__imagepage/img/Fu4C4TX0KfUrBaK6hjIqC1Q1PKE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic8357487.jpg",
     "bgg_id": 383053,
@@ -3941,6 +4442,9 @@
     "image_version_id": "724273",
     "categories_zh": [
       "派對"
+    ],
+    "mechanics_zh": [
+      "Player Judge"
     ],
     "image": "assets/img/383053.jpg"
   },
@@ -3955,7 +4459,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/qGFT4WFD86zTBROTQZiErg__imagepage/img/99zlNEy_ktFlYN1Arzxjd2Z0IjU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4480086.jpg",
     "bgg_id": 220653,
@@ -3988,6 +4492,10 @@
       "基本款擴充",
       "文藝復興"
     ],
+    "mechanics_zh": [
+      "公開選牌",
+      "收集套組"
+    ],
     "image": "assets/img/220653.jpg"
   },
   {
@@ -4001,7 +4509,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 406291,
@@ -4035,6 +4543,12 @@
       "影視／廣播主題",
       "電玩主題"
     ],
+    "mechanics_zh": [
+      "合約",
+      "公開選牌",
+      "Race",
+      "收集套組"
+    ],
     "image": "assets/img/406291.jpg"
   },
   {
@@ -4048,7 +4562,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "Traditional Chinese edition",
     "image_override": "https://cf.geekdo-images.com/bTTwxCpTpIkIRG4bXUv73w__imagepage/img/hnoLVndgq3oFOGdBj5Gaq3L2RoU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7089383.jpg",
     "bgg_id": 293296,
@@ -4081,6 +4595,12 @@
       "漫畫",
       "經濟"
     ],
+    "mechanics_zh": [
+      "合約",
+      "公開選牌",
+      "Race",
+      "收集套組"
+    ],
     "image": "assets/img/293296.jpg"
   },
   {
@@ -4094,7 +4614,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "GoKid Chinese edition",
     "image_override": "https://cf.geekdo-images.com/aEipdIPyNfuveSmdV_h8JQ__imagepage/img/4CCsJSmE9QOGUIjdmchUDA3vOgU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2313795.jpg",
     "bgg_id": 148228,
@@ -4127,6 +4647,12 @@
       "經濟",
       "文藝復興"
     ],
+    "mechanics_zh": [
+      "合約",
+      "公開選牌",
+      "Race",
+      "收集套組"
+    ],
     "image": "assets/img/148228.jpg"
   },
   {
@@ -4140,7 +4666,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "4",
+    "stock": 4,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/T27pOSV4o3HlFPSibHFWUA__small@2x/img/ap_HeWFrqTlfRAtcN3w0P9DqouA=/fit-in/400x300/filters:strip_icc()/pic3884764.jpg",
     "bgg_id": 217449,
@@ -4174,6 +4700,13 @@
       "數字",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "Layering",
+      "Pattern Building",
+      "同時選擇行動",
+      "板塊擺放"
+    ],
     "image": "assets/img/217449.jpg"
   },
   {
@@ -4187,7 +4720,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "",
     "bgg_id": 150,
@@ -4222,6 +4755,11 @@
       "競速",
       "運動"
     ],
+    "mechanics_zh": [
+      "Flicking",
+      "模組地圖",
+      "Race"
+    ],
     "image": "assets/img/150.jpg"
   },
   {
@@ -4235,7 +4773,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "Chinese/English edition",
     "image_override": "https://cf.geekdo-images.com/dpAidU3yqwNaSNO2EHehcA__imagepage/img/bew4Jz-GkyCtTSpqh0Zzvhkiedw=/fit-in/900x600/filters:no_upscale():strip_icc()/pic2616068.png",
     "bgg_id": 170041,
@@ -4265,6 +4803,9 @@
       "兒童",
       "派對"
     ],
+    "mechanics_zh": [
+      "Pattern Building"
+    ],
     "image": "assets/img/170041.jpg"
   },
   {
@@ -4278,7 +4819,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/aoH0KLMXtBo7-AnHx6wceg__small@2x/img/o1hcy71-5PyWZOKRQafURwqyH78=/fit-in/400x300/filters:strip_icc()/pic3089347.jpg",
     "bgg_id": 128,
@@ -4307,6 +4848,11 @@
       "抽象策略",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "Bingo",
+      "Pattern Building",
+      "板塊擺放"
+    ],
     "image": "assets/img/128.jpg"
   },
   {
@@ -4320,7 +4866,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 162915,
@@ -4345,6 +4891,9 @@
     "categories_zh": [
       "唬人"
     ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
     "image": "assets/img/162915.jpg"
   },
   {
@@ -4358,7 +4907,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/kfp8EJrlTcDnhZU9q8GW7Q__small@2x/img/MAq4sVSgK7hc1NpGQ6EaBCZMqrY=/fit-in/400x300/filters:strip_icc()/pic4229314.jpg",
     "bgg_id": 198454,
@@ -4394,6 +4943,14 @@
       "即時制",
       "字詞"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Hidden Roles",
+      "記憶",
+      "角色扮演",
+      "Storytelling",
+      "Team-Based Game"
+    ],
     "image": "assets/img/198454.jpg"
   },
   {
@@ -4407,7 +4964,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/ar0PNvoj86S8o-Y_wVHA8g__small@2x/img/ELsKORSpBaTicCzfOKfnr61PtpE=/fit-in/400x300/filters:strip_icc()/pic6126671.png",
     "bgg_id": 247314,
@@ -4439,6 +4996,10 @@
       "兒童",
       "推理"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作"
+    ],
     "image": "assets/img/247314.jpg"
   },
   {
@@ -4452,7 +5013,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/ItTurQyarLsUcY-HaccQ3g__small@2x/img/7-ZRS69t6VrLpqbbDjPJ6yvL2qA=/fit-in/400x300/filters:strip_icc()/pic2220430.jpg",
     "bgg_id": 147151,
@@ -4483,6 +5044,11 @@
       "派對",
       "字詞"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Race",
+      "Team-Based Game"
+    ],
     "image": "assets/img/147151.jpg"
   },
   {
@@ -4496,7 +5062,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://www.bghut.com/images/202210/goods_img/10116_P_1664841522827.jpg",
     "bgg_id": 370164,
@@ -4522,6 +5088,10 @@
     "categories_zh": [
       "派對"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Ordering"
+    ],
     "image": "assets/img/370164.jpg"
   },
   {
@@ -4535,7 +5105,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/c1bXrymsER07fPJKeCoEaA__small@2x/img/xPjA-u4BWtIYoyszch-TKcdlNxk=/fit-in/400x300/filters:strip_icc()/pic4924159.png",
     "bgg_id": 245503,
@@ -4558,6 +5128,7 @@
     "categories_zh": [
       "動作／敏捷"
     ],
+    "mechanics_zh": [],
     "image": "assets/img/245503.jpg"
   },
   {
@@ -4571,7 +5142,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/LXHQypt-1L-OUB9enqxc1w__small@2x/img/W0mJOrPuXAD0O5LCK_Wo62MRESQ=/fit-in/400x300/filters:strip_icc()/pic2538532.jpg",
     "bgg_id": 54137,
@@ -4601,6 +5172,12 @@
       "抽象策略",
       "動物"
     ],
+    "mechanics_zh": [
+      "Enclosure",
+      "格子移動",
+      "Hexagon Grid",
+      "模組地圖"
+    ],
     "image": "assets/img/54137.jpg"
   },
   {
@@ -4614,7 +5191,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/JljWkiGv2YyBR5aCpQ-tIA__small@2x/img/dTs6uw8w_vT0vKb-6laDRgkkTPY=/fit-in/400x300/filters:strip_icc()/pic3342886.png",
     "bgg_id": 192334,
@@ -4641,6 +5218,11 @@
     "categories_zh": [
       "航海"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "Betting and Bluffing",
+      "工人放置"
+    ],
     "image": "assets/img/192334.jpg"
   },
   {
@@ -4654,7 +5236,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cdn.prod.website-files.com/575714cc825e8dbc6c83b98a/5ab8f770326fa984a0e9f9cd_Elfenland_Box_3D-p-800.jpeg",
     "bgg_id": 180325,
@@ -4684,6 +5266,12 @@
       "奇幻",
       "旅遊"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "路網建設",
+      "公開選牌",
+      "Point to Point Movement"
+    ],
     "image": "assets/img/180325.jpg"
   },
   {
@@ -4697,7 +5285,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/4ttMiZ19OyI1PknRt-F09A__small@2x/img/siCPkTblHeGcKCuBr8Fkqf6an2Q=/fit-in/400x300/filters:strip_icc()/pic3289266.png",
     "bgg_id": 170969,
@@ -4727,6 +5315,10 @@
       "奇幻",
       "記憶"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "互害"
+    ],
     "image": "assets/img/170969.jpg"
   },
   {
@@ -4740,7 +5332,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/ym_ghqbdx8TaLwI5reF0cQ__small@2x/img/dIAzplrvvHyZL1vHUP0JNmTAodk=/fit-in/400x300/filters:strip_icc()/pic3585080.jpg",
     "bgg_id": 11,
@@ -4773,6 +5365,13 @@
       "農業",
       "談判"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Multi-Use Cards",
+      "談判",
+      "收集套組",
+      "交易"
+    ],
     "image": "assets/img/11.jpg"
   },
   {
@@ -4786,7 +5385,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/l6ma7rpw3i0DyT5Yww7oUA__small@2x/img/BOAbTsBuuCJAHB-NOPpp-Pu3tbE=/fit-in/400x300/filters:strip_icc()/pic2445099.png",
     "bgg_id": 41916,
@@ -4821,6 +5420,13 @@
       "迷宮",
       "記憶"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "格子移動",
+      "記憶",
+      "路網建設",
+      "Roll / Spin and Move"
+    ],
     "image": "assets/img/41916.jpg"
   },
   {
@@ -4834,7 +5440,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/4zJ0imEAaeaNHYFAkJTQWg__small@2x/img/OFNlzJYD9LRpH0te54wD8R1xulc=/fit-in/400x300/filters:strip_icc()/pic5974161.jpg",
     "bgg_id": 255823,
@@ -4883,6 +5489,17 @@
       "懸疑／推理",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "區域移動",
+      "合作",
+      "擲骰",
+      "手牌管理",
+      "模組地圖",
+      "角色扮演",
+      "Team-Based Game",
+      "Traitor Game",
+      "角色能力"
+    ],
     "image": "assets/img/255823.jpg"
   },
   {
@@ -4896,7 +5513,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/NlCv9LL1tClkGSxud_L5Lg__small@2x/img/VGY3AAbNAQnRBYTugeKLs0Waok0=/fit-in/400x300/filters:strip_icc()/pic5974141.jpg",
     "bgg_id": 205059,
@@ -4950,6 +5567,20 @@
       "小說改編",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "區域移動",
+      "合作",
+      "擲骰",
+      "手牌管理",
+      "Map Addition",
+      "模組地圖",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "Stat Check Resolution",
+      "Traitor Game",
+      "角色能力"
+    ],
     "image": "assets/img/205059.jpg"
   },
   {
@@ -4963,7 +5594,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 274688,
@@ -4990,6 +5621,11 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "競標",
+      "吃墩",
+      "工人放置"
+    ],
     "image": "assets/img/274688.jpg"
   },
   {
@@ -5003,7 +5639,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 27833,
@@ -5037,6 +5673,14 @@
       "鐵道",
       "交通"
     ],
+    "mechanics_zh": [
+      "競標",
+      "借貸",
+      "路網建設",
+      "所有權",
+      "取貨運送",
+      "板塊擺放"
+    ],
     "image": "assets/img/27833.jpg"
   },
   {
@@ -5050,7 +5694,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/OqHE_-aiRMheW3rWYa-qmA__small@2x/img/e7DmJ6YxPoEZSC2j8oSNxF7l7Wk=/fit-in/400x300/filters:strip_icc()/pic7605848.png",
     "bgg_id": 219513,
@@ -5082,6 +5726,14 @@
       "動物",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "Grid Coverage",
+      "模組地圖",
+      "公開選牌",
+      "收集套組",
+      "方格",
+      "板塊擺放"
+    ],
     "image": "assets/img/219513.jpg"
   },
   {
@@ -5095,7 +5747,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/UMH52-Ne7YIXW-HiqrqrYA__small@2x/img/5D9EA_c3WsMlgHtU1gCtqPgURzE=/fit-in/400x300/filters:strip_icc()/pic4884271.png",
     "bgg_id": 286145,
@@ -5125,6 +5777,12 @@
       "卡牌",
       "領地建設"
     ],
+    "mechanics_zh": [
+      "Layering",
+      "公開選牌",
+      "Pattern Building",
+      "板塊擺放"
+    ],
     "image": "assets/img/286145.jpg"
   },
   {
@@ -5138,7 +5796,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/zg0yWiKSgAG3_JEOAsNLnw__small@2x/img/RDVGNLGshJ58-TS0CExDUkCKBsM=/fit-in/400x300/filters:strip_icc()/pic2067897.jpg",
     "bgg_id": 71021,
@@ -5168,6 +5826,12 @@
       "動物",
       "卡牌"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "Melding and Splaying",
+      "互害"
+    ],
     "image": "assets/img/71021.jpg"
   },
   {
@@ -5181,7 +5845,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 145645,
@@ -5211,6 +5875,10 @@
       "音樂",
       "小說改編"
     ],
+    "mechanics_zh": [
+      "格子移動",
+      "角色能力"
+    ],
     "image": "assets/img/145645.jpg"
   },
   {
@@ -5224,7 +5892,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/2TejZGVqieHWeVJ05-Szzw__small@2x/img/Cw6aI8GLHPqWQTbg74dh7x3zPCY=/fit-in/400x300/filters:strip_icc()/pic3342862.png",
     "bgg_id": 206844,
@@ -5254,6 +5922,10 @@
       "益智／拼圖",
       "即時制"
     ],
+    "mechanics_zh": [
+      "圖形辨識",
+      "Player Elimination"
+    ],
     "image": "assets/img/206844.jpg"
   },
   {
@@ -5267,7 +5939,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://bghut.com/images/201909/goods_img/7735_G_1568177111476.jpg",
     "bgg_id": 273938,
@@ -5300,6 +5972,11 @@
       "派對",
       "字詞"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Targeted Clues",
+      "Team-Based Game"
+    ],
     "image": "assets/img/273938.jpg"
   },
   {
@@ -5313,7 +5990,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/QN7fc4_zxoGGO9L1T-jOUQ__small@2x/img/gwiqj6a5-QP5uglrI14zR5zWD3s=/fit-in/400x300/filters:strip_icc()/pic4163204.png",
     "bgg_id": 225694,
@@ -5347,6 +6024,12 @@
       "間諜",
       "字詞"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "Paper-and-Pencil",
+      "Targeted Clues",
+      "Team-Based Game"
+    ],
     "image": "assets/img/225694.jpg"
   },
   {
@@ -5360,7 +6043,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/gYZXJ0ogktykTZkNIkqvrQ__small@2x/img/SMz8MsdYirTlJgP5tFqjPZNXe60=/fit-in/400x300/filters:strip_icc()/pic6617922.jpg",
     "bgg_id": 1117,
@@ -5397,6 +6080,15 @@
       "卡牌",
       "幽默"
     ],
+    "mechanics_zh": [
+      "Auction: Turn Order Until Pass",
+      "Betting and Bluffing",
+      "手牌管理",
+      "記憶",
+      "收集套組",
+      "同時選擇行動",
+      "交易"
+    ],
     "image": "assets/img/1117.jpg"
   },
   {
@@ -5410,7 +6102,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/N01/128/44/N011284499.jpg&v=5b91d063k&w=375&h=375",
     "bgg_id": 235251,
@@ -5435,6 +6127,9 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "收集套組"
+    ],
     "image": "assets/img/235251.jpg"
   },
   {
@@ -5448,7 +6143,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/IZAMD2Z-B72dzgrfJXi5TQ__small@2x/img/6dmWDcFVLglqKgwRRRFl8dmgqm0=/fit-in/400x300/filters:strip_icc()/pic8367367.jpg",
     "bgg_id": 194880,
@@ -5477,6 +6172,13 @@
     "categories_zh": [
       "卡牌"
     ],
+    "mechanics_zh": [
+      "記憶",
+      "公開選牌",
+      "Pattern Building",
+      "收集套組",
+      "可變階段順序"
+    ],
     "image": "assets/img/194880.jpg"
   },
   {
@@ -5490,7 +6192,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://img.gokids.com.tw/GoodPic/94/big/166752407219494.png",
     "bgg_id": 356123,
@@ -5520,6 +6222,10 @@
       "數學",
       "間諜"
     ],
+    "mechanics_zh": [
+      "Deduction",
+      "單人"
+    ],
     "image": "assets/img/356123.jpg"
   },
   {
@@ -5533,7 +6239,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/PH12swoaUo_yi_Q6Nb-vdA__small@2x/img/GweBljbwgN_8IKU_aS_up1m9A1M=/fit-in/400x300/filters:strip_icc()/pic2428373.jpg",
     "bgg_id": 8089,
@@ -5566,6 +6272,9 @@
       "工業／製造",
       "派對"
     ],
+    "mechanics_zh": [
+      "Storytelling"
+    ],
     "image": "assets/img/8089.jpg"
   },
   {
@@ -5579,7 +6288,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/ry-Uv3S79DePm_LQmecCLw__small@2x/img/tLEo20xmA_QVUqNXHZ8yYSTcTg4=/fit-in/400x300/filters:strip_icc()/pic5448699.jpg",
     "bgg_id": 172507,
@@ -5610,6 +6319,11 @@
       "兒童",
       "骰子"
     ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "Push Your Luck"
+    ],
     "image": "assets/img/172507.jpg"
   },
   {
@@ -5623,7 +6337,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/mf125uHI9w5KW6nTrHXONQ__small@2x/img/-emLr23UQIWHlDsw_e6W-hKs5lI=/fit-in/400x300/filters:strip_icc()/pic3020087.png",
     "bgg_id": 175293,
@@ -5656,6 +6370,13 @@
       "鐵道",
       "交通"
     ],
+    "mechanics_zh": [
+      "Multi-Use Cards",
+      "公開選牌",
+      "Ordering",
+      "Score-and-Reset Game",
+      "收集套組"
+    ],
     "image": "assets/img/175293.jpg"
   },
   {
@@ -5669,7 +6390,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/X6j13eS_XDm-lRJPtWyu3g__small@2x/img/DUQsBktqN1JNdcFomMAJmuss_aU=/fit-in/400x300/filters:strip_icc()/pic6241474.jpg",
     "bgg_id": 2651,
@@ -5703,6 +6424,16 @@
       "經濟",
       "工業／製造"
     ],
+    "mechanics_zh": [
+      "競標",
+      "Auction: Turn Order Until Pass",
+      "Catch the Leader",
+      "Income",
+      "Market",
+      "路網建設",
+      "Turn Order: Stat-Based",
+      "可變設置"
+    ],
     "image": "assets/img/2651.jpg"
   },
   {
@@ -5716,7 +6447,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/dK6xCJADWkUna0OC3NA8Lg__small@2x/img/nZ5Hne895R5myD64AUqY614URxo=/fit-in/400x300/filters:strip_icc()/pic5531536.jpg",
     "bgg_id": 634,
@@ -5743,6 +6474,11 @@
     "categories_zh": [
       "抽象策略"
     ],
+    "mechanics_zh": [
+      "Action Queue",
+      "Point to Point Movement",
+      "同時選擇行動"
+    ],
     "image": "assets/img/634.jpg"
   },
   {
@@ -5756,7 +6492,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/29I0znYeLcbJhw0cLYWOIw__small@2x/img/R_UofUuFhi5EPKZlQn7aitUT04Q=/fit-in/400x300/filters:strip_icc()/pic3087414.jpg",
     "bgg_id": 17329,
@@ -5787,6 +6523,11 @@
       "動物",
       "兒童"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Stacking and Balancing",
+      "互害"
+    ],
     "image": "assets/img/17329.jpg"
   },
   {
@@ -5800,7 +6541,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/35BfYZUMBLwMp7296XqScA__small@2x/img/0ZRoGslqqe5KKXLvDArS37nF1sU=/fit-in/400x300/filters:strip_icc()/pic2313813.jpg",
     "bgg_id": 85563,
@@ -5828,6 +6569,10 @@
       "抽象策略",
       "兒童"
     ],
+    "mechanics_zh": [
+      "Point to Point Movement",
+      "收集套組"
+    ],
     "image": "assets/img/85563.jpg"
   },
   {
@@ -5841,7 +6586,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/oOB-nguIsjw5GH8rOSdMVQ__small@2x/img/Zw90JLHGbCZC3TIftkHOlxn7CJM=/fit-in/400x300/filters:strip_icc()/pic4918679.png",
     "bgg_id": 246784,
@@ -5869,6 +6614,12 @@
     "categories_zh": [
       "推理"
     ],
+    "mechanics_zh": [
+      "Deduction",
+      "Hexagon Grid",
+      "模組地圖",
+      "圖形辨識"
+    ],
     "image": "assets/img/246784.jpg"
   },
   {
@@ -5882,7 +6633,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/YHdWoJaODmqw2R6QC5Cczw__small@2x/img/-ptT5uQoQkXmw-bOma4EFlrpi_c=/fit-in/400x300/filters:strip_icc()/pic6112689.png",
     "bgg_id": 181304,
@@ -5921,6 +6672,17 @@
       "派對",
       "即時制"
     ],
+    "mechanics_zh": [
+      "Communication Limits",
+      "合作",
+      "Deduction",
+      "Finale Ending",
+      "手牌管理",
+      "圖形辨識",
+      "Real-Time",
+      "Storytelling",
+      "Voting"
+    ],
     "image": "assets/img/181304.jpg"
   },
   {
@@ -5934,7 +6696,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/WO2fpPMzP2-W-stt-4m90g__small@2x/img/odf2R0rfYisMnvxcaonnZzpHvgE=/fit-in/400x300/filters:strip_icc()/pic7763336.jpg",
     "bgg_id": 31016,
@@ -5967,6 +6729,13 @@
       "幽默",
       "派對"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "記憶",
+      "Player Elimination",
+      "剪刀石頭布",
+      "互害"
+    ],
     "image": "assets/img/31016.jpg"
   },
   {
@@ -5980,7 +6749,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/Z_MxpLoQTezawqQ9oTRd0Q__small@2x/img/EQxBPYxSwLVXlzXJi1mqlt9yAkE=/fit-in/400x300/filters:strip_icc()/pic6465403.jpg",
     "bgg_id": 289018,
@@ -6007,6 +6776,9 @@
       "幽默",
       "派對"
     ],
+    "mechanics_zh": [
+      "Acting"
+    ],
     "image": "assets/img/289018.jpg"
   },
   {
@@ -6020,7 +6792,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/7EmHenj5PV6ZtmrPp8C5HQ__small@2x/img/9ykBvR_PRl9H2Sa1lPX9V6NRB3k=/fit-in/400x300/filters:strip_icc()/pic8038318.jpg",
     "bgg_id": 414829,
@@ -6043,6 +6815,7 @@
     "categories_zh": [
       "派對"
     ],
+    "mechanics_zh": [],
     "image": "assets/img/414829.jpg"
   },
   {
@@ -6056,7 +6829,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/1LlHqFqzUJGpTiXORzk6CA__small@2x/img/0V-wDzqIf_Ye4wmFY-bLrak7j5A=/fit-in/400x300/filters:strip_icc()/pic6243188.png",
     "bgg_id": 300905,
@@ -6085,6 +6858,13 @@
     "categories_zh": [
       "派對"
     ],
+    "mechanics_zh": [
+      "合作",
+      "Deduction",
+      "Ordering",
+      "Player Judge",
+      "Targeted Clues"
+    ],
     "image": "assets/img/300905.jpg"
   },
   {
@@ -6098,7 +6878,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 175427,
@@ -6125,6 +6905,9 @@
       "卡牌",
       "宗教"
     ],
+    "mechanics_zh": [
+      "收集套組"
+    ],
     "image": "assets/img/175427.jpg"
   },
   {
@@ -6138,7 +6921,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/fL8tV3WEktWPHcWRwLeeyw__small@2x/img/FHygNYBMuzIbxk-UrhMimfsARyw=/fit-in/400x300/filters:strip_icc()/pic4153403.jpg",
     "bgg_id": 199561,
@@ -6174,6 +6957,18 @@
       "骰子",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "合約",
+      "擲骰",
+      "終局加分",
+      "Grid Coverage",
+      "公開選牌",
+      "Pattern Building",
+      "收集套組",
+      "單人",
+      "Turn Order: Progressive",
+      "可變設置"
+    ],
     "image": "assets/img/199561.jpg"
   },
   {
@@ -6187,7 +6982,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 8217,
@@ -6224,6 +7019,17 @@
       "城市建設",
       "經濟"
     ],
+    "mechanics_zh": [
+      "Action Drafting",
+      "Follow",
+      "手牌管理",
+      "Market",
+      "Multi-Use Cards",
+      "公開選牌",
+      "收集套組",
+      "Turn Order: Progressive",
+      "可變階段順序"
+    ],
     "image": "assets/img/8217.jpg"
   },
   {
@@ -6237,7 +7043,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 156943,
@@ -6270,6 +7076,11 @@
       "城市建設",
       "經濟"
     ],
+    "mechanics_zh": [
+      "Income",
+      "公開選牌",
+      "收集套組"
+    ],
     "image": "assets/img/156943.jpg"
   },
   {
@@ -6283,7 +7094,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/TcAq-1tyBq8ZQ5xFWIDUhg__small@2x/img/yxecUd2zzJYaFgbdcu1Ar3iMw30=/fit-in/400x300/filters:strip_icc()/pic4446213.png",
     "bgg_id": 2389,
@@ -6310,6 +7121,11 @@
     "categories_zh": [
       "抽象策略"
     ],
+    "mechanics_zh": [
+      "Enclosure",
+      "方格",
+      "板塊擺放"
+    ],
     "image": "assets/img/2389.jpg"
   },
   {
@@ -6323,7 +7139,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/R5wpqzQjQK20K7KY8E3I2w__small@2x/img/eyoei0ihCt9PVUKnLnyPcudu0p8=/fit-in/400x300/filters:strip_icc()/pic6222853.jpg",
     "bgg_id": 209450,
@@ -6352,6 +7168,11 @@
       "卡牌",
       "教育"
     ],
+    "mechanics_zh": [
+      "收集套組",
+      "同時選擇行動",
+      "吃墩"
+    ],
     "image": "assets/img/209450.jpg"
   },
   {
@@ -6365,7 +7186,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/uryZ7ONnbxAGY9M8Qe5y5A__small/img/JJa4tDjwj20dvvyqQVrl3OOdnxo=/fit-in/200x150/filters:strip_icc()/pic2376605.png",
     "bgg_id": 51,
@@ -6401,6 +7222,14 @@
       "益智／拼圖",
       "即時制"
     ],
+    "mechanics_zh": [
+      "格子移動",
+      "模組地圖",
+      "Real-Time",
+      "方格",
+      "Turn Order: Stat-Based",
+      "可變設置"
+    ],
     "image": "assets/img/51.jpg"
   },
   {
@@ -6414,7 +7243,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/WbT4pDP7IzjBZcpapVBJMQ__small@2x/img/in4lSNA_rzKcgLPLc4781nttoks=/fit-in/400x300/filters:strip_icc()/pic684123.jpg",
     "bgg_id": 9220,
@@ -6456,6 +7285,16 @@
       "奇幻",
       "派對"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "Hidden Roles",
+      "Hidden Victory Points",
+      "Map Addition",
+      "路網建設",
+      "Score-and-Reset Game",
+      "互害",
+      "Traitor Game"
+    ],
     "image": "assets/img/9220.jpg"
   },
   {
@@ -6469,7 +7308,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/HJFZp-hkX4QZTOyf7Mo7Mw__small@2x/img/0OxzV4ZGuBoib_U3JZSWVlLNomw=/fit-in/400x300/filters:strip_icc()/pic2576277.png",
     "bgg_id": 12267,
@@ -6499,6 +7338,10 @@
       "骰子",
       "奇幻"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "圖形辨識"
+    ],
     "image": "assets/img/12267.jpg"
   },
   {
@@ -6512,7 +7355,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/yhqsVLsIt6Pz9rVgP50PKA__small@2x/img/YrQguiRZHYxYcgQSlBgguKtKq0g=/fit-in/400x300/filters:strip_icc()/pic7017508.jpg",
     "bgg_id": 368956,
@@ -6543,6 +7386,15 @@
     "categories_zh": [
       "電玩主題"
     ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "擲骰",
+      "格子移動",
+      "模組地圖",
+      "Point to Point Movement",
+      "單人"
+    ],
     "image": "assets/img/368956.jpg"
   },
   {
@@ -6556,7 +7408,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/lAvfCCEBDeyoa1CpdgOFCg__small@2x/img/8A_fF1wa6eo-HaWTsdHKJ8mN2aU=/fit-in/400x300/filters:strip_icc()/pic4975740.jpg",
     "bgg_id": 269603,
@@ -6587,6 +7439,15 @@
     "categories_zh": [
       "電玩主題"
     ],
+    "mechanics_zh": [
+      "行動點",
+      "Deck, Bag, and Pool Building",
+      "終局加分",
+      "格子移動",
+      "Layering",
+      "板塊擺放",
+      "可變設置"
+    ],
     "image": "assets/img/269603.jpg"
   },
   {
@@ -6600,7 +7461,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/XlxmRNQwFgktGYd__pT-kA__small@2x/img/HRzOGhKvpbHxLc6ZRmxWSTO6_Zg=/fit-in/400x300/filters:strip_icc()/pic3014785.jpg",
     "bgg_id": 191538,
@@ -6629,6 +7490,11 @@
       "兒童",
       "神話"
     ],
+    "mechanics_zh": [
+      "合作",
+      "手牌管理",
+      "記憶"
+    ],
     "image": "assets/img/191538.jpg"
   },
   {
@@ -6642,7 +7508,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/krinbSABMlrrJelqwiZ7HA__small@2x/img/3eKQTpR2kCkqdEQ3CAN-6nCkZKg=/fit-in/400x300/filters:strip_icc()/pic4170805.jpg",
     "bgg_id": 161970,
@@ -6680,6 +7546,18 @@
       "奇幻",
       "益智／拼圖"
     ],
+    "mechanics_zh": [
+      "Action Drafting",
+      "Action Queue",
+      "Constrained Bidding",
+      "Deduction",
+      "終局加分",
+      "Events",
+      "手牌管理",
+      "公開選牌",
+      "Turn Order: Progressive",
+      "工人放置"
+    ],
     "image": "assets/img/161970.jpg"
   },
   {
@@ -6693,7 +7571,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 153479,
@@ -6721,6 +7599,10 @@
       "派對",
       "即時制"
     ],
+    "mechanics_zh": [
+      "Pattern Building",
+      "圖形辨識"
+    ],
     "image": "assets/img/153479.jpg"
   },
   {
@@ -6734,7 +7616,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "2",
+    "stock": 2,
     "description": "",
     "image_override": "https://shoplineimg.com/60a74ede7b095a005dafd838/649bd126fbde7f0020460fb7/800x.webp?source_format=png",
     "bgg_id": 9539,
@@ -6763,6 +7645,9 @@
       "兒童",
       "派對"
     ],
+    "mechanics_zh": [
+      "同時選擇行動"
+    ],
     "image": "assets/img/9539.jpg"
   },
   {
@@ -6776,7 +7661,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://shoplineimg.com/60a74ede7b095a005dafd838/612f25596c1565002c4b3224/800x.webp?source_format=png",
     "bgg_id": 145639,
@@ -6806,6 +7691,10 @@
       "動物",
       "兒童"
     ],
+    "mechanics_zh": [
+      "Push Your Luck",
+      "互害"
+    ],
     "image": "assets/img/145639.jpg"
   },
   {
@@ -6819,7 +7708,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://pic.pimg.tw/punchboardgame/1540962137-1387765022_n.jpg?v=1540963101",
     "bgg_id": 24068,
@@ -6858,6 +7747,13 @@
       "恐怖",
       "派對"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "Hidden Roles",
+      "Player Elimination",
+      "Team-Based Game",
+      "角色能力"
+    ],
     "image": "assets/img/24068.jpg"
   },
   {
@@ -6871,7 +7767,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/oteSpWBtWFZgajLe5uvgGw__small@2x/img/aNFAzOC9R1CxrxBwS2s76P4f6bQ=/fit-in/400x300/filters:strip_icc()/pic5957596.jpg",
     "bgg_id": 288098,
@@ -6910,6 +7806,13 @@
       "骰子",
       "派對"
     ],
+    "mechanics_zh": [
+      "擲骰",
+      "模組地圖",
+      "Player Elimination",
+      "Team-Based Game",
+      "角色能力"
+    ],
     "image": "assets/img/288098.jpg"
   },
   {
@@ -6923,7 +7826,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://img.gokids.com.tw/GoodPic/61/big/17400426625261.png",
     "bgg_id": 415773,
@@ -6950,6 +7853,9 @@
       "派對",
       "字詞"
     ],
+    "mechanics_zh": [
+      "擲骰"
+    ],
     "image": "assets/img/415773.jpg"
   },
   {
@@ -6963,7 +7869,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "",
     "bgg_id": 187113,
@@ -6989,6 +7895,10 @@
     "categories_zh": [
       "記憶"
     ],
+    "mechanics_zh": [
+      "合作",
+      "記憶"
+    ],
     "image": "assets/img/187113.jpg"
   },
   {
@@ -7002,7 +7912,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "3",
+    "stock": 3,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/ikUVg39J2M-EuW8H5QUQfA__small@2x/img/CZBFmDq1B__4C4NwAJwiDNrg1_k=/fit-in/400x300/filters:strip_icc()/pic2293201.jpg",
     "bgg_id": 33964,
@@ -7034,6 +7944,10 @@
       "兒童",
       "數字"
     ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組"
+    ],
     "image": "assets/img/33964.jpg"
   },
   {
@@ -7047,7 +7961,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
-    "stock": "1",
+    "stock": 1,
     "description": "",
     "image_override": "https://cf.geekdo-images.com/tyE2q8WSdBeUtUy8TWGGgQ__small@2x/img/pM9Hq9l9p5-UQ54QFOmQCz53UvU=/fit-in/400x300/filters:strip_icc()/pic4111336.jpg",
     "bgg_id": 49,
@@ -7073,6 +7987,10 @@
     "versions_count": 27,
     "categories_zh": [
       "卡牌",
+      "記憶"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
       "記憶"
     ],
     "image": "assets/img/49.jpg"
@@ -7127,6 +8045,18 @@
       "奇幻",
       "戰鬥",
       "微縮模型"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "格子移動",
+      "模組地圖",
+      "移動點",
+      "角色扮演",
+      "劇本/任務/戰役",
+      "單人",
+      "方格",
+      "角色能力"
     ],
     "image": "assets/img/322708.jpg"
   }
