@@ -9,17 +9,8 @@
     .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{border:1px solid #e5e7eb;padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    /* 圖片固定盒，不會撐爆 */
-    .media{
-      width:100%;
-      aspect-ratio:16/9;
-      background:#f3f4f6;
-      border-radius:8px;
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-    }
-    .media img{width:100%;height:100%;object-fit:contain}
+    /* 不裁切—吃原圖比例 */
+    .poster{width:100%;height:auto;background:#f3f4f6;border-radius:8px;display:block}
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:#6b7280}
     input,select,label{font:inherit}
@@ -45,7 +36,7 @@
          autocomplete="off" inputmode="numeric" spellcheck="false">
 
   <label class="checkbox"><input type="checkbox" id="inclUsed" checked> 含二手價</label>
-  <label class="checkbox"><input type="checkbox" id="hotOnly" checked> 只顯示熱門分類（≥5件）</label>
+  <label class="checkbox"><input type="checkbox" id="hotOnly" checked> 只顯示熱門分類（≥10件）</label>
 
   <select id="sort">
     <option value="">排序</option>
@@ -59,10 +50,9 @@
 <div id="grid" class="grid"></div>
 
 <script>
-  // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  // BGG 全 85 類別：英→中備援（後端 category_map_zh.csv 仍是主來源）
+  // BGG 類別英→中（備援；後端 categories_zh 仍優先）
   const CAT_MAP = {
     "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
     "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
@@ -83,7 +73,7 @@
     "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
   };
 
-  // 取中文分類：優先 categories_zh，否則映射英文；最多 10 個
+  // 優先 categories_zh，否則映射英文；最多 10 個
   function getCatsZh(x){
     if (Array.isArray(x.categories_zh) && x.categories_zh.length)
       return x.categories_zh.slice(0,10);
@@ -91,7 +81,7 @@
     return en.map(s => CAT_MAP[s] || s).slice(0,10);
   }
 
-  // 取價格候選（含/不含二手）
+  // 價格候選（含/不含二手）
   function priceCandidates(x, includeUsed=true){
     const out=[];
     if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
@@ -103,8 +93,8 @@
     return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
   }
 
-  // 熱門分類的門檻（可調整）
-  const MIN_CAT_COUNT = 5;
+  // 熱門分類門檻：10
+  const MIN_CAT_COUNT = 10;
 
   let DATA=[];
   const G = document.getElementById("grid"),
@@ -116,13 +106,12 @@
         INCL = document.getElementById("inclUsed"),
         HOT  = document.getElementById("hotOnly");
 
-  // 依所在路徑決定資料路徑
   const prefix = location.pathname.includes('/site/') ? '../' : '';
   const DATA_URL = prefix + 'data/games_full.json?ts=' + Date.now();
 
   fetch(DATA_URL).then(r=>r.json()).then(d=>{ DATA=d; buildCategoryOptions(); render(); });
 
-  // 下拉分類（可切換只顯示熱門）
+  // 下拉分類（只熱門或全部）
   function buildCategoryOptions(){
     const counts = new Map();
     for (const x of DATA){
@@ -159,13 +148,13 @@
       });
     }
 
-    // 分類（中文）
+    // 分類
     const chosen = C.value;
     if(chosen){
       list = list.filter(x => getCatsZh(x).includes(chosen));
     }
 
-    // 價格區間（含二手勾選控制）
+    // 價格區間
     const includeUsed = INCL.checked;
     const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
     if (pmin>0 || pmax>0){
@@ -182,17 +171,15 @@
     if (S.value==="used")      list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12));
     if (S.value==="weight")    list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12));
 
-    // 畫卡片
+    // 卡片
     G.innerHTML = list.map(x => {
       const cz = getCatsZh(x);
       const imgSrc = (x.image||'').startsWith('http') ? x.image : (prefix+(x.image||''));
       return `
         <div class="card">
-          <div class="media">
-            <img loading="lazy" src="${imgSrc}"
-                 alt="${x.name_zh||x.name_en||''}"
-                 onerror="this.src='https://via.placeholder.com/560x315?text=No+Image'">
-          </div>
+          <img class="poster" loading="lazy" src="${imgSrc}"
+               alt="${x.name_zh||x.name_en||''}"
+               onerror="this.src='https://via.placeholder.com/800x600?text=No+Image'">
 
           <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
           ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
