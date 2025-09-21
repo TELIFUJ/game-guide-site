@@ -237,6 +237,67 @@ jobs:
                   print("fetch_version_image: no change")
           if __name__ == "__main__": main()
           PY
+          build_json.p
+          # --- make_mechanism_map.py ---
+cat <<'PY' > scripts/make_mechanism_map.py
+import csv, json
+from pathlib import Path
+
+BGG = Path("data/bgg_data.json")
+MAP = Path("data/mechanism_map_zh.csv")
+OUT = Path("data/mechanism_map_candidates.csv")
+
+SEED = {
+  "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
+  "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"戰役/卡驅動",
+  "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
+  "Contracts":"合約","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","End Game Bonuses":"終局加分",
+  "Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
+  "Line Drawing":"連線","Loans":"借貸","Memory":"記憶","Modular Board":"模組地圖",
+  "Movement Points":"移動點","Network and Route Building":"路網建設","Negotiation":"談判",
+  "Open Drafting":"公開選牌","Ownership":"所有權","Pattern Recognition":"圖形辨識",
+  "Pick-up and Deliver":"取貨運送","Press Your Luck":"拚運氣","Rock-Paper-Scissors":"剪刀石頭布",
+  "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本/任務/戰役",
+  "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
+  "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
+  "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
+  "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
+  "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
+  "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人"
+}
+
+def load_cur_map():
+  m={}
+  if MAP.exists():
+    with MAP.open(encoding="utf-8-sig") as f:
+      r=csv.DictReader(f)
+      for row in r:
+        en=(row.get("bgg_mechanism_en") or "").strip()
+        zh=(row.get("mechanism_zh") or "").strip()
+        if en: m[en]=zh
+  return m
+
+def main():
+  if not BGG.exists():
+    print("no data/bgg_data.json; skip"); return
+  rows=json.loads(BGG.read_text(encoding="utf-8"))
+  found=set()
+  for r in rows:
+    for m in (r.get("mechanics") or []):
+      if m: found.add(m)
+
+  cur = load_cur_map()
+  all_mechs=sorted(found)
+  OUT.parent.mkdir(parents=True, exist_ok=True)
+  with OUT.open("w", encoding="utf-8", newline="") as f:
+    w=csv.writer(f); w.writerow(["bgg_mechanism_en","mechanism_zh"])
+    for en in all_mechs:
+      w.writerow([en, cur.get(en) or SEED.get(en) or ""])
+  print(f"Collected {len(all_mechs)} unique mechanics → {OUT}")
+  print("Move translations from candidates into mechanism_map_zh.csv to persist.")
+if __name__=="__main__": main()
+PY
+
 
           # --- build_json.py ---
           cat <<'PY' > scripts/build_json.py
