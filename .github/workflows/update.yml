@@ -348,11 +348,12 @@ jobs:
           python scripts/build_json.py
 
       - name: Commit changes
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/games_full.json data/bgg_data.json data/bgg_ids.json \
-                 data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
-          git add assets/img/* || true
-          git commit -m "Auto-update game data" || echo "No changes to commit"
-          git push || echo "No changes to push"
+  run: |
+    git config --local user.name "github-actions[bot]"
+    git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
+    git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
+    git add assets/img/* || true
+    git commit -m "Auto-update game data" || echo "No changes to commit"
+    git push || echo "No changes to push"
+
