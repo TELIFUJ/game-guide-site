@@ -1536,7 +1536,7 @@
     ],
     "time_min": 30,
     "time_max": 60,
-    "weight": 1.8221,
+    "weight": 1.8216,
     "categories": [
       "Trains"
     ],
@@ -1582,7 +1582,7 @@
     ],
     "time_min": 45,
     "time_max": 45,
-    "weight": 1.9446,
+    "weight": 1.9447,
     "categories": [
       "Deduction",
       "Travel"
@@ -2788,7 +2788,7 @@
     ],
     "time_min": 30,
     "time_max": 45,
-    "weight": 1.5057,
+    "weight": 1.5042,
     "categories": [
       "Animals",
       "Arabian",
@@ -3119,7 +3119,7 @@
     ],
     "time_min": 20,
     "time_max": 60,
-    "weight": 1.0362,
+    "weight": 1.0361,
     "categories": [
       "Deduction",
       "Party Game",
@@ -3386,7 +3386,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.2582,
+    "weight": 1.2581,
     "categories": [
       "Card Game",
       "Deduction",
@@ -3978,7 +3978,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.7789,
+    "weight": 1.7786,
     "categories": [
       "Card Game",
       "Economic",
@@ -4336,7 +4336,7 @@
     ],
     "time_min": 40,
     "time_max": 40,
-    "weight": 1.3788,
+    "weight": 1.3781,
     "categories": [
       "Deduction",
       "Party Game",
