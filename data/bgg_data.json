@@ -2447,6 +2447,137 @@
     "image": "assets/img/25578.jpg"
   },
   {
+    "name_zh": "Bert Bever",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Bt4-Gsx-SYNiYp8XQ2Rp_g__small/img/hierXbpmfQ_YMqh2vbsjOkobmvk=/fit-in/200x150/filters:strip_icc()/pic517067.jpg",
+    "bgg_id": 35652,
+    "name_en": "Log Jam",
+    "year": 2008,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.1875,
+    "categories": [
+      "Action / Dexterity",
+      "Animals",
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Physical Removal"
+    ],
+    "image_url": "https://cf.geekdo-images.com/jOy_0NwyQimXNL7fgNMkUQ__original/img/NSMWaHWfkpLMBU5QR_22VcHa8DE=/0x0/filters:format(jpeg)/pic908735.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/jOy_0NwyQimXNL7fgNMkUQ__small/img/17rvEXufUk6zFIX5HkxnxmiVHNU=/fit-in/200x150/filters:strip_icc()/pic908735.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "動作／敏捷",
+      "動物",
+      "兒童"
+    ],
+    "mechanics_zh": [
+      "實體移除"
+    ],
+    "image": "assets/img/35652.jpg"
+  },
+  {
+    "name_zh": "Backyard Builders Treehouse",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 600,
+    "price_twd": 600,
+    "used_price_twd": 360,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 249414,
+    "name_en": "Backyard Builders Treehouse",
+    "year": 2016,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0,
+    "categories": [
+      "Card Game"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/VR0UYDn-1Q9TxwOUA764pQ__original/img/eZsKi-yABuq63IjZeuIidcTDZKM=/0x0/filters:format(jpeg)/pic3058640.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/VR0UYDn-1Q9TxwOUA764pQ__small/img/NxNNp88xlKl5SMOYJg6Ew5TB-lY=/fit-in/200x150/filters:strip_icc()/pic3058640.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "卡牌"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "收集套組"
+    ],
+    "image": "assets/img/249414.jpg"
+  },
+  {
+    "name_zh": "Ali",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/RWjKuiSincgYjPHinHWuPQ__small@2x/img/fpGWYViqaJCQ7CEhhuZgg-0kJP4=/fit-in/400x300/filters:strip_icc()/pic1302526.jpg",
+    "bgg_id": 164668,
+    "name_en": "Schliess ab !",
+    "year": 0,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 0.0,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "mechanics": [
+      "Enclosure",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/JKGETBADDizI8Nfl3eQexA__original/img/o_-ifsY4dkXTRkrngf6vROeN4y0=/0x0/filters:format(jpeg)/pic3893685.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/JKGETBADDizI8Nfl3eQexA__small/img/j7unbGAcD-Iz7S2SB6zEXeRXWek=/fit-in/200x150/filters:strip_icc()/pic3893685.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics_zh": [
+      "圍地",
+      "板塊擺放"
+    ],
+    "image": "assets/img/164668.jpg"
+  },
+  {
     "name_zh": "驢橋",
     "name_en_override": "",
     "alias_zh": "",
@@ -2459,7 +2590,7 @@
     "manual_override": 1,
     "stock": 1,
     "description": "",
-    "image_override": "",
+    "image_override": "https://cf.geekdo-images.com/mNwiluGC6HCULrRtNpxGxQ__small@2x/img/AvkS1FTCba8QAMryfBJd0lR4ZTI=/fit-in/400x300/filters:strip_icc()/pic2390622.png",
     "bgg_id": 90009,
     "name_en": "Eselsbrücke",
     "year": 2011,
@@ -2657,7 +2788,7 @@
     "manual_override": 1,
     "stock": 2,
     "description": "",
-    "image_override": "",
+    "image_override": "https://cf.geekdo-images.com/auaY4tGs5xiOE7UzLngLFQ__small@2x/img/RpXVq8NAkRZvPj_VbXOOd6qZXkw=/fit-in/400x300/filters:strip_icc()/pic4229342.jpg",
     "bgg_id": 236217,
     "name_en": "Time Bomb",
     "year": 2016,
@@ -3198,57 +3329,6 @@
     "image": "assets/img/205542.jpg"
   },
   {
-    "name_zh": "魔城馬車黑暗預言擴充",
-    "name_en_override": "",
-    "alias_zh": "",
-    "category_zh": "",
-    "price_msrp_twd": 490,
-    "price_twd": 490,
-    "used_price_twd": 294,
-    "price_note": "",
-    "used_note": "",
-    "manual_override": 1,
-    "stock": 1,
-    "description": "",
-    "image_override": "",
-    "bgg_id": 131452,
-    "name_en": "Die dunkle Prophezeiung",
-    "year": 2012,
-    "players": [
-      3,
-      10
-    ],
-    "time_min": 60,
-    "time_max": 60,
-    "weight": 2.6,
-    "categories": [
-      "Bluffing",
-      "Card Game",
-      "Deduction",
-      "Expansion for Base-game"
-    ],
-    "mechanics": [
-      "Hand Management",
-      "Role Playing",
-      "Variable Player Powers"
-    ],
-    "image_url": "https://cf.geekdo-images.com/5m-zcmB7YMtvg1OPvB2M0A__original/img/f54iGOdaMUgSfW9T_vBzQp7pbFc=/0x0/filters:format(jpeg)/pic1435270.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/5m-zcmB7YMtvg1OPvB2M0A__small/img/NPv6Fb1ADUxT1LuXpBE50f_koUc=/fit-in/200x150/filters:strip_icc()/pic1435270.jpg",
-    "versions_count": 2,
-    "categories_zh": [
-      "唬人",
-      "卡牌",
-      "推理",
-      "基本款擴充"
-    ],
-    "mechanics_zh": [
-      "手牌管理",
-      "角色扮演",
-      "角色能力"
-    ],
-    "image": "assets/img/131452.jpg"
-  },
-  {
     "name_zh": "魔城馬車",
     "name_en_override": "",
     "alias_zh": "",
@@ -3261,7 +3341,7 @@
     "manual_override": 1,
     "stock": 1,
     "description": "",
-    "image_override": "",
+    "image_override": "https://cf.geekdo-images.com/f7lkrEgKgSvemy2WbNoYFA__small@2x/img/G0xyRoum1fgQCTMM1zV83JTqVgQ=/fit-in/400x300/filters:strip_icc()/pic4629237.jpg",
     "bgg_id": 168839,
     "name_en": "Die Kutschfahrt zur Teufelsburg",
     "year": 2006,
@@ -3839,6 +3919,482 @@
     "image": "assets/img/438.jpg"
   },
   {
+    "name_zh": "寶石獵人",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/g1DLwCLezUp1Fx10sz6ezw__small@2x/img/S1uOE15DD7KeSJlynFr_v1SQ8mU=/fit-in/400x300/filters:strip_icc()/pic3483179.jpg",
+    "bgg_id": 172971,
+    "name_en": "Crossing",
+    "year": 2013,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.05,
+    "categories": [
+      "Bluffing",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Set Collection",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rGXfe9VDmrGa5zpSvZXS1Q__original/img/Ae1eJr_HXTGnJ1kAdlxrXlM0nr0=/0x0/filters:format(png)/pic2797773.png",
+    "thumb_url": "https://cf.geekdo-images.com/rGXfe9VDmrGa5zpSvZXS1Q__small/img/KA2kcE02LavgFcQyMSGuppEg4jM=/fit-in/200x150/filters:strip_icc()/pic2797773.png",
+    "versions_count": 9,
+    "categories_zh": [
+      "唬人",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "收集套組",
+      "同時選擇行動"
+    ],
+    "image": "assets/img/172971.jpg"
+  },
+  {
+    "name_zh": "寶石陣",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 990,
+    "price_twd": 990,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/ZgQU00a7hvyP2pqx6vPApg__small@2x/img/Ev8sWTnlzdnXuswxLCcUFwWz4po=/fit-in/400x300/filters:strip_icc()/pic2428372.png",
+    "bgg_id": 19427,
+    "name_en": "Gemblo",
+    "year": 2003,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.8511,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "mechanics": [
+      "Grid Coverage",
+      "Hand Management",
+      "Hexagon Grid",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/67cCKOBkgJVCKQi1kfJ8wA__original/img/7JG_QatrkpiL_GbrnoNtr0fJCG0=/0x0/filters:format(jpeg)/pic1876379.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/67cCKOBkgJVCKQi1kfJ8wA__small/img/zEDoQAr0lg5iktIPgLXA0EeCInw=/fit-in/200x150/filters:strip_icc()/pic1876379.jpg",
+    "versions_count": 12,
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics_zh": [
+      "格面覆蓋",
+      "手牌管理",
+      "六角格",
+      "板塊擺放"
+    ],
+    "image": "assets/img/19427.jpg"
+  },
+  {
+    "name_zh": "寶石陣",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 990,
+    "price_twd": 990,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/ZgQU00a7hvyP2pqx6vPApg__small@2x/img/Ev8sWTnlzdnXuswxLCcUFwWz4po=/fit-in/400x300/filters:strip_icc()/pic2428372.png",
+    "bgg_id": 19427,
+    "name_en": "Gemblo",
+    "year": 2003,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.8511,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "mechanics": [
+      "Grid Coverage",
+      "Hand Management",
+      "Hexagon Grid",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/67cCKOBkgJVCKQi1kfJ8wA__original/img/7JG_QatrkpiL_GbrnoNtr0fJCG0=/0x0/filters:format(jpeg)/pic1876379.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/67cCKOBkgJVCKQi1kfJ8wA__small/img/zEDoQAr0lg5iktIPgLXA0EeCInw=/fit-in/200x150/filters:strip_icc()/pic1876379.jpg",
+    "versions_count": 12,
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics_zh": [
+      "格面覆蓋",
+      "手牌管理",
+      "六角格",
+      "板塊擺放"
+    ],
+    "image": "assets/img/19427.jpg"
+  },
+  {
+    "name_zh": "韻腳對對",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 550,
+    "price_twd": 550,
+    "used_price_twd": 330,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 2,
+    "description": "",
+    "image_override": "https://image-cdn-flare.qdm.cloud/q597ea3309c6d9/image/data/2020/08/05/1caf67de9819ae676334014dd160adb6.jpg",
+    "bgg_id": 270128,
+    "name_en": "Rhyme Time",
+    "year": 2019,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 10,
+    "time_max": 20,
+    "weight": 0.0,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Real-time",
+      "Word Game"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "image_url": "https://cf.geekdo-images.com/7iQTRRPb9birzbreS2YEqQ__original/img/qG9-TnqCHtyOWnGLvjM9rIobLqs=/0x0/filters:format(jpeg)/pic4535947.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/7iQTRRPb9birzbreS2YEqQ__small/img/0SvcGdDpr9fiy6bGKxUbLyn5tD8=/fit-in/200x150/filters:strip_icc()/pic4535947.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "即時制",
+      "字詞"
+    ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
+    "image": "assets/img/270128.jpg"
+  },
+  {
+    "name_zh": "辭彙捕手 英文版",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-09-22%20171843.png?raw=true",
+    "bgg_id": 322204,
+    "name_en": "Word Capture",
+    "year": 2021,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 10,
+    "time_max": 15,
+    "weight": 1.125,
+    "categories": [
+      "Action / Dexterity",
+      "Card Game",
+      "Party Game",
+      "Real-time",
+      "Word Game"
+    ],
+    "mechanics": [
+      "Real-Time",
+      "Speed Matching"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ak3IvEJL-DihkifEu-r5zw__original/img/90_h4MjPV-pHQzbwGcBP0xx8aGA=/0x0/filters:format(png)/pic6255299.png",
+    "thumb_url": "https://cf.geekdo-images.com/ak3IvEJL-DihkifEu-r5zw__small/img/7N4JvFDuA13hvlj3F69lRu0lvCs=/fit-in/200x150/filters:strip_icc()/pic6255299.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "動作／敏捷",
+      "卡牌",
+      "派對",
+      "即時制",
+      "字詞"
+    ],
+    "mechanics_zh": [
+      "即時制",
+      "速度配對"
+    ],
+    "image": "assets/img/322204.jpg"
+  },
+  {
+    "name_zh": "辭彙捕手 英文版",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-09-22%20171843.png?raw=true",
+    "bgg_id": 322204,
+    "name_en": "Word Capture",
+    "year": 2021,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 10,
+    "time_max": 15,
+    "weight": 1.125,
+    "categories": [
+      "Action / Dexterity",
+      "Card Game",
+      "Party Game",
+      "Real-time",
+      "Word Game"
+    ],
+    "mechanics": [
+      "Real-Time",
+      "Speed Matching"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ak3IvEJL-DihkifEu-r5zw__original/img/90_h4MjPV-pHQzbwGcBP0xx8aGA=/0x0/filters:format(png)/pic6255299.png",
+    "thumb_url": "https://cf.geekdo-images.com/ak3IvEJL-DihkifEu-r5zw__small/img/7N4JvFDuA13hvlj3F69lRu0lvCs=/fit-in/200x150/filters:strip_icc()/pic6255299.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "動作／敏捷",
+      "卡牌",
+      "派對",
+      "即時制",
+      "字詞"
+    ],
+    "mechanics_zh": [
+      "即時制",
+      "速度配對"
+    ],
+    "image": "assets/img/322204.jpg"
+  },
+  {
+    "name_zh": "蟹霸王",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 400,
+    "price_twd": 400,
+    "used_price_twd": 240,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/sUnVryQGzOxUH7BzNtAv2A__small@2x/img/Nu7rFUhDb69Y7TFOBdDve9m5Y4c=/fit-in/400x300/filters:strip_icc()/pic2975275.jpg",
+    "bgg_id": 197944,
+    "name_en": "Crabs!",
+    "year": 2016,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 20,
+    "time_max": 35,
+    "weight": 2.2857,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Farming",
+      "Math"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/TRU-Puibj_BFUzpQZEjc5w__original/img/dwT6RvHD0s-ba73tZ90LwkwSnP4=/0x0/filters:format(jpeg)/pic2975276.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/TRU-Puibj_BFUzpQZEjc5w__small/img/8DngOzQbJAPqaDcnTIygt6Kq-_I=/fit-in/200x150/filters:strip_icc()/pic2975276.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "農業",
+      "數學"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組"
+    ],
+    "image": "assets/img/197944.jpg"
+  },
+  {
+    "name_zh": "臘腸狗",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 450,
+    "price_twd": 450,
+    "used_price_twd": 270,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 260334,
+    "name_en": "Winston",
+    "year": 2018,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 25,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Pattern Building",
+      "Push Your Luck"
+    ],
+    "image_url": "https://cf.geekdo-images.com/LpM67aGBJu4T01AVRbW2wg__original/img/WFqwEHkeiRVcJYmp-IXaIihiIy8=/0x0/filters:format(jpeg)/pic4297626.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/LpM67aGBJu4T01AVRbW2wg__small/img/6h4sBVoN2ZMR67CLl6qKqoTnWnw=/fit-in/200x150/filters:strip_icc()/pic4297626.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "動物",
+      "兒童"
+    ],
+    "mechanics_zh": [
+      "圖案建構",
+      "押注碰運氣"
+    ],
+    "image": "assets/img/260334.jpg"
+  },
+  {
+    "name_zh": "繪聲繪影",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/icHzDTFVmFnD0ZN0RTV6VA__small@2x/img/aI77XuN3ah7N2kHbBKZIqXUp8o0=/fit-in/400x300/filters:strip_icc()/pic6366430.png",
+    "bgg_id": 341136,
+    "name_en": "What's That Sound?",
+    "year": 2021,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 20,
+    "weight": 1.0,
+    "categories": [
+      "Humor",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Deduction",
+      "Real-Time",
+      "Speed Matching"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vhwa9AMXqfTqVpY6Z01_2A__original/img/PKKePnlVAGQQkektNYoRiFjeIJc=/0x0/filters:format(jpeg)/pic6416292.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/vhwa9AMXqfTqVpY6Z01_2A__small/img/_fAl8-tWPSTEPNoHzWNhs2QBwu4=/fit-in/200x150/filters:strip_icc()/pic6416292.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "幽默",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "溝通限制",
+      "推理",
+      "即時制",
+      "速度配對"
+    ],
+    "image": "assets/img/341136.jpg"
+  },
+  {
+    "name_zh": "瓊漿",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 900,
+    "price_twd": 900,
+    "used_price_twd": 540,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 207670,
+    "name_en": "Nectar",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Dt7ghOdXhFN0OPpMiTA9ng__original/img/gsn296F0hXcBDuGAx7DDk7t4ON4=/0x0/filters:format(jpeg)/pic3162834.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Dt7ghOdXhFN0OPpMiTA9ng__small/img/4Od7OaqGCLfrOPuaBhJGnPximos=/fit-in/200x150/filters:strip_icc()/pic3162834.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組"
+    ],
+    "image": "assets/img/207670.jpg"
+  },
+  {
     "name_zh": "爆珠發明",
     "name_en_override": "",
     "alias_zh": "",
@@ -3889,6 +4445,157 @@
     "image": "assets/img/246192.jpg"
   },
   {
+    "name_zh": "爆炸貓(18禁版本)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 890,
+    "price_twd": 890,
+    "used_price_twd": 534,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 172242,
+    "name_en": "Exploding Kittens: NSFW Edition",
+    "year": 2015,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 20,
+    "weight": 1.0847,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Comic Book / Strip",
+      "Humor",
+      "Mature / Adult"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Player Elimination",
+      "Push Your Luck",
+      "Set Collection",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/_9v_15rJjapltOr0I74uJQ__original/img/5-sylqMMDS3r8RelWDrcNQJiUSE=/0x0/filters:format(png)/pic9005066.png",
+    "thumb_url": "https://cf.geekdo-images.com/_9v_15rJjapltOr0I74uJQ__small/img/RG3VraWEZaezik-9vAA0ksN4MZI=/fit-in/200x150/filters:strip_icc()/pic9005066.png",
+    "versions_count": 18,
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "漫畫",
+      "幽默",
+      "限制級／成人"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "玩家淘汰",
+      "押注碰運氣",
+      "收集套組",
+      "互害"
+    ],
+    "image": "assets/img/172242.jpg"
+  },
+  {
+    "name_zh": "爆炸貓",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 172225,
+    "name_en": "Exploding Kittens",
+    "year": 2015,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0815,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Comic Book / Strip",
+      "Humor"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Hot Potato",
+      "Player Elimination",
+      "Push Your Luck",
+      "Set Collection",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/N8bL53-pRU7zaXDTrEaYrw__original/img/0ciN1VZYifUd0qIDO0e8cGXmiss=/0x0/filters:format(png)/pic2691976.png",
+    "thumb_url": "https://cf.geekdo-images.com/N8bL53-pRU7zaXDTrEaYrw__small/img/3tH4pIc1Udzkd0tXc6MgVQ59BC0=/fit-in/200x150/filters:strip_icc()/pic2691976.png",
+    "versions_count": 34,
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "漫畫",
+      "幽默"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "燙手山芋",
+      "玩家淘汰",
+      "押注碰運氣",
+      "收集套組",
+      "互害"
+    ],
+    "image": "assets/img/172225.jpg"
+  },
+  {
+    "name_zh": "爆肝大作戰",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 680,
+    "price_twd": 680,
+    "used_price_twd": 408,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 131887,
+    "name_en": "Workaholic Liver War",
+    "year": 2011,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 75,
+    "time_max": 75,
+    "weight": 1.0,
+    "categories": [
+      "Humor"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/f4d_Wx84f2KxSbd95WCDag__original/img/Xe124FqPj6PZoVrj_DByFH_JVAM=/0x0/filters:format(jpeg)/pic6858797.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/f4d_Wx84f2KxSbd95WCDag__small/img/vF0Q4iz88vH_LHtXtKBkHMP6rnA=/fit-in/200x150/filters:strip_icc()/pic6858797.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "幽默"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/131887.jpg"
+  },
+  {
     "name_zh": "龐氏騙局",
     "name_en_override": "",
     "alias_zh": "",
@@ -3933,6 +4640,45 @@
       "交易"
     ],
     "image": "assets/img/180899.jpg"
+  },
+  {
+    "name_zh": "寵物PETS",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 137047,
+    "name_en": "Pets",
+    "year": 2012,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.6667,
+    "categories": [
+      "Animals",
+      "Card Game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/H5zJKQQlpUW-w1cGXLUK4A__original/img/IeHDZrHsmfj7vpNgVXDtKTIuFSs=/0x0/filters:format(jpeg)/pic1561982.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/H5zJKQQlpUW-w1cGXLUK4A__small/img/lcwUCv7BEVWEnZlay0MOa7SAOOo=/fit-in/200x150/filters:strip_icc()/pic1561982.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "動物",
+      "卡牌"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/137047.jpg"
   },
   {
     "name_zh": "鯊魚警報",
@@ -4030,6 +4776,53 @@
       "重擲與鎖骰"
     ],
     "image": "assets/img/130556.jpg"
+  },
+  {
+    "name_zh": "鯊口餘生:鐵盒",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 830,
+    "price_twd": 830,
+    "used_price_twd": 498,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 174460,
+    "name_en": "Wren's Nest",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 1,
+    "time_max": 20,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Print & Play"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Trick-taking"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Oz8iv6KQk-3B4ifrYFQECQ__original/img/zxg1iRIZk2Gof-kWyGqFziswQlU=/0x0/filters:format(png)/pic2472519.png",
+    "thumb_url": "https://cf.geekdo-images.com/Oz8iv6KQk-3B4ifrYFQECQ__small/img/vbjHwrO8T8NlZm4tRkLGLgQBcj4=/fit-in/200x150/filters:strip_icc()/pic2472519.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "自印版"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "吃墩"
+    ],
+    "image": "assets/img/174460.jpg"
   },
   {
     "name_zh": "鯊口餘生",
@@ -4133,6 +4926,59 @@
     "image": "assets/img/121041.jpg"
   },
   {
+    "name_zh": "醬爆商人",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 12002,
+    "name_en": "Jambo",
+    "year": 2004,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.0722,
+    "categories": [
+      "Card Game",
+      "Economic"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Contracts",
+      "Hand Management",
+      "Race",
+      "Set Collection",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ZHpHR-6b7ZjQ97mulBg2fg__original/img/4C2Lj2LKIoyxw53ra48q6uSeg2s=/0x0/filters:format(jpeg)/pic253740.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ZHpHR-6b7ZjQ97mulBg2fg__small/img/JkV1wP7WPQx8UDMksNC6VZZ-XUw=/fit-in/200x150/filters:strip_icc()/pic253740.jpg",
+    "versions_count": 11,
+    "categories_zh": [
+      "卡牌",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合約",
+      "手牌管理",
+      "競速",
+      "收集套組",
+      "互害"
+    ],
+    "image": "assets/img/12002.jpg"
+  },
+  {
     "name_zh": "蹦蹦蛙",
     "name_en_override": "",
     "alias_zh": "",
@@ -4171,6 +5017,92 @@
     ],
     "mechanics_zh": [],
     "image": "assets/img/341914.jpg"
+  },
+  {
+    "name_zh": "Nino Conillo",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 990,
+    "price_twd": 990,
+    "used_price_twd": 549,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/VjBroe8qZwWJDWAIVl8ApQ__small@2x/img/1cEXQnD8V5HcoKFYMHmwp0Y6184=/fit-in/400x300/filters:strip_icc()/pic145857.jpg",
+    "bgg_id": 13436,
+    "name_en": "Hopp hopp Häschen",
+    "year": 2004,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Dice Rolling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/OfD9VDKYpQjnFK_Im1heUw__original/img/yxgWQo7g0bpuezvAjCP0c4nIQy0=/0x0/filters:format(jpeg)/pic6952101.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/OfD9VDKYpQjnFK_Im1heUw__small/img/gTPVsOAH7-jgex83Mm13XouQBNQ=/fit-in/200x150/filters:strip_icc()/pic6952101.jpg",
+    "versions_count": 12,
+    "categories_zh": [
+      "動物",
+      "兒童"
+    ],
+    "mechanics_zh": [
+      "擲骰"
+    ],
+    "image": "assets/img/13436.jpg"
+  },
+  {
+    "name_zh": "Nino Conillo",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 990,
+    "price_twd": 990,
+    "used_price_twd": 549,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/VjBroe8qZwWJDWAIVl8ApQ__small@2x/img/1cEXQnD8V5HcoKFYMHmwp0Y6184=/fit-in/400x300/filters:strip_icc()/pic145857.jpg",
+    "bgg_id": 13436,
+    "name_en": "Hopp hopp Häschen",
+    "year": 2004,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Dice Rolling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/OfD9VDKYpQjnFK_Im1heUw__original/img/yxgWQo7g0bpuezvAjCP0c4nIQy0=/0x0/filters:format(jpeg)/pic6952101.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/OfD9VDKYpQjnFK_Im1heUw__small/img/gTPVsOAH7-jgex83Mm13XouQBNQ=/fit-in/200x150/filters:strip_icc()/pic6952101.jpg",
+    "versions_count": 12,
+    "categories_zh": [
+      "動物",
+      "兒童"
+    ],
+    "mechanics_zh": [
+      "擲骰"
+    ],
+    "image": "assets/img/13436.jpg"
   },
   {
     "name_zh": "蟲蟲燒烤派對",
@@ -4221,6 +5153,59 @@
       "互害"
     ],
     "image": "assets/img/15818.jpg"
+  },
+  {
+    "name_zh": "蟲蟲數字1~10",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 450,
+    "price_twd": 450,
+    "used_price_twd": 270,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "bgg_id": 242546,
+    "name_en": "Ungeziffer",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.5,
+    "categories": [
+      "Animals",
+      "Children's Game",
+      "Dice",
+      "Math",
+      "Memory"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Memory",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/qlSxTOqOie9q6GeeHnNIKA__original/img/x0kx4PbsBuITjyFJ45xaFq5n-Yg=/0x0/filters:format(jpeg)/pic3923925.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/qlSxTOqOie9q6GeeHnNIKA__small/img/1kYa4nabmInTVnoEfpIOVx64a4s=/fit-in/200x150/filters:strip_icc()/pic3923925.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "動物",
+      "兒童",
+      "骰子",
+      "數學",
+      "記憶"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "記憶",
+      "收集套組"
+    ],
+    "image": "assets/img/242546.jpg"
   },
   {
     "name_zh": "蟲蟲蜂房",
