@@ -1770,6 +1770,732 @@
     "updated_at": "2025-09-22"
   },
   {
+    "id": "fastrack",
+    "name_zh": "Fastrack",
+    "name_en": "Fastrack",
+    "aliases_zh": [],
+    "bgg_id": 41762,
+    "bgg_url": "https://boardgamegeek.com/boardgame/41762",
+    "year": 2008,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童"
+    ],
+    "mechanics": [],
+    "mechanics_zh": [],
+    "versions_count": 5,
+    "image": "assets/img/41762.jpg",
+    "price_msrp_twd": 600,
+    "price_twd": 600,
+    "used_price_twd": 360,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Fastrack BGG",
+      "Fastrack BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "dos",
+    "name_zh": "DOS遊戲卡",
+    "name_en": "DOS",
+    "aliases_zh": [],
+    "bgg_id": 246701,
+    "bgg_url": "https://boardgamegeek.com/boardgame/246701",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.4138,
+    "categories": [
+      "Card Game",
+      "Number"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "數字"
+    ],
+    "mechanics": [
+      "Hand Management"
+    ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
+    "versions_count": 9,
+    "image": "assets/img/246701.jpg",
+    "price_msrp_twd": 299,
+    "price_twd": 299,
+    "used_price_twd": 180,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "DOS遊戲卡 BGG",
+      "DOS BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "fruit_spy",
+    "name_zh": "Dead Man's Treasure",
+    "name_en": "Fruit Spy",
+    "aliases_zh": [],
+    "bgg_id": 16144,
+    "bgg_url": "https://boardgamegeek.com/boardgame/16144",
+    "year": 2005,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 20,
+    "weight": 1.2639,
+    "categories": [
+      "Animals",
+      "Bluffing",
+      "Card Game",
+      "Pirates",
+      "Science Fiction",
+      "Space Exploration"
+    ],
+    "categories_zh": [
+      "動物",
+      "唬人",
+      "卡牌",
+      "海盜",
+      "科幻",
+      "太空探索"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理"
+    ],
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/ywOZQIvN8SAmRsYOV_BT4Q__small@2x/img/4gzD9SXKqa1wVdTj85Cc-7zJ3Vw=/fit-in/400x300/filters:strip_icc()/pic241922.jpg",
+    "price_msrp_twd": 1000,
+    "price_twd": 1000,
+    "used_price_twd": 600,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Dead Man's Treasure BGG",
+      "Fruit Spy BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "dc_deck-building_game",
+    "name_zh": "DC超級英雄",
+    "name_en": "DC Deck-Building Game",
+    "aliases_zh": [],
+    "bgg_id": 125678,
+    "bgg_url": "https://boardgamegeek.com/boardgame/125678",
+    "year": 2012,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.9966,
+    "categories": [
+      "Card Game",
+      "Comic Book / Strip"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "漫畫"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building",
+      "Open Drafting"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "公開輪抽"
+    ],
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/FaOtgk6Jh_H-IoHjWyM7FA__small@2x/img/VUuyayUeFOC7pFS979N5HYRHnwQ=/fit-in/400x300/filters:strip_icc()/pic3086041.png",
+    "price_msrp_twd": 1250,
+    "price_twd": 1250,
+    "used_price_twd": 750,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "DC超級英雄 BGG",
+      "DC Deck-Building Game BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "dancing_dice",
+    "name_zh": "Dancing dice",
+    "name_en": "Dancing Dice",
+    "aliases_zh": [],
+    "bgg_id": 10756,
+    "bgg_url": "https://boardgamegeek.com/boardgame/10756",
+    "year": 2004,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.1143,
+    "categories": [
+      "Dice"
+    ],
+    "categories_zh": [
+      "骰子"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Player Elimination"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "玩家淘汰"
+    ],
+    "versions_count": 2,
+    "image": "assets/img/10756.jpg",
+    "price_msrp_twd": 800,
+    "price_twd": 800,
+    "used_price_twd": 480,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Dancing dice BGG",
+      "Dancing Dice BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "cv",
+    "name_zh": "CV人生規劃",
+    "name_en": "CV",
+    "aliases_zh": [],
+    "bgg_id": 143986,
+    "bgg_url": "https://boardgamegeek.com/boardgame/143986",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.8448,
+    "categories": [
+      "Card Game",
+      "Dice",
+      "Humor"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "骰子",
+      "幽默"
+    ],
+    "mechanics": [
+      "Contracts",
+      "Dice Rolling",
+      "Hand Management",
+      "Open Drafting",
+      "Push Your Luck",
+      "Set Collection",
+      "Simulation"
+    ],
+    "mechanics_zh": [
+      "合約",
+      "擲骰",
+      "手牌管理",
+      "公開輪抽",
+      "押注碰運氣",
+      "收集套組",
+      "模擬"
+    ],
+    "versions_count": 15,
+    "image": "assets/img/143986.jpg",
+    "price_msrp_twd": 1320,
+    "price_twd": 1320,
+    "used_price_twd": 792,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "CV人生規劃 BGG",
+      "CV BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "deception:_undercover_allies",
+    "name_zh": "犯罪現場：隱蔽同盟擴充 (CS-Files / CSI /Deception: Undercover Allies)",
+    "name_en": "Deception: Undercover Allies",
+    "aliases_zh": [],
+    "bgg_id": 227748,
+    "bgg_url": "https://boardgamegeek.com/boardgame/227748",
+    "year": 2017,
+    "players": [
+      4,
+      14
+    ],
+    "time_min": 20,
+    "time_max": 0,
+    "weight": 1.7692,
+    "categories": [
+      "Expansion for Base-game",
+      "Bluffing",
+      "Deduction",
+      "Murder / Mystery",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "基本款擴充",
+      "唬人",
+      "推理",
+      "懸疑／推理",
+      "派對"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Storytelling",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "mechanics_zh": [
+      "溝通限制",
+      "說故事",
+      "團隊",
+      "角色能力"
+    ],
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/WEg82g9YvPLL5DpzZVSQYw__small@2x/img/_8v7HVdOP_yy02eH1o19v96KTZk=/fit-in/400x300/filters:strip_icc()/pic3724108.jpg",
+    "price_msrp_twd": 680,
+    "price_twd": 680,
+    "used_price_twd": 408,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "犯罪現場：隱蔽同盟擴充 (CS-Files / CSI /Deception: Undercover Allies) BGG",
+      "Deception: Undercover Allies BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "col-or-form",
+    "name_zh": "Col-Or-Form",
+    "name_en": "Col-Or-Form",
+    "aliases_zh": [],
+    "bgg_id": 165471,
+    "bgg_url": "https://boardgamegeek.com/boardgame/165471",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Real-time"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "即時制"
+    ],
+    "mechanics": [
+      "Pattern Building",
+      "Pattern Recognition"
+    ],
+    "mechanics_zh": [
+      "圖案建構",
+      "圖形辨識"
+    ],
+    "versions_count": 2,
+    "image": "assets/img/165471.jpg",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Col-Or-Form BGG",
+      "Col-Or-Form BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "deception:_murder_in_hong_kong",
+    "name_zh": "CS犯罪現場",
+    "name_en": "Deception: Murder in Hong Kong",
+    "aliases_zh": [],
+    "bgg_id": 156129,
+    "bgg_url": "https://boardgamegeek.com/boardgame/156129",
+    "year": 2014,
+    "players": [
+      4,
+      12
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.5833,
+    "categories": [
+      "Bluffing",
+      "Deduction",
+      "Murder / Mystery",
+      "Party Game"
+    ],
+    "categories_zh": [
+      "唬人",
+      "推理",
+      "懸疑／推理",
+      "派對"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Deduction",
+      "Events",
+      "Finale Ending",
+      "Hidden Roles",
+      "Storytelling",
+      "Team-Based Game",
+      "Traitor Game",
+      "Variable Set-up"
+    ],
+    "mechanics_zh": [
+      "溝通限制",
+      "推理",
+      "事件",
+      "終章結束",
+      "隱藏身分",
+      "說故事",
+      "團隊",
+      "內鬼",
+      "可變設置"
+    ],
+    "versions_count": 19,
+    "image": "assets/img/156129.jpg",
+    "price_msrp_twd": 1200,
+    "price_twd": 1200,
+    "used_price_twd": 720,
+    "price_note": "",
+    "used_note": "",
+    "stock": 2,
+    "description": "",
+    "search_keywords": [
+      "CS犯罪現場 BGG",
+      "Deception: Murder in Hong Kong BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "christmas_tale",
+    "name_zh": "Christmas tale",
+    "name_en": "Christmas Tale",
+    "aliases_zh": [],
+    "bgg_id": 190627,
+    "bgg_url": "https://boardgamegeek.com/boardgame/190627",
+    "year": 2014,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 25,
+    "time_max": 0,
+    "weight": 0.0,
+    "categories": [
+      "Children's Game",
+      "Racing"
+    ],
+    "categories_zh": [
+      "兒童",
+      "競速"
+    ],
+    "mechanics": [
+      "Roll / Spin and Move"
+    ],
+    "mechanics_zh": [
+      "擲骰／轉盤移動"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/190627.jpg",
+    "price_msrp_twd": 1500,
+    "price_twd": 1500,
+    "used_price_twd": 900,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Christmas tale BGG",
+      "Christmas Tale BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "chefs",
+    "name_zh": "Chefs",
+    "name_en": "Chefs",
+    "aliases_zh": [],
+    "bgg_id": 191529,
+    "bgg_url": "https://boardgamegeek.com/boardgame/191529",
+    "year": 0,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 25,
+    "time_max": 25,
+    "weight": 1.5,
+    "categories": [
+      "Card Game"
+    ],
+    "categories_zh": [
+      "卡牌"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Set Collection"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "收集套組"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/191529.jpg",
+    "price_msrp_twd": 1500,
+    "price_twd": 1500,
+    "used_price_twd": 900,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Chefs BGG",
+      "Chefs BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "castle_climbing_frog",
+    "name_zh": "castle chimbing frog",
+    "name_en": "Castle Climbing Frog",
+    "aliases_zh": [],
+    "bgg_id": 237715,
+    "bgg_url": "https://boardgamegeek.com/boardgame/237715",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.5,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game",
+      "Medieval",
+      "Memory"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童",
+      "中世紀",
+      "記憶"
+    ],
+    "mechanics": [
+      "Memory",
+      "Pick-up and Deliver"
+    ],
+    "mechanics_zh": [
+      "記憶",
+      "取貨運送"
+    ],
+    "versions_count": 2,
+    "image": "assets/img/237715.jpg",
+    "price_msrp_twd": 1780,
+    "price_twd": 1780,
+    "used_price_twd": 1068,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "castle chimbing frog BGG",
+      "Castle Climbing Frog BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "walter_wick:_can_you_see_what_i_see?_–_finders_keepers_game",
+    "name_zh": "Can You See What I See?Finders Keepers Game",
+    "name_en": "Walter Wick: Can You See What I See? – Finders Keepers Game",
+    "aliases_zh": [],
+    "bgg_id": 40653,
+    "bgg_url": "https://boardgamegeek.com/boardgame/40653",
+    "year": 2009,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.1667,
+    "categories": [
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "兒童"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/40653.jpg",
+    "price_msrp_twd": 600,
+    "price_twd": 600,
+    "used_price_twd": 360,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Can You See What I See?Finders Keepers Game BGG",
+      "Walter Wick: Can You See What I See? – Finders Keepers Game BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "bugs",
+    "name_zh": "BUGS",
+    "name_en": "Bugs",
+    "aliases_zh": [],
+    "bgg_id": 191530,
+    "bgg_url": "https://boardgamegeek.com/boardgame/191530",
+    "year": 2014,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Children's Game",
+      "Racing"
+    ],
+    "categories_zh": [
+      "兒童",
+      "競速"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Roll / Spin and Move"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "擲骰／轉盤移動"
+    ],
+    "versions_count": 2,
+    "image": "assets/img/191530.jpg",
+    "price_msrp_twd": 1250,
+    "price_twd": 1250,
+    "used_price_twd": 750,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "BUGS BGG",
+      "Bugs BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "stupid_little_soccer_game",
+    "name_zh": "BEVERBENDE",
+    "name_en": "Stupid Little Soccer Game",
+    "aliases_zh": [],
+    "bgg_id": 25578,
+    "bgg_url": "https://boardgamegeek.com/boardgame/25578",
+    "year": 2006,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Print & Play",
+      "Sports"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "自印版",
+      "運動"
+    ],
+    "mechanics": [
+      "Open Drafting"
+    ],
+    "mechanics_zh": [
+      "公開輪抽"
+    ],
+    "versions_count": 0,
+    "image": "https://cf.geekdo-images.com/ec3Ugu7EF1y1d3y1clbuNg__small/img/gBeXTpQfndZ0iiek1dy5MEOgskk=/fit-in/200x150/filters:strip_icc()/pic493681.jpg",
+    "price_msrp_twd": 500,
+    "price_twd": 500,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "BEVERBENDE BGG",
+      "Stupid Little Soccer Game BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
     "id": "eselsbrücke",
     "name_zh": "驢橋",
     "name_en": "Eselsbrücke",
