@@ -1,90 +1,153 @@
-# --- build_json.py ---
-cat <<'PY' > scripts/build_json.py
-import json, datetime, hashlib
-from pathlib import Path
+name: Update Game Data
 
-INPUT  = Path("data/bgg_data.json")
-OUTPUT = Path("data/games_full.json")
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 17 * * *"  # 台灣 01:00
 
-def slugify(s: str) -> str:
-    return (s or "").strip().lower().replace(" ", "_")
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 讓後面 git push 有權限
 
-if not INPUT.exists():
-    print("No data/bgg_data.json; skip build_json.")
-    raise SystemExit(0)
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-rows   = json.loads(INPUT.read_text(encoding="utf-8"))
-items  = []
-today  = datetime.date.today().isoformat()
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-# ---- 規則：用 名稱/版本/override/bgg_id 組出穩定且唯一的 id ----
-def make_item_id(name_en, name_zh, bid, r):
-    base = slugify(name_en or name_zh or (f"bgg_{bid}" if bid else "game"))
-    # 1) 最優先：版本（支援 image_version_id / image_version_used）
-    ver = r.get("image_version_id") or r.get("image_version_used")
-    if ver:
-        return f"{base}-v{str(ver).strip()}"
-    # 2) 其次：image_override → 取 URL 的 md5 前 8 碼
-    if r.get("image_override"):
-        suffix = hashlib.md5(r["image_override"].encode("utf-8")).hexdigest()[:8]
-        return f"{base}-{suffix}"
-    # 3) 再其次：bgg_id
-    if bid:
-        return f"{base}-{bid}"
-    # 4) 最後：單純 base
-    return base
+      - name: Install dependencies
+        run: pip install requests pillow
 
-# ---- 聰明去重：只有「完全相同條件」再出現時才加 -2、-3... ----
-_seen = {}  # {item_id: {"sigs": set(), "dup": 1}}
+      - name: Create scripts (in-memory)
+        shell: bash
+        run: |
+          mkdir -p scripts data
+          if [ ! -f data/mechanism_map_zh.csv ]; then
+            printf 'bgg_mechanism_en,mechanism_zh\n' > data/mechanism_map_zh.csv
+          fi
 
-def ensure_unique(item_id: str, signature: tuple) -> str:
-    bucket = _seen.setdefault(item_id, {"sigs": set(), "dup": 1})
-    if signature in bucket["sigs"]:
-        bucket["dup"] += 1
-        return f"{item_id}-{bucket['dup']}"  # 第二筆同條件 → -2
-    else:
-        bucket["sigs"].add(signature)
-        return item_id
+          # --- fetch_bgg.py ---
+          cat <<'PY' > scripts/fetch_bgg.py
+          (保持你現在那段 fetch_bgg.py 內容，省略)
+          PY
 
-# ---- 產生輸出 ----
-for r in rows:
-    bid      = r.get("bgg_id")
-    name_en  = r.get("name_en") or r.get("name")
-    name_zh  = r.get("name_zh")
-    base_id  = make_item_id(name_en, name_zh, bid, r)
+          # --- apply_taxonomy_and_price.py ---
+          cat <<'PY' > scripts/apply_taxonomy_and_price.py
+          (保持你現在那段 apply_taxonomy_and_price.py 內容，省略)
+          PY
 
-    # 這些欄位代表「是否同條件」
-    signature = (
-        bid,
-        r.get("image_version_id"),
-        r.get("image_version_used"),
-        r.get("image_override"),
-    )
-    final_id = ensure_unique(base_id, signature)
+          # --- fetch_version_image.py ---
+          cat <<'PY' > scripts/fetch_version_image.py
+          (保持你現在那段 fetch_version_image.py 內容，省略)
+          PY
 
-    item = dict(r)
-    item["id"] = final_id
-    item["name_en"] = name_en or ""
-    item["name_zh"] = name_zh or ""
-    item["updated_at"] = today
+          # --- make_mechanism_map.py ---
+          cat <<'PY' > scripts/make_mechanism_map.py
+          (保持你現在那段 make_mechanism_map.py 內容，省略)
+          PY
 
-    # 保底：補上 bgg_url / 搜尋關鍵字 / image
-    if bid and not item.get("bgg_url"):
-        item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
-    if not item.get("search_keywords"):
-        kws = []
-        if item["name_zh"]: kws.append(f"{item['name_zh']} BGG")
-        if item["name_en"]: kws.append(f"{item['name_en']} BGG")
-        item["search_keywords"] = kws
-    if not item.get("image"):
-        item["image"] = item.get("image_url") or item.get("thumb_url")
+          # --- build_json.py（新版，穩定唯一 id + 聰明去重） ---
+          cat <<'PY' > scripts/build_json.py
+          import json, datetime, hashlib
+          from pathlib import Path
 
-    items.append(item)
+          INPUT  = Path("data/bgg_data.json")
+          OUTPUT = Path("data/games_full.json")
 
-# 可選：依名稱排序，輸出更穩定
-items.sort(key=lambda x: (x.get("name_zh") or x.get("name_en") or "").lower())
+          def slugify(s: str) -> str:
+              return (s or "").strip().lower().replace(" ", "_")
 
-OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Built {len(items)} entries → {OUTPUT}")
-PY
+          if not INPUT.exists():
+              print("No data/bgg_data.json; skip build_json.")
+              raise SystemExit(0)
+
+          rows   = json.loads(INPUT.read_text(encoding="utf-8"))
+          items  = []
+          today  = datetime.date.today().isoformat()
+
+          def make_item_id(name_en, name_zh, bid, r):
+              base = slugify(name_en or name_zh or (f"bgg_{bid}" if bid else "game"))
+              ver = r.get("image_version_id") or r.get("image_version_used")
+              if ver:
+                  return f"{base}-v{str(ver).strip()}"
+              if r.get("image_override"):
+                  suffix = hashlib.md5(r["image_override"].encode("utf-8")).hexdigest()[:8]
+                  return f"{base}-{suffix}"
+              if bid:
+                  return f"{base}-{bid}"
+              return base
+
+          _seen = {}  # {item_id: {"sigs": set(), "dup": 1}}
+
+          def ensure_unique(item_id: str, signature: tuple) -> str:
+              bucket = _seen.setdefault(item_id, {"sigs": set(), "dup": 1})
+              if signature in bucket["sigs"]:
+                  bucket["dup"] += 1
+                  return f"{item_id}-{bucket['dup']}"
+              else:
+                  bucket["sigs"].add(signature)
+                  return item_id
+
+          for r in rows:
+              bid      = r.get("bgg_id")
+              name_en  = r.get("name_en") or r.get("name")
+              name_zh  = r.get("name_zh")
+              base_id  = make_item_id(name_en, name_zh, bid, r)
+
+              signature = (
+                  bid,
+                  r.get("image_version_id"),
+                  r.get("image_version_used"),
+                  r.get("image_override"),
+              )
+              final_id = ensure_unique(base_id, signature)
+
+              item = dict(r)
+              item["id"] = final_id
+              item["name_en"] = name_en or ""
+              item["name_zh"] = name_zh or ""
+              item["updated_at"] = today
+
+              if bid and not item.get("bgg_url"):
+                  item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
+              if not item.get("search_keywords"):
+                  kws = []
+                  if item["name_zh"]: kws.append(f"{item['name_zh']} BGG")
+                  if item["name_en"]: kws.append(f"{item['name_en']} BGG")
+                  item["search_keywords"] = kws
+              if not item.get("image"):
+                  item["image"] = item.get("image_url") or item.get("thumb_url")
+
+              items.append(item)
+
+          items.sort(key=lambda x: (x.get("name_zh") or x.get("name_en") or "").lower())
+
+          OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+          OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(f"Built {len(items)} entries → {OUTPUT}")
+          PY
+
+      - name: Run scripts
+        run: |
+          python scripts/resolve_bgg.py
+          python scripts/fetch_bgg.py
+          python scripts/apply_taxonomy_and_price.py
+          python scripts/make_mechanism_map.py
+          python scripts/fetch_version_image.py
+          python scripts/download_images.py
+          python scripts/build_json.py
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
+          git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
+          git add assets/img/* || true
+          git commit -m "Auto-update game data" || echo "No changes to commit"
+          git push || echo "No changes to push"
