@@ -1,4 +1,4 @@
-import json, datetime
+import json, datetime, hashlib
 from pathlib import Path
 
 INPUT=Path("data/bgg_data.json")
@@ -13,58 +13,32 @@ if not INPUT.exists():
 rows=json.loads(INPUT.read_text(encoding="utf-8"))
 items=[]; today=datetime.date.today().isoformat()
 
-# 追蹤已使用的 id，確保唯一
-seen={}
-def unique_id(base:str)->str:
-    c = seen.get(base, 0)
-    if c==0:
-        seen[base]=1
-        return base
-    else:
-        c+=1
-        seen[base]=c
-        return f"{base}-{c}"
-
-for r in rows:
-    bid=r.get("bgg_id")
-    bgg_url=f"https://boardgamegeek.com/boardgame/{bid}" if bid else None
-    name_zh=r.get("name_zh")
-    name_en=r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
-
-    # 基礎 slug
+# NEW: 以名稱/版本/override/bgg_id 組穩定 id（可重建）
+def make_item_id(name_en, name_zh, bid, r):
     base = slugify(name_en or name_zh or (f"bgg_{bid}" if bid else "game"))
-
-    # 若這筆有版本資訊，優先以版本做識別（避免兩筆撞名）
-    ver = r.get("image_version_used") or r.get("image_version_id")
+    # 版本優先（支援 image_version_id 或 image_version_used）
+    ver = r.get("image_version_id") or r.get("image_version_used")
     if ver:
-        base = f"{base}-v{ver}"
+        return f"{base}-v{str(ver).strip()}"
+    # 其次使用 override 的短哈希，避免 url 太長
+    if r.get("image_override"):
+        suffix = hashlib.md5(r["image_override"].encode("utf-8")).hexdigest()[:8]
+        return f"{base}-{suffix}"
+    # 再其次用 bgg_id 強化唯一性
+    if bid:
+        return f"{base}-{bid}"
+    # 最後回退 base
+    return base
 
-    uid = unique_id(base)
+# NEW: 追蹤已使用 id，僅在「完全相同條件」也重複時才加尾碼防撞
+seen = {}
 
-    image=r.get("image") or r.get("image_url") or r.get("thumb_url")
-    if r.get("image_override"): image = r["image_override"]
-
-    search_keywords=[]
-    if name_zh: search_keywords.append(f"{name_zh} BGG")
-    if name_en: search_keywords.append(f"{name_en} BGG")
-
-    items.append({
-      "id": uid,
-      "name_zh": name_zh, "name_en": name_en, "aliases_zh": r.get("aliases_zh", []),
-      "bgg_id": bid, "bgg_url": bgg_url, "year": r.get("year"), "players": r.get("players"),
-      "time_min": r.get("time_min"), "time_max": r.get("time_max"), "weight": r.get("weight"),
-      "categories": r.get("categories") or [], "categories_zh": r.get("categories_zh") or [],
-      "mechanics": r.get("mechanics") or [], "mechanics_zh": r.get("mechanics_zh") or [],
-      "versions_count": r.get("versions_count", 0),
-      "image": image, "price_msrp_twd": r.get("price_msrp_twd"), "price_twd": r.get("price_twd"),
-      "used_price_twd": r.get("used_price_twd"), "price_note": r.get("price_note"),
-      "used_note": r.get("used_note"), "stock": r.get("stock"), "description": r.get("description"),
-      # 外部連結（自有頁面）可選；有的話前端會改顯示「介紹」
-      "external_url": r.get("external_url"),
-      "image_version_used": r.get("image_version_used"),
-      "image_version_id": r.get("image_version_id"),
-      "search_keywords": search_keywords, "updated_at": today
-    })
-
-OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Built {len(items)} entries → {OUTPUT}")
+def ensure_unique(item_id:str)->str:
+    c = seen.get(item_id, 0)
+    if c == 0:
+        seen[item_id] = 1
+        return item_id
+    else:
+        c += 1
+        seen[item_id] = c
+        r
