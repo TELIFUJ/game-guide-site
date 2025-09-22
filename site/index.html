@@ -13,7 +13,24 @@
     .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{position:relative;border:1px solid var(--border);padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    .poster{width:100%;height:auto;background:#f3f4f6;border-radius:8px;display:block}
+
+    /* 圖片統一：方形框 + 完整呈現（不裁切） */
+    .poster-box{
+      width:100%;
+      aspect-ratio:1/1;             /* 現代瀏覽器原生方框 */
+      background:#f3f4f6;
+      border-radius:8px;
+      overflow:hidden;
+      display:block;
+      position:relative;
+    }
+    .poster{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:contain;            /* 在框內完整呈現，不裁切 */
+      background:#fff;
+    }
+
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:var(--muted)}
     input,select,label,button{font:inherit}
@@ -27,8 +44,11 @@
     .btn{padding:8px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;cursor:pointer}
     .btn:active{transform:translateY(1px)}
     .row{display:flex;gap:8px;align-items:center}
+
+    /* 可愛收藏按鈕（放大） */
     .fav-btn{
-      position:absolute;top:10px;right:10px;width:40px;height:40px;
+      position:absolute;top:10px;right:10px;
+      width:40px;height:40px;
       display:flex;align-items:center;justify-content:center;
       background:#fff;border:1px solid var(--border);border-radius:999px;
       box-shadow:0 2px 8px rgba(0,0,0,.06);
@@ -43,21 +63,41 @@
 <body>
 
 <form class="filters" autocomplete="off" onsubmit="return false">
-  <input id="q" name="q_no_autofill" placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
+  <input id="q" name="q_no_autofill"
+         placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
   <select id="catSel"><option value="">全部分類</option></select>
   <select id="mechSel"><option value="">全部機制</option></select>
-  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）" autocomplete="off" inputmode="numeric" spellcheck="false">
-  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）" autocomplete="off" inputmode="numeric" spellcheck="false">
-  <label class="checkbox"><input type="checkbox" id="inclUsed" checked> 含二手價</label>
-  <label class="checkbox"><input type="checkbox" id="hotCat" checked> 熱門分類（≥10）</label>
-  <label class="checkbox"><input type="checkbox" id="hotMech" checked> 熱門機制（≥10）</label>
+
+  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）"
+         autocomplete="off" inputmode="numeric" spellcheck="false">
+  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）"
+         autocomplete="off" inputmode="numeric" spellcheck="false">
+
+  <!-- 預設改為不勾選 -->
+  <label class="checkbox"><input type="checkbox" id="inclUsed"> 含二手價</label>
+  <label class="checkbox"><input type="checkbox" id="hotCat"> 熱門分類（≥10）</label>
+  <label class="checkbox"><input type="checkbox" id="hotMech"> 熱門機制（≥10）</label>
+
   <select id="sort">
     <option value="">排序</option>
-    <option value="min_price">最低價格（含二手）</option>
-    <option value="price">售價（僅新品，低→高）</option>
-    <option value="used">二手價（低→高）</option>
-    <option value="weight">策略強度（低→高）</option>
+    <optgroup label="最低價格（含二手）">
+      <option value="min_price_asc">低 → 高</option>
+      <option value="min_price_desc">高 → 低</option>
+    </optgroup>
+    <optgroup label="售價（新品）">
+      <option value="price_asc">低 → 高</option>
+      <option value="price_desc">高 → 低</option>
+    </optgroup>
+    <optgroup label="二手價">
+      <option value="used_asc">低 → 高</option>
+      <option value="used_desc">高 → 低</option>
+    </optgroup>
+    <optgroup label="策略強度（Weight）">
+      <option value="weight_asc">低 → 高</option>
+      <option value="weight_desc">高 → 低</option>
+    </optgroup>
   </select>
 </form>
 
@@ -85,7 +125,7 @@
   // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  // ====== 英→中備援映射（前端備援；後端仍以 *_zh 優先）======
+  // ====== 英→中備援映射（後端 *_zh 優先；這只是 fallback）======
   const CAT_MAP = {
     "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
     "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
@@ -106,7 +146,6 @@
     "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
   };
 
-  // —— 機制映射（含別名）——
   const MECH_MAP = {
     "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
     "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"劇本／戰役卡驅動",
@@ -120,16 +159,14 @@
     "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本／任務／戰役",
     "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
     "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
-    "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
-    "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
-    "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
+    "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩","Turn Order: Claim Action":"搶先手",
+    "Variable Phase Order":"可變階段順序","Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
     "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人",
-
-    // 補：漏網之魚與別名
+    /* 特別處理 BGG 機制別名 */
     "Deck, Bag, and Pool Building":"卡／袋／池構築",
-    "Deck, Bag and Pool Building":"卡／袋／池構築",        // 無逗號版本
-    "Different Worker Types":"不同工種工人",
-    "Worker Placement, Different Worker Types":"多工種工人放置"
+    "Deck, Bag and Pool Building":"卡／袋／池構築",
+    "Worker Placement, Different Worker Types":"多工種工人放置",
+    "Different Worker Types":"不同工種工人"
   };
 
   // ====== 工具 ======
@@ -171,19 +208,14 @@
     const en = Array.isArray(x.categories) ? x.categories : [];
     return en.map(s => CAT_MAP[s] || s).slice(0,10);
   }
-
-  // 先正規化再比對（處理空白、不同逗號版本）
   function getMechsZh(x){
-    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice();
+    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice(); // 全部顯示
     const en = Array.isArray(x.mechanics) ? x.mechanics : [];
     const normalize = s => (s || "")
-      .replace(/\u00A0/g, " ")
-      .replace(/\s+/g, " ")
+      .replace(/\u00A0/g, " ")      // non-breaking space → 空白
+      .replace(/\s+/g, " ")         // 多重空白壓成 1 個
       .trim();
-    return [...new Set(en.map(s => {
-      const key = normalize(s);
-      return MECH_MAP[key] || key;
-    }))];
+    return [...new Set(en.map(s => MECH_MAP[normalize(s)] || normalize(s)))];
   }
 
   // 價格
@@ -224,7 +256,7 @@
 ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 機制：${getMechsZh(x).join(" / ")}
 價格：${x.price_twd??"-"}｜二手：${x.used_price_twd??"-"}
-連結：${x.bgg_url||""}\n`).join("\n");
+連結：${x.external_url || x.bgg_url || ""}\n`).join("\n");
     const mailto = `mailto:?subject=${encodeURIComponent("收藏清單")}&body=${encodeURIComponent(body)}`;
     location.href = mailto;
   }
@@ -275,7 +307,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
 
-  // 篩選
+  // 篩選（CSV/Email 會用到不分頁）
   function filtered(noPaging=false){
     let list = DATA.slice();
 
@@ -309,11 +341,19 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     // 只看收藏
     if (ONLYF.checked) list = list.filter(x=>favs.has(idOf(x)));
 
-    // 排序
-    if (S.value==="min_price") list.sort((a,b)=> minPrice(a, includeUsed) - minPrice(b, includeUsed));
-    if (S.value==="price")     list.sort((a,b)=>(a.price_twd??1e12)-(b.price_twd??1e12));
-    if (S.value==="used")      list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12));
-    if (S.value==="weight")    list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12));
+    // 排序（升/降序）
+    const sortKey = S.value;
+    const cmpNum = (a,b) => (a??1e12) - (b??1e12);
+    const cmpNumDesc = (a,b) => (b??-1e12) - (a??-1e12);
+
+    if (sortKey === "min_price_asc")  list.sort((a,b)=> cmpNum( minPrice(a, includeUsed), minPrice(b, includeUsed) ));
+    if (sortKey === "min_price_desc") list.sort((a,b)=> cmpNumDesc( minPrice(a, includeUsed), minPrice(b, includeUsed) ));
+    if (sortKey === "price_asc")      list.sort((a,b)=> cmpNum(a.price_twd, b.price_twd));
+    if (sortKey === "price_desc")     list.sort((a,b)=> cmpNumDesc(a.price_twd, b.price_twd));
+    if (sortKey === "used_asc")       list.sort((a,b)=> cmpNum(a.used_price_twd, b.used_price_twd));
+    if (sortKey === "used_desc")      list.sort((a,b)=> cmpNumDesc(a.used_price_twd, b.used_price_twd));
+    if (sortKey === "weight_asc")     list.sort((a,b)=> cmpNum(a.weight, b.weight));
+    if (sortKey === "weight_desc")    list.sort((a,b)=> cmpNumDesc(a.weight, b.weight));
 
     const total=list.length;
     const ps = Number(PAGE_SIZE.value||40);
@@ -326,12 +366,23 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 
   function toggleFav(id){
     if (favs.has(id)) favs.delete(id); else favs.add(id);
-    saveFavs(); render();
+    saveFavs(); render(); // 星星/統計同步更新
+  }
+
+  function buildImgSrc(x){
+    // 基底：相對路徑則加 prefix
+    const base = (x.image||'').startsWith('http') ? x.image : (prefix + (x.image||''));
+    // cache key：盡量用 version id 區分不同版圖，避免被快取成同一張
+    const key = x.image_version_used || x.image_version_id || x.updated_at || x.bgg_id || '';
+    if (!base) return '';
+    return base + (base.includes('?') ? '&' : '?') + 'v=' + encodeURIComponent(key);
   }
 
   function render(){
     const {total, pages, pageRows} = filtered();
-    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${favs.size}`;
+    const allFavCount = favs.size;
+
+    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
     PAGE_INFO.textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
     PREV.disabled = (page<=1);
     NEXT.disabled = (page>=pages);
@@ -339,10 +390,14 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     G.innerHTML = pageRows.map(x=>{
       const cz = getCatsZh(x);
       const mz = getMechsZh(x);
-      const imgSrc = (x.image||'').startsWith('http') ? x.image : (prefix+(x.image||'')); 
+      const imgSrc = buildImgSrc(x) || 'https://via.placeholder.com/800x800?text=No+Image';
       const id = idOf(x);
       const fav = favs.has(id);
       const chosenCat = CAT.value, chosenMech = MECH.value;
+
+      // 連結：local 走 external_url；否則 BGG
+      const href = x.external_url || x.bgg_url || '#';
+      const linkText = x.external_url ? '介紹' : 'BGG';
 
       return `
       <div class="card">
@@ -350,17 +405,19 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
           <span class="star">${fav?'⭐':'☆'}</span>
         </button>
 
-        <img class="poster" loading="lazy" src="${imgSrc}"
-             alt="${x.name_zh||x.name_en||''}"
-             onerror="this.src='https://via.placeholder.com/800x600?text=No+Image'">
+        <span class="poster-box">
+          <img class="poster" loading="lazy" src="${imgSrc}"
+               alt="${x.name_zh||x.name_en||''}">
+        </span>
 
         <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
         ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
 
+        <!-- 分類 -->
         <div class="chips" aria-label="categories">
           ${cz.map(t=>`<a href="#" class="chip cat" data-cat="${t}">${t===chosenCat?`<b>${t}</b>`:t}</a>`).join('')}
         </div>
-
+        <!-- 機制（全部顯示、中文） -->
         <div class="chips" aria-label="mechanics">
           ${mz.map(t=>`<a href="#" class="chip mech ${t===chosenMech?'active':''}" data-mech="${t}">${t}</a>`).join('')}
         </div>
@@ -375,12 +432,12 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
 
         <div style="margin-top:6px">
-          <a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a>
+          <a href="${href}" target="_blank" rel="nofollow noopener">${linkText}</a>
         </div>
       </div>`;
     }).join('');
 
-    // 事件代理
+    // 事件代理：收藏／點 chip 篩選
     G.querySelectorAll('.fav-btn').forEach(btn=>{
       btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
     });
