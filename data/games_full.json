@@ -41,7 +41,7 @@
       "ZIP ZAP BGG",
       "Zip Zap BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "vye:_the_card_game_of_capture_and_control",
@@ -87,7 +87,7 @@
       "VYE BGG",
       "Vye: The Card Game of Capture and Control BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "uno_stacko",
@@ -133,7 +133,7 @@
       "Uno疊疊樂 BGG",
       "UNO Stacko BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "uno:_show_'em_no_mercy",
@@ -183,7 +183,7 @@
       "UNO SHOW'EM NO MERCY BGG",
       "UNO: Show 'Em No Mercy BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "uno",
@@ -239,7 +239,7 @@
       "UNO BGG",
       "UNO BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "dominoes",
@@ -291,7 +291,7 @@
       "Whoa dominoes BGG",
       "Dominoes BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "solo",
@@ -339,7 +339,53 @@
       "Solo BGG",
       "Solo BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "sifaka",
+    "name_zh": "Sifaka",
+    "name_en": "Sifaka",
+    "aliases_zh": [],
+    "bgg_id": 166246,
+    "bgg_url": "https://boardgamegeek.com/boardgame/166246",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.2,
+    "categories": [
+      "Animals",
+      "Card Game"
+    ],
+    "categories_zh": [
+      "動物",
+      "卡牌"
+    ],
+    "mechanics": [
+      "Layering",
+      "Modular Board"
+    ],
+    "mechanics_zh": [
+      "疊放",
+      "模組地圖"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/166246.jpg",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "stock": "",
+    "description": "",
+    "search_keywords": [
+      "Sifaka BGG",
+      "Sifaka BGG"
+    ],
+    "updated_at": "2025-09-22"
   },
   {
     "id": "seven!",
@@ -374,7 +420,7 @@
     "image": "https://cf.geekdo-images.com/11_4ft9nWaMW9sTrTr-m8w__small@2x/img/g8Bo8c8hrUeWanMi2a7qGWlh0jA=/fit-in/400x300/filters:strip_icc()/pic5531526.jpg",
     "price_msrp_twd": 490,
     "price_twd": 490,
-    "used_price_twd": 250,
+    "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
     "stock": 2,
@@ -383,7 +429,111 @@
       "SEVEN! BGG",
       "Seven! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "set",
+    "name_zh": "SET",
+    "name_en": "SET",
+    "aliases_zh": [],
+    "bgg_id": 1198,
+    "bgg_url": "https://boardgamegeek.com/boardgame/1198",
+    "year": 1988,
+    "players": [
+      1,
+      20
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.6537,
+    "categories": [
+      "Card Game",
+      "Puzzle"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "益智／拼圖"
+    ],
+    "mechanics": [
+      "Pattern Recognition",
+      "Real-Time",
+      "Speed Matching"
+    ],
+    "mechanics_zh": [
+      "圖形辨識",
+      "即時制",
+      "速度配對"
+    ],
+    "versions_count": 45,
+    "image": "https://cf.geekdo-images.com/Dzz6QN5VZvMfR0yA4CW4JA__small@2x/img/U8VpSePwrcW6kbYThGCYcgwZds8=/fit-in/400x300/filters:strip_icc()/pic4120020.jpg",
+    "price_msrp_twd": 590,
+    "price_twd": 590,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "stock": 11,
+    "description": "",
+    "search_keywords": [
+      "SET BGG",
+      "SET BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "red7",
+    "name_zh": "Red7",
+    "name_en": "Red7",
+    "aliases_zh": [],
+    "bgg_id": 161417,
+    "bgg_url": "https://boardgamegeek.com/boardgame/161417",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 30,
+    "weight": 1.701,
+    "categories": [
+      "Card Game",
+      "Number"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "數字"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Move Through Deck",
+      "Multi-Use Cards",
+      "Pattern Building",
+      "Player Elimination",
+      "Score-and-Reset Game",
+      "Set Collection"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "穿牌移動",
+      "多用途卡",
+      "圖案建構",
+      "玩家淘汰",
+      "記分重置",
+      "收集套組"
+    ],
+    "versions_count": 23,
+    "image": "https://cf.geekdo-images.com/DZjCvkOv4u4yrIb5vbZXdw__small@2x/img/-S1CVkUlV4R_2pW8Y9_PiZg349s=/fit-in/400x300/filters:strip_icc()/pic3002342.jpg",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Red7 BGG",
+      "Red7 BGG"
+    ],
+    "updated_at": "2025-09-22"
   },
   {
     "id": "ranking",
@@ -431,7 +581,7 @@
       "Ranking BGG",
       "Ranking BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "qwinto",
@@ -481,7 +631,7 @@
       "QWINTO BGG",
       "Qwinto BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "king_frog",
@@ -529,7 +679,7 @@
       "Quibbit BGG",
       "King Frog BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "pony_run",
@@ -577,7 +727,141 @@
       "pony run BGG",
       "Pony Run BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "penguin_picnic",
+    "name_zh": "Pinguin Picknick",
+    "name_en": "Penguin Picnic",
+    "aliases_zh": [],
+    "bgg_id": 11782,
+    "bgg_url": "https://boardgamegeek.com/boardgame/11782",
+    "year": 1997,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "動物",
+      "兒童"
+    ],
+    "mechanics": [],
+    "mechanics_zh": [],
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/mZXOIcWV4AAjrBwUhHy9Mw__small@2x/img/yYYAfPCskmJKaktUncp65UkQH1I=/fit-in/400x300/filters:strip_icc()/pic775862.jpg",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "stock": 2,
+    "description": "",
+    "search_keywords": [
+      "Pinguin Picknick BGG",
+      "Penguin Picnic BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "pachisi",
+    "name_zh": "Petits chevaux - Ludo",
+    "name_en": "Pachisi",
+    "aliases_zh": [],
+    "bgg_id": 2136,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2136",
+    "year": 400,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.1775,
+    "categories": [
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "兒童"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Race",
+      "Roll / Spin and Move",
+      "Static Capture",
+      "Take That",
+      "Team-Based Game",
+      "Track Movement"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "競速",
+      "擲骰／轉盤移動",
+      "靜態捕獲",
+      "互害",
+      "團隊",
+      "軌道移動"
+    ],
+    "versions_count": 275,
+    "image": "https://www.bcd-jeux.fr/57664-pdt_771/petits-chevaux-ludo-djeco.jpg",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Petits chevaux - Ludo BGG",
+      "Pachisi BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "king_ozo",
+    "name_zh": "Ozo王大作戰",
+    "name_en": "King Ozo",
+    "aliases_zh": [],
+    "bgg_id": 233565,
+    "bgg_url": "https://boardgamegeek.com/boardgame/233565",
+    "year": 2017,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童"
+    ],
+    "mechanics": [],
+    "mechanics_zh": [],
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/HBsAixuHrB1rPxv7OWpfDA__small@2x/img/dWovHUgtqgcq5wRiNbV-kLgBKYg=/fit-in/400x300/filters:strip_icc()/pic3826338.png",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Ozo王大作戰 BGG",
+      "King Ozo BGG"
+    ],
+    "updated_at": "2025-09-22"
   },
   {
     "id": "eselsbrücke",
@@ -621,7 +905,7 @@
       "驢橋 BGG",
       "Eselsbrücke BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "paranormal_detectives",
@@ -681,7 +965,7 @@
       "靈能偵探 BGG",
       "Paranormal Detectives BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "the_mind",
@@ -729,7 +1013,7 @@
       "靈光同線 BGG",
       "The Mind BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "time_bomb_evolution",
@@ -779,7 +1063,7 @@
       "驚爆倫敦 危機進化 BGG",
       "Time Bomb Evolution BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "time_bomb",
@@ -833,7 +1117,7 @@
       "驚爆倫敦 (主/中文) BGG",
       "Time Bomb BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "last_friday",
@@ -895,7 +1179,7 @@
       "驚魂星期五 BGG",
       "Last Friday BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "cubeez",
@@ -939,7 +1223,7 @@
       "變臉魔方 BGG",
       "Cubeez BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "coloretto",
@@ -989,7 +1273,7 @@
       "變色龍 BGG",
       "Coloretto BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "stick_stack",
@@ -1031,7 +1315,7 @@
       "籤籤入扣 BGG",
       "Stick Stack BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "bounce-off_rock_'n'_rollz!",
@@ -1075,7 +1359,7 @@
       "歡樂彈跳球:進階搖滾版  BGG",
       "Bounce-Off Rock 'N' Rollz! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "welcome_to_the_dungeon",
@@ -1129,7 +1413,7 @@
       "歡迎來到地下城(外文版) BGG",
       "Welcome to the Dungeon BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "welcome_to...",
@@ -1187,7 +1471,7 @@
       "歡迎來到 BGG",
       "Welcome To... BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "welcome_back_to_the_dungeon",
@@ -1241,7 +1525,7 @@
       "歡迎回到地下城 (主/中文) BGG",
       "Welcome Back to the Dungeon BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "a_game_of_thrones:_catan_–_brotherhood_of_the_watch",
@@ -1295,7 +1579,7 @@
       "權力的遊戲 :卡坦 (主/中文) BGG",
       "A Game of Thrones: Catan – Brotherhood of the Watch BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "dark_castle",
@@ -1343,7 +1627,7 @@
       "黯影魔城 BGG",
       "Dark Castle BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "die_dunkle_prophezeiung",
@@ -1395,7 +1679,7 @@
       "魔城馬車黑暗預言擴充 BGG",
       "Die dunkle Prophezeiung BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "die_kutschfahrt_zur_teufelsburg",
@@ -1443,7 +1727,7 @@
       "魔城馬車 BGG",
       "Die Kutschfahrt zur Teufelsburg BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "magi_kitchen",
@@ -1493,7 +1777,7 @@
       "魔法廚房 BGG",
       "Magi Kitchen BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "via_magica",
@@ -1541,7 +1825,7 @@
       "魔法賓果 BGG",
       "Via Magica BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "spellbook",
@@ -1587,7 +1871,7 @@
       "魔法秘笈 BGG",
       "SpellBook BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "the_lord_of_the_rings:_journeys_in_middle-earth_–_shadowed_paths_expansion",
@@ -1647,7 +1931,7 @@
       "魔戒擴充:暗影之路 BGG",
       "The Lord of the Rings: Journeys in Middle-earth – Shadowed Paths Expansion BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "the_lord_of_the_rings:_journeys_in_middle-earth_–_dwellers_in_darkness_figure_pack",
@@ -1711,7 +1995,7 @@
       "魔戒：中洲征途 - 黑暗中的棲身者擴充 (擴/ 中文) BGG",
       "The Lord of the Rings: Journeys in Middle-earth – Dwellers in Darkness Figure Pack BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "the_lord_of_the_rings:_journeys_in_middle-earth",
@@ -1783,7 +2067,7 @@
       "魔戒: 中洲征途 (主/中文) BGG",
       "The Lord of the Rings: Journeys in Middle-Earth BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "catapult_feud",
@@ -1831,7 +2115,7 @@
       "霹靂投石車 BGG",
       "Catapult Feud BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "ticket_to_ride:_europe",
@@ -1887,7 +2171,7 @@
       "鐵道任務 歐洲 (主/中文) BGG",
       "Ticket to Ride: Europe BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "ticket_to_ride",
@@ -1943,7 +2227,7 @@
       "鐵道任務 美國 (主/中文) BGG",
       "Ticket to Ride BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "scotland_yard",
@@ -1993,7 +2277,7 @@
       "蘇格蘭特警 BGG",
       "Scotland Yard BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "gizmos",
@@ -2043,7 +2327,7 @@
       "爆珠發明 BGG",
       "Gizmos BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "ponzi_scheme",
@@ -2089,7 +2373,7 @@
       "龐氏騙局 BGG",
       "Ponzi Scheme BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "shark_alarm!!!",
@@ -2139,7 +2423,7 @@
       "鯊魚警報 BGG",
       "Shark Alarm!!! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "shark_attacks!",
@@ -2187,7 +2471,7 @@
       "鯊魚來襲 BGG",
       "Shark Attacks! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "get_bit!",
@@ -2243,7 +2527,7 @@
       "鯊口餘生 BGG",
       "Get Bit! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "pluckin'_pairs",
@@ -2289,7 +2573,7 @@
       "雙胞胎 (主/中文) BGG",
       "Pluckin' Pairs BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "froggies",
@@ -2329,7 +2613,7 @@
       "蹦蹦蛙 BGG",
       "Froggies BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "pickomino",
@@ -2379,7 +2663,7 @@
       "蟲蟲燒烤派對 BGG",
       "Pickomino BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "hive",
@@ -2435,7 +2719,7 @@
       "蟲蟲蜂房 BGG",
       "Hive BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "assel_schlamassel",
@@ -2479,7 +2763,7 @@
       "蟲蟲密碼 BGG",
       "Assel Schlamassel BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "savannah_park",
@@ -2535,7 +2819,7 @@
       "薩凡娜公園 BGG",
       "Savannah Park BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "salem_1692",
@@ -2593,7 +2877,7 @@
       "獵巫鎮 1692 (主/中文) BGG",
       "Salem 1692 BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "niagara",
@@ -2645,7 +2929,7 @@
       "瀑布淘金客 BGG",
       "Niagara BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "bumúntú",
@@ -2691,7 +2975,7 @@
       "叢林智慧棋 BGG",
       "Bumúntú BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "jungle_brunch",
@@ -2737,7 +3021,7 @@
       "叢林野宴（附Promo卡） BGG",
       "Jungle Brunch BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "dice_forge",
@@ -2791,7 +3075,7 @@
       "鍛骰物語 (主/中文) BGG",
       "Dice Forge BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "we_didn't_playtest_this_either",
@@ -2841,7 +3125,7 @@
       "還試好遊戲 BGG",
       "We Didn't Playtest This Either BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "galloping_pigs",
@@ -2883,7 +3167,7 @@
       "賽豬俱樂部 BGG",
       "Galloping Pigs BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "ready_set_bet",
@@ -2939,7 +3223,7 @@
       "賽馬大亨 BGG",
       "Ready Set Bet BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "bugs_in_the_kitchen",
@@ -2989,7 +3273,7 @@
       "蟑螂捕手 BGG",
       "Bugs in the Kitchen BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "cookie_run:_kingdom_the_board_game",
@@ -3049,7 +3333,7 @@
       "薑餅人王國 BGG",
       "Cookie Run: Kingdom The Board Game BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "stockpile",
@@ -3109,7 +3393,7 @@
       "縱橫股海 BGG",
       "Stockpile BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "around_the_world_in_80_days",
@@ -3159,7 +3443,7 @@
       "環遊世界八十天 BGG",
       "Around the World in 80 Days BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "what_the_heck?",
@@ -3205,7 +3489,7 @@
       "獴鷲派對 BGG",
       "What the Heck? BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "draftosaurus",
@@ -3259,7 +3543,7 @@
       "龍龍公園 BGG",
       "Draftosaurus BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "dragon_teeth_washer",
@@ -3305,7 +3589,7 @@
       "龍牙勇者 BGG",
       "Dragon Teeth Washer BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "camel_up_(second_edition)",
@@ -3361,7 +3645,7 @@
       "駱駝大賽2020年版 BGG",
       "Camel Up (Second Edition) BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "first_class:_all_aboard_the_orient_express!",
@@ -3409,7 +3693,7 @@
       "頭等艙列車 BGG",
       "First Class: All Aboard the Orient Express! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "lady_richmond:_ein_erzocktes_erbe",
@@ -3463,7 +3747,7 @@
       "遺產爭奪戰(貴婦的遺產) BGG",
       "Lady Richmond: Ein erzocktes Erbe BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "aye,_dark_overlord!_the_red_box",
@@ -3517,7 +3801,7 @@
       "遵命！黑魔王 BGG",
       "Aye, Dark Overlord! The Red Box BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "spicy",
@@ -3565,7 +3849,7 @@
       "貓吃3辣 BGG",
       "Spicy BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "sheriff_of_nottingham",
@@ -3631,7 +3915,7 @@
       "諾丁漢警長 BGG",
       "Sheriff of Nottingham BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "murano:_light_masters",
@@ -3679,7 +3963,7 @@
       "穆拉諾-光影大師 BGG",
       "Murano: Light Masters BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "just_one",
@@ -3731,7 +4015,7 @@
       "獨家暗語 (主/中文) BGG",
       "Just One BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "disc_cover",
@@ -3781,7 +4065,7 @@
       "獨家專輯 (主/中文) BGG",
       "Disc Cover BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "burn_rate",
@@ -3827,7 +4111,7 @@
       "燒錢計畫 BGG",
       "Burn Rate BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "dr._beaker",
@@ -3873,7 +4157,7 @@
       "燒杯博士 BGG",
       "Dr. Beaker BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "codenames:_duet",
@@ -3925,7 +4209,7 @@
       "機密代號:裡應外合 BGG",
       "Codenames: Duet BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "codenames:_pictures",
@@ -3977,7 +4261,7 @@
       "機密代號:有圖有真相 BGG",
       "Codenames: Pictures BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "codenames",
@@ -4035,7 +4319,7 @@
       "機密代號 BGG",
       "Codenames BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "age_of_war",
@@ -4097,7 +4381,7 @@
       "戰國時代 BGG",
       "Age of War BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "squid_game:_let_the_games_begin",
@@ -4149,7 +4433,7 @@
       "魷魚遊戲 BGG",
       "Squid Game: Let the Games Begin BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "skull",
@@ -4203,7 +4487,7 @@
       "骷髏牌 (主/中文) BGG",
       "Skull BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "lorenzo_il_magnifico",
@@ -4259,7 +4543,7 @@
       "輝煌的羅倫佐 BGG",
       "Lorenzo il Magnifico BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "world_championship_russian_roulette",
@@ -4307,7 +4591,7 @@
       "賭命大賽 BGG",
       "World Championship Russian Roulette BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "get_on_board:_new_york_&_london",
@@ -4359,7 +4643,7 @@
       "請上車 BGG",
       "Get on Board: New York & London BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "6_nimmt!_25_jahre",
@@ -4407,7 +4691,7 @@
       "誰是牛頭王25週年版 BGG",
       "6 nimmt! 25 Jahre BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "9upper_瞎掰王",
@@ -4449,7 +4733,7 @@
       "瞎掰王 BGG",
       "9upper 瞎掰王 BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "9upper_瞎掰王",
@@ -4491,7 +4775,7 @@
       "瞎掰王 BGG",
       "9upper 瞎掰王 BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "splendor:_cities_of_splendor",
@@ -4541,7 +4825,7 @@
       "璀璨寶石擴充: 璀璨之城 (擴/中文) BGG",
       "Splendor: Cities of Splendor BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "스플렌더:_pokémon_(splendor:_pokémon)",
@@ -4595,7 +4879,7 @@
       "璀璨寶石:寶可夢 BGG",
       "스플렌더: Pokémon (Splendor: Pokémon) BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "splendor:_marvel",
@@ -4647,7 +4931,7 @@
       "璀璨寶石: 漫威 (主/中文) BGG",
       "Splendor: Marvel BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "splendor",
@@ -4699,7 +4983,7 @@
       "璀璨寶石 (主/中文) BGG",
       "Splendor BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "nmbr_9",
@@ -4753,7 +5037,7 @@
       "數字九乘塔 (主/中文) BGG",
       "NMBR 9 BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "pitchcar",
@@ -4807,7 +5091,7 @@
       "彈指賽車 BGG",
       "PitchCar BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "splash!",
@@ -4853,7 +5137,7 @@
       "嘩啦啦真痛快 BGG",
       "Splash! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "take_it_easy!",
@@ -4901,7 +5185,7 @@
       "輕鬆放 BGG",
       "Take it Easy! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "8_the_liar",
@@ -4943,7 +5227,7 @@
       "說謊小八 BGG",
       "8 the Liar BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "when_i_dream",
@@ -5001,7 +5285,7 @@
       "說夢人(主/中文) BGG",
       "When I Dream BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "concept_kids:_animals",
@@ -5051,7 +5335,7 @@
       "語破天機 兒童版 (主/中文) BGG",
       "Concept Kids: Animals BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "concept",
@@ -5101,7 +5385,7 @@
       "語破天機 (主/中文) BGG",
       "Concept BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "fun_facts",
@@ -5145,7 +5429,7 @@
       "認清你的朋友 BGG",
       "Fun Facts BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "abra_kazam!",
@@ -5183,7 +5467,7 @@
       "舞動魔咒 BGG",
       "Abra Kazam! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "battle_sheep",
@@ -5233,7 +5517,7 @@
       "綿羊爭牧場 BGG",
       "Battle Sheep BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "vikings_on_board",
@@ -5279,7 +5563,7 @@
       "維京襲來 BGG",
       "Vikings on Board BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "elfenroads",
@@ -5329,7 +5613,7 @@
       "精靈國度豪華版 BGG",
       "Elfenroads BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "gigamons",
@@ -5377,7 +5661,7 @@
       "精靈捕手 BGG",
       "Gigamons BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "bohnanza",
@@ -5431,7 +5715,7 @@
       "種豆 BGG",
       "Bohnanza BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "the_magic_labyrinth",
@@ -5487,7 +5771,7 @@
       "磁石魔法迷宮 BGG",
       "The Magic Labyrinth BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "mansions_of_madness:_second_edition_–_horrific_journeys:_expansion",
@@ -5561,7 +5845,7 @@
       "瘋狂詭宅: 驚魂之旅(擴/中文) BGG",
       "Mansions of Madness: Second Edition – Horrific Journeys: Expansion BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "mansions_of_madness:_second_edition",
@@ -5643,7 +5927,7 @@
       "瘋狂詭宅 第二版(主/中文) BGG",
       "Mansions of Madness: Second Edition BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "board_game_cafe_frenzy",
@@ -5689,7 +5973,7 @@
       "瘋狂桌遊店 BGG",
       "Board Game Cafe Frenzy BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "steam",
@@ -5745,7 +6029,7 @@
       "蒸氣 BGG",
       "Steam BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "bärenpark",
@@ -5799,7 +6083,7 @@
       "熊熊公園 (主/中文) BGG",
       "Bärenpark BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "walking_in_provence",
@@ -5849,7 +6133,7 @@
       "漫步普羅旺斯 BGG",
       "Walking in Provence BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "evolution:_the_origin_of_species",
@@ -5899,7 +6183,7 @@
       "演化論:物種起源 BGG",
       "Evolution: The Origin of Species BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "le_fantôme_de_l'opéra",
@@ -5947,7 +6231,7 @@
       "歌劇魅影 BGG",
       "Le Fantôme de l'Opéra BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "fold-it",
@@ -5995,7 +6279,7 @@
       "摺足先登 BGG",
       "Fold-it BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "decrypto:_expansion_#01_–_laserdrive",
@@ -6047,7 +6331,7 @@
       "截碼戰+光碟播放器擴充套組 BGG",
       "Decrypto: Expansion #01 – Laserdrive BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "decrypto",
@@ -6101,7 +6385,7 @@
       "截碼戰 (主/中文) BGG",
       "Decrypto BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "you're_bluffing!",
@@ -6161,7 +6445,7 @@
       "幕後交易 BGG",
       "You're Bluffing! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "forest",
@@ -6203,7 +6487,7 @@
       "察顏觀7 BGG",
       "Forest BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "dream_home",
@@ -6253,7 +6537,7 @@
       "夢想家園 (主/中文) BGG",
       "Dream Home BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "turing_machine",
@@ -6301,7 +6585,7 @@
       "圖靈解密 BGG",
       "Turing Machine BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "x-machina",
@@ -6351,7 +6635,7 @@
       "圖騰快手 BGG",
       "X-Machina BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "mmm!",
@@ -6401,7 +6685,7 @@
       "鼠國英雄 BGG",
       "Mmm! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "trambahn",
@@ -6455,7 +6739,7 @@
       "電車大亨 BGG",
       "Trambahn BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "power_grid",
@@ -6513,7 +6797,7 @@
       "電力公司2020版 BGG",
       "Power Grid BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "river_dragons",
@@ -6559,7 +6843,7 @@
       "過河拆橋 BGG",
       "River Dragons BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "animal_upon_animal",
@@ -6609,7 +6893,7 @@
       "農場動物疊疊樂 BGG",
       "Animal Upon Animal BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "skippity",
@@ -6655,7 +6939,7 @@
       "跳跳棋 (主/中文) BGG",
       "Skippity BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "cryptid",
@@ -6703,7 +6987,7 @@
       "詭影尋蹤 BGG",
       "Cryptid BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "mysterium",
@@ -6767,7 +7051,7 @@
       "詭秘莊園 (主/中文) BGG",
       "Mysterium BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "we_didn't_playtest_this_at_all",
@@ -6821,7 +7105,7 @@
       "試個好遊戲 BGG",
       "We Didn't Playtest This at All BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "on_a_scale_of_one_to_t-rex",
@@ -6865,7 +7149,7 @@
       "裝龍作啞 (主/中文) BGG",
       "On a Scale of One to T-Rex BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "i.a.:_installation_artist",
@@ -6903,7 +7187,7 @@
       "裝置譯述家 BGG",
       "I.A.: Installation Artist BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "top_ten",
@@ -6953,7 +7237,7 @@
       "腦洞量表 BGG",
       "Top Ten BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "bible_hunter",
@@ -6997,7 +7281,7 @@
       "聖經尋寶獵人 BGG",
       "Bible Hunter BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "sagrada",
@@ -7059,7 +7343,7 @@
       "聖家族大教堂 BGG",
       "Sagrada BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "san_juan",
@@ -7121,7 +7405,7 @@
       "聖胡安 BGG",
       "San Juan BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "saint_petersburg_(second_edition)",
@@ -7173,7 +7457,7 @@
       "聖彼得堡 BGG",
       "Saint Petersburg (Second Edition) BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "othello",
@@ -7219,7 +7503,7 @@
       "經典黑白棋 BGG",
       "Othello BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "länder_toppen!",
@@ -7267,7 +7551,7 @@
       "萬國爭鋒 BGG",
       "Länder toppen! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "ricochet_robots",
@@ -7325,7 +7609,7 @@
       "碰撞機器人 BGG",
       "Ricochet Robots BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "saboteur",
@@ -7391,7 +7675,7 @@
       "矮人礦坑 BGG",
       "Saboteur BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "dwarves_and_dice",
@@ -7439,7 +7723,7 @@
       "矮人骰子樂 BGG",
       "Dwarves and Dice BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "minecraft:_portal_dash",
@@ -7493,7 +7777,7 @@
       "當個創世神：衝出地獄門 BGG",
       "Minecraft: Portal Dash BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "minecraft:_builders_&_biomes",
@@ -7547,7 +7831,7 @@
       "當個創世神 BGG",
       "Minecraft: Builders & Biomes BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "leo",
@@ -7595,7 +7879,7 @@
       "獅子剪髮大冒險 BGG",
       "Leo BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "alchemists",
@@ -7659,7 +7943,7 @@
       "煉金術士 BGG",
       "Alchemists BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "leg_los!",
@@ -7705,7 +7989,7 @@
       "極簡大師 BGG",
       "Leg los! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "beat_the_8_ball",
@@ -7751,7 +8035,7 @@
       "極限一發 BGG",
       "Beat the 8 Ball BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "coconuts",
@@ -7799,7 +8083,7 @@
       "椰子猴王 BGG",
       "Coconuts BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "shadow_hunters",
@@ -7859,7 +8143,7 @@
       "暗影獵人 BGG",
       "Shadow Hunters BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "shadow_raiders",
@@ -7919,7 +8203,7 @@
       "暗影奇襲 BGG",
       "Shadow Raiders BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "buzzer_f*cker",
@@ -7963,7 +8247,7 @@
       "搶鈴詞王 BGG",
       "Buzzer F*cker BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "help_peggy",
@@ -8007,7 +8291,7 @@
       "搶救派琪 BGG",
       "Help Peggy BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "shokoba",
@@ -8057,7 +8341,7 @@
       "搜捕農場動物 (主/中文) BGG",
       "Shokoba BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "mamma_mia!",
@@ -8103,7 +8387,7 @@
       "媽媽咪呀! BGG",
       "Mamma Mia! BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   },
   {
     "id": "descent:_legends_of_the_dark",
@@ -8169,6 +8453,6 @@
       "深入絕地: 暗黑世界傳說 BGG",
       "Descent: Legends of the Dark BGG"
     ],
-    "updated_at": "2025-09-21"
+    "updated_at": "2025-09-22"
   }
 ]

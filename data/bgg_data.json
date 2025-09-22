@@ -336,13 +336,58 @@
     "image": "assets/img/3347.jpg"
   },
   {
+    "name_zh": "Sifaka",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 0,
+    "stock": "",
+    "description": "",
+    "image_override": "",
+    "bgg_id": 166246,
+    "name_en": "Sifaka",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.2,
+    "categories": [
+      "Animals",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Layering",
+      "Modular Board"
+    ],
+    "image_url": "https://cf.geekdo-images.com/X0FxAa3oYV-AkZIiEcfRaw__original/img/Fyj4OnkRkYczsNmdIy8p-a_GCGE=/0x0/filters:format(jpeg)/pic2247102.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/X0FxAa3oYV-AkZIiEcfRaw__small/img/IBYtcf47hPY5V-vSG_V12pXizVw=/fit-in/200x150/filters:strip_icc()/pic2247102.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "動物",
+      "卡牌"
+    ],
+    "mechanics_zh": [
+      "疊放",
+      "模組地圖"
+    ],
+    "image": "assets/img/166246.jpg"
+  },
+  {
     "name_zh": "SEVEN!",
     "name_en_override": "",
     "alias_zh": "",
     "category_zh": "",
     "price_msrp_twd": 490,
     "price_twd": 490,
-    "used_price_twd": 250,
+    "used_price_twd": 354,
     "price_note": "",
     "used_note": "",
     "manual_override": 1,
@@ -378,6 +423,108 @@
       "收集套組"
     ],
     "image": "assets/img/105866.jpg"
+  },
+  {
+    "name_zh": "SET",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 590,
+    "price_twd": 590,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 11,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Dzz6QN5VZvMfR0yA4CW4JA__small@2x/img/U8VpSePwrcW6kbYThGCYcgwZds8=/fit-in/400x300/filters:strip_icc()/pic4120020.jpg",
+    "bgg_id": 1198,
+    "name_en": "SET",
+    "year": 1988,
+    "players": [
+      1,
+      20
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.6537,
+    "categories": [
+      "Card Game",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Pattern Recognition",
+      "Real-Time",
+      "Speed Matching"
+    ],
+    "image_url": "https://cf.geekdo-images.com/uEtWO_Ag8OxbG6NkSZbH6A__original/img/io2YlTwg9Be3eNt5BgWOsvpjPVU=/0x0/filters:format(png)/pic7627182.png",
+    "thumb_url": "https://cf.geekdo-images.com/uEtWO_Ag8OxbG6NkSZbH6A__small/img/wElABDsqOCR3YjI1nInQqeNa-Lk=/fit-in/200x150/filters:strip_icc()/pic7627182.png",
+    "versions_count": 45,
+    "categories_zh": [
+      "卡牌",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "圖形辨識",
+      "即時制",
+      "速度配對"
+    ],
+    "image": "assets/img/1198.jpg"
+  },
+  {
+    "name_zh": "Red7",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 354,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/DZjCvkOv4u4yrIb5vbZXdw__small@2x/img/-S1CVkUlV4R_2pW8Y9_PiZg349s=/fit-in/400x300/filters:strip_icc()/pic3002342.jpg",
+    "bgg_id": 161417,
+    "name_en": "Red7",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 30,
+    "weight": 1.701,
+    "categories": [
+      "Card Game",
+      "Number"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Move Through Deck",
+      "Multi-Use Cards",
+      "Pattern Building",
+      "Player Elimination",
+      "Score-and-Reset Game",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/7zH6Kt5ebWEixjDGmHweNA__original/img/fABY4SjThfxj2NO1SL_G_FzbX7M=/0x0/filters:format(png)/pic2247258.png",
+    "thumb_url": "https://cf.geekdo-images.com/7zH6Kt5ebWEixjDGmHweNA__small/img/PVkJyJhCtzo1ZwKO4iuRaqUyKJc=/fit-in/200x150/filters:strip_icc()/pic2247258.png",
+    "versions_count": 23,
+    "categories_zh": [
+      "卡牌",
+      "數字"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "穿牌移動",
+      "多用途卡",
+      "圖案建構",
+      "玩家淘汰",
+      "記分重置",
+      "收集套組"
+    ],
+    "image": "assets/img/161417.jpg"
   },
   {
     "name_zh": "Ranking",
@@ -569,6 +716,137 @@
       "團隊"
     ],
     "image": "assets/img/224993.jpg"
+  },
+  {
+    "name_zh": "Pinguin Picknick",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 2,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/mZXOIcWV4AAjrBwUhHy9Mw__small@2x/img/yYYAfPCskmJKaktUncp65UkQH1I=/fit-in/400x300/filters:strip_icc()/pic775862.jpg",
+    "bgg_id": 11782,
+    "name_en": "Penguin Picnic",
+    "year": 1997,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Children's Game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/mZXOIcWV4AAjrBwUhHy9Mw__original/img/ykKkV4dg87vt-ifOJYuqM0VWqZ4=/0x0/filters:format(jpeg)/pic775862.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mZXOIcWV4AAjrBwUhHy9Mw__small/img/1z0P8J591GtkJFrpP1ShJ_MFF98=/fit-in/200x150/filters:strip_icc()/pic775862.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "動物",
+      "兒童"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/11782.jpg"
+  },
+  {
+    "name_zh": "Petits chevaux - Ludo",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://www.bcd-jeux.fr/57664-pdt_771/petits-chevaux-ludo-djeco.jpg",
+    "bgg_id": 2136,
+    "name_en": "Pachisi",
+    "year": 400,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.1775,
+    "categories": [
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Race",
+      "Roll / Spin and Move",
+      "Static Capture",
+      "Take That",
+      "Team-Based Game",
+      "Track Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/45Nb6goQqvPHD9hOut0ntg__original/img/PvDk6RoeXtEl1hsi1eIjeEKZqJk=/0x0/filters:format(jpeg)/pic516869.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/45Nb6goQqvPHD9hOut0ntg__small/img/ZtUXrh9wko9BQ3QLCMw9mU9Fjpw=/fit-in/200x150/filters:strip_icc()/pic516869.jpg",
+    "versions_count": 275,
+    "categories_zh": [
+      "兒童"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "競速",
+      "擲骰／轉盤移動",
+      "靜態捕獲",
+      "互害",
+      "團隊",
+      "軌道移動"
+    ],
+    "image": "assets/img/2136.jpg"
+  },
+  {
+    "name_zh": "Ozo王大作戰",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/HBsAixuHrB1rPxv7OWpfDA__small@2x/img/dWovHUgtqgcq5wRiNbV-kLgBKYg=/fit-in/400x300/filters:strip_icc()/pic3826338.png",
+    "bgg_id": 233565,
+    "name_en": "King Ozo",
+    "year": 2017,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/tdmz6yyEsOwc8o261PEEKw__original/img/9DtZtRFYq3DKPR9a8ev1jSb3vcY=/0x0/filters:format(jpeg)/pic3700462.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/tdmz6yyEsOwc8o261PEEKw__small/img/aUiEEvPwYEMjxoVrC33CzhIuDMQ=/fit-in/200x150/filters:strip_icc()/pic3700462.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/233565.jpg"
   },
   {
     "name_zh": "驢橋",
@@ -6515,8 +6793,8 @@
       "Stacking and Balancing",
       "Take That"
     ],
-    "image_url": "https://cf.geekdo-images.com/3We9ciQcC6g4StwcFbzIqw__original/img/uHKkjsq-42iOVJTzsnsTQQtBYe8=/0x0/filters:format(jpeg)/pic8899094.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/3We9ciQcC6g4StwcFbzIqw__small/img/H-kuHfDkslX7j1XwV_MVz0FUcWU=/fit-in/200x150/filters:strip_icc()/pic8899094.jpg",
+    "image_url": "https://cf.geekdo-images.com/5RHnNYBqmNXYvDtIeJw3pA__original/img/mD1qqRY_sjE0G6ojCQwy_mkErHY=/0x0/filters:format(jpeg)/pic403502.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/5RHnNYBqmNXYvDtIeJw3pA__small/img/k3dUd6Gx-ogOeDtH2HsyVX0n-8E=/fit-in/200x150/filters:strip_icc()/pic403502.jpg",
     "versions_count": 27,
     "categories_zh": [
       "動作／敏捷",
