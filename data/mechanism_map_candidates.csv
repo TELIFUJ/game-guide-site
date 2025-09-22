@@ -3,6 +3,7 @@ Acting,演技／表演
 Action Drafting,行動選擇（輪抽）
 Action Points,行動點
 Action Queue,行動序列
+Action Retrieval,行動取回
 Area Majority / Influence,區域控制
 Area Movement,區域移動
 Auction / Bidding,競標
@@ -18,12 +19,14 @@ Campaign / Battle Card Driven,戰役／卡驅動
 Card Play Conflict Resolution,出牌解衝突
 Catch the Leader,追趕領先者
 Closed Drafting,封閉輪抽
+Closed Economy Auction,封閉經濟競標
 Commodity Speculation,商品投機
 Communication Limits,溝通限制
 Connections,連線／連結
 Constrained Bidding,限制式競標
 Contracts,合約
 Cooperative Game,合作
+Deck Construction,牌庫構築
 "Deck, Bag, and Pool Building",
 Deduction,推理
 Dice Rolling,擲骰
@@ -49,6 +52,7 @@ Line Drawing,連線描繪
 Loans,借貸
 Lose a Turn,失去回合
 Map Addition,地圖擴增
+Map Reduction,地圖縮減
 Market,市集
 Matching,配對
 Melding and Splaying,攤牌與扇形
@@ -101,6 +105,7 @@ Stat Check Resolution,屬性檢定
 Static Capture,靜態捕獲
 Stock Holding,持股／股權
 Storytelling,說故事
+Sudden Death Ending,突然死亡結束
 Take That,互害
 Targeted Clues,定向線索
 Team-Based Game,團隊
