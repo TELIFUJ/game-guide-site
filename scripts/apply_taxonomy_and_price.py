@@ -74,14 +74,19 @@ def main():
     rows=json.loads(BGG_IN.read_text(encoding="utf-8"))
     out=[]
     for r in rows:
-        # 合併手動欄位
+        # 合併手動欄位（新增 link_override / bgg_url_override）
         m=None
         for k in [str(r.get("bgg_id") or ""), str(r.get("name_zh") or ""), str(r.get("bgg_query") or "")]:
             if k and k in manual: m=manual[k]; break
         if m:
-            for fld in ["name_zh","name_en_override","alias_zh","category_zh","price_msrp_twd",
-                        "price_twd","used_price_twd","price_note","used_note","manual_override",
-                        "stock","description","image_override","image_version_id"]:
+            for fld in [
+                "name_zh","name_en_override","alias_zh","category_zh",
+                "price_msrp_twd","price_twd","used_price_twd","price_note","used_note",
+                "manual_override","stock","description",
+                "image_override","image_version_id",
+                # 新增：連結覆蓋（可選，有填才會覆蓋）
+                "link_override","bgg_url_override"
+            ]:
                 if fld in m and m[fld] not in (None,""):
                     r[fld]=m[fld]
 
@@ -107,4 +112,6 @@ def main():
 
     BGG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied.")
-if __name__ == "__main__": main()
+
+if __name__ == "__main__":
+    main()
