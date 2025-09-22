@@ -864,6 +864,912 @@
     "updated_at": "2025-09-22"
   },
   {
+    "id": "orchard",
+    "name_zh": "orchard",
+    "name_en": "Orchard",
+    "aliases_zh": [],
+    "bgg_id": 5770,
+    "bgg_url": "https://boardgamegeek.com/boardgame/5770",
+    "year": 1986,
+    "players": [
+      2,
+      8
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0349,
+    "categories": [
+      "Children's Game",
+      "Dice"
+    ],
+    "categories_zh": [
+      "兒童",
+      "骰子"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰"
+    ],
+    "versions_count": 15,
+    "image": "assets/img/5770.jpg",
+    "price_msrp_twd": 2100,
+    "price_twd": 2100,
+    "used_price_twd": 1260,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "orchard BGG",
+      "Orchard BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "office_21",
+    "name_zh": "Office 21",
+    "name_en": "Office 21",
+    "aliases_zh": [],
+    "bgg_id": 137789,
+    "bgg_url": "https://boardgamegeek.com/boardgame/137789",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.4545,
+    "categories": [
+      "Card Game"
+    ],
+    "categories_zh": [
+      "卡牌"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Set Collection"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組"
+    ],
+    "versions_count": 3,
+    "image": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/5ab909bd326fa9033cea187b_Office21_Box_3D-p-800.jpeg?raw=true",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "stock": 2,
+    "description": "",
+    "search_keywords": [
+      "Office 21 BGG",
+      "Office 21 BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "nanu?",
+    "name_zh": "NANU",
+    "name_en": "Nanu?",
+    "aliases_zh": [],
+    "bgg_id": 30951,
+    "bgg_url": "https://boardgamegeek.com/boardgame/30951",
+    "year": 1989,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0,
+    "categories": [
+      "Children's Game",
+      "Dice",
+      "Memory"
+    ],
+    "categories_zh": [
+      "兒童",
+      "骰子",
+      "記憶"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Memory"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "記憶"
+    ],
+    "versions_count": 11,
+    "image": "https://cf.geekdo-images.com/ANOFVaeWMTG2g9qQgnvfvQ__small@2x/img/_VW4borDmUa6MqXO7UgpPTGmtcU=/fit-in/400x300/filters:strip_icc()/pic697952.jpg",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "stock": 2,
+    "description": "",
+    "search_keywords": [
+      "NANU BGG",
+      "Nanu? BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "moo's_code",
+    "name_zh": "Moo斯密碼",
+    "name_en": "Moo's Code",
+    "aliases_zh": [],
+    "bgg_id": 126771,
+    "bgg_url": "https://boardgamegeek.com/boardgame/126771",
+    "year": 2010,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Animals",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "動物",
+      "兒童"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/ww5tDCvOxLPNRtrDAmcVKA__small@2x/img/d6UunPRAj7oCjvMWe6Mq8GiYUUI=/fit-in/400x300/filters:strip_icc()/pic2034497.jpg",
+    "price_msrp_twd": 499,
+    "price_twd": 499,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "stock": 2,
+    "description": "",
+    "search_keywords": [
+      "Moo斯密碼 BGG",
+      "Moo's Code BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "mix_it",
+    "name_zh": "MIX IT",
+    "name_en": "Mix It",
+    "aliases_zh": [],
+    "bgg_id": 177843,
+    "bgg_url": "https://boardgamegeek.com/boardgame/177843",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 5,
+    "time_max": 15,
+    "weight": 1.0909,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Puzzle"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "益智／拼圖"
+    ],
+    "mechanics": [],
+    "mechanics_zh": [],
+    "versions_count": 2,
+    "image": "assets/img/177843.jpg",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "stock": 2,
+    "description": "",
+    "search_keywords": [
+      "MIX IT BGG",
+      "Mix It BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "mauseschlau_&_bärenstark:_wissen_&_lachen_–_deutschland",
+    "name_zh": "Mauseschlau & Bärenstark Wissen und Lachen – Deutschland",
+    "name_en": "Mauseschlau & Bärenstark: Wissen & Lachen – Deutschland",
+    "aliases_zh": [],
+    "bgg_id": 174297,
+    "bgg_url": "https://boardgamegeek.com/boardgame/174297",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 2.0,
+    "categories": [
+      "Children's Game",
+      "Trivia"
+    ],
+    "categories_zh": [
+      "兒童",
+      "問答"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Roll / Spin and Move",
+      "Set Collection"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "擲骰／轉盤移動",
+      "收集套組"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/174297.jpg",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Mauseschlau & Bärenstark Wissen und Lachen – Deutschland BGG",
+      "Mauseschlau & Bärenstark: Wissen & Lachen – Deutschland BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "loot",
+    "name_zh": "LOOT",
+    "name_en": "Loot",
+    "aliases_zh": [],
+    "bgg_id": 770,
+    "bgg_url": "https://boardgamegeek.com/boardgame/770",
+    "year": 1992,
+    "players": [
+      2,
+      8
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.3808,
+    "categories": [
+      "Card Game",
+      "Nautical",
+      "Pirates"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "航海",
+      "海盜"
+    ],
+    "mechanics": [
+      "Card Play Conflict Resolution",
+      "Hand Management"
+    ],
+    "mechanics_zh": [
+      "出牌解衝突",
+      "手牌管理"
+    ],
+    "versions_count": 24,
+    "image": "https://cf.geekdo-images.com/bP5qWRFDaKq33_P4JdAekw__small@2x/img/p4wPjfu-4zLU-dEuNHQFWfyb0p0=/fit-in/400x300/filters:strip_icc()/pic2240856.jpg",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "LOOT BGG",
+      "Loot BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "lighthouse_adventure",
+    "name_zh": "Lighthouse adventure",
+    "name_en": "Lighthouse Adventure",
+    "aliases_zh": [],
+    "bgg_id": 183243,
+    "bgg_url": "https://boardgamegeek.com/boardgame/183243",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 0,
+    "weight": 0.0,
+    "categories": [
+      "Children's Game",
+      "Memory",
+      "Travel"
+    ],
+    "categories_zh": [
+      "兒童",
+      "記憶",
+      "旅遊"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Memory"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "記憶"
+    ],
+    "versions_count": 2,
+    "image": "assets/img/183243.jpg",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Lighthouse adventure BGG",
+      "Lighthouse Adventure BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "laundry_day",
+    "name_zh": "laundry Day",
+    "name_en": "Laundry Day",
+    "aliases_zh": [],
+    "bgg_id": 225354,
+    "bgg_url": "https://boardgamegeek.com/boardgame/225354",
+    "year": 2017,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 0.0,
+    "categories": [
+      "Card Game",
+      "Children's Game"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "兒童"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Pattern Recognition"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "圖形辨識"
+    ],
+    "versions_count": 2,
+    "image": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/c51a2be5e992607ae153f0d3558c2f74.jpg?raw=true",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "laundry Day BGG",
+      "Laundry Day BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "la_boca",
+    "name_zh": "La Boca",
+    "name_en": "La Boca",
+    "aliases_zh": [],
+    "bgg_id": 136280,
+    "bgg_url": "https://boardgamegeek.com/boardgame/136280",
+    "year": 2013,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 40,
+    "time_max": 40,
+    "weight": 1.3626,
+    "categories": [
+      "Abstract Strategy",
+      "Electronic"
+    ],
+    "categories_zh": [
+      "抽象策略",
+      "電子"
+    ],
+    "mechanics": [
+      "Pattern Building",
+      "Real-Time",
+      "Square Grid"
+    ],
+    "mechanics_zh": [
+      "圖案建構",
+      "即時制",
+      "方格"
+    ],
+    "versions_count": 7,
+    "image": "assets/img/136280.jpg",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "La Boca BGG",
+      "La Boca BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "dead_man's_draw",
+    "name_zh": "KS亡者神抽",
+    "name_en": "Dead Man's Draw",
+    "aliases_zh": [],
+    "bgg_id": 149155,
+    "bgg_url": "https://boardgamegeek.com/boardgame/149155",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.3211,
+    "categories": [
+      "Card Game",
+      "Pirates"
+    ],
+    "categories_zh": [
+      "卡牌",
+      "海盜"
+    ],
+    "mechanics": [
+      "Push Your Luck",
+      "Set Collection",
+      "Take That",
+      "Variable Player Powers"
+    ],
+    "mechanics_zh": [
+      "押注碰運氣",
+      "收集套組",
+      "互害",
+      "角色能力"
+    ],
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/f11qdOFEnn1fcOZ7M-rylg__small@2x/img/f0pCzZu3yZ5r8nt-ZGjsfckkPlU=/fit-in/400x300/filters:strip_icc()/pic2379664.jpg",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "KS亡者神抽 BGG",
+      "Dead Man's Draw BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "kombat_kittens",
+    "name_zh": "Kombat Kittens",
+    "name_en": "Kombat Kittens",
+    "aliases_zh": [],
+    "bgg_id": 156746,
+    "bgg_url": "https://boardgamegeek.com/boardgame/156746",
+    "year": 2014,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.4286,
+    "categories": [
+      "Animals",
+      "Bluffing",
+      "Card Game",
+      "Fighting",
+      "Humor"
+    ],
+    "categories_zh": [
+      "動物",
+      "唬人",
+      "卡牌",
+      "戰鬥",
+      "幽默"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building",
+      "Hand Management",
+      "Open Drafting"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "手牌管理",
+      "公開輪抽"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/156746.jpg",
+    "price_msrp_twd": 600,
+    "price_twd": 600,
+    "used_price_twd": 360,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Kombat Kittens BGG",
+      "Kombat Kittens BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "k2",
+    "name_zh": "K2",
+    "name_en": "K2",
+    "aliases_zh": [],
+    "bgg_id": 73761,
+    "bgg_url": "https://boardgamegeek.com/boardgame/73761",
+    "year": 2010,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.2471,
+    "categories": [
+      "Adventure",
+      "Exploration",
+      "Sports"
+    ],
+    "categories_zh": [
+      "冒險",
+      "探索",
+      "運動"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Movement Points",
+      "Player Elimination",
+      "Point to Point Movement",
+      "Push Your Luck",
+      "Simultaneous Action Selection",
+      "Solo / Solitaire Game",
+      "Turn Order: Progressive",
+      "Variable Set-up"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "移動點",
+      "玩家淘汰",
+      "點對點移動",
+      "押注碰運氣",
+      "同時選擇行動",
+      "單人",
+      "回合順序：逐步",
+      "可變設置"
+    ],
+    "versions_count": 19,
+    "image": "https://cf.geekdo-images.com/BxDsGLe-9LE_qG_ryzZsbQ__small@2x/img/uVGdKtg752BrrZuRR_NxL47xd3o=/fit-in/400x300/filters:strip_icc()/pic2436550.png",
+    "price_msrp_twd": 1890,
+    "price_twd": 1890,
+    "used_price_twd": 1134,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "K2 BGG",
+      "K2 BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "hector_tayleplufor",
+    "name_zh": "Hector Tayleplufor",
+    "name_en": "Hector Tayleplufor",
+    "aliases_zh": [],
+    "bgg_id": 202565,
+    "bgg_url": "https://boardgamegeek.com/boardgame/202565",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 20,
+    "weight": 0.0,
+    "categories": [
+      "Children's Game",
+      "Medieval"
+    ],
+    "categories_zh": [
+      "兒童",
+      "中世紀"
+    ],
+    "mechanics": [
+      "Roll / Spin and Move"
+    ],
+    "mechanics_zh": [
+      "擲骰／轉盤移動"
+    ],
+    "versions_count": 1,
+    "image": "assets/img/202565.jpg",
+    "price_msrp_twd": 1080,
+    "price_twd": 1080,
+    "used_price_twd": 648,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Hector Tayleplufor BGG",
+      "Hector Tayleplufor BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "haunted_castle",
+    "name_zh": "Gruselino",
+    "name_en": "Haunted Castle",
+    "aliases_zh": [],
+    "bgg_id": 1307,
+    "bgg_url": "https://boardgamegeek.com/boardgame/1307",
+    "year": 1999,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0,
+    "categories": [
+      "Children's Game",
+      "Deduction",
+      "Horror",
+      "Puzzle"
+    ],
+    "categories_zh": [
+      "兒童",
+      "推理",
+      "恐怖",
+      "益智／拼圖"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/IVcoBZA2OZDHsW8wGwQX2g__small@2x/img/WZLnWVyiwDu2BwfmpwXGGvh63uM=/fit-in/400x300/filters:strip_icc()/pic4518200.jpg",
+    "price_msrp_twd": 490,
+    "price_twd": 490,
+    "used_price_twd": 294,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "Gruselino BGG",
+      "Haunted Castle BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "pick_picknic",
+    "name_zh": "G同鴨搶",
+    "name_en": "Pick Picknic",
+    "aliases_zh": [],
+    "bgg_id": 2569,
+    "bgg_url": "https://boardgamegeek.com/boardgame/2569",
+    "year": 2001,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.1956,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Children's Game",
+      "Negotiation"
+    ],
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "兒童",
+      "談判"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hand Management",
+      "Simultaneous Action Selection"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "同時選擇行動"
+    ],
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/QcdWPpsxHN5ecimvIpLLtA__small@2x/img/Daqlljmoj2OpvzAt-YBraCII7zI=/fit-in/400x300/filters:strip_icc()/pic6907065.jpg",
+    "price_msrp_twd": 790,
+    "price_twd": 790,
+    "used_price_twd": 474,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "G同鴨搶 BGG",
+      "Pick Picknic BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "fusion",
+    "name_zh": "FUSION",
+    "name_en": "Fusion",
+    "aliases_zh": [],
+    "bgg_id": 103236,
+    "bgg_url": "https://boardgamegeek.com/boardgame/103236",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Card Game",
+      "Real-time"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "卡牌",
+      "即時制"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/0K2iadRs2BrfA5VMWiNtdw__small@2x/img/S2ALTb1s6BFmu6ZXmYWaOMbFVBg=/fit-in/400x300/filters:strip_icc()/pic1291108.jpg",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "FUSION BGG",
+      "Fusion BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "fusion",
+    "name_zh": "FUSION",
+    "name_en": "Fusion",
+    "aliases_zh": [],
+    "bgg_id": 103236,
+    "bgg_url": "https://boardgamegeek.com/boardgame/103236",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Card Game",
+      "Real-time"
+    ],
+    "categories_zh": [
+      "動作／敏捷",
+      "卡牌",
+      "即時制"
+    ],
+    "mechanics": [
+      "Pattern Recognition"
+    ],
+    "mechanics_zh": [
+      "圖形辨識"
+    ],
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/0K2iadRs2BrfA5VMWiNtdw__small@2x/img/S2ALTb1s6BFmu6ZXmYWaOMbFVBg=/fit-in/400x300/filters:strip_icc()/pic1291108.jpg",
+    "price_msrp_twd": 390,
+    "price_twd": 390,
+    "used_price_twd": 234,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "FUSION BGG",
+      "Fusion BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
+    "id": "finding_dory:_wo_seid_ihr?",
+    "name_zh": "FINDING DORY",
+    "name_en": "Finding Dory: Wo seid ihr?",
+    "aliases_zh": [],
+    "bgg_id": 294697,
+    "bgg_url": "https://boardgamegeek.com/boardgame/294697",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 0.0,
+    "categories": [
+      "Animals",
+      "Children's Game",
+      "Movies / TV / Radio theme"
+    ],
+    "categories_zh": [
+      "動物",
+      "兒童",
+      "影視／廣播主題"
+    ],
+    "mechanics": [],
+    "mechanics_zh": [],
+    "versions_count": 1,
+    "image": "assets/img/294697.jpg",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 414,
+    "price_note": "",
+    "used_note": "",
+    "stock": 1,
+    "description": "",
+    "search_keywords": [
+      "FINDING DORY BGG",
+      "Finding Dory: Wo seid ihr? BGG"
+    ],
+    "updated_at": "2025-09-22"
+  },
+  {
     "id": "eselsbrücke",
     "name_zh": "驢橋",
     "name_en": "Eselsbrücke",
