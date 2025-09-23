@@ -1,133 +1,147 @@
-# scripts/apply_taxonomy_and_price.py
 import csv, json
-from pathlib import Path
 from collections import defaultdict
+from copy import deepcopy
+from pathlib import Path
 
-MANUAL_CSV = Path("data/manual.csv")
-BGG_IN     = Path("data/bgg_data.json")
-BGG_OUT    = BGG_IN
-CATMAP_CSV = Path("data/category_map_zh.csv")
-MECHMAP_CSV= Path("data/mechanism_map_zh.csv")
-
-MECH_SEED = {
-  "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
-  "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"戰役/卡驅動",
-  "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
-  "Contracts":"合約","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","End Game Bonuses":"終局加分",
-  "Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
-  "Line Drawing":"連線","Loans":"借貸","Memory":"記憶","Modular Board":"模組地圖",
-  "Movement Points":"移動點","Network and Route Building":"路網建設","Negotiation":"談判",
-  "Open Drafting":"公開選牌","Ownership":"所有權","Pattern Recognition":"圖形辨識",
-  "Pick-up and Deliver":"取貨運送","Press Your Luck":"拚運氣","Rock-Paper-Scissors":"剪刀石頭布",
-  "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本/任務/戰役",
-  "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
-  "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
-  "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
-  "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
-  "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
-  "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人"
-}
+MANUAL_CSV=Path("data/manual.csv")
+BGG_IN=Path("data/bgg_data.json")
+BGG_OUT=BGG_IN
+CATMAP_CSV=Path("data/category_map_zh.csv")
+MECHMAP_CSV=Path("data/mechanism_map_zh.csv")
 
 def _int_or_none(x):
     if x is None: return None
-    s = str(x).strip()
-    if s == "" or s.lower() == "none": return None
+    s=str(x).strip()
+    if s=="" or s.lower()=="none": return None
     try: return int(float(s))
     except: return None
 
-def load_manual_multi():
-    """同一個 key（bgg_id/name_zh/bgg_query）允許多筆。"""
-    by_key = defaultdict(list)
-    if not MANUAL_CSV.exists(): return by_key
+# 載入 manual：同時回傳「以 key 查」和「以 bgg_id 分組」
+def load_manual():
+    by_key={}
+    by_bid=defaultdict(list)
+    if not MANUAL_CSV.exists(): return by_key, by_bid
     with MANUAL_CSV.open(encoding="utf-8-sig") as f:
-        r = csv.DictReader(f)
+        r=csv.DictReader(f)
         for row in r:
-            row["manual_override"] = int(row.get("manual_override") or 0)
-            row["price_msrp_twd"]  = _int_or_none(row.get("price_msrp_twd"))
-            row["price_twd"]       = _int_or_none(row.get("price_twd"))
-            row["used_price_twd"]  = _int_or_none(row.get("used_price_twd"))
-            row["stock"]           = _int_or_none(row.get("stock"))
+            # 清理常用欄位
+            row["manual_override"]=int(row.get("manual_override") or 0)
+            row["price_msrp_twd"]=_int_or_none(row.get("price_msrp_twd"))
+            row["price_twd"]=_int_or_none(row.get("price_twd"))
+            row["used_price_twd"]=_int_or_none(row.get("used_price_twd"))
+            row["stock"]=_int_or_none(row.get("stock"))
             if row.get("image_version_id") is not None:
-                row["image_version_id"] = str(row["image_version_id"]).strip()
+                row["image_version_id"]=str(row["image_version_id"]).strip()
 
-            for key in (str(row.get("bgg_id") or "").strip(),
-                        str(row.get("name_zh") or "").strip(),
-                        str(row.get("bgg_query") or "").strip()):
-                if key:
-                    by_key[key].append(row)
-    return by_key
+            # 兩種索引：key 查找、bgg_id 分組
+            key=str(row.get("bgg_id") or row.get("name_zh") or row.get("bgg_query") or "").strip()
+            if key: by_key[key]=row
+            bid=str(row.get("bgg_id") or "").strip()
+            if bid: by_bid[bid].append(row)
+    return by_key, by_bid
 
 def load_map(csv_path, key_en, key_zh):
-    m = {}
+    m={}
     if not csv_path.exists(): return m
     with csv_path.open(encoding="utf-8-sig") as f:
-        r = csv.DictReader(f)
+        r=csv.DictReader(f)
         for row in r:
-            en = (row.get(key_en) or "").strip()
-            zh = (row.get(key_zh) or "").strip()
-            if en: m[en] = zh or en
+            en=(row.get(key_en) or "").strip()
+            zh=(row.get(key_zh) or "").strip()
+            if en: m[en]=zh or en
     return m
 
-def apply_manual_fields(base, m):
-    out = dict(base)
-    for fld in [
-        "name_zh","name_en_override","alias_zh","category_zh",
-        "price_msrp_twd","price_twd","used_price_twd",
-        "price_note","used_note","manual_override","stock",
-        "description",
-        # 圖片控制（兩個都支援）
-        "image_override","image_version_id",
-        # （可選）自訂連結
-        "link_override","bgg_url_override",
-    ]:
-        if fld in m and m[fld] not in (None, ""):
-            out[fld] = m[fld]
+# 套用一列 manual 到一個 BGG 基底物件
+OVERRIDE_FIELDS = [
+    "name_zh","name_en_override","alias_zh","category_zh",
+    "price_msrp_twd","price_twd","used_price_twd","price_note","used_note",
+    "manual_override","stock","description",
+    "image_override","image_version_id",
+    # 有需要也可加入 link_override/bgg_url_override
+]
 
-    # 別名 → 陣列
-    if out.get("alias_zh"):
-        out["aliases_zh"] = [x.strip() for x in str(out["alias_zh"]).split(";") if x.strip()]
-    return out
+def apply_one_manual(base_obj, mrow):
+    obj = deepcopy(base_obj)
+    for fld in OVERRIDE_FIELDS:
+        if fld in mrow and mrow[fld] not in (None,""):
+            obj[fld] = mrow[fld]
+    # 中文分類
+    if obj.get("category_zh"):
+        obj["categories_zh"]=[x.strip() for x in str(obj["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
+    else:
+        en=obj.get("categories") or []
+        # 先保持英文，中文轉換交由主流程（避免需要 catmap 這裡再讀一次）
+    # 別名
+    if obj.get("alias_zh"):
+        obj["aliases_zh"]=[x.strip() for x in str(obj["alias_zh"]).split(";") if x.strip()]
+    return obj
 
 def main():
     if not BGG_IN.exists():
         print("No data/bgg_data.json; skip apply."); return
 
-    manual_multi = load_manual_multi()
-    catmap = load_map(CATMAP_CSV, "bgg_category_en", "category_zh")
-    mechmap = load_map(MECHMAP_CSV, "bgg_mechanism_en", "mechanism_zh")
+    manual_by_key, manual_by_bid = load_manual()
+    catmap = load_map(CATMAP_CSV,"bgg_category_en","category_zh")
+    mechmap = load_map(MECHMAP_CSV,"bgg_mechanism_en","mechanism_zh")
 
-    base_rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
-    out = []
+    rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
 
-    for r in base_rows:
-        keys = [str(r.get("bgg_id") or "").strip(),
-                str(r.get("name_zh") or "").strip(),
-                str(r.get("bgg_query") or "").strip()]
-        manuals = None
-        for k in keys:
-            if k and k in manual_multi:
-                manuals = manual_multi[k]; break
+    # 先做「原本那一筆」的合併
+    out=[]
+    rows_by_bid = {}
+    for r in rows:
+        rows_by_bid[str(r.get("bgg_id") or "")] = r  # 給 fan-out 用
 
-        if not manuals:
-            out.append(r)
-        else:
-            for m in manuals:
-                out.append(apply_manual_fields(r, m))
+        m=None
+        for k in [str(r.get("bgg_id") or ""), str(r.get("name_zh") or ""), str(r.get("bgg_query") or "")]:
+            if k and k in manual_by_key: m=manual_by_key[k]; break
+        if m:
+            r = apply_one_manual(r, m)
 
-    # 中文分類 & 機制中文
-    for r in out:
+        # 中文分類
         if r.get("category_zh"):
-            r["categories_zh"] = [x.strip() for x in str(r["category_zh"]).replace("；",";")
-                                  .replace("/", ";").split(";") if x.strip()]
+            r["categories_zh"]=[x.strip() for x in str(r["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
         else:
-            en = r.get("categories") or []
-            r["categories_zh"] = [catmap.get(x, x) for x in en]
+            en=r.get("categories") or []
+            r["categories_zh"]=[catmap.get(x,x) for x in en]
 
-        mechs = r.get("mechanics") or []
-        r["mechanics_zh"] = [mechmap.get(x) or MECH_SEED.get(x) or x for x in mechs]
+        # 機制中文
+        mechs=r.get("mechanics") or []
+        r["mechanics_zh"]=[mechmap.get(x,x) for x in mechs]
 
+        # 別名
+        if r.get("alias_zh"):
+            r["aliases_zh"]=[x.strip() for x in str(r["alias_zh"]).split(";") if x.strip()]
+
+        out.append(r)
+
+    # ★ Fan-out：manual.csv 同一 bgg_id 有多筆 → 針對「其餘筆」複製一份
+    for bid, mrows in manual_by_bid.items():
+        if len(mrows) <= 1: 
+            continue
+        base = rows_by_bid.get(bid)
+        if not base: 
+            continue
+        # 第一筆已在上面合併過了；從第二筆開始複製
+        for mrow in mrows[1:]:
+            clone = apply_one_manual(base, mrow)
+
+            # 中文分類
+            if clone.get("category_zh"):
+                clone["categories_zh"]=[x.strip() for x in str(clone["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
+            else:
+                en=clone.get("categories") or []
+                clone["categories_zh"]=[catmap.get(x,x) for x in en]
+
+            mechs=clone.get("mechanics") or []
+            clone["mechanics_zh"]=[mechmap.get(x,x) for x in mechs]
+
+            if clone.get("alias_zh"):
+                clone["aliases_zh"]=[x.strip() for x in str(clone["alias_zh"]).split(";") if x.strip()]
+
+            out.append(clone)
+
+    # 輸出
     BGG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied.")
-
-if __name__ == "__main__":
-    main()
+    print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied + fan-out.")
+if __name__ == "__main__": main()
