@@ -8998,6 +8998,94 @@
     ]
   },
   {
+    "name_zh": "靠背畫家",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/5kGFO5Etsj2yKTUuuBSuTQ__small/img/E8pj_ezLnBR0sXZ411rmV764fTw=/fit-in/200x150/filters:strip_icc()/pic6017249.png",
+    "image_version_id": "",
+    "bgg_id": 332647,
+    "name_en": "Back to Back",
+    "year": 2021,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 10,
+    "time_max": 20,
+    "weight": 0.0,
+    "categories": [
+      "Humor",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Cooperative Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/5kGFO5Etsj2yKTUuuBSuTQ__original/img/wkxoBQFvtYJcUcl3n1Sdgn4Nf_0=/0x0/filters:format(png)/pic6017249.png",
+    "thumb_url": "https://cf.geekdo-images.com/5kGFO5Etsj2yKTUuuBSuTQ__small/img/E8pj_ezLnBR0sXZ411rmV764fTw=/fit-in/200x150/filters:strip_icc()/pic6017249.png",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/5kGFO5Etsj2yKTUuuBSuTQ__small/img/E8pj_ezLnBR0sXZ411rmV764fTw=/fit-in/200x150/filters:strip_icc()/pic6017249.png",
+    "categories_zh": [
+      "幽默",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "合作"
+    ]
+  },
+  {
+    "name_zh": "醉不可能的任務",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1200,
+    "price_twd": 1200,
+    "used_price_twd": 720,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 287272,
+    "name_en": "Mission ImpossiBar",
+    "year": 2018,
+    "players": [
+      5,
+      8
+    ],
+    "time_min": 20,
+    "time_max": 40,
+    "weight": 1.0,
+    "categories": [
+      "Party Game"
+    ],
+    "mechanics": [
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/wB2vf0kLnCZnVpO1v6p1HQ__original/img/xIWKXxLIWEIivrmPu1sJIo_o1pw=/0x0/filters:format(jpeg)/pic4959916.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/wB2vf0kLnCZnVpO1v6p1HQ__small/img/_Yby3eDc2uBpWv_HXtmEdGkd-5I=/fit-in/200x150/filters:strip_icc()/pic4959916.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "派對"
+    ],
+    "mechanics_zh": [
+      "團隊",
+      "角色能力"
+    ],
+    "image": "assets/img/287272-c0693e51.jpg"
+  },
+  {
     "name_zh": "輝煌的羅倫佐",
     "name_en_override": "",
     "alias_zh": "",
@@ -9154,6 +9242,90 @@
     ]
   },
   {
+    "name_zh": "調色盤本色",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 400,
+    "price_twd": 400,
+    "used_price_twd": 200,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 2,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/IPZtml24gKyEF4DiGuUtag__small/img/FOMsIH8hK0dIO0mbmXxUAY2sJxE=/fit-in/200x150/filters:strip_icc()/pic2290144.jpg",
+    "image_version_id": "",
+    "bgg_id": 136529,
+    "name_en": "Colora Go!",
+    "year": 2013,
+    "players": [
+      0,
+      0
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 0.0,
+    "categories": [
+      "Animals",
+      "Children's Game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/IPZtml24gKyEF4DiGuUtag__original/img/5q95X8iZMbWjPhFIlbMJLNFESfs=/0x0/filters:format(jpeg)/pic2290144.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/IPZtml24gKyEF4DiGuUtag__small/img/FOMsIH8hK0dIO0mbmXxUAY2sJxE=/fit-in/200x150/filters:strip_icc()/pic2290144.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/IPZtml24gKyEF4DiGuUtag__small/img/FOMsIH8hK0dIO0mbmXxUAY2sJxE=/fit-in/200x150/filters:strip_icc()/pic2290144.jpg",
+    "categories_zh": [
+      "動物",
+      "兒童"
+    ],
+    "mechanics_zh": []
+  },
+  {
+    "name_zh": "誰是放屁王",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 193592,
+    "name_en": "Gas Out",
+    "year": 2016,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Electronic",
+      "Humor"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/Q7RmdIME-eaRwUDENp2K1A__original/img/XTO0TvYOIelbWM30BwiqUaib93k=/0x0/filters:format(jpeg)/pic3076641.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Q7RmdIME-eaRwUDENp2K1A__small/img/5y2oxMXHfWSc21m06DkJEjyet8w=/fit-in/200x150/filters:strip_icc()/pic3076641.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "電子",
+      "幽默"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/193592-39fb1d47.jpg"
+  },
+  {
     "name_zh": "誰是牛頭王25週年版",
     "name_en_override": "",
     "alias_zh": "",
@@ -9200,6 +9372,204 @@
       "記分重置",
       "同時選擇行動"
     ]
+  },
+  {
+    "name_zh": "衝鋒計程車",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 790,
+    "price_twd": 790,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 2,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 941,
+    "name_en": "Turbo Taxi",
+    "year": 2000,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.4711,
+    "categories": [
+      "Puzzle",
+      "Real-time"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/X4S-b_HDGHNOh5SlmWZFFQ__original/img/sgLsuhlpYdr7-uW2oaYnPlFhi9c=/0x0/filters:format(jpeg)/pic90095.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/X4S-b_HDGHNOh5SlmWZFFQ__small/img/r3EyWWI5BDmsHGEF3wSUv6_5dbE=/fit-in/200x150/filters:strip_icc()/pic90095.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "益智／拼圖",
+      "即時制"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/941-51813ba4.jpg"
+  },
+  {
+    "name_zh": "衝向黃金城",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1700,
+    "price_twd": 1700,
+    "used_price_twd": 1020,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/mFLy85sQwRkZTM7oEsWM0Q__small@2x/img/UIjGAAnq9-l_D16eY6w3VOh5XHM=/fit-in/400x300/filters:strip_icc()/pic6243309.png",
+    "image_version_id": "568755",
+    "bgg_id": 217372,
+    "name_en": "The Quest for El Dorado",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 1.9429,
+    "categories": [
+      "Adventure",
+      "Exploration",
+      "Racing"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building",
+      "Delayed Purchase",
+      "Grid Movement",
+      "Hand Management",
+      "Hexagon Grid",
+      "Modular Board",
+      "Multi-Use Cards",
+      "Open Drafting",
+      "Race",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/b5VyYjNfAxJ4Z-Dx2UWlqg__original/img/-GqQ0EOfg9e3yFVpKgJbPdlunso=/0x0/filters:format(jpeg)/pic7945692.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/b5VyYjNfAxJ4Z-Dx2UWlqg__small/img/TB_X7b0PIfykfnI12rm3bt6rnGY=/fit-in/200x150/filters:strip_icc()/pic7945692.jpg",
+    "versions_count": 26,
+    "image": "https://cf.geekdo-images.com/mFLy85sQwRkZTM7oEsWM0Q__small@2x/img/UIjGAAnq9-l_D16eY6w3VOh5XHM=/fit-in/400x300/filters:strip_icc()/pic6243309.png",
+    "categories_zh": [
+      "冒險",
+      "探索",
+      "競速"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "延遲購買",
+      "格子移動",
+      "手牌管理",
+      "六角格",
+      "模組地圖",
+      "多用途卡",
+      "公開輪抽",
+      "競速",
+      "可變設置"
+    ]
+  },
+  {
+    "name_zh": "蓮花 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/7-kXJ8VcHT_Vy248z8WTLw__small/img/aQgbKeW-hAY-StjZziUlhFTMtjM=/fit-in/200x150/filters:strip_icc()/pic4119988.jpg",
+    "image_version_id": "",
+    "bgg_id": 198525,
+    "name_en": "Lotus",
+    "year": 2016,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.434,
+    "categories": [
+      "Card Game"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management",
+      "Kill Steal",
+      "Layering",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Dh8f10PsgclhlaYbRnkApQ__original/img/Y387tYDQQSHC0N0Ld5ZX3MBx0GY=/0x0/filters:format(jpeg)/pic8037572.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Dh8f10PsgclhlaYbRnkApQ__small/img/CVC82X02UUjfv6K3kpQh1dhaPVM=/fit-in/200x150/filters:strip_icc()/pic8037572.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/7-kXJ8VcHT_Vy248z8WTLw__small/img/aQgbKeW-hAY-StjZziUlhFTMtjM=/fit-in/200x150/filters:strip_icc()/pic4119988.jpg",
+    "categories_zh": [
+      "卡牌"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理",
+      "搶頭功",
+      "疊放",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "糊塗動畫室",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 650,
+    "price_twd": 650,
+    "used_price_twd": 350,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 365597,
+    "name_en": "Chaotic Studio",
+    "year": 2024,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.0,
+    "categories": [
+      "Deduction",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Drawing"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DPWNFvJlZlMcjVyVrHpmhA__original/img/UHpbBCbBZPs2-TZx6s_4n7nswUo=/0x0/filters:format(png)/pic6928997.png",
+    "thumb_url": "https://cf.geekdo-images.com/DPWNFvJlZlMcjVyVrHpmhA__small/img/GKTWdVdFrb3cuae6JRJi3SbbFUc=/fit-in/200x150/filters:strip_icc()/pic6928997.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "推理",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "繪圖"
+    ],
+    "image": "assets/img/365597-90f56236.jpg"
   },
   {
     "name_zh": "瞎掰王SDGS",
