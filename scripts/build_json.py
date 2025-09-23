@@ -1,77 +1,86 @@
 # scripts/build_json.py
-import json, datetime
+import json, datetime, hashlib
 from pathlib import Path
 
 INPUT  = Path("data/bgg_data.json")
 OUTPUT = Path("data/games_full.json")
 
-def slugify(s:str)->str:
-    return (s or "").strip().lower().replace(" ","_")
+def slugify(s: str) -> str:
+    return (s or "").strip().lower().replace(" ", "_")
 
-if not INPUT.exists():
-    print("No data/bgg_data.json; skip build_json."); raise SystemExit(0)
+def make_id(r: dict) -> str:
+    """
+    穩定唯一 id 規則（避免分身互踩）：
+    1) 有 image_override → base-<md5(override)前8>
+    2) 其次用 image_version_id / image_version_used → base-v<ver>
+    3) 否則加 bgg_id → base-<bgg_id>
+    4) 都沒有就用 base
+    base 以 name_en_override > name_en > name_zh > bgg_<id>
+    """
+    bid  = r.get("bgg_id")
+    base = slugify(
+        r.get("name_en_override")
+        or r.get("name_en")
+        or r.get("name_zh")
+        or (f"bgg_{bid}" if bid else "game")
+    )
 
-rows  = json.loads(INPUT.read_text(encoding="utf-8"))
-items = []
-today = datetime.date.today().isoformat()
+    ovr = r.get("image_override")
+    if ovr:
+        return f"{base}-{hashlib.md5(str(ovr).encode('utf-8')).hexdigest()[:8]}"
 
-for r in rows:
-    bid     = r.get("bgg_id")
-    bgg_url = f"https://boardgamegeek.com/boardgame/{bid}" if bid else None
+    ver = r.get("image_version_id") or r.get("image_version_used")
+    if ver:
+        return f"{base}-v{str(ver).strip()}"
 
-    # 名稱（維持你以前的規則）
-    name_zh = r.get("name_zh")
-    name_en = r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
+    if bid:
+        return f"{base}-{bid}"
 
-    # 圖片（重點：CSV 的 image_override 優先）
-    image = r.get("image") or r.get("image_url") or r.get("thumb_url")
-    if r.get("image_override"):
-        image = r["image_override"]   # 還原成你之前的做法：一定吃 CSV 連結
+    return base
 
-    # 搜尋關鍵字
-    search_keywords=[]
-    if name_zh: search_keywords.append(f"{name_zh} BGG")
-    if name_en: search_keywords.append(f"{name_en} BGG")
+def main():
+    if not INPUT.exists():
+        print("No data/bgg_data.json; skip build_json.")
+        return
 
-    # id（維持舊規則；不同 name_zh/EN 會變不同 id）
-    if (name_en or name_zh):
-        item_id = slugify(name_en or name_zh)
-    else:
-        item_id = f"bgg_{bid}"
+    rows   = json.loads(INPUT.read_text(encoding="utf-8"))
+    items  = []
+    today  = datetime.date.today().isoformat()
 
-    items.append({
-      "id": item_id,
-      "name_zh": name_zh,
-      "name_en": name_en,
-      "aliases_zh": r.get("aliases_zh", []),
+    for r in rows:
+        bid     = r.get("bgg_id")
+        name_zh = r.get("name_zh")
+        name_en = r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
 
-      "bgg_id": bid,
-      "bgg_url": bgg_url,
+        # 圖片：CSV 的 image_override 絕對優先
+        image = r.get("image") or r.get("image_url") or r.get("thumb_url")
+        if r.get("image_override"):
+            image = r["image_override"]
 
-      "year": r.get("year"),
-      "players": r.get("players"),
-      "time_min": r.get("time_min"),
-      "time_max": r.get("time_max"),
-      "weight": r.get("weight"),
+        # 建立輸出物件（保留原欄位，再補強必備鍵）
+        item = dict(r)
+        item["id"]       = make_id(r)
+        item["name_zh"]  = name_zh or ""
+        item["name_en"]  = name_en or ""
+        item["image"]    = image or ""
+        if bid and not item.get("bgg_url"):
+            item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
 
-      "categories": r.get("categories") or [],
-      "categories_zh": r.get("categories_zh") or [],
-      "mechanics": r.get("mechanics") or [],
-      "mechanics_zh": r.get("mechanics_zh") or [],
-      "versions_count": r.get("versions_count", 0),
+        if not item.get("search_keywords"):
+            kws = []
+            if name_zh: kws.append(f"{name_zh} BGG")
+            if name_en: kws.append(f"{name_en} BGG")
+            item["search_keywords"] = kws
 
-      "image": image,   # ← 關鍵：用上面決定好的 image（CSV 會蓋過）
-      "price_msrp_twd": r.get("price_msrp_twd"),
-      "price_twd": r.get("price_twd"),
-      "used_price_twd": r.get("used_price_twd"),
-      "price_note": r.get("price_note"),
-      "used_note": r.get("used_note"),
-      "stock": r.get("stock"),
-      "description": r.get("description"),
+        item["updated_at"] = today
+        items.append(item)
 
-      "search_keywords": search_keywords,
-      "updated_at": today
-    })
+    # 排序：中文名 > 英文名
+    items.sort(key=lambda x: (x.get("name_zh") or x.get("name_en") or "").lower())
 
-OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Built {len(items)} entries → {OUTPUT}")
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Built {len(items)} entries → {OUTPUT}")
+
+if __name__ == "__main__":
+    main()
