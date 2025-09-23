@@ -7,6 +7,7 @@ Action Retrieval,行動取回
 Area Majority / Influence,區域控制
 Area Movement,區域移動
 Auction / Bidding,競標
+Auction Compensation,競標補償
 Auction: Fixed Placement,固定出價位
 Auction: Sealed Bid,密封標
 Auction: Turn Order Until Pass,依序出價至棄權
@@ -26,6 +27,7 @@ Connections,連線／連結
 Constrained Bidding,限制式競標
 Contracts,合約
 Cooperative Game,合作
+Crayon Rail System,蠟筆鐵道
 Deck Construction,牌庫構築
 "Deck, Bag, and Pool Building",
 Deduction,推理
@@ -127,3 +129,4 @@ Victory Points as a Resource,分數作為資源
 Voting,投票
 Worker Placement,Different Worker Types
 Worker Placement with Dice Workers,骰子工人
+"Worker Placement, Different Worker Types",

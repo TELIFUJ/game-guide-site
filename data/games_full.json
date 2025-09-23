@@ -51,6 +51,73 @@
     "updated_at": "2025-09-23"
   },
   {
+    "name_zh": "American Rails",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1200,
+    "price_twd": 1200,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 41749,
+    "name_en": "American Rails",
+    "year": 2009,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.8537,
+    "categories": [
+      "Economic",
+      "Trains"
+    ],
+    "mechanics": [
+      "Action Drafting",
+      "Auction / Bidding",
+      "Income",
+      "Investment",
+      "Negotiation",
+      "Network and Route Building",
+      "Stock Holding",
+      "Turn Order: Claim Action",
+      "Victory Points as a Resource"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1pj6mBD81iVx2IrnS0Rt1Q__original/img/XY9wPVFLu3MqjoV-OvQvzbj46B4=/0x0/filters:format(jpeg)/pic1754865.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/1pj6mBD81iVx2IrnS0Rt1Q__small/img/46yT-brOxLy7CB5HeIS8TYranoI=/fit-in/200x150/filters:strip_icc()/pic1754865.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "經濟",
+      "鐵道"
+    ],
+    "mechanics_zh": [
+      "行動選擇（輪抽）",
+      "競標",
+      "收入",
+      "投資",
+      "談判",
+      "路網建設",
+      "持股／股權",
+      "搶先手",
+      "分數作為資源"
+    ],
+    "image": "assets/img/41749-858747df.jpg",
+    "id": "american_rails-41749",
+    "bgg_url": "https://boardgamegeek.com/boardgame/41749",
+    "search_keywords": [
+      "American Rails BGG",
+      "American Rails BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
     "name_zh": "Backyard Builders Treehouse",
     "name_en_override": "",
     "alias_zh": "",
@@ -931,6 +998,124 @@
     "updated_at": "2025-09-23"
   },
   {
+    "name_zh": "Dilluvia Project",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 2,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 139245,
+    "name_en": "Dilluvia Project",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.6512,
+    "categories": [
+      "City Building",
+      "Science Fiction",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Tile Placement",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6fgoKqdjn4JBfgVykPr6wA__original/img/zl7yIOKi3BUEj5QmTYDnFPXYVYc=/0x0/filters:format(jpeg)/pic2602443.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6fgoKqdjn4JBfgVykPr6wA__small/img/AasZiDHeaRZtlVi0tN7lDML-lmk=/fit-in/200x150/filters:strip_icc()/pic2602443.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "城市建設",
+      "科幻",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "板塊擺放",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/139245-5805d715.jpg",
+    "id": "dilluvia_project-139245",
+    "bgg_url": "https://boardgamegeek.com/boardgame/139245",
+    "search_keywords": [
+      "Dilluvia Project BGG",
+      "Dilluvia Project BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "Doomtown: Reloaded",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1600,
+    "price_twd": 1600,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 156714,
+    "name_en": "Doomtown: Reloaded",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 3.6087,
+    "categories": [
+      "American West",
+      "Card Game",
+      "City Building",
+      "Fantasy",
+      "Horror"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Betting and Bluffing",
+      "Hand Management",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/0RRXX6up8XWKoG-r83typg__original/img/-alPVo_JNDGCpHpxpSxZk5Rai1g=/0x0/filters:format(jpeg)/pic1963882.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/0RRXX6up8XWKoG-r83typg__small/img/hc0vcSd7noejoF339K-DDFunvGg=/fit-in/200x150/filters:strip_icc()/pic1963882.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "美國西部",
+      "卡牌",
+      "城市建設",
+      "奇幻",
+      "恐怖"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "下注與唬人",
+      "手牌管理",
+      "角色能力"
+    ],
+    "image": "assets/img/156714-76807d4a.jpg",
+    "id": "doomtown:_reloaded-156714",
+    "bgg_url": "https://boardgamegeek.com/boardgame/156714",
+    "search_keywords": [
+      "Doomtown: Reloaded BGG",
+      "Doomtown: Reloaded BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
     "name_zh": "DOS遊戲卡",
     "name_en_override": "",
     "alias_zh": "",
@@ -982,6 +1167,67 @@
     "updated_at": "2025-09-23"
   },
   {
+    "name_zh": "Eurorails",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 600,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 157,
+    "name_en": "Eurorails",
+    "year": 1990,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 180,
+    "time_max": 240,
+    "weight": 2.7365,
+    "categories": [
+      "Economic",
+      "Trains",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Connections",
+      "Crayon Rail System",
+      "Hexagon Grid",
+      "Network and Route Building",
+      "Pick-up and Deliver"
+    ],
+    "image_url": "https://cf.geekdo-images.com/dRpoTdWSHT70H_e3-c-QSQ__original/img/ys4pvrVLaj2dGFCgjmazNqQT8O4=/0x0/filters:format(jpeg)/pic509670.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/dRpoTdWSHT70H_e3-c-QSQ__small/img/H0ZHngkLpU7z4gGUWCO-PHXB9DQ=/fit-in/200x150/filters:strip_icc()/pic509670.jpg",
+    "versions_count": 7,
+    "categories_zh": [
+      "經濟",
+      "鐵道",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "連線／連結",
+      "蠟筆鐵道",
+      "六角格",
+      "路網建設",
+      "取貨運送"
+    ],
+    "image": "assets/img/157-86cae83e.jpg",
+    "id": "eurorails-157",
+    "bgg_url": "https://boardgamegeek.com/boardgame/157",
+    "search_keywords": [
+      "Eurorails BGG",
+      "Eurorails BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
     "name_zh": "Fastrack",
     "name_en_override": "",
     "alias_zh": "",
@@ -1025,6 +1271,75 @@
     "search_keywords": [
       "Fastrack BGG",
       "Fastrack BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "Feierabend",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1650,
+    "price_twd": 1650,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 310442,
+    "name_en": "Feierabend",
+    "year": 2020,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 75,
+    "weight": 2.6,
+    "categories": [
+      "Economic",
+      "Humor",
+      "Industry / Manufacturing",
+      "Political"
+    ],
+    "mechanics": [
+      "Income",
+      "Investment",
+      "Multiple Maps",
+      "Race",
+      "Solo / Solitaire Game",
+      "Victory Points as a Resource",
+      "Worker Placement",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image_url": "https://cf.geekdo-images.com/lGcdFUgSkOp0aBYsE3z1kA__original/img/pMTV_K2hGxCz-ccYs36wGiNj2v8=/0x0/filters:format(jpeg)/pic5435827.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/lGcdFUgSkOp0aBYsE3z1kA__small/img/d2vgvIrYHGDEVTUk94uG1mIrvac=/fit-in/200x150/filters:strip_icc()/pic5435827.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "幽默",
+      "工業／製造",
+      "政治"
+    ],
+    "mechanics_zh": [
+      "收入",
+      "投資",
+      "多重地圖",
+      "競速",
+      "單人",
+      "分數作為資源",
+      "Different Worker Types",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image": "assets/img/310442-8d54625b.jpg",
+    "id": "feierabend-310442",
+    "bgg_url": "https://boardgamegeek.com/boardgame/310442",
+    "search_keywords": [
+      "Feierabend BGG",
+      "Feierabend BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -1347,6 +1662,83 @@
     "updated_at": "2025-09-23"
   },
   {
+    "name_zh": "Ginkgopolis ‐ German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1200,
+    "price_twd": 1200,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/y8nbyPRxP4B6fNIxET_UCg__small@2x/img/b_AOAJkhAjiUUbZlQ8gx0ip-eZk=/fit-in/400x300/filters:strip_icc()/pic1412371.jpg",
+    "image_version_id": "",
+    "bgg_id": 128271,
+    "name_en": "Ginkgopolis",
+    "year": 2012,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.9121,
+    "categories": [
+      "City Building",
+      "Environmental",
+      "Science Fiction",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Closed Drafting",
+      "End Game Bonuses",
+      "Hand Management",
+      "Income",
+      "Layering",
+      "Modular Board",
+      "Simultaneous Action Selection",
+      "Solo / Solitaire Game",
+      "Square Grid",
+      "Tile Placement",
+      "Turn Order: Progressive"
+    ],
+    "image_url": "https://cf.geekdo-images.com/2y2A4qcoGamLcYNLv8wb5A__original/img/tC1u-idEJeuZui-n806S9nw3oPI=/0x0/filters:format(jpeg)/pic5975231.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/2y2A4qcoGamLcYNLv8wb5A__small/img/U27Rs0NzKCs5s6V5CeA-fw5e4Lc=/fit-in/200x150/filters:strip_icc()/pic5975231.jpg",
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/y8nbyPRxP4B6fNIxET_UCg__small@2x/img/b_AOAJkhAjiUUbZlQ8gx0ip-eZk=/fit-in/400x300/filters:strip_icc()/pic1412371.jpg",
+    "categories_zh": [
+      "城市建設",
+      "環境議題",
+      "科幻",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "封閉輪抽",
+      "終局加分",
+      "手牌管理",
+      "收入",
+      "疊放",
+      "模組地圖",
+      "同時選擇行動",
+      "單人",
+      "方格",
+      "板塊擺放",
+      "回合順序：逐步"
+    ],
+    "id": "ginkgopolis-10643698",
+    "bgg_url": "https://boardgamegeek.com/boardgame/128271",
+    "search_keywords": [
+      "Ginkgopolis ‐ German edition BGG",
+      "Ginkgopolis BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
     "name_zh": "Gruselino",
     "name_en_override": "",
     "alias_zh": "",
@@ -1508,6 +1900,77 @@
     "search_keywords": [
       "Hector Tayleplufor BGG",
       "Hector Tayleplufor BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "Homesteaders Quined Games Masterprint edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1200,
+    "price_twd": 1200,
+    "used_price_twd": 450,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Ns_SaGCF0hfzPrcRmV7uWQ__small@2x/img/iyZaCBHuTUsOipOjHORpBJay7x0=/fit-in/400x300/filters:strip_icc()/pic1406719.jpg",
+    "image_version_id": "",
+    "bgg_id": 26566,
+    "name_en": "Homesteaders",
+    "year": 2009,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 3.045,
+    "categories": [
+      "American West",
+      "City Building",
+      "Economic"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Auction Compensation",
+      "Auction: Fixed Placement",
+      "Auction: Turn Order Until Pass",
+      "Constrained Bidding",
+      "End Game Bonuses",
+      "Income",
+      "Loans",
+      "Open Drafting",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/i61Apbaaj_qvSt0-7NBvag__original/img/byq85D2igqTd0xYwv63hYPXU9AI=/0x0/filters:format(jpeg)/pic1113708.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/i61Apbaaj_qvSt0-7NBvag__small/img/rseIP1ezqnea3sEsT93vZHdjNaw=/fit-in/200x150/filters:strip_icc()/pic1113708.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/Ns_SaGCF0hfzPrcRmV7uWQ__small@2x/img/iyZaCBHuTUsOipOjHORpBJay7x0=/fit-in/400x300/filters:strip_icc()/pic1406719.jpg",
+    "categories_zh": [
+      "美國西部",
+      "城市建設",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "競標補償",
+      "固定出價位",
+      "依序出價至棄權",
+      "限制式競標",
+      "終局加分",
+      "收入",
+      "借貸",
+      "公開輪抽",
+      "Different Worker Types"
+    ],
+    "id": "homesteaders-e3665494",
+    "bgg_url": "https://boardgamegeek.com/boardgame/26566",
+    "search_keywords": [
+      "Homesteaders Quined Games Masterprint edition BGG",
+      "Homesteaders BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -1998,6 +2461,57 @@
     "updated_at": "2025-09-23"
   },
   {
+    "name_zh": "Lignum",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 900,
+    "price_twd": 900,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 174155,
+    "name_en": "Lignum",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.814,
+    "categories": [
+      "Economic"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6JGC3gqeKjCmdlycnynpcw__original/img/nkXkMvDcZJQcoC0NJG7j5b4LZQE=/0x0/filters:format(jpeg)/pic2435028.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6JGC3gqeKjCmdlycnynpcw__small/img/mpZGtclFfkPKgvg_DHwEofAX7Ws=/fit-in/200x150/filters:strip_icc()/pic2435028.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/174155-59bc2a34.jpg",
+    "id": "lignum-174155",
+    "bgg_url": "https://boardgamegeek.com/boardgame/174155",
+    "search_keywords": [
+      "Lignum BGG",
+      "Lignum BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
     "name_zh": "LOOT",
     "name_en_override": "",
     "alias_zh": "",
@@ -2049,6 +2563,67 @@
     "search_keywords": [
       "LOOT BGG",
       "Loot BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "Lunar Rails",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 6663,
+    "name_en": "Lunar Rails",
+    "year": 2003,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 180,
+    "time_max": 240,
+    "weight": 2.7636,
+    "categories": [
+      "Economic",
+      "Science Fiction",
+      "Trains",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Crayon Rail System",
+      "Hexagon Grid",
+      "Network and Route Building",
+      "Pick-up and Deliver"
+    ],
+    "image_url": "https://cf.geekdo-images.com/RQfEmTqGnxpDI-RaUXXIdw__original/img/F-U8CgOJ8MWNMdPs30F0coWeZfU=/0x0/filters:format(jpeg)/pic159313.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/RQfEmTqGnxpDI-RaUXXIdw__small/img/2UBG5m0Sfm4f16wFXmaOfODZLvs=/fit-in/200x150/filters:strip_icc()/pic159313.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "科幻",
+      "鐵道",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "蠟筆鐵道",
+      "六角格",
+      "路網建設",
+      "取貨運送"
+    ],
+    "image": "assets/img/6663-9ea6a7af.jpg",
+    "id": "lunar_rails-6663",
+    "bgg_url": "https://boardgamegeek.com/boardgame/6663",
+    "search_keywords": [
+      "Lunar Rails BGG",
+      "Lunar Rails BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -2361,6 +2936,61 @@
     "search_keywords": [
       "Nino Conillo BGG",
       "Hopp hopp Häschen BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "North American Railways",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 800,
+    "price_twd": 800,
+    "used_price_twd": 300,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 191438,
+    "name_en": "North American Railways",
+    "year": 2016,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 90,
+    "weight": 2.4118,
+    "categories": [
+      "Card Game",
+      "Economic",
+      "Trains"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Stock Holding"
+    ],
+    "image_url": "https://cf.geekdo-images.com/EhFHGbpihB7KBNEuDe0bJw__original/img/KrVXX4Bs4uOZkMbbAc6bMSu1aqg=/0x0/filters:format(png)/pic3847804.png",
+    "thumb_url": "https://cf.geekdo-images.com/EhFHGbpihB7KBNEuDe0bJw__small/img/EydatDnC9as4K-Oiel7ujVS8oSk=/fit-in/200x150/filters:strip_icc()/pic3847804.png",
+    "versions_count": 6,
+    "categories_zh": [
+      "卡牌",
+      "經濟",
+      "鐵道"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "持股／股權"
+    ],
+    "image": "assets/img/191438-84417ca7.jpg",
+    "id": "north_american_railways-191438",
+    "bgg_url": "https://boardgamegeek.com/boardgame/191438",
+    "search_keywords": [
+      "North American Railways BGG",
+      "North American Railways BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -3119,6 +3749,63 @@
     "search_keywords": [
       "Solo BGG",
       "Solo BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "Tajemnicze Domostwo",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 113997,
+    "name_en": "Tajemnicze Domostwo",
+    "year": 2013,
+    "players": [
+      2,
+      7
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 1.8287,
+    "categories": [
+      "Deduction",
+      "Murder / Mystery"
+    ],
+    "mechanics": [
+      "Communication Limits",
+      "Cooperative Game",
+      "Finale Ending",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6aNWmjHtgPrGpNsO-g0-Iw__original/img/r4mNZSUiYkGq4CfDbCyJ6GzO9Gc=/0x0/filters:format(jpeg)/pic2601636.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6aNWmjHtgPrGpNsO-g0-Iw__small/img/GwtdrIVeIZSGvz0zX-OG8sWdc1A=/fit-in/200x150/filters:strip_icc()/pic2601636.jpg",
+    "versions_count": 9,
+    "categories_zh": [
+      "推理",
+      "懸疑／推理"
+    ],
+    "mechanics_zh": [
+      "溝通限制",
+      "合作",
+      "終章結束",
+      "手牌管理"
+    ],
+    "image": "assets/img/113997-b9af2f03.jpg",
+    "id": "tajemnicze_domostwo-113997",
+    "bgg_url": "https://boardgamegeek.com/boardgame/113997",
+    "search_keywords": [
+      "Tajemnicze Domostwo BGG",
+      "Tajemnicze Domostwo BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -5379,6 +6066,59 @@
     "updated_at": "2025-09-23"
   },
   {
+    "name_zh": "機智新星",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 790,
+    "price_twd": 790,
+    "used_price_twd": 350,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/GU95HQeabmBtcwTOBp9JPQ__small@2x/img/2QzbUkcOsvRNAlFAbTy5do69aXM=/fit-in/400x300/filters:strip_icc()/pic6040303.png",
+    "image_version_id": "",
+    "bgg_id": 329812,
+    "name_en": "Genius Star",
+    "year": 2020,
+    "players": [
+      1,
+      2
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 1.6667,
+    "categories": [
+      "Puzzle",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Pattern Building",
+      "Real-Time"
+    ],
+    "image_url": "https://cf.geekdo-images.com/YYaB1gS3qv1Ahw7W1bITHQ__original/img/Lq4VKG9CklAGv-5oJrwHYNJzL9A=/0x0/filters:format(jpeg)/pic8497593.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/YYaB1gS3qv1Ahw7W1bITHQ__small/img/PGoFJou_UKnxJ1aauHrRmSP3p5Q=/fit-in/200x150/filters:strip_icc()/pic8497593.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/GU95HQeabmBtcwTOBp9JPQ__small@2x/img/2QzbUkcOsvRNAlFAbTy5do69aXM=/fit-in/400x300/filters:strip_icc()/pic6040303.png",
+    "categories_zh": [
+      "益智／拼圖",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "圖案建構",
+      "即時制"
+    ],
+    "id": "genius_star-66658040",
+    "bgg_url": "https://boardgamegeek.com/boardgame/329812",
+    "search_keywords": [
+      "機智新星 BGG",
+      "Genius Star BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
     "name_zh": "權力的遊戲 :卡坦 (主/中文)",
     "name_en_override": "",
     "alias_zh": "",
@@ -6683,6 +7423,57 @@
     "updated_at": "2025-09-23"
   },
   {
+    "name_zh": "獨角獸莉莉 (主/中文)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 630,
+    "price_twd": 630,
+    "used_price_twd": 350,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 3,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 159566,
+    "name_en": "Unicorn Glitterluck: Cloud Crystals",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.2812,
+    "categories": [
+      "Children's Game"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Roll / Spin and Move"
+    ],
+    "image_url": "https://cf.geekdo-images.com/U6atz_DE97XrLajSJdJ97Q__original/img/_PGlJGGNtKyFSoQ3zzYSw4WZDJQ=/0x0/filters:format(png)/pic8905876.png",
+    "thumb_url": "https://cf.geekdo-images.com/U6atz_DE97XrLajSJdJ97Q__small/img/mjMev4PueQfHCklCMfqTjSoBlx0=/fit-in/200x150/filters:strip_icc()/pic8905876.png",
+    "versions_count": 12,
+    "categories_zh": [
+      "兒童"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "擲骰／轉盤移動"
+    ],
+    "image": "assets/img/159566-312e5a92.jpg",
+    "id": "unicorn_glitterluck:_cloud_crystals-159566",
+    "bgg_url": "https://boardgamegeek.com/boardgame/159566",
+    "search_keywords": [
+      "獨角獸莉莉 (主/中文) BGG",
+      "Unicorn Glitterluck: Cloud Crystals BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
     "name_zh": "獴鷲派對",
     "name_en_override": "",
     "alias_zh": "",
@@ -7143,6 +7934,67 @@
     "search_keywords": [
       "瓊漿 BGG",
       "Nectar BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "瓢蟲彩妝宴",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 990,
+    "price_twd": 990,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/GxL9OfJvFcUp0dH0_CE2mg__small@2x/img/tUV3seq8r5Yi3hepEtGqTPD6gvg=/fit-in/400x300/filters:strip_icc()/pic3089126.jpg",
+    "image_version_id": "",
+    "bgg_id": 4522,
+    "name_en": "The Ladybug's Costume Party",
+    "year": 2002,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 1.0435,
+    "categories": [
+      "Animals",
+      "Children's Game",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Memory",
+      "Pattern Recognition",
+      "Roll / Spin and Move",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6hZSsJldR55FNgBD-c2iVw__original/img/l82EL2h385zQF6bpUa7cobzLr-c=/0x0/filters:format(jpeg)/pic6952092.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6hZSsJldR55FNgBD-c2iVw__small/img/eh-l7Qh_k7-Cc37X_F1nfdzrY-8=/fit-in/200x150/filters:strip_icc()/pic6952092.jpg",
+    "versions_count": 16,
+    "image": "https://cf.geekdo-images.com/GxL9OfJvFcUp0dH0_CE2mg__small@2x/img/tUV3seq8r5Yi3hepEtGqTPD6gvg=/fit-in/400x300/filters:strip_icc()/pic3089126.jpg",
+    "categories_zh": [
+      "動物",
+      "兒童",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "記憶",
+      "圖形辨識",
+      "擲骰／轉盤移動",
+      "收集套組"
+    ],
+    "id": "the_ladybug's_costume_party-c16d9261",
+    "bgg_url": "https://boardgamegeek.com/boardgame/4522",
+    "search_keywords": [
+      "瓢蟲彩妝宴 BGG",
+      "The Ladybug's Costume Party BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -8166,6 +9018,57 @@
     "search_keywords": [
       "穆拉諾-光影大師 BGG",
       "Murano: Light Masters BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "積多寶",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 590,
+    "price_twd": 590,
+    "used_price_twd": 290,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/RiJULVQqFXCEem_lgfDHkA__small@2x/img/KQ7vTnj-M5mb7JQFVcQPcgETlmo=/fit-in/400x300/filters:strip_icc()/pic6743239.jpg",
+    "image_version_id": "",
+    "bgg_id": 330936,
+    "name_en": "Keetoo",
+    "year": 2016,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 15,
+    "weight": 0.0,
+    "categories": [
+      "Card Game",
+      "Memory"
+    ],
+    "mechanics": [
+      "Speed Matching"
+    ],
+    "image_url": "https://cf.geekdo-images.com/FVtlqxPDYUXZLwNf1p_Nkw__original/img/d5fR8Pp3DJqwGNWfwSCFPXuvSaM=/0x0/filters:format(jpeg)/pic5981029.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/FVtlqxPDYUXZLwNf1p_Nkw__small/img/_IO3aQpQIvaxtOouZ5HY__CSzco=/fit-in/200x150/filters:strip_icc()/pic5981029.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/RiJULVQqFXCEem_lgfDHkA__small@2x/img/KQ7vTnj-M5mb7JQFVcQPcgETlmo=/fit-in/400x300/filters:strip_icc()/pic6743239.jpg",
+    "categories_zh": [
+      "卡牌",
+      "記憶"
+    ],
+    "mechanics_zh": [
+      "速度配對"
+    ],
+    "id": "keetoo-fbd20335",
+    "bgg_url": "https://boardgamegeek.com/boardgame/330936",
+    "search_keywords": [
+      "積多寶 BGG",
+      "Keetoo BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -9554,6 +10457,61 @@
     "search_keywords": [
       "蘇格蘭特警 BGG",
       "Scotland Yard BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "螞蟻與蚱蜢",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 690,
+    "price_twd": 690,
+    "used_price_twd": 200,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/znLOQZKr3_x4bFaL6jUtTQ__small@2x/img/DQyTiK9StEGiZQnuhvuxnndecU4=/fit-in/400x300/filters:strip_icc()/pic2697139.jpg",
+    "image_version_id": "",
+    "bgg_id": 152851,
+    "name_en": "Tales & Games: The Grasshopper & the Ant",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.5333,
+    "categories": [
+      "Animals",
+      "Bluffing",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Set Collection",
+      "Stock Holding"
+    ],
+    "image_url": "https://cf.geekdo-images.com/_-2k_tZO6SXxmaNKq8NZmg__original/img/cvpIRL0vEiKFGvbHXGzjxcgajhY=/0x0/filters:format(jpeg)/pic2359426.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/_-2k_tZO6SXxmaNKq8NZmg__small/img/tE_B_Md6N3J5tPmb6KGvCWTLph0=/fit-in/200x150/filters:strip_icc()/pic2359426.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/znLOQZKr3_x4bFaL6jUtTQ__small@2x/img/DQyTiK9StEGiZQnuhvuxnndecU4=/fit-in/400x300/filters:strip_icc()/pic2697139.jpg",
+    "categories_zh": [
+      "動物",
+      "唬人",
+      "小說改編"
+    ],
+    "mechanics_zh": [
+      "收集套組",
+      "持股／股權"
+    ],
+    "id": "tales_&_games:_the_grasshopper_&_the_ant-e308b26a",
+    "bgg_url": "https://boardgamegeek.com/boardgame/152851",
+    "search_keywords": [
+      "螞蟻與蚱蜢 BGG",
+      "Tales & Games: The Grasshopper & the Ant BGG"
     ],
     "updated_at": "2025-09-23"
   },
