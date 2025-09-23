@@ -1648,7 +1648,7 @@
     "manual_override": 1,
     "stock": 3,
     "description": "",
-    "image_override": "https://cf.geekdo-images.com/Vy3uaEqZdM_zRAz02hLY-w__small@2x/img/3sxbfE9FwH24TJuhsAjQo_T0mDs=/fit-in/400x300/filters:strip_icc()/pic2713140.jpg",
+    "image_override": "",
     "image_version_id": "",
     "bgg_id": 103236,
     "name_en": "Fusion",
@@ -1671,7 +1671,6 @@
     "image_url": "https://cf.geekdo-images.com/cbZLZhv6LmzjqmoHl7TZQA__original/img/EiicWSfEDBTigGCp-yo1KleovSY=/0x0/filters:format(jpeg)/pic1964213.jpg",
     "thumb_url": "https://cf.geekdo-images.com/cbZLZhv6LmzjqmoHl7TZQA__small/img/D4oHr76LCbXcpUSk5NhrYIBndso=/fit-in/200x150/filters:strip_icc()/pic1964213.jpg",
     "versions_count": 8,
-    "image": "https://cf.geekdo-images.com/Vy3uaEqZdM_zRAz02hLY-w__small@2x/img/3sxbfE9FwH24TJuhsAjQo_T0mDs=/fit-in/400x300/filters:strip_icc()/pic2713140.jpg",
     "categories_zh": [
       "動作／敏捷",
       "卡牌",
@@ -1679,7 +1678,8 @@
     ],
     "mechanics_zh": [
       "圖形辨識"
-    ]
+    ],
+    "image": "assets/img/103236-dbc4e7a5.jpg"
   },
   {
     "name_zh": "FUSION",
@@ -1740,7 +1740,7 @@
     "manual_override": 1,
     "stock": 3,
     "description": "",
-    "image_override": "https://cf.geekdo-images.com/Vy3uaEqZdM_zRAz02hLY-w__small@2x/img/3sxbfE9FwH24TJuhsAjQo_T0mDs=/fit-in/400x300/filters:strip_icc()/pic2713140.jpg",
+    "image_override": "https://cf.geekdo-images.com/0K2iadRs2BrfA5VMWiNtdw__small@2x/img/S2ALTb1s6BFmu6ZXmYWaOMbFVBg=/fit-in/400x300/filters:strip_icc()/pic1291108.jpg",
     "image_version_id": "",
     "bgg_id": 103236,
     "name_en": "Fusion",
@@ -1763,7 +1763,6 @@
     "image_url": "https://cf.geekdo-images.com/cbZLZhv6LmzjqmoHl7TZQA__original/img/EiicWSfEDBTigGCp-yo1KleovSY=/0x0/filters:format(jpeg)/pic1964213.jpg",
     "thumb_url": "https://cf.geekdo-images.com/cbZLZhv6LmzjqmoHl7TZQA__small/img/D4oHr76LCbXcpUSk5NhrYIBndso=/fit-in/200x150/filters:strip_icc()/pic1964213.jpg",
     "versions_count": 8,
-    "image": "https://cf.geekdo-images.com/Vy3uaEqZdM_zRAz02hLY-w__small@2x/img/3sxbfE9FwH24TJuhsAjQo_T0mDs=/fit-in/400x300/filters:strip_icc()/pic2713140.jpg",
     "categories_zh": [
       "動作／敏捷",
       "卡牌",
@@ -1771,7 +1770,8 @@
     ],
     "mechanics_zh": [
       "圖形辨識"
-    ]
+    ],
+    "image": "https://cf.geekdo-images.com/0K2iadRs2BrfA5VMWiNtdw__small@2x/img/S2ALTb1s6BFmu6ZXmYWaOMbFVBg=/fit-in/400x300/filters:strip_icc()/pic1291108.jpg"
   },
   {
     "name_zh": "FUSION",
@@ -3827,7 +3827,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 2.6889,
+    "weight": 2.6895,
     "categories": [
       "Adventure",
       "Exploration",
@@ -5723,7 +5723,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.1509,
+    "weight": 1.1507,
     "categories": [
       "Animals",
       "Dice"
@@ -6277,7 +6277,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.1317,
+    "weight": 1.1316,
     "categories": [
       "Card Game"
     ],
@@ -8075,6 +8075,52 @@
     "mechanics_zh": [
       "下注與唬人",
       "手牌管理"
+    ]
+  },
+  {
+    "name_zh": "謀殺之謎:嫌犯遊戲",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1550,
+    "price_twd": 1550,
+    "used_price_twd": 800,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/RPtIjpUvPKEXOF1aQMlAxQ__small@2x/img/2H6duOtWu-1VRlkT6u0wNGN0MGc=/fit-in/400x300/filters:strip_icc()/pic7828970.png",
+    "image_version_id": "",
+    "bgg_id": 346623,
+    "name_en": "Suspect Game",
+    "year": 2021,
+    "players": [
+      4,
+      4
+    ],
+    "time_min": 120,
+    "time_max": 480,
+    "weight": 2.25,
+    "categories": [
+      "Deduction",
+      "Murder / Mystery"
+    ],
+    "mechanics": [
+      "Deduction",
+      "Role Playing"
+    ],
+    "image_url": "https://cf.geekdo-images.com/CBNplbwOWIoPsCQKvPkZbQ__original/img/lq8cSearzZMZtvYLavybkEB65nk=/0x0/filters:format(jpeg)/pic6401991.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/CBNplbwOWIoPsCQKvPkZbQ__small/img/oFgS9p-OmdAMwhpnwED6YiKO2jQ=/fit-in/200x150/filters:strip_icc()/pic6401991.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/RPtIjpUvPKEXOF1aQMlAxQ__small@2x/img/2H6duOtWu-1VRlkT6u0wNGN0MGc=/fit-in/400x300/filters:strip_icc()/pic7828970.png",
+    "categories_zh": [
+      "推理",
+      "懸疑／推理"
+    ],
+    "mechanics_zh": [
+      "推理",
+      "角色扮演"
     ]
   },
   {
@@ -10365,7 +10411,7 @@
     ],
     "time_min": 30,
     "time_max": 45,
-    "weight": 1.6618,
+    "weight": 1.6604,
     "categories": [
       "Animals",
       "Puzzle"
@@ -11133,7 +11179,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.7188,
+    "weight": 1.7156,
     "categories": [
       "Abstract Strategy"
     ],
@@ -11323,7 +11369,7 @@
     ],
     "time_min": 42,
     "time_max": 42,
-    "weight": 1.8914,
+    "weight": 1.8915,
     "categories": [
       "Deduction",
       "Murder / Mystery",
@@ -11617,7 +11663,7 @@
     ],
     "time_min": 30,
     "time_max": 45,
-    "weight": 1.9173,
+    "weight": 1.9174,
     "categories": [
       "Dice",
       "Puzzle"
@@ -12764,5 +12810,269 @@
       "角色能力"
     ],
     "image": "assets/img/322708-8cd01fcc.jpg"
+  },
+  {
+    "name_zh": "Barony",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 600,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/khWmetTHOuTGGluS0LNrfA__small@2x/img/MQJ-Ko0_T_IqllqwQYJo2cR-oEE=/fit-in/400x300/filters:strip_icc()/pic2414579.jpg",
+    "image_version_id": "",
+    "bgg_id": 167513,
+    "name_en": "Barony",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.2773,
+    "categories": [
+      "Abstract Strategy",
+      "Medieval",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Modular Board"
+    ],
+    "image_url": "https://cf.geekdo-images.com/khWmetTHOuTGGluS0LNrfA__original/img/1Fzvtdzw9OA05vA5o56K2KWJhHs=/0x0/filters:format(jpeg)/pic2414579.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/khWmetTHOuTGGluS0LNrfA__small/img/MPuX4oeqYBg_yuWEXZQRCI02elc=/fit-in/200x150/filters:strip_icc()/pic2414579.jpg",
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/khWmetTHOuTGGluS0LNrfA__small@2x/img/MQJ-Ko0_T_IqllqwQYJo2cR-oEE=/fit-in/400x300/filters:strip_icc()/pic2414579.jpg",
+    "categories_zh": [
+      "抽象策略",
+      "中世紀",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "模組地圖"
+    ]
+  },
+  {
+    "name_zh": "Imperial Settlers",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 600,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/pRwsvyfsRJ-lWWwVJCdXNg__small@2x/img/2XMVvqcRyagS1x4ttoR5rY2jxNE=/fit-in/400x300/filters:strip_icc()/pic2871265.jpg",
+    "image_version_id": "",
+    "bgg_id": 154203,
+    "name_en": "Imperial Settlers",
+    "year": 2014,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 90,
+    "weight": 2.7685,
+    "categories": [
+      "Ancient",
+      "Card Game",
+      "City Building",
+      "Civilization"
+    ],
+    "mechanics": [
+      "Closed Drafting",
+      "Contracts",
+      "End Game Bonuses",
+      "Hand Management",
+      "Income",
+      "Multi-Use Cards",
+      "Open Drafting",
+      "Solo / Solitaire Game",
+      "Take That",
+      "Turn Order: Progressive",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/pRwsvyfsRJ-lWWwVJCdXNg__original/img/Cw8O-7dOaO1sZRy95QGImdSm7p8=/0x0/filters:format(jpeg)/pic2871265.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/pRwsvyfsRJ-lWWwVJCdXNg__small/img/-b7sYBaUVxdZ_a33QRfvJY2ccAk=/fit-in/200x150/filters:strip_icc()/pic2871265.jpg",
+    "versions_count": 18,
+    "image": "https://cf.geekdo-images.com/pRwsvyfsRJ-lWWwVJCdXNg__small@2x/img/2XMVvqcRyagS1x4ttoR5rY2jxNE=/fit-in/400x300/filters:strip_icc()/pic2871265.jpg",
+    "categories_zh": [
+      "古代",
+      "卡牌",
+      "城市建設",
+      "文明"
+    ],
+    "mechanics_zh": [
+      "封閉輪抽",
+      "合約",
+      "終局加分",
+      "手牌管理",
+      "收入",
+      "多用途卡",
+      "公開輪抽",
+      "單人",
+      "互害",
+      "回合順序：逐步",
+      "角色能力"
+    ]
+  },
+  {
+    "name_zh": "Camelot: The Build",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1000,
+    "price_twd": 1000,
+    "used_price_twd": 400,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 138973,
+    "name_en": "Camelot: The Build",
+    "year": 2013,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.1,
+    "categories": [
+      "Medieval"
+    ],
+    "mechanics": [
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/A06JtG_yy1PdbnFI8KJt5g__original/img/3U-LaB5U-q9kuzs4XesBl9I51gY=/0x0/filters:format(png)/pic1807233.png",
+    "thumb_url": "https://cf.geekdo-images.com/A06JtG_yy1PdbnFI8KJt5g__small/img/v2-mcdPokK8gBpAiraLEGiA8p10=/fit-in/200x150/filters:strip_icc()/pic1807233.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "板塊擺放"
+    ],
+    "image": "assets/img/138973-e0b23daf.jpg"
+  },
+  {
+    "name_zh": "Frogriders",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 600,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 217362,
+    "name_en": "Frogriders",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 1.2667,
+    "categories": [
+      "Abstract Strategy",
+      "Animals",
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Grid Movement",
+      "Set Collection",
+      "Static Capture"
+    ],
+    "image_url": "https://cf.geekdo-images.com/reBBGFg_mqp-F12eolXPWQ__original/img/doGGYfEr7xVm4DjGBYYNkJH2uAc=/0x0/filters:format(jpeg)/pic3326905.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/reBBGFg_mqp-F12eolXPWQ__small/img/DoIIHxSva09-4wvVOCKyk35IRRg=/fit-in/200x150/filters:strip_icc()/pic3326905.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "抽象策略",
+      "動物",
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "格子移動",
+      "收集套組",
+      "靜態捕獲"
+    ],
+    "image": "assets/img/217362-d884a62b.jpg"
+  },
+  {
+    "name_zh": "Khronos",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1400,
+    "price_twd": 1400,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 25674,
+    "name_en": "Khronos",
+    "year": 2006,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.5616,
+    "categories": [
+      "City Building",
+      "Fantasy",
+      "Medieval",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management",
+      "Multiple Maps",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/38UliyiXQuYP7YuBxy-YtQ__original/img/N2pJhMfX8OdoMvOkBw_jN2qMbA8=/0x0/filters:format(jpeg)/pic1195438.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/38UliyiXQuYP7YuBxy-YtQ__small/img/Aoj7lu1JtC-aYOSFUb9vRCmtAAM=/fit-in/200x150/filters:strip_icc()/pic1195438.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "城市建設",
+      "奇幻",
+      "中世紀",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理",
+      "多重地圖",
+      "板塊擺放"
+    ],
+    "image": "assets/img/25674-d3146fd8.jpg"
   }
 ]
