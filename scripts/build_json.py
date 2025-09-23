@@ -53,7 +53,7 @@ for r in rows:
     )
     final_id = ensure_unique(base_id, signature)
 
-    # ★ 圖片優先順序：image_override > image > image_url > thumb_url
+    # ★ 圖片優先：image_override > image > image_url > thumb_url
     image = r.get("image_override") or r.get("image") or r.get("image_url") or r.get("thumb_url")
 
     item = dict(r)
@@ -61,7 +61,7 @@ for r in rows:
     item["name_en"] = name_en or ""
     item["name_zh"] = name_zh or ""
     item["updated_at"] = today
-    item["image"] = image  # ★ 寫入 image，前端就會優先用你 CSV 的 override
+    item["image"] = image  # ★ 寫入 image，前端會優先顯示 CSV 指定圖片
 
     if bid and not item.get("bgg_url"):
         item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
@@ -73,7 +73,6 @@ for r in rows:
 
     items.append(item)
 
-# 排序讓輸出穩定
 items.sort(key=lambda x: (x.get("name_zh") or x.get("name_en") or "").lower())
 
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
