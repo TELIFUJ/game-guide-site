@@ -13,15 +13,7 @@
     .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
     .card{position:relative;border:1px solid var(--border);padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-    /* 圖片：固定正方形框、完整置入（不裁切） */
-    .poster{
-      width:100%;
-      aspect-ratio:1/1;
-      object-fit:contain;
-      background:#f3f4f6;
-      border-radius:8px;
-      display:block;
-    }
+    .poster{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f3f4f6;border-radius:8px;display:block}
     .price{font-weight:700;margin-top:6px}
     .price small{font-weight:400;color:var(--muted)}
     input,select,label,button{font:inherit}
@@ -35,23 +27,11 @@
     .btn{padding:8px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;cursor:pointer}
     .btn:active{transform:translateY(1px)}
     .row{display:flex;gap:8px;align-items:center}
-
-    /* 可愛收藏按鈕（放大） */
-    .fav-btn{
-      position:absolute;top:10px;right:10px;
-      width:40px;height:40px;
-      display:flex;align-items:center;justify-content:center;
-      background:#fff;border:1px solid var(--border);border-radius:999px;
-      box-shadow:0 2px 8px rgba(0,0,0,.06);
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
-      cursor:pointer;
-    }
+    .fav-btn{position:absolute;top:10px;right:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;cursor:pointer}
     .fav-btn .star{font-size:22px;line-height:1}
     .fav-btn:hover{ transform:scale(1.06); box-shadow:0 4px 14px rgba(0,0,0,.08) }
     .fav-btn.active{ background:#fff7cc; border-color:#facc15 }
-
-    /* 分頁列 */
-    .pagination{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .pagination{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}
     .page-btn{padding:6px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer}
     .page-btn.active{background:#eef2ff;border-color:#c7d2fe}
     .page-btn:disabled{opacity:.5;cursor:not-allowed}
@@ -72,7 +52,6 @@
   <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）"
          autocomplete="off" inputmode="numeric" spellcheck="false">
 
-  <!-- 預設關閉三個勾選 -->
   <label class="checkbox"><input type="checkbox" id="inclUsed"> 含二手價</label>
   <label class="checkbox"><input type="checkbox" id="hotCat"> 熱門分類（≥10）</label>
   <label class="checkbox"><input type="checkbox" id="hotMech"> 熱門機制（≥10）</label>
@@ -108,10 +87,13 @@
   <button id="emailFav" class="btn">Email 收藏清單</button>
 </div>
 
-<!-- 數字分頁列（可直接跳頁） -->
+<!-- 上方數字分頁 -->
 <div id="pager" class="pagination" aria-label="pagination"></div>
 
 <div id="grid" class="grid"></div>
+
+<!-- 底部分頁（新增） -->
+<div id="pager-bottom" class="pagination" aria-label="pagination"></div>
 
 <script>
   // 避免瀏覽器沿用舊自動填入
@@ -130,7 +112,7 @@
     return BASE + String(p).replace(/^\/+/, '');
   }
 
-  // ====== 英→中備援映射（前端備援；後端仍以 *_zh 欄位優先）======
+  // ====== 英→中備援映射 ======
   const CAT_MAP = {
     "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
     "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
@@ -151,7 +133,6 @@
     "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
   };
 
-  // 機制備援（含常見別名）
   const MECH_MAP = {
     "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
     "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"劇本／戰役卡驅動",
@@ -170,12 +151,11 @@
     "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
     "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人",
     "Deck, Bag, and Pool Building":"卡／袋／池構築",
-    "Deck, Bag and Pool Building":"卡／袋／池構築",   // 無逗號版本
+    "Deck, Bag and Pool Building":"卡／袋／池構築",
     "Different Worker Types":"不同工種工人",
     "Worker Placement, Different Worker Types":"多工種工人放置"
   };
 
-  // ====== 工具 ======
   const MIN_CAT_COUNT  = 10;
   const MIN_MECH_COUNT = 10;
   const DATA_URL = absUrl('data/games_full.json') + '?ts=' + Date.now();
@@ -198,11 +178,12 @@
         PAGE_INFO = document.getElementById("pageInfo"),
         DLCSV = document.getElementById("dlCsv"),
         EMAIL = document.getElementById("emailFav"),
-        PAGER = document.getElementById("pager");
+        PAGER_TOP = document.getElementById("pager"),
+        PAGER_BOTTOM = document.getElementById("pager-bottom");
 
   let DATA=[], page=1;
 
-  // 收藏儲存
+  // 收藏
   const favKey = 'bg_favs';
   const favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
   function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
@@ -223,8 +204,7 @@
 
   // 價格
   function priceCandidates(x, includeUsed=true){
-    const out=[];
-    if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
+    const out=[]; if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
     if (includeUsed && x.used_price_twd!=null && x.used_price_twd!=="") out.push(Number(x.used_price_twd));
     return out;
   }
@@ -243,15 +223,13 @@
         (x.name_en||"").replace(/,/g,"，"),
         (getCatsZh(x).join("/")).replace(/,/g,"，"),
         (getMechsZh(x).join("/")).replace(/,/g,"，"),
-        x.price_twd??"", x.used_price_twd??"", x.stock??"", x.bgg_url||""
+        x.price_twd??"", x.used_price_twd??"", x.stock??"", (x.link_override||x.bgg_url_override||x.bgg_url||"")
       ];
       lines.push(vals.join(","));
     });
     const blob = new Blob(["\ufeff"+lines.join("\n")], {type:"text/csv;charset=utf-8"});
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "boardgames.csv";
-    a.click();
+    a.href = URL.createObjectURL(blob); a.download = "boardgames.csv"; a.click();
     URL.revokeObjectURL(a.href);
   }
 
@@ -260,12 +238,12 @@
 ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 機制：${getMechsZh(x).join(" / ")}
 價格：${x.price_twd??"-"}｜二手：${x.used_price_twd??"-"}
-連結：${x.bgg_url||""}\n`).join("\n");
+連結：${x.link_override||x.bgg_url_override||x.bgg_url||""}\n`).join("\n");
     const mailto = `mailto:?subject=${encodeURIComponent("收藏清單")}&body=${encodeURIComponent(body)}`;
     location.href = mailto;
   }
 
-  // 取得圖片 src（外連或本地皆可）
+  // 圖片來源
   function imageSrcOf(x){
     const raw = x.image || x.image_url || x.thumb_url || '';
     const url = absUrl(raw);
@@ -276,7 +254,6 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   fetch(DATA_URL).then(r=>r.json()).then(d=>{
     DATA=d;
     buildOptions();
-    // URL 預設
     const u = new URL(location.href);
     const catQ = u.searchParams.get('cat'), mechQ = u.searchParams.get('mech'), pageQ = parseInt(u.searchParams.get('page')||'1',10);
     if (catQ){ HOTC.checked=false; buildOptions(); ensureOption(CAT, catQ); CAT.value=catQ; }
@@ -295,21 +272,17 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   }
 
   function buildOptions(){
-    // 分類
     const cCounts=new Map();
     DATA.forEach(x=>getCatsZh(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
     CAT.innerHTML='<option value="">全部分類</option>';
-    [...cCounts.entries()]
-      .filter(([n,cnt])=>!HOTC.checked || cnt>=MIN_CAT_COUNT)
+    [...cCounts.entries()].filter(([n,cnt])=>!HOTC.checked || cnt>=MIN_CAT_COUNT)
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
       .forEach(([n])=>{ const o=document.createElement('option'); o.value=n; o.textContent=n; CAT.appendChild(o); });
 
-    // 機制
     const mCounts=new Map();
     DATA.forEach(x=>getMechsZh(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
     MECH.innerHTML='<option value="">全部機制</option>';
-    [...mCounts.entries()]
-      .filter(([n,cnt])=>!HOTM.checked || cnt>=MIN_MECH_COUNT)
+    [...mCounts.entries()].filter(([n,cnt])=>!HOTM.checked || cnt>=MIN_MECH_COUNT)
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
       .forEach(([n])=>{ const o=document.createElement('option'); o.value=n; o.textContent=n; MECH.appendChild(o); });
   }
@@ -322,27 +295,19 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
 
-  // 篩選（CSV/Email 會用到不分頁）
   function filtered(noPaging=false){
     let list = DATA.slice();
-
-    // 關鍵字
     const q = Q.value.trim().toLowerCase();
     if(q){
       list = list.filter(x=>{
-        const blob = [
-          x.name_zh||"", x.name_en||"", ...(x.aliases_zh||[]), ...(x.search_keywords||[])
-        ].join(" ").toLowerCase();
+        const blob = [x.name_zh||"", x.name_en||"", ...(x.aliases_zh||[]), ...(x.search_keywords||[])].join(" ").toLowerCase();
         return blob.includes(q);
       });
     }
-
-    // 分類 & 機制（中文）
     const cSel = CAT.value, mSel = MECH.value;
     if(cSel) list = list.filter(x => getCatsZh(x).includes(cSel));
     if(mSel) list = list.filter(x => getMechsZh(x).includes(mSel));
 
-    // 價格
     const includeUsed = INCL.checked;
     const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
     if (pmin>0 || pmax>0){
@@ -352,11 +317,8 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         return cand.some(p => (pmin>0 ? p>=pmin : true) && (pmax>0 ? p<=pmax : true));
       });
     }
-
-    // 只看收藏
     if (ONLYF.checked) list = list.filter(x=>favs.has(idOf(x)));
 
-    // 排序
     const includeUsedForSort = INCL.checked;
     switch (S.value){
       case "min_price_asc":  list.sort((a,b)=> minPrice(a, includeUsedForSort) - minPrice(b, includeUsedForSort)); break;
@@ -385,28 +347,28 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     saveFavs(); render();
   }
 
-  function renderPager(pages){
-    const MAX_LINKS = 9; // 最多顯示 9 個頁碼
-    PAGER.innerHTML = '';
+  // 渲染到指定容器（上/下兩處）
+  function renderPagerInto(el, pages){
+    const MAX_LINKS = 9;
+    el.innerHTML = '';
     const addBtn = (label, target, disabled=false, active=false)=>{
       const b=document.createElement('button');
       b.className='page-btn'+(active?' active':'');
       b.textContent=label;
       b.disabled=disabled;
       b.onclick=()=>{ if(!disabled){ page=target; render(); scrollToTop(); } };
-      PAGER.appendChild(b);
+      el.appendChild(b);
     };
     addBtn('« 首', 1, page===1);
     addBtn('‹ 上', Math.max(1,page-1), page===1);
 
     let start = Math.max(1, page - Math.floor(MAX_LINKS/2));
     let end   = Math.min(pages, start + MAX_LINKS - 1);
-    start = Math.max(1, end - MAX_LINKS + 1);
+    start     = Math.max(1, end - MAX_LINKS + 1);
 
     for(let i=start;i<=end;i++){
       addBtn(String(i), i, false, i===page);
     }
-
     addBtn('下 ›', Math.min(pages,page+1), page===pages);
     addBtn('末 »', pages, page===pages);
   }
@@ -419,7 +381,10 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     PAGE_INFO.textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
     PREV.disabled = (page<=1);
     NEXT.disabled = (page>=pages);
-    renderPager(pages);
+
+    // 同步兩個分頁列
+    renderPagerInto(PAGER_TOP, pages);
+    renderPagerInto(PAGER_BOTTOM, pages);
 
     G.innerHTML = pageRows.map(x=>{
       const cz = getCatsZh(x);
@@ -428,6 +393,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       const id = idOf(x);
       const fav = favs.has(id);
       const chosenCat = CAT.value, chosenMech = MECH.value;
+      const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
 
       return `
       <div class="card">
@@ -442,11 +408,9 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
         ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
 
-        <!-- 分類 -->
         <div class="chips" aria-label="categories">
           ${cz.map(t=>`<a href="#" class="chip cat" data-cat="${t}">${t===chosenCat?`<b>${t}</b>`:t}</a>`).join('')}
         </div>
-        <!-- 機制（全部顯示、中文） -->
         <div class="chips" aria-label="mechanics">
           ${mz.map(t=>`<a href="#" class="chip mech ${t===chosenMech?'active':''}" data-mech="${t}">${t}</a>`).join('')}
         </div>
@@ -461,12 +425,12 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
 
         <div style="margin-top:6px">
-          <a href="${x.bgg_url||'#'}" target="_blank" rel="nofollow noopener">BGG</a>
+          <a href="${link}" target="_blank" rel="nofollow noopener">BGG</a>
         </div>
       </div>`;
     }).join('');
 
-    // 事件代理：收藏／點 chip 篩選
+    // 收藏／chip 篩選
     G.querySelectorAll('.fav-btn').forEach(btn=>{
       btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
     });
