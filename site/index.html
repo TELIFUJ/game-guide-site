@@ -83,6 +83,8 @@
     <button id="next" class="btn">下一頁 ›</button>
   </div>
   <label class="checkbox"><input type="checkbox" id="onlyFav"> 只看收藏</label>
+  <!-- 新增：隱藏重複（自動合併） -->
+  <label class="checkbox"><input type="checkbox" id="hideDup" checked> 隱藏重複（自動合併）</label>
   <button id="dlCsv" class="btn">下載 CSV</button>
   <button id="emailFav" class="btn">Email 收藏清單</button>
 </div>
@@ -92,7 +94,7 @@
 
 <div id="grid" class="grid"></div>
 
-<!-- 底部分頁（新增） -->
+<!-- 底部分頁 -->
 <div id="pager-bottom" class="pagination" aria-label="pagination"></div>
 
 <script>
@@ -171,6 +173,7 @@
         HOTC = document.getElementById("hotCat"),
         HOTM = document.getElementById("hotMech"),
         ONLYF = document.getElementById("onlyFav"),
+        HIDED = document.getElementById("hideDup"),   // 新增：隱藏重複開關
         STATS = document.getElementById("stats"),
         PAGE_SIZE = document.getElementById("pageSize"),
         PREV = document.getElementById("prev"),
@@ -211,6 +214,48 @@
   function minPrice(x, includeUsed=true){
     const c=priceCandidates(x, includeUsed);
     return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
+  }
+
+  // ===== 重複合併工具（僅顯示用，不改原資料）=====
+  function normalizeImgUrl(s){
+    s = String(s||'').toLowerCase();
+    s = s.replace(/^https?:\/\/[^/]+/, ''); // 去掉網域
+    s = s.replace(/[?#].*$/, '');           // 去掉 query/fragment
+    return s;
+  }
+  function dupKey(x){
+    return [
+      x.bgg_id || '',
+      (x.name_zh || x.name_en || '').trim().toLowerCase(),
+      normalizeImgUrl(x.image || x.image_url || x.thumb_url || '')
+    ].join('|');
+  }
+  // 選出群組裡「較佳」的一張（有 override > 有新品價 > 較便宜 > 庫存高）
+  function isBetter(a,b){
+    const ao = !!a.image_override, bo = !!b.image_override;
+    if (ao !== bo) return ao;
+    const ap = a.price_twd ?? Infinity, bp = b.price_twd ?? Infinity;
+    if (ap !== bp) return ap < bp;
+    const as = a.stock ?? -1, bs = b.stock ?? -1;
+    if (as !== bs) return as > bs;
+    return false;
+  }
+  function dedupList(list){
+    const pick = new Map();
+    const counts = new Map();
+    for (const x of list){
+      const k = dupKey(x);
+      const cur = pick.get(k);
+      if (!cur || isBetter(x, cur)) pick.set(k, x);
+      counts.set(k, (counts.get(k)||0)+1);
+    }
+    const out = [];
+    for (const [k, x] of pick.entries()){
+      const clone = {...x};
+      clone._variant_count = counts.get(k)||1;
+      out.push(clone);
+    }
+    return out;
   }
 
   // 匯出
@@ -290,6 +335,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1;render();}));
   [HOTC,HOTM].forEach(el=>el.addEventListener('change',()=>{ buildOptions(); page=1; render(); }));
   ONLYF.addEventListener('change', ()=>{ page=1; render(); });
+  HIDED.addEventListener('change', ()=>{ page=1; render(); }); // 新增
   PREV.addEventListener('click', ()=>{ if(page>1){page--; render(); scrollToTop();}});
   NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); scrollToTop();}});
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
@@ -329,6 +375,11 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       case "used_desc":      list.sort((a,b)=>(b.used_price_twd??-1)-(a.used_price_twd??-1)); break;
       case "weight_asc":     list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12)); break;
       case "weight_desc":    list.sort((a,b)=>(b.weight??-1)-(a.weight??-1)); break;
+    }
+
+    // ★ 勾選時，將視覺上的重複（同 bgg_id＋同名稱＋同圖片）合併
+    if (HIDED.checked){
+      list = dedupList(list);
     }
 
     const total=list.length;
@@ -420,6 +471,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
           ${x.price_twd?`$${x.price_twd}`:''}
           ${x.used_price_twd?` ｜二手 $${x.used_price_twd}`:''}
         </div>
+        ${x._variant_count>1 ? `<div class="muted" style="margin-top:2px"><small>變體：${x._variant_count}</small></div>` : ''}
         ${x.price_note?`<div class="muted" style="margin-top:4px">${x.price_note}</div>`:''}
         ${x.used_note?`<div class="muted" style="margin-top:2px">${x.used_note}</div>`:''}
         ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
