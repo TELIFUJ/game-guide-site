@@ -1,85 +1,48 @@
 # scripts/build_json.py
-import json, datetime, hashlib
+import json, datetime
 from pathlib import Path
 
-INPUT  = Path("data/bgg_data.json")
-OUTPUT = Path("data/games_full.json")
+INPUT=Path("data/bgg_data.json")
+OUTPUT=Path("data/games_full.json")
 
-def slugify(s: str) -> str:
-    return (s or "").strip().lower().replace(" ", "_")
+def slugify(s:str)->str:
+    return (s or "").strip().lower().replace(" ","_")
 
 if not INPUT.exists():
-    print("No data/bgg_data.json; skip build_json.")
-    raise SystemExit(0)
+    print("No data/bgg_data.json; skip build_json."); raise SystemExit(0)
 
-rows   = json.loads(INPUT.read_text(encoding="utf-8"))
-items  = []
-today  = datetime.date.today().isoformat()
-
-# 規則：用 名稱/版本/override/bgg_id 組穩定 id
-def make_item_id(name_en, name_zh, bid, r):
-    base = slugify(name_en or name_zh or (f"bgg_{bid}" if bid else "game"))
-    ver = r.get("image_version_id") or r.get("image_version_used")
-    if ver:
-        return f"{base}-v{str(ver).strip()}"
-    if r.get("image_override"):
-        suffix = hashlib.md5(r["image_override"].encode("utf-8")).hexdigest()[:8]
-        return f"{base}-{suffix}"
-    if bid:
-        return f"{base}-{bid}"
-    return base
-
-# 聰明去重：只有完全相同條件再重複，才加 -2、-3...
-_seen = {}  # {item_id: {"sigs": set(), "dup": 1}}
-def ensure_unique(item_id: str, signature: tuple) -> str:
-    bucket = _seen.setdefault(item_id, {"sigs": set(), "dup": 1})
-    if signature in bucket["sigs"]:
-        bucket["dup"] += 1
-        return f"{item_id}-{bucket['dup']}"
-    else:
-        bucket["sigs"].add(signature)
-        return item_id
+rows=json.loads(INPUT.read_text(encoding="utf-8"))
+items=[]; today=datetime.date.today().isoformat()
 
 for r in rows:
-    bid      = r.get("bgg_id")
-    name_en  = r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
-    name_zh  = r.get("name_zh")
-    base_id  = make_item_id(name_en, name_zh, bid, r)
+    bid=r.get("bgg_id")
+    bgg_url=f"https://boardgamegeek.com/boardgame/{bid}" if bid else None
+    name_zh=r.get("name_zh")
+    name_en=r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
 
-    signature = (
-        bid,
-        r.get("image_version_id"),
-        r.get("image_version_used"),
-        r.get("image_override"),
-    )
-    final_id = ensure_unique(base_id, signature)
+    # 圖片：**永遠以 image_override 優先**；否則回退到 image / image_url / thumb_url
+    image = r.get("image_override") or r.get("image") or r.get("image_url") or r.get("thumb_url")
 
-    # image：以 image_override 最高優先
-    image = r.get("image")
-    if r.get("image_override"):
-        image = r["image_override"]
-    if not image:
-        image = r.get("image_url") or r.get("thumb_url")
+    search_keywords=[]
+    if name_zh: search_keywords.append(f"{name_zh} BGG")
+    if name_en: search_keywords.append(f"{name_en} BGG")
 
-    item = dict(r)
-    item["id"] = final_id
-    item["name_en"] = name_en or ""
-    item["name_zh"] = name_zh or ""
-    item["image"]   = image
-    item["updated_at"] = today
+    items.append({
+        "id": (name_en or name_zh or f"bgg_{bid}").lower().replace(" ","_") if (name_en or name_zh) else f"bgg_{bid}",
+        "name_zh": name_zh, "name_en": name_en, "aliases_zh": r.get("aliases_zh", []),
+        "bgg_id": bid, "bgg_url": r.get("bgg_url") or bgg_url,
+        "year": r.get("year"), "players": r.get("players"),
+        "time_min": r.get("time_min"), "time_max": r.get("time_max"), "weight": r.get("weight"),
+        "categories": r.get("categories") or [], "categories_zh": r.get("categories_zh") or [],
+        "mechanics": r.get("mechanics") or [], "mechanics_zh": r.get("mechanics_zh") or [],
+        "versions_count": r.get("versions_count", 0),
+        "image": image,
+        "price_msrp_twd": r.get("price_msrp_twd"), "price_twd": r.get("price_twd"),
+        "used_price_twd": r.get("used_price_twd"), "price_note": r.get("price_note"),
+        "used_note": r.get("used_note"), "stock": r.get("stock"), "description": r.get("description"),
+        "search_keywords": r.get("search_keywords") or search_keywords,
+        "updated_at": today
+    })
 
-    if bid and not item.get("bgg_url"):
-        item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
-    if not item.get("search_keywords"):
-        kws = []
-        if item["name_zh"]: kws.append(f"{item['name_zh']} BGG")
-        if item["name_en"]: kws.append(f"{item['name_en']} BGG")
-        item["search_keywords"] = kws
-
-    items.append(item)
-
-items.sort(key=lambda x: (x.get("name_zh") or x.get("name_en") or "").lower())
-
-OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"Built {len(items)} entries → {OUTPUT}")
