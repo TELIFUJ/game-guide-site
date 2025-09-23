@@ -1,123 +1,144 @@
-          # --- apply_taxonomy_and_price.py ---
-          cat <<'PY' > scripts/apply_taxonomy_and_price.py
-          import csv, json
-          from collections import defaultdict
-          from copy import deepcopy
-          from pathlib import Path
+# scripts/apply_taxonomy_and_price.py
+import csv, json
+from pathlib import Path
 
-          MANUAL_CSV=Path("data/manual.csv")
-          BGG_IN=Path("data/bgg_data.json")
-          BGG_OUT=BGG_IN
-          CATMAP_CSV=Path("data/category_map_zh.csv")
-          MECHMAP_CSV=Path("data/mechanism_map_zh.csv")
+MANUAL_CSV = Path("data/manual.csv")
+BGG_IN     = Path("data/bgg_data.json")
+BGG_OUT    = BGG_IN
+CATMAP_CSV = Path("data/category_map_zh.csv")
+MECHMAP_CSV= Path("data/mechanism_map_zh.csv")
 
-          def _int_or_none(x):
-              if x is None: return None
-              s=str(x).strip()
-              if s=="" or s.lower()=="none": return None
-              try: return int(float(s))
-              except: return None
+def _int_or_none(x):
+    if x is None: return None
+    s=str(x).strip()
+    if s=="" or s.lower()=="none": return None
+    try: return int(float(s))
+    except: return None
 
-          def load_manual():
-              by_key={}
-              by_bid=defaultdict(list)
-              if not MANUAL_CSV.exists(): return by_key, by_bid
-              with MANUAL_CSV.open(encoding="utf-8-sig") as f:
-                  r=csv.DictReader(f)
-                  for row in r:
-                      row["manual_override"]=int(row.get("manual_override") or 0)
-                      row["price_msrp_twd"]=_int_or_none(row.get("price_msrp_twd"))
-                      row["price_twd"]=_int_or_none(row.get("price_twd"))
-                      row["used_price_twd"]=_int_or_none(row.get("used_price_twd"))
-                      row["stock"]=_int_or_none(row.get("stock"))
-                      if row.get("image_version_id") is not None:
-                          row["image_version_id"]=str(row["image_version_id"]).strip()
+def load_manual_rows():
+    """
+    讀完整個 manual.csv，保留『多列同 bgg_id』，並建立三種索引：
+    by_id[str(bgg_id)] -> [rows...]
+    by_name[str(name_zh)] -> [rows...]
+    by_query[str(bgg_query)] -> [rows...]
+    """
+    rows = []
+    by_id, by_name, by_query = {}, {}, {}
+    if not MANUAL_CSV.exists(): 
+        return rows, by_id, by_name, by_query
 
-                      key=str(row.get("bgg_id") or row.get("name_zh") or row.get("bgg_query") or "").strip()
-                      if key: by_key[key]=row
-                      bid=str(row.get("bgg_id") or "").strip()
-                      if bid: by_bid[bid].append(row)
-              return by_key, by_bid
+    with MANUAL_CSV.open(encoding="utf-8-sig") as f:
+        r = csv.DictReader(f)
+        for row in r:
+            # 清洗常用欄位
+            row["manual_override"] = int(row.get("manual_override") or 0)
+            row["price_msrp_twd"]  = _int_or_none(row.get("price_msrp_twd"))
+            row["price_twd"]       = _int_or_none(row.get("price_twd"))
+            row["used_price_twd"]  = _int_or_none(row.get("used_price_twd"))
+            row["stock"]           = _int_or_none(row.get("stock"))
 
-          def load_map(csv_path, key_en, key_zh):
-              m={}
-              if not csv_path.exists(): return m
-              with csv_path.open(encoding="utf-8-sig") as f:
-                  r=csv.DictReader(f)
-                  for row in r:
-                      en=(row.get(key_en) or "").strip()
-                      zh=(row.get(key_zh) or "").strip()
-                      if en: m[en]=zh or en
-              return m
+            if row.get("image_version_id") is not None:
+                row["image_version_id"] = str(row["image_version_id"]).strip()
 
-          OVERRIDE_FIELDS = [
-              "name_zh","name_en_override","alias_zh","category_zh",
-              "price_msrp_twd","price_twd","used_price_twd","price_note","used_note",
-              "manual_override","stock","description",
-              "image_override","image_version_id",
-          ]
+            # 收進 rows 與索引
+            rows.append(row)
+            if row.get("bgg_id"):
+                by_id.setdefault(str(row["bgg_id"]).strip(), []).append(row)
+            if row.get("name_zh"):
+                by_name.setdefault(str(row["name_zh"]).strip(), []).append(row)
+            if row.get("bgg_query"):
+                by_query.setdefault(str(row["bgg_query"]).strip(), []).append(row)
 
-          def apply_one_manual(base_obj, mrow):
-              obj = deepcopy(base_obj)
-              for fld in OVERRIDE_FIELDS:
-                  if fld in mrow and mrow[fld] not in (None,""):
-                      obj[fld] = mrow[fld]
-              if obj.get("alias_zh"):
-                  obj["aliases_zh"]=[x.strip() for x in str(obj["alias_zh"]).split(";") if x.strip()]
-              return obj
+    return rows, by_id, by_name, by_query
 
-          def main():
-              if not BGG_IN.exists():
-                  print("No data/bgg_data.json; skip apply."); return
+def load_map(csv_path, key_en, key_zh):
+    m = {}
+    if not csv_path.exists(): return m
+    with csv_path.open(encoding="utf-8-sig") as f:
+        r = csv.DictReader(f)
+        for row in r:
+            en = (row.get(key_en) or "").strip()
+            zh = (row.get(key_zh) or "").strip()
+            if en: m[en] = zh or en
+    return m
 
-              manual_by_key, manual_by_bid = load_manual()
-              catmap = load_map(CATMAP_CSV,"bgg_category_en","category_zh")
-              mechmap = load_map(MECHMAP_CSV,"bgg_mechanism_en","mechanism_zh")
+def apply_cn_fields(r, catmap, mechmap):
+    # 中文分類
+    if r.get("category_zh"):
+        r["categories_zh"] = [x.strip() for x in str(r["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
+    else:
+        en = r.get("categories") or []
+        r["categories_zh"] = [catmap.get(x, x) for x in en]
 
-              base_rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
+    # 機制中文
+    mechs = r.get("mechanics") or []
+    r["mechanics_zh"] = [mechmap.get(x, x) for x in mechs]
 
-              out=[]
-              rows_by_bid={}
-              # 原筆：先合併一列 manual（bgg_id > name_zh > bgg_query）
-              for r in base_rows:
-                  rows_by_bid[str(r.get("bgg_id") or "")]=r
-                  m=None
-                  for k in [str(r.get("bgg_id") or ""), str(r.get("name_zh") or ""), str(r.get("bgg_query") or "")]:
-                      if k and k in manual_by_key: m=manual_by_key[k]; break
-                  if m:
-                      r = apply_one_manual(r, m)
+    # 別名
+    if r.get("alias_zh"):
+        r["aliases_zh"] = [x.strip() for x in str(r["alias_zh"]).split(";") if x.strip()]
 
-                  # 中文分類
-                  if r.get("category_zh"):
-                      r["categories_zh"]=[x.strip() for x in str(r["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
-                  else:
-                      en=r.get("categories") or []
-                      r["categories_zh"]=[catmap.get(x,x) for x in en]
+def main():
+    if not BGG_IN.exists():
+        print("No data/bgg_data.json; skip apply."); return
 
-                  mechs=r.get("mechanics") or []
-                  r["mechanics_zh"]=[mechmap.get(x,x) for x in mechs]
+    manual_rows, by_id, by_name, by_query = load_manual_rows()
+    catmap = load_map(CATMAP_CSV, "bgg_category_en", "category_zh")
+    mechmap= load_map(MECHMAP_CSV, "bgg_mechanism_en","mechanism_zh")
 
-                  out.append(r)
+    base = json.loads(BGG_IN.read_text(encoding="utf-8"))
+    out  = []
 
-              # fan-out：同一 bgg_id 在 manual.csv 還有其他列 → 再複出新卡
-              for bid, mrows in manual_by_bid.items():
-                  if len(mrows) <= 1: 
-                      continue
-                  base = rows_by_bid.get(bid)
-                  if not base:
-                      continue
-                  for mrow in mrows[1:]:
-                      clone = apply_one_manual(base, mrow)
-                      if clone.get("category_zh"):
-                          clone["categories_zh"]=[x.strip() for x in str(clone["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
-                      else:
-                          en=clone.get("categories") or []
-                          clone["categories_zh"]=[catmap.get(x,x) for x in en]
-                      mechs=clone.get("mechanics") or []
-                      clone["mechanics_zh"]=[mechmap.get(x,x) for x in mechs]
-                      out.append(clone)
+    for r in base:
+        bid = r.get("bgg_id")
+        key_id   = str(bid).strip() if bid not in (None, "") else ""
+        key_name = str(r.get("name_zh") or "").strip()
+        key_q    = str(r.get("bgg_query") or "").strip()
 
-              BGG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied + fan-out.")
-          if __name__ == "__main__": main()
-          PY
+        # 找出所有匹配的 manual 列（允許多筆 → fan-out）
+        matches = []
+        if key_id and key_id in by_id:   matches.extend(by_id[key_id])
+        if key_name and key_name in by_name: matches.extend(by_name[key_name])
+        if key_q and key_q in by_query:  matches.extend(by_query[key_q])
+
+        # 去重（以物件 id 去重即可）
+        seen_ids = set()
+        uniq_matches = []
+        for m in matches:
+            if id(m) in seen_ids: 
+                continue
+            seen_ids.add(id(m))
+            uniq_matches.append(m)
+
+        if not uniq_matches:
+            # 沒有 manual → 原樣（但仍補中文欄位）
+            rr = dict(r)
+            apply_cn_fields(rr, catmap, mechmap)
+            out.append(rr)
+            continue
+
+        # 有 manual → 為每一條 manual 產生一張卡（clone）
+        for m in uniq_matches:
+            rr = dict(r)
+            # 覆寫欄位（包含 image_override、image_version_id）
+            for fld in [
+                "name_zh","name_en_override","alias_zh","category_zh",
+                "price_msrp_twd","price_twd","used_price_twd","price_note","used_note",
+                "manual_override","stock","description",
+                "image_override","image_version_id"
+            ]:
+                if fld in m and m[fld] not in (None, ""):
+                    rr[fld] = m[fld]
+
+            # 優先使用 image_override（真正換圖在 build_json 也會再保險一次）
+            if rr.get("image_override"):
+                rr["image"] = rr["image_override"]
+
+            apply_cn_fields(rr, catmap, mechmap)
+            out.append(rr)
+
+    BGG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied.")
+
+if __name__ == "__main__":
+    main()
