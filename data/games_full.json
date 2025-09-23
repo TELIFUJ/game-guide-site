@@ -8552,7 +8552,7 @@
     "manual_override": 1,
     "stock": 3,
     "description": "",
-    "image_override": "https://cf.geekdo-images.com/WbT4pDP7IzjBZcpapVBJMQ__small@2x/img/in4lSNA_rzKcgLPLc4781nttoks=/fit-in/400x300/filters:strip_icc()/pic684123.jpg",
+    "image_override": "https://cf.geekdo-images.com/H_FqVFfUQzEtu9gWghMV3Q__small/img/sLHPyWXXCTWKZiVMieQ9LQcMOqA=/fit-in/200x150/filters:strip_icc()/pic4489757.jpg",
     "image_version_id": "",
     "bgg_id": 9220,
     "name_en": "Saboteur",
@@ -8585,7 +8585,7 @@
     "image_url": "https://cf.geekdo-images.com/0vJwP6NGa7GHPZKC3gplUw__original/img/TJDCd-PYySXmhQn-LC-y88JPA7U=/0x0/filters:format(jpeg)/pic3989824.jpg",
     "thumb_url": "https://cf.geekdo-images.com/0vJwP6NGa7GHPZKC3gplUw__small/img/B3j-is62fP09eHP34uFG_gsxNQs=/fit-in/200x150/filters:strip_icc()/pic3989824.jpg",
     "versions_count": 58,
-    "image": "https://cf.geekdo-images.com/WbT4pDP7IzjBZcpapVBJMQ__small@2x/img/in4lSNA_rzKcgLPLc4781nttoks=/fit-in/400x300/filters:strip_icc()/pic684123.jpg",
+    "image": "https://cf.geekdo-images.com/H_FqVFfUQzEtu9gWghMV3Q__small/img/sLHPyWXXCTWKZiVMieQ9LQcMOqA=/fit-in/200x150/filters:strip_icc()/pic4489757.jpg",
     "categories_zh": [
       "唬人",
       "卡牌",
@@ -8604,7 +8604,7 @@
       "互害",
       "內鬼"
     ],
-    "id": "saboteur-c1a175ae",
+    "id": "saboteur-78f6dc09",
     "bgg_url": "https://boardgamegeek.com/boardgame/9220",
     "search_keywords": [
       "矮人礦坑 BGG",
@@ -10201,6 +10201,63 @@
     "search_keywords": [
       "萬國爭鋒 BGG",
       "Länder toppen! BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "落筆為城",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 850,
+    "price_twd": 850,
+    "used_price_twd": 500,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 244333,
+    "name_en": "Once Upon a Castle",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.7143,
+    "categories": [
+      "Children's Game",
+      "Dice",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Line Drawing",
+      "Paper-and-Pencil"
+    ],
+    "image_url": "https://cf.geekdo-images.com/G1wfev_SQuLN1leRF0uUpA__original/img/Zg3M_hvKi9p9EU5V8Dbquxma_x8=/0x0/filters:format(png)/pic4062262.png",
+    "thumb_url": "https://cf.geekdo-images.com/G1wfev_SQuLN1leRF0uUpA__small/img/OgliVfwMe3JqTZwt1p_M3ZBsyDY=/fit-in/200x150/filters:strip_icc()/pic4062262.png",
+    "versions_count": 6,
+    "categories_zh": [
+      "兒童",
+      "骰子",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "連線描繪",
+      "紙筆"
+    ],
+    "image": "assets/img/244333-7913e9ef.jpg",
+    "id": "once_upon_a_castle-244333",
+    "bgg_url": "https://boardgamegeek.com/boardgame/244333",
+    "search_keywords": [
+      "落筆為城 BGG",
+      "Once Upon a Castle BGG"
     ],
     "updated_at": "2025-09-23"
   },
@@ -13963,6 +14020,69 @@
     "search_keywords": [
       "電力公司2020版 BGG",
       "Power Grid BGG"
+    ],
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name_zh": "電波畫家",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": 1280,
+    "price_twd": 1280,
+    "used_price_twd": 600,
+    "price_note": "",
+    "used_note": "",
+    "manual_override": 1,
+    "stock": 1,
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 346913,
+    "name_en": "Brainwave Painters",
+    "year": 2021,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 15,
+    "time_max": 40,
+    "weight": 0.0,
+    "categories": [
+      "Fantasy",
+      "Humor",
+      "Party Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Action Timer",
+      "Communication Limits",
+      "Line Drawing",
+      "Paper-and-Pencil",
+      "Turn Order: Progressive"
+    ],
+    "image_url": "https://cf.geekdo-images.com/WpI70e_sTc6o9qvb-Y2oOA__original/img/uyNjWjbwhCe9aPeHhDGJ9ArHMlM=/0x0/filters:format(jpeg)/pic6403159.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/WpI70e_sTc6o9qvb-Y2oOA__small/img/MteigB1c_q6Cgf3vKcgyvzffmZ0=/fit-in/200x150/filters:strip_icc()/pic6403159.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "奇幻",
+      "幽默",
+      "派對",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "行動計時",
+      "溝通限制",
+      "連線描繪",
+      "紙筆",
+      "回合順序：逐步"
+    ],
+    "image": "assets/img/346913-d4123b59.jpg",
+    "id": "brainwave_painters-346913",
+    "bgg_url": "https://boardgamegeek.com/boardgame/346913",
+    "search_keywords": [
+      "電波畫家 BGG",
+      "Brainwave Painters BGG"
     ],
     "updated_at": "2025-09-23"
   },
