@@ -5,6 +5,13 @@ from pathlib import Path
 MANUAL = Path("data/manual.csv")
 OUT    = Path("data/bgg_ids.json")
 
+def _int_or_none(x):
+    if x is None: return None
+    s = str(x).strip()
+    if s == "" or s.lower() == "none": return None
+    try: return int(float(s))
+    except: return None
+
 def bgg_search_to_id(q: str):
     url = f"https://boardgamegeek.com/xmlapi2/search?type=boardgame&query={requests.utils.quote(q)}"
     r = requests.get(url, timeout=30)
@@ -29,28 +36,44 @@ def main():
         OUT.write_text("[]", encoding="utf-8")
         print("No manual.csv → 0"); return
 
-    with MANUAL.open(encoding="utf-8-sig") as f:
+    with MANUAL.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         for r in reader:
             entry = {
-                k: r.get(k) for k in [
-                    "name_zh","name_en_override","alias_zh","category_zh",
-                    "price_msrp_twd","price_twd","used_price_twd",
-                    "price_note","used_note","manual_override",
-                    "stock","description","image_override"
-                ]
+                # 直接往下傳遞的手動欄位（fetch_bgg 會再與 BGG 資料 merge）
+                "name_zh": r.get("name_zh") or None,
+                "name_en_override": r.get("name_en_override") or None,
+                "alias_zh": r.get("alias_zh") or None,
+                "category_zh": r.get("category_zh") or None,
+                "price_msrp_twd": _int_or_none(r.get("price_msrp_twd")),
+                "price_twd": _int_or_none(r.get("price_twd")),
+                "used_price_twd": _int_or_none(r.get("used_price_twd")),
+                "price_note": r.get("price_note") or None,
+                "used_note": r.get("used_note") or None,
+                "manual_override": r.get("manual_override") or None,
+                "stock": _int_or_none(r.get("stock")),
+                "description": r.get("description") or None,
+                "image_override": (r.get("image_override") or "").strip() or None,
+                "image_version_id": (r.get("image_version_id") or "").strip() or None,
+                "link_override": r.get("link_override") or None,
+                "bgg_url_override": r.get("bgg_url_override") or None,
             }
             bid = (r.get("bgg_id") or "").strip()
             q   = (r.get("bgg_query") or "").strip()
+
             if not bid and q:
                 try:
                     bid = bgg_search_to_id(q)
                 except Exception:
                     bid = None
             if bid:
-                entry["bgg_id"] = int(bid)
+                try:
+                    entry["bgg_id"] = int(bid)
+                except:
+                    pass
             if q:
                 entry["bgg_query"] = q
+
             rows.append(entry)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
