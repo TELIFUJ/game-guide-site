@@ -1,4 +1,3 @@
-# scripts/resolve_bgg.py
 import csv, json, requests, xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -33,14 +32,12 @@ def bgg_search_to_id(q: str):
 def main():
     rows = []
     if not MANUAL.exists():
-        OUT.write_text("[]", encoding="utf-8")
-        print("No manual.csv → 0"); return
+        OUT.write_text("[]", encoding="utf-8"); print("No manual.csv → 0"); return
 
     with MANUAL.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         for r in reader:
             entry = {
-                # 直接往下傳遞的手動欄位（fetch_bgg 會再與 BGG 資料 merge）
                 "name_zh": r.get("name_zh") or None,
                 "name_en_override": r.get("name_en_override") or None,
                 "alias_zh": r.get("alias_zh") or None,
@@ -62,15 +59,12 @@ def main():
             q   = (r.get("bgg_query") or "").strip()
 
             if not bid and q:
-                try:
-                    bid = bgg_search_to_id(q)
-                except Exception:
-                    bid = None
+                try: bid = bgg_search_to_id(q)
+                except Exception: bid = None
+
             if bid:
-                try:
-                    entry["bgg_id"] = int(bid)
-                except:
-                    pass
+                try: entry["bgg_id"] = int(bid)
+                except: pass
             if q:
                 entry["bgg_query"] = q
 
