@@ -35,6 +35,14 @@
     .page-btn{padding:6px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer}
     .page-btn.active{background:#eef2ff;border-color:#c7d2fe}
     .page-btn:disabled{opacity:.5;cursor:not-allowed}
+
+    /* --- smart suggestions (新增) --- */
+    .suggest{position:fixed;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:6px;z-index:99;width:min(520px,92vw);max-height:260px;overflow:auto}
+    .suggest.hidden{display:none}
+    .suggest a{display:flex;gap:8px;align-items:center;padding:6px 8px;border-radius:8px;text-decoration:none;color:inherit}
+    .suggest a:hover{background:#f3f4f6}
+    .suggest .meta{font-size:12px;color:var(--muted)}
+    .suggest .ext{margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);display:flex;gap:8px;flex-wrap:wrap}
   </style>
 </head>
 <body>
@@ -43,6 +51,8 @@
   <input id="q" name="q_no_autofill"
          placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <!-- 新增：即時建議容器（會自動定位到 #q 底下） -->
+  <div id="qSuggest" class="suggest hidden"></div>
 
   <select id="catSel"><option value="">全部分類</option></select>
   <select id="mechSel"><option value="">全部機制</option></select>
@@ -173,7 +183,7 @@
         HOTC = document.getElementById("hotCat"),
         HOTM = document.getElementById("hotMech"),
         ONLYF = document.getElementById("onlyFav"),
-        HIDED = document.getElementById("hideDup"),   // 新增：隱藏重複開關
+        HIDED = document.getElementById("hideDup"),
         STATS = document.getElementById("stats"),
         PAGE_SIZE = document.getElementById("pageSize"),
         PREV = document.getElementById("prev"),
@@ -182,7 +192,8 @@
         DLCSV = document.getElementById("dlCsv"),
         EMAIL = document.getElementById("emailFav"),
         PAGER_TOP = document.getElementById("pager"),
-        PAGER_BOTTOM = document.getElementById("pager-bottom");
+        PAGER_BOTTOM = document.getElementById("pager-bottom"),
+        QSUG = document.getElementById("qSuggest");
 
   let DATA=[], page=1;
 
@@ -335,7 +346,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1;render();}));
   [HOTC,HOTM].forEach(el=>el.addEventListener('change',()=>{ buildOptions(); page=1; render(); }));
   ONLYF.addEventListener('change', ()=>{ page=1; render(); });
-  HIDED.addEventListener('change', ()=>{ page=1; render(); }); // 新增
+  HIDED.addEventListener('change', ()=>{ page=1; render(); });
   PREV.addEventListener('click', ()=>{ if(page>1){page--; render(); scrollToTop();}});
   NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); scrollToTop();}});
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
@@ -377,7 +388,6 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       case "weight_desc":    list.sort((a,b)=>(b.weight??-1)-(a.weight??-1)); break;
     }
 
-    // ★ 勾選時，將視覺上的重複（同 bgg_id＋同名稱＋同圖片）合併
     if (HIDED.checked){
       list = dedupList(list);
     }
@@ -404,7 +414,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     el.innerHTML = '';
     const addBtn = (label, target, disabled=false, active=false)=>{
       const b=document.createElement('button');
-      b.className='page-btn'+(active?' active':'');
+      b.className='page-btn'+(active?' active':'' );
       b.textContent=label;
       b.disabled=disabled;
       b.onclick=()=>{ if(!disabled){ page=target; render(); scrollToTop(); } };
@@ -512,6 +522,137 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     url.searchParams.set('page', String(page));
     history.replaceState(null,"",url);
   }
+
+  /* =========================
+     🔎 智慧建議（模糊＋同義詞）
+     ========================= */
+  const ALIAS_DICT = {
+    "矮人金礦": ["矮人礦坑","saboteur"],
+    "凱人金礦": ["矮人礦坑","saboteur"],
+    "卡坦": ["卡坦島","卡坦拓荒者","settlers of catan","catan"],
+    "票車": ["車票之旅","ticket to ride"],
+    "璀璨寶石": ["寶石陣","splendor"],
+    "大鎌": ["大鎌戰","scythe"],
+    "農家樂": ["農場主","agricola"]
+  };
+  function normalizeText(s){
+    return String(s||"").toLowerCase().replace(/\s+|[　]/g,"")
+      .replace(/[：:·•．.]/g,"").replace(/桌[遊游]/g,"").replace(/\(.*?\)|\[.*?\]/g,"");
+  }
+  function bigrams(s){ const n=[]; for(let i=0;i<s.length-1;i++) n.push(s.slice(i,i+2)); return n; }
+  function jaccard(a,b){ const A=new Set(a),B=new Set(b); const inter=[...A].filter(x=>B.has(x)).length; const uni=new Set([...A,...B]).size||1; return inter/uni; }
+  function levenshtein(a,b){
+    a=normalizeText(a); b=normalizeText(b);
+    const m=a.length,n=b.length; if(!m) return n; if(!n) return m;
+    const dp=Array(n+1); for(let j=0;j<=n;j++) dp[j]=j;
+    for(let i=1;i<=m;i++){
+      let prev=dp[0]; dp[0]=i;
+      for(let j=1;j<=n;j++){
+        const tmp=dp[j];
+        dp[j]=Math.min(dp[j]+1, dp[j-1]+1, prev + (a[i-1]===b[j-1]?0:1));
+        prev=tmp;
+      }
+    }
+    return dp[n];
+  }
+  function fuzzyScore(q, label){
+    const nq=normalizeText(q), nl=normalizeText(label);
+    if(!nq || !nl) return 0;
+    const lev=levenshtein(nq,nl);
+    const levNorm = 1 - (lev/Math.max(nq.length, nl.length));
+    const jac=jaccard(bigrams(nq), bigrams(nl));
+    return 0.6*levNorm + 0.4*jac;
+  }
+  function labelsOf(x){
+    const arr=[]; if(x.name_zh) arr.push(x.name_zh); if(x.name_en) arr.push(x.name_en);
+    if(Array.isArray(x.aliases_zh)) arr.push(...x.aliases_zh);
+    return [...new Set(arr.filter(Boolean))];
+  }
+  function expandedQueries(q){
+    const base=[q];
+    const alias = ALIAS_DICT[q] || ALIAS_DICT[normalizeText(q)] || [];
+    return [...new Set([...base, ...alias])];
+  }
+  function topMatchesForQuery(q, limit=8){
+    const qs=expandedQueries(q);
+    const scored = DATA.map(x=>{
+      let best=0, bestLabel="";
+      const labels=labelsOf(x);
+      for(const qq of qs){
+        for(const lb of labels){
+          const s=fuzzyScore(qq, lb);
+          if(s>best){ best=s; bestLabel=lb; }
+        }
+      }
+      return {x, score:best, label:bestLabel};
+    }).filter(o=>o.score>=0.35)
+      .sort((a,b)=>b.score-a.score)
+      .slice(0, limit);
+    return scored;
+  }
+
+  function positionSuggest(){
+    const r = Q.getBoundingClientRect();
+    QSUG.style.left = (r.left + window.scrollX) + 'px';
+    QSUG.style.top  = (r.bottom + window.scrollY + 4) + 'px';
+  }
+  function drawQSuggest(){
+    const q = Q.value.trim();
+    if(!q){ QSUG.classList.add('hidden'); QSUG.innerHTML=''; return; }
+    const matches = topMatchesForQuery(q, 7);
+
+    // 偵測輸入中的機制/分類關鍵字 → 快捷套用
+    const nz = normalizeText(q);
+    const allMechs = new Set(); DATA.forEach(x=>getMechsZh(x).forEach(m=>allMechs.add(m)));
+    const allCats  = new Set(); DATA.forEach(x=>getCatsZh(x).forEach(c=>allCats.add(c)));
+    const hitMechs = [...allMechs].filter(m=>nz.includes(normalizeText(m))).slice(0,5);
+    const hitCats  = [...allCats].filter(c=>nz.includes(normalizeText(c))).slice(0,5);
+
+    const items = matches.map(o=>`
+      <a href="#" data-id="${idOf(o.x)}">
+        <div>${o.x.name_zh||o.x.name_en||''}</div>
+        <div class="meta">${(o.x.name_en||'')}${o.x.name_en?' · ':''}${getMechsZh(o.x).slice(0,3).join(' / ')}</div>
+      </a>`).join('');
+
+    const ext = `
+      <div class="ext">
+        <a href="https://www.google.com/search?q=${encodeURIComponent(q+' 桌遊')}" target="_blank" rel="noopener">Google「${q} 桌遊」</a>
+        <a href="https://boardgamegeek.com/boardgame/search?query=${encodeURIComponent(q)}" target="_blank" rel="noopener">BGG「${q}」</a>
+        ${hitMechs.length||hitCats.length ? `<span class="muted">｜偵測到關鍵字 →</span>`:''}
+        ${hitMechs.map(m=>`<a href="#" data-kind="m" data-val="${m}">套用機制：${m}</a>`).join('')}
+        ${hitCats.map(c=>`<a href="#" data-kind="c" data-val="${c}">套用分類：${c}</a>`).join('')}
+      </div>`;
+
+    QSUG.innerHTML = items + ext;
+    positionSuggest();
+    QSUG.classList.remove('hidden');
+
+    // 點建議 → 將搜尋框填入該名字，並渲染
+    QSUG.querySelectorAll('a[data-id]').forEach(a=>{
+      a.onclick = (e)=>{ e.preventDefault();
+        const id=a.getAttribute('data-id');
+        const x = DATA.find(g=>idOf(g)===id);
+        if(x){
+          Q.value = x.name_zh || x.name_en || '';
+          page=1; render(); QSUG.classList.add('hidden');
+        }
+      };
+    });
+    // 一鍵套用機制/分類 → 設定下拉 & 渲染
+    QSUG.querySelectorAll('a[data-kind]').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault();
+        const kind=a.getAttribute('data-kind'), val=a.getAttribute('data-val');
+        if(kind==='m'){ ensureOption(MECH, val); MECH.value=val; }
+        if(kind==='c'){ ensureOption(CAT,  val); CAT.value=val;  }
+        page=1; render(); QSUG.classList.add('hidden');
+      };
+    });
+  }
+  Q.addEventListener('input', ()=>{ drawQSuggest(); });
+  window.addEventListener('resize', ()=>{ if(!QSUG.classList.contains('hidden')) positionSuggest(); });
+  document.addEventListener('click', (e)=>{
+    if(!QSUG.contains(e.target) && e.target!==Q) QSUG.classList.add('hidden');
+  });
 </script>
 </body>
 </html>
