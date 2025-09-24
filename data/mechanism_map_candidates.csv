@@ -1,15 +1,18 @@
 bgg_mechanism_en,mechanism_zh
 Acting,演技／表演
+Action / Event,行動／事件
 Action Drafting,行動選擇（輪抽）
 Action Points,行動點
 Action Queue,行動序列
 Action Retrieval,行動取回
 Action Timer,行動計時
+Advantage Token,優勢指示物
 Area Majority / Influence,區域控制
 Area Movement,區域移動
 Auction / Bidding,競標
 Auction Compensation,競標補償
 Auction: Fixed Placement,固定出價位
+Auction: Once Around,單圈競標
 Auction: Sealed Bid,密封標
 Auction: Turn Order Until Pass,依序出價至棄權
 Betting and Bluffing,下注與唬人
@@ -20,6 +23,7 @@ Bribery,賄賂
 Campaign / Battle Card Driven,戰役／卡驅動
 Card Play Conflict Resolution,出牌解衝突
 Catch the Leader,追趕領先者
+Chaining,連鎖
 Closed Drafting,封閉輪抽
 Closed Economy Auction,封閉經濟競標
 Commodity Speculation,商品投機
@@ -29,6 +33,7 @@ Constrained Bidding,限制式競標
 Contracts,合約
 Cooperative Game,合作
 Crayon Rail System,蠟筆鐵道
+Critical Hits and Failures,暴擊與失誤
 Deck Construction,牌庫構築
 "Deck, Bag, and Pool Building",
 Deduction,推理
@@ -102,6 +107,7 @@ Rondel,輪轉盤
 Scenario / Mission / Campaign Game,劇本／任務／戰役
 Score-and-Reset Game,記分重置
 Secret Unit Deployment,秘密部署
+Semi-Cooperative Game,半合作
 Set Collection,收集套組
 Simulation,模擬
 Simultaneous Action Selection,同時選擇行動
@@ -116,9 +122,11 @@ Static Capture,靜態捕獲
 Stock Holding,持股／股權
 Storytelling,說故事
 Sudden Death Ending,突然死亡結束
+Tags,標籤
 Take That,互害
 Targeted Clues,定向線索
 Team-Based Game,團隊
+Tech Trees / Tech Tracks,科技樹／軌道
 Three Dimensional Movement,三維移動
 Tile Placement,板塊擺放
 Track Movement,軌道移動

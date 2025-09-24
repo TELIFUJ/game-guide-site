@@ -11184,7 +11184,7 @@
     ]
   },
   {
-    "name_zh": "電力公司2020版",
+    "name_zh": "電力公司",
     "name_en_override": "",
     "alias_zh": "",
     "category_zh": "",
@@ -11196,7 +11196,7 @@
     "manual_override": "1",
     "stock": "1",
     "description": "",
-    "image_override": "https://cf.geekdo-images.com/X6j13eS_XDm-lRJPtWyu3g__small@2x/img/DUQsBktqN1JNdcFomMAJmuss_aU=/fit-in/400x300/filters:strip_icc()/pic6241474.jpg",
+    "image_override": "",
     "image_version_id": "",
     "bgg_id": 2651,
     "name_en": "Power Grid",
@@ -11225,7 +11225,6 @@
     "image_url": "https://cf.geekdo-images.com/yd6LuatytHRhcFCxCf-EEg__original/img/OS13C6W4i1XW__wWVVVaqF7BV0c=/0x0/filters:format(jpeg)/pic4459753.jpg",
     "thumb_url": "https://cf.geekdo-images.com/yd6LuatytHRhcFCxCf-EEg__small/img/jWTonZ5oYNlPzpELKHIJGWSS0Y8=/fit-in/200x150/filters:strip_icc()/pic4459753.jpg",
     "versions_count": 47,
-    "image": "https://cf.geekdo-images.com/X6j13eS_XDm-lRJPtWyu3g__small@2x/img/DUQsBktqN1JNdcFomMAJmuss_aU=/fit-in/400x300/filters:strip_icc()/pic6241474.jpg",
     "categories_zh": [
       "經濟",
       "工業／製造"
@@ -11239,7 +11238,8 @@
       "路網建設",
       "回合順序：能力值",
       "可變設置"
-    ]
+    ],
+    "image": "assets/img/2651-d6984c4f.jpg"
   },
   {
     "name_zh": "過河拆橋",
@@ -15446,5 +15446,655 @@
       "Different Worker Types"
     ],
     "image": "assets/img/172547-26001f3d.jpg"
+  },
+  {
+    "name_zh": "Brass: Lancashire 工業革命",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/K1PFx8FRRrkTk4Q4wHPR9g__small@2x/img/XNXYueoI_W_P0dhfdhG0-KEQT38=/fit-in/400x300/filters:strip_icc()/pic1303509.jpg",
+    "image_version_id": "",
+    "bgg_id": 28720,
+    "name_en": "Brass: Lancashire",
+    "year": 2007,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.8507,
+    "categories": [
+      "Economic",
+      "Educational",
+      "Industry / Manufacturing",
+      "Post-Napoleonic",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Chaining",
+      "End Game Bonuses",
+      "Hand Management",
+      "Income",
+      "Loans",
+      "Market",
+      "Multi-Use Cards",
+      "Network and Route Building",
+      "Ownership",
+      "Tags",
+      "Tech Trees / Tech Tracks",
+      "Tile Placement",
+      "Turn Order: Stat-Based",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/tHVtPzu82mBpeQbbZkV6EA__original/img/3ffdJj5Pz6HQrg09Kh8ecTen-TY=/0x0/filters:format(jpeg)/pic3469216.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/tHVtPzu82mBpeQbbZkV6EA__small/img/AghH1bAEhqzvyRcP3cy5G-rz0So=/fit-in/200x150/filters:strip_icc()/pic3469216.jpg",
+    "versions_count": 23,
+    "image": "https://cf.geekdo-images.com/K1PFx8FRRrkTk4Q4wHPR9g__small@2x/img/XNXYueoI_W_P0dhfdhG0-KEQT38=/fit-in/400x300/filters:strip_icc()/pic1303509.jpg",
+    "categories_zh": [
+      "經濟",
+      "教育",
+      "工業／製造",
+      "拿破崙後時代",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "連鎖",
+      "終局加分",
+      "手牌管理",
+      "收入",
+      "借貸",
+      "市集",
+      "多用途卡",
+      "路網建設",
+      "所有權",
+      "標籤",
+      "科技樹／軌道",
+      "板塊擺放",
+      "回合順序：能力值",
+      "可變設置"
+    ]
+  },
+  {
+    "name_zh": "冷戰熱鬥",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/7uioAsHFc4fBUFUkkwK3Sg__small@2x/img/5aw2BZ_mDNMLMrBYg_TOFb1METU=/fit-in/400x300/filters:strip_icc()/pic897879.jpg",
+    "image_version_id": "",
+    "bgg_id": 12333,
+    "name_en": "Twilight Struggle",
+    "year": 2005,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 120,
+    "time_max": 180,
+    "weight": 3.6135,
+    "categories": [
+      "Modern Warfare",
+      "Political",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Action / Event",
+      "Advantage Token",
+      "Area Majority / Influence",
+      "Campaign / Battle Card Driven",
+      "Dice Rolling",
+      "Events",
+      "Hand Management",
+      "Simulation",
+      "Simultaneous Action Selection",
+      "Sudden Death Ending",
+      "Tug of War",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/pNCiUUphnoeWOYfsWq0kng__original/img/Iae47UtAd_RXVd5tJ3YzbDHOv4E=/0x0/filters:format(jpeg)/pic3530661.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/pNCiUUphnoeWOYfsWq0kng__small/img/p7alNkNy8Avm8UISmhYHCiMz5bE=/fit-in/200x150/filters:strip_icc()/pic3530661.jpg",
+    "versions_count": 39,
+    "image": "https://cf.geekdo-images.com/7uioAsHFc4fBUFUkkwK3Sg__small@2x/img/5aw2BZ_mDNMLMrBYg_TOFb1METU=/fit-in/400x300/filters:strip_icc()/pic897879.jpg",
+    "categories_zh": [
+      "現代戰爭",
+      "政治",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "行動／事件",
+      "優勢指示物",
+      "區域控制",
+      "戰役／卡驅動",
+      "擲骰",
+      "事件",
+      "手牌管理",
+      "模擬",
+      "同時選擇行動",
+      "突然死亡結束",
+      "拔河",
+      "可變設置"
+    ]
+  },
+  {
+    "name_zh": "The Republic of Rome",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 1513,
+    "name_en": "The Republic of Rome",
+    "year": 1990,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 300,
+    "time_max": 300,
+    "weight": 4.3695,
+    "categories": [
+      "Ancient",
+      "Negotiation",
+      "Political",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Auction: Once Around",
+      "Bribery",
+      "Critical Hits and Failures",
+      "Dice Rolling",
+      "Events",
+      "Hand Management",
+      "Income",
+      "Negotiation",
+      "Ownership",
+      "Semi-Cooperative Game",
+      "Simulation",
+      "Solo / Solitaire Game",
+      "Voting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1hw9kRfQg849_J5mjPHuBQ__original/img/2neiZgMUdbeliPtHUp-lSCfAOt0=/0x0/filters:format(jpeg)/pic487045.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/1hw9kRfQg849_J5mjPHuBQ__small/img/A8YR8VBRNcV8QfA46JgyHAw1T6g=/fit-in/200x150/filters:strip_icc()/pic487045.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "古代",
+      "談判",
+      "政治",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "單圈競標",
+      "賄賂",
+      "暴擊與失誤",
+      "擲骰",
+      "事件",
+      "手牌管理",
+      "收入",
+      "談判",
+      "所有權",
+      "半合作",
+      "模擬",
+      "單人",
+      "投票"
+    ],
+    "image": "assets/img/1513-b1d80987.jpg"
+  },
+  {
+    "name_zh": "Sultaniya",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 145012,
+    "name_en": "Sultaniya",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.025,
+    "categories": [
+      "Arabian",
+      "City Building",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Pattern Building",
+      "Set Collection",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DRtQGIltVJwNtE9b_hX0nA__original/img/f_6bNwnORv0IafY8zSxry2dNzHE=/0x0/filters:format(jpeg)/pic2065568.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/DRtQGIltVJwNtE9b_hX0nA__small/img/Blq1-pP3qzRlolGKtr6iJ9y7sbY=/fit-in/200x150/filters:strip_icc()/pic2065568.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "阿拉伯",
+      "城市建設",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "圖案建構",
+      "收集套組",
+      "板塊擺放"
+    ],
+    "image": "assets/img/145012-cc3985a7.jpg"
+  },
+  {
+    "name_zh": "Cyclades",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 54998,
+    "name_en": "Cyclades",
+    "year": 2009,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 2.8172,
+    "categories": [
+      "Ancient",
+      "City Building",
+      "Civilization",
+      "Fighting",
+      "Mythology",
+      "Nautical"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Auction / Bidding",
+      "Auction: Fixed Placement",
+      "Dice Rolling",
+      "Open Drafting",
+      "Set Collection",
+      "Variable Phase Order"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6QbaJOS8acWkJ6gSYI0KaQ__original/img/KOGjizqhVHXlKWxXkuyxkHRCNnA=/0x0/filters:format(jpeg)/pic584779.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6QbaJOS8acWkJ6gSYI0KaQ__small/img/YSxmsx_zxqdVoqNVGsNnAqyH1lc=/fit-in/200x150/filters:strip_icc()/pic584779.jpg",
+    "versions_count": 23,
+    "categories_zh": [
+      "古代",
+      "城市建設",
+      "文明",
+      "戰鬥",
+      "神話",
+      "航海"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "競標",
+      "固定出價位",
+      "擲骰",
+      "公開輪抽",
+      "收集套組",
+      "可變階段順序"
+    ],
+    "image": "assets/img/54998-4b1b6eab.jpg"
+  },
+  {
+    "name_zh": "Hare & Tortoise",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 361,
+    "name_en": "Hare & Tortoise",
+    "year": 1973,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.9223,
+    "categories": [
+      "Animals",
+      "Racing"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Resource to Move"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rX7uZ5UCbVV61tNCTnZTmg__original/img/p_Anw8ONur9oiVEQRORAffwP0Po=/0x0/filters:format(jpeg)/pic275126.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/rX7uZ5UCbVV61tNCTnZTmg__small/img/l5wm0q-MD2LRxcFuIhr34yBoo4M=/fit-in/200x150/filters:strip_icc()/pic275126.jpg",
+    "versions_count": 31,
+    "categories_zh": [
+      "動物",
+      "競速"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "資源換移動"
+    ],
+    "image": "assets/img/361-2252585c.jpg"
+  },
+  {
+    "name_zh": "Rise of Empires",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/_ZHPlZh_Dzv-AL9gRR1ZQQ__small@2x/img/A2CPc44GhGcrgcp6ik6KQZ9qzVQ=/fit-in/400x300/filters:strip_icc()/pic897847.jpg",
+    "image_version_id": "",
+    "bgg_id": 30658,
+    "name_en": "Rise of Empires",
+    "year": 2009,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 150,
+    "time_max": 150,
+    "weight": 3.5442,
+    "categories": [
+      "Ancient",
+      "Civilization"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Variable Phase Order",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ckbYcn2XmNr5GN1imz0XdA__original/img/WI-CiY2TAMspUBBADn8J86OZFbY=/0x0/filters:format(jpeg)/pic434539.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ckbYcn2XmNr5GN1imz0XdA__small/img/qK_aVFUIzj0juV0MVIj1YB63Jgk=/fit-in/200x150/filters:strip_icc()/pic434539.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/_ZHPlZh_Dzv-AL9gRR1ZQQ__small@2x/img/A2CPc44GhGcrgcp6ik6KQZ9qzVQ=/fit-in/400x300/filters:strip_icc()/pic897847.jpg",
+    "categories_zh": [
+      "古代",
+      "文明"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "可變階段順序",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Imperial 2030",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/ecSmZxSrmiKeMhtvmAPwYQ__small/img/zhMfgtqcFT41fowUnEZqOg662tg=/fit-in/200x150/filters:strip_icc()/pic670620.jpg",
+    "image_version_id": "",
+    "bgg_id": 54138,
+    "name_en": "Imperial 2030",
+    "year": 2009,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 120,
+    "time_max": 180,
+    "weight": 3.5012,
+    "categories": [
+      "Economic",
+      "Nautical",
+      "Political"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Investment",
+      "Ownership",
+      "Rondel",
+      "Stock Holding",
+      "Victory Points as a Resource"
+    ],
+    "image_url": "https://cf.geekdo-images.com/YSopSx1x5iea7qI21ogYBw__original/img/BTpxWEL57yDfISpu-WZdfzX6Di0=/0x0/filters:format(jpeg)/pic586346.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/YSopSx1x5iea7qI21ogYBw__small/img/9pIX4JJydy15FHCDrdwtdbXRAFk=/fit-in/200x150/filters:strip_icc()/pic586346.jpg",
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/ecSmZxSrmiKeMhtvmAPwYQ__small/img/zhMfgtqcFT41fowUnEZqOg662tg=/fit-in/200x150/filters:strip_icc()/pic670620.jpg",
+    "categories_zh": [
+      "經濟",
+      "航海",
+      "政治"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "投資",
+      "所有權",
+      "輪轉盤",
+      "持股／股權",
+      "分數作為資源"
+    ]
+  },
+  {
+    "name_zh": "Gloria Mundi",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 13286,
+    "name_en": "Gloria Mundi",
+    "year": 2006,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.6149,
+    "categories": [
+      "Ancient",
+      "City Building"
+    ],
+    "mechanics": [
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/X7Qo2fEvszeYdX7cfPHrtQ__original/img/NlVV3padQcovQ1bdhp6YeL-SQXo=/0x0/filters:format(jpeg)/pic95406.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/X7Qo2fEvszeYdX7cfPHrtQ__small/img/mPR83bCQpj2fr84J2qG0uyXOyvs=/fit-in/200x150/filters:strip_icc()/pic95406.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "古代",
+      "城市建設"
+    ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
+    "image": "assets/img/13286-09a11e1d.jpg"
+  },
+  {
+    "name_zh": "Tikal",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/NXfgNrgDNxqnsWpNYmbEew__small@2x/img/VEJ5dFAbOz3_mx6Kpgps7K6nII0=/fit-in/400x300/filters:strip_icc()/pic703484.jpg",
+    "image_version_id": "",
+    "bgg_id": 54,
+    "name_en": "Tikal",
+    "year": 1999,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.7772,
+    "categories": [
+      "Adventure",
+      "Ancient",
+      "Exploration",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Events",
+      "Grid Movement",
+      "Hexagon Grid",
+      "Kill Steal",
+      "Layering",
+      "Map Addition",
+      "Modular Board",
+      "Set Collection",
+      "Tile Placement",
+      "Victory Points as a Resource"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ajU3xzGDUKihjNdvjCR1Hw__original/img/6dCgK1EESbk9GNuCiwQ4XiqIW3Y=/0x0/filters:format(jpeg)/pic3328391.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ajU3xzGDUKihjNdvjCR1Hw__small/img/pXR57sUMEJ-GJydf-yyAu0ZLgZw=/fit-in/200x150/filters:strip_icc()/pic3328391.jpg",
+    "versions_count": 23,
+    "image": "https://cf.geekdo-images.com/NXfgNrgDNxqnsWpNYmbEew__small@2x/img/VEJ5dFAbOz3_mx6Kpgps7K6nII0=/fit-in/400x300/filters:strip_icc()/pic703484.jpg",
+    "categories_zh": [
+      "冒險",
+      "古代",
+      "探索",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域控制",
+      "競標",
+      "事件",
+      "格子移動",
+      "六角格",
+      "搶頭功",
+      "疊放",
+      "地圖擴增",
+      "模組地圖",
+      "收集套組",
+      "板塊擺放",
+      "分數作為資源"
+    ]
+  },
+  {
+    "name_zh": "Fire & Axe: A Viking Saga",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/fS5Vk4na_Qh5LBx20bFwQQ__small@2x/img/SG6cdwon3OFDlNjuQ4N3qdlh7bA=/fit-in/400x300/filters:strip_icc()/pic331580.jpg",
+    "image_version_id": "",
+    "bgg_id": 12495,
+    "name_en": "Fire & Axe: A Viking Saga",
+    "year": 2004,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 90,
+    "weight": 2.6677,
+    "categories": [
+      "Medieval",
+      "Nautical"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Movement",
+      "Dice Rolling",
+      "Pick-up and Deliver"
+    ],
+    "image_url": "https://cf.geekdo-images.com/QuYDgrZrloOTUn5HVS0C9g__original/img/6fv_o-jJdGZK2eMIMwF_ZLUvUHc=/0x0/filters:format(jpeg)/pic2390081.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/QuYDgrZrloOTUn5HVS0C9g__small/img/AYMF5-5XjHemZBavheOk9ajdWGk=/fit-in/200x150/filters:strip_icc()/pic2390081.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/fS5Vk4na_Qh5LBx20bFwQQ__small@2x/img/SG6cdwon3OFDlNjuQ4N3qdlh7bA=/fit-in/400x300/filters:strip_icc()/pic331580.jpg",
+    "categories_zh": [
+      "中世紀",
+      "航海"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域移動",
+      "擲骰",
+      "取貨運送"
+    ]
   }
 ]
