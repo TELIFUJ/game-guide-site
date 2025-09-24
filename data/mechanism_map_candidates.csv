@@ -85,6 +85,7 @@ Player Elimination,玩家淘汰
 Player Judge,玩家裁決
 Point to Point Movement,點對點移動
 Predictive Bid,預測出價
+Programmed Movement,程序移動
 Push Your Luck,押注碰運氣
 Questions and Answers,問與答
 Race,競速
@@ -95,7 +96,9 @@ Relative Movement,相對移動
 Resource to Move,資源換移動
 Rock-Paper-Scissors,剪刀石頭布
 Role Playing,角色扮演
+Roles with Asymmetric Information,非對稱資訊角色
 Roll / Spin and Move,擲骰／轉盤移動
+Rondel,輪轉盤
 Scenario / Mission / Campaign Game,劇本／任務／戰役
 Score-and-Reset Game,記分重置
 Secret Unit Deployment,秘密部署
@@ -122,6 +125,7 @@ Track Movement,軌道移動
 Trading,交易
 Traitor Game,內鬼
 Trick-taking,吃墩
+Tug of War,拔河
 Turn Order: Claim Action,搶先手
 Turn Order: Pass Order,回合順序：棄權順序
 Turn Order: Progressive,回合順序：逐步

@@ -697,6 +697,85 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "Crazy Karts",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 195518,
+    "name_en": "Crazy Karts",
+    "year": 2016,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 1.875,
+    "categories": [
+      "Fantasy",
+      "Humor",
+      "Racing"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Communication Limits",
+      "Grid Movement",
+      "Hand Management",
+      "Modular Board",
+      "Multiple Maps",
+      "Programmed Movement",
+      "Resource to Move",
+      "Rock-Paper-Scissors",
+      "Roles with Asymmetric Information",
+      "Simultaneous Action Selection",
+      "Take That",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/tuz1paociIFCwki_tfN5pg__original/img/eibXlmoh0Br2E0e-jNV7rEp7pjU=/0x0/filters:format(jpeg)/pic2935361.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/tuz1paociIFCwki_tfN5pg__small/img/ZDIypgSQtMDsqbZVCKf3dcDT8sI=/fit-in/200x150/filters:strip_icc()/pic2935361.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "奇幻",
+      "幽默",
+      "競速"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "溝通限制",
+      "格子移動",
+      "手牌管理",
+      "模組地圖",
+      "多重地圖",
+      "程序移動",
+      "資源換移動",
+      "剪刀石頭布",
+      "非對稱資訊角色",
+      "同時選擇行動",
+      "互害",
+      "團隊",
+      "角色能力"
+    ],
+    "image": "assets/img/195518-4f186482.jpg",
+    "id": "crazy_karts-195518",
+    "bgg_url": "https://boardgamegeek.com/boardgame/195518",
+    "search_keywords": [
+      "Crazy Karts BGG",
+      "Crazy Karts BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "CS犯罪現場",
     "name_en_override": "",
     "alias_zh": "",
@@ -1633,6 +1712,59 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "Ground Floor",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 38765,
+    "name_en": "Ground Floor",
+    "year": 2012,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 90,
+    "time_max": 150,
+    "weight": 3.7135,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Industry / Manufacturing"
+    ],
+    "mechanics": [
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/b8mrYfdRmAFLAmytvRZpSQ__original/img/KUzRrfQby7qoxq9vq5OamPiCtJw=/0x0/filters:format(jpeg)/pic1560952.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/b8mrYfdRmAFLAmytvRZpSQ__small/img/DzeBYUePyeSpzO0FN0xRFxP1HAg=/fit-in/200x150/filters:strip_icc()/pic1560952.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "工業／製造"
+    ],
+    "mechanics_zh": [
+      "Different Worker Types"
+    ],
+    "image": "assets/img/38765-3b7108b6.jpg",
+    "id": "ground_floor-38765",
+    "bgg_url": "https://boardgamegeek.com/boardgame/38765",
+    "search_keywords": [
+      "Ground Floor BGG",
+      "Ground Floor BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "Gruselino",
     "name_en_override": "",
     "alias_zh": "",
@@ -2518,6 +2650,67 @@
     "search_keywords": [
       "Lunar Rails BGG",
       "Lunar Rails BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "Löwenherz",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/BHnWFcjq4LHeOdnDTrXFHg__small@2x/img/E4Rl2If8c0xKZz8Eaxudvc0GkV4=/fit-in/400x300/filters:strip_icc()/pic6042862.jpg",
+    "image_version_id": "",
+    "bgg_id": 66,
+    "name_en": "Löwenherz",
+    "year": 1997,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 2.7843,
+    "categories": [
+      "Medieval",
+      "Political"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Enclosure",
+      "Modular Board",
+      "Negotiation",
+      "Square Grid"
+    ],
+    "image_url": "https://cf.geekdo-images.com/qsiGPdi9ktEKj3rU8HcAog__original/img/LoxqSRScweTL2i0niuaNolPn8hI=/0x0/filters:format(jpeg)/pic582814.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/qsiGPdi9ktEKj3rU8HcAog__small/img/JmMkAohECrQ9BzfASGZnjlx-Ms4=/fit-in/200x150/filters:strip_icc()/pic582814.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/BHnWFcjq4LHeOdnDTrXFHg__small@2x/img/E4Rl2If8c0xKZz8Eaxudvc0GkV4=/fit-in/400x300/filters:strip_icc()/pic6042862.jpg",
+    "categories_zh": [
+      "中世紀",
+      "政治"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "圍地",
+      "模組地圖",
+      "談判",
+      "方格"
+    ],
+    "id": "löwenherz-d82b23f0",
+    "bgg_url": "https://boardgamegeek.com/boardgame/66",
+    "search_keywords": [
+      "Löwenherz BGG",
+      "Löwenherz BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -3653,6 +3846,65 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "The Swarm (2008)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 38735,
+    "name_en": "The Swarm",
+    "year": 2008,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 75,
+    "time_max": 75,
+    "weight": 2.54,
+    "categories": [
+      "Environmental",
+      "Exploration",
+      "Novel-based",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Network and Route Building",
+      "Open Drafting",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/7PKBYAg7rWLJ1sBIp-J19w__original/img/Fwv5CTybTpxTVnhchJkMJ2GkYsY=/0x0/filters:format(jpeg)/pic804416.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/7PKBYAg7rWLJ1sBIp-J19w__small/img/7rA7tyWGdaFGjOQFs_yPfOHuROs=/fit-in/200x150/filters:strip_icc()/pic804416.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "環境議題",
+      "探索",
+      "小說改編",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "路網建設",
+      "公開輪抽",
+      "板塊擺放"
+    ],
+    "image": "assets/img/38735-fbe890e2.jpg",
+    "id": "the_swarm-38735",
+    "bgg_url": "https://boardgamegeek.com/boardgame/38735",
+    "search_keywords": [
+      "The Swarm (2008) BGG",
+      "The Swarm BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "UNO",
     "name_en_override": "",
     "alias_zh": "",
@@ -4248,6 +4500,63 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "圓樓",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "1490",
+    "price_twd": "1490",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 205498,
+    "name_en": "Round House",
+    "year": 2016,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 3.2353,
+    "categories": [
+      "Economic",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Rondel",
+      "Set Collection",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/NW5QvdcOPHn-pE1Qu_yF7A__original/img/TVdRc-VOXlE7bpmTXtaz2X3hhoE=/0x0/filters:format(png)/pic4120046.png",
+    "thumb_url": "https://cf.geekdo-images.com/NW5QvdcOPHn-pE1Qu_yF7A__small/img/CafSi5yJzB8q73QLgVf7SNXqeNE=/fit-in/200x150/filters:strip_icc()/pic4120046.png",
+    "versions_count": 5,
+    "categories_zh": [
+      "經濟",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "輪轉盤",
+      "收集套組",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/205498-e267563f.jpg",
+    "id": "round_house-205498",
+    "bgg_url": "https://boardgamegeek.com/boardgame/205498",
+    "search_keywords": [
+      "圓樓 BGG",
+      "Round House BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "圖靈解密",
     "name_en_override": "",
     "alias_zh": "",
@@ -4360,6 +4669,118 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "塔樓",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "1580",
+    "price_twd": "1580",
+    "used_price_twd": "900",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/eKW3ZszC7oQz7UlSsteKpg__small@2x/img/CBfTE8dcjLmoQS2h339HI_10Cec=/fit-in/400x300/filters:strip_icc()/pic3186148.jpg",
+    "image_version_id": "",
+    "bgg_id": 148443,
+    "name_en": "Talo",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.625,
+    "categories": [
+      "Dice",
+      "Educational",
+      "Math",
+      "Racing"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Grid Movement",
+      "Pattern Building",
+      "Take That",
+      "Three Dimensional Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Fq7tVlpTU0n-pzt5_cyyWw__original/img/amiC34coB0R3juo9hcMtjx_q1Nk=/0x0/filters:format(jpeg)/pic1794022.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Fq7tVlpTU0n-pzt5_cyyWw__small/img/l19u86KIkRXigDAlWRLFppJ1n_E=/fit-in/200x150/filters:strip_icc()/pic1794022.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/eKW3ZszC7oQz7UlSsteKpg__small@2x/img/CBfTE8dcjLmoQS2h339HI_10Cec=/fit-in/400x300/filters:strip_icc()/pic3186148.jpg",
+    "categories_zh": [
+      "骰子",
+      "教育",
+      "數學",
+      "競速"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "格子移動",
+      "圖案建構",
+      "互害",
+      "三維移動"
+    ],
+    "id": "talo-80e202c0",
+    "bgg_url": "https://boardgamegeek.com/boardgame/148443",
+    "search_keywords": [
+      "塔樓 BGG",
+      "Talo BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "塔雲軒",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/FRt9GHLr-2MYl3-WeXlGBw__small@2x/img/SfQ61vmpq5h-3WC8xmyTnRFB58M=/fit-in/400x300/filters:strip_icc()/pic1950619.jpg",
+    "image_version_id": "",
+    "bgg_id": 154003,
+    "name_en": "Pagoda",
+    "year": 2014,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.8636,
+    "categories": [
+      "Ancient"
+    ],
+    "mechanics": [
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/7O4vKpsCSO4yLlI2DkVSew__original/img/NsFqocSM5PZszTju0B60i82YdbY=/0x0/filters:format(jpeg)/pic1918075.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/7O4vKpsCSO4yLlI2DkVSew__small/img/FiuPM87IB0yptsyomekOl9yCJK0=/fit-in/200x150/filters:strip_icc()/pic1918075.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/FRt9GHLr-2MYl3-WeXlGBw__small@2x/img/SfQ61vmpq5h-3WC8xmyTnRFB58M=/fit-in/400x300/filters:strip_icc()/pic1950619.jpg",
+    "categories_zh": [
+      "古代"
+    ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
+    "id": "pagoda-e1608fbd",
+    "bgg_url": "https://boardgamegeek.com/boardgame/154003",
+    "search_keywords": [
+      "塔雲軒 BGG",
+      "Pagoda BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "夢想家園 (主/中文)",
     "name_en_override": "",
     "alias_zh": "",
@@ -4413,6 +4834,193 @@
     "search_keywords": [
       "夢想家園 (主/中文) BGG",
       "Dream Home BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "奧地利大飯店",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "1800",
+    "price_twd": "1800",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/d4It-gdWY4GZVYSjbq20gQ__small@2x/img/uec-jVIbOsefSCxguMufkvhdQIY=/fit-in/400x300/filters:strip_icc()/pic2728138.jpg",
+    "image_version_id": "",
+    "bgg_id": 182874,
+    "name_en": "Grand Austria Hotel",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.202,
+    "categories": [
+      "Economic"
+    ],
+    "mechanics": [
+      "Action Drafting",
+      "Contracts",
+      "Dice Rolling",
+      "End Game Bonuses",
+      "Hand Management",
+      "Set Collection",
+      "Turn Order: Progressive",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/GlCmHjdLwv3SqSjv52ToGw__original/img/5vNCdK9mQ0szo_SwSeVQUWnirZ8=/0x0/filters:format(jpeg)/pic6966955.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/GlCmHjdLwv3SqSjv52ToGw__small/img/WXzXZh50EGKd1U2fg75fCbFIL_8=/fit-in/200x150/filters:strip_icc()/pic6966955.jpg",
+    "versions_count": 24,
+    "image": "https://cf.geekdo-images.com/d4It-gdWY4GZVYSjbq20gQ__small@2x/img/uec-jVIbOsefSCxguMufkvhdQIY=/fit-in/400x300/filters:strip_icc()/pic2728138.jpg",
+    "categories_zh": [
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "行動選擇（輪抽）",
+      "合約",
+      "擲骰",
+      "終局加分",
+      "手牌管理",
+      "收集套組",
+      "回合順序：逐步",
+      "可變設置"
+    ],
+    "id": "grand_austria_hotel-db6ac724",
+    "bgg_url": "https://boardgamegeek.com/boardgame/182874",
+    "search_keywords": [
+      "奧地利大飯店 BGG",
+      "Grand Austria Hotel BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "奧林匹斯之戰",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Dwr6Ge-iZUY2Vf0k91GGcQ__small@2x/img/BgrUAsNjzJmRXI7tzVQUxcButzY=/fit-in/400x300/filters:strip_icc()/pic3020090.png",
+    "image_version_id": "",
+    "bgg_id": 192834,
+    "name_en": "Fight for Olympus",
+    "year": 2016,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.098,
+    "categories": [
+      "Ancient",
+      "Card Game",
+      "Mythology"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Take That",
+      "Tug of War"
+    ],
+    "image_url": "https://cf.geekdo-images.com/8gCuTOspW6ehn4A73u06aQ__original/img/vIFpjv3z9Pb_79xuWZzMt-aBwXY=/0x0/filters:format(jpeg)/pic3032690.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/8gCuTOspW6ehn4A73u06aQ__small/img/aunzdbcFMqs_VnQY72E0Rdb7L0I=/fit-in/200x150/filters:strip_icc()/pic3032690.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/Dwr6Ge-iZUY2Vf0k91GGcQ__small@2x/img/BgrUAsNjzJmRXI7tzVQUxcButzY=/fit-in/400x300/filters:strip_icc()/pic3020090.png",
+    "categories_zh": [
+      "古代",
+      "卡牌",
+      "神話"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "互害",
+      "拔河"
+    ],
+    "id": "fight_for_olympus-0a7eb594",
+    "bgg_url": "https://boardgamegeek.com/boardgame/192834",
+    "search_keywords": [
+      "奧林匹斯之戰 BGG",
+      "Fight for Olympus BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "奧法之戰",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "1390",
+    "price_twd": "1390",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/O7p7VXxTNmOb_o2zJkU7ig__small@2x/img/VoRgLOVwb0jcx3uWlvnHHeXSjRI=/fit-in/400x300/filters:strip_icc()/pic4918695.png",
+    "image_version_id": "",
+    "bgg_id": 262712,
+    "name_en": "Res Arcana",
+    "year": 2019,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.6483,
+    "categories": [
+      "Card Game",
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Income",
+      "Multi-Use Cards",
+      "Open Drafting",
+      "Race",
+      "Score-and-Reset Game",
+      "Take That",
+      "Turn Order: Pass Order",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/gcALy45JfcjyKUn6T3mBIQ__original/img/YLSAurBSWEGi3PHsuQWi8St_0Yg=/0x0/filters:format(jpeg)/pic4422847.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/gcALy45JfcjyKUn6T3mBIQ__small/img/5cPMxq_X6VIO8l2t1_6H7C_KqrU=/fit-in/200x150/filters:strip_icc()/pic4422847.jpg",
+    "versions_count": 16,
+    "image": "https://cf.geekdo-images.com/O7p7VXxTNmOb_o2zJkU7ig__small@2x/img/VoRgLOVwb0jcx3uWlvnHHeXSjRI=/fit-in/400x300/filters:strip_icc()/pic4918695.png",
+    "categories_zh": [
+      "卡牌",
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收入",
+      "多用途卡",
+      "公開輪抽",
+      "競速",
+      "記分重置",
+      "互害",
+      "回合順序：棄權順序",
+      "角色能力"
+    ],
+    "id": "res_arcana-eb432336",
+    "bgg_url": "https://boardgamegeek.com/boardgame/262712",
+    "search_keywords": [
+      "奧法之戰 BGG",
+      "Res Arcana BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -5046,6 +5654,344 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "搖擺猴子",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "990",
+    "price_twd": "990",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/O2IoATCI3EJxXZ1GD5Ecfw__small@2x/img/Dh4lsmPfnG7m_IA2YNaBX13zMN8=/fit-in/400x300/filters:strip_icc()/pic3014793.jpg",
+    "image_version_id": "",
+    "bgg_id": 23576,
+    "name_en": "CooCoo the Rocking Clown!",
+    "year": 2005,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 5,
+    "time_max": 5,
+    "weight": 1.0667,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Pattern Building"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ADZdyUszIp6lu1izH1x9rA__original/img/f2dbaAWzAZt5BNcXxXte1AoJCUc=/0x0/filters:format(jpeg)/pic1683226.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ADZdyUszIp6lu1izH1x9rA__small/img/jDTSBEx8LNtW36ZK4_IqiI9x0ZU=/fit-in/200x150/filters:strip_icc()/pic1683226.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/O2IoATCI3EJxXZ1GD5Ecfw__small@2x/img/Dh4lsmPfnG7m_IA2YNaBX13zMN8=/fit-in/400x300/filters:strip_icc()/pic3014793.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "圖案建構"
+    ],
+    "id": "coocoo_the_rocking_clown!-81f05f02",
+    "bgg_url": "https://boardgamegeek.com/boardgame/23576",
+    "search_keywords": [
+      "搖擺猴子 BGG",
+      "CooCoo the Rocking Clown! BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "搖滾天團",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/u6YYpRhN_1zk8jxoywQEeQ__small@2x/img/Q6ISy9Q05YvXhU9UIreFFwKBexw=/fit-in/400x300/filters:strip_icc()/pic4788689.jpg",
+    "image_version_id": "",
+    "bgg_id": 39080,
+    "name_en": "IGOR: The Monster Making Game",
+    "year": 2008,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.1071,
+    "categories": [
+      "Dice",
+      "Horror",
+      "Movies / TV / Radio theme"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Kill Steal",
+      "Push Your Luck"
+    ],
+    "image_url": "https://cf.geekdo-images.com/iNNhf4sJhp1nq0IJPG7uYg__original/img/bqxHhXkBcluLcSDelJlxyy5X_j0=/0x0/filters:format(jpeg)/pic5687370.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/iNNhf4sJhp1nq0IJPG7uYg__small/img/HbOG_j0vfPgjdhLGjJotqvDw5Wk=/fit-in/200x150/filters:strip_icc()/pic5687370.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/u6YYpRhN_1zk8jxoywQEeQ__small@2x/img/Q6ISy9Q05YvXhU9UIreFFwKBexw=/fit-in/400x300/filters:strip_icc()/pic4788689.jpg",
+    "categories_zh": [
+      "骰子",
+      "恐怖",
+      "影視／廣播主題"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "搶頭功",
+      "押注碰運氣"
+    ],
+    "id": "igor:_the_monster_making_game-a9b7697d",
+    "bgg_url": "https://boardgamegeek.com/boardgame/39080",
+    "search_keywords": [
+      "搖滾天團 BGG",
+      "IGOR: The Monster Making Game BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "搖滾巫奇",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "1390",
+    "price_twd": "1390",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "https://cdn.prod.website-files.com/575714cc825e8dbc6c83b98a/5c1cabd3edf0cc6e0a36ebf1_The-Rolling-Witch_BOX_3D.jpg",
+    "image_version_id": "",
+    "bgg_id": 206938,
+    "name_en": "Kullerhexe",
+    "year": 2016,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 20,
+    "weight": 1.4,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/NJSzsKj78Ldqiy2xMFy92Q__original/img/wnfrGovFTle2JVf2HkNMamZy1LA=/0x0/filters:format(jpeg)/pic3416062.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/NJSzsKj78Ldqiy2xMFy92Q__small/img/cIkVw97LqUou6ifI7ahnrioe8aw=/fit-in/200x150/filters:strip_icc()/pic3416062.jpg",
+    "versions_count": 3,
+    "image": "https://cdn.prod.website-files.com/575714cc825e8dbc6c83b98a/5c1cabd3edf0cc6e0a36ebf1_The-Rolling-Witch_BOX_3D.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童"
+    ],
+    "mechanics_zh": [],
+    "id": "kullerhexe-9b3be197",
+    "bgg_url": "https://boardgamegeek.com/boardgame/206938",
+    "search_keywords": [
+      "搖滾巫奇 BGG",
+      "Kullerhexe BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "搖滾節奏",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "390",
+    "price_twd": "390",
+    "used_price_twd": "294",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/BPj8G11vC7VXy59AjnEISA__small@2x/img/23A4BHjOE7lfBfdTUCiPkBiph7A=/fit-in/400x300/filters:strip_icc()/pic1750776.jpg",
+    "image_version_id": "",
+    "bgg_id": 37728,
+    "name_en": "Rock the Beat",
+    "year": 2008,
+    "players": [
+      4,
+      12
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0595,
+    "categories": [
+      "Action / Dexterity",
+      "Humor",
+      "Music",
+      "Party Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Acting",
+      "Memory",
+      "Pattern Recognition"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Y55vSPrIyR0TzP7vM0luHw__original/img/Wn0ITgyFk7f0xEX9AH3zIP-5hsc=/0x0/filters:format(jpeg)/pic1638726.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Y55vSPrIyR0TzP7vM0luHw__small/img/_XfGZDrfcwuCGEPhZFTfu4IrOu4=/fit-in/200x150/filters:strip_icc()/pic1638726.jpg",
+    "versions_count": 27,
+    "image": "https://cf.geekdo-images.com/BPj8G11vC7VXy59AjnEISA__small@2x/img/23A4BHjOE7lfBfdTUCiPkBiph7A=/fit-in/400x300/filters:strip_icc()/pic1750776.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "幽默",
+      "音樂",
+      "派對",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "演技／表演",
+      "記憶",
+      "圖形辨識"
+    ],
+    "id": "rock_the_beat-19445d8c",
+    "bgg_url": "https://boardgamegeek.com/boardgame/37728",
+    "search_keywords": [
+      "搖滾節奏 BGG",
+      "Rock the Beat BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "搖滾節奏",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "390",
+    "price_twd": "390",
+    "used_price_twd": "294",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 37728,
+    "name_en": "Rock the Beat",
+    "year": 2008,
+    "players": [
+      4,
+      12
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0595,
+    "categories": [
+      "Action / Dexterity",
+      "Humor",
+      "Music",
+      "Party Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Acting",
+      "Memory",
+      "Pattern Recognition"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Y55vSPrIyR0TzP7vM0luHw__original/img/Wn0ITgyFk7f0xEX9AH3zIP-5hsc=/0x0/filters:format(jpeg)/pic1638726.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Y55vSPrIyR0TzP7vM0luHw__small/img/_XfGZDrfcwuCGEPhZFTfu4IrOu4=/fit-in/200x150/filters:strip_icc()/pic1638726.jpg",
+    "versions_count": 27,
+    "categories_zh": [
+      "動作／敏捷",
+      "幽默",
+      "音樂",
+      "派對",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "演技／表演",
+      "記憶",
+      "圖形辨識"
+    ],
+    "image": "assets/img/37728-9268793d.jpg",
+    "id": "rock_the_beat-37728",
+    "bgg_url": "https://boardgamegeek.com/boardgame/37728",
+    "search_keywords": [
+      "搖滾節奏 BGG",
+      "Rock the Beat BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "搗蛋派對",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "690",
+    "price_twd": "690",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/F4Koql2gtqNlzExAUICEiQ__small@2x/img/JNW7VvE2teQlrxYmuqzQuMQl8OM=/fit-in/400x300/filters:strip_icc()/pic4426224.png",
+    "image_version_id": "",
+    "bgg_id": 254227,
+    "name_en": "Crazy Eggz",
+    "year": 2018,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Children's Game",
+      "Dice",
+      "Humor",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Dice Rolling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/RkUIC4McYIUyUR8i59BL3w__original/img/99BCGs8ZcTI0TSS0MzQF2qzDY9A=/0x0/filters:format(jpeg)/pic5224446.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/RkUIC4McYIUyUR8i59BL3w__small/img/2CvCwdoq6OcBWfRVY6HLO0aaxNs=/fit-in/200x150/filters:strip_icc()/pic5224446.jpg",
+    "versions_count": 10,
+    "image": "https://cf.geekdo-images.com/F4Koql2gtqNlzExAUICEiQ__small@2x/img/JNW7VvE2teQlrxYmuqzQuMQl8OM=/fit-in/400x300/filters:strip_icc()/pic4426224.png",
+    "categories_zh": [
+      "動作／敏捷",
+      "兒童",
+      "骰子",
+      "幽默",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "擲骰"
+    ],
+    "id": "crazy_eggz-8ea3d7a0",
+    "bgg_url": "https://boardgamegeek.com/boardgame/254227",
+    "search_keywords": [
+      "搗蛋派對 BGG",
+      "Crazy Eggz BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "搜捕農場動物 (主/中文)",
     "name_en_override": "",
     "alias_zh": "",
@@ -5103,6 +6049,63 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "搞笑瑜珈",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "490",
+    "price_twd": "490",
+    "used_price_twd": "294",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 224271,
+    "name_en": "Yogi",
+    "year": 2017,
+    "players": [
+      3,
+      12
+    ],
+    "time_min": 15,
+    "time_max": 20,
+    "weight": 1.2222,
+    "categories": [
+      "Action / Dexterity",
+      "Card Game",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Player Elimination",
+      "Take That",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DUPJ6uq3__6ySwJ5yVHYXw__original/img/QS-vZvVJUGgMejxDivxMVdHJvYM=/0x0/filters:format(png)/pic6472590.png",
+    "thumb_url": "https://cf.geekdo-images.com/DUPJ6uq3__6ySwJ5yVHYXw__small/img/_kxrU00SpkCI439xQcbruiSrK1M=/fit-in/200x150/filters:strip_icc()/pic6472590.png",
+    "versions_count": 17,
+    "categories_zh": [
+      "動作／敏捷",
+      "卡牌",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "玩家淘汰",
+      "互害",
+      "團隊"
+    ],
+    "image": "assets/img/224271-d25bba73.jpg",
+    "id": "yogi-224271",
+    "bgg_url": "https://boardgamegeek.com/boardgame/224271",
+    "search_keywords": [
+      "搞笑瑜珈 BGG",
+      "Yogi BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "搶救派琪",
     "name_en_override": "",
     "alias_zh": "",
@@ -5150,6 +6153,55 @@
     "search_keywords": [
       "搶救派琪 BGG",
       "Help Peggy BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "搶杯王",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "390",
+    "price_twd": "390",
+    "used_price_twd": "240",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/M9wXuaIkwSdPc6u2shMp4Q__small@2x/img/TuzegxzP_Uq3N8MtYMsDTIxzFVc=/fit-in/400x300/filters:strip_icc()/pic2598877.png",
+    "image_version_id": "",
+    "bgg_id": 2843,
+    "name_en": "Ketch Up",
+    "year": 1998,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0882,
+    "categories": [
+      "Card Game"
+    ],
+    "mechanics": [
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/8lAjAuClpL4INm2rcg63XA__original/img/aRwft2Fb4PbK-2XsKXLvf4s6fPg=/0x0/filters:format(jpeg)/pic472066.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/8lAjAuClpL4INm2rcg63XA__small/img/igq-hsXBevPP8ElZfFNFWXNh9lc=/fit-in/200x150/filters:strip_icc()/pic472066.jpg",
+    "versions_count": 13,
+    "image": "https://cf.geekdo-images.com/M9wXuaIkwSdPc6u2shMp4Q__small@2x/img/TuzegxzP_Uq3N8MtYMsDTIxzFVc=/fit-in/400x300/filters:strip_icc()/pic2598877.png",
+    "categories_zh": [
+      "卡牌"
+    ],
+    "mechanics_zh": [
+      "收集套組"
+    ],
+    "id": "ketch_up-e1934805",
+    "bgg_url": "https://boardgamegeek.com/boardgame/2843",
+    "search_keywords": [
+      "搶杯王 BGG",
+      "Ketch Up BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -5331,7 +6383,7 @@
     "price_note": "",
     "used_note": "",
     "manual_override": "1",
-    "stock": "1",
+    "stock": "2",
     "description": "",
     "image_override": "https://cf.geekdo-images.com/oteSpWBtWFZgajLe5uvgGw__small@2x/img/aNFAzOC9R1CxrxBwS2s76P4f6bQ=/fit-in/400x300/filters:strip_icc()/pic5957596.jpg",
     "image_version_id": "",
@@ -5384,6 +6436,75 @@
     "search_keywords": [
       "暗影奇襲 BGG",
       "Shadow Raiders BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "暗影奇襲 女王陛下的飛行船擴充",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/qm1ph3myfThlDIoTzyBa5w__small@2x/img/4weDx9_p1V58uxmRcgCAZP5DGlQ=/fit-in/400x300/filters:strip_icc()/pic6516515.jpg",
+    "image_version_id": "",
+    "bgg_id": 291222,
+    "name_en": "Shadow Raiders: Expansion Set – Queen Majesty Airship",
+    "year": 2019,
+    "players": [
+      4,
+      10
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.75,
+    "categories": [
+      "Adventure",
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Dice",
+      "Expansion for Base-game",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Modular Board",
+      "Player Elimination",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/OJ0c2rzww5nbRH3BKakGdA__original/img/eTX9gMsQzXrWAE_DkfkTVDkMWbw=/0x0/filters:format(jpeg)/pic4990577.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/OJ0c2rzww5nbRH3BKakGdA__small/img/hGYCT6MvYZgfeO2tLkg__vPxDeI=/fit-in/200x150/filters:strip_icc()/pic4990577.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/qm1ph3myfThlDIoTzyBa5w__small@2x/img/4weDx9_p1V58uxmRcgCAZP5DGlQ=/fit-in/400x300/filters:strip_icc()/pic6516515.jpg",
+    "categories_zh": [
+      "冒險",
+      "唬人",
+      "卡牌",
+      "推理",
+      "骰子",
+      "基本款擴充",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "模組地圖",
+      "玩家淘汰",
+      "團隊",
+      "角色能力"
+    ],
+    "id": "shadow_raiders:_expansion_set_–_queen_majesty_airship-e02e872b",
+    "bgg_url": "https://boardgamegeek.com/boardgame/291222",
+    "search_keywords": [
+      "暗影奇襲 女王陛下的飛行船擴充 BGG",
+      "Shadow Raiders: Expansion Set – Queen Majesty Airship BGG"
     ],
     "updated_at": "2025-09-24"
   },
