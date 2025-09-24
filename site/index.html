@@ -35,24 +35,32 @@
     .page-btn{padding:6px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer}
     .page-btn.active{background:#eef2ff;border-color:#c7d2fe}
     .page-btn:disabled{opacity:.5;cursor:not-allowed}
-    /* 新增：新聞區 */
-    .news-wrap{margin-top:8px;border-top:1px dashed var(--border);padding-top:8px}
-    .news-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .news-badge{display:inline-flex;gap:6px;align-items:center}
-    .pill{display:inline-block;font-size:12px;padding:2px 6px;border:1px solid var(--border);border-radius:999px;background:#f8fafc}
-    .hot{color:#b45309;font-weight:600}
-    .news-list{margin-top:6px}
-    .news-item{font-size:14px;display:flex;align-items:center;gap:6px;margin:4px 0}
-    .news-item time{color:var(--muted);font-size:12px}
-    .news-btn{font-size:13px;padding:4px 8px}
+
+    /* Auto-complete */
+    .ac-wrap{position:relative;display:inline-block}
+    .ac-list{position:absolute;left:0;top:100%;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08);margin-top:6px;max-height:320px;overflow:auto;min-width:260px;width:100%}
+    .ac-item{padding:8px 10px;cursor:pointer;display:flex;gap:8px;align-items:center}
+    .ac-item:hover{background:#f5f7ff}
+    .ac-sub{font-size:12px;color:var(--muted)}
+
+    /* Focus + recommendations */
+    #focus{margin:16px 0 10px}
+    .focus-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .focus-title{font-weight:700}
+    .rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .reason{margin-top:6px;color:var(--muted);font-size:12px}
+    .clear-link{margin-left:auto;color:#2563eb;background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:6px 10px;cursor:pointer}
   </style>
 </head>
 <body>
 
 <form class="filters" autocomplete="off" onsubmit="return false">
-  <input id="q" name="q_no_autofill"
-         placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
-         autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <div class="ac-wrap">
+    <input id="q" name="q_no_autofill"
+           placeholder="搜尋：中文名 / EN / 關鍵字（支援模糊）" style="min-width:280px"
+           autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div id="ac" class="ac-list" style="display:none"></div>
+  </div>
 
   <select id="catSel"><option value="">全部分類</option></select>
   <select id="mechSel"><option value="">全部機制</option></select>
@@ -93,10 +101,20 @@
     <button id="next" class="btn">下一頁 ›</button>
   </div>
   <label class="checkbox"><input type="checkbox" id="onlyFav"> 只看收藏</label>
-  <!-- 隱藏重複（自動合併） -->
   <label class="checkbox"><input type="checkbox" id="hideDup" checked> 隱藏重複（自動合併）</label>
   <button id="dlCsv" class="btn">下載 CSV</button>
   <button id="emailFav" class="btn">Email 收藏清單</button>
+</div>
+
+<!-- 智慧推薦焦點區 -->
+<div id="focus" style="display:none">
+  <div class="focus-head">
+    <div class="focus-title">🔎 已選：<span id="focus-name"></span></div>
+    <button id="clearFocus" class="clear-link">清除預覽</button>
+  </div>
+  <div id="focus-card" class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
+  <div style="margin:10px 0 6px;font-weight:700">你可能也會喜歡</div>
+  <div id="rec" class="rec-grid"></div>
 </div>
 
 <!-- 上方數字分頁 -->
@@ -124,71 +142,8 @@
     return BASE + String(p).replace(/^\/+/, '');
   }
 
-  // ====== BGG API（XML） ======
-  const BGG_API = 'https://boardgamegeek.com/xmlapi2'; // 官方建議不要用 www 子網域
-  async function fetchXML(url, {retries=3, backoff=1200}={}){
-    for(let i=0;i<=retries;i++){
-      const r = await fetch(url, {mode:'cors'});
-      if (r.status===202){ await new Promise(s=>setTimeout(s, backoff)); continue; }
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const txt = await r.text();
-      return new DOMParser().parseFromString(txt, "application/xml");
-    }
-    throw new Error('BGG queue timeout');
-  }
-
-  // 熱度列表（全站 Hot）
-  const HOTMAP = new Map(); // bgg_id -> rank
-  (async function loadHot(){
-    try{
-      const xml = await fetchXML(`${BGG_API}/hot?type=boardgame`);
-      const items = [...xml.querySelectorAll('item')];
-      items.forEach((it,idx)=>{
-        const id = Number(it.getAttribute('id'));
-        HOTMAP.set(id, idx+1);
-      });
-      render(); // 資料回來後刷新顯示熱度
-    }catch(e){ /* 靜默失敗就不顯示熱度 */ }
-  })();
-
-  // 取得論壇清單（挑 General/News 優先）
-  async function getForumIdForThing(bggId){
-    const xml = await fetchXML(`${BGG_API}/forumlist?id=${bggId}&type=thing`);
-    const forums = [...xml.querySelectorAll('forum')].map(f=>({
-      id: Number(f.getAttribute('id')),
-      title: f.getAttribute('title')||''
-    }));
-    // 優先 General/News；否則取第一個
-    const pick = forums.find(f=>/general/i.test(f.title)) ||
-                 forums.find(f=>/news|announ/i.test(f.title)) ||
-                 forums[0];
-    return pick? pick.id : null;
-  }
-
-  // 某論壇最新討論串（已按最後回文時間排序）
-  async function getLatestThreads(forumId, limit=3){
-    const xml = await fetchXML(`${BGG_API}/forum?id=${forumId}&page=1`);
-    return [...xml.querySelectorAll('thread')].slice(0,limit).map(t=>({
-      id: Number(t.getAttribute('id')),
-      subject: t.getAttribute('subject')||'',
-      lastpostdate: t.getAttribute('lastpostdate')||'',
-      link: `https://boardgamegeek.com/thread/${t.getAttribute('id')}`
-    }));
-  }
-
-  // 遊戲影片（取最新幾支）
-  async function getLatestVideos(bggId, limit=3){
-    const xml = await fetchXML(`${BGG_API}/thing?id=${bggId}&videos=1&pagesize=${Math.max(10,limit)}`);
-    const vs = [...xml.querySelectorAll('videos video')].slice(0,limit).map(v=>({
-      title: v.getAttribute('title')||'',
-      link: v.getAttribute('link')||'',
-      postdate: v.getAttribute('postdate')||''
-    }));
-    return vs;
-  }
-
   // ====== 英→中備援映射 ======
-  const CAT_MAP = {/* ...原本一大段，保持不動... */ 
+  const CAT_MAP = {
     "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
     "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
     "American West":"美國西部","Ancient":"古代","Animals":"動物","Arabian":"阿拉伯","Aviation / Flight":"航空／飛行",
@@ -207,7 +162,8 @@
     "Trivia":"問答","Video Game Theme":"電玩主題","Vietnam War":"越戰","Wargame":"戰棋","Word Game":"字詞",
     "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
   };
-  const MECH_MAP = {/* ...原本那段，保持不動... */
+
+  const MECH_MAP = {
     "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
     "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"劇本／戰役卡驅動",
     "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
@@ -236,6 +192,7 @@
 
   const G = document.getElementById("grid"),
         Q = document.getElementById("q"),
+        AC = document.getElementById("ac"),
         CAT = document.getElementById("catSel"),
         MECH = document.getElementById("mechSel"),
         S = document.getElementById("sort"),
@@ -254,7 +211,12 @@
         DLCSV = document.getElementById("dlCsv"),
         EMAIL = document.getElementById("emailFav"),
         PAGER_TOP = document.getElementById("pager"),
-        PAGER_BOTTOM = document.getElementById("pager-bottom");
+        PAGER_BOTTOM = document.getElementById("pager-bottom"),
+        FOCUS = document.getElementById("focus"),
+        FOCUS_NAME = document.getElementById("focus-name"),
+        FOCUS_CARD = document.getElementById("focus-card"),
+        REC = document.getElementById("rec"),
+        CLEAR_FOCUS = document.getElementById("clearFocus");
 
   let DATA=[], page=1;
 
@@ -288,11 +250,11 @@
     return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
   }
 
-  // ===== 重複合併（顯示用）=====
+  // ===== 重複合併工具（僅顯示用，不改原資料）=====
   function normalizeImgUrl(s){
     s = String(s||'').toLowerCase();
-    s = s.replace(/^https?:\/\/[^/]+/, '');
-    s = s.replace(/[?#].*$/, '');
+    s = s.replace(/^https?:\/\/[^/]+/, ''); // 去掉網域
+    s = s.replace(/[?#].*$/, '');           // 去掉 query/fragment
     return s;
   }
   function dupKey(x){
@@ -403,7 +365,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       .forEach(([n])=>{ const o=document.createElement('option'); o.value=n; o.textContent=n; MECH.appendChild(o); });
   }
 
-  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1;render();}));
+  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1;render(); hideAC();}));
   [HOTC,HOTM].forEach(el=>el.addEventListener('change',()=>{ buildOptions(); page=1; render(); }));
   ONLYF.addEventListener('change', ()=>{ page=1; render(); });
   HIDED.addEventListener('change', ()=>{ page=1; render(); });
@@ -411,6 +373,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); scrollToTop();}});
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
+  CLEAR_FOCUS.addEventListener('click', ()=>{ clearFocus(); });
 
   function filtered(noPaging=false){
     let list = DATA.slice();
@@ -466,43 +429,6 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     saveFavs(); render();
   }
 
-  function hotBadge(bggId){
-    const rank = HOTMAP.get(Number(bggId));
-    return rank? `<span class="pill hot">🔥 熱度 #${rank}</span>` : '';
-  }
-
-  const NEWS_CACHE = new Map(); // bgg_id -> html
-  async function loadNewsInto(bggId, mountEl){
-    if (!bggId){ mountEl.innerHTML = '<div class="muted">沒有 BGG ID</div>'; return; }
-    if (NEWS_CACHE.has(bggId)){ mountEl.innerHTML = NEWS_CACHE.get(bggId); return; }
-    mountEl.innerHTML = '<div class="muted">讀取中…</div>';
-    try{
-      const fid = await getForumIdForThing(bggId);
-      let threads = [];
-      if (fid) threads = await getLatestThreads(fid, 3);
-      const videos = await getLatestVideos(bggId, 3);
-
-      const tHtml = threads.length ? threads.map(t=>`
-        <div class="news-item">🗨️ <a href="${t.link}" target="_blank" rel="noopener">${t.subject}</a>
-          <time>（${t.lastpostdate.slice(0,10)}）</time></div>`).join('') : '<div class="muted">暫無最新討論</div>';
-
-      const vHtml = videos.length ? videos.map(v=>`
-        <div class="news-item">▶️ <a href="${v.link}" target="_blank" rel="noopener">${v.title}</a>
-          <time>（${(v.postdate||'').slice(0,10)}）</time></div>`).join('') : '';
-
-      const html = `
-        <div class="news-list">
-          ${tHtml}
-          ${vHtml}
-        </div>`;
-      NEWS_CACHE.set(bggId, html);
-      mountEl.innerHTML = html;
-    }catch(e){
-      mountEl.innerHTML = '<div class="muted">讀取失敗（可能是 CORS 或流量限制）</div>';
-    }
-  }
-
-  // 渲染到指定容器（上/下兩處）
   function renderPagerInto(el, pages){
     const MAX_LINKS = 9;
     el.innerHTML = '';
@@ -540,17 +466,49 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     renderPagerInto(PAGER_TOP, pages);
     renderPagerInto(PAGER_BOTTOM, pages);
 
-    G.innerHTML = pageRows.map(x=>{
-      const cz = getCatsZh(x);
-      const mz = getMechsZh(x);
-      const imgSrc = imageSrcOf(x);
-      const id = idOf(x);
-      const fav = favs.has(id);
-      const chosenCat = CAT.value, chosenMech = MECH.value;
-      const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
-      const hot = hotBadge(x.bgg_id);
+    G.innerHTML = pageRows.map(cardHtml).join('');
 
-      return `
+    // 收藏／chip 篩選
+    G.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
+    G.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault();
+        const v=a.dataset.cat;
+        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
+        ensureOption(CAT, v); CAT.value=v; page=1; render();
+        const url = new URL(location.href); url.searchParams.set('cat', v); url.searchParams.set('page','1');
+        history.replaceState(null,"",url);
+        scrollToTop();
+      };
+    });
+    G.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault();
+        const v=a.dataset.mech;
+        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
+        ensureOption(MECH, v); MECH.value=v; page=1; render();
+        const url = new URL(location.href); url.searchParams.set('mech', v); url.searchParams.set('page','1');
+        history.replaceState(null,"",url);
+        scrollToTop();
+      };
+    });
+
+    // 同步 URL 的 page 參數
+    const url = new URL(location.href);
+    url.searchParams.set('page', String(page));
+    history.replaceState(null,"",url);
+  }
+
+  function cardHtml(x){
+    const cz = getCatsZh(x);
+    const mz = getMechsZh(x);
+    const imgSrc = imageSrcOf(x);
+    const id = idOf(x);
+    const fav = favs.has(id);
+    const chosenCat = CAT.value, chosenMech = MECH.value;
+    const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
+
+    return `
       <div class="card">
         <button class="fav-btn ${fav?'active':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite">
           <span class="star">${fav?'⭐':'☆'}</span>
@@ -580,63 +538,169 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         ${x.used_note?`<div class="muted" style="margin-top:2px">${x.used_note}</div>`:''}
         ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
 
-        <div class="news-wrap">
-          <div class="news-row">
-            <a href="${link}" target="_blank" rel="nofollow noopener">BGG</a>
-            ${hot}
-            <button class="btn news-btn" data-bggid="${x.bgg_id||''}">📰 最新資訊</button>
-          </div>
-          <div class="news-box" id="news-${x.bgg_id||id}" style="display:none"></div>
+        <div style="margin-top:6px">
+          <a href="${link}" target="_blank" rel="nofollow noopener">BGG</a>
+        </div>
+      </div>`;
+  }
+
+  // ====== Auto-complete（模糊） ======
+  function hideAC(){ AC.style.display='none'; AC.innerHTML=''; }
+  function showAC(items){
+    if(!items.length){ hideAC(); return; }
+    AC.innerHTML = items.slice(0,8).map(it=>{
+      const sub = it.name_en ? `<span class="ac-sub">EN: ${it.name_en}</span>` : '';
+      return `<div class="ac-item" data-id="${idOf(it)}">
+        <div>
+          <div>${it.name_zh || it.name_en || ''}</div>
+          ${sub}
         </div>
       </div>`;
     }).join('');
-
-    // 收藏／chip 篩選
-    G.querySelectorAll('.fav-btn').forEach(btn=>{
-      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
-    });
-    G.querySelectorAll('.chip.cat').forEach(a=>{
-      a.onclick=(e)=>{ e.preventDefault();
-        const v=a.dataset.cat;
-        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
-        ensureOption(CAT, v); CAT.value=v; page=1; render();
-        const url = new URL(location.href); url.searchParams.set('cat', v); url.searchParams.set('page','1');
-        history.replaceState(null,"",url);
-        scrollToTop();
-      };
-    });
-    G.querySelectorAll('.chip.mech').forEach(a=>{
-      a.onclick=(e)=>{ e.preventDefault();
-        const v=a.dataset.mech;
-        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
-        ensureOption(MECH, v); MECH.value=v; page=1; render();
-        const url = new URL(location.href); url.searchParams.set('mech', v); url.searchParams.set('page','1');
-        history.replaceState(null,"",url);
-        scrollToTop();
-      };
-    });
-
-    // 最新資訊按鈕（點擊才查，避免 API 流量）
-    G.querySelectorAll('.news-btn').forEach(btn=>{
-      btn.onclick = async (e)=>{
-        e.preventDefault();
-        const bggId = Number(btn.dataset.bggid||0);
-        const box = btn.closest('.news-wrap').querySelector('.news-box');
-        if (box.style.display==='none'){
-          box.style.display='block';
-          await loadNewsInto(bggId, box);
-        }else{
-          box.style.display='none';
+    AC.style.display='block';
+    AC.querySelectorAll('.ac-item').forEach(el=>{
+      el.onclick = ()=>{
+        const item = DATA.find(x=>idOf(x)===el.dataset.id);
+        if(item){
+          Q.value = item.name_zh || item.name_en || '';
+          hideAC();
+          page=1;
+          render();
+          showFocus(item);
+          scrollToTop();
         }
       };
     });
+  }
 
-    // 同步 URL 的 page 參數
-    const url = new URL(location.href);
-    const {pages} = filtered();
-    page = Math.min(page, pages);
-    url.searchParams.set('page', String(page));
-    history.replaceState(null,"",url);
+  function normText(s){
+    return (s||'').toLowerCase()
+      .replace(/桌遊|桌由|board ?game|bgg/g,'') // 常見尾詞
+      .replace(/[^\p{L}\p{N}]+/gu,''); // 移除符號空白
+  }
+  function bigrams(s){
+    const arr=[...s]; const out=new Set();
+    for(let i=0;i<arr.length-1;i++) out.add(arr[i]+arr[i+1]);
+    return out;
+  }
+  function jaccardSet(a,b){
+    if(!a.size && !b.size) return 0;
+    let inter=0;
+    for(const x of a) if(b.has(x)) inter++;
+    return inter / (a.size + b.size - inter);
+  }
+  function lcsLen(a,b){
+    const m=a.length, n=b.length;
+    const dp=Array.from({length:m+1},()=>Array(n+1).fill(0));
+    for(let i=1;i<=m;i++){
+      for(let j=1;j<=n;j++){
+        dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1]+1 : Math.max(dp[i-1][j], dp[i][j-1]);
+      }
+    }
+    return dp[m][n];
+  }
+  function nameScore(q, x){
+    const fields = [
+      x.name_zh||'', x.name_en||'',
+      ...(x.aliases_zh||[]), ...((x.search_keywords||[]).map(s=>String(s)))
+    ];
+    const qn = normText(q);
+    let best=0;
+    for(const f of fields){
+      const fn = normText(f);
+      if(!fn) continue;
+      let s=0;
+      if(fn.includes(qn)) s += 3;
+      if(qn.includes(fn) && fn.length>0) s += 2;
+      const j = jaccardSet(bigrams(fn), bigrams(qn)); s += 2*j;
+      const l = lcsLen(fn, qn); s += (l / Math.max(1, Math.max(fn.length, qn.length))) * 2;
+      if(s>best) best=s;
+    }
+    return best;
+  }
+
+  Q.addEventListener('input', ()=>{
+    const q = Q.value.trim();
+    if(!q){ hideAC(); clearFocus(false); render(); return; }
+    const ranked = DATA
+      .map(x=>[x, nameScore(q, x)])
+      .filter(([x,s])=>s>0.15)
+      .sort((a,b)=>b[1]-a[1])
+      .map(([x])=>x);
+    showAC(ranked);
+  });
+  document.addEventListener('click', (e)=>{ if(!AC.contains(e.target) && e.target!==Q) hideAC(); });
+
+  // ====== 智慧推薦 ======
+  function jaccard(aArr,bArr){
+    const A = new Set(aArr), B = new Set(bArr);
+    if(!A.size && !B.size) return 0;
+    let inter=0; for(const x of A) if(B.has(x)) inter++;
+    return inter / (A.size + B.size - inter);
+  }
+  function common(aArr,bArr){ const A=new Set(aArr); return bArr.filter(x=>A.has(x)); }
+
+  function similarFor(seed, k=5){
+    const seedM = getMechsZh(seed), seedC = getCatsZh(seed);
+    const scored = DATA
+      .filter(x=> idOf(x)!==idOf(seed))
+      .map(x=>{
+        const m = getMechsZh(x), c = getCatsZh(x);
+        const s = 0.6*jaccard(seedM,m) + 0.4*jaccard(seedC,c);
+        return {x, s, commonM: common(seedM,m), commonC: common(seedC,c)};
+      })
+      .filter(o=>o.s>0) // 至少有重疊
+      .sort((a,b)=> b.s - a.s);
+    // 若完全沒有重疊，放寬條件改取名字相似
+    if(scored.length===0){
+      const q = seed.name_zh || seed.name_en || '';
+      const byName = DATA
+        .filter(x=>idOf(x)!==idOf(seed))
+        .map(x=>({x, s:nameScore(q,x)/8, commonM:[], commonC:[]}))
+        .sort((a,b)=>b.s-a.s);
+      return byName.slice(0,k);
+    }
+    return scored.slice(0,k);
+  }
+
+  function showFocus(seed){
+    FOCUS_NAME.textContent = seed.name_zh || seed.name_en || '';
+    FOCUS_CARD.innerHTML = cardHtml(seed);
+    const sims = similarFor(seed, 5);
+    const cards = sims.map(o=>{
+      const x=o.x;
+      const reasonBits=[];
+      if(o.commonM.length) reasonBits.push(`共通機制：${o.commonM.slice(0,3).join("、")}`);
+      if(o.commonC.length) reasonBits.push(`共通分類：${o.commonC.slice(0,3).join("、")}`);
+      const reason = reasonBits.length? `<div class="reason">${reasonBits.join("　")}</div>` : '';
+      return `<div>${cardHtml(x)}${reason}</div>`;
+    }).join('');
+    REC.innerHTML = cards;
+    FOCUS.style.display='block';
+
+    // 讓推薦卡也能點 chip、收藏
+    FOCUS.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
+    FOCUS.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.cat;
+        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
+        ensureOption(CAT, v); CAT.value=v; page=1; render(); scrollToTop();
+      };
+    });
+    FOCUS.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.mech;
+        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
+        ensureOption(MECH, v); MECH.value=v; page=1; render(); scrollToTop();
+      };
+    });
+  }
+
+  function clearFocus(resetQuery=true){
+    if(resetQuery){ Q.value=''; }
+    FOCUS.style.display='none';
+    FOCUS_CARD.innerHTML=''; REC.innerHTML='';
+    render();
   }
 </script>
 </body>
