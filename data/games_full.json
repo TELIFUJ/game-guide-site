@@ -1441,7 +1441,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.5833,
+    "weight": 1.5842,
     "categories": [
       "Bluffing",
       "Deduction",
@@ -3976,7 +3976,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 4.5696,
+    "weight": 4.57,
     "categories": [
       "City Building",
       "Economic",
@@ -6263,7 +6263,7 @@
     ],
     "time_min": 60,
     "time_max": 150,
-    "weight": 4.218,
+    "weight": 4.2178,
     "categories": [
       "Economic"
     ],
@@ -7727,7 +7727,7 @@
     ],
     "time_min": 120,
     "time_max": 180,
-    "weight": 3.6135,
+    "weight": 3.6136,
     "categories": [
       "Modern Warfare",
       "Political",
@@ -10420,7 +10420,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.2581,
+    "weight": 1.258,
     "categories": [
       "Card Game",
       "Deduction",
@@ -10485,7 +10485,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.2335,
+    "weight": 1.2329,
     "categories": [
       "Card Game",
       "Deduction",
@@ -12711,7 +12711,7 @@
     ],
     "time_min": 120,
     "time_max": 180,
-    "weight": 2.6994,
+    "weight": 2.6998,
     "categories": [
       "Adventure",
       "Exploration",
@@ -15904,7 +15904,7 @@
     ],
     "time_min": 42,
     "time_max": 42,
-    "weight": 1.8915,
+    "weight": 1.8917,
     "categories": [
       "Deduction",
       "Murder / Mystery",
@@ -16140,7 +16140,7 @@
     ],
     "time_min": 20,
     "time_max": 40,
-    "weight": 1.191,
+    "weight": 1.1889,
     "categories": [
       "Deduction",
       "Party Game",
@@ -16466,7 +16466,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 1.6611,
+    "weight": 1.6615,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -18524,7 +18524,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.0759,
+    "weight": 1.0758,
     "categories": [
       "Card Game",
       "Number"
