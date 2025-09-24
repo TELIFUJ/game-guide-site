@@ -3,7 +3,7 @@ name: Update Game Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 17 * * *"  # 台灣 01:00
+    - cron: "0 17 * * *"  # 台灣 01:00（UTC+8）
 
 jobs:
   build:
@@ -29,9 +29,12 @@ jobs:
           set -euo pipefail
           mkdir -p scripts data assets/img
 
-          # 若沒有機制對照檔，先建表頭
+          # 若沒有對照檔，先建表頭（可留空表，之後慢慢補）
           if [ ! -f data/mechanism_map_zh.csv ]; then
             printf 'bgg_mechanism_en,mechanism_zh\n' > data/mechanism_map_zh.csv
+          fi
+          if [ ! -f data/category_map_zh.csv ]; then
+            printf 'bgg_category_en,category_zh\n' > data/category_map_zh.csv
           fi
 
           # --- scripts/resolve_bgg.py ---
@@ -181,48 +184,19 @@ jobs:
           if __name__ == "__main__": main()
           PY
 
-          # --- scripts/apply_taxonomy_and_price.py（含 fan-out，覆寫 image） ---
+          # --- scripts/apply_taxonomy_and_price.py（不 fan-out；覆寫 image、套中文映射） ---
           cat <<'PY' > scripts/apply_taxonomy_and_price.py
-          import csv, json
+          import csv, json, urllib.parse
           from pathlib import Path
 
-          MANUAL_CSV = Path("data/manual.csv")
-          BGG_IN     = Path("data/bgg_data.json")
-          BGG_OUT    = BGG_IN
-          CATMAP_CSV = Path("data/category_map_zh.csv")
-          MECHMAP_CSV= Path("data/mechanism_map_zh.csv")
-
-          def _int_or_none(x):
-              if x is None: return None
-              s = str(x).strip()
-              if s=="" or s.lower()=="none": return None
-              try: return int(float(s))
-              except: return None
-
-          def load_manual_grouped():
-              groups = {}
-              if not MANUAL_CSV.exists(): return groups
-              import csv
-              with MANUAL_CSV.open(encoding="utf-8-sig", newline="") as f:
-                  r = csv.DictReader(f)
-                  for row in r:
-                      key = str(row.get("bgg_id") or row.get("name_zh") or row.get("bgg_query") or "").strip()
-                      if not key: 
-                          continue
-                      row["manual_override"] = int(row.get("manual_override") or 0)
-                      row["price_msrp_twd"]  = _int_or_none(row.get("price_msrp_twd"))
-                      row["price_twd"]       = _int_or_none(row.get("price_twd"))
-                      row["used_price_twd"]  = _int_or_none(row.get("used_price_twd"))
-                      row["stock"]           = _int_or_none(row.get("stock"))
-                      if row.get("image_version_id") is not None:
-                          row["image_version_id"] = str(row["image_version_id"]).strip()
-                      groups.setdefault(key, []).append(row)
-              return groups
+          BGG_IN      = Path("data/bgg_data.json")
+          CATMAP_CSV  = Path("data/category_map_zh.csv")
+          MECHMAP_CSV = Path("data/mechanism_map_zh.csv")
 
           def load_map(csv_path, key_en, key_zh):
               m = {}
               if not csv_path.exists(): return m
-              with csv_path.open(encoding="utf-8-sig") as f:
+              with csv_path.open(encoding="utf-8-sig", newline="") as f:
                   r = csv.DictReader(f)
                   for row in r:
                       en = (row.get(key_en) or "").strip()
@@ -231,63 +205,59 @@ jobs:
                           m[en] = zh or en
               return m
 
-          def _apply_manual_fields(base: dict, m: dict) -> dict:
-              out = dict(base)
-              for fld in [
-                  "name_zh","name_en_override","alias_zh","category_zh",
-                  "price_msrp_twd","price_twd","used_price_twd",
-                  "price_note","used_note","manual_override","stock",
-                  "description","image_override","image_version_id",
-              ]:
-                  if fld in m and m[fld] not in (None, ""):
-                      out[fld] = m[fld]
-              if out.get("alias_zh"):
-                  out["aliases_zh"] = [x.strip() for x in str(out["alias_zh"]).split(";") if x.strip()]
-              img_ovr = (m.get("image_override") or "").strip()
-              if img_ovr:
-                  v = (m.get("image_version_id") or "").strip()
-                  if v:
-                      sep = "&" if "?" in img_ovr else "?"
-                      out["image"] = f"{img_ovr}{sep}v={v}"
-                  else:
-                      out["image"] = img_ovr
-              return out
+          def parse_list_zh(s: str):
+              return [x.strip() for x in str(s).replace("；",";").replace("/", ";").split(";") if x.strip()]
+
+          def with_cache_param(url: str, ver: str|None):
+              if not url or not ver: return url
+              u = urllib.parse.urlsplit(url)
+              q = urllib.parse.parse_qsl(u.query, keep_blank_values=True)
+              if any(k.lower()=="v" for k,_ in q):
+                  return url
+              q.append(("v", str(ver)))
+              new_q = urllib.parse.urlencode(q)
+              return urllib.parse.urlunsplit((u.scheme, u.netloc, u.path, new_q, u.fragment))
 
           def main():
               if not BGG_IN.exists():
                   print("No data/bgg_data.json; skip apply."); return
-              manual_groups = load_manual_grouped()
-              catmap = load_map(CATMAP_CSV,"bgg_category_en","category_zh")
-              mechmap= load_map(MECHMAP_CSV,"bgg_mechanism_en","mechanism_zh")
+
+              catmap  = load_map(CATMAP_CSV,  "bgg_category_en",  "category_zh")
+              mechmap = load_map(MECHMAP_CSV, "bgg_mechanism_en", "mechanism_zh")
 
               rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
               out  = []
 
               for r in rows:
-                  keys = [str(r.get("bgg_id") or ""), str(r.get("name_zh") or ""), str(r.get("bgg_query") or "")]
-                  matched = None
-                  for k in keys:
-                      if k and k in manual_groups:
-                          matched = manual_groups[k]; break
-                  if matched:
-                      for m in matched:
-                          clone = _apply_manual_fields(r, m)
-                          out.append(clone)
-                  else:
-                      out.append(r)
+                  rr = dict(r)
 
-              for r in out:
-                  if r.get("category_zh"):
-                      r["categories_zh"] = [x.strip() for x in str(r["category_zh"]).replace("；",";").replace("/", ";").split(";") if x.strip()]
-                  else:
-                      en = r.get("categories") or []
-                      r["categories_zh"] = [catmap.get(x, x) for x in en]
-              for r in out:
-                  mechs = r.get("mechanics") or []
-                  r["mechanics_zh"] = [mechmap.get(x, x) for x in mechs]
+                  # alias_zh -> aliases_zh（陣列）
+                  if rr.get("alias_zh"):
+                      rr["aliases_zh"] = [x.strip() for x in str(rr["alias_zh"]).split(";") if x.strip()]
 
-              BGG_OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied (fan-out enabled).")
+                  # 只要有 image_override 就直接寫進 image；並帶 v= 做快取破壞
+                  img_ovr = (rr.get("image_override") or "").strip()
+                  if img_ovr:
+                      ver = (str(rr.get("image_version_id")).strip()
+                             if rr.get("image_version_id") not in (None, "") else None)
+                      rr["image"] = with_cache_param(img_ovr, ver)
+
+                  # 分類中文
+                  if rr.get("category_zh"):
+                      rr["categories_zh"] = parse_list_zh(rr["category_zh"])
+                  else:
+                      en = rr.get("categories") or []
+                      rr["categories_zh"] = [catmap.get(x, x) for x in en]
+
+                  # 機制中文
+                  mechs = rr.get("mechanics") or []
+                  rr["mechanics_zh"] = [mechmap.get(x, x) for x in mechs]
+
+                  out.append(rr)
+
+              BGG_IN.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+              print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied (no fan-out).")
+
           if __name__ == "__main__":
               main()
           PY
