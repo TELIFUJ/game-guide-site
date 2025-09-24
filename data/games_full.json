@@ -1,5 +1,56 @@
 [
   {
+    "name_zh": "12 Thieves",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 22278,
+    "name_en": "12 Thieves",
+    "year": 2006,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.8729,
+    "categories": [
+      "Arabian"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/AYHhIzq4b-Zl1_meiahlIQ__original/img/E2J4xAwFwc754FLaE6Pktrk5TaE=/0x0/filters:format(jpeg)/pic3389017.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/AYHhIzq4b-Zl1_meiahlIQ__small/img/ZDgXLmavV4rKv3q0DO11puC0f08=/fit-in/200x150/filters:strip_icc()/pic3389017.jpg",
+    "versions_count": 8,
+    "categories_zh": [
+      "阿拉伯"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "手牌管理"
+    ],
+    "image": "assets/img/22278-af8a39ee.jpg",
+    "id": "12_thieves-22278",
+    "bgg_url": "https://boardgamegeek.com/boardgame/22278",
+    "search_keywords": [
+      "12 Thieves BGG",
+      "12 Thieves BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "Ali",
     "name_en_override": "",
     "alias_zh": "",
@@ -1242,6 +1293,65 @@
     "search_keywords": [
       "DOS遊戲卡 BGG",
       "DOS BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "España 1936",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/4dqSCuvsZwaLiA-k5lS88w__small@2x/img/S7iDIyEt7bs09WfB2iJtYABR1LQ=/fit-in/400x300/filters:strip_icc()/pic315102.jpg",
+    "image_version_id": "",
+    "bgg_id": 31291,
+    "name_en": "España 1936",
+    "year": 2007,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 180,
+    "time_max": 180,
+    "weight": 2.8151,
+    "categories": [
+      "Civil War",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Campaign / Battle Card Driven",
+      "Dice Rolling",
+      "Movement Points",
+      "Simulation"
+    ],
+    "image_url": "https://cf.geekdo-images.com/0umHDLi76A0kFfFTQJhgTA__original/img/KuScXRru04hZgAQUUEodx2bHiFo=/0x0/filters:format(jpeg)/pic7958550.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/0umHDLi76A0kFfFTQJhgTA__small/img/wJ4spGd_ixsGffqfgBTn0OosVK0=/fit-in/200x150/filters:strip_icc()/pic7958550.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/4dqSCuvsZwaLiA-k5lS88w__small@2x/img/S7iDIyEt7bs09WfB2iJtYABR1LQ=/fit-in/400x300/filters:strip_icc()/pic315102.jpg",
+    "categories_zh": [
+      "內戰",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "戰役／卡驅動",
+      "擲骰",
+      "移動點",
+      "模擬"
+    ],
+    "id": "españa_1936-92d706cb",
+    "bgg_url": "https://boardgamegeek.com/boardgame/31291",
+    "search_keywords": [
+      "España 1936 BGG",
+      "España 1936 BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -3182,6 +3292,63 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "Parfum",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 172546,
+    "name_en": "Parfum",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.0909,
+    "categories": [
+      "Industry / Manufacturing",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Dice Rolling",
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/e_ZSrPuyjbSdtUlbFUWozw__original/img/EI2H3i7Od6sMaRc4G7ZTCkC3vzg=/0x0/filters:format(jpeg)/pic2448514.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/e_ZSrPuyjbSdtUlbFUWozw__small/img/1sNCdgDUHfFRK2eXH5-v1C74Bw8=/fit-in/200x150/filters:strip_icc()/pic2448514.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "工業／製造",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "擲骰",
+      "公開輪抽",
+      "收集套組"
+    ],
+    "image": "assets/img/172546-80316d20.jpg",
+    "id": "parfum-172546",
+    "bgg_url": "https://boardgamegeek.com/boardgame/172546",
+    "search_keywords": [
+      "Parfum BGG",
+      "Parfum BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "Petits chevaux - Ludo",
     "name_en_override": "",
     "alias_zh": "",
@@ -3341,6 +3508,61 @@
     "search_keywords": [
       "pony run BGG",
       "Pony Run BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "Queen's Architect",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 172547,
+    "name_en": "Queen's Architect",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.7937,
+    "categories": [
+      "Medieval"
+    ],
+    "mechanics": [
+      "Point to Point Movement",
+      "Rondel",
+      "Set Collection",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Mi0scH0iUlXWYFQKzvUtPA__original/img/Jvqfk7lsRnVbXwgDuC1lQpVJAtY=/0x0/filters:format(jpeg)/pic2448516.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Mi0scH0iUlXWYFQKzvUtPA__small/img/RV52MEJw6ovXG06jVEq6TASRvpk=/fit-in/200x150/filters:strip_icc()/pic2448516.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "點對點移動",
+      "輪轉盤",
+      "收集套組",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/172547-26001f3d.jpg",
+    "id": "queen's_architect-172547",
+    "bgg_url": "https://boardgamegeek.com/boardgame/172547",
+    "search_keywords": [
+      "Queen's Architect BGG",
+      "Queen's Architect BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -3846,6 +4068,63 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "Templars' Journey",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 219502,
+    "name_en": "Templars' Journey",
+    "year": 2017,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.6667,
+    "categories": [
+      "Bluffing",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Simultaneous Action Selection",
+      "Take That",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/PRCvDcshmhKl6ktu_Euf4w__original/img/Rlg5dyBdQoHSqb0nlXEL9jBAdlM=/0x0/filters:format(jpeg)/pic3389210.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/PRCvDcshmhKl6ktu_Euf4w__small/img/Fhs_SZvlGMaf5dMUZje73TTEkQk=/fit-in/200x150/filters:strip_icc()/pic3389210.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "唬人",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "同時選擇行動",
+      "互害",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/219502-d60143f5.jpg",
+    "id": "templars'_journey-219502",
+    "bgg_url": "https://boardgamegeek.com/boardgame/219502",
+    "search_keywords": [
+      "Templars' Journey BGG",
+      "Templars' Journey BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "The Swarm (2008)",
     "name_en_override": "",
     "alias_zh": "",
@@ -4078,6 +4357,65 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "Urbanization",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 118337,
+    "name_en": "Urbanization",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 75,
+    "time_max": 75,
+    "weight": 2.8776,
+    "categories": [
+      "City Building"
+    ],
+    "mechanics": [
+      "Income",
+      "Market",
+      "Network and Route Building",
+      "Open Drafting",
+      "Turn Order: Stat-Based",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-Uv_0yuIEAewugd4XseXrQ__original/img/7zyhWWA_0g8TT6nFV8kHYBn52NQ=/0x0/filters:format(jpeg)/pic1208221.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/-Uv_0yuIEAewugd4XseXrQ__small/img/tFOTUpk2nQFhuOSR7zEF0KlSk9w=/fit-in/200x150/filters:strip_icc()/pic1208221.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "城市建設"
+    ],
+    "mechanics_zh": [
+      "收入",
+      "市集",
+      "路網建設",
+      "公開輪抽",
+      "回合順序：能力值",
+      "角色能力"
+    ],
+    "image": "assets/img/118337-24b9e0b8.jpg",
+    "id": "urbanization-118337",
+    "bgg_url": "https://boardgamegeek.com/boardgame/118337",
+    "search_keywords": [
+      "Urbanization BGG",
+      "Urbanization BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "VYE",
     "name_en_override": "",
     "alias_zh": "",
@@ -4237,6 +4575,293 @@
     "search_keywords": [
       "ZIP ZAP BGG",
       "Zip Zap BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "傳情畫意",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "350",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "3",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/K46rzeRGC96r5PkARNfs5g__small@2x/img/8IosASlqOxz3XBm9-fcqhKvQWjc=/fit-in/400x300/filters:strip_icc()/pic2596628.png",
+    "image_version_id": "",
+    "bgg_id": 46213,
+    "name_en": "Telestrations",
+    "year": 2009,
+    "players": [
+      4,
+      8
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0707,
+    "categories": [
+      "Humor",
+      "Party Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Drawing",
+      "Paper-and-Pencil"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Dd94J37Oi1tgL7HAAaOfAQ__original/img/SAMxnv21q2rwvViEOu2nti4H0Is=/0x0/filters:format(jpeg)/pic8855812.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Dd94J37Oi1tgL7HAAaOfAQ__small/img/CcgassIExgVh2dwANVY_Srp6be0=/fit-in/200x150/filters:strip_icc()/pic8855812.jpg",
+    "versions_count": 40,
+    "image": "https://cf.geekdo-images.com/K46rzeRGC96r5PkARNfs5g__small@2x/img/8IosASlqOxz3XBm9-fcqhKvQWjc=/fit-in/400x300/filters:strip_icc()/pic2596628.png",
+    "categories_zh": [
+      "幽默",
+      "派對",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "繪圖",
+      "紙筆"
+    ],
+    "id": "telestrations-35be72df",
+    "bgg_url": "https://boardgamegeek.com/boardgame/46213",
+    "search_keywords": [
+      "傳情畫意 BGG",
+      "Telestrations BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "傳情畫意:歡樂今宵",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "350",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/13RHFJQH4wx1RejtzD87UQ__small@2x/img/6mclz4tF2oDwKNohtUaqNEpbgy4=/fit-in/400x300/filters:strip_icc()/pic4506138.png",
+    "image_version_id": "",
+    "bgg_id": 173761,
+    "name_en": "Telestrations: After Dark",
+    "year": 2015,
+    "players": [
+      4,
+      8
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Humor",
+      "Mature / Adult",
+      "Party Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Line Drawing",
+      "Paper-and-Pencil"
+    ],
+    "image_url": "https://cf.geekdo-images.com/lxSrSu2-x2PcDwi78SACjA__original/img/eCKJZh3dTN8MdEYAN6hy_LMyxR0=/0x0/filters:format(jpeg)/pic2564213.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/lxSrSu2-x2PcDwi78SACjA__small/img/Q_q-a0H1MT30IIOVtmHAsIaiqP8=/fit-in/200x150/filters:strip_icc()/pic2564213.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/13RHFJQH4wx1RejtzD87UQ__small@2x/img/6mclz4tF2oDwKNohtUaqNEpbgy4=/fit-in/400x300/filters:strip_icc()/pic4506138.png",
+    "categories_zh": [
+      "幽默",
+      "限制級／成人",
+      "派對",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "連線描繪",
+      "紙筆"
+    ],
+    "id": "telestrations:_after_dark-64b20c38",
+    "bgg_url": "https://boardgamegeek.com/boardgame/173761",
+    "search_keywords": [
+      "傳情畫意:歡樂今宵 BGG",
+      "Telestrations: After Dark BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "傳說的碎片",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 10323,
+    "name_en": "Saga",
+    "year": 2003,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.7,
+    "categories": [
+      "Card Game",
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/fZojCJeLrtLL1bk2bcFWTg__original/img/eKF84Ciq8wsJ636TdXidQ-TCg7w=/0x0/filters:format(jpeg)/pic42882.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/fZojCJeLrtLL1bk2bcFWTg__small/img/MRaru4RzeIEeWSTqwuFp59l0wi8=/fit-in/200x150/filters:strip_icc()/pic42882.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "卡牌",
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組"
+    ],
+    "image": "assets/img/10323-02baf782.jpg",
+    "id": "saga-10323",
+    "bgg_url": "https://boardgamegeek.com/boardgame/10323",
+    "search_keywords": [
+      "傳說的碎片 BGG",
+      "Saga BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "傻傻玩",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "390",
+    "price_twd": "390",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Ws1-MdKWWof49vj8J0Y_Cw__small@2x/img/YLBO8QMsMGnssnQFQ_89xRuXVtM=/fit-in/400x300/filters:strip_icc()/pic2390702.png",
+    "image_version_id": "",
+    "bgg_id": 1692,
+    "name_en": "Spoons",
+    "year": 1972,
+    "players": [
+      4,
+      13
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0833,
+    "categories": [
+      "Action / Dexterity",
+      "Animals",
+      "Card Game",
+      "Children's Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Player Elimination",
+      "Set Collection",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/HsvHpo48kYvLPWn1mjwBgg__original/img/8kjWeCnRKYmLSkoimnsBDfVEmK0=/0x0/filters:format(jpeg)/pic4739608.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/HsvHpo48kYvLPWn1mjwBgg__small/img/lSENVnJ6WQtXPAdtN_cjhNItNqA=/fit-in/200x150/filters:strip_icc()/pic4739608.jpg",
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/Ws1-MdKWWof49vj8J0Y_Cw__small@2x/img/YLBO8QMsMGnssnQFQ_89xRuXVtM=/fit-in/400x300/filters:strip_icc()/pic2390702.png",
+    "categories_zh": [
+      "動作／敏捷",
+      "動物",
+      "卡牌",
+      "兒童",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "玩家淘汰",
+      "收集套組",
+      "同時選擇行動"
+    ],
+    "id": "spoons-65d24730",
+    "bgg_url": "https://boardgamegeek.com/boardgame/1692",
+    "search_keywords": [
+      "傻傻玩 BGG",
+      "Spoons BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "傻傻玩2.0",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "390",
+    "price_twd": "390",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/F-xxek0YslfRdDrBOrm2Mg__small@2x/img/CMe4R49GjzUQlVAqKd_vQSkz0bE=/fit-in/400x300/filters:strip_icc()/pic5522660.jpg",
+    "image_version_id": "",
+    "bgg_id": 1692,
+    "name_en": "Spoons",
+    "year": 1972,
+    "players": [
+      4,
+      13
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0833,
+    "categories": [
+      "Action / Dexterity",
+      "Animals",
+      "Card Game",
+      "Children's Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Player Elimination",
+      "Set Collection",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/HsvHpo48kYvLPWn1mjwBgg__original/img/8kjWeCnRKYmLSkoimnsBDfVEmK0=/0x0/filters:format(jpeg)/pic4739608.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/HsvHpo48kYvLPWn1mjwBgg__small/img/lSENVnJ6WQtXPAdtN_cjhNItNqA=/fit-in/200x150/filters:strip_icc()/pic4739608.jpg",
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/F-xxek0YslfRdDrBOrm2Mg__small@2x/img/CMe4R49GjzUQlVAqKd_vQSkz0bE=/fit-in/400x300/filters:strip_icc()/pic5522660.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "動物",
+      "卡牌",
+      "兒童",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "玩家淘汰",
+      "收集套組",
+      "同時選擇行動"
+    ],
+    "id": "spoons-0338e7c2",
+    "bgg_url": "https://boardgamegeek.com/boardgame/1692",
+    "search_keywords": [
+      "傻傻玩2.0 BGG",
+      "Spoons BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -4447,6 +5072,69 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "嗒寶",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "150",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 63268,
+    "name_en": "Spot it!",
+    "year": 2009,
+    "players": [
+      2,
+      8
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0388,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Educational",
+      "Party Game",
+      "Real-time",
+      "Sports"
+    ],
+    "mechanics": [
+      "Hot Potato",
+      "Pattern Recognition",
+      "Speed Matching"
+    ],
+    "image_url": "https://cf.geekdo-images.com/hqDT4HbEb2eNCyMOeiGj-g__original/img/6w3wjI3YZOWa8XLxoKQqg3XnbN0=/0x0/filters:format(png)/pic6477003.png",
+    "thumb_url": "https://cf.geekdo-images.com/hqDT4HbEb2eNCyMOeiGj-g__small/img/ZNgW2QhLjYpVltWHy3LyJqstnow=/fit-in/200x150/filters:strip_icc()/pic6477003.png",
+    "versions_count": 223,
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "教育",
+      "派對",
+      "即時制",
+      "運動"
+    ],
+    "mechanics_zh": [
+      "燙手山芋",
+      "圖形辨識",
+      "速度配對"
+    ],
+    "image": "assets/img/63268-d442be8e.jpg",
+    "id": "spot_it!-63268",
+    "bgg_url": "https://boardgamegeek.com/boardgame/63268",
+    "search_keywords": [
+      "嗒寶 BGG",
+      "Spot it! BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "嘩啦啦真痛快",
     "name_en_override": "",
     "alias_zh": "",
@@ -4496,6 +5184,47 @@
     "search_keywords": [
       "嘩啦啦真痛快 BGG",
       "Splash! BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "園藝大師",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 237338,
+    "name_en": "Bale's Outfitting Outpost",
+    "year": 2016,
+    "players": [
+      null,
+      null
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/e7Etyb17sdB1hvnmnAFYFw__original/img/yZ75i7X3oF0prpAKkLvd-GyUOLE=/0x0/filters:format(jpeg)/pic3782892.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/e7Etyb17sdB1hvnmnAFYFw__small/img/4cj23mILYsqG999ky3pG3NZzxk8=/fit-in/200x150/filters:strip_icc()/pic3782892.jpg",
+    "versions_count": 3,
+    "categories_zh": [],
+    "mechanics_zh": [],
+    "image": "assets/img/237338-2ad0568b.jpg",
+    "id": "bale's_outfitting_outpost-237338",
+    "bgg_url": "https://boardgamegeek.com/boardgame/237338",
+    "search_keywords": [
+      "園藝大師 BGG",
+      "Bale's Outfitting Outpost BGG"
     ],
     "updated_at": "2025-09-24"
   },
