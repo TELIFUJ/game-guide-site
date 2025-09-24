@@ -1,4 +1,3 @@
-# scripts/apply_taxonomy_and_price.py
 import csv, json, urllib.parse
 from pathlib import Path
 
@@ -44,11 +43,11 @@ def main():
     for r in rows:
         rr = dict(r)
 
-        # 別名（CSV 來的 alias_zh → 陣列）
+        # alias_zh -> aliases_zh 陣列
         if rr.get("alias_zh"):
             rr["aliases_zh"] = [x.strip() for x in str(rr["alias_zh"]).split(";") if x.strip()]
 
-        # 只要有 image_override，就直接定案到 image（自動加 ?v= 快取碼）
+        # 只要有 image_override 就直接定案到 image，並加 v= 抗快取
         img_ovr = (rr.get("image_override") or "").strip()
         if img_ovr:
             ver = (str(rr.get("image_version_id")).strip()
@@ -62,7 +61,7 @@ def main():
             en = rr.get("categories") or []
             rr["categories_zh"] = [catmap.get(x, x) for x in en]
 
-        # 機制中文（無對應就沿用英文）
+        # 機制中文
         mechs = rr.get("mechanics") or []
         rr["mechanics_zh"] = [mechmap.get(x, x) for x in mechs]
 
