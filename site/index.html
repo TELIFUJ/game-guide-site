@@ -36,23 +36,31 @@
     .page-btn.active{background:#eef2ff;border-color:#c7d2fe}
     .page-btn:disabled{opacity:.5;cursor:not-allowed}
 
-    /* --- smart suggestions (新增) --- */
-    .suggest{position:fixed;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:6px;z-index:99;width:min(520px,92vw);max-height:260px;overflow:auto}
-    .suggest.hidden{display:none}
-    .suggest a{display:flex;gap:8px;align-items:center;padding:6px 8px;border-radius:8px;text-decoration:none;color:inherit}
-    .suggest a:hover{background:#f3f4f6}
-    .suggest .meta{font-size:12px;color:var(--muted)}
-    .suggest .ext{margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);display:flex;gap:8px;flex-wrap:wrap}
+    /* Auto-complete */
+    .ac-wrap{position:relative;display:inline-block}
+    .ac-list{position:absolute;left:0;top:100%;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08);margin-top:6px;max-height:320px;overflow:auto;min-width:260px;width:100%}
+    .ac-item{padding:8px 10px;cursor:pointer;display:flex;gap:8px;align-items:center}
+    .ac-item:hover{background:#f5f7ff}
+    .ac-sub{font-size:12px;color:var(--muted)}
+
+    /* Focus + recommendations */
+    #focus{margin:16px 0 10px}
+    .focus-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .focus-title{font-weight:700}
+    .rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .reason{margin-top:6px;color:var(--muted);font-size:12px}
+    .clear-link{margin-left:auto;color:#2563eb;background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:6px 10px;cursor:pointer}
   </style>
 </head>
 <body>
 
 <form class="filters" autocomplete="off" onsubmit="return false">
-  <input id="q" name="q_no_autofill"
-         placeholder="搜尋：中文名 / EN / 關鍵字" style="min-width:220px"
-         autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <!-- 新增：即時建議容器（會自動定位到 #q 底下） -->
-  <div id="qSuggest" class="suggest hidden"></div>
+  <div class="ac-wrap">
+    <input id="q" name="q_no_autofill"
+           placeholder="搜尋：中文名 / EN / 關鍵字（支援模糊）" style="min-width:280px"
+           autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div id="ac" class="ac-list" style="display:none"></div>
+  </div>
 
   <select id="catSel"><option value="">全部分類</option></select>
   <select id="mechSel"><option value="">全部機制</option></select>
@@ -93,10 +101,20 @@
     <button id="next" class="btn">下一頁 ›</button>
   </div>
   <label class="checkbox"><input type="checkbox" id="onlyFav"> 只看收藏</label>
-  <!-- 新增：隱藏重複（自動合併） -->
   <label class="checkbox"><input type="checkbox" id="hideDup" checked> 隱藏重複（自動合併）</label>
   <button id="dlCsv" class="btn">下載 CSV</button>
   <button id="emailFav" class="btn">Email 收藏清單</button>
+</div>
+
+<!-- 智慧推薦焦點區 -->
+<div id="focus" style="display:none">
+  <div class="focus-head">
+    <div class="focus-title">🔎 已選：<span id="focus-name"></span></div>
+    <button id="clearFocus" class="clear-link">清除預覽</button>
+  </div>
+  <div id="focus-card" class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
+  <div style="margin:10px 0 6px;font-weight:700">你可能也會喜歡</div>
+  <div id="rec" class="rec-grid"></div>
 </div>
 
 <!-- 上方數字分頁 -->
@@ -174,6 +192,7 @@
 
   const G = document.getElementById("grid"),
         Q = document.getElementById("q"),
+        AC = document.getElementById("ac"),
         CAT = document.getElementById("catSel"),
         MECH = document.getElementById("mechSel"),
         S = document.getElementById("sort"),
@@ -193,7 +212,11 @@
         EMAIL = document.getElementById("emailFav"),
         PAGER_TOP = document.getElementById("pager"),
         PAGER_BOTTOM = document.getElementById("pager-bottom"),
-        QSUG = document.getElementById("qSuggest");
+        FOCUS = document.getElementById("focus"),
+        FOCUS_NAME = document.getElementById("focus-name"),
+        FOCUS_CARD = document.getElementById("focus-card"),
+        REC = document.getElementById("rec"),
+        CLEAR_FOCUS = document.getElementById("clearFocus");
 
   let DATA=[], page=1;
 
@@ -241,7 +264,6 @@
       normalizeImgUrl(x.image || x.image_url || x.thumb_url || '')
     ].join('|');
   }
-  // 選出群組裡「較佳」的一張（有 override > 有新品價 > 較便宜 > 庫存高）
   function isBetter(a,b){
     const ao = !!a.image_override, bo = !!b.image_override;
     if (ao !== bo) return ao;
@@ -343,7 +365,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       .forEach(([n])=>{ const o=document.createElement('option'); o.value=n; o.textContent=n; MECH.appendChild(o); });
   }
 
-  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1;render();}));
+  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1;render(); hideAC();}));
   [HOTC,HOTM].forEach(el=>el.addEventListener('change',()=>{ buildOptions(); page=1; render(); }));
   ONLYF.addEventListener('change', ()=>{ page=1; render(); });
   HIDED.addEventListener('change', ()=>{ page=1; render(); });
@@ -351,6 +373,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); scrollToTop();}});
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
+  CLEAR_FOCUS.addEventListener('click', ()=>{ clearFocus(); });
 
   function filtered(noPaging=false){
     let list = DATA.slice();
@@ -388,9 +411,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       case "weight_desc":    list.sort((a,b)=>(b.weight??-1)-(a.weight??-1)); break;
     }
 
-    if (HIDED.checked){
-      list = dedupList(list);
-    }
+    if (HIDED.checked){ list = dedupList(list); }
 
     const total=list.length;
     const ps = Number(PAGE_SIZE.value||40);
@@ -408,13 +429,12 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     saveFavs(); render();
   }
 
-  // 渲染到指定容器（上/下兩處）
   function renderPagerInto(el, pages){
     const MAX_LINKS = 9;
     el.innerHTML = '';
     const addBtn = (label, target, disabled=false, active=false)=>{
       const b=document.createElement('button');
-      b.className='page-btn'+(active?' active':'' );
+      b.className='page-btn'+(active?' active':'');
       b.textContent=label;
       b.disabled=disabled;
       b.onclick=()=>{ if(!disabled){ page=target; render(); scrollToTop(); } };
@@ -443,20 +463,52 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     PREV.disabled = (page<=1);
     NEXT.disabled = (page>=pages);
 
-    // 同步兩個分頁列
     renderPagerInto(PAGER_TOP, pages);
     renderPagerInto(PAGER_BOTTOM, pages);
 
-    G.innerHTML = pageRows.map(x=>{
-      const cz = getCatsZh(x);
-      const mz = getMechsZh(x);
-      const imgSrc = imageSrcOf(x);
-      const id = idOf(x);
-      const fav = favs.has(id);
-      const chosenCat = CAT.value, chosenMech = MECH.value;
-      const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
+    G.innerHTML = pageRows.map(cardHtml).join('');
 
-      return `
+    // 收藏／chip 篩選
+    G.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
+    G.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault();
+        const v=a.dataset.cat;
+        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
+        ensureOption(CAT, v); CAT.value=v; page=1; render();
+        const url = new URL(location.href); url.searchParams.set('cat', v); url.searchParams.set('page','1');
+        history.replaceState(null,"",url);
+        scrollToTop();
+      };
+    });
+    G.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault();
+        const v=a.dataset.mech;
+        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
+        ensureOption(MECH, v); MECH.value=v; page=1; render();
+        const url = new URL(location.href); url.searchParams.set('mech', v); url.searchParams.set('page','1');
+        history.replaceState(null,"",url);
+        scrollToTop();
+      };
+    });
+
+    // 同步 URL 的 page 參數
+    const url = new URL(location.href);
+    url.searchParams.set('page', String(page));
+    history.replaceState(null,"",url);
+  }
+
+  function cardHtml(x){
+    const cz = getCatsZh(x);
+    const mz = getMechsZh(x);
+    const imgSrc = imageSrcOf(x);
+    const id = idOf(x);
+    const fav = favs.has(id);
+    const chosenCat = CAT.value, chosenMech = MECH.value;
+    const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
+
+    return `
       <div class="card">
         <button class="fav-btn ${fav?'active':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite">
           <span class="star">${fav?'⭐':'☆'}</span>
@@ -490,169 +542,166 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
           <a href="${link}" target="_blank" rel="nofollow noopener">BGG</a>
         </div>
       </div>`;
+  }
+
+  // ====== Auto-complete（模糊） ======
+  function hideAC(){ AC.style.display='none'; AC.innerHTML=''; }
+  function showAC(items){
+    if(!items.length){ hideAC(); return; }
+    AC.innerHTML = items.slice(0,8).map(it=>{
+      const sub = it.name_en ? `<span class="ac-sub">EN: ${it.name_en}</span>` : '';
+      return `<div class="ac-item" data-id="${idOf(it)}">
+        <div>
+          <div>${it.name_zh || it.name_en || ''}</div>
+          ${sub}
+        </div>
+      </div>`;
     }).join('');
-
-    // 收藏／chip 篩選
-    G.querySelectorAll('.fav-btn').forEach(btn=>{
-      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
-    });
-    G.querySelectorAll('.chip.cat').forEach(a=>{
-      a.onclick=(e)=>{ e.preventDefault();
-        const v=a.dataset.cat;
-        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
-        ensureOption(CAT, v); CAT.value=v; page=1; render();
-        const url = new URL(location.href); url.searchParams.set('cat', v); url.searchParams.set('page','1');
-        history.replaceState(null,"",url);
-        scrollToTop();
+    AC.style.display='block';
+    AC.querySelectorAll('.ac-item').forEach(el=>{
+      el.onclick = ()=>{
+        const item = DATA.find(x=>idOf(x)===el.dataset.id);
+        if(item){
+          Q.value = item.name_zh || item.name_en || '';
+          hideAC();
+          page=1;
+          render();
+          showFocus(item);
+          scrollToTop();
+        }
       };
     });
-    G.querySelectorAll('.chip.mech').forEach(a=>{
-      a.onclick=(e)=>{ e.preventDefault();
-        const v=a.dataset.mech;
-        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
-        ensureOption(MECH, v); MECH.value=v; page=1; render();
-        const url = new URL(location.href); url.searchParams.set('mech', v); url.searchParams.set('page','1');
-        history.replaceState(null,"",url);
-        scrollToTop();
-      };
-    });
-
-    // 同步 URL 的 page 參數
-    const url = new URL(location.href);
-    url.searchParams.set('page', String(page));
-    history.replaceState(null,"",url);
   }
 
-  /* =========================
-     🔎 智慧建議（模糊＋同義詞）
-     ========================= */
-  const ALIAS_DICT = {
-    "矮人金礦": ["矮人礦坑","saboteur"],
-    "凱人金礦": ["矮人礦坑","saboteur"],
-    "卡坦": ["卡坦島","卡坦拓荒者","settlers of catan","catan"],
-    "票車": ["車票之旅","ticket to ride"],
-    "璀璨寶石": ["寶石陣","splendor"],
-    "大鎌": ["大鎌戰","scythe"],
-    "農家樂": ["農場主","agricola"]
-  };
-  function normalizeText(s){
-    return String(s||"").toLowerCase().replace(/\s+|[　]/g,"")
-      .replace(/[：:·•．.]/g,"").replace(/桌[遊游]/g,"").replace(/\(.*?\)|\[.*?\]/g,"");
+  function normText(s){
+    return (s||'').toLowerCase()
+      .replace(/桌遊|桌由|board ?game|bgg/g,'') // 常見尾詞
+      .replace(/[^\p{L}\p{N}]+/gu,''); // 移除符號空白
   }
-  function bigrams(s){ const n=[]; for(let i=0;i<s.length-1;i++) n.push(s.slice(i,i+2)); return n; }
-  function jaccard(a,b){ const A=new Set(a),B=new Set(b); const inter=[...A].filter(x=>B.has(x)).length; const uni=new Set([...A,...B]).size||1; return inter/uni; }
-  function levenshtein(a,b){
-    a=normalizeText(a); b=normalizeText(b);
-    const m=a.length,n=b.length; if(!m) return n; if(!n) return m;
-    const dp=Array(n+1); for(let j=0;j<=n;j++) dp[j]=j;
+  function bigrams(s){
+    const arr=[...s]; const out=new Set();
+    for(let i=0;i<arr.length-1;i++) out.add(arr[i]+arr[i+1]);
+    return out;
+  }
+  function jaccardSet(a,b){
+    if(!a.size && !b.size) return 0;
+    let inter=0;
+    for(const x of a) if(b.has(x)) inter++;
+    return inter / (a.size + b.size - inter);
+  }
+  function lcsLen(a,b){
+    const m=a.length, n=b.length;
+    const dp=Array.from({length:m+1},()=>Array(n+1).fill(0));
     for(let i=1;i<=m;i++){
-      let prev=dp[0]; dp[0]=i;
       for(let j=1;j<=n;j++){
-        const tmp=dp[j];
-        dp[j]=Math.min(dp[j]+1, dp[j-1]+1, prev + (a[i-1]===b[j-1]?0:1));
-        prev=tmp;
+        dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1]+1 : Math.max(dp[i-1][j], dp[i][j-1]);
       }
     }
-    return dp[n];
+    return dp[m][n];
   }
-  function fuzzyScore(q, label){
-    const nq=normalizeText(q), nl=normalizeText(label);
-    if(!nq || !nl) return 0;
-    const lev=levenshtein(nq,nl);
-    const levNorm = 1 - (lev/Math.max(nq.length, nl.length));
-    const jac=jaccard(bigrams(nq), bigrams(nl));
-    return 0.6*levNorm + 0.4*jac;
-  }
-  function labelsOf(x){
-    const arr=[]; if(x.name_zh) arr.push(x.name_zh); if(x.name_en) arr.push(x.name_en);
-    if(Array.isArray(x.aliases_zh)) arr.push(...x.aliases_zh);
-    return [...new Set(arr.filter(Boolean))];
-  }
-  function expandedQueries(q){
-    const base=[q];
-    const alias = ALIAS_DICT[q] || ALIAS_DICT[normalizeText(q)] || [];
-    return [...new Set([...base, ...alias])];
-  }
-  function topMatchesForQuery(q, limit=8){
-    const qs=expandedQueries(q);
-    const scored = DATA.map(x=>{
-      let best=0, bestLabel="";
-      const labels=labelsOf(x);
-      for(const qq of qs){
-        for(const lb of labels){
-          const s=fuzzyScore(qq, lb);
-          if(s>best){ best=s; bestLabel=lb; }
-        }
-      }
-      return {x, score:best, label:bestLabel};
-    }).filter(o=>o.score>=0.35)
-      .sort((a,b)=>b.score-a.score)
-      .slice(0, limit);
-    return scored;
+  function nameScore(q, x){
+    const fields = [
+      x.name_zh||'', x.name_en||'',
+      ...(x.aliases_zh||[]), ...((x.search_keywords||[]).map(s=>String(s)))
+    ];
+    const qn = normText(q);
+    let best=0;
+    for(const f of fields){
+      const fn = normText(f);
+      if(!fn) continue;
+      let s=0;
+      if(fn.includes(qn)) s += 3;
+      if(qn.includes(fn) && fn.length>0) s += 2;
+      const j = jaccardSet(bigrams(fn), bigrams(qn)); s += 2*j;
+      const l = lcsLen(fn, qn); s += (l / Math.max(1, Math.max(fn.length, qn.length))) * 2;
+      if(s>best) best=s;
+    }
+    return best;
   }
 
-  function positionSuggest(){
-    const r = Q.getBoundingClientRect();
-    QSUG.style.left = (r.left + window.scrollX) + 'px';
-    QSUG.style.top  = (r.bottom + window.scrollY + 4) + 'px';
-  }
-  function drawQSuggest(){
+  Q.addEventListener('input', ()=>{
     const q = Q.value.trim();
-    if(!q){ QSUG.classList.add('hidden'); QSUG.innerHTML=''; return; }
-    const matches = topMatchesForQuery(q, 7);
+    if(!q){ hideAC(); clearFocus(false); render(); return; }
+    const ranked = DATA
+      .map(x=>[x, nameScore(q, x)])
+      .filter(([x,s])=>s>0.15)
+      .sort((a,b)=>b[1]-a[1])
+      .map(([x])=>x);
+    showAC(ranked);
+  });
+  document.addEventListener('click', (e)=>{ if(!AC.contains(e.target) && e.target!==Q) hideAC(); });
 
-    // 偵測輸入中的機制/分類關鍵字 → 快捷套用
-    const nz = normalizeText(q);
-    const allMechs = new Set(); DATA.forEach(x=>getMechsZh(x).forEach(m=>allMechs.add(m)));
-    const allCats  = new Set(); DATA.forEach(x=>getCatsZh(x).forEach(c=>allCats.add(c)));
-    const hitMechs = [...allMechs].filter(m=>nz.includes(normalizeText(m))).slice(0,5);
-    const hitCats  = [...allCats].filter(c=>nz.includes(normalizeText(c))).slice(0,5);
+  // ====== 智慧推薦 ======
+  function jaccard(aArr,bArr){
+    const A = new Set(aArr), B = new Set(bArr);
+    if(!A.size && !B.size) return 0;
+    let inter=0; for(const x of A) if(B.has(x)) inter++;
+    return inter / (A.size + B.size - inter);
+  }
+  function common(aArr,bArr){ const A=new Set(aArr); return bArr.filter(x=>A.has(x)); }
 
-    const items = matches.map(o=>`
-      <a href="#" data-id="${idOf(o.x)}">
-        <div>${o.x.name_zh||o.x.name_en||''}</div>
-        <div class="meta">${(o.x.name_en||'')}${o.x.name_en?' · ':''}${getMechsZh(o.x).slice(0,3).join(' / ')}</div>
-      </a>`).join('');
+  function similarFor(seed, k=5){
+    const seedM = getMechsZh(seed), seedC = getCatsZh(seed);
+    const scored = DATA
+      .filter(x=> idOf(x)!==idOf(seed))
+      .map(x=>{
+        const m = getMechsZh(x), c = getCatsZh(x);
+        const s = 0.6*jaccard(seedM,m) + 0.4*jaccard(seedC,c);
+        return {x, s, commonM: common(seedM,m), commonC: common(seedC,c)};
+      })
+      .filter(o=>o.s>0) // 至少有重疊
+      .sort((a,b)=> b.s - a.s);
+    // 若完全沒有重疊，放寬條件改取名字相似
+    if(scored.length===0){
+      const q = seed.name_zh || seed.name_en || '';
+      const byName = DATA
+        .filter(x=>idOf(x)!==idOf(seed))
+        .map(x=>({x, s:nameScore(q,x)/8, commonM:[], commonC:[]}))
+        .sort((a,b)=>b.s-a.s);
+      return byName.slice(0,k);
+    }
+    return scored.slice(0,k);
+  }
 
-    const ext = `
-      <div class="ext">
-        <a href="https://www.google.com/search?q=${encodeURIComponent(q+' 桌遊')}" target="_blank" rel="noopener">Google「${q} 桌遊」</a>
-        <a href="https://boardgamegeek.com/boardgame/search?query=${encodeURIComponent(q)}" target="_blank" rel="noopener">BGG「${q}」</a>
-        ${hitMechs.length||hitCats.length ? `<span class="muted">｜偵測到關鍵字 →</span>`:''}
-        ${hitMechs.map(m=>`<a href="#" data-kind="m" data-val="${m}">套用機制：${m}</a>`).join('')}
-        ${hitCats.map(c=>`<a href="#" data-kind="c" data-val="${c}">套用分類：${c}</a>`).join('')}
-      </div>`;
+  function showFocus(seed){
+    FOCUS_NAME.textContent = seed.name_zh || seed.name_en || '';
+    FOCUS_CARD.innerHTML = cardHtml(seed);
+    const sims = similarFor(seed, 5);
+    const cards = sims.map(o=>{
+      const x=o.x;
+      const reasonBits=[];
+      if(o.commonM.length) reasonBits.push(`共通機制：${o.commonM.slice(0,3).join("、")}`);
+      if(o.commonC.length) reasonBits.push(`共通分類：${o.commonC.slice(0,3).join("、")}`);
+      const reason = reasonBits.length? `<div class="reason">${reasonBits.join("　")}</div>` : '';
+      return `<div>${cardHtml(x)}${reason}</div>`;
+    }).join('');
+    REC.innerHTML = cards;
+    FOCUS.style.display='block';
 
-    QSUG.innerHTML = items + ext;
-    positionSuggest();
-    QSUG.classList.remove('hidden');
-
-    // 點建議 → 將搜尋框填入該名字，並渲染
-    QSUG.querySelectorAll('a[data-id]').forEach(a=>{
-      a.onclick = (e)=>{ e.preventDefault();
-        const id=a.getAttribute('data-id');
-        const x = DATA.find(g=>idOf(g)===id);
-        if(x){
-          Q.value = x.name_zh || x.name_en || '';
-          page=1; render(); QSUG.classList.add('hidden');
-        }
+    // 讓推薦卡也能點 chip、收藏
+    FOCUS.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
+    FOCUS.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.cat;
+        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
+        ensureOption(CAT, v); CAT.value=v; page=1; render(); scrollToTop();
       };
     });
-    // 一鍵套用機制/分類 → 設定下拉 & 渲染
-    QSUG.querySelectorAll('a[data-kind]').forEach(a=>{
-      a.onclick=(e)=>{ e.preventDefault();
-        const kind=a.getAttribute('data-kind'), val=a.getAttribute('data-val');
-        if(kind==='m'){ ensureOption(MECH, val); MECH.value=val; }
-        if(kind==='c'){ ensureOption(CAT,  val); CAT.value=val;  }
-        page=1; render(); QSUG.classList.add('hidden');
+    FOCUS.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.mech;
+        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
+        ensureOption(MECH, v); MECH.value=v; page=1; render(); scrollToTop();
       };
     });
   }
-  Q.addEventListener('input', ()=>{ drawQSuggest(); });
-  window.addEventListener('resize', ()=>{ if(!QSUG.classList.contains('hidden')) positionSuggest(); });
-  document.addEventListener('click', (e)=>{
-    if(!QSUG.contains(e.target) && e.target!==Q) QSUG.classList.add('hidden');
-  });
+
+  function clearFocus(resetQuery=true){
+    if(resetQuery){ Q.value=''; }
+    FOCUS.style.display='none';
+    FOCUS_CARD.innerHTML=''; REC.innerHTML='';
+    render();
+  }
 </script>
 </body>
 </html>
