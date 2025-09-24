@@ -16556,5 +16556,695 @@
       "同時選擇行動",
       "團隊"
     ]
+  },
+  {
+    "name_zh": "Unfair",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 179172,
+    "name_en": "Unfair",
+    "year": 2017,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 50,
+    "time_max": 125,
+    "weight": 2.7206,
+    "categories": [
+      "Card Game",
+      "City Building",
+      "Economic",
+      "Print & Play"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Income",
+      "Loans",
+      "Open Drafting",
+      "Set Collection",
+      "Take That",
+      "Turn Order: Progressive"
+    ],
+    "image_url": "https://cf.geekdo-images.com/RQvdby3WmdROu05YFuxnqQ__original/img/zgL01zlTKSpbIgW5R3vzAJBaJlU=/0x0/filters:format(jpeg)/pic4717882.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/RQvdby3WmdROu05YFuxnqQ__small/img/RRVq0hk9d5X9QbshiIBeWXCdmSA=/fit-in/200x150/filters:strip_icc()/pic4717882.jpg",
+    "versions_count": 8,
+    "categories_zh": [
+      "卡牌",
+      "城市建設",
+      "經濟",
+      "自印版"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收入",
+      "借貸",
+      "公開輪抽",
+      "收集套組",
+      "互害",
+      "回合順序：逐步"
+    ],
+    "image": "assets/img/179172-83279c45.jpg"
+  },
+  {
+    "name_zh": "Castles of Mad King Ludwig         \nPolish edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/9By8m3VhZJnC05ohnq9sow__small@2x/img/zMg9TM4GGHiKbt2gglxV59H4im0=/fit-in/400x300/filters:strip_icc()/pic7696045.jpg",
+    "image_version_id": "",
+    "bgg_id": 263940,
+    "name_en": "G-Player",
+    "year": null,
+    "players": [
+      1,
+      0
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "image_url": null,
+    "thumb_url": null,
+    "versions_count": 1,
+    "image": "https://cf.geekdo-images.com/9By8m3VhZJnC05ohnq9sow__small@2x/img/zMg9TM4GGHiKbt2gglxV59H4im0=/fit-in/400x300/filters:strip_icc()/pic7696045.jpg",
+    "categories_zh": [],
+    "mechanics_zh": []
+  },
+  {
+    "name_zh": "Spirits of the Rice Paddy",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 149119,
+    "name_en": "Spirits of the Rice Paddy",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.0816,
+    "categories": [
+      "Farming",
+      "Mythology"
+    ],
+    "mechanics": [
+      "Enclosure",
+      "Open Drafting",
+      "Simultaneous Action Selection",
+      "Tile Placement",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/0eAvFBxtgRfuwf75WYPk4g__original/img/llBxDgELiWWaJDGnQhGOxXg5Dqk=/0x0/filters:format(jpeg)/pic2563119.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/0eAvFBxtgRfuwf75WYPk4g__small/img/WJbFq-r1I5Snkii6c95zps3GguU=/fit-in/200x150/filters:strip_icc()/pic2563119.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "農業",
+      "神話"
+    ],
+    "mechanics_zh": [
+      "圍地",
+      "公開輪抽",
+      "同時選擇行動",
+      "板塊擺放",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/149119-2985ac98.jpg"
+  },
+  {
+    "name_zh": "Progress: Evolution of Technology",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 140717,
+    "name_en": "Progress: Evolution of Technology",
+    "year": 2014,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 90,
+    "weight": 2.4259,
+    "categories": [
+      "Card Game",
+      "Civilization"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Hand Management",
+      "Open Drafting",
+      "Tech Trees / Tech Tracks"
+    ],
+    "image_url": "https://cf.geekdo-images.com/T7z9R5fSfg-mQ1_zOAPvKw__original/img/CokkxNs3YdjoPvvibjYob_Fta1k=/0x0/filters:format(png)/pic2042966.png",
+    "thumb_url": "https://cf.geekdo-images.com/T7z9R5fSfg-mQ1_zOAPvKw__small/img/0IZVOmIQY6Xr9NUwrQRUb_VvCdQ=/fit-in/200x150/filters:strip_icc()/pic2042966.png",
+    "versions_count": 4,
+    "categories_zh": [
+      "卡牌",
+      "文明"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "手牌管理",
+      "公開輪抽",
+      "科技樹／軌道"
+    ],
+    "image": "assets/img/140717-79ad473f.jpg"
+  },
+  {
+    "name_zh": "Rockwell",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 139562,
+    "name_en": "Rockwell",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.2045,
+    "categories": [
+      "Economic",
+      "Exploration",
+      "Industry / Manufacturing",
+      "Number"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Modular Board",
+      "Semi-Cooperative Game",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/AMTcsFT_XZAahBEiRc11lw__original/img/x4iovDNoMjJbZ0T1015YnYqOabo=/0x0/filters:format(jpeg)/pic1661396.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/AMTcsFT_XZAahBEiRc11lw__small/img/DdH4q7xEg6jnnKpgxuOA842Obmo=/fit-in/200x150/filters:strip_icc()/pic1661396.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "探索",
+      "工業／製造",
+      "數字"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "模組地圖",
+      "半合作",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/139562-d06894e8.jpg"
+  },
+  {
+    "name_zh": "New Amsterdam Multilingual first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Cj4cDq-RF9F9lIhzibHqLg__small@2x/img/Zo9yqAVR9EBTBdI4O4bmY81QSZ4=/fit-in/400x300/filters:strip_icc()/pic1384601.jpg",
+    "image_version_id": "",
+    "bgg_id": 175235,
+    "name_en": "Fallujah, 2004: City Fighting in Iraq",
+    "year": 2016,
+    "players": [
+      1,
+      1
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 2.5,
+    "categories": [
+      "Modern Warfare",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Simulation",
+      "Solo / Solitaire Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/PXxu5wmSZxYRpxw6fWeqjA__original/img/ics7ZOs3EMsLZrkfQ6V4unUz7Js=/0x0/filters:format(jpeg)/pic2849737.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/PXxu5wmSZxYRpxw6fWeqjA__small/img/BfQK8_NEaUMl5UoSXZQH0junfIU=/fit-in/200x150/filters:strip_icc()/pic2849737.jpg",
+    "versions_count": 1,
+    "image": "https://cf.geekdo-images.com/Cj4cDq-RF9F9lIhzibHqLg__small@2x/img/Zo9yqAVR9EBTBdI4O4bmY81QSZ4=/fit-in/400x300/filters:strip_icc()/pic1384601.jpg",
+    "categories_zh": [
+      "現代戰爭",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "模擬",
+      "單人"
+    ]
+  },
+  {
+    "name_zh": "La Città",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 554,
+    "name_en": "La Città",
+    "year": 2000,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.2661,
+    "categories": [
+      "City Building",
+      "Civilization",
+      "Renaissance",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Commodity Speculation",
+      "Modular Board",
+      "Open Drafting",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/faO16dIGrR3cHsBR-3n9Ig__original/img/lzpA-Q84qhq3UMmZStd_VfAxcb0=/0x0/filters:format(jpeg)/pic1013955.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/faO16dIGrR3cHsBR-3n9Ig__small/img/dU1V8qllsDfg0oigPDoWw8RCTsI=/fit-in/200x150/filters:strip_icc()/pic1013955.jpg",
+    "versions_count": 7,
+    "categories_zh": [
+      "城市建設",
+      "文明",
+      "文藝復興",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "商品投機",
+      "模組地圖",
+      "公開輪抽",
+      "板塊擺放"
+    ],
+    "image": "assets/img/554-575f91b8.jpg"
+  },
+  {
+    "name_zh": "Waggle Dance",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 158572,
+    "name_en": "Waggle Dance",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 90,
+    "weight": 2.3125,
+    "categories": [
+      "Animals",
+      "Dice",
+      "Environmental"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Dice Rolling",
+      "Set Collection",
+      "Worker Placement",
+      "Worker Placement with Dice Workers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mql4ZA17CcBvwurWB8RxLQ__original/img/-Iez4TDF9nLw2JwxmHK5c7iZ6OY=/0x0/filters:format(jpeg)/pic2597688.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mql4ZA17CcBvwurWB8RxLQ__small/img/CdqLcVwLPUK-kInfu5TGQnsSuGg=/fit-in/200x150/filters:strip_icc()/pic2597688.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "動物",
+      "骰子",
+      "環境議題"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "擲骰",
+      "收集套組",
+      "Different Worker Types",
+      "骰子工人"
+    ],
+    "image": "assets/img/158572-10d7ee5c.jpg"
+  },
+  {
+    "name_zh": "Cornish Smuggler",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 142451,
+    "name_en": "Cornish Smuggler",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.1957,
+    "categories": [
+      "Economic",
+      "Nautical",
+      "Transportation",
+      "Travel"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area-Impulse",
+      "Deck, Bag, and Pool Building",
+      "Network and Route Building",
+      "Pick-up and Deliver",
+      "Point to Point Movement",
+      "Simulation"
+    ],
+    "image_url": "https://cf.geekdo-images.com/miHP4S_xal3ZzvYkfiESWw__original/img/lRqx1khbSoVFCMnMEGJ8IzyPq6Y=/0x0/filters:format(jpeg)/pic1656251.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/miHP4S_xal3ZzvYkfiESWw__small/img/TWZoPYIePJgGwrX1tNUArY4lPgo=/fit-in/200x150/filters:strip_icc()/pic1656251.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "航海",
+      "交通",
+      "旅遊"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域脈衝",
+      "Deck, Bag, and Pool Building",
+      "路網建設",
+      "取貨運送",
+      "點對點移動",
+      "模擬"
+    ],
+    "image": "assets/img/142451-8cc498b9.jpg"
+  },
+  {
+    "name_zh": "Age of Conan: The Strategy Board Game (2009)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 27848,
+    "name_en": "Age of Conan: The Strategy Board Game",
+    "year": 2009,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.2724,
+    "categories": [
+      "Adventure",
+      "Civilization",
+      "Fantasy",
+      "Fighting",
+      "Miniatures",
+      "Novel-based",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Auction / Bidding",
+      "Dice Rolling",
+      "Multi-Use Cards",
+      "Variable Phase Order",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mUNuI39RzELzJf5cej2vAg__original/img/-GRJlwukTb6bRAzFyLDKSuHhxms=/0x0/filters:format(jpeg)/pic450412.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mUNuI39RzELzJf5cej2vAg__small/img/f-sb3zSlWU0xY4ilT-1Z66cawxU=/fit-in/200x150/filters:strip_icc()/pic450412.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "冒險",
+      "文明",
+      "奇幻",
+      "戰鬥",
+      "微縮模型",
+      "小說改編",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "競標",
+      "擲骰",
+      "多用途卡",
+      "可變階段順序",
+      "角色能力"
+    ],
+    "image": "assets/img/27848-4c669087.jpg"
+  },
+  {
+    "name_zh": "Torres",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/C7AG1_7WZkW07i4Q8k_buA__small@2x/img/_upd0mGOxsEi4oxSKW-PbsYzJ7k=/fit-in/400x300/filters:strip_icc()/pic371614.jpg",
+    "image_version_id": "",
+    "bgg_id": 88,
+    "name_en": "Torres",
+    "year": 1999,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.8516,
+    "categories": [
+      "Abstract Strategy",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Majority / Influence",
+      "Enclosure",
+      "Grid Movement",
+      "Hand Management",
+      "Square Grid",
+      "Three Dimensional Movement",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vLDgCpcL-beOsC5iWfZ9ig__original/img/upBZeKEaQHY6LZS7R-hykx6a7kY=/0x0/filters:format(jpeg)/pic3515154.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/vLDgCpcL-beOsC5iWfZ9ig__small/img/TPQCIaZKOl2ApBfBk0HgVjVsovw=/fit-in/200x150/filters:strip_icc()/pic3515154.jpg",
+    "versions_count": 12,
+    "image": "https://cf.geekdo-images.com/C7AG1_7WZkW07i4Q8k_buA__small@2x/img/_upd0mGOxsEi4oxSKW-PbsYzJ7k=/fit-in/400x300/filters:strip_icc()/pic371614.jpg",
+    "categories_zh": [
+      "抽象策略",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域控制",
+      "圍地",
+      "格子移動",
+      "手牌管理",
+      "方格",
+      "三維移動",
+      "板塊擺放"
+    ]
+  },
+  {
+    "name_zh": "Java",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 855,
+    "name_en": "Java",
+    "year": 2000,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.3789,
+    "categories": [
+      "City Building"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Majority / Influence",
+      "Layering",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/xojY9ltzSnbkaZyZyDEbSQ__original/img/-NMZ6ql398yl-6AILcPM5xwya4g=/0x0/filters:format(jpeg)/pic427860.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/xojY9ltzSnbkaZyZyDEbSQ__small/img/1As1k-e-VSw8vyahBugKYmhxbZs=/fit-in/200x150/filters:strip_icc()/pic427860.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "城市建設"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域控制",
+      "疊放",
+      "板塊擺放"
+    ],
+    "image": "assets/img/855-fb523d04.jpg"
+  },
+  {
+    "name_zh": "Der Markt von Alturien",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/kucDbRpm4dVZvA5i5ySu0w__small/img/ezidHt9S1j0NoUJp8-z7_y1nJyg=/fit-in/200x150/filters:strip_icc()/pic182396.jpg",
+    "image_version_id": "",
+    "bgg_id": 27800,
+    "name_en": "The Market of Alturien",
+    "year": 2007,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.9,
+    "categories": [
+      "Economic",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Investment",
+      "Market",
+      "Ownership"
+    ],
+    "image_url": "https://cf.geekdo-images.com/kucDbRpm4dVZvA5i5ySu0w__original/img/Ji97iO6jIXtBehjlr4Oe-H10gnw=/0x0/filters:format(jpeg)/pic182396.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/kucDbRpm4dVZvA5i5ySu0w__small/img/ezidHt9S1j0NoUJp8-z7_y1nJyg=/fit-in/200x150/filters:strip_icc()/pic182396.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/kucDbRpm4dVZvA5i5ySu0w__small/img/ezidHt9S1j0NoUJp8-z7_y1nJyg=/fit-in/200x150/filters:strip_icc()/pic182396.jpg",
+    "categories_zh": [
+      "經濟",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "投資",
+      "市集",
+      "所有權"
+    ]
   }
 ]
