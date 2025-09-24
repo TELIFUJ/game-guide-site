@@ -47,7 +47,6 @@ def main():
     for r in rows:
         sig = signature(r)
         if sig in seen:
-            # 完全一樣就略過（避免畫面雙胞胎）
             continue
         seen.add(sig)
 
@@ -69,7 +68,7 @@ def main():
           "aliases_zh": r.get("aliases_zh", []),
 
           "bgg_id": bid,
-          "bgg_url": bgg_url,
+          "bgg_url": r.get("bgg_url") or bgg_url,
 
           "year": r.get("year"),
           "players": r.get("players"),
