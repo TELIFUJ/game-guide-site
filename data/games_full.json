@@ -619,6 +619,128 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "Carson City",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 39938,
+    "name_en": "Carson City",
+    "year": 2009,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.1811,
+    "categories": [
+      "American West",
+      "City Building",
+      "Economic"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Dice Rolling",
+      "Tile Placement",
+      "Variable Player Powers",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DxNZPNkfjS-exbFa_ASi0Q__original/img/y5XnUGr6Oxf-7d6CalLATFR76Bk=/0x0/filters:format(jpeg)/pic577030.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/DxNZPNkfjS-exbFa_ASi0Q__small/img/ABNJVaqRzjMTxfs8Rn7IZWXFN4s=/fit-in/200x150/filters:strip_icc()/pic577030.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "美國西部",
+      "城市建設",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "擲骰",
+      "板塊擺放",
+      "角色能力",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/39938-aa48b6f3.jpg",
+    "id": "carson_city-39938",
+    "bgg_url": "https://boardgamegeek.com/boardgame/39938",
+    "search_keywords": [
+      "Carson City BGG",
+      "Carson City BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "Carson City: Gold & Guns",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 129508,
+    "name_en": "Carson City: Gold & Guns",
+    "year": 2012,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.0588,
+    "categories": [
+      "American West",
+      "City Building",
+      "Expansion for Base-game"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Dice Rolling",
+      "Grid Movement",
+      "Variable Player Powers",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/_xTE33J8agN2G7MdpnLQag__original/img/J6_kpxipwh4p-9LzO4rMqo53-t0=/0x0/filters:format(jpeg)/pic1398247.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/_xTE33J8agN2G7MdpnLQag__small/img/oVuo6qWHIfj5y0KdQ5sFmyv8g0g=/fit-in/200x150/filters:strip_icc()/pic1398247.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "美國西部",
+      "城市建設",
+      "基本款擴充"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "擲骰",
+      "格子移動",
+      "角色能力",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/129508-51a67a7d.jpg",
+    "id": "carson_city:_gold_&_guns-129508",
+    "bgg_url": "https://boardgamegeek.com/boardgame/129508",
+    "search_keywords": [
+      "Carson City: Gold & Guns BGG",
+      "Carson City: Gold & Guns BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "castle chimbing frog",
     "name_en_override": "",
     "alias_zh": "",
@@ -774,6 +896,85 @@
     "search_keywords": [
       "Christmas tale BGG",
       "Christmas Tale BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "Clash of Cultures",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 40765,
+    "name_en": "Clash of Cultures",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 180,
+    "time_max": 240,
+    "weight": 3.606,
+    "categories": [
+      "Ancient",
+      "City Building",
+      "Civilization",
+      "Economic",
+      "Exploration",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Majority / Influence",
+      "Critical Hits and Failures",
+      "Dice Rolling",
+      "Grid Movement",
+      "Hand Management",
+      "Hexagon Grid",
+      "Modular Board",
+      "Movement Points",
+      "Tech Trees / Tech Tracks",
+      "Trading"
+    ],
+    "image_url": "https://cf.geekdo-images.com/XHTMyEGDsNHLKXkbGDKaKA__original/img/GKb17ffVsXR5RFKmKE5OTT8O21U=/0x0/filters:format(jpeg)/pic1351042.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/XHTMyEGDsNHLKXkbGDKaKA__small/img/mf5yep4EN9ZQP5hId2GsPB9zduo=/fit-in/200x150/filters:strip_icc()/pic1351042.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "古代",
+      "城市建設",
+      "文明",
+      "經濟",
+      "探索",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域控制",
+      "暴擊與失誤",
+      "擲骰",
+      "格子移動",
+      "手牌管理",
+      "六角格",
+      "模組地圖",
+      "移動點",
+      "科技樹／軌道",
+      "交易"
+    ],
+    "image": "assets/img/40765-b127ae4e.jpg",
+    "id": "clash_of_cultures-40765",
+    "bgg_url": "https://boardgamegeek.com/boardgame/40765",
+    "search_keywords": [
+      "Clash of Cultures BGG",
+      "Clash of Cultures BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -3362,6 +3563,67 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "Myrmes",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/4ev4kRYJy-l2VsF6py8kyg__small@2x/img/rlnvxbWxoRcf7XVz_nUXPQ6JMSo=/fit-in/400x300/filters:strip_icc()/pic8949001.jpg",
+    "image_version_id": "",
+    "bgg_id": 126792,
+    "name_en": "Myrmes",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.4524,
+    "categories": [
+      "Animals",
+      "Environmental",
+      "Farming"
+    ],
+    "mechanics": [
+      "Grid Coverage",
+      "Grid Movement",
+      "Hexagon Grid",
+      "Network and Route Building",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/irYtV0aFZFz-UlhV1uMNOg__original/img/sD1dVazfYaOAnndFaa8VtJxw7EQ=/0x0/filters:format(jpeg)/pic1370050.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/irYtV0aFZFz-UlhV1uMNOg__small/img/pc-1nA3dBW6e1KBluTMb4FRTTbI=/fit-in/200x150/filters:strip_icc()/pic1370050.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/4ev4kRYJy-l2VsF6py8kyg__small@2x/img/rlnvxbWxoRcf7XVz_nUXPQ6JMSo=/fit-in/400x300/filters:strip_icc()/pic8949001.jpg",
+    "categories_zh": [
+      "動物",
+      "環境議題",
+      "農業"
+    ],
+    "mechanics_zh": [
+      "格面覆蓋",
+      "格子移動",
+      "六角格",
+      "路網建設",
+      "Different Worker Types"
+    ],
+    "id": "myrmes-65db75ee",
+    "bgg_url": "https://boardgamegeek.com/boardgame/126792",
+    "search_keywords": [
+      "Myrmes BGG",
+      "Myrmes BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "NANU",
     "name_en_override": "",
     "alias_zh": "",
@@ -3570,6 +3832,61 @@
     "search_keywords": [
       "Office 21 BGG",
       "Office 21 BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "Okanagan: Valley of the Lakes",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 230089,
+    "name_en": "Okanagan: Valley of the Lakes",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.1053,
+    "categories": [
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Enclosure",
+      "Set Collection",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6aI-Pi8WcOgbLwfdLP_Pbg__original/img/gAarlOmBuZPp_2qCARsnFz5GJm4=/0x0/filters:format(jpeg)/pic6249485.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6aI-Pi8WcOgbLwfdLP_Pbg__small/img/SocLadTVRj2Cvi4Z94_iUjlQnl0=/fit-in/200x150/filters:strip_icc()/pic6249485.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "圍地",
+      "收集套組",
+      "板塊擺放"
+    ],
+    "image": "assets/img/230089-5c15556c.jpg",
+    "id": "okanagan:_valley_of_the_lakes-230089",
+    "bgg_url": "https://boardgamegeek.com/boardgame/230089",
+    "search_keywords": [
+      "Okanagan: Valley of the Lakes BGG",
+      "Okanagan: Valley of the Lakes BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -4505,6 +4822,69 @@
     "updated_at": "2025-09-24"
   },
   {
+    "name_zh": "T.I.M.E Stories時間守望",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/uq3uEryiE9n-Gx9NK4n41g__small@2x/img/sRkfABlYGjkZsT8x1T1zQnB49x0=/fit-in/400x300/filters:strip_icc()/pic3133960.jpg",
+    "image_version_id": "",
+    "bgg_id": 146508,
+    "name_en": "T.I.M.E Stories",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.5869,
+    "categories": [
+      "Adventure",
+      "Puzzle",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Move Through Deck",
+      "Narrative Choice / Paragraph",
+      "Storytelling",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/XmwCsjQ3C1Ul53ZN2o8Q-Q__original/img/sUuboe9L4_nrIokyjAE74uklCjE=/0x0/filters:format(png)/pic2617634.png",
+    "thumb_url": "https://cf.geekdo-images.com/XmwCsjQ3C1Ul53ZN2o8Q-Q__small/img/tTU1YVtab-cN5gCdagINowvVA2g=/fit-in/200x150/filters:strip_icc()/pic2617634.png",
+    "versions_count": 18,
+    "image": "https://cf.geekdo-images.com/uq3uEryiE9n-Gx9NK4n41g__small@2x/img/sRkfABlYGjkZsT8x1T1zQnB49x0=/fit-in/400x300/filters:strip_icc()/pic3133960.jpg",
+    "categories_zh": [
+      "冒險",
+      "益智／拼圖",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "穿牌移動",
+      "段落式敘事",
+      "說故事",
+      "角色能力"
+    ],
+    "id": "t.i.m.e_stories-ada6a132",
+    "bgg_url": "https://boardgamegeek.com/boardgame/146508",
+    "search_keywords": [
+      "T.I.M.E Stories時間守望 BGG",
+      "T.I.M.E Stories BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
     "name_zh": "Tajemnicze Domostwo",
     "name_en_override": "",
     "alias_zh": "",
@@ -5117,6 +5497,73 @@
     "search_keywords": [
       "VYE BGG",
       "Vye: The Card Game of Capture and Control BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "Wars of the Roses: Lancaster vs. York",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/r0rOK-QZI1IiUUAYKFkN2g__small@2x/img/HOy0PzZKNv-yfwMTXWn3EhjZH5A=/fit-in/400x300/filters:strip_icc()/pic577593.jpg",
+    "image_version_id": "",
+    "bgg_id": 58936,
+    "name_en": "Wars of the Roses: Lancaster vs. York",
+    "year": 2010,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 180,
+    "time_max": 180,
+    "weight": 3.1943,
+    "categories": [
+      "Civil War",
+      "Medieval",
+      "Political",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Area Majority / Influence",
+      "Area Movement",
+      "Open Drafting",
+      "Secret Unit Deployment",
+      "Simultaneous Action Selection",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/r0rOK-QZI1IiUUAYKFkN2g__original/img/CH3jNB79mo6itDcS23s4LKmxT-s=/0x0/filters:format(jpeg)/pic577593.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/r0rOK-QZI1IiUUAYKFkN2g__small/img/x9-xbFvex5pQZW0D5PjG2DBRUV8=/fit-in/200x150/filters:strip_icc()/pic577593.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/r0rOK-QZI1IiUUAYKFkN2g__small@2x/img/HOy0PzZKNv-yfwMTXWn3EhjZH5A=/fit-in/400x300/filters:strip_icc()/pic577593.jpg",
+    "categories_zh": [
+      "內戰",
+      "中世紀",
+      "政治",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "區域控制",
+      "區域移動",
+      "公開輪抽",
+      "秘密部署",
+      "同時選擇行動",
+      "團隊"
+    ],
+    "id": "wars_of_the_roses:_lancaster_vs._york-423e5f64",
+    "bgg_url": "https://boardgamegeek.com/boardgame/58936",
+    "search_keywords": [
+      "Wars of the Roses: Lancaster vs. York BGG",
+      "Wars of the Roses: Lancaster vs. York BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -5929,29 +6376,47 @@
     "description": "",
     "image_override": "",
     "image_version_id": "",
-    "bgg_id": 237338,
-    "name_en": "Bale's Outfitting Outpost",
-    "year": 2016,
+    "bgg_id": 237388,
+    "name_en": "Horticulture Master",
+    "year": 2018,
     "players": [
-      null,
-      null
+      2,
+      5
     ],
-    "time_min": null,
-    "time_max": null,
-    "weight": 0.0,
-    "categories": [],
-    "mechanics": [],
-    "image_url": "https://cf.geekdo-images.com/e7Etyb17sdB1hvnmnAFYFw__original/img/yZ75i7X3oF0prpAKkLvd-GyUOLE=/0x0/filters:format(jpeg)/pic3782892.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/e7Etyb17sdB1hvnmnAFYFw__small/img/4cj23mILYsqG999ky3pG3NZzxk8=/fit-in/200x150/filters:strip_icc()/pic3782892.jpg",
-    "versions_count": 3,
-    "categories_zh": [],
-    "mechanics_zh": [],
-    "image": "assets/img/237338-2ad0568b.jpg",
-    "id": "bale's_outfitting_outpost-237338",
-    "bgg_url": "https://boardgamegeek.com/boardgame/237338",
+    "time_min": 40,
+    "time_max": 60,
+    "weight": 2.0,
+    "categories": [
+      "City Building",
+      "Farming",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Grid Coverage",
+      "Hand Management",
+      "Open Drafting",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/pWCkqVS9aLhcIjG-Dv2DZQ__original/img/jagllUwkCaWsffc5NjnVdgL2a78=/0x0/filters:format(jpeg)/pic4340132.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/pWCkqVS9aLhcIjG-Dv2DZQ__small/img/2OIj2PwuoSpFsudeVcBvhh2BeiE=/fit-in/200x150/filters:strip_icc()/pic4340132.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "城市建設",
+      "農業",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "格面覆蓋",
+      "手牌管理",
+      "公開輪抽",
+      "板塊擺放"
+    ],
+    "image": "assets/img/237388-685ca454.jpg",
+    "id": "horticulture_master-237388",
+    "bgg_url": "https://boardgamegeek.com/boardgame/237388",
     "search_keywords": [
       "園藝大師 BGG",
-      "Bale's Outfitting Outpost BGG"
+      "Horticulture Master BGG"
     ],
     "updated_at": "2025-09-24"
   },
@@ -14308,6 +14773,57 @@
     "search_keywords": [
       "諾丁漢警長 BGG",
       "Sheriff of Nottingham BGG"
+    ],
+    "updated_at": "2025-09-24"
+  },
+  {
+    "name_zh": "諾亞鬧方舟",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "1090",
+    "price_twd": "1090",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/RdpWub-bYCpPceBFR1CgNg__small@2x/img/zrd1npUnVmaD-c3HjfsoSnD5XN8=/fit-in/400x300/filters:strip_icc()/pic3087420.jpg",
+    "image_version_id": "",
+    "bgg_id": 191572,
+    "name_en": "Animals on Board",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 30,
+    "weight": 1.5152,
+    "categories": [
+      "Animals"
+    ],
+    "mechanics": [
+      "I Cut, You Choose",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/NLgUgFH88DJogE-16PPFsw__original/img/pm_iRmkcuFn25JvP4LeLqotZWD4=/0x0/filters:format(jpeg)/pic2845593.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/NLgUgFH88DJogE-16PPFsw__small/img/CuInp1YTUxTZlrIi3TMTcUwQcKs=/fit-in/200x150/filters:strip_icc()/pic2845593.jpg",
+    "versions_count": 12,
+    "image": "https://cf.geekdo-images.com/RdpWub-bYCpPceBFR1CgNg__small@2x/img/zrd1npUnVmaD-c3HjfsoSnD5XN8=/fit-in/400x300/filters:strip_icc()/pic3087420.jpg",
+    "categories_zh": [
+      "動物"
+    ],
+    "mechanics_zh": [
+      "I Cut, You Choose",
+      "收集套組"
+    ],
+    "id": "animals_on_board-627ec462",
+    "bgg_url": "https://boardgamegeek.com/boardgame/191572",
+    "search_keywords": [
+      "諾亞鬧方舟 BGG",
+      "Animals on Board BGG"
     ],
     "updated_at": "2025-09-24"
   },
