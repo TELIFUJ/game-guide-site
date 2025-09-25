@@ -1114,6 +1114,7 @@
     "weight": 2.0,
     "categories": [
       "Children's Game",
+      "Educational",
       "Trivia"
     ],
     "mechanics": [
@@ -1126,6 +1127,7 @@
     "versions_count": 1,
     "categories_zh": [
       "兒童",
+      "教育",
       "問答"
     ],
     "mechanics_zh": [
@@ -4017,7 +4019,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.05,
+    "weight": 1.0488,
     "categories": [
       "Bluffing",
       "Party Game"
@@ -8617,7 +8619,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.2866,
+    "weight": 3.286,
     "categories": [
       "Renaissance"
     ],
@@ -11455,7 +11457,7 @@
     ],
     "time_min": 42,
     "time_max": 42,
-    "weight": 1.8917,
+    "weight": 1.8918,
     "categories": [
       "Deduction",
       "Murder / Mystery",
@@ -15489,7 +15491,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.8507,
+    "weight": 3.8508,
     "categories": [
       "Economic",
       "Educational",
@@ -16393,7 +16395,7 @@
     ],
     "time_min": 90,
     "time_max": 90,
-    "weight": 2.5869,
+    "weight": 2.5876,
     "categories": [
       "Adventure",
       "Puzzle",
