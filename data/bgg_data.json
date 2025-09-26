@@ -5787,7 +5787,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.1316,
+    "weight": 1.1315,
     "categories": [
       "Card Game"
     ],
@@ -8947,7 +8947,7 @@
     ],
     "time_min": 30,
     "time_max": 60,
-    "weight": 1.9429,
+    "weight": 1.9431,
     "categories": [
       "Adventure",
       "Exploration",
@@ -10075,7 +10075,7 @@
     ],
     "time_min": 45,
     "time_max": 45,
-    "weight": 1.6679,
+    "weight": 1.668,
     "categories": [
       "Card Game",
       "Farming",
