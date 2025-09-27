@@ -113,6 +113,7 @@ Rondel,輪轉盤
 Scenario / Mission / Campaign Game,劇本／任務／戰役
 Score-and-Reset Game,記分重置
 Secret Unit Deployment,秘密部署
+Selection Order Bid,選擇順序出價
 Semi-Cooperative Game,半合作
 Set Collection,收集套組
 Simulation,模擬
@@ -143,6 +144,7 @@ Tug of War,拔河
 Turn Order: Claim Action,搶先手
 Turn Order: Pass Order,回合順序：棄權順序
 Turn Order: Progressive,回合順序：逐步
+Turn Order: Role Order,回合順序：角色順序
 Turn Order: Stat-Based,回合順序：能力值
 Variable Phase Order,可變階段順序
 Variable Player Powers,角色能力

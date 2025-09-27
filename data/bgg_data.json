@@ -11871,6 +11871,7 @@
     ],
     "mechanics": [
       "Action Drafting",
+      "End Game Bonuses",
       "Follow",
       "Hand Management",
       "Market",
@@ -11890,6 +11891,7 @@
     ],
     "mechanics_zh": [
       "行動選擇（輪抽）",
+      "終局加分",
       "跟隨",
       "手牌管理",
       "市集",
@@ -19532,5 +19534,1061 @@
       "同時選擇行動"
     ],
     "image": "assets/img/157096-bd4ac831.jpg"
+  },
+  {
+    "name_zh": "Zombie Tower 3D",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 189829,
+    "name_en": "Zombie Tower 3D",
+    "year": 2015,
+    "players": [
+      3,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 2.0,
+    "categories": [
+      "Negotiation",
+      "Zombies"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/f26CJ_WLIp371JU4TpFapw__original/img/I2aBsQrcqe1UdTNhKr87XsQfrPI=/0x0/filters:format(jpeg)/pic2802561.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/f26CJ_WLIp371JU4TpFapw__small/img/z9TGOqPPgtwYlozVjHk1iFhkx4E=/fit-in/200x150/filters:strip_icc()/pic2802561.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "談判",
+      "殭屍"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合作"
+    ],
+    "image": "assets/img/189829-48881ea5.jpg"
+  },
+  {
+    "name_zh": "Strasbourg",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 91873,
+    "name_en": "Strasbourg",
+    "year": 2011,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.7371,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Auction: Once Around",
+      "Pattern Building",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/5aTSIE4Ayv8K6I6XeJKvug__original/img/K9nuxBB07rEjTT5I8x1_NBAcOss=/0x0/filters:format(jpeg)/pic951192.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/5aTSIE4Ayv8K6I6XeJKvug__small/img/2KjaZpz3F9_ToDvJmstbIPjjkyQ=/fit-in/200x150/filters:strip_icc()/pic951192.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "單圈競標",
+      "圖案建構",
+      "板塊擺放"
+    ],
+    "image": "assets/img/91873-c9f61d75.jpg"
+  },
+  {
+    "name_zh": "地城任務 中文版",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "http://www.wargames.com.hk/wp-content/uploads/2014/05/DQ01_3D-Box_800-600x600.jpg",
+    "image_version_id": "",
+    "bgg_id": 157958,
+    "name_en": "DungeonQuest: Revised Edition",
+    "year": 2014,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.0,
+    "categories": [
+      "Adventure",
+      "Exploration",
+      "Fantasy",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Dice Rolling",
+      "Network and Route Building",
+      "Open Drafting",
+      "Player Elimination",
+      "Push Your Luck",
+      "Rock-Paper-Scissors",
+      "Role Playing",
+      "Solo / Solitaire Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/fp_QRuZe9hfPY_k7Ff3jIQ__original/img/SJdA5IPcgMtVSOt5XiZOYhgNTNE=/0x0/filters:format(jpeg)/pic2017396.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/fp_QRuZe9hfPY_k7Ff3jIQ__small/img/-Y35xyBseYa1e4z0iK-gumwbgys=/fit-in/200x150/filters:strip_icc()/pic2017396.jpg",
+    "versions_count": 4,
+    "image": "http://www.wargames.com.hk/wp-content/uploads/2014/05/DQ01_3D-Box_800-600x600.jpg",
+    "categories_zh": [
+      "冒險",
+      "探索",
+      "奇幻",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "擲骰",
+      "路網建設",
+      "公開輪抽",
+      "玩家淘汰",
+      "押注碰運氣",
+      "剪刀石頭布",
+      "角色扮演",
+      "單人"
+    ]
+  },
+  {
+    "name_zh": "披薩大亨",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 36879,
+    "name_en": "Pizza Bake-Off",
+    "year": 2008,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 0.0,
+    "categories": [
+      "Educational",
+      "Math"
+    ],
+    "mechanics": [
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/FmDRTZn5np64F9qQzQRQYA__original/img/pHN-wXtCdEu3a7pDvPnHrbBpZrw=/0x0/filters:format(jpeg)/pic4221620.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/FmDRTZn5np64F9qQzQRQYA__small/img/jNR82v2_XMsi0d_thkMfdiFBirw=/fit-in/200x150/filters:strip_icc()/pic4221620.jpg",
+    "versions_count": 0,
+    "categories_zh": [
+      "教育",
+      "數學"
+    ],
+    "mechanics_zh": [
+      "收集套組"
+    ],
+    "image": "assets/img/36879-d7f16978.jpg"
+  },
+  {
+    "name_zh": "Loop Inc.",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 163027,
+    "name_en": "Loop Inc.",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 40,
+    "weight": 2.5,
+    "categories": [
+      "Science Fiction",
+      "Travel"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/spzcN87MleEICBN3LB-qyA__original/img/e14EBgQRxOA5pm2_LRRszspYuqA=/0x0/filters:format(jpeg)/pic2486422.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/spzcN87MleEICBN3LB-qyA__small/img/qXpl-k9wSIcfC9qHN7-Cuyf0W-g=/fit-in/200x150/filters:strip_icc()/pic2486422.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "科幻",
+      "旅遊"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "手牌管理"
+    ],
+    "image": "assets/img/163027-9c496dd8.jpg"
+  },
+  {
+    "name_zh": "LUNA",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/g6oVYL50cmXAEs8c_tGPTA__imagepage/img/eQimudXYNmwWmoJdn_gXjj-9HOU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic793353.jpg",
+    "image_version_id": "",
+    "bgg_id": 70512,
+    "name_en": "Luna",
+    "year": 2010,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 100,
+    "weight": 3.323,
+    "categories": [
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Modular Board",
+      "Point to Point Movement",
+      "Solo / Solitaire Game",
+      "Tile Placement",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/tMYWtENCa6qdHg3DLIDqcw__original/img/36hPaylXSE-5S4oKm6TPb9ElU6A=/0x0/filters:format(png)/pic2538939.png",
+    "thumb_url": "https://cf.geekdo-images.com/tMYWtENCa6qdHg3DLIDqcw__small/img/K5WlrHSW_e0JqRhu6Na_D-h5klU=/fit-in/200x150/filters:strip_icc()/pic2538939.png",
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/g6oVYL50cmXAEs8c_tGPTA__imagepage/img/eQimudXYNmwWmoJdn_gXjj-9HOU=/fit-in/900x600/filters:no_upscale():strip_icc()/pic793353.jpg",
+    "categories_zh": [
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "模組地圖",
+      "點對點移動",
+      "單人",
+      "板塊擺放",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Nika",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 153757,
+    "name_en": "Nika",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.3636,
+    "categories": [
+      "Abstract Strategy",
+      "Ancient"
+    ],
+    "mechanics": [
+      "Grid Movement",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mVLqZLmFGhj_erI6nqUc9A__original/img/u9GUXcgR8OZOvN7sHBkncHuSMDw=/0x0/filters:format(jpeg)/pic1905264.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mVLqZLmFGhj_erI6nqUc9A__small/img/rS9i5qC7gBIwJ5Dzsa0FhOBFMzU=/fit-in/200x150/filters:strip_icc()/pic1905264.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "抽象策略",
+      "古代"
+    ],
+    "mechanics_zh": [
+      "格子移動",
+      "團隊"
+    ],
+    "image": "assets/img/153757-999af817.jpg"
+  },
+  {
+    "name_zh": "Klondike Rush",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 223602,
+    "name_en": "Klondike Rush",
+    "year": 2017,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.5,
+    "categories": [
+      "Economic",
+      "Miniatures"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Auction: Once Around",
+      "Contracts",
+      "Network and Route Building",
+      "Set Collection",
+      "Stock Holding",
+      "Turn Order: Progressive"
+    ],
+    "image_url": "https://cf.geekdo-images.com/3m0T43xJMJqzqu_YMYNlfw__original/img/QN_tTEZvfs6RHCN3vO2_oT7PTMY=/0x0/filters:format(jpeg)/pic3690786.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/3m0T43xJMJqzqu_YMYNlfw__small/img/6vGjsHhqqb7zt-aw1QAziowW-KY=/fit-in/200x150/filters:strip_icc()/pic3690786.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "微縮模型"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "單圈競標",
+      "合約",
+      "路網建設",
+      "收集套組",
+      "持股／股權",
+      "回合順序：逐步"
+    ],
+    "image": "assets/img/223602-dfcaadc6.jpg"
+  },
+  {
+    "name_zh": "Yspahan",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/CpgYaNXcDAkSdDLUULjDWQ__small@2x/img/7CBuAqKI-0TBGyAXiEuWEF5XC-g=/fit-in/400x300/filters:strip_icc()/pic352626.jpg",
+    "image_version_id": "",
+    "bgg_id": 22345,
+    "name_en": "Yspahan",
+    "year": 2006,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 2.3702,
+    "categories": [
+      "Dice",
+      "Economic"
+    ],
+    "mechanics": [
+      "Action Drafting",
+      "Area Majority / Influence",
+      "Dice Rolling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/_hUX-wQKA7Y8NYLitCl3Kw__original/img/2jQTOa7Wm3naCMDebGUXeSxUZIg=/0x0/filters:format(jpeg)/pic244381.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/_hUX-wQKA7Y8NYLitCl3Kw__small/img/gB45aMPqMqqTVndQsxm34ofuL40=/fit-in/200x150/filters:strip_icc()/pic244381.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/CpgYaNXcDAkSdDLUULjDWQ__small@2x/img/7CBuAqKI-0TBGyAXiEuWEF5XC-g=/fit-in/400x300/filters:strip_icc()/pic352626.jpg",
+    "categories_zh": [
+      "骰子",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "行動選擇（輪抽）",
+      "區域控制",
+      "擲骰"
+    ]
+  },
+  {
+    "name_zh": "Pony Express",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 42490,
+    "name_en": "Pony Express",
+    "year": 2009,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.5926,
+    "categories": [
+      "Action / Dexterity",
+      "American West",
+      "Bluffing",
+      "Dice",
+      "Humor"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Race",
+      "Roll / Spin and Move",
+      "Track Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/8CBldFHPDLrHYdshUv_HRA__original/img/i9SX-z2En-2kcmnBlSd7xs0QCQM=/0x0/filters:format(jpeg)/pic477522.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/8CBldFHPDLrHYdshUv_HRA__small/img/M8tnmwuWT-RINdYrYlfkI59L7UE=/fit-in/200x150/filters:strip_icc()/pic477522.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "動作／敏捷",
+      "美國西部",
+      "唬人",
+      "骰子",
+      "幽默"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "競速",
+      "擲骰／轉盤移動",
+      "軌道移動"
+    ],
+    "image": "assets/img/42490-acc59ea5.jpg"
+  },
+  {
+    "name_zh": "Ladies & Gentlemen",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 124380,
+    "name_en": "Ladies & Gentlemen",
+    "year": 2013,
+    "players": [
+      4,
+      10
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.0893,
+    "categories": [
+      "Humor",
+      "Party Game",
+      "Post-Napoleonic",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Set Collection",
+      "Simultaneous Action Selection",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vF0lE9ScZjHZDg9kyLELDA__original/img/FatNrRou4GXmq_t-LUglKAPVC1o=/0x0/filters:format(jpeg)/pic3396607.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/vF0lE9ScZjHZDg9kyLELDA__small/img/ChV1-nyXbmeJmtsPrha3CBza-AY=/fit-in/200x150/filters:strip_icc()/pic3396607.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "幽默",
+      "派對",
+      "拿破崙後時代",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "收集套組",
+      "同時選擇行動",
+      "團隊"
+    ],
+    "image": "assets/img/124380-348373ec.jpg"
+  },
+  {
+    "name_zh": "Trains and Stations",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 138317,
+    "name_en": "Trains and Stations",
+    "year": 2013,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.8333,
+    "categories": [
+      "Dice",
+      "Trains",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Network and Route Building"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vCOB7mmorTnEf8ApvjIB5w__original/img/p62am_hgNqUQkC_PIvM6GhMCIUE=/0x0/filters:format(jpeg)/pic2726917.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/vCOB7mmorTnEf8ApvjIB5w__small/img/COY4fd6LoyzDD5bcyl0eMwsDhTw=/fit-in/200x150/filters:strip_icc()/pic2726917.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "骰子",
+      "鐵道",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "路網建設"
+    ],
+    "image": "assets/img/138317-98d82e24.jpg"
+  },
+  {
+    "name_zh": "Top This! A Pizza Flicking Game",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 124647,
+    "name_en": "Top This! A Pizza Flicking Game",
+    "year": 2014,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.0909,
+    "categories": [
+      "Action / Dexterity",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Pattern Building",
+      "Point to Point Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/NzEow2oQptQQ9Zb84InJ-Q__original/img/qRGKKA0N1s2thdCAf03rUoilHUk=/0x0/filters:format(jpeg)/pic3945208.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/NzEow2oQptQQ9Zb84InJ-Q__small/img/8w9Z49q2gBWmNBwTDzlG3AnNGqI=/fit-in/200x150/filters:strip_icc()/pic3945208.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "動作／敏捷",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "圖案建構",
+      "點對點移動"
+    ],
+    "image": "assets/img/124647-17e76609.jpg"
+  },
+  {
+    "name_zh": "毛納基火山",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 146188,
+    "name_en": "Mauna Kea",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.6364,
+    "categories": [
+      "Adventure"
+    ],
+    "mechanics": [
+      "Grid Movement",
+      "Hand Management",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1SAAqFDKSdoyZ9FTlz_FeA__original/img/D6PJZ0shFQ_kZ88yg4YHrXUyGfg=/0x0/filters:format(jpeg)/pic1753761.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/1SAAqFDKSdoyZ9FTlz_FeA__small/img/D0yhLxLrrZvuUxhZjxGypHNFVME=/fit-in/200x150/filters:strip_icc()/pic1753761.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "冒險"
+    ],
+    "mechanics_zh": [
+      "格子移動",
+      "手牌管理",
+      "板塊擺放"
+    ],
+    "image": "assets/img/146188-a5ae058b.jpg"
+  },
+  {
+    "name_zh": "Tribune: Primus Inter Pares",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 30957,
+    "name_en": "Tribune: Primus Inter Pares",
+    "year": 2007,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 2.8673,
+    "categories": [
+      "Ancient",
+      "Political"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Hand Management",
+      "Open Drafting",
+      "Set Collection",
+      "Sudden Death Ending",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/4M-gGQVY5MOtrOkkV8P6fQ__original/img/J8VHW_g2gEhiBt0W_efsALkt35E=/0x0/filters:format(jpeg)/pic413081.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/4M-gGQVY5MOtrOkkV8P6fQ__small/img/sG_qGOhk9z6N0STHdQV4R3_akCI=/fit-in/200x150/filters:strip_icc()/pic413081.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "古代",
+      "政治"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "手牌管理",
+      "公開輪抽",
+      "收集套組",
+      "突然死亡結束",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/30957-172784d4.jpg"
+  },
+  {
+    "name_zh": "Wok Star",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 71655,
+    "name_en": "Wok Star",
+    "year": 2010,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.0645,
+    "categories": [
+      "Real-time"
+    ],
+    "mechanics": [
+      "Action Timer",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Real-Time",
+      "Simultaneous Action Selection",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/YmUcqsw7lUBa4xyiCGHOrQ__original/img/NzKfch_zELReVpyR7DWqhTBYTKo=/0x0/filters:format(jpeg)/pic728335.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/YmUcqsw7lUBa4xyiCGHOrQ__small/img/eQugBvcsGzdSoWSAcydQkGWHb0c=/fit-in/200x150/filters:strip_icc()/pic728335.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "行動計時",
+      "合作",
+      "擲骰",
+      "即時制",
+      "同時選擇行動",
+      "角色能力"
+    ],
+    "image": "assets/img/71655-dc5111cc.jpg"
+  },
+  {
+    "name_zh": "Meridian",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 1416,
+    "name_en": "Meridian",
+    "year": 2001,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.5128,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "mechanics": [
+      "Area Majority / Influence"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Z5qQVtB03C2y1mCa_GRw-A__original/img/85Gn7OFNHV4oJpu9O9Y0nRGQ0Ck=/0x0/filters:format(jpeg)/pic6300569.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Z5qQVtB03C2y1mCa_GRw-A__small/img/nPdteKZ1jrlXVTXe10-fy0uSi20=/fit-in/200x150/filters:strip_icc()/pic6300569.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics_zh": [
+      "區域控制"
+    ],
+    "image": "assets/img/1416-36a65456.jpg"
+  },
+  {
+    "name_zh": "Haleakala",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 177727,
+    "name_en": "Haleakala",
+    "year": 2015,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 40,
+    "time_max": 40,
+    "weight": 2.3871,
+    "categories": [
+      "Mythology",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rg9cZhJRFa3sNlsCSYFg2g__original/img/R1NNGxrQnFAgsMMPCMgLyKBzGcE=/0x0/filters:format(png)/pic2831205.png",
+    "thumb_url": "https://cf.geekdo-images.com/rg9cZhJRFa3sNlsCSYFg2g__small/img/AU_x5tSvR_VOCP63SneFHGupSdM=/fit-in/200x150/filters:strip_icc()/pic2831205.png",
+    "versions_count": 3,
+    "categories_zh": [
+      "神話",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理"
+    ],
+    "image": "assets/img/177727-eaf5286e.jpg"
+  },
+  {
+    "name_zh": "Shitenno",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 102610,
+    "name_en": "Shitenno",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.7297,
+    "categories": [
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "I Cut, You Choose",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/XIlwacpTOzhdph81LcO7zw__original/img/ECHEA8VqAqbAJdpUiNxs3C-ZoOI=/0x0/filters:format(jpeg)/pic1132853.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/XIlwacpTOzhdph81LcO7zw__small/img/mVeFwiVTc5N0kICdya_Fsox78jA=/fit-in/200x150/filters:strip_icc()/pic1132853.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "I Cut, You Choose",
+      "收集套組"
+    ],
+    "image": "assets/img/102610-0cbfe5c7.jpg"
+  },
+  {
+    "name_zh": "萊伯塔利的海盜",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 125618,
+    "name_en": "Libertalia",
+    "year": 2012,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 40,
+    "time_max": 60,
+    "weight": 2.2318,
+    "categories": [
+      "Card Game",
+      "Pirates"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Deduction",
+      "Hand Management",
+      "Selection Order Bid",
+      "Set Collection",
+      "Simultaneous Action Selection",
+      "Take That",
+      "Turn Order: Role Order",
+      "Variable Phase Order"
+    ],
+    "image_url": "https://cf.geekdo-images.com/LeUx57CGYdnIEsnGebOB0A__original/img/ZMdpuswDvVy-I97-ws45isBIRO4=/0x0/filters:format(jpeg)/pic1326136.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/LeUx57CGYdnIEsnGebOB0A__small/img/BRF-D_TW7oHr7t6Yh0F9wx_zFI4=/fit-in/200x150/filters:strip_icc()/pic1326136.jpg",
+    "versions_count": 9,
+    "categories_zh": [
+      "卡牌",
+      "海盜"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "推理",
+      "手牌管理",
+      "選擇順序出價",
+      "收集套組",
+      "同時選擇行動",
+      "互害",
+      "回合順序：角色順序",
+      "可變階段順序"
+    ],
+    "image": "assets/img/125618-0f9b4282.jpg"
+  },
+  {
+    "name_zh": "KUMO Hogosha",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 181290,
+    "name_en": "KUMO Hogosha",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 25,
+    "time_max": 30,
+    "weight": 2.2857,
+    "categories": [
+      "Abstract Strategy",
+      "Fighting"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Action Queue",
+      "Grid Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/g4w3h4jkZfSVHpjx-dER0Q__original/img/zkprJAR6V5XHTj7kHPcxTyamaYI=/0x0/filters:format(jpeg)/pic2606432.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/g4w3h4jkZfSVHpjx-dER0Q__small/img/xyDHeIB_pYsPTLWpCFDszXAn2vE=/fit-in/200x150/filters:strip_icc()/pic2606432.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "抽象策略",
+      "戰鬥"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "行動序列",
+      "格子移動"
+    ],
+    "image": "assets/img/181290-9277f100.jpg"
   }
 ]
