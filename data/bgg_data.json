@@ -10745,7 +10745,7 @@
     ],
     "time_min": 15,
     "time_max": 45,
-    "weight": 1.8273,
+    "weight": 1.8277,
     "categories": [
       "Deduction",
       "Party Game",
@@ -11457,7 +11457,7 @@
     ],
     "time_min": 42,
     "time_max": 42,
-    "weight": 1.8918,
+    "weight": 1.8919,
     "categories": [
       "Deduction",
       "Murder / Mystery",
@@ -17533,7 +17533,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 4.57,
+    "weight": 4.5704,
     "categories": [
       "City Building",
       "Economic",
