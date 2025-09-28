@@ -225,7 +225,7 @@
     ],
     "image_url": "https://cf.geekdo-images.com/-DHiHBBSnvaLu0Do8CIykQ__original/img/fRfoyWezpQsumExNKVxf1cwtJfg=/0x0/filters:format(jpeg)/pic8204165.jpg",
     "thumb_url": "https://cf.geekdo-images.com/-DHiHBBSnvaLu0Do8CIykQ__small/img/AUkAjClJAk3BX1vEpk7EasSh_44=/fit-in/200x150/filters:strip_icc()/pic8204165.jpg",
-    "versions_count": 146,
+    "versions_count": 147,
     "categories_zh": [
       "卡牌",
       "兒童",
@@ -455,7 +455,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.6537,
+    "weight": 1.6529,
     "categories": [
       "Card Game",
       "Puzzle"
@@ -3567,7 +3567,7 @@
     ],
     "time_min": 45,
     "time_max": 45,
-    "weight": 2.0204,
+    "weight": 2.02,
     "categories": [
       "Fantasy"
     ],
@@ -3913,7 +3913,7 @@
     ],
     "time_min": 30,
     "time_max": 60,
-    "weight": 1.8216,
+    "weight": 1.8215,
     "categories": [
       "Trains"
     ],
@@ -7205,7 +7205,7 @@
     ],
     "time_min": 40,
     "time_max": 80,
-    "weight": 2.7902,
+    "weight": 2.7917,
     "categories": [
       "Card Game",
       "Trains"
@@ -8305,7 +8305,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.258,
+    "weight": 1.2579,
     "categories": [
       "Card Game",
       "Deduction",
@@ -13469,7 +13469,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.202,
+    "weight": 3.2018,
     "categories": [
       "Economic"
     ],
