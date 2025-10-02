@@ -209,7 +209,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.1017,
+    "weight": 1.1016,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -793,7 +793,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.1775,
+    "weight": 1.1771,
     "categories": [
       "Children's Game"
     ],
@@ -1351,7 +1351,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.3211,
+    "weight": 1.3242,
     "categories": [
       "Card Game",
       "Pirates"
@@ -8363,7 +8363,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.1639,
+    "weight": 1.1626,
     "categories": [
       "Ancient",
       "Dice",
@@ -10745,7 +10745,7 @@
     ],
     "time_min": 15,
     "time_max": 45,
-    "weight": 1.8277,
+    "weight": 1.8284,
     "categories": [
       "Deduction",
       "Party Game",
@@ -11209,7 +11209,7 @@
     ],
     "time_min": 120,
     "time_max": 120,
-    "weight": 3.2485,
+    "weight": 3.2486,
     "categories": [
       "Economic",
       "Industry / Manufacturing"
@@ -11409,7 +11409,7 @@
     ],
     "time_min": 30,
     "time_max": 50,
-    "weight": 2.2615,
+    "weight": 2.2607,
     "categories": [
       "Deduction"
     ],
@@ -15493,7 +15493,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.8508,
+    "weight": 3.8503,
     "categories": [
       "Economic",
       "Educational",
