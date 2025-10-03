@@ -10745,7 +10745,7 @@
     ],
     "time_min": 15,
     "time_max": 45,
-    "weight": 1.8284,
+    "weight": 1.8288,
     "categories": [
       "Deduction",
       "Party Game",
@@ -13359,7 +13359,7 @@
     ],
     "time_min": 30,
     "time_max": 60,
-    "weight": 2.6483,
+    "weight": 2.6489,
     "categories": [
       "Card Game",
       "Fantasy"
@@ -17275,7 +17275,7 @@
     ],
     "time_min": 45,
     "time_max": 45,
-    "weight": 2.3808,
+    "weight": 2.3798,
     "categories": [
       "Card Game",
       "Territory Building",
