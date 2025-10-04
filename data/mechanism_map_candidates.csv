@@ -7,15 +7,20 @@ Action Queue,行動序列
 Action Retrieval,行動取回
 Action Timer,行動計時
 Advantage Token,優勢指示物
+Alliances,同盟
 Area Majority / Influence,區域控制
 Area Movement,區域移動
 Area-Impulse,區域脈衝
 Auction / Bidding,競標
 Auction Compensation,競標補償
+Auction: Dexterity,技巧競標
+Auction: Dutch,荷蘭式競標
 Auction: Fixed Placement,固定出價位
+Auction: Multiple Lot,多標的競標
 Auction: Once Around,單圈競標
 Auction: Sealed Bid,密封標
 Auction: Turn Order Until Pass,依序出價至棄權
+Automatic Resource Growth,資源自動成長
 Betting and Bluffing,下注與唬人
 Bias,偏誤
 Bids As Wagers,下注式出價
@@ -57,9 +62,11 @@ Hexagon Grid,六角格
 Hidden Movement,隱藏移動
 Hidden Roles,隱藏身分
 Hidden Victory Points,隱藏分數
+Highest-Lowest Scoring,最高最低得分
 Hot Potato,燙手山芋
 "I Cut, You Choose",
 Income,收入
+Increase Value of Unchosen Resources,未選資源增值
 Investment,投資
 Kill Steal,搶頭功
 Layering,疊放
@@ -144,9 +151,11 @@ Trading,交易
 Traitor Game,內鬼
 Trick-taking,吃墩
 Tug of War,拔河
+Turn Order: Auction,回合順序：競標
 Turn Order: Claim Action,搶先手
 Turn Order: Pass Order,回合順序：棄權順序
 Turn Order: Progressive,回合順序：逐步
+Turn Order: Random,回合順序：隨機
 Turn Order: Role Order,回合順序：角色順序
 Turn Order: Stat-Based,回合順序：能力值
 Variable Phase Order,可變階段順序

@@ -1,5 +1,113 @@
 [
   {
+    "name_zh": "\tFlashlights & Fireflies ‐ English edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 172932,
+    "name_en": "Flashlights & Fireflies",
+    "year": 2015,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.0,
+    "categories": [
+      "Children's Game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/GPcOhPC4qwBWj214TYUQQw__original/img/oB4DcMt_0yPGJ_O7JHIMyYm9x8M=/0x0/filters:format(jpeg)/pic2401323.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/GPcOhPC4qwBWj214TYUQQw__small/img/rq1h7xVM0kXrjE9WfBNP3gx4rLY=/fit-in/200x150/filters:strip_icc()/pic2401323.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "兒童"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/172932-793943d9.jpg",
+    "id": "flashlights_&_fireflies-172932",
+    "bgg_url": "https://boardgamegeek.com/boardgame/172932",
+    "search_keywords": [
+      "\tFlashlights & Fireflies ‐ English edition  BGG",
+      "Flashlights & Fireflies BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "12 Realms",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/pDgSeQg95Mmyu8RNjlyENA__small/img/vd-ul-DxizgSbJ8yXxrZPUDZ4io=/fit-in/200x150/filters:strip_icc()/pic1676549.jpg",
+    "image_version_id": "",
+    "bgg_id": 68606,
+    "name_en": "12 Realms",
+    "year": 2010,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.0,
+    "categories": [
+      "Adventure",
+      "Fantasy",
+      "Miniatures",
+      "Print & Play"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Cooperative Game",
+      "Hand Management",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/zL4SanlRGdnxiSZkYkMZvw__original/img/puQhAwYIAvr1mNENlAd8Hj7wX-U=/0x0/filters:format(jpeg)/pic2761491.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/zL4SanlRGdnxiSZkYkMZvw__small/img/PZDBP1KiMuI2MHSwFl2NCHzAAs0=/fit-in/200x150/filters:strip_icc()/pic2761491.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/pDgSeQg95Mmyu8RNjlyENA__small/img/vd-ul-DxizgSbJ8yXxrZPUDZ4io=/fit-in/200x150/filters:strip_icc()/pic1676549.jpg",
+    "categories_zh": [
+      "冒險",
+      "奇幻",
+      "微縮模型",
+      "自印版"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "合作",
+      "手牌管理",
+      "團隊",
+      "角色能力"
+    ],
+    "id": "12_realms-4f6c725a",
+    "bgg_url": "https://boardgamegeek.com/boardgame/68606",
+    "search_keywords": [
+      "12 Realms BGG",
+      "12 Realms BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "12 Thieves",
     "name_en_override": "",
     "alias_zh": "",
@@ -486,6 +594,57 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Aperitivo",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/fOePRl36velMNkEQOuKi1w__small@2x/img/H2RJ6eQcD1s4yczOaLC8bgSmkJM=/fit-in/400x300/filters:strip_icc()/pic1391346.jpg",
+    "image_version_id": "",
+    "bgg_id": 44558,
+    "name_en": "Beer & Pretzels",
+    "year": 2009,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Humor"
+    ],
+    "mechanics": [
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/lxMuK91dje9PfY-UU9_b9A__original/img/rhBSDw--x7JoFUtP_DJSM-1j5Lg=/0x0/filters:format(jpeg)/pic501239.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/lxMuK91dje9PfY-UU9_b9A__small/img/OTN_fbS1k23C8jO8MuQee6gTnwg=/fit-in/200x150/filters:strip_icc()/pic501239.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/fOePRl36velMNkEQOuKi1w__small@2x/img/H2RJ6eQcD1s4yczOaLC8bgSmkJM=/fit-in/400x300/filters:strip_icc()/pic1391346.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "幽默"
+    ],
+    "mechanics_zh": [
+      "板塊擺放"
+    ],
+    "id": "beer_&_pretzels-5e68b5fc",
+    "bgg_url": "https://boardgamegeek.com/boardgame/44558",
+    "search_keywords": [
+      "Aperitivo BGG",
+      "Beer & Pretzels BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Atacama",
     "name_en_override": "",
     "alias_zh": "",
@@ -543,6 +702,65 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Attika",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/mOl94Ro3_qvILJnU9uAotQ__small@2x/img/CeMl9UqXA3Pzdnx9r42VWreq1Bw=/fit-in/400x300/filters:strip_icc()/pic106122.jpg",
+    "image_version_id": "",
+    "bgg_id": 8051,
+    "name_en": "Attika",
+    "year": 2003,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 2.3652,
+    "categories": [
+      "Ancient",
+      "City Building",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Map Addition",
+      "Modular Board",
+      "Network and Route Building",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/qaqbQuVKcAd5hjWZxMQfpg__original/img/8s7ZeDiMjBBkgYgZkE8TxPEXG_4=/0x0/filters:format(jpeg)/pic33096.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/qaqbQuVKcAd5hjWZxMQfpg__small/img/1iMHQlSP52-yRryXrEqncUQc5eU=/fit-in/200x150/filters:strip_icc()/pic33096.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/mOl94Ro3_qvILJnU9uAotQ__small@2x/img/CeMl9UqXA3Pzdnx9r42VWreq1Bw=/fit-in/400x300/filters:strip_icc()/pic106122.jpg",
+    "categories_zh": [
+      "古代",
+      "城市建設",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "地圖擴增",
+      "模組地圖",
+      "路網建設",
+      "板塊擺放"
+    ],
+    "id": "attika-7ba70a8f",
+    "bgg_url": "https://boardgamegeek.com/boardgame/8051",
+    "search_keywords": [
+      "Attika BGG",
+      "Attika BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Backyard Builders Treehouse",
     "name_en_override": "",
     "alias_zh": "",
@@ -590,6 +808,57 @@
     "search_keywords": [
       "Backyard Builders Treehouse BGG",
       "Backyard Builders Treehouse BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Barcelona: The Rose of Fire ‐ English-only edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 205078,
+    "name_en": "Barcelona: The Rose of Fire",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 70,
+    "time_max": 90,
+    "weight": 3.0,
+    "categories": [
+      "City Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ERxFy63c7lYYmkYSgF__Kg__original/img/x7nx1DGW9LhMImwSLsVxuNefTeE=/0x0/filters:format(jpeg)/pic3114486.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ERxFy63c7lYYmkYSgF__Kg__small/img/RsgIzUmZcnrswcWCwq12ndyqnQs=/fit-in/200x150/filters:strip_icc()/pic3114486.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "城市建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "板塊擺放"
+    ],
+    "image": "assets/img/205078-db61a0bd.jpg",
+    "id": "barcelona:_the_rose_of_fire-205078",
+    "bgg_url": "https://boardgamegeek.com/boardgame/205078",
+    "search_keywords": [
+      "Barcelona: The Rose of Fire ‐ English-only edition BGG",
+      "Barcelona: The Rose of Fire BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -712,6 +981,73 @@
     "search_keywords": [
       "BattleLore: Second Edition BGG",
       "BattleLore: Second Edition BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Beowulf: The Legend ‐ Esdevium first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/yzCE14S_Tsku1t08uo8jtg__small/img/9OEWt8ZebFRkcSt4UhGPcIYQ3ZA=/fit-in/200x150/filters:strip_icc()/pic359455.jpg",
+    "image_version_id": "",
+    "bgg_id": 17449,
+    "name_en": "Beowulf: The Legend",
+    "year": 2005,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.2555,
+    "categories": [
+      "Adventure",
+      "Fantasy",
+      "Mythology",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Auction: Sealed Bid",
+      "Auction: Turn Order Until Pass",
+      "Hand Management",
+      "Open Drafting",
+      "Push Your Luck",
+      "Turn Order: Auction"
+    ],
+    "image_url": "https://cf.geekdo-images.com/yzCE14S_Tsku1t08uo8jtg__original/img/kwvWaC-DS8qOqT2JTOuRz0zSDCk=/0x0/filters:format(jpeg)/pic359455.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/yzCE14S_Tsku1t08uo8jtg__small/img/9OEWt8ZebFRkcSt4UhGPcIYQ3ZA=/fit-in/200x150/filters:strip_icc()/pic359455.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/yzCE14S_Tsku1t08uo8jtg__small/img/9OEWt8ZebFRkcSt4UhGPcIYQ3ZA=/fit-in/200x150/filters:strip_icc()/pic359455.jpg",
+    "categories_zh": [
+      "冒險",
+      "奇幻",
+      "神話",
+      "小說改編"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "密封標",
+      "依序出價至棄權",
+      "手牌管理",
+      "公開輪抽",
+      "押注碰運氣",
+      "回合順序：競標"
+    ],
+    "id": "beowulf:_the_legend-24ad452f",
+    "bgg_url": "https://boardgamegeek.com/boardgame/17449",
+    "search_keywords": [
+      "Beowulf: The Legend ‐ Esdevium first edition BGG",
+      "Beowulf: The Legend BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -1565,6 +1901,63 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Bruxelles 1893",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 144592,
+    "name_en": "Bruxelles 1893",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 50,
+    "time_max": 125,
+    "weight": 3.5833,
+    "categories": [
+      "Economic"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Modular Board",
+      "Open Drafting",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/sDga04VbcuQdapSSJme-Tg__original/img/eFuxK4c9VaTakN48H29ylNfY6Fc=/0x0/filters:format(jpeg)/pic1726346.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/sDga04VbcuQdapSSJme-Tg__small/img/SUmDJc11Sw3bvV1r5q_mF1IfJjU=/fit-in/200x150/filters:strip_icc()/pic1726346.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "模組地圖",
+      "公開輪抽",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/144592-cb928850.jpg",
+    "id": "bruxelles_1893-144592",
+    "bgg_url": "https://boardgamegeek.com/boardgame/144592",
+    "search_keywords": [
+      "Bruxelles 1893 BGG",
+      "Bruxelles 1893 BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "BUGS",
     "name_en_override": "",
     "alias_zh": "",
@@ -1824,6 +2217,122 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Canopy Walk",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 154477,
+    "name_en": "Canopy Walk",
+    "year": 2014,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.5714,
+    "categories": [
+      "Abstract Strategy",
+      "Adventure"
+    ],
+    "mechanics": [
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/UoSaU0xFXOzmUy3B9XT5Eg__original/img/bCUArmdRHA1syvPbZP7vIlUbsPA=/0x0/filters:format(jpeg)/pic2015109.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/UoSaU0xFXOzmUy3B9XT5Eg__small/img/mIMKfdefQpuHGc-cekv4Q6244EY=/fit-in/200x150/filters:strip_icc()/pic2015109.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "抽象策略",
+      "冒險"
+    ],
+    "mechanics_zh": [
+      "板塊擺放"
+    ],
+    "image": "assets/img/154477-74f9c9a7.jpg",
+    "id": "canopy_walk-154477",
+    "bgg_url": "https://boardgamegeek.com/boardgame/154477",
+    "search_keywords": [
+      "Canopy Walk BGG",
+      "Canopy Walk BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Carolvs Magnvs ‐ Venice Connection edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/HT2eLqEbib9ptJQrVSzOfg__small/img/4RDj_qLmtFClJUMdos8MKFmv4iM=/fit-in/200x150/filters:strip_icc()/pic130679.jpg",
+    "image_version_id": "",
+    "bgg_id": 481,
+    "name_en": "Carolus Magnus",
+    "year": 2000,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.5802,
+    "categories": [
+      "Abstract Strategy",
+      "Medieval",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Dice Rolling",
+      "Hand Management",
+      "Modular Board",
+      "Team-Based Game",
+      "Track Movement",
+      "Turn Order: Auction"
+    ],
+    "image_url": "https://cf.geekdo-images.com/HT2eLqEbib9ptJQrVSzOfg__original/img/is7-nY98d2N5hHKJQb-Y_sTIFAA=/0x0/filters:format(jpeg)/pic130679.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/HT2eLqEbib9ptJQrVSzOfg__small/img/4RDj_qLmtFClJUMdos8MKFmv4iM=/fit-in/200x150/filters:strip_icc()/pic130679.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/HT2eLqEbib9ptJQrVSzOfg__small/img/4RDj_qLmtFClJUMdos8MKFmv4iM=/fit-in/200x150/filters:strip_icc()/pic130679.jpg",
+    "categories_zh": [
+      "抽象策略",
+      "中世紀",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "擲骰",
+      "手牌管理",
+      "模組地圖",
+      "團隊",
+      "軌道移動",
+      "回合順序：競標"
+    ],
+    "id": "carolus_magnus-a44f928b",
+    "bgg_url": "https://boardgamegeek.com/boardgame/481",
+    "search_keywords": [
+      "Carolvs Magnvs ‐ Venice Connection edition BGG",
+      "Carolus Magnus BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Carson City",
     "name_en_override": "",
     "alias_zh": "",
@@ -2040,6 +2549,61 @@
     "search_keywords": [
       "Castles of Mad King Ludwig         \nPolish edition BGG",
       "G-Player BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Caverna: Höhle gegen Höhle",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Of4uOzOcLYITw3wBf5KgMg__small@2x/img/3z3zu_MbkpE_g-n9qhkCtgQcqW4=/fit-in/400x300/filters:strip_icc()/pic3487899.jpg",
+    "image_version_id": "",
+    "bgg_id": 220520,
+    "name_en": "Caverna: Cave vs Cave",
+    "year": 2017,
+    "players": [
+      1,
+      2
+    ],
+    "time_min": 20,
+    "time_max": 40,
+    "weight": 2.567,
+    "categories": [
+      "Economic",
+      "Fantasy",
+      "Farming"
+    ],
+    "mechanics": [
+      "Tile Placement",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rTlJoKU2lHOZfv1Ad8YvDA__original/img/gZmllkN9eYLyezrjLl8KEGJWlCo=/0x0/filters:format(jpeg)/pic3505750.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/rTlJoKU2lHOZfv1Ad8YvDA__small/img/_fvhogbWyAeMrwGsxmcUIy6yvA8=/fit-in/200x150/filters:strip_icc()/pic3505750.jpg",
+    "versions_count": 11,
+    "image": "https://cf.geekdo-images.com/Of4uOzOcLYITw3wBf5KgMg__small@2x/img/3z3zu_MbkpE_g-n9qhkCtgQcqW4=/fit-in/400x300/filters:strip_icc()/pic3487899.jpg",
+    "categories_zh": [
+      "經濟",
+      "奇幻",
+      "農業"
+    ],
+    "mechanics_zh": [
+      "板塊擺放",
+      "Different Worker Types"
+    ],
+    "id": "caverna:_cave_vs_cave-526b7ddf",
+    "bgg_url": "https://boardgamegeek.com/boardgame/220520",
+    "search_keywords": [
+      "Caverna: Höhle gegen Höhle BGG",
+      "Caverna: Cave vs Cave BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -2333,6 +2897,61 @@
     "search_keywords": [
       "Col-Or-Form BGG",
       "Col-Or-Form BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Comuni ‐ English/French/German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 37231,
+    "name_en": "Comuni",
+    "year": 2008,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.3095,
+    "categories": [
+      "City Building",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-1GEskclsjUCFvU-4ex4Qg__original/img/cGta385vHyMM-UAspRlLgTyjFhw=/0x0/filters:format(jpeg)/pic387531.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/-1GEskclsjUCFvU-4ex4Qg__small/img/5Fu2TbqeoTTH2itrFlIbX9G1--w=/fit-in/200x150/filters:strip_icc()/pic387531.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "城市建設",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "公開輪抽",
+      "收集套組"
+    ],
+    "image": "assets/img/37231-0d90f38e.jpg",
+    "id": "comuni-37231",
+    "bgg_url": "https://boardgamegeek.com/boardgame/37231",
+    "search_keywords": [
+      "Comuni ‐ English/French/German edition BGG",
+      "Comuni BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -2729,6 +3348,65 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Cubist",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 147431,
+    "name_en": "Cubist",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.8974,
+    "categories": [
+      "Dice",
+      "Educational",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hand Management",
+      "Pattern Building",
+      "Pattern Recognition"
+    ],
+    "image_url": "https://cf.geekdo-images.com/nCCKDTq21GLRbzHWl785EQ__original/img/CEAGDFQTjPFPSStLqdhzuOwO330=/0x0/filters:format(jpeg)/pic2099804.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/nCCKDTq21GLRbzHWl785EQ__small/img/AyVN7vSEG8uNpWD3TIepBpocMpQ=/fit-in/200x150/filters:strip_icc()/pic2099804.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "骰子",
+      "教育",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "圖案建構",
+      "圖形辨識"
+    ],
+    "image": "assets/img/147431-3a59bd69.jpg",
+    "id": "cubist-147431",
+    "bgg_url": "https://boardgamegeek.com/boardgame/147431",
+    "search_keywords": [
+      "Cubist BGG",
+      "Cubist BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "CV人生規劃",
     "name_en_override": "",
     "alias_zh": "",
@@ -3026,6 +3704,122 @@
     "search_keywords": [
       "DC超級英雄 BGG",
       "DC Deck-Building Game BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "De Vorsten van Florence ‐ Quined White Goblin Dutch edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/kY9SZDdCqOOtpflPrwqrGg__small/img/wpMkyWKPqtZ8s3Ugx1acajRlsxg=/fit-in/200x150/filters:strip_icc()/pic211799.jpg",
+    "image_version_id": "",
+    "bgg_id": 555,
+    "name_en": "The Princes of Florence",
+    "year": 2000,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 75,
+    "time_max": 100,
+    "weight": 3.2416,
+    "categories": [
+      "City Building",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "End Game Bonuses",
+      "Grid Coverage",
+      "Tile Placement",
+      "Victory Points as a Resource"
+    ],
+    "image_url": "https://cf.geekdo-images.com/GdXWqyTfO8F_M9hFtfo-HA__original/img/832FztQEizwRR3FnHIx1Zgjkw8Y=/0x0/filters:format(jpeg)/pic7565506.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/GdXWqyTfO8F_M9hFtfo-HA__small/img/z76c9lnWodF4G-JWPYen5oFj3hs=/fit-in/200x150/filters:strip_icc()/pic7565506.jpg",
+    "versions_count": 23,
+    "image": "https://cf.geekdo-images.com/kY9SZDdCqOOtpflPrwqrGg__small/img/wpMkyWKPqtZ8s3Ugx1acajRlsxg=/fit-in/200x150/filters:strip_icc()/pic211799.jpg",
+    "categories_zh": [
+      "城市建設",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "終局加分",
+      "格面覆蓋",
+      "板塊擺放",
+      "分數作為資源"
+    ],
+    "id": "the_princes_of_florence-7fff003a",
+    "bgg_url": "https://boardgamegeek.com/boardgame/555",
+    "search_keywords": [
+      "De Vorsten van Florence ‐ Quined White Goblin Dutch edition BGG",
+      "The Princes of Florence BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "De Vulgari Eloquentia ‐ Z-Man English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/mAyx-NXFYvTj6Dz-YKormQ__small/img/k56Pz_BhVJ2ojAzx9Z5BeZth3pQ=/fit-in/200x150/filters:strip_icc()/pic778029.jpg",
+    "image_version_id": "",
+    "bgg_id": 75165,
+    "name_en": "De Vulgari Eloquentia",
+    "year": 2010,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.6377,
+    "categories": [
+      "Medieval",
+      "Religious",
+      "Travel"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Movement",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mAyx-NXFYvTj6Dz-YKormQ__original/img/Ch4TL5VvsCZGDrEfAvpA65Drym8=/0x0/filters:format(jpeg)/pic778029.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mAyx-NXFYvTj6Dz-YKormQ__small/img/k56Pz_BhVJ2ojAzx9Z5BeZth3pQ=/fit-in/200x150/filters:strip_icc()/pic778029.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/mAyx-NXFYvTj6Dz-YKormQ__small/img/k56Pz_BhVJ2ojAzx9Z5BeZth3pQ=/fit-in/200x150/filters:strip_icc()/pic778029.jpg",
+    "categories_zh": [
+      "中世紀",
+      "宗教",
+      "旅遊"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域移動",
+      "收集套組"
+    ],
+    "id": "de_vulgari_eloquentia-6dc5e74e",
+    "bgg_url": "https://boardgamegeek.com/boardgame/75165",
+    "search_keywords": [
+      "De Vulgari Eloquentia ‐ Z-Man English edition BGG",
+      "De Vulgari Eloquentia BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -3423,6 +4217,57 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Domus Domini ‐ Dutch/English/French/German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 138728,
+    "name_en": "Domus Domini",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 2.5,
+    "categories": [
+      "Medieval",
+      "Religious"
+    ],
+    "mechanics": [
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Ju0i9pEC5miw1em_RKz-dQ__original/img/EzuhsC6PFe-TE6pOf_EpDXKXc_Q=/0x0/filters:format(jpeg)/pic2457649.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Ju0i9pEC5miw1em_RKz-dQ__small/img/GQgzjFqw8Cr6seuCW_uCwmWVUa0=/fit-in/200x150/filters:strip_icc()/pic2457649.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "中世紀",
+      "宗教"
+    ],
+    "mechanics_zh": [
+      "Different Worker Types"
+    ],
+    "image": "assets/img/138728-6336ea05.jpg",
+    "id": "domus_domini-138728",
+    "bgg_url": "https://boardgamegeek.com/boardgame/138728",
+    "search_keywords": [
+      "Domus Domini ‐ Dutch/English/French/German edition BGG",
+      "Domus Domini BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Doomtown: Reloaded",
     "name_en_override": "",
     "alias_zh": "",
@@ -3537,6 +4382,122 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Downtown",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "100",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 148430,
+    "name_en": "Downtown",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 40,
+    "time_max": 90,
+    "weight": 2.5,
+    "categories": [
+      "Card Game",
+      "Economic",
+      "Mafia"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Hand Management",
+      "Take That",
+      "Turn Order: Random"
+    ],
+    "image_url": "https://cf.geekdo-images.com/hCfC9OWUwsmdH3Yle5X2Eg__original/img/hwXfGhZzNAj8sl58sFwhF0Ivj0w=/0x0/filters:format(jpeg)/pic1787538.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/hCfC9OWUwsmdH3Yle5X2Eg__small/img/lb_RLa8kJzLMRLsv0OiP9elipe8=/fit-in/200x150/filters:strip_icc()/pic1787538.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "經濟",
+      "黑幫"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "手牌管理",
+      "互害",
+      "回合順序：隨機"
+    ],
+    "image": "assets/img/148430-d450086f.jpg",
+    "id": "downtown-148430",
+    "bgg_url": "https://boardgamegeek.com/boardgame/148430",
+    "search_keywords": [
+      "Downtown BGG",
+      "Downtown BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Dragonsgate College ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/c0RS626-xWu8rIvD2QrM3w__small/img/f-bnfOLYKPtW6NjE_DmqpJrCTUc=/fit-in/200x150/filters:strip_icc()/pic3739430.png",
+    "image_version_id": "",
+    "bgg_id": 184704,
+    "name_en": "Dragonsgate College",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 3.0,
+    "categories": [
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Tile Placement",
+      "Variable Player Powers",
+      "Worker Placement with Dice Workers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/c0RS626-xWu8rIvD2QrM3w__original/img/D6vK4Nj09_MOPRB9GgGMDILx5dM=/0x0/filters:format(png)/pic3739430.png",
+    "thumb_url": "https://cf.geekdo-images.com/c0RS626-xWu8rIvD2QrM3w__small/img/f-bnfOLYKPtW6NjE_DmqpJrCTUc=/fit-in/200x150/filters:strip_icc()/pic3739430.png",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/c0RS626-xWu8rIvD2QrM3w__small/img/f-bnfOLYKPtW6NjE_DmqpJrCTUc=/fit-in/200x150/filters:strip_icc()/pic3739430.png",
+    "categories_zh": [
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "板塊擺放",
+      "角色能力",
+      "骰子工人"
+    ],
+    "id": "dragonsgate_college-32561895",
+    "bgg_url": "https://boardgamegeek.com/boardgame/184704",
+    "search_keywords": [
+      "Dragonsgate College ‐ English edition BGG",
+      "Dragonsgate College BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Drum Roll",
     "name_en_override": "",
     "alias_zh": "",
@@ -3588,6 +4549,79 @@
     "search_keywords": [
       "Drum Roll BGG",
       "Drum Roll BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Dungeon Fighter ‐ English second edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/738VWftggbUej2MGhTvhmw__small/img/qcrSeF_9lr_r_lGTWNA0NAmKFzw=/fit-in/200x150/filters:strip_icc()/pic1324620.jpg",
+    "image_version_id": "",
+    "bgg_id": 102548,
+    "name_en": "Dungeon Fighter",
+    "year": 2011,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 1.7551,
+    "categories": [
+      "Action / Dexterity",
+      "Exploration",
+      "Fantasy",
+      "Fighting",
+      "Humor",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Modular Board",
+      "Open Drafting",
+      "Point to Point Movement",
+      "Turn Order: Progressive",
+      "Variable Player Powers",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ukPf_rrA7ity7UQEVjWPNw__original/img/Oss0hzRILIZgXlqQGJaa7HCH_Zo=/0x0/filters:format(png)/pic2411495.png",
+    "thumb_url": "https://cf.geekdo-images.com/ukPf_rrA7ity7UQEVjWPNw__small/img/St4DMjt5DCEImqj7CEXpjFg4KEw=/fit-in/200x150/filters:strip_icc()/pic2411495.png",
+    "versions_count": 13,
+    "image": "https://cf.geekdo-images.com/738VWftggbUej2MGhTvhmw__small/img/qcrSeF_9lr_r_lGTWNA0NAmKFzw=/fit-in/200x150/filters:strip_icc()/pic1324620.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "探索",
+      "奇幻",
+      "戰鬥",
+      "幽默",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "模組地圖",
+      "公開輪抽",
+      "點對點移動",
+      "回合順序：逐步",
+      "角色能力",
+      "可變設置"
+    ],
+    "id": "dungeon_fighter-5496c1c5",
+    "bgg_url": "https://boardgamegeek.com/boardgame/102548",
+    "search_keywords": [
+      "Dungeon Fighter ‐ English second edition BGG",
+      "Dungeon Fighter BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -3649,6 +4683,65 @@
     "search_keywords": [
       "El Grande Big Box BGG",
       "El Grande Big Box BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Entropy",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 171339,
+    "name_en": "Entropy",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.8889,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Simultaneous Action Selection",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/SpdJDtxcbt7fW2bXZP58yw__original/img/ODU9xc8ADEbhjNWE88X8oNhXECo=/0x0/filters:format(jpeg)/pic2415140.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/SpdJDtxcbt7fW2bXZP58yw__small/img/jT8GbF6k4DXiP3XghfkJ5KAG8j4=/fit-in/200x150/filters:strip_icc()/pic2415140.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "唬人",
+      "卡牌",
+      "推理",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "同時選擇行動",
+      "角色能力"
+    ],
+    "image": "assets/img/171339-0feede32.jpg",
+    "id": "entropy-171339",
+    "bgg_url": "https://boardgamegeek.com/boardgame/171339",
+    "search_keywords": [
+      "Entropy BGG",
+      "Entropy BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -3836,6 +4929,104 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Exoplanets ‐ Multilingual first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/bIs11RWw7FQ3I5ShGI-6NA__small/img/hAvQSeAEHbcNd-v1eRislqhQC_o=/fit-in/200x150/filters:strip_icc()/pic2649798.jpg",
+    "image_version_id": "",
+    "bgg_id": 163976,
+    "name_en": "Exoplanets",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 2.3158,
+    "categories": [
+      "Science Fiction",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management",
+      "Open Drafting",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6uWm6pbtHfBiTQgQKs3ufA__original/img/iDsJB1twAUQm5caYVuBGFKEy4ys=/0x0/filters:format(jpeg)/pic3078318.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6uWm6pbtHfBiTQgQKs3ufA__small/img/URFiFzzKlY_6Ifgd5J9Ji-Wt7PI=/fit-in/200x150/filters:strip_icc()/pic3078318.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/bIs11RWw7FQ3I5ShGI-6NA__small/img/hAvQSeAEHbcNd-v1eRislqhQC_o=/fit-in/200x150/filters:strip_icc()/pic2649798.jpg",
+    "categories_zh": [
+      "科幻",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理",
+      "公開輪抽",
+      "板塊擺放"
+    ],
+    "id": "exoplanets-9fb5750f",
+    "bgg_url": "https://boardgamegeek.com/boardgame/163976",
+    "search_keywords": [
+      "Exoplanets ‐ Multilingual first edition BGG",
+      "Exoplanets BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Exoplanets ‐ Multilingual first edition (w/ Kickstarter bonuses)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/bIs11RWw7FQ3I5ShGI-6NA__small/img/hAvQSeAEHbcNd-v1eRislqhQC_o=/fit-in/200x150/filters:strip_icc()/pic2649798.jpg",
+    "image_version_id": "",
+    "bgg_id": 169976,
+    "name_en": "Starship Bridge",
+    "year": 2014,
+    "players": [
+      null,
+      null
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/H9AFYhWUncQwayX_-co3Pw__original/img/JeKCdJC0OjAQU8anMckDv7qVLOM=/0x0/filters:format(jpeg)/pic2328293.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/H9AFYhWUncQwayX_-co3Pw__small/img/ZuTX3lx5zyshCbuGQJQuK2HK7ac=/fit-in/200x150/filters:strip_icc()/pic2328293.jpg",
+    "versions_count": 1,
+    "image": "https://cf.geekdo-images.com/bIs11RWw7FQ3I5ShGI-6NA__small/img/hAvQSeAEHbcNd-v1eRislqhQC_o=/fit-in/200x150/filters:strip_icc()/pic2649798.jpg",
+    "categories_zh": [],
+    "mechanics_zh": [],
+    "id": "starship_bridge-9fb5750f",
+    "bgg_url": "https://boardgamegeek.com/boardgame/169976",
+    "search_keywords": [
+      "Exoplanets ‐ Multilingual first edition (w/ Kickstarter bonuses) BGG",
+      "Starship Bridge BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Fastrack",
     "name_en_override": "",
     "alias_zh": "",
@@ -3948,6 +5139,57 @@
     "search_keywords": [
       "Feierabend BGG",
       "Feierabend BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Fiji",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 21704,
+    "name_en": "Fiji",
+    "year": 2006,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.7596,
+    "categories": [
+      "Humor"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vpDqRDIBPLK27oAxd2AvbA__original/img/uYcbjk-QhB2OZs-7QFKgSyeZdNc=/0x0/filters:format(jpeg)/pic1147039.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/vpDqRDIBPLK27oAxd2AvbA__small/img/7UEzp_6-8dewyzFWhwCrEv9t02E=/fit-in/200x150/filters:strip_icc()/pic1147039.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "幽默"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "收集套組"
+    ],
+    "image": "assets/img/21704-14c92427.jpg",
+    "id": "fiji-21704",
+    "bgg_url": "https://boardgamegeek.com/boardgame/21704",
+    "search_keywords": [
+      "Fiji BGG",
+      "Fiji BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -4172,6 +5414,61 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Funkenschlag: Das Kartenspiel\n電力公司紙牌版",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/gEZgyTypi2Oqw4qjkgRpeg__small@2x/img/ayTfsLQur9v1tLVVrwYBGSfpijg=/fit-in/400x300/filters:strip_icc()/pic3091751.jpg",
+    "image_version_id": "",
+    "bgg_id": 203780,
+    "name_en": "Power Grid: The Card Game",
+    "year": 2016,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 2.3953,
+    "categories": [
+      "Card Game",
+      "Economic",
+      "Industry / Manufacturing"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Market"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rUj7XGeBmcyFPH2UorVL6w__original/img/VDlmSNJFV0gy-q1HZEqkGynhZ74=/0x0/filters:format(jpeg)/pic3091756.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/rUj7XGeBmcyFPH2UorVL6w__small/img/493msPA5kAJ0oOEBppYGzRuydTM=/fit-in/200x150/filters:strip_icc()/pic3091756.jpg",
+    "versions_count": 10,
+    "image": "https://cf.geekdo-images.com/gEZgyTypi2Oqw4qjkgRpeg__small@2x/img/ayTfsLQur9v1tLVVrwYBGSfpijg=/fit-in/400x300/filters:strip_icc()/pic3091751.jpg",
+    "categories_zh": [
+      "卡牌",
+      "經濟",
+      "工業／製造"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "市集"
+    ],
+    "id": "power_grid:_the_card_game-f8de9fe4",
+    "bgg_url": "https://boardgamegeek.com/boardgame/203780",
+    "search_keywords": [
+      "Funkenschlag: Das Kartenspiel\n電力公司紙牌版 BGG",
+      "Power Grid: The Card Game BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "FUSION",
     "name_en_override": "",
     "alias_zh": "",
@@ -4274,6 +5571,63 @@
     "search_keywords": [
       "FUSION BGG",
       "Fusion BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Futuropia         \n富途共樂",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/mzL4wcT4_jxYIAO1p7CHQw__small@2x/img/RkOVaPWXSdJjgjkbrDzmrywgRhc=/fit-in/400x300/filters:strip_icc()/pic4264809.jpg",
+    "image_version_id": "",
+    "bgg_id": 258389,
+    "name_en": "Futuropia",
+    "year": 2018,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.3636,
+    "categories": [
+      "Economic",
+      "Environmental",
+      "Industry / Manufacturing",
+      "Political",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Simulation"
+    ],
+    "image_url": "https://cf.geekdo-images.com/sDpI8j9x5gMC3JdErj3-gw__original/img/GB9yRqceKmuV9UP0907nBSicmOA=/0x0/filters:format(jpeg)/pic4264810.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/sDpI8j9x5gMC3JdErj3-gw__small/img/Sf9h8eKU7STIBBJs9vPjIVC-l4g=/fit-in/200x150/filters:strip_icc()/pic4264810.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/mzL4wcT4_jxYIAO1p7CHQw__small@2x/img/RkOVaPWXSdJjgjkbrDzmrywgRhc=/fit-in/400x300/filters:strip_icc()/pic4264809.jpg",
+    "categories_zh": [
+      "經濟",
+      "環境議題",
+      "工業／製造",
+      "政治",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "模擬"
+    ],
+    "id": "futuropia-53791717",
+    "bgg_url": "https://boardgamegeek.com/boardgame/258389",
+    "search_keywords": [
+      "Futuropia         \n富途共樂 BGG",
+      "Futuropia BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -4402,6 +5756,63 @@
     "search_keywords": [
       "Gloria Mundi BGG",
       "Gloria Mundi BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Goblins, Inc.",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 110524,
+    "name_en": "Goblins, Inc.",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.3521,
+    "categories": [
+      "Dice",
+      "Fantasy",
+      "Industry / Manufacturing"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Team-Based Game",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/y-7XKqyWHh3sE5N86EBUfA__original/img/4x73_koCjxNqljt1F-91-E0txLk=/0x0/filters:format(jpeg)/pic1415862.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/y-7XKqyWHh3sE5N86EBUfA__small/img/UtLa49EALZ2DVwSgsR9Ku5hE6hU=/fit-in/200x150/filters:strip_icc()/pic1415862.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "骰子",
+      "奇幻",
+      "工業／製造"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "團隊",
+      "板塊擺放"
+    ],
+    "image": "assets/img/110524-103d89c9.jpg",
+    "id": "goblins,_inc.-110524",
+    "bgg_url": "https://boardgamegeek.com/boardgame/110524",
+    "search_keywords": [
+      "Goblins, Inc. BGG",
+      "Goblins, Inc. BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -4789,6 +6200,128 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Henchling",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 158053,
+    "name_en": "Henchling",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.5,
+    "categories": [
+      "Card Game",
+      "Fantasy",
+      "Humor",
+      "Real-time",
+      "Video Game Theme"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/sPYrZ0xr-aKZ4ihmwklXYQ__original/img/Lb8emQBbKhO48v7IdBlhY5v9YZQ=/0x0/filters:format(jpeg)/pic1995101.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/sPYrZ0xr-aKZ4ihmwklXYQ__small/img/Vrozjeg5inetzCEKgkgNJ6cfRtY=/fit-in/200x150/filters:strip_icc()/pic1995101.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "奇幻",
+      "幽默",
+      "即時制",
+      "電玩主題"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "手牌管理"
+    ],
+    "image": "assets/img/158053-57f56767.jpg",
+    "id": "henchling-158053",
+    "bgg_url": "https://boardgamegeek.com/boardgame/158053",
+    "search_keywords": [
+      "Henchling BGG",
+      "Henchling BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Hermagor ‐ Rio Grande Dutch/English/German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/c07cxvQPYcpaEC_EffaQ1Q__small/img/mNofKhEBVba6Y7DreCziSv98fhI=/fit-in/200x150/filters:strip_icc()/pic696612.jpg",
+    "image_version_id": "",
+    "bgg_id": 25224,
+    "name_en": "Hermagor",
+    "year": 2006,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 120,
+    "weight": 3.1702,
+    "categories": [
+      "Economic",
+      "Fantasy",
+      "Medieval",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Commodity Speculation",
+      "Network and Route Building",
+      "Point to Point Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/9X8h1wU5gHxLq1EfYZI_5A__original/img/yWodKi08c7Cz3m3AyxWaIYZXvAY=/0x0/filters:format(jpeg)/pic143036.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/9X8h1wU5gHxLq1EfYZI_5A__small/img/fjy1iIepXtAjmizISJYF82a0HYc=/fit-in/200x150/filters:strip_icc()/pic143036.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/c07cxvQPYcpaEC_EffaQ1Q__small/img/mNofKhEBVba6Y7DreCziSv98fhI=/fit-in/200x150/filters:strip_icc()/pic696612.jpg",
+    "categories_zh": [
+      "經濟",
+      "奇幻",
+      "中世紀",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "商品投機",
+      "路網建設",
+      "點對點移動"
+    ],
+    "id": "hermagor-d451a849",
+    "bgg_url": "https://boardgamegeek.com/boardgame/25224",
+    "search_keywords": [
+      "Hermagor ‐ Rio Grande Dutch/English/German edition BGG",
+      "Hermagor BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "High Frontier",
     "name_en_override": "",
     "alias_zh": "",
@@ -4812,7 +6345,7 @@
     ],
     "time_min": 180,
     "time_max": 180,
-    "weight": 4.3491,
+    "weight": 4.3519,
     "categories": [
       "Economic",
       "Industry / Manufacturing",
@@ -5482,6 +7015,61 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Inkognito (2006) ‐ Rio Grande edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/UIrXZv-BnqY9B-2jxyXFyg__small/img/T_bcxxvU616vkMzUpu0LAIP0A8M=/fit-in/200x150/filters:strip_icc()/pic291645.jpg",
+    "image_version_id": "",
+    "bgg_id": 466,
+    "name_en": "Inkognito",
+    "year": 1988,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.1645,
+    "categories": [
+      "Deduction",
+      "Spies / Secret Agents"
+    ],
+    "mechanics": [
+      "Point to Point Movement",
+      "Roll / Spin and Move",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/W3BGlJsdZO0_MH75qLjStQ__original/img/MlR2wxpXBT-hMktt2P7Kgy7kA74=/0x0/filters:format(jpeg)/pic3061724.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/W3BGlJsdZO0_MH75qLjStQ__small/img/7-RWK99Ojx39mgkZa3MqpxILSR8=/fit-in/200x150/filters:strip_icc()/pic3061724.jpg",
+    "versions_count": 22,
+    "image": "https://cf.geekdo-images.com/UIrXZv-BnqY9B-2jxyXFyg__small/img/T_bcxxvU616vkMzUpu0LAIP0A8M=/fit-in/200x150/filters:strip_icc()/pic291645.jpg",
+    "categories_zh": [
+      "推理",
+      "間諜"
+    ],
+    "mechanics_zh": [
+      "點對點移動",
+      "擲骰／轉盤移動",
+      "團隊"
+    ],
+    "id": "inkognito-93b4369f",
+    "bgg_url": "https://boardgamegeek.com/boardgame/466",
+    "search_keywords": [
+      "Inkognito (2006) ‐ Rio Grande edition BGG",
+      "Inkognito BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Java",
     "name_en_override": "",
     "alias_zh": "",
@@ -5657,6 +7245,73 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Key to the City: London ‐ Quined Master Print edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/QCkw5XY6r88cUx-qXeyvCA__small/img/gGu5Jp8jOqKKRzPVfbJXCnMFuys=/fit-in/200x150/filters:strip_icc()/pic3145967.jpg",
+    "image_version_id": "",
+    "bgg_id": 205507,
+    "name_en": "Key to the City: London",
+    "year": 2016,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 90,
+    "time_max": 120,
+    "weight": 2.8846,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Auction: Fixed Placement",
+      "Auction: Multiple Lot",
+      "Constrained Bidding",
+      "Ownership",
+      "Set Collection",
+      "Tile Placement",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/KOx2N4eRuY45SWvzFL8_7g__original/img/t2_w9ybfEOUIz8iwP1zmeR9WXCE=/0x0/filters:format(jpeg)/pic3145313.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/KOx2N4eRuY45SWvzFL8_7g__small/img/g3Fu9UEH_S_2Ci7OUQ8cDz2sxP0=/fit-in/200x150/filters:strip_icc()/pic3145313.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/QCkw5XY6r88cUx-qXeyvCA__small/img/gGu5Jp8jOqKKRzPVfbJXCnMFuys=/fit-in/200x150/filters:strip_icc()/pic3145967.jpg",
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "固定出價位",
+      "多標的競標",
+      "限制式競標",
+      "所有權",
+      "收集套組",
+      "板塊擺放",
+      "Different Worker Types"
+    ],
+    "id": "key_to_the_city:_london-a54aa329",
+    "bgg_url": "https://boardgamegeek.com/boardgame/205507",
+    "search_keywords": [
+      "Key to the City: London ‐ Quined Master Print edition BGG",
+      "Key to the City: London BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Khronos",
     "name_en_override": "",
     "alias_zh": "",
@@ -5714,6 +7369,71 @@
     "search_keywords": [
       "Khronos BGG",
       "Khronos BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Kingdom of Solomon ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 87821,
+    "name_en": "Kingdom of Solomon",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.7627,
+    "categories": [
+      "Ancient",
+      "City Building",
+      "Economic",
+      "Religious"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Commodity Speculation",
+      "Enclosure",
+      "Network and Route Building",
+      "Variable Phase Order",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/h3cV60mA9vFuFoKSSDNdkg__original/img/jCk4si0HJft1HV_I7Dqf5kp5KrI=/0x0/filters:format(jpeg)/pic1064271.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/h3cV60mA9vFuFoKSSDNdkg__small/img/I7Q8eParNJZRhQK-K1EBaejqMhU=/fit-in/200x150/filters:strip_icc()/pic1064271.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "古代",
+      "城市建設",
+      "經濟",
+      "宗教"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "商品投機",
+      "圍地",
+      "路網建設",
+      "可變階段順序",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/87821-023ef059.jpg",
+    "id": "kingdom_of_solomon-87821",
+    "bgg_url": "https://boardgamegeek.com/boardgame/87821",
+    "search_keywords": [
+      "Kingdom of Solomon ‐ English edition BGG",
+      "Kingdom of Solomon BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -5838,6 +7558,55 @@
     "search_keywords": [
       "Kombat Kittens BGG",
       "Kombat Kittens BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Korrigans",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 155802,
+    "name_en": "Korrigans",
+    "year": 2014,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.5882,
+    "categories": [
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Area Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/BI7siuTmSw43fGSbPZQKLA__original/img/jeeZX-va6sMOhqpc0yHv-X54btI=/0x0/filters:format(jpeg)/pic1945189.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/BI7siuTmSw43fGSbPZQKLA__small/img/yPmdqU3i6XAxqA5Q44H0xUSiQLU=/fit-in/200x150/filters:strip_icc()/pic1945189.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "區域移動"
+    ],
+    "image": "assets/img/155802-e8f9f644.jpg",
+    "id": "korrigans-155802",
+    "bgg_url": "https://boardgamegeek.com/boardgame/155802",
+    "search_keywords": [
+      "Korrigans BGG",
+      "Korrigans BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -6005,6 +7774,122 @@
     "search_keywords": [
       "KUMO Hogosha BGG",
       "KUMO Hogosha BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "KUNE v LAKIA: A Chronicle Of A Royal Lapine Divorce Foretold",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 155495,
+    "name_en": "KUNE v LAKIA: A Chronicle Of A Royal Lapine Divorce Foretold",
+    "year": 2015,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 15,
+    "time_max": 30,
+    "weight": 2.25,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Fantasy",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Campaign / Battle Card Driven",
+      "Deck, Bag, and Pool Building",
+      "Hand Management",
+      "Open Drafting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DKDV18kTtTnPklW9K0Pj0A__original/img/OGoW36zxm91A27jedcQwJKIPYus=/0x0/filters:format(jpeg)/pic4733806.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/DKDV18kTtTnPklW9K0Pj0A__small/img/sP5ghp6naepXNmD8LxAJHbMFRds=/fit-in/200x150/filters:strip_icc()/pic4733806.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "奇幻",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "戰役／卡驅動",
+      "Deck, Bag, and Pool Building",
+      "手牌管理",
+      "公開輪抽"
+    ],
+    "image": "assets/img/155495-9ecc5a22.jpg",
+    "id": "kune_v_lakia:_a_chronicle_of_a_royal_lapine_divorce_foretold-155495",
+    "bgg_url": "https://boardgamegeek.com/boardgame/155495",
+    "search_keywords": [
+      "KUNE v LAKIA: A Chronicle Of A Royal Lapine Divorce Foretold BGG",
+      "KUNE v LAKIA: A Chronicle Of A Royal Lapine Divorce Foretold BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "L'Aéropostale ‐ English/French edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 145205,
+    "name_en": "L'Aéropostale",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 70,
+    "time_max": 70,
+    "weight": 2.9524,
+    "categories": [
+      "Aviation / Flight",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Network and Route Building",
+      "Pick-up and Deliver"
+    ],
+    "image_url": "https://cf.geekdo-images.com/K4f_old4ul5lqBAujiEnlQ__original/img/mcj3AiXemcDHO0bOwTMC5eVvdMs=/0x0/filters:format(jpeg)/pic4917397.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/K4f_old4ul5lqBAujiEnlQ__small/img/AJ2Z_Pv86oQPjjI_SIL4wRMzncA=/fit-in/200x150/filters:strip_icc()/pic4917397.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "航空／飛行",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "路網建設",
+      "取貨運送"
+    ],
+    "image": "assets/img/145205-17b06bee.jpg",
+    "id": "l'aéropostale-145205",
+    "bgg_url": "https://boardgamegeek.com/boardgame/145205",
+    "search_keywords": [
+      "L'Aéropostale ‐ English/French edition BGG",
+      "L'Aéropostale BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -6249,6 +8134,63 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Last Will: Getting Sacked",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/tvUdzkyc5bne9hnqowl-HQ__small@2x/img/yLQvVxaEaDEFxcPia762zx4wKuI=/fit-in/400x300/filters:strip_icc()/pic1788540.jpg",
+    "image_version_id": "",
+    "bgg_id": 143063,
+    "name_en": "Last Will: Getting Sacked",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 75,
+    "weight": 2.6744,
+    "categories": [
+      "Card Game",
+      "Expansion for Base-game",
+      "Humor"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Hand Management",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/tvUdzkyc5bne9hnqowl-HQ__original/img/H98XC9XNLqF8wcx5s6QPg1et8B4=/0x0/filters:format(jpeg)/pic1788540.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/tvUdzkyc5bne9hnqowl-HQ__small/img/G-7PEDg2srGvxbFTLCjl46v5PaY=/fit-in/200x150/filters:strip_icc()/pic1788540.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/tvUdzkyc5bne9hnqowl-HQ__small@2x/img/yLQvVxaEaDEFxcPia762zx4wKuI=/fit-in/400x300/filters:strip_icc()/pic1788540.jpg",
+    "categories_zh": [
+      "卡牌",
+      "基本款擴充",
+      "幽默"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "手牌管理",
+      "Different Worker Types"
+    ],
+    "id": "last_will:_getting_sacked-c145cac1",
+    "bgg_url": "https://boardgamegeek.com/boardgame/143063",
+    "search_keywords": [
+      "Last Will: Getting Sacked BGG",
+      "Last Will: Getting Sacked BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "laundry Day",
     "name_en_override": "",
     "alias_zh": "",
@@ -6361,6 +8303,65 @@
     "search_keywords": [
       "Leaping Lemmings BGG",
       "Leaping Lemmings BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Leonardo da Vinci Quined White Goblin masterprint edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/89LpY8xNHn_C7MAZYrbPCw__small/img/92ymHd_bCp9zxbPMOHKXBtw-biA=/fit-in/200x150/filters:strip_icc()/pic352511.jpg",
+    "image_version_id": "",
+    "bgg_id": 21920,
+    "name_en": "Leonardo da Vinci",
+    "year": 2006,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.1808,
+    "categories": [
+      "Industry / Manufacturing",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Contracts",
+      "Hand Management",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/EgE3d_zoM2QbVFNW5-qXVw__original/img/XS3-FMQRMLDpS8Ac97wmVCVbDk0=/0x0/filters:format(jpeg)/pic143408.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/EgE3d_zoM2QbVFNW5-qXVw__small/img/IiJ2tYPEgtOufxVng3_M9guS6qg=/fit-in/200x150/filters:strip_icc()/pic143408.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/89LpY8xNHn_C7MAZYrbPCw__small/img/92ymHd_bCp9zxbPMOHKXBtw-biA=/fit-in/200x150/filters:strip_icc()/pic352511.jpg",
+    "categories_zh": [
+      "工業／製造",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "合約",
+      "手牌管理",
+      "Different Worker Types"
+    ],
+    "id": "leonardo_da_vinci-ad8d422b",
+    "bgg_url": "https://boardgamegeek.com/boardgame/21920",
+    "search_keywords": [
+      "Leonardo da Vinci Quined White Goblin masterprint edition BGG",
+      "Leonardo da Vinci BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -7033,6 +9034,59 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Matterhorn",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 231644,
+    "name_en": "Matterhorn",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 10,
+    "time_max": 30,
+    "weight": 1.3333,
+    "categories": [
+      "Dice",
+      "Sports"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Push Your Luck"
+    ],
+    "image_url": "https://cf.geekdo-images.com/N_jw_y-eZZavB7fPq2Wn_A__original/img/OuI07n42Kjo70iggFroX2tdP6Qk=/0x0/filters:format(jpeg)/pic3735886.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/N_jw_y-eZZavB7fPq2Wn_A__small/img/psinKzr7HgotYv7o31VtCuPm3Nc=/fit-in/200x150/filters:strip_icc()/pic3735886.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "骰子",
+      "運動"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "押注碰運氣"
+    ],
+    "image": "assets/img/231644-5e2e59c0.jpg",
+    "id": "matterhorn-231644",
+    "bgg_url": "https://boardgamegeek.com/boardgame/231644",
+    "search_keywords": [
+      "Matterhorn BGG",
+      "Matterhorn BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Mauseschlau & Bärenstark Wissen und Lachen – Deutschland",
     "name_en_override": "",
     "alias_zh": "",
@@ -7086,6 +9140,67 @@
     "search_keywords": [
       "Mauseschlau & Bärenstark Wissen und Lachen – Deutschland BGG",
       "Mauseschlau & Bärenstark: Wissen & Lachen – Deutschland BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Meeple War",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "100",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/llxUc2pWeMdLDPqvvpbDew__small@2x/img/qedC36VP02dicZ1xR8OXyFHDVEY=/fit-in/400x300/filters:strip_icc()/pic2862447.png",
+    "image_version_id": "",
+    "bgg_id": 192120,
+    "name_en": "Meeple War",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.6786,
+    "categories": [
+      "Exploration",
+      "Fantasy",
+      "Fighting",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Modular Board",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ohX-5VQ47zkb4x6ovEGWiw__original/img/gxuywoBbh6Tem3J2OX82ebAuXdw=/0x0/filters:format(jpeg)/pic3639455.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ohX-5VQ47zkb4x6ovEGWiw__small/img/zzyjXWiydUzUvnZKeNdZiTHlj2I=/fit-in/200x150/filters:strip_icc()/pic3639455.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/llxUc2pWeMdLDPqvvpbDew__small@2x/img/qedC36VP02dicZ1xR8OXyFHDVEY=/fit-in/400x300/filters:strip_icc()/pic2862447.png",
+    "categories_zh": [
+      "探索",
+      "奇幻",
+      "戰鬥",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "模組地圖",
+      "Different Worker Types"
+    ],
+    "id": "meeple_war-cba60785",
+    "bgg_url": "https://boardgamegeek.com/boardgame/192120",
+    "search_keywords": [
+      "Meeple War BGG",
+      "Meeple War BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -7149,6 +9264,67 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Merchants of Amsterdam",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 531,
+    "name_en": "Merchants of Amsterdam",
+    "year": 2000,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.6339,
+    "categories": [
+      "Economic",
+      "Real-time",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Auction: Dexterity",
+      "Auction: Dutch",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6-Gt5b4KHTfdVWqPhQCeaw__original/img/adj9x4tv6hzBVYGB6YOyLva1flQ=/0x0/filters:format(jpeg)/pic153968.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6-Gt5b4KHTfdVWqPhQCeaw__small/img/2c3QxjsDbVlgOsaES-K2gu2ftPU=/fit-in/200x150/filters:strip_icc()/pic153968.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "經濟",
+      "即時制",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "技巧競標",
+      "荷蘭式競標",
+      "板塊擺放"
+    ],
+    "image": "assets/img/531-b3cc637e.jpg",
+    "id": "merchants_of_amsterdam-531",
+    "bgg_url": "https://boardgamegeek.com/boardgame/531",
+    "search_keywords": [
+      "Merchants of Amsterdam BGG",
+      "Merchants of Amsterdam BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Meridian",
     "name_en_override": "",
     "alias_zh": "",
@@ -7198,6 +9374,69 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Mexica ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/JSK9Za4oigbYhNVUZpuglQ__small/img/rs1MqD4zNkajfBevhDyYsGv523U=/fit-in/200x150/filters:strip_icc()/pic1821009.jpg",
+    "image_version_id": "",
+    "bgg_id": 2955,
+    "name_en": "Mexica",
+    "year": 2002,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.6714,
+    "categories": [
+      "Abstract Strategy",
+      "City Building",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Majority / Influence",
+      "Enclosure",
+      "Grid Movement",
+      "Square Grid",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-bOJ-MJseZ4R9SPx-NDrQw__original/img/sH9IcE1o34bIspTeSE_-NSdYdZc=/0x0/filters:format(jpeg)/pic2470537.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/-bOJ-MJseZ4R9SPx-NDrQw__small/img/0KYcQBPLgzdLE2UqKjs-6yCtlZg=/fit-in/200x150/filters:strip_icc()/pic2470537.jpg",
+    "versions_count": 12,
+    "image": "https://cf.geekdo-images.com/JSK9Za4oigbYhNVUZpuglQ__small/img/rs1MqD4zNkajfBevhDyYsGv523U=/fit-in/200x150/filters:strip_icc()/pic1821009.jpg",
+    "categories_zh": [
+      "抽象策略",
+      "城市建設",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域控制",
+      "圍地",
+      "格子移動",
+      "方格",
+      "板塊擺放"
+    ],
+    "id": "mexica-7328c3ea",
+    "bgg_url": "https://boardgamegeek.com/boardgame/2955",
+    "search_keywords": [
+      "Mexica ‐ English first edition BGG",
+      "Mexica BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "MIX IT",
     "name_en_override": "",
     "alias_zh": "",
@@ -7243,6 +9482,61 @@
     "search_keywords": [
       "MIX IT BGG",
       "Mix It BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Monarch",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 173115,
+    "name_en": "Monarch",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.7143,
+    "categories": [
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Modular Board",
+      "Open Drafting",
+      "Set Collection",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/xfkJ8Qps6YdeqscuZrytnw__original/img/4ZvN7PKpxkHEmdwus1OvBVvFWWY=/0x0/filters:format(jpeg)/pic5052921.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/xfkJ8Qps6YdeqscuZrytnw__small/img/SkFrjqH43zqDSyGxyuNlQY4xJCw=/fit-in/200x150/filters:strip_icc()/pic5052921.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "模組地圖",
+      "公開輪抽",
+      "收集套組",
+      "角色能力"
+    ],
+    "image": "assets/img/173115-aff06f04.jpg",
+    "id": "monarch-173115",
+    "bgg_url": "https://boardgamegeek.com/boardgame/173115",
+    "search_keywords": [
+      "Monarch BGG",
+      "Monarch BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -8681,6 +10975,59 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Panthalos ‐ English/French/German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 159446,
+    "name_en": "Panthalos",
+    "year": 2014,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 3.0,
+    "categories": [
+      "Ancient",
+      "Fighting",
+      "Mythology"
+    ],
+    "mechanics": [
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/iKwum8W746mQFx6bWx05ng__original/img/G9V6nwacy321qEvb9l8iKm_UWoU=/0x0/filters:format(jpeg)/pic2218109.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/iKwum8W746mQFx6bWx05ng__small/img/oPUtzjYnBQuB2Xz9dbdIUErXmRI=/fit-in/200x150/filters:strip_icc()/pic2218109.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "古代",
+      "戰鬥",
+      "神話"
+    ],
+    "mechanics_zh": [
+      "Different Worker Types"
+    ],
+    "image": "assets/img/159446-98fbcb38.jpg",
+    "id": "panthalos-159446",
+    "bgg_url": "https://boardgamegeek.com/boardgame/159446",
+    "search_keywords": [
+      "Panthalos ‐ English/French/German edition BGG",
+      "Panthalos BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Parfum",
     "name_en_override": "",
     "alias_zh": "",
@@ -8734,6 +11081,89 @@
     "search_keywords": [
       "Parfum BGG",
       "Parfum BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Patchistory ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/-6gKorC-CMVMUnmFCOhquQ__small@2x/img/3w6oYn1pky6A4y0kDjiyfDAv0tI=/fit-in/400x300/filters:strip_icc()/pic1695954.jpg",
+    "image_version_id": "",
+    "bgg_id": 144041,
+    "name_en": "Patchistory",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.7654,
+    "categories": [
+      "Bluffing",
+      "City Building",
+      "Civilization",
+      "Economic",
+      "Negotiation",
+      "Political",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Alliances",
+      "Auction / Bidding",
+      "Grid Movement",
+      "Income",
+      "Layering",
+      "Open Drafting",
+      "Simultaneous Action Selection",
+      "Tile Placement",
+      "Track Movement",
+      "Voting",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vENMrvRgN3ZPef-Hi8q-6g__original/img/1-jvSSB1tXHHu2We3t-tfqCbSPI=/0x0/filters:format(jpeg)/pic1949968.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/vENMrvRgN3ZPef-Hi8q-6g__small/img/ftsceilnZZZ52C1c8eq97X3zZqc=/fit-in/200x150/filters:strip_icc()/pic1949968.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/-6gKorC-CMVMUnmFCOhquQ__small@2x/img/3w6oYn1pky6A4y0kDjiyfDAv0tI=/fit-in/400x300/filters:strip_icc()/pic1695954.jpg",
+    "categories_zh": [
+      "唬人",
+      "城市建設",
+      "文明",
+      "經濟",
+      "談判",
+      "政治",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "同盟",
+      "競標",
+      "格子移動",
+      "收入",
+      "疊放",
+      "公開輪抽",
+      "同時選擇行動",
+      "板塊擺放",
+      "軌道移動",
+      "投票",
+      "Different Worker Types"
+    ],
+    "id": "patchistory-0babc216",
+    "bgg_url": "https://boardgamegeek.com/boardgame/144041",
+    "search_keywords": [
+      "Patchistory ‐ English first edition BGG",
+      "Patchistory BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -8897,6 +11327,67 @@
     "search_keywords": [
       "Pirates! Card Game BGG",
       "Pirates! Card Game BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Piratoons French edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/B0PprgELf4ZYFA0GmeWUJA__small@2x/img/yRDdaU5Q82sLuY7luAzPvrWXMRE=/fit-in/400x300/filters:strip_icc()/pic2391882.jpg",
+    "image_version_id": "",
+    "bgg_id": 172560,
+    "name_en": "Piratoons",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.8421,
+    "categories": [
+      "Nautical",
+      "Pirates",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Auction: Dexterity",
+      "Open Drafting",
+      "Real-Time",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/OCZECy9ZxqrARrbjEZTmQA__original/img/6yhml_s9mI0Q5ZKXQodE40e_8Qc=/0x0/filters:format(jpeg)/pic2846337.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/OCZECy9ZxqrARrbjEZTmQA__small/img/Gx6V0aHI16SPtvxs3Je7KBM-rSQ=/fit-in/200x150/filters:strip_icc()/pic2846337.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/B0PprgELf4ZYFA0GmeWUJA__small@2x/img/yRDdaU5Q82sLuY7luAzPvrWXMRE=/fit-in/400x300/filters:strip_icc()/pic2391882.jpg",
+    "categories_zh": [
+      "航海",
+      "海盜",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "技巧競標",
+      "公開輪抽",
+      "即時制",
+      "收集套組"
+    ],
+    "id": "piratoons-3f3fd662",
+    "bgg_url": "https://boardgamegeek.com/boardgame/172560",
+    "search_keywords": [
+      "Piratoons French edition BGG",
+      "Piratoons BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -9711,6 +12202,71 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Runebound: Second Edition ‐ English edition (2005)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/9ihKYaEPIQD7d1KkTWfFpQ__small/img/JQGLbThEtF14BEuaf6RHi4cWm-4=/fit-in/200x150/filters:strip_icc()/pic178189.jpg",
+    "image_version_id": "",
+    "bgg_id": 21523,
+    "name_en": "Runebound: Second Edition",
+    "year": 2005,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 120,
+    "time_max": 240,
+    "weight": 2.6755,
+    "categories": [
+      "Adventure",
+      "Exploration",
+      "Fantasy",
+      "Fighting"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Dice Rolling",
+      "Hexagon Grid",
+      "Open Drafting",
+      "Role Playing",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/9ihKYaEPIQD7d1KkTWfFpQ__original/img/Tf_yZ6myNWnWkY6lyMvBvLU7g9s=/0x0/filters:format(jpeg)/pic178189.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/9ihKYaEPIQD7d1KkTWfFpQ__small/img/JQGLbThEtF14BEuaf6RHi4cWm-4=/fit-in/200x150/filters:strip_icc()/pic178189.jpg",
+    "versions_count": 11,
+    "image": "https://cf.geekdo-images.com/9ihKYaEPIQD7d1KkTWfFpQ__small/img/JQGLbThEtF14BEuaf6RHi4cWm-4=/fit-in/200x150/filters:strip_icc()/pic178189.jpg",
+    "categories_zh": [
+      "冒險",
+      "探索",
+      "奇幻",
+      "戰鬥"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "擲骰",
+      "六角格",
+      "公開輪抽",
+      "角色扮演",
+      "角色能力"
+    ],
+    "id": "runebound:_second_edition-d08d4056",
+    "bgg_url": "https://boardgamegeek.com/boardgame/21523",
+    "search_keywords": [
+      "Runebound: Second Edition ‐ English edition (2005) BGG",
+      "Runebound: Second Edition BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Räuber",
     "name_en_override": "",
     "alias_zh": "",
@@ -9874,6 +12430,55 @@
     "search_keywords": [
       "Santiago de Cuba  BGG",
       "Santiago de Cuba BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Seidenstraße ‐ German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 56943,
+    "name_en": "Seidenstraße",
+    "year": 2009,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.5,
+    "categories": [
+      "Economic"
+    ],
+    "mechanics": [
+      "Trading"
+    ],
+    "image_url": "https://cf.geekdo-images.com/0ftk6AaSUQbesh0E7LyX9g__original/img/YOl3iOVccvKeoTLwdeJAQsWTn48=/0x0/filters:format(jpeg)/pic577422.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/0ftk6AaSUQbesh0E7LyX9g__small/img/rIKfNVMCgDjIX3Y4Q_Ij42FyOHc=/fit-in/200x150/filters:strip_icc()/pic577422.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "交易"
+    ],
+    "image": "assets/img/56943-9bdb9918.jpg",
+    "id": "seidenstraße-56943",
+    "bgg_url": "https://boardgamegeek.com/boardgame/56943",
+    "search_keywords": [
+      "Seidenstraße ‐ German edition BGG",
+      "Seidenstraße BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -10191,6 +12796,63 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Siena ‐ ZuGames edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/wb8pvgFmW9IH-upj8XB-KA__small/img/fLkWcZdIkZNJfM7oc_4YBVj2Eyo=/fit-in/200x150/filters:strip_icc()/pic99088.jpg",
+    "image_version_id": "",
+    "bgg_id": 18932,
+    "name_en": "Siena",
+    "year": 2005,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.3364,
+    "categories": [
+      "Economic",
+      "Farming",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Hand Management",
+      "Rondel"
+    ],
+    "image_url": "https://cf.geekdo-images.com/wb8pvgFmW9IH-upj8XB-KA__original/img/RFtp7kZVguHraFzRPCeXLxqHhDk=/0x0/filters:format(jpeg)/pic99088.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/wb8pvgFmW9IH-upj8XB-KA__small/img/fLkWcZdIkZNJfM7oc_4YBVj2Eyo=/fit-in/200x150/filters:strip_icc()/pic99088.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/wb8pvgFmW9IH-upj8XB-KA__small/img/fLkWcZdIkZNJfM7oc_4YBVj2Eyo=/fit-in/200x150/filters:strip_icc()/pic99088.jpg",
+    "categories_zh": [
+      "經濟",
+      "農業",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "手牌管理",
+      "輪轉盤"
+    ],
+    "id": "siena-66957bab",
+    "bgg_url": "https://boardgamegeek.com/boardgame/18932",
+    "search_keywords": [
+      "Siena ‐ ZuGames edition BGG",
+      "Siena BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Sifaka",
     "name_en_override": "",
     "alias_zh": "",
@@ -10348,6 +13010,61 @@
     "search_keywords": [
       "Sioux BGG",
       "Sioux BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Skyline 3000 ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 54643,
+    "name_en": "Skyline 3000",
+    "year": 2009,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.3864,
+    "categories": [
+      "City Building",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Auction / Bidding",
+      "Turn Order: Progressive"
+    ],
+    "image_url": "https://cf.geekdo-images.com/NLeDIuukRC9PLodEW-tKDA__original/img/NzXTTZQfPwDKHhuDFRdfVzoujeg=/0x0/filters:format(jpeg)/pic544982.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/NLeDIuukRC9PLodEW-tKDA__small/img/mdZ8aHMwCI22PSQro0JgQi0wFj8=/fit-in/200x150/filters:strip_icc()/pic544982.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "城市建設",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "競標",
+      "回合順序：逐步"
+    ],
+    "image": "assets/img/54643-bfc32788.jpg",
+    "id": "skyline_3000-54643",
+    "bgg_url": "https://boardgamegeek.com/boardgame/54643",
+    "search_keywords": [
+      "Skyline 3000 ‐ English edition BGG",
+      "Skyline 3000 BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -10529,6 +13246,69 @@
     "search_keywords": [
       "Spirits of the Rice Paddy BGG",
       "Spirits of the Rice Paddy BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Steam Park ‐ English third edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/HA0kPnNDm7O0gh0ukPcGcw__small/img/zZNZq4mvxP9y-MxZQyeHvFsDhdk=/fit-in/200x150/filters:strip_icc()/pic2656302.jpg",
+    "image_version_id": "",
+    "bgg_id": 121410,
+    "name_en": "Steam Park",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.1171,
+    "categories": [
+      "City Building",
+      "Dice",
+      "Real-time",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Memory",
+      "Modular Board",
+      "Open Drafting",
+      "Real-Time"
+    ],
+    "image_url": "https://cf.geekdo-images.com/HA0kPnNDm7O0gh0ukPcGcw__original/img/o98tRHk91X2oFIsYeyXvrJJixss=/0x0/filters:format(jpeg)/pic2656302.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/HA0kPnNDm7O0gh0ukPcGcw__small/img/zZNZq4mvxP9y-MxZQyeHvFsDhdk=/fit-in/200x150/filters:strip_icc()/pic2656302.jpg",
+    "versions_count": 11,
+    "image": "https://cf.geekdo-images.com/HA0kPnNDm7O0gh0ukPcGcw__small/img/zZNZq4mvxP9y-MxZQyeHvFsDhdk=/fit-in/200x150/filters:strip_icc()/pic2656302.jpg",
+    "categories_zh": [
+      "城市建設",
+      "骰子",
+      "即時制",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "記憶",
+      "模組地圖",
+      "公開輪抽",
+      "即時制"
+    ],
+    "id": "steam_park-47b2d77f",
+    "bgg_url": "https://boardgamegeek.com/boardgame/121410",
+    "search_keywords": [
+      "Steam Park ‐ English third edition BGG",
+      "Steam Park BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -10769,6 +13549,67 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Taj Mahal ‐ Rio Grande 2006 edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/f9gbmotkSpf6R9Azuq32SQ__small@2x/img/a8FdN6aa9_YuCU3xU5-5lvAOQwU=/fit-in/400x300/filters:strip_icc()/pic178427.jpg",
+    "image_version_id": "",
+    "bgg_id": 475,
+    "name_en": "Taj Mahal",
+    "year": 2000,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 90,
+    "weight": 2.8512,
+    "categories": [
+      "Bluffing",
+      "Political"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Auction: Turn Order Until Pass",
+      "Hand Management",
+      "Network and Route Building",
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1AbjSJSVWFJ5GEXriWLd0w__original/img/pUWU53usRd2ck1OAXApT5haZUW4=/0x0/filters:format(jpeg)/pic4092498.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/1AbjSJSVWFJ5GEXriWLd0w__small/img/Hl5F3BOBmcd-NmdNfkbDHbqheNo=/fit-in/200x150/filters:strip_icc()/pic4092498.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/f9gbmotkSpf6R9Azuq32SQ__small@2x/img/a8FdN6aa9_YuCU3xU5-5lvAOQwU=/fit-in/400x300/filters:strip_icc()/pic178427.jpg",
+    "categories_zh": [
+      "唬人",
+      "政治"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "依序出價至棄權",
+      "手牌管理",
+      "路網建設",
+      "公開輪抽",
+      "收集套組"
+    ],
+    "id": "taj_mahal-d86e71ed",
+    "bgg_url": "https://boardgamegeek.com/boardgame/475",
+    "search_keywords": [
+      "Taj Mahal ‐ Rio Grande 2006 edition BGG",
+      "Taj Mahal BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Tajemnicze Domostwo",
     "name_en_override": "",
     "alias_zh": "",
@@ -10907,6 +13748,59 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Tavarua ‐ Collector's Edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/7Thfly7Q8y_MwrBJvev1fQ__small@2x/img/JMre-g1py8REKG60o-5gpzF1P9g=/fit-in/400x300/filters:strip_icc()/pic3884903.jpg",
+    "image_version_id": "",
+    "bgg_id": 186323,
+    "name_en": "Tavarua",
+    "year": 2016,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.2857,
+    "categories": [
+      "Sports"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Push Your Luck",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/7Thfly7Q8y_MwrBJvev1fQ__original/img/GwtvjmlKw2MKdCQ8Fr53YnyDA0c=/0x0/filters:format(jpeg)/pic3884903.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/7Thfly7Q8y_MwrBJvev1fQ__small/img/1uR1tR6nNqp1N5TvvICS-VuV0vg=/fit-in/200x150/filters:strip_icc()/pic3884903.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/7Thfly7Q8y_MwrBJvev1fQ__small@2x/img/JMre-g1py8REKG60o-5gpzF1P9g=/fit-in/400x300/filters:strip_icc()/pic3884903.jpg",
+    "categories_zh": [
+      "運動"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "押注碰運氣",
+      "同時選擇行動"
+    ],
+    "id": "tavarua-1534c979",
+    "bgg_url": "https://boardgamegeek.com/boardgame/186323",
+    "search_keywords": [
+      "Tavarua ‐ Collector's Edition BGG",
+      "Tavarua BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Templar: The Secret Treasures",
     "name_en_override": "",
     "alias_zh": "",
@@ -11040,7 +13934,7 @@
     ],
     "time_min": 60,
     "time_max": 150,
-    "weight": 4.2178,
+    "weight": 4.2166,
     "categories": [
       "Economic"
     ],
@@ -11082,6 +13976,63 @@
     "search_keywords": [
       "The Gallerist BGG",
       "The Gallerist BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "The Hen Commandments",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 168728,
+    "name_en": "The Hen Commandments",
+    "year": 2015,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.0,
+    "categories": [
+      "Humor",
+      "Party Game",
+      "Religious"
+    ],
+    "mechanics": [
+      "Role Playing",
+      "Storytelling",
+      "Voting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/injMtIvmOcnmaRZHh2t5fg__original/img/Pswwvq_llh0V9xETom67wBg5huc=/0x0/filters:format(png)/pic2533869.png",
+    "thumb_url": "https://cf.geekdo-images.com/injMtIvmOcnmaRZHh2t5fg__small/img/bBKBe3mF-GCrIUEyGMP0hQQqwmU=/fit-in/200x150/filters:strip_icc()/pic2533869.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "幽默",
+      "派對",
+      "宗教"
+    ],
+    "mechanics_zh": [
+      "角色扮演",
+      "說故事",
+      "投票"
+    ],
+    "image": "assets/img/168728-448ff22c.jpg",
+    "id": "the_hen_commandments-168728",
+    "bgg_url": "https://boardgamegeek.com/boardgame/168728",
+    "search_keywords": [
+      "The Hen Commandments BGG",
+      "The Hen Commandments BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -11159,6 +14110,61 @@
     "search_keywords": [
       "The Isle of Cats         \n貓島奇緣 BGG",
       "The Isle of Cats BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "The Prodigals Club ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/JiTIOiIvvpMHIO1NIlcBmA__small/img/0PTZyjpJRmSA29IO1nRtHPS1ejE=/fit-in/200x150/filters:strip_icc()/pic2684453.jpg",
+    "image_version_id": "",
+    "bgg_id": 181796,
+    "name_en": "The Prodigals Club",
+    "year": 2015,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 40,
+    "time_max": 100,
+    "weight": 3.2549,
+    "categories": [
+      "Card Game",
+      "Economic"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Highest-Lowest Scoring",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/JiTIOiIvvpMHIO1NIlcBmA__original/img/4IyzMADM1DO7EqGYvTpghvmlHYs=/0x0/filters:format(jpeg)/pic2684453.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/JiTIOiIvvpMHIO1NIlcBmA__small/img/0PTZyjpJRmSA29IO1nRtHPS1ejE=/fit-in/200x150/filters:strip_icc()/pic2684453.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/JiTIOiIvvpMHIO1NIlcBmA__small/img/0PTZyjpJRmSA29IO1nRtHPS1ejE=/fit-in/200x150/filters:strip_icc()/pic2684453.jpg",
+    "categories_zh": [
+      "卡牌",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "最高最低得分",
+      "Different Worker Types"
+    ],
+    "id": "the_prodigals_club-0a711899",
+    "bgg_url": "https://boardgamegeek.com/boardgame/181796",
+    "search_keywords": [
+      "The Prodigals Club ‐ English edition BGG",
+      "The Prodigals Club BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -11364,6 +14370,118 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "The Werewolves of Miller's Hollow: Characters",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "50",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/odTbeYBeyHyoixrkQ8_89w__small/img/VhYwkafq4zrObki0RAFM3TY0vng=/fit-in/200x150/filters:strip_icc()/pic1515841.jpg",
+    "image_version_id": "",
+    "bgg_id": 132780,
+    "name_en": "The Werewolves of Miller's Hollow: Characters",
+    "year": 2012,
+    "players": [
+      8,
+      28
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.8333,
+    "categories": [
+      "Expansion for Base-game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/5nL6Q4cOX7w-RKmG6FAcjQ__original/img/Z4te_0eVrRKZgrzdhOWnWlwdCUI=/0x0/filters:format(jpeg)/pic7203291.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/5nL6Q4cOX7w-RKmG6FAcjQ__small/img/LaXn__t6p1IBaHv05qgVKa1Y1bc=/fit-in/200x150/filters:strip_icc()/pic7203291.jpg",
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/odTbeYBeyHyoixrkQ8_89w__small/img/VhYwkafq4zrObki0RAFM3TY0vng=/fit-in/200x150/filters:strip_icc()/pic1515841.jpg",
+    "categories_zh": [
+      "基本款擴充"
+    ],
+    "mechanics_zh": [],
+    "id": "the_werewolves_of_miller's_hollow:_characters-3e7f15da",
+    "bgg_url": "https://boardgamegeek.com/boardgame/132780",
+    "search_keywords": [
+      "The Werewolves of Miller's Hollow: Characters BGG",
+      "The Werewolves of Miller's Hollow: Characters BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "The Werewolves of Miller's Hollow: New Moon",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "50",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 21713,
+    "name_en": "The Werewolves of Miller's Hollow: New Moon",
+    "year": 2005,
+    "players": [
+      8,
+      18
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.5152,
+    "categories": [
+      "Bluffing",
+      "Deduction",
+      "Expansion for Base-game",
+      "Horror",
+      "Murder / Mystery",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Player Elimination",
+      "Role Playing",
+      "Team-Based Game",
+      "Variable Player Powers",
+      "Voting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6MSwLOr-dnigSb6rt-M5TA__original/img/X0vXkHB9mpalp5DFK7s6BOQDPfc=/0x0/filters:format(jpeg)/pic7203281.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6MSwLOr-dnigSb6rt-M5TA__small/img/OtFMJxRmE4FMEzk-pq0i-kDLxJw=/fit-in/200x150/filters:strip_icc()/pic7203281.jpg",
+    "versions_count": 10,
+    "categories_zh": [
+      "唬人",
+      "推理",
+      "基本款擴充",
+      "恐怖",
+      "懸疑／推理",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "玩家淘汰",
+      "角色扮演",
+      "團隊",
+      "角色能力",
+      "投票"
+    ],
+    "image": "assets/img/21713-f208ea76.jpg",
+    "id": "the_werewolves_of_miller's_hollow:_new_moon-21713",
+    "bgg_url": "https://boardgamegeek.com/boardgame/21713",
+    "search_keywords": [
+      "The Werewolves of Miller's Hollow: New Moon BGG",
+      "The Werewolves of Miller's Hollow: New Moon BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Theseus: The Dark Orbit",
     "name_en_override": "",
     "alias_zh": "",
@@ -11535,6 +14653,57 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Those Pesky Garden Gnomes ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 30364,
+    "name_en": "Those Pesky Garden Gnomes",
+    "year": 2012,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.2,
+    "categories": [
+      "Card Game",
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Trick-taking"
+    ],
+    "image_url": "https://cf.geekdo-images.com/hGQmHpdEFIkifEgQH5SG9Q__original/img/yWT_rFvSbgJ1zeHsb_86bB1OSQY=/0x0/filters:format(jpeg)/pic1188351.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/hGQmHpdEFIkifEgQH5SG9Q__small/img/ERSA5xDWf1YGfejwAbdj3q6A09E=/fit-in/200x150/filters:strip_icc()/pic1188351.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "吃墩"
+    ],
+    "image": "assets/img/30364-e4dc2dd4.jpg",
+    "id": "those_pesky_garden_gnomes-30364",
+    "bgg_url": "https://boardgamegeek.com/boardgame/30364",
+    "search_keywords": [
+      "Those Pesky Garden Gnomes ‐ English edition BGG",
+      "Those Pesky Garden Gnomes BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Thunderstone",
     "name_en_override": "",
     "alias_zh": "",
@@ -11702,6 +14871,63 @@
     "search_keywords": [
       "Thunderstone: Wrath of the Elements BGG",
       "Thunderstone: Wrath of the Elements BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Thurn and Taxis ‐ English second edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/DhOKyXGyHNaDNoqfKtRieQ__small/img/rpuV6fjARO8MltgzjJ03qJ1Ntqw=/fit-in/200x150/filters:strip_icc()/pic2332319.jpg",
+    "image_version_id": "",
+    "bgg_id": 21790,
+    "name_en": "Thurn and Taxis",
+    "year": 2006,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.2572,
+    "categories": [
+      "Post-Napoleonic",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Network and Route Building",
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/OlwMFxx9t6HGndTSKaWxhg__original/img/SPiwIEJ1u6hBJtG4p4BrCgrPwDs=/0x0/filters:format(jpeg)/pic115300.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/OlwMFxx9t6HGndTSKaWxhg__small/img/Fz4ZowJ6MyHSUTZv6XVPs5w4NM0=/fit-in/200x150/filters:strip_icc()/pic115300.jpg",
+    "versions_count": 13,
+    "image": "https://cf.geekdo-images.com/DhOKyXGyHNaDNoqfKtRieQ__small/img/rpuV6fjARO8MltgzjJ03qJ1Ntqw=/fit-in/200x150/filters:strip_icc()/pic2332319.jpg",
+    "categories_zh": [
+      "拿破崙後時代",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "路網建設",
+      "公開輪抽",
+      "收集套組"
+    ],
+    "id": "thurn_and_taxis-364f507a",
+    "bgg_url": "https://boardgamegeek.com/boardgame/21790",
+    "search_keywords": [
+      "Thurn and Taxis ‐ English second edition BGG",
+      "Thurn and Taxis BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -11966,6 +15192,77 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Tournay ‐ Multilingual first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/LW5i0G7B6zLR2sS-49IELw__small/img/osAeDNYG1A9bgRJ5S-9QgbBuIqU=/fit-in/200x150/filters:strip_icc()/pic1068585.jpg",
+    "image_version_id": "",
+    "bgg_id": 105037,
+    "name_en": "Tournay",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.9037,
+    "categories": [
+      "Card Game",
+      "City Building",
+      "Economic",
+      "Medieval"
+    ],
+    "mechanics": [
+      "End Game Bonuses",
+      "Events",
+      "Hand Management",
+      "Income",
+      "Layering",
+      "Modular Board",
+      "Open Drafting",
+      "Worker Placement",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image_url": "https://cf.geekdo-images.com/LW5i0G7B6zLR2sS-49IELw__original/img/OHkoIIhZqoqZm3GEJxUjJClKR2I=/0x0/filters:format(jpeg)/pic1068585.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/LW5i0G7B6zLR2sS-49IELw__small/img/osAeDNYG1A9bgRJ5S-9QgbBuIqU=/fit-in/200x150/filters:strip_icc()/pic1068585.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/LW5i0G7B6zLR2sS-49IELw__small/img/osAeDNYG1A9bgRJ5S-9QgbBuIqU=/fit-in/200x150/filters:strip_icc()/pic1068585.jpg",
+    "categories_zh": [
+      "卡牌",
+      "城市建設",
+      "經濟",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "終局加分",
+      "事件",
+      "手牌管理",
+      "收入",
+      "疊放",
+      "模組地圖",
+      "公開輪抽",
+      "Different Worker Types",
+      "Worker Placement, Different Worker Types"
+    ],
+    "id": "tournay-faf7f40e",
+    "bgg_url": "https://boardgamegeek.com/boardgame/105037",
+    "search_keywords": [
+      "Tournay ‐ Multilingual first edition BGG",
+      "Tournay BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Trains",
     "name_en_override": "",
     "alias_zh": "",
@@ -12137,6 +15434,61 @@
     "search_keywords": [
       "Tribune: Primus Inter Pares BGG",
       "Tribune: Primus Inter Pares BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Troyes: The Ladies of Troyes ‐ Z-Man English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/UDQFqOy1y3UMKFNg4lywuQ__small/img/L5S9YyDt6xKFZSw2QVgmgF6WkEA=/fit-in/200x150/filters:strip_icc()/pic1450377.jpg",
+    "image_version_id": "",
+    "bgg_id": 127061,
+    "name_en": "Troyes: The Ladies of Troyes",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.5269,
+    "categories": [
+      "Dice",
+      "Expansion for Base-game",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/UDQFqOy1y3UMKFNg4lywuQ__original/img/vaPGeYWpN1jPV1rnaxWU5uu2590=/0x0/filters:format(jpeg)/pic1450377.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/UDQFqOy1y3UMKFNg4lywuQ__small/img/L5S9YyDt6xKFZSw2QVgmgF6WkEA=/fit-in/200x150/filters:strip_icc()/pic1450377.jpg",
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/UDQFqOy1y3UMKFNg4lywuQ__small/img/L5S9YyDt6xKFZSw2QVgmgF6WkEA=/fit-in/200x150/filters:strip_icc()/pic1450377.jpg",
+    "categories_zh": [
+      "骰子",
+      "基本款擴充",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "Different Worker Types"
+    ],
+    "id": "troyes:_the_ladies_of_troyes-45bdfc39",
+    "bgg_url": "https://boardgamegeek.com/boardgame/127061",
+    "search_keywords": [
+      "Troyes: The Ladies of Troyes ‐ Z-Man English edition BGG",
+      "Troyes: The Ladies of Troyes BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -12554,6 +15906,250 @@
     "search_keywords": [
       "Urbanization BGG",
       "Urbanization BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Valletta ‐ German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/3IjqtsLbV7o1NAW8LIvRmA__small/img/dhD0bpzsotbx9A6TZJumEFnKVnU=/fit-in/200x150/filters:strip_icc()/pic3670282.jpg",
+    "image_version_id": "",
+    "bgg_id": 218920,
+    "name_en": "Valletta",
+    "year": 2017,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 40,
+    "time_max": 80,
+    "weight": 2.3409,
+    "categories": [
+      "City Building",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building",
+      "Hand Management",
+      "Modular Board",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mBXXPh7tGmzqToW8D8vaeg__original/img/xO7w-OrIP0dHq6KN5XQ2S5uFPs4=/0x0/filters:format(jpeg)/pic3514287.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/mBXXPh7tGmzqToW8D8vaeg__small/img/MdLE3Dw8EIwf7jCuR3wstY-CuFE=/fit-in/200x150/filters:strip_icc()/pic3514287.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/3IjqtsLbV7o1NAW8LIvRmA__small/img/dhD0bpzsotbx9A6TZJumEFnKVnU=/fit-in/200x150/filters:strip_icc()/pic3670282.jpg",
+    "categories_zh": [
+      "城市建設",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "手牌管理",
+      "模組地圖",
+      "互害"
+    ],
+    "id": "valletta-a8a0d891",
+    "bgg_url": "https://boardgamegeek.com/boardgame/218920",
+    "search_keywords": [
+      "Valletta ‐ German edition BGG",
+      "Valletta BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Vampire Empire",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 128698,
+    "name_en": "Vampire Empire",
+    "year": 2012,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.1463,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Deduction",
+      "Fighting",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/F_TGBosdvb7Meqg_1Mw8xg__original/img/8-N70pJ4F_BLAu6tfoC-LeVpils=/0x0/filters:format(jpeg)/pic1591258.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/F_TGBosdvb7Meqg_1Mw8xg__small/img/ul36ItEqjY_sBOeRf_DReBSx1xY=/fit-in/200x150/filters:strip_icc()/pic1591258.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "唬人",
+      "卡牌",
+      "推理",
+      "戰鬥",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "手牌管理"
+    ],
+    "image": "assets/img/128698-8f45f299.jpg",
+    "id": "vampire_empire-128698",
+    "bgg_url": "https://boardgamegeek.com/boardgame/128698",
+    "search_keywords": [
+      "Vampire Empire BGG",
+      "Vampire Empire BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Vanuatu German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/3LXCGjPqEkUxIa26Zl-5OA__small/img/m3UuFb1Da7IiKEpifeWa5RnQbxw=/fit-in/200x150/filters:strip_icc()/pic1914805.jpg",
+    "image_version_id": "",
+    "bgg_id": 104020,
+    "name_en": "Vanuatu",
+    "year": 2011,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.2906,
+    "categories": [
+      "Economic",
+      "Nautical"
+    ],
+    "mechanics": [
+      "Action Drafting",
+      "Auction / Bidding",
+      "Grid Movement",
+      "Hexagon Grid",
+      "Lose a Turn",
+      "Map Addition",
+      "Market",
+      "Modular Board",
+      "Turn Order: Claim Action"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1ozE0RuBxHf-WpJctDZBRw__original/img/weK6_HFcc18b6wIf9bfOG3notCw=/0x0/filters:format(jpeg)/pic1288264.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/1ozE0RuBxHf-WpJctDZBRw__small/img/d7ZqhcCCpJMzvtjM_Axl8NvmW1I=/fit-in/200x150/filters:strip_icc()/pic1288264.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/3LXCGjPqEkUxIa26Zl-5OA__small/img/m3UuFb1Da7IiKEpifeWa5RnQbxw=/fit-in/200x150/filters:strip_icc()/pic1914805.jpg",
+    "categories_zh": [
+      "經濟",
+      "航海"
+    ],
+    "mechanics_zh": [
+      "行動選擇（輪抽）",
+      "競標",
+      "格子移動",
+      "六角格",
+      "失去回合",
+      "地圖擴增",
+      "市集",
+      "模組地圖",
+      "搶先手"
+    ],
+    "id": "vanuatu-f2214e23",
+    "bgg_url": "https://boardgamegeek.com/boardgame/104020",
+    "search_keywords": [
+      "Vanuatu German edition BGG",
+      "Vanuatu BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Vikings ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/mDq3YVbubI2h28ZPg62Kog__small/img/Kba0AVbe3qPYcysiZ0p__QNd2fk=/fit-in/200x150/filters:strip_icc()/pic650920.jpg",
+    "image_version_id": "",
+    "bgg_id": 27173,
+    "name_en": "Vikings",
+    "year": 2007,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.5402,
+    "categories": [
+      "Economic",
+      "Medieval",
+      "Nautical",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Income",
+      "Rondel",
+      "Tile Placement",
+      "Victory Points as a Resource"
+    ],
+    "image_url": "https://cf.geekdo-images.com/nQPsaIgIvHiVewkPlSeFLA__original/img/WVqOVRbWwE3skoEB63fy-gHbi1k=/0x0/filters:format(jpeg)/pic1904581.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/nQPsaIgIvHiVewkPlSeFLA__small/img/r-994ljtk8eekrwvCCRWsbnx3PQ=/fit-in/200x150/filters:strip_icc()/pic1904581.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/mDq3YVbubI2h28ZPg62Kog__small/img/Kba0AVbe3qPYcysiZ0p__QNd2fk=/fit-in/200x150/filters:strip_icc()/pic650920.jpg",
+    "categories_zh": [
+      "經濟",
+      "中世紀",
+      "航海",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "收入",
+      "輪轉盤",
+      "板塊擺放",
+      "分數作為資源"
+    ],
+    "id": "vikings-5b3d8ba0",
+    "bgg_url": "https://boardgamegeek.com/boardgame/27173",
+    "search_keywords": [
+      "Vikings ‐ English first edition BGG",
+      "Vikings BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -12977,6 +16573,65 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "Wizard Kings",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 692,
+    "name_en": "Wizard Kings",
+    "year": 2000,
+    "players": [
+      2,
+      7
+    ],
+    "time_min": 150,
+    "time_max": 150,
+    "weight": 2.6516,
+    "categories": [
+      "Fantasy",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hexagon Grid",
+      "Modular Board",
+      "Secret Unit Deployment",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rlrzwzgVR4IASRddhN6SRQ__original/img/dMmnspUHnmZGpoU2kXsYPY8Mjyw=/0x0/filters:format(jpeg)/pic199522.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/rlrzwzgVR4IASRddhN6SRQ__small/img/Led9BZFQ8m6dhvg7w09gjz7JoX4=/fit-in/200x150/filters:strip_icc()/pic199522.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "奇幻",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "六角格",
+      "模組地圖",
+      "秘密部署",
+      "角色能力"
+    ],
+    "image": "assets/img/692-060ab824.jpg",
+    "id": "wizard_kings-692",
+    "bgg_url": "https://boardgamegeek.com/boardgame/692",
+    "search_keywords": [
+      "Wizard Kings BGG",
+      "Wizard Kings BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "Wok Star",
     "name_en_override": "",
     "alias_zh": "",
@@ -13085,6 +16740,71 @@
     "search_keywords": [
       "Wolfsspuren BGG",
       "Wolfsspuren BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Yokohama \t\n横濱紳商伝",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/rX5R5vwZHIj2dAGLfqmULA__small@2x/img/pjOFD-KZoagodXojvzQw3X3xQpM=/fit-in/400x300/filters:strip_icc()/pic2948038.png",
+    "image_version_id": "",
+    "bgg_id": 196340,
+    "name_en": "Yokohama",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.2797,
+    "categories": [
+      "Economic"
+    ],
+    "mechanics": [
+      "Contracts",
+      "End Game Bonuses",
+      "Grid Movement",
+      "Modular Board",
+      "Network and Route Building",
+      "Set Collection",
+      "Variable Set-up",
+      "Worker Placement",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image_url": "https://cf.geekdo-images.com/3edsEXwH21uaO8HXXdD1Dg__original/img/O-03BIpt7yhPbsffYjDwZc68zbQ=/0x0/filters:format(png)/pic7745916.png",
+    "thumb_url": "https://cf.geekdo-images.com/3edsEXwH21uaO8HXXdD1Dg__small/img/jUrVfOrsWBIaTRd5F6RKHFOYcaQ=/fit-in/200x150/filters:strip_icc()/pic7745916.png",
+    "versions_count": 25,
+    "image": "https://cf.geekdo-images.com/rX5R5vwZHIj2dAGLfqmULA__small@2x/img/pjOFD-KZoagodXojvzQw3X3xQpM=/fit-in/400x300/filters:strip_icc()/pic2948038.png",
+    "categories_zh": [
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "合約",
+      "終局加分",
+      "格子移動",
+      "模組地圖",
+      "路網建設",
+      "收集套組",
+      "可變設置",
+      "Different Worker Types",
+      "Worker Placement, Different Worker Types"
+    ],
+    "id": "yokohama-6117f1f8",
+    "bgg_url": "https://boardgamegeek.com/boardgame/196340",
+    "search_keywords": [
+      "Yokohama \t\n横濱紳商伝 BGG",
+      "Yokohama BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -13244,6 +16964,57 @@
     "search_keywords": [
       "Zombie Tower 3D BGG",
       "Zombie Tower 3D BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "Коста Руана",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/RNEOQQFMkIgPg9eN6aKMVQ__small@2x/img/vUza2N1THhkU1IpMi7j2zAEeNcE=/fit-in/400x300/filters:strip_icc()/pic2257547.jpg",
+    "image_version_id": "",
+    "bgg_id": 166888,
+    "name_en": "Costa Ruana",
+    "year": 2014,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 60,
+    "weight": 2.0,
+    "categories": [
+      "Bluffing",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Area Majority / Influence"
+    ],
+    "image_url": "https://cf.geekdo-images.com/I47tctjWqX4yPDYcdulILg__original/img/cCuQnQ3e_dj7XItOYGIm6JgUIdg=/0x0/filters:format(jpeg)/pic4195039.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/I47tctjWqX4yPDYcdulILg__small/img/JfmpX3EIzsxhM_IVZTQHjCf-ySE=/fit-in/200x150/filters:strip_icc()/pic4195039.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/RNEOQQFMkIgPg9eN6aKMVQ__small@2x/img/vUza2N1THhkU1IpMi7j2zAEeNcE=/fit-in/400x300/filters:strip_icc()/pic2257547.jpg",
+    "categories_zh": [
+      "唬人",
+      "卡牌"
+    ],
+    "mechanics_zh": [
+      "區域控制"
+    ],
+    "id": "costa_ruana-0a87d5cb",
+    "bgg_url": "https://boardgamegeek.com/boardgame/166888",
+    "search_keywords": [
+      "Коста Руана BGG",
+      "Costa Ruana BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -13558,7 +17329,7 @@
     ],
     "time_min": 120,
     "time_max": 180,
-    "weight": 3.6136,
+    "weight": 3.6139,
     "categories": [
       "Modern Warfare",
       "Political",
@@ -14400,6 +18171,57 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "奧勒崗拓荒Oregon ‐ Rio Grande English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 31497,
+    "name_en": "Oregon",
+    "year": 2007,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.1483,
+    "categories": [
+      "American West"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/urxIKf8swB-HeaFTVXt54g__original/img/Kwv7pn6G7ptWF6nTdEZAikb8a0M=/0x0/filters:format(jpeg)/pic1450927.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/urxIKf8swB-HeaFTVXt54g__small/img/6UbRVzdHIuzhyZaUtB0i6TL-YjI=/fit-in/200x150/filters:strip_icc()/pic1450927.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "美國西部"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "板塊擺放"
+    ],
+    "image": "assets/img/31497-dc056cc1.jpg",
+    "id": "oregon-31497",
+    "bgg_url": "https://boardgamegeek.com/boardgame/31497",
+    "search_keywords": [
+      "奧勒崗拓荒Oregon ‐ Rio Grande English edition BGG",
+      "Oregon BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "奧地利大飯店",
     "name_en_override": "",
     "alias_zh": "",
@@ -14423,7 +18245,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.2018,
+    "weight": 3.2026,
     "categories": [
       "Economic"
     ],
@@ -14950,6 +18772,128 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "工業時代 Wargames Club Chinese edition\nAge of Industry",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/rp3M_E8Xat-vSrp5DSOeFA__small/img/lGsrN_3nQf9j0biLpift9Nt0jOY=/fit-in/200x150/filters:strip_icc()/pic1043866.jpg",
+    "image_version_id": "",
+    "bgg_id": 65901,
+    "name_en": "Age of Industry",
+    "year": 2010,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.3525,
+    "categories": [
+      "Economic",
+      "Industry / Manufacturing",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Loans",
+      "Market",
+      "Network and Route Building",
+      "Open Drafting",
+      "Tech Trees / Tech Tracks"
+    ],
+    "image_url": "https://cf.geekdo-images.com/F1DJ5wsTySoSTTb9E3fouQ__original/img/5cgNo6iXR7kouxeYkWYrZmtvzCg=/0x0/filters:format(jpeg)/pic715611.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/F1DJ5wsTySoSTTb9E3fouQ__small/img/BpkzyXVeVxZVBmac2jam5LfI4Fg=/fit-in/200x150/filters:strip_icc()/pic715611.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/rp3M_E8Xat-vSrp5DSOeFA__small/img/lGsrN_3nQf9j0biLpift9Nt0jOY=/fit-in/200x150/filters:strip_icc()/pic1043866.jpg",
+    "categories_zh": [
+      "經濟",
+      "工業／製造",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "借貸",
+      "市集",
+      "路網建設",
+      "公開輪抽",
+      "科技樹／軌道"
+    ],
+    "id": "age_of_industry-69e223b1",
+    "bgg_url": "https://boardgamegeek.com/boardgame/65901",
+    "search_keywords": [
+      "工業時代 Wargames Club Chinese edition\nAge of Industry BGG",
+      "Age of Industry BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "布魯日\nBrügge ‐ German first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/TfQKHul5QNNQPJug1UHcQA__small/img/M5TdXDd_iaBiWGsySiD8l0mxzVA=/fit-in/200x150/filters:strip_icc()/pic1545558.jpg",
+    "image_version_id": "",
+    "bgg_id": 136888,
+    "name_en": "Bruges",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.7504,
+    "categories": [
+      "Card Game",
+      "City Building",
+      "Economic",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hand Management",
+      "Multi-Use Cards"
+    ],
+    "image_url": "https://cf.geekdo-images.com/A8JeebUT3mu4zUmYs9clDQ__original/img/v5d03Jz4di-I6S6C1iihj6JEeoY=/0x0/filters:format(jpeg)/pic1652004.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/A8JeebUT3mu4zUmYs9clDQ__small/img/0O-Yp8KcLpb_lUXGm3AgymPJKos=/fit-in/200x150/filters:strip_icc()/pic1652004.jpg",
+    "versions_count": 12,
+    "image": "https://cf.geekdo-images.com/TfQKHul5QNNQPJug1UHcQA__small/img/M5TdXDd_iaBiWGsySiD8l0mxzVA=/fit-in/200x150/filters:strip_icc()/pic1545558.jpg",
+    "categories_zh": [
+      "卡牌",
+      "城市建設",
+      "經濟",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "多用途卡"
+    ],
+    "id": "bruges-17b0b919",
+    "bgg_url": "https://boardgamegeek.com/boardgame/136888",
+    "search_keywords": [
+      "布魯日\nBrügge ‐ German first edition BGG",
+      "Bruges BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "幕後交易",
     "name_en_override": "",
     "alias_zh": "",
@@ -14973,7 +18917,7 @@
     ],
     "time_min": 45,
     "time_max": 45,
-    "weight": 1.6283,
+    "weight": 1.6294,
     "categories": [
       "Animals",
       "Bluffing",
@@ -15314,6 +19258,59 @@
     "search_keywords": [
       "披薩大亨 BGG",
       "Pizza Bake-Off BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "抹茶\nMatcha ‐ English-only edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/3dSO91qu4SMftHD4jHQlIA__small/img/9uzYWGv_zH0RCmNyaSB00CdJNZU=/fit-in/200x150/filters:strip_icc()/pic2330472.jpg",
+    "image_version_id": "",
+    "bgg_id": 166107,
+    "name_en": "Matcha",
+    "year": 2015,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.6667,
+    "categories": [
+      "Bluffing",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/o-6cFDHmUZtwxrwnSDVJxw__original/img/bRtRrLnfQ6ch6Avsqz-QmURee0E=/0x0/filters:format(jpeg)/pic5975081.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/o-6cFDHmUZtwxrwnSDVJxw__small/img/zYGpNZ-ewUZq9t2RbzwAeNB4IxA=/fit-in/200x150/filters:strip_icc()/pic5975081.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/3dSO91qu4SMftHD4jHQlIA__small/img/9uzYWGv_zH0RCmNyaSB00CdJNZU=/fit-in/200x150/filters:strip_icc()/pic2330472.jpg",
+    "categories_zh": [
+      "唬人",
+      "卡牌"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "收集套組"
+    ],
+    "id": "matcha-5bdefd15",
+    "bgg_url": "https://boardgamegeek.com/boardgame/166107",
+    "search_keywords": [
+      "抹茶\nMatcha ‐ English-only edition BGG",
+      "Matcha BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -16240,6 +20237,73 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "柯爾特快車擴充：車馬飛渡\nColt Express: Horses & Stagecoach",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "150",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 181158,
+    "name_en": "Colt Express: Horses & Stagecoach",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.1892,
+    "categories": [
+      "American West",
+      "Expansion for Base-game",
+      "Fighting",
+      "Trains"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Hand Management",
+      "Memory",
+      "Modular Board",
+      "Open Drafting",
+      "Take That",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/movEptUmjne5GnbJ5z9--A__original/img/S0dIfJ0o1f-_UrsfxrYodIVVXHs=/0x0/filters:format(jpeg)/pic2602731.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/movEptUmjne5GnbJ5z9--A__small/img/J-cNdj8ZETBpeFfPQhCxBE6TRaE=/fit-in/200x150/filters:strip_icc()/pic2602731.jpg",
+    "versions_count": 12,
+    "categories_zh": [
+      "美國西部",
+      "基本款擴充",
+      "戰鬥",
+      "鐵道"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "手牌管理",
+      "記憶",
+      "模組地圖",
+      "公開輪抽",
+      "互害",
+      "角色能力"
+    ],
+    "image": "assets/img/181158-3e37086b.jpg",
+    "id": "colt_express:_horses_&_stagecoach-181158",
+    "bgg_url": "https://boardgamegeek.com/boardgame/181158",
+    "search_keywords": [
+      "柯爾特快車擴充：車馬飛渡\nColt Express: Horses & Stagecoach BGG",
+      "Colt Express: Horses & Stagecoach BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "椰子猴王",
     "name_en_override": "",
     "alias_zh": "",
@@ -17044,6 +21108,71 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "洞穴農夫\nCaverna: The Cave Farmers",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "1000",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/KDhzjrTJoW-y2DemIwtgeA__small@2x/img/RrOg3tK27Q04TeAuicYTx5xiOGA=/fit-in/400x300/filters:strip_icc()/pic3800048.jpg",
+    "image_version_id": "",
+    "bgg_id": 102794,
+    "name_en": "Caverna: The Cave Farmers",
+    "year": 2013,
+    "players": [
+      1,
+      7
+    ],
+    "time_min": 30,
+    "time_max": 210,
+    "weight": 3.7741,
+    "categories": [
+      "Animals",
+      "Economic",
+      "Fantasy",
+      "Farming"
+    ],
+    "mechanics": [
+      "Automatic Resource Growth",
+      "Increase Value of Unchosen Resources",
+      "Solo / Solitaire Game",
+      "Tile Placement",
+      "Turn Order: Claim Action",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/EAqbd46lFxo-7GumlO8U4w__original/img/oNM6bkDbjww-7nKZX-WYYmPxRws=/0x0/filters:format(jpeg)/pic5598833.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/EAqbd46lFxo-7GumlO8U4w__small/img/g-qxFyjgqn7kwH3erf3jhmgYaIU=/fit-in/200x150/filters:strip_icc()/pic5598833.jpg",
+    "versions_count": 32,
+    "image": "https://cf.geekdo-images.com/KDhzjrTJoW-y2DemIwtgeA__small@2x/img/RrOg3tK27Q04TeAuicYTx5xiOGA=/fit-in/400x300/filters:strip_icc()/pic3800048.jpg",
+    "categories_zh": [
+      "動物",
+      "經濟",
+      "奇幻",
+      "農業"
+    ],
+    "mechanics_zh": [
+      "資源自動成長",
+      "未選資源增值",
+      "單人",
+      "板塊擺放",
+      "搶先手",
+      "Different Worker Types"
+    ],
+    "id": "caverna:_the_cave_farmers-1a85c09c",
+    "bgg_url": "https://boardgamegeek.com/boardgame/102794",
+    "search_keywords": [
+      "洞穴農夫\nCaverna: The Cave Farmers BGG",
+      "Caverna: The Cave Farmers BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "深入絕地: 暗黑世界傳說",
     "name_en_override": "",
     "alias_zh": "",
@@ -17113,6 +21242,73 @@
     "search_keywords": [
       "深入絕地: 暗黑世界傳說 BGG",
       "Descent: Legends of the Dark BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "港都情濃",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/e0aSLzaut9zYdiZ5haJjKQ__small/img/XaDelsWp9BwOrqQsCV9lcHIq384=/fit-in/200x150/filters:strip_icc()/pic4095349.jpg",
+    "image_version_id": "",
+    "bgg_id": 35677,
+    "name_en": "Le Havre",
+    "year": 2008,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 150,
+    "weight": 3.7084,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Industry / Manufacturing",
+      "Nautical"
+    ],
+    "mechanics": [
+      "Automatic Resource Growth",
+      "End Game Bonuses",
+      "Increase Value of Unchosen Resources",
+      "Loans",
+      "Ownership",
+      "Solo / Solitaire Game",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/y7Rqd3S6J7vyVhicR1bqTQ__original/img/tQFXv1w2R-J-1cjyaKG9LAS2UOs=/0x0/filters:format(jpeg)/pic6091101.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/y7Rqd3S6J7vyVhicR1bqTQ__small/img/w1iHoYZCVTDZI6gsPuxOScA7FqU=/fit-in/200x150/filters:strip_icc()/pic6091101.jpg",
+    "versions_count": 33,
+    "image": "https://cf.geekdo-images.com/e0aSLzaut9zYdiZ5haJjKQ__small/img/XaDelsWp9BwOrqQsCV9lcHIq384=/fit-in/200x150/filters:strip_icc()/pic4095349.jpg",
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "工業／製造",
+      "航海"
+    ],
+    "mechanics_zh": [
+      "資源自動成長",
+      "終局加分",
+      "未選資源增值",
+      "借貸",
+      "所有權",
+      "單人",
+      "Different Worker Types"
+    ],
+    "id": "le_havre-ec8b23ec",
+    "bgg_url": "https://boardgamegeek.com/boardgame/35677",
+    "search_keywords": [
+      "港都情濃 BGG",
+      "Le Havre BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -17197,7 +21393,7 @@
     ],
     "time_min": 20,
     "time_max": 30,
-    "weight": 1.8,
+    "weight": 1.7273,
     "categories": [
       "Card Game",
       "Territory Building"
@@ -17760,6 +21956,85 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "特鲁瓦\nTroyes ‐ English-only first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/mADfmBW4Kqj4oWNRVc_M6Q__small/img/4TFX_nSWlUx0O1xfaUiHRnk-9U8=/fit-in/200x150/filters:strip_icc()/pic935668.jpg",
+    "image_version_id": "",
+    "bgg_id": 73439,
+    "name_en": "Troyes",
+    "year": 2010,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.377,
+    "categories": [
+      "Dice",
+      "Economic",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Dice Rolling",
+      "End Game Bonuses",
+      "Events",
+      "Hidden Victory Points",
+      "Income",
+      "Ownership",
+      "Set Collection",
+      "Slide / Push",
+      "Solo / Solitaire Game",
+      "Turn Order: Progressive",
+      "Variable Set-up",
+      "Worker Placement with Dice Workers",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image_url": "https://cf.geekdo-images.com/fBIe-aEPtJKC-ceNlspK6A__original/img/otcIVdG4ebZmK1SjUtzma18JtJ4=/0x0/filters:format(jpeg)/pic750583.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/fBIe-aEPtJKC-ceNlspK6A__small/img/Npv5mrWBkjnlKjl_8hGLNk9CCwc=/fit-in/200x150/filters:strip_icc()/pic750583.jpg",
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/mADfmBW4Kqj4oWNRVc_M6Q__small/img/4TFX_nSWlUx0O1xfaUiHRnk-9U8=/fit-in/200x150/filters:strip_icc()/pic935668.jpg",
+    "categories_zh": [
+      "骰子",
+      "經濟",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "擲骰",
+      "終局加分",
+      "事件",
+      "隱藏分數",
+      "收入",
+      "所有權",
+      "收集套組",
+      "滑動／推移",
+      "單人",
+      "回合順序：逐步",
+      "可變設置",
+      "骰子工人",
+      "Worker Placement, Different Worker Types"
+    ],
+    "id": "troyes-55d9d05f",
+    "bgg_url": "https://boardgamegeek.com/boardgame/73439",
+    "search_keywords": [
+      "特鲁瓦\nTroyes ‐ English-only first edition BGG",
+      "Troyes BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "犯罪現場：隱蔽同盟擴充 (CS-Files / CSI /Deception: Undercover Allies)",
     "name_en_override": "",
     "alias_zh": "",
@@ -18186,7 +22461,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.7786,
+    "weight": 1.7787,
     "categories": [
       "Card Game",
       "Economic",
@@ -18304,7 +22579,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.8974,
+    "weight": 1.9,
     "categories": [
       "Card Game",
       "Economic",
@@ -19666,6 +23941,134 @@
     "updated_at": "2025-10-04"
   },
   {
+    "name_zh": "米勒山谷狼人 ‐ Swan Panasia Chinese edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "50",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/RzHown3po3HheYd_eoZ8sA__small/img/haWmlRFLJUwIA-M0gUXO8W_I0rY=/fit-in/200x150/filters:strip_icc()/pic2390719.png",
+    "image_version_id": "",
+    "bgg_id": 25821,
+    "name_en": "The Werewolves of Miller's Hollow",
+    "year": 2001,
+    "players": [
+      8,
+      18
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.3119,
+    "categories": [
+      "Bluffing",
+      "Deduction",
+      "Horror",
+      "Murder / Mystery",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Hidden Roles",
+      "Player Elimination",
+      "Role Playing",
+      "Team-Based Game",
+      "Variable Player Powers",
+      "Voting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rZ0tOafAt1oue_7NKqELsg__original/img/Mxx1Abak0zV1FhoDr5HOnMirFAM=/0x0/filters:format(jpeg)/pic7203269.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/rZ0tOafAt1oue_7NKqELsg__small/img/jqycRUhCBZjq1E87oQVIFb1_j0A=/fit-in/200x150/filters:strip_icc()/pic7203269.jpg",
+    "versions_count": 33,
+    "image": "https://cf.geekdo-images.com/RzHown3po3HheYd_eoZ8sA__small/img/haWmlRFLJUwIA-M0gUXO8W_I0rY=/fit-in/200x150/filters:strip_icc()/pic2390719.png",
+    "categories_zh": [
+      "唬人",
+      "推理",
+      "恐怖",
+      "懸疑／推理",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "隱藏身分",
+      "玩家淘汰",
+      "角色扮演",
+      "團隊",
+      "角色能力",
+      "投票"
+    ],
+    "id": "the_werewolves_of_miller's_hollow-e226d542",
+    "bgg_url": "https://boardgamegeek.com/boardgame/25821",
+    "search_keywords": [
+      "米勒山谷狼人 ‐ Swan Panasia Chinese edition BGG",
+      "The Werewolves of Miller's Hollow BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "米寶戰爭Meeple War",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "100",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/JQpd_B4A_k4rVCjzHbRxLQ__small@2x/img/HfJmq35QdEDblqhxNX2RkR5PZUI=/fit-in/400x300/filters:strip_icc()/pic4229313.jpg",
+    "image_version_id": "",
+    "bgg_id": 192120,
+    "name_en": "Meeple War",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.6786,
+    "categories": [
+      "Exploration",
+      "Fantasy",
+      "Fighting",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Modular Board",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ohX-5VQ47zkb4x6ovEGWiw__original/img/gxuywoBbh6Tem3J2OX82ebAuXdw=/0x0/filters:format(jpeg)/pic3639455.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ohX-5VQ47zkb4x6ovEGWiw__small/img/zzyjXWiydUzUvnZKeNdZiTHlj2I=/fit-in/200x150/filters:strip_icc()/pic3639455.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/JQpd_B4A_k4rVCjzHbRxLQ__small@2x/img/HfJmq35QdEDblqhxNX2RkR5PZUI=/fit-in/400x300/filters:strip_icc()/pic4229313.jpg",
+    "categories_zh": [
+      "探索",
+      "奇幻",
+      "戰鬥",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "模組地圖",
+      "Different Worker Types"
+    ],
+    "id": "meeple_war-3395a50a",
+    "bgg_url": "https://boardgamegeek.com/boardgame/192120",
+    "search_keywords": [
+      "米寶戰爭Meeple War BGG",
+      "Meeple War BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
     "name_zh": "精靈國度豪華版",
     "name_en_override": "",
     "alias_zh": "",
@@ -19825,6 +24228,116 @@
     "search_keywords": [
       "糊塗動畫室 BGG",
       "Chaotic Studio BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "紐約 1901 ‐ Chinese edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/loeUxZrOj8Qi6swmm_u0vw__small/img/iuxLdp5x4MVaTCCqMGZzpbXrcOw=/fit-in/200x150/filters:strip_icc()/pic2616024.png",
+    "image_version_id": "",
+    "bgg_id": 174660,
+    "name_en": "New York 1901",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.05,
+    "categories": [
+      "City Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Once-Per-Game Abilities",
+      "Open Drafting",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/HTdnmBGtjaS2hgn9IEta9g__original/img/7HYeDu_2vBCepbhAFh1-6eg8WjQ=/0x0/filters:format(jpeg)/pic2515532.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/HTdnmBGtjaS2hgn9IEta9g__small/img/wSOIMKcHyhSA7sU4p9xY2xyj7kA=/fit-in/200x150/filters:strip_icc()/pic2515532.jpg",
+    "versions_count": 9,
+    "image": "https://cf.geekdo-images.com/loeUxZrOj8Qi6swmm_u0vw__small/img/iuxLdp5x4MVaTCCqMGZzpbXrcOw=/fit-in/200x150/filters:strip_icc()/pic2616024.png",
+    "categories_zh": [
+      "城市建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "每局一次能力",
+      "公開輪抽",
+      "板塊擺放"
+    ],
+    "id": "new_york_1901-82d418a7",
+    "bgg_url": "https://boardgamegeek.com/boardgame/174660",
+    "search_keywords": [
+      "紐約 1901 ‐ Chinese edition BGG",
+      "New York 1901 BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "紐約披薩王\nNew York Slice ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 208895,
+    "name_en": "New York Slice",
+    "year": 2017,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.4561,
+    "categories": [
+      "Party Game"
+    ],
+    "mechanics": [
+      "I Cut, You Choose",
+      "Once-Per-Game Abilities",
+      "Set Collection",
+      "Turn Order: Progressive"
+    ],
+    "image_url": "https://cf.geekdo-images.com/pqJB3ccbvCW4Fii-uQG1kA__original/img/umEFTPSPVQAE2z4toFzvMXHTnSk=/0x0/filters:format(jpeg)/pic3211823.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/pqJB3ccbvCW4Fii-uQG1kA__small/img/ZUFpifMTH57E3B8bSuca3Eq7Xfc=/fit-in/200x150/filters:strip_icc()/pic3211823.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "派對"
+    ],
+    "mechanics_zh": [
+      "I Cut, You Choose",
+      "每局一次能力",
+      "收集套組",
+      "回合順序：逐步"
+    ],
+    "image": "assets/img/208895-d0831a22.jpg",
+    "id": "new_york_slice-208895",
+    "bgg_url": "https://boardgamegeek.com/boardgame/208895",
+    "search_keywords": [
+      "紐約披薩王\nNew York Slice ‐ English edition BGG",
+      "New York Slice BGG"
     ],
     "updated_at": "2025-10-04"
   },
@@ -20987,6 +25500,89 @@
     "search_keywords": [
       "蒸氣 BGG",
       "Steam BGG"
+    ],
+    "updated_at": "2025-10-04"
+  },
+  {
+    "name_zh": "蒸汽時代 ‐ Chinese edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/EK2jwn0-jfcydH5mvYixOQ__small/img/3pFSkc0F16NOo9bN3NfWJHoct-8=/fit-in/200x150/filters:strip_icc()/pic1052164.jpg",
+    "image_version_id": "",
+    "bgg_id": 4098,
+    "name_en": "Age of Steam",
+    "year": 2002,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.8604,
+    "categories": [
+      "Economic",
+      "Post-Napoleonic",
+      "Trains",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Catch the Leader",
+      "Connections",
+      "Dice Rolling",
+      "Hexagon Grid",
+      "Loans",
+      "Network and Route Building",
+      "Pick-up and Deliver",
+      "Player Elimination",
+      "Scenario / Mission / Campaign Game",
+      "Selection Order Bid",
+      "Solo / Solitaire Game",
+      "Tile Placement",
+      "Turn Order: Auction",
+      "Victory Points as a Resource"
+    ],
+    "image_url": "https://cf.geekdo-images.com/gBPzZsgm9nrUYVfdK216NA__original/img/eQEmKYEWVoNvEx6PZYZv13275io=/0x0/filters:format(png)/pic4557340.png",
+    "thumb_url": "https://cf.geekdo-images.com/gBPzZsgm9nrUYVfdK216NA__small/img/aceZ647BbV53Yv7rod9AwpTTst0=/fit-in/200x150/filters:strip_icc()/pic4557340.png",
+    "versions_count": 16,
+    "image": "https://cf.geekdo-images.com/EK2jwn0-jfcydH5mvYixOQ__small/img/3pFSkc0F16NOo9bN3NfWJHoct-8=/fit-in/200x150/filters:strip_icc()/pic1052164.jpg",
+    "categories_zh": [
+      "經濟",
+      "拿破崙後時代",
+      "鐵道",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "追趕領先者",
+      "連線／連結",
+      "擲骰",
+      "六角格",
+      "借貸",
+      "路網建設",
+      "取貨運送",
+      "玩家淘汰",
+      "劇本／任務／戰役",
+      "選擇順序出價",
+      "單人",
+      "板塊擺放",
+      "回合順序：競標",
+      "分數作為資源"
+    ],
+    "id": "age_of_steam-b8647aec",
+    "bgg_url": "https://boardgamegeek.com/boardgame/4098",
+    "search_keywords": [
+      "蒸汽時代 ‐ Chinese edition BGG",
+      "Age of Steam BGG"
     ],
     "updated_at": "2025-10-04"
   },
