@@ -29150,24 +29150,40 @@
     "description": "",
     "image_override": "https://cf.geekdo-images.com/fCMiq4XTcqPevO8n9KHqQQ__small@2x/img/Fo58tw90TcSrsFyifvbttehP9ms=/fit-in/400x300/filters:strip_icc()/pic1446815.jpg",
     "image_version_id": "",
-    "bgg_id": 178367,
-    "name_en": "Majestic Nights",
-    "year": null,
+    "bgg_id": 129948,
+    "name_en": "The Palaces of Carrara",
+    "year": 2012,
     "players": [
-      1,
-      1
+      2,
+      4
     ],
-    "time_min": null,
-    "time_max": null,
-    "weight": 0.0,
-    "categories": [],
-    "mechanics": [],
-    "image_url": "https://cf.geekdo-images.com/75zfTqe8H-860Pl8yDx7Kw__original/img/wclCzGCWk65Ic3Oq3k4fsHvW7Xo=/0x0/filters:format(jpeg)/pic2534448.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/75zfTqe8H-860Pl8yDx7Kw__small/img/DQPl2YPQxaHyhBC-8roOYVN7z-s=/fit-in/200x150/filters:strip_icc()/pic2534448.jpg",
-    "versions_count": 1,
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.5861,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Increase Value of Unchosen Resources",
+      "Set Collection",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DsMeW1M58khZlWpHEdGOuw__original/img/40juLFRgylorMnbhK0TR6-l8Wu0=/0x0/filters:format(jpeg)/pic4398491.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/DsMeW1M58khZlWpHEdGOuw__small/img/fUmovwFlp3Ajf5sT0TrzABrBxNs=/fit-in/200x150/filters:strip_icc()/pic4398491.jpg",
+    "versions_count": 5,
     "image": "https://cf.geekdo-images.com/fCMiq4XTcqPevO8n9KHqQQ__small@2x/img/Fo58tw90TcSrsFyifvbttehP9ms=/fit-in/400x300/filters:strip_icc()/pic1446815.jpg",
-    "categories_zh": [],
-    "mechanics_zh": []
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "未選資源增值",
+      "收集套組",
+      "板塊擺放"
+    ]
   },
   {
     "name_zh": "504 ‐ Chinese edition",
@@ -29310,6 +29326,76 @@
     "thumb_url": "https://cf.geekdo-images.com/soAzNVWglCdVBacNjoCTJw__small/img/0UPEyOaSFyqEH1ikrSig_218RQ0=/fit-in/200x150/filters:strip_icc()/pic2338267.jpg",
     "versions_count": 22,
     "image": "https://cf.geekdo-images.com/7uZKfrocexedffNeZxDmrw__small@2x/img/udiguoxR2LezOmt_eofZNzCGetg=/fit-in/400x300/filters:strip_icc()/pic381221.jpg",
+    "categories_zh": [
+      "抽象策略",
+      "古代",
+      "文明",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "連鎖",
+      "連線／連結",
+      "強制承諾",
+      "手牌管理",
+      "隱藏分數",
+      "最高最低得分",
+      "收入",
+      "收集套組",
+      "方格",
+      "互害",
+      "板塊擺放"
+    ]
+  },
+  {
+    "name_zh": "兩河流域 ‐ Wargames Club Chinese edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/wNdQ_iE7CauVVkq6OudHjQ__small@2x/img/Cz9WY4VzsKWpfqr_HFew0jJgORk=/fit-in/400x300/filters:strip_icc()/pic761028.jpg",
+    "image_version_id": "",
+    "bgg_id": 42,
+    "name_en": "Tigris & Euphrates",
+    "year": 1997,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.4827,
+    "categories": [
+      "Abstract Strategy",
+      "Ancient",
+      "Civilization",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Chaining",
+      "Connections",
+      "Force Commitment",
+      "Hand Management",
+      "Hidden Victory Points",
+      "Highest-Lowest Scoring",
+      "Income",
+      "Set Collection",
+      "Square Grid",
+      "Take That",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/soAzNVWglCdVBacNjoCTJw__original/img/HClVZy9phFP-NPte4UBQpclsaHU=/0x0/filters:format(jpeg)/pic2338267.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/soAzNVWglCdVBacNjoCTJw__small/img/0UPEyOaSFyqEH1ikrSig_218RQ0=/fit-in/200x150/filters:strip_icc()/pic2338267.jpg",
+    "versions_count": 22,
+    "image": "https://cf.geekdo-images.com/wNdQ_iE7CauVVkq6OudHjQ__small@2x/img/Cz9WY4VzsKWpfqr_HFew0jJgORk=/fit-in/400x300/filters:strip_icc()/pic761028.jpg",
     "categories_zh": [
       "抽象策略",
       "古代",
@@ -30517,6 +30603,960 @@
       "突然死亡結束",
       "板塊擺放",
       "可變設置"
+    ]
+  },
+  {
+    "name_zh": "Fresco ‐ Multilingual edition 2010 with awards",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 66188,
+    "name_en": "Fresco",
+    "year": 2010,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.6389,
+    "categories": [
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Grid Movement",
+      "Market",
+      "Set Collection",
+      "Simultaneous Action Selection",
+      "Turn Order: Stat-Based",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DCVRR-zA7Jy9wjuZudTZ8w__original/img/dF1pDf3JLgqAdzD9uhy14Pd3yx8=/0x0/filters:format(jpeg)/pic714398.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/DCVRR-zA7Jy9wjuZudTZ8w__small/img/7-_wICvkH7Opfpkc4vkNYvubia4=/fit-in/200x150/filters:strip_icc()/pic714398.jpg",
+    "versions_count": 14,
+    "categories_zh": [
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "格子移動",
+      "市集",
+      "收集套組",
+      "同時選擇行動",
+      "回合順序：能力值",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/66188-aa6ff097.jpg"
+  },
+  {
+    "name_zh": "Shogun Big Box",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 176103,
+    "name_en": "Shogun Big Box",
+    "year": 2015,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 150,
+    "weight": 3.4,
+    "categories": [
+      "Economic",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Area Majority / Influence",
+      "Area Movement",
+      "Auction / Bidding",
+      "Cube Tower",
+      "Simultaneous Action Selection",
+      "Variable Phase Order"
+    ],
+    "image_url": "https://cf.geekdo-images.com/nRzAp6Z0gieoIOyt1woxPg__original/img/sbJeb56ukHmIM4iX2Ty7VkOpLXM=/0x0/filters:format(jpeg)/pic5362154.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/nRzAp6Z0gieoIOyt1woxPg__small/img/98Q89gy3ZlwwFquwoEU7tYbW5XE=/fit-in/200x150/filters:strip_icc()/pic5362154.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "經濟",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "區域控制",
+      "區域移動",
+      "競標",
+      "方塊塔",
+      "同時選擇行動",
+      "可變階段順序"
+    ],
+    "image": "assets/img/176103-768cc72a.jpg"
+  },
+  {
+    "name_zh": "Alhambra: Big Box ‐ English edition (2009)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 45358,
+    "name_en": "Alhambra: Big Box",
+    "year": 2009,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.3316,
+    "categories": [
+      "Arabian",
+      "City Building",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Open Drafting",
+      "Pattern Building",
+      "Set Collection",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/qZcmQvAUH6JJTpwGlqPwAA__original/img/c0OEuXcT_kd-y9aZ3ljE5wXOw74=/0x0/filters:format(jpeg)/pic535726.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/qZcmQvAUH6JJTpwGlqPwAA__small/img/UwYOZMmJTlRs4xwUuQ8j4aHnPUI=/fit-in/200x150/filters:strip_icc()/pic535726.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "阿拉伯",
+      "城市建設",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "公開輪抽",
+      "圖案建構",
+      "收集套組",
+      "板塊擺放"
+    ],
+    "image": "assets/img/45358-aeec009d.jpg"
+  },
+  {
+    "name_zh": "Dr. Hrubec ‐ Czech/English/German/Slovak edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 147396,
+    "name_en": "Dr. Hrubec",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 40,
+    "time_max": 40,
+    "weight": 2.0,
+    "categories": [
+      "Card Game",
+      "Medical",
+      "Party Game"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/gTchAU3XxrHcWE7BYhz1hQ__original/img/7e6dAWugO9d29O_HRMVLemZd6LI=/0x0/filters:format(png)/pic1769895.png",
+    "thumb_url": "https://cf.geekdo-images.com/gTchAU3XxrHcWE7BYhz1hQ__small/img/DjEpfbopnbsvaWOmG5ulQOm0aX4=/fit-in/200x150/filters:strip_icc()/pic1769895.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "醫療",
+      "派對"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理"
+    ],
+    "image": "assets/img/147396-6c996538.jpg"
+  },
+  {
+    "name_zh": "Francis Drake ‐ English/German first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/JhevUw6bY6Pz6YLQsD2qdg__small@2x/img/OAcxjvGq3CVtTREsPHlL3PTiOAM=/fit-in/400x300/filters:strip_icc()/pic1616979.jpg",
+    "image_version_id": "",
+    "bgg_id": 140603,
+    "name_en": "Francis Drake",
+    "year": 2013,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 120,
+    "weight": 2.9031,
+    "categories": [
+      "Bluffing",
+      "Exploration",
+      "Nautical",
+      "Pirates",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Order Counters",
+      "Push Your Luck",
+      "Secret Unit Deployment",
+      "Set Collection",
+      "Turn Order: Time Track",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/oYDRG315rTkMJG9ZFwQpTQ__original/img/Cn19RxMSKMquYu2XCdHb4uUyl9Y=/0x0/filters:format(jpeg)/pic3182129.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/oYDRG315rTkMJG9ZFwQpTQ__small/img/lAgPi8DttoNwVvdGNkJx4ywyRB4=/fit-in/200x150/filters:strip_icc()/pic3182129.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/JhevUw6bY6Pz6YLQsD2qdg__small@2x/img/OAcxjvGq3CVtTREsPHlL3PTiOAM=/fit-in/400x300/filters:strip_icc()/pic1616979.jpg",
+    "categories_zh": [
+      "唬人",
+      "探索",
+      "航海",
+      "海盜",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "順序指示物",
+      "押注碰運氣",
+      "秘密部署",
+      "收集套組",
+      "回合順序：時間軌",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Francis Drake: The Expansions ‐ English/French/German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 170813,
+    "name_en": "Francis Drake: The Expansions",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.5,
+    "categories": [
+      "Expansion for Base-game",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Dice Rolling",
+      "Modular Board",
+      "Secret Unit Deployment"
+    ],
+    "image_url": "https://cf.geekdo-images.com/iwx-dys2dTegxJV8esavkg__original/img/vlqkcsNo3Ena2YyiL6WjugfBtAo=/0x0/filters:format(jpeg)/pic3970708.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/iwx-dys2dTegxJV8esavkg__small/img/0BSM7grybz8MKhlGWH6dHRun0rQ=/fit-in/200x150/filters:strip_icc()/pic3970708.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "基本款擴充",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "擲骰",
+      "模組地圖",
+      "秘密部署"
+    ],
+    "image": "assets/img/170813-bcb0dc38.jpg"
+  },
+  {
+    "name_zh": "Orcs Orcs Orcs",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 165477,
+    "name_en": "Orcs Orcs Orcs",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.1,
+    "categories": [
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building"
+    ],
+    "image_url": "https://cf.geekdo-images.com/3QKkydzyjgjinieLplDUHg__original/img/UtF2M3mAtoku9m4Wz5SEvKNteXI=/0x0/filters:format(jpeg)/pic2335552.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/3QKkydzyjgjinieLplDUHg__small/img/42XSQjsi5HrmeTCT4SMukLYv1LI=/fit-in/200x150/filters:strip_icc()/pic2335552.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building"
+    ],
+    "image": "assets/img/165477-fcab32b4.jpg"
+  },
+  {
+    "name_zh": "Orcs Orcs Orcs: Reinforcements (Expansion 1)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 166524,
+    "name_en": "Orcs Orcs Orcs: Reinforcements (Expansion 1)",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 2.0,
+    "categories": [
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building"
+    ],
+    "image_url": "https://cf.geekdo-images.com/RsuVfHZgDPGuFXl_UDxymQ__original/img/gK9QA9QVLt_BCowK0yIzO2aoVRA=/0x0/filters:format(jpeg)/pic2278015.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/RsuVfHZgDPGuFXl_UDxymQ__small/img/IpMGOuKJsyfrjd5wAw-nhvneUME=/fit-in/200x150/filters:strip_icc()/pic2278015.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building"
+    ],
+    "image": "assets/img/166524-40cd7178.jpg"
+  },
+  {
+    "name_zh": "McJohny's ‐ Czech/English/German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 164566,
+    "name_en": "McJohny's",
+    "year": 2014,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.4286,
+    "categories": [
+      "Action / Dexterity",
+      "Party Game",
+      "Puzzle",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Modular Board",
+      "Tile Placement",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/zMg20gnj-eB3w7aHXVqaXA__original/img/9BhmCM1SZkySaOkNjCijVu4ZOVs=/0x0/filters:format(png)/pic2222915.png",
+    "thumb_url": "https://cf.geekdo-images.com/zMg20gnj-eB3w7aHXVqaXA__small/img/ybTTGbi2uwY-XotwQE4RiLAaDaE=/fit-in/200x150/filters:strip_icc()/pic2222915.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "動作／敏捷",
+      "派對",
+      "益智／拼圖",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "模組地圖",
+      "板塊擺放",
+      "角色能力"
+    ],
+    "image": "assets/img/164566-99553d27.jpg"
+  },
+  {
+    "name_zh": "Thebes ‐ Queen multilingual edition 2012",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/BqjSiH96QqRPklZf2Wq3Hw__small@2x/img/PMOKqD9Qb7kc_eVt6UCYPSTfFoI=/fit-in/400x300/filters:strip_icc()/pic4412356.jpg",
+    "image_version_id": "",
+    "bgg_id": 30869,
+    "name_en": "Thebes",
+    "year": 2007,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.1549,
+    "categories": [
+      "Ancient",
+      "Exploration",
+      "Travel"
+    ],
+    "mechanics": [
+      "Point to Point Movement",
+      "Set Collection",
+      "Turn Order: Time Track"
+    ],
+    "image_url": "https://cf.geekdo-images.com/T4EH02wIepQC4DzyEEY1MQ__original/img/QxPqkxizF0ZN4crTiw_OukDV8c4=/0x0/filters:format(jpeg)/pic2723204.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/T4EH02wIepQC4DzyEEY1MQ__small/img/oQ0IlYEVkHSnCPvoORuPAjzCCy8=/fit-in/200x150/filters:strip_icc()/pic2723204.jpg",
+    "versions_count": 14,
+    "image": "https://cf.geekdo-images.com/BqjSiH96QqRPklZf2Wq3Hw__small@2x/img/PMOKqD9Qb7kc_eVt6UCYPSTfFoI=/fit-in/400x300/filters:strip_icc()/pic4412356.jpg",
+    "categories_zh": [
+      "古代",
+      "探索",
+      "旅遊"
+    ],
+    "mechanics_zh": [
+      "點對點移動",
+      "收集套組",
+      "回合順序：時間軌"
+    ]
+  },
+  {
+    "name_zh": "Edo ‐ ENG/FRE/DUT/SPA edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 113636,
+    "name_en": "Edo",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.9643,
+    "categories": [
+      "Economic",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Action Queue",
+      "Hand Management",
+      "Point to Point Movement",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/wwgXfmp8X1ZaE7P85xpsuA__original/img/RwC79gZBGkuTWyvfBVToM6yRlI8=/0x0/filters:format(jpeg)/pic7285666.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/wwgXfmp8X1ZaE7P85xpsuA__small/img/b5IEFMsv0yGL46BHiEUvj6crjME=/fit-in/200x150/filters:strip_icc()/pic7285666.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "經濟",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "行動序列",
+      "手牌管理",
+      "點對點移動",
+      "同時選擇行動"
+    ],
+    "image": "assets/img/113636-435a1c0f.jpg"
+  },
+  {
+    "name_zh": "Edo: Expansion #1 ‐ Multilingual edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 137104,
+    "name_en": "Edo: Expansion #1",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 3.0,
+    "categories": [
+      "Economic",
+      "Expansion for Base-game",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Point to Point Movement",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Sk2A87qFzzZRVvZ6_8aXsg__original/img/WQXUL7aGYEKtc6HeTMI3htOk9AE=/0x0/filters:format(jpeg)/pic1550039.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Sk2A87qFzzZRVvZ6_8aXsg__small/img/sYQoowzsn75HAdb_71soEmBXlDE=/fit-in/200x150/filters:strip_icc()/pic1550039.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "基本款擴充",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "點對點移動",
+      "同時選擇行動"
+    ],
+    "image": "assets/img/137104-b275ba40.jpg"
+  },
+  {
+    "name_zh": "Cubo ‐ Multilingual edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 166532,
+    "name_en": "Cubo",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.5833,
+    "categories": [
+      "Dice",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Pattern Building",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/F4iujQlnFgNrvo2mQFVh2w__original/img/I4FepXHMtw2ARV_HelSCq7iaQCE=/0x0/filters:format(jpeg)/pic2335547.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/F4iujQlnFgNrvo2mQFVh2w__small/img/XD3StiaSFF5CkAX7FSR1Fxx0B6Y=/fit-in/200x150/filters:strip_icc()/pic2335547.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "骰子",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "圖案建構",
+      "收集套組"
+    ],
+    "image": "assets/img/166532-2a704801.jpg"
+  },
+  {
+    "name_zh": "Word on the Street ‐ English fourth edition (2012)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/LKfFRruzwGRVMKWwi5AhmQ__small@2x/img/nQWkXEom5x-5fCKlL4k0FDSmC40=/fit-in/400x300/filters:strip_icc()/pic1229366.jpg",
+    "image_version_id": "",
+    "bgg_id": 40990,
+    "name_en": "Word on the Street",
+    "year": 2009,
+    "players": [
+      2,
+      10
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.3451,
+    "categories": [
+      "Party Game",
+      "Word Game"
+    ],
+    "mechanics": [
+      "Spelling",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/d19HVb_gUXFh-9nKMDmykg__original/img/g-pbF5lUQ5vqwYnB46iHFwu9RgU=/0x0/filters:format(jpeg)/pic7065724.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/d19HVb_gUXFh-9nKMDmykg__small/img/m20bwBYhtRt8SEBFOOScbv-v9SY=/fit-in/200x150/filters:strip_icc()/pic7065724.jpg",
+    "versions_count": 14,
+    "image": "https://cf.geekdo-images.com/LKfFRruzwGRVMKWwi5AhmQ__small@2x/img/nQWkXEom5x-5fCKlL4k0FDSmC40=/fit-in/400x300/filters:strip_icc()/pic1229366.jpg",
+    "categories_zh": [
+      "派對",
+      "字詞"
+    ],
+    "mechanics_zh": [
+      "拼字",
+      "團隊"
+    ]
+  },
+  {
+    "name_zh": "The Downfall of Pompeii ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/TiQMCUZDLA5oDuBNqbJSNw__small@2x/img/UuaqN70meP9o-NcP5uYLudEUgPI=/fit-in/400x300/filters:strip_icc()/pic167210.jpg",
+    "image_version_id": "",
+    "bgg_id": 13004,
+    "name_en": "The Downfall of Pompeii",
+    "year": 2004,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.8452,
+    "categories": [
+      "Ancient"
+    ],
+    "mechanics": [
+      "Events",
+      "Grid Movement",
+      "Hand Management",
+      "Move Through Deck",
+      "Movement Points",
+      "Square Grid",
+      "Static Capture",
+      "Tags",
+      "Take That",
+      "Tile Placement",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/eZjGZ9O4hdUnc47rDgAgRg__original/img/dH4prpq1jPIi9IS_7a44MlBm6J4=/0x0/filters:format(jpeg)/pic1685805.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/eZjGZ9O4hdUnc47rDgAgRg__small/img/Ii0rodwBgEzpHofswh32VECo1xk=/fit-in/200x150/filters:strip_icc()/pic1685805.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/TiQMCUZDLA5oDuBNqbJSNw__small@2x/img/UuaqN70meP9o-NcP5uYLudEUgPI=/fit-in/400x300/filters:strip_icc()/pic167210.jpg",
+    "categories_zh": [
+      "古代"
+    ],
+    "mechanics_zh": [
+      "事件",
+      "格子移動",
+      "手牌管理",
+      "穿牌移動",
+      "移動點",
+      "方格",
+      "靜態捕獲",
+      "標籤",
+      "互害",
+      "板塊擺放",
+      "可變設置"
+    ]
+  },
+  {
+    "name_zh": "瘟疫危機 一觸即發 (瘟疫危机 一触即发) ‐ Chinese first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/lit7VSFD5gUDB8BBLCwVxg__small@2x/img/UGCW4yTddlQpMlV8W12edd_gIyg=/fit-in/400x300/filters:strip_icc()/pic633202.jpg",
+    "image_version_id": "",
+    "bgg_id": 40849,
+    "name_en": "Pandemic: On the Brink",
+    "year": 2009,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.6531,
+    "categories": [
+      "Expansion for Base-game",
+      "Environmental",
+      "Medical",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game",
+      "Hand Management",
+      "Hidden Movement",
+      "Point to Point Movement",
+      "Secret Unit Deployment",
+      "Set Collection",
+      "Tags",
+      "Team-Based Game",
+      "Trading",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/MOsfIJrEqkGMUlo09TL3rw__original/img/cJ2kOhpNeVakyUn4SfzD8kwO6n8=/0x0/filters:format(jpeg)/pic7014070.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/MOsfIJrEqkGMUlo09TL3rw__small/img/CSEB6i26tqktFOXyh2IgqtR8zpE=/fit-in/200x150/filters:strip_icc()/pic7014070.jpg",
+    "versions_count": 32,
+    "image": "https://cf.geekdo-images.com/lit7VSFD5gUDB8BBLCwVxg__small@2x/img/UGCW4yTddlQpMlV8W12edd_gIyg=/fit-in/400x300/filters:strip_icc()/pic633202.jpg",
+    "categories_zh": [
+      "基本款擴充",
+      "環境議題",
+      "醫療",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "手牌管理",
+      "隱藏移動",
+      "點對點移動",
+      "秘密部署",
+      "收集套組",
+      "標籤",
+      "團隊",
+      "交易",
+      "角色能力"
+    ]
+  },
+  {
+    "name_zh": "Dungeon Twister 2: Prison ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 42124,
+    "name_en": "Dungeon Twister 2: Prison",
+    "year": 2009,
+    "players": [
+      1,
+      2
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 3.2421,
+    "categories": [
+      "Adventure",
+      "Exploration",
+      "Fantasy",
+      "Fighting",
+      "Maze"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Grid Movement",
+      "Hand Management",
+      "Modular Board",
+      "Secret Unit Deployment",
+      "Tile Placement",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/OeGNqqFmedAS2fLeNGE9yQ__original/img/i6_uGsHGuzHrfr8vrdaSYhoHBUQ=/0x0/filters:format(jpeg)/pic482348.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/OeGNqqFmedAS2fLeNGE9yQ__small/img/uuBT0DaJmkjRr8P5xkH5naqjWfo=/fit-in/200x150/filters:strip_icc()/pic482348.jpg",
+    "versions_count": 3,
+    "categories_zh": [
+      "冒險",
+      "探索",
+      "奇幻",
+      "戰鬥",
+      "迷宮"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "格子移動",
+      "手牌管理",
+      "模組地圖",
+      "秘密部署",
+      "板塊擺放",
+      "角色能力"
+    ],
+    "image": "assets/img/42124-243ab294.jpg"
+  },
+  {
+    "name_zh": "Exploding Kittens: Imploding Kittens ‐ English 1.0 edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/I5JSKlcAKikJ8GlcFRwD6w__small@2x/img/hXAIeNkexlAHpTo9_zXskmIiUXU=/fit-in/400x300/filters:strip_icc()/pic3518497.jpg",
+    "image_version_id": "",
+    "bgg_id": 204053,
+    "name_en": "Exploding Kittens: Imploding Kittens",
+    "year": 2016,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 0,
+    "weight": 1.1034,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Comic Book / Strip",
+      "Expansion for Base-game",
+      "Humor"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Player Elimination",
+      "Push Your Luck",
+      "Set Collection",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/I5JSKlcAKikJ8GlcFRwD6w__original/img/ZpfgFS7Ru7C6N6EZ4OlIzfT_EvU=/0x0/filters:format(jpeg)/pic3518497.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/I5JSKlcAKikJ8GlcFRwD6w__small/img/4XKbpNyF4f2QCOB2ITjBI5YaSQ8=/fit-in/200x150/filters:strip_icc()/pic3518497.jpg",
+    "versions_count": 16,
+    "image": "https://cf.geekdo-images.com/I5JSKlcAKikJ8GlcFRwD6w__small@2x/img/hXAIeNkexlAHpTo9_zXskmIiUXU=/fit-in/400x300/filters:strip_icc()/pic3518497.jpg",
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "漫畫",
+      "基本款擴充",
+      "幽默"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "玩家淘汰",
+      "押注碰運氣",
+      "收集套組",
+      "互害"
     ]
   }
 ]
