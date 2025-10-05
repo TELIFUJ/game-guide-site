@@ -15,6 +15,7 @@ Auction / Bidding,競標
 Auction Compensation,競標補償
 Auction: Dexterity,技巧競標
 Auction: Dutch,荷蘭式競標
+Auction: Dutch Priority,荷蘭式優先
 Auction: Fixed Placement,固定出價位
 Auction: Multiple Lot,多標的競標
 Auction: Once Around,單圈競標
@@ -55,6 +56,7 @@ Events,事件
 Finale Ending,終章結束
 Flicking,彈射
 Follow,跟隨
+Force Commitment,強制承諾
 Grid Coverage,格面覆蓋
 Grid Movement,格子移動
 Hand Management,手牌管理

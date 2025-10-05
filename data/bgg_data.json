@@ -2747,7 +2747,7 @@
     ],
     "time_min": 30,
     "time_max": 50,
-    "weight": 1.6739,
+    "weight": 1.6596,
     "categories": [
       "Deduction",
       "Horror",
@@ -4113,7 +4113,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.8511,
+    "weight": 1.8451,
     "categories": [
       "Abstract Strategy"
     ],
@@ -4161,7 +4161,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.8511,
+    "weight": 1.8451,
     "categories": [
       "Abstract Strategy"
     ],
@@ -5835,7 +5835,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.1315,
+    "weight": 1.1314,
     "categories": [
       "Card Game"
     ],
@@ -9059,7 +9059,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.434,
+    "weight": 1.4444,
     "categories": [
       "Card Game"
     ],
@@ -9445,7 +9445,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.223,
+    "weight": 1.2286,
     "categories": [
       "Abstract Strategy",
       "Number",
@@ -12085,7 +12085,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 2.0627,
+    "weight": 2.0645,
     "categories": [
       "Abstract Strategy"
     ],
@@ -12351,7 +12351,7 @@
     ],
     "time_min": 30,
     "time_max": 60,
-    "weight": 2.0,
+    "weight": 2.0714,
     "categories": [
       "Video Game Theme"
     ],
@@ -12405,7 +12405,7 @@
     ],
     "time_min": 30,
     "time_max": 60,
-    "weight": 1.9872,
+    "weight": 1.9873,
     "categories": [
       "Video Game Theme"
     ],
@@ -13419,7 +13419,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.3611,
+    "weight": 1.3604,
     "categories": [
       "Card Game",
       "Memory"
@@ -14233,7 +14233,7 @@
     ],
     "time_min": 120,
     "time_max": 180,
-    "weight": 2.6994,
+    "weight": 2.6951,
     "categories": [
       "Adventure",
       "Fantasy",
@@ -15837,7 +15837,7 @@
     ],
     "time_min": 300,
     "time_max": 300,
-    "weight": 4.3695,
+    "weight": 4.3689,
     "categories": [
       "Ancient",
       "Negotiation",
@@ -16387,7 +16387,7 @@
     ],
     "time_min": 90,
     "time_max": 90,
-    "weight": 3.1811,
+    "weight": 3.1807,
     "categories": [
       "American West",
       "City Building",
@@ -18540,34 +18540,34 @@
     "description": "",
     "image_override": "",
     "image_version_id": "",
-    "bgg_id": 10815,
-    "name_en": "Craps",
-    "year": 1125,
+    "bgg_id": 108157,
+    "name_en": "Kalimambo",
+    "year": 2011,
     "players": [
-      1,
-      16
+      3,
+      7
     ],
-    "time_min": 20,
-    "time_max": 60,
-    "weight": 1.7907,
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.05,
     "categories": [
-      "Dice"
+      "Animals",
+      "Exploration"
     ],
     "mechanics": [
-      "Betting and Bluffing",
-      "Dice Rolling"
+      "Simultaneous Action Selection"
     ],
-    "image_url": "https://cf.geekdo-images.com/FZvpAsmgphfnd0yrytevKQ__original/img/awGdH_hb6H1n8OFBRwlHn187twQ=/0x0/filters:format(jpeg)/pic243141.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/FZvpAsmgphfnd0yrytevKQ__small/img/gSEpL1YiNefFwmk8h7ZnQgKbCrA=/fit-in/200x150/filters:strip_icc()/pic243141.jpg",
-    "versions_count": 8,
+    "image_url": "https://cf.geekdo-images.com/Zj87fDDFijSMT8DP3YS9Lw__original/img/Cc1Gu9zb3Ip_9vYcP5jsT6gaWLI=/0x0/filters:format(jpeg)/pic1121024.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Zj87fDDFijSMT8DP3YS9Lw__small/img/2lMh6M4PaSsD1KFf_4E8PTZaJNM=/fit-in/200x150/filters:strip_icc()/pic1121024.jpg",
+    "versions_count": 2,
     "categories_zh": [
-      "骰子"
+      "動物",
+      "探索"
     ],
     "mechanics_zh": [
-      "下注與唬人",
-      "擲骰"
+      "同時選擇行動"
     ],
-    "image": "assets/img/10815-5e8be430.jpg"
+    "image": "assets/img/108157-6c7c3ed4.jpg"
   },
   {
     "name_zh": "Coffee Roaster 咖啡烘焙師",
@@ -18889,7 +18889,7 @@
     ],
     "time_min": 90,
     "time_max": 120,
-    "weight": 3.3494,
+    "weight": 3.3452,
     "categories": [
       "Expansion for Base-game",
       "Medieval",
@@ -19073,7 +19073,7 @@
     ],
     "time_min": 90,
     "time_max": 90,
-    "weight": 3.2241,
+    "weight": 3.2203,
     "categories": [
       "Expansion for Base-game",
       "Medieval",
@@ -19475,7 +19475,7 @@
     ],
     "time_min": 30,
     "time_max": 45,
-    "weight": 1.8333,
+    "weight": 1.8354,
     "categories": [
       "Animals",
       "Exploration",
@@ -21069,7 +21069,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 2.8286,
+    "weight": 2.8287,
     "categories": [
       "Environmental",
       "Medical"
@@ -23530,50 +23530,6 @@
     "image": "assets/img/154477-74f9c9a7.jpg"
   },
   {
-    "name_zh": "Canopy Walk",
-    "name_en_override": "",
-    "alias_zh": "",
-    "category_zh": "",
-    "price_msrp_twd": "",
-    "price_twd": "",
-    "used_price_twd": "300",
-    "price_note": "",
-    "used_note": "",
-    "manual_override": "1",
-    "stock": "1",
-    "description": "",
-    "image_override": "",
-    "image_version_id": "",
-    "bgg_id": 154477,
-    "name_en": "Canopy Walk",
-    "year": 2014,
-    "players": [
-      2,
-      2
-    ],
-    "time_min": 30,
-    "time_max": 30,
-    "weight": 1.5714,
-    "categories": [
-      "Abstract Strategy",
-      "Adventure"
-    ],
-    "mechanics": [
-      "Tile Placement"
-    ],
-    "image_url": "https://cf.geekdo-images.com/UoSaU0xFXOzmUy3B9XT5Eg__original/img/bCUArmdRHA1syvPbZP7vIlUbsPA=/0x0/filters:format(jpeg)/pic2015109.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/UoSaU0xFXOzmUy3B9XT5Eg__small/img/mIMKfdefQpuHGc-cekv4Q6244EY=/fit-in/200x150/filters:strip_icc()/pic2015109.jpg",
-    "versions_count": 1,
-    "categories_zh": [
-      "抽象策略",
-      "冒險"
-    ],
-    "mechanics_zh": [
-      "板塊擺放"
-    ],
-    "image": "assets/img/154477-74f9c9a7.jpg"
-  },
-  {
     "name_zh": "Matterhorn",
     "name_en_override": "",
     "alias_zh": "",
@@ -25605,7 +25561,7 @@
     ],
     "time_min": 120,
     "time_max": 120,
-    "weight": 3.8604,
+    "weight": 3.8605,
     "categories": [
       "Economic",
       "Post-Napoleonic",
@@ -27473,7 +27429,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.4561,
+    "weight": 1.4483,
     "categories": [
       "Party Game"
     ],
@@ -29069,6 +29025,1498 @@
       "擲骰",
       "模組地圖",
       "擲骰／轉盤移動"
+    ]
+  },
+  {
+    "name_zh": "Goldbräu ‐ German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 12632,
+    "name_en": "Goldbräu",
+    "year": 2004,
+    "players": [
+      3,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.518,
+    "categories": [
+      "Economic"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Simultaneous Action Selection",
+      "Stock Holding"
+    ],
+    "image_url": "https://cf.geekdo-images.com/fnW79xy_HI5Aqxael9M7Pg__original/img/-UdjZEivspTpQmmQE3IO3skJTec=/0x0/filters:format(jpeg)/pic54572.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/fnW79xy_HI5Aqxael9M7Pg__small/img/gln7BbZtA-EwUdffilqtTHyNlxk=/fit-in/200x150/filters:strip_icc()/pic54572.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "同時選擇行動",
+      "持股／股權"
+    ],
+    "image": "assets/img/12632-3316c78b.jpg"
+  },
+  {
+    "name_zh": "1775: Rebellion ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/rTKzRG0b8CtQWYqmCC353w__small@2x/img/hq6XCSDGRrSvRSIQvXm2TIpJddw=/fit-in/400x300/filters:strip_icc()/pic1386705.jpg",
+    "image_version_id": "",
+    "bgg_id": 128996,
+    "name_en": "1775: Rebellion",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 2.3268,
+    "categories": [
+      "Age of Reason",
+      "American Revolutionary War",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Campaign / Battle Card Driven",
+      "Command Cards",
+      "Dice Rolling",
+      "Die Icon Resolution",
+      "Team-Based Game",
+      "Turn Order: Random",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rTKzRG0b8CtQWYqmCC353w__original/img/Qvg98VUzuZQZsRtE4sgn5dDSokE=/0x0/filters:format(jpeg)/pic1386705.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/rTKzRG0b8CtQWYqmCC353w__small/img/fivxQMJoJqReqc7c2yghuAFP9Uk=/fit-in/200x150/filters:strip_icc()/pic1386705.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/rTKzRG0b8CtQWYqmCC353w__small@2x/img/hq6XCSDGRrSvRSIQvXm2TIpJddw=/fit-in/400x300/filters:strip_icc()/pic1386705.jpg",
+    "categories_zh": [
+      "啟蒙時代",
+      "美國獨立戰爭",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "戰役／卡驅動",
+      "指揮卡",
+      "擲骰",
+      "骰面圖示結算",
+      "團隊",
+      "回合順序：隨機",
+      "角色能力"
+    ]
+  },
+  {
+    "name_zh": "Die Paläste von Carrara ‐ German first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/fCMiq4XTcqPevO8n9KHqQQ__small@2x/img/Fo58tw90TcSrsFyifvbttehP9ms=/fit-in/400x300/filters:strip_icc()/pic1446815.jpg",
+    "image_version_id": "",
+    "bgg_id": 178367,
+    "name_en": "Majestic Nights",
+    "year": null,
+    "players": [
+      1,
+      1
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/75zfTqe8H-860Pl8yDx7Kw__original/img/wclCzGCWk65Ic3Oq3k4fsHvW7Xo=/0x0/filters:format(jpeg)/pic2534448.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/75zfTqe8H-860Pl8yDx7Kw__small/img/DQPl2YPQxaHyhBC-8roOYVN7z-s=/fit-in/200x150/filters:strip_icc()/pic2534448.jpg",
+    "versions_count": 1,
+    "image": "https://cf.geekdo-images.com/fCMiq4XTcqPevO8n9KHqQQ__small@2x/img/Fo58tw90TcSrsFyifvbttehP9ms=/fit-in/400x300/filters:strip_icc()/pic1446815.jpg",
+    "categories_zh": [],
+    "mechanics_zh": []
+  },
+  {
+    "name_zh": "504 ‐ Chinese edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/9OEb6y8IcRekjQxfa8JZNQ__small@2x/img/W85vFZ6KQV1U8rT_ZpebfUTsnug=/fit-in/400x300/filters:strip_icc()/pic2621288.jpg",
+    "image_version_id": "",
+    "bgg_id": 175878,
+    "name_en": "504",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 120,
+    "weight": 3.4623,
+    "categories": [
+      "Animals",
+      "City Building",
+      "Economic",
+      "Exploration",
+      "Farming",
+      "Industry / Manufacturing",
+      "Territory Building",
+      "Travel"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Auction / Bidding",
+      "Commodity Speculation",
+      "Dice Rolling",
+      "Enclosure",
+      "Grid Movement",
+      "Hexagon Grid",
+      "Modular Board",
+      "Network and Route Building",
+      "Pick-up and Deliver",
+      "Player Elimination",
+      "Point to Point Movement",
+      "Race",
+      "Set Collection",
+      "Stock Holding",
+      "Take That",
+      "Tile Placement",
+      "Variable Phase Order"
+    ],
+    "image_url": "https://cf.geekdo-images.com/P2-jw7YCLqx1gqE-9Wprlw__original/img/n-sl1RtjTCq9h4O80WcjnpGodmw=/0x0/filters:format(jpeg)/pic2570515.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/P2-jw7YCLqx1gqE-9Wprlw__small/img/tP199gjoV5wunY5RhrjyJzEnQj0=/fit-in/200x150/filters:strip_icc()/pic2570515.jpg",
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/9OEb6y8IcRekjQxfa8JZNQ__small@2x/img/W85vFZ6KQV1U8rT_ZpebfUTsnug=/fit-in/400x300/filters:strip_icc()/pic2621288.jpg",
+    "categories_zh": [
+      "動物",
+      "城市建設",
+      "經濟",
+      "探索",
+      "農業",
+      "工業／製造",
+      "領地建設",
+      "旅遊"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "競標",
+      "商品投機",
+      "擲骰",
+      "圍地",
+      "格子移動",
+      "六角格",
+      "模組地圖",
+      "路網建設",
+      "取貨運送",
+      "玩家淘汰",
+      "點對點移動",
+      "競速",
+      "收集套組",
+      "持股／股權",
+      "互害",
+      "板塊擺放",
+      "可變階段順序"
+    ]
+  },
+  {
+    "name_zh": "Tigris & Euphrates\t\nMayfair English edition 2008",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/7uZKfrocexedffNeZxDmrw__small@2x/img/udiguoxR2LezOmt_eofZNzCGetg=/fit-in/400x300/filters:strip_icc()/pic381221.jpg",
+    "image_version_id": "",
+    "bgg_id": 42,
+    "name_en": "Tigris & Euphrates",
+    "year": 1997,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.4827,
+    "categories": [
+      "Abstract Strategy",
+      "Ancient",
+      "Civilization",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Chaining",
+      "Connections",
+      "Force Commitment",
+      "Hand Management",
+      "Hidden Victory Points",
+      "Highest-Lowest Scoring",
+      "Income",
+      "Set Collection",
+      "Square Grid",
+      "Take That",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/soAzNVWglCdVBacNjoCTJw__original/img/HClVZy9phFP-NPte4UBQpclsaHU=/0x0/filters:format(jpeg)/pic2338267.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/soAzNVWglCdVBacNjoCTJw__small/img/0UPEyOaSFyqEH1ikrSig_218RQ0=/fit-in/200x150/filters:strip_icc()/pic2338267.jpg",
+    "versions_count": 22,
+    "image": "https://cf.geekdo-images.com/7uZKfrocexedffNeZxDmrw__small@2x/img/udiguoxR2LezOmt_eofZNzCGetg=/fit-in/400x300/filters:strip_icc()/pic381221.jpg",
+    "categories_zh": [
+      "抽象策略",
+      "古代",
+      "文明",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "連鎖",
+      "連線／連結",
+      "強制承諾",
+      "手牌管理",
+      "隱藏分數",
+      "最高最低得分",
+      "收入",
+      "收集套組",
+      "方格",
+      "互害",
+      "板塊擺放"
+    ]
+  },
+  {
+    "name_zh": "Agricola: Family Edition ‐ Mayfair English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/X1xSEWTxwMuCVYBC6SpgWg__small@2x/img/gcB6H6tm3ufXCqlaaUi_C9kToZQ=/fit-in/400x300/filters:strip_icc()/pic3136438.jpg",
+    "image_version_id": "",
+    "bgg_id": 205418,
+    "name_en": "Agricola: Family Edition",
+    "year": 2016,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.3956,
+    "categories": [
+      "Animals",
+      "Farming"
+    ],
+    "mechanics": [
+      "Automatic Resource Growth",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/X1xSEWTxwMuCVYBC6SpgWg__original/img/IwU1BQrnYwYVe33vdhxdtHprVrg=/0x0/filters:format(jpeg)/pic3136438.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/X1xSEWTxwMuCVYBC6SpgWg__small/img/xRshQ8XgLaLL_n6_xLDCGeNTSgg=/fit-in/200x150/filters:strip_icc()/pic3136438.jpg",
+    "versions_count": 15,
+    "image": "https://cf.geekdo-images.com/X1xSEWTxwMuCVYBC6SpgWg__small@2x/img/gcB6H6tm3ufXCqlaaUi_C9kToZQ=/fit-in/400x300/filters:strip_icc()/pic3136438.jpg",
+    "categories_zh": [
+      "動物",
+      "農業"
+    ],
+    "mechanics_zh": [
+      "資源自動成長",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "New Bedford ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 157413,
+    "name_en": "New Bedford",
+    "year": 2016,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.4118,
+    "categories": [
+      "City Building"
+    ],
+    "mechanics": [
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/rALjcH5AB5GARjxKM_Y6TQ__original/img/JmSj0Hxj91vsAvc-43_4_F3byLM=/0x0/filters:format(png)/pic2591224.png",
+    "thumb_url": "https://cf.geekdo-images.com/rALjcH5AB5GARjxKM_Y6TQ__small/img/n3P4YGq0qyI9-9N2PwSVO0XOrF8=/fit-in/200x150/filters:strip_icc()/pic2591224.png",
+    "versions_count": 2,
+    "categories_zh": [
+      "城市建設"
+    ],
+    "mechanics_zh": [
+      "Different Worker Types"
+    ],
+    "image": "assets/img/157413-c540328a.jpg"
+  },
+  {
+    "name_zh": "New Bedford: Rising Tide ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 204420,
+    "name_en": "New Bedford: Rising Tide",
+    "year": 2016,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.6667,
+    "categories": [
+      "Expansion for Base-game"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/gtkC7ZIh1AVkQx224MyMuQ__original/img/3q1d33Kuiu4mKgXj8dUecULrfiI=/0x0/filters:format(jpeg)/pic3102031.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/gtkC7ZIh1AVkQx224MyMuQ__small/img/cQecNjzYtetJlRplyR0HAW-iYkY=/fit-in/200x150/filters:strip_icc()/pic3102031.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "基本款擴充"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/204420-c544e652.jpg"
+  },
+  {
+    "name_zh": "UGO! ‐ French first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/DYaVCZbg4s4AJmhOjhEaBg__small@2x/img/2L8kQZpuDnjh0EfOjcO2UwhxLRw=/fit-in/400x300/filters:strip_icc()/pic2226884.jpg",
+    "image_version_id": "",
+    "bgg_id": 139326,
+    "name_en": "UGO!",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 40,
+    "time_max": 40,
+    "weight": 1.6364,
+    "categories": [
+      "Card Game",
+      "Farming"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Trick-taking"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vLlpTJzPbWSTO1p8v65VQQ__original/img/K1BUgRnHPzRC5v8MJ6af349r0Tw=/0x0/filters:format(png)/pic1823140.png",
+    "thumb_url": "https://cf.geekdo-images.com/vLlpTJzPbWSTO1p8v65VQQ__small/img/NyZCUFG4ITVIHFaWrcdNsOi3fww=/fit-in/200x150/filters:strip_icc()/pic1823140.png",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/DYaVCZbg4s4AJmhOjhEaBg__small@2x/img/2L8kQZpuDnjh0EfOjcO2UwhxLRw=/fit-in/400x300/filters:strip_icc()/pic2226884.jpg",
+    "categories_zh": [
+      "卡牌",
+      "農業"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "吃墩"
+    ]
+  },
+  {
+    "name_zh": "The Settlers of Catan Card Game ‐ English first edition with product code (1998)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/2eBDd5bGKUMKLBg2CCfiZw__small@2x/img/yrJ1ElLJlBw2-ZC6TwpgzK13T1s=/fit-in/400x300/filters:strip_icc()/pic73081.jpg",
+    "image_version_id": "",
+    "bgg_id": 278,
+    "name_en": "Catan Card Game",
+    "year": 1996,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 2.4386,
+    "categories": [
+      "Card Game",
+      "City Building",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Hand Management",
+      "Map Addition",
+      "Open Drafting",
+      "Race",
+      "Random Production",
+      "Trading"
+    ],
+    "image_url": "https://cf.geekdo-images.com/CRCOv0p4FgZaze_3fGuhIA__original/img/OiugGzMENFVOzMTKBFZnEVOPzto=/0x0/filters:format(jpeg)/pic706443.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/CRCOv0p4FgZaze_3fGuhIA__small/img/m3u-LAThaaVm0fBYatEMsbrl_bk=/fit-in/200x150/filters:strip_icc()/pic706443.jpg",
+    "versions_count": 29,
+    "image": "https://cf.geekdo-images.com/2eBDd5bGKUMKLBg2CCfiZw__small@2x/img/yrJ1ElLJlBw2-ZC6TwpgzK13T1s=/fit-in/400x300/filters:strip_icc()/pic73081.jpg",
+    "categories_zh": [
+      "卡牌",
+      "城市建設",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "手牌管理",
+      "地圖擴增",
+      "公開輪抽",
+      "競速",
+      "隨機生產",
+      "交易"
+    ]
+  },
+  {
+    "name_zh": "猜猜看",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "50",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Pim3EWDee9dQq03tCi8KHw__small@2x/img/WhhwVacNDueuSa7oHFGYc-lAyZA=/fit-in/400x300/filters:strip_icc()/pic4170859.png",
+    "image_version_id": "",
+    "bgg_id": 161383,
+    "name_en": "LIE",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 20,
+    "weight": 1.3571,
+    "categories": [
+      "Bluffing",
+      "Card Game",
+      "Dice"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Hand Management",
+      "Open Drafting",
+      "Player Elimination"
+    ],
+    "image_url": "https://cf.geekdo-images.com/2a90ieAFRP4xIzKbJUHf9w__original/img/MfPGb3u7mEVN9xxthqhbJ_vSYIo=/0x0/filters:format(jpeg)/pic2559567.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/2a90ieAFRP4xIzKbJUHf9w__small/img/vwY7L0bylKsxTruAboQlaThGz_8=/fit-in/200x150/filters:strip_icc()/pic2559567.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/Pim3EWDee9dQq03tCi8KHw__small@2x/img/WhhwVacNDueuSa7oHFGYc-lAyZA=/fit-in/400x300/filters:strip_icc()/pic4170859.png",
+    "categories_zh": [
+      "唬人",
+      "卡牌",
+      "骰子"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "手牌管理",
+      "公開輪抽",
+      "玩家淘汰"
+    ]
+  },
+  {
+    "name_zh": "Spaceteam: Triangulum Expansion",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "100",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 191679,
+    "name_en": "Spaceteam: Triangulum Expansion",
+    "year": 2016,
+    "players": [
+      6,
+      9
+    ],
+    "time_min": 5,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Card Game",
+      "Real-time",
+      "Science Fiction",
+      "Space Exploration"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Hand Management",
+      "Memory",
+      "Trading"
+    ],
+    "image_url": "https://cf.geekdo-images.com/yPmlHCylvdIsHmLDnfQgGQ__original/img/Sy3wvljQMhlrLb3g589N8rGV7lw=/0x0/filters:format(jpeg)/pic4783226.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/yPmlHCylvdIsHmLDnfQgGQ__small/img/i7MomrZM9Lw8zT4Esan9B1DIsoM=/fit-in/200x150/filters:strip_icc()/pic4783226.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "即時制",
+      "科幻",
+      "太空探索"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "手牌管理",
+      "記憶",
+      "交易"
+    ],
+    "image": "assets/img/191679-4071f375.jpg"
+  },
+  {
+    "name_zh": "Relic Expedition ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 138614,
+    "name_en": "Relic Expedition",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.3333,
+    "categories": [
+      "Adventure",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Hand Management",
+      "Modular Board",
+      "Set Collection",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/2phZCEyNqqpxi7wBPeDC8w__original/img/pCiYdxk-HhmkaZXTU-OufjxGX90=/0x0/filters:format(jpeg)/pic1760905.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/2phZCEyNqqpxi7wBPeDC8w__small/img/6PNTGWdSGWBnjr9jrNexTvGyEYY=/fit-in/200x150/filters:strip_icc()/pic1760905.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "冒險",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "手牌管理",
+      "模組地圖",
+      "收集套組",
+      "互害"
+    ],
+    "image": "assets/img/138614-2fd54988.jpg"
+  },
+  {
+    "name_zh": "Lift Off! Get me off this Planet!",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 161681,
+    "name_en": "Lift Off! Get me off this Planet!",
+    "year": 2015,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.8438,
+    "categories": [
+      "Environmental",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Modular Board",
+      "Team-Based Game",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/nsR96tXFqVwcmyZQoocmIA__original/img/1q-kxZZ4U3FkSWzrawmCiI4vnnM=/0x0/filters:format(png)/pic2502487.png",
+    "thumb_url": "https://cf.geekdo-images.com/nsR96tXFqVwcmyZQoocmIA__small/img/d4TLQszZqrix4XRe96w-xIh_eyw=/fit-in/200x150/filters:strip_icc()/pic2502487.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "環境議題",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "模組地圖",
+      "團隊",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/161681-04352106.jpg"
+  },
+  {
+    "name_zh": "Tomorrow",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 89342,
+    "name_en": "Tomorrow",
+    "year": 2013,
+    "players": [
+      4,
+      6
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.6923,
+    "categories": [
+      "Bluffing",
+      "Environmental",
+      "Modern Warfare",
+      "Negotiation",
+      "Political",
+      "Science Fiction",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Hand Management",
+      "Open Drafting",
+      "Simultaneous Action Selection",
+      "Take That",
+      "Team-Based Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/p6Rs03zOADw7ITz0b9CPqQ__original/img/CkmTanq0gC2qsGJgr2ZePmN2TAM=/0x0/filters:format(png)/pic1464496.png",
+    "thumb_url": "https://cf.geekdo-images.com/p6Rs03zOADw7ITz0b9CPqQ__small/img/cApmwsH_GWbJXNF1zCzlMJFoVL0=/fit-in/200x150/filters:strip_icc()/pic1464496.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "唬人",
+      "環境議題",
+      "現代戰爭",
+      "談判",
+      "政治",
+      "科幻",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "手牌管理",
+      "公開輪抽",
+      "同時選擇行動",
+      "互害",
+      "團隊",
+      "角色能力"
+    ],
+    "image": "assets/img/89342-a06df787.jpg"
+  },
+  {
+    "name_zh": "Discoveries: The Journals of Lewis & Clark ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/3OjspN1BMrUEL1YN-Q8UKQ__small@2x/img/6Z356hlhfMDk5_XwlV3A1t-xse0=/fit-in/400x300/filters:strip_icc()/pic2571301.jpg",
+    "image_version_id": "",
+    "bgg_id": 171669,
+    "name_en": "Discoveries: The Journals of Lewis & Clark",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.3561,
+    "categories": [
+      "American West",
+      "Dice"
+    ],
+    "mechanics": [
+      "Contracts",
+      "Deck, Bag, and Pool Building",
+      "Dice Rolling",
+      "Set Collection",
+      "Worker Placement",
+      "Worker Placement with Dice Workers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/3OjspN1BMrUEL1YN-Q8UKQ__original/img/TDdGcOgqmW-ZhEu6ja98GwEkJgI=/0x0/filters:format(jpeg)/pic2571301.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/3OjspN1BMrUEL1YN-Q8UKQ__small/img/no8Q5IdChPD2Fx1YyDNn_xJyRqw=/fit-in/200x150/filters:strip_icc()/pic2571301.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/3OjspN1BMrUEL1YN-Q8UKQ__small@2x/img/6Z356hlhfMDk5_XwlV3A1t-xse0=/fit-in/400x300/filters:strip_icc()/pic2571301.jpg",
+    "categories_zh": [
+      "美國西部",
+      "骰子"
+    ],
+    "mechanics_zh": [
+      "合約",
+      "Deck, Bag, and Pool Building",
+      "擲骰",
+      "收集套組",
+      "Different Worker Types",
+      "骰子工人"
+    ]
+  },
+  {
+    "name_zh": "Doctor Panic ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/JHnoYL2LrWIhCcWLCkTqBg__small@2x/img/qJAPz4wNBj4BgTFmqWR32x0_nZQ=/fit-in/400x300/filters:strip_icc()/pic2851036.jpg",
+    "image_version_id": "",
+    "bgg_id": 171037,
+    "name_en": "Doctor Panic",
+    "year": 2016,
+    "players": [
+      2,
+      9
+    ],
+    "time_min": 12,
+    "time_max": 12,
+    "weight": 1.25,
+    "categories": [
+      "Action / Dexterity",
+      "Electronic",
+      "Humor",
+      "Medical",
+      "Party Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Cooperative Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Th7g04a-ZwbMGhy7-6h8ng__original/img/l_ux1uO4ZVVoeJDpruEc9GNTuvo=/0x0/filters:format(jpeg)/pic2851037.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Th7g04a-ZwbMGhy7-6h8ng__small/img/TJ5zgNPdR50iyr_QTRgT5Rt51Ic=/fit-in/200x150/filters:strip_icc()/pic2851037.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/JHnoYL2LrWIhCcWLCkTqBg__small@2x/img/qJAPz4wNBj4BgTFmqWR32x0_nZQ=/fit-in/400x300/filters:strip_icc()/pic2851036.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "電子",
+      "幽默",
+      "醫療",
+      "派對",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "合作"
+    ]
+  },
+  {
+    "name_zh": "Warhammer Quest: The Adventure Card Game ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/iZTS0-aD6KRvXxtYbbdODQ__small@2x/img/eQlih0_1NA43vX23Fx3VgA4PWHk=/fit-in/400x300/filters:strip_icc()/pic2625794.jpg",
+    "image_version_id": "",
+    "bgg_id": 181521,
+    "name_en": "Warhammer Quest: The Adventure Card Game",
+    "year": 2015,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.7273,
+    "categories": [
+      "Adventure",
+      "Card Game",
+      "Exploration",
+      "Fantasy",
+      "Fighting"
+    ],
+    "mechanics": [
+      "Action Retrieval",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Role Playing",
+      "Solo / Solitaire Game",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/iZTS0-aD6KRvXxtYbbdODQ__original/img/HC-LHlo1bc6vpzPH2qBV2-71MNg=/0x0/filters:format(jpeg)/pic2625794.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/iZTS0-aD6KRvXxtYbbdODQ__small/img/FQdBjbA45KEJPG-36gWOn92uu4c=/fit-in/200x150/filters:strip_icc()/pic2625794.jpg",
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/iZTS0-aD6KRvXxtYbbdODQ__small@2x/img/eQlih0_1NA43vX23Fx3VgA4PWHk=/fit-in/400x300/filters:strip_icc()/pic2625794.jpg",
+    "categories_zh": [
+      "冒險",
+      "卡牌",
+      "探索",
+      "奇幻",
+      "戰鬥"
+    ],
+    "mechanics_zh": [
+      "行動取回",
+      "合作",
+      "擲骰",
+      "角色扮演",
+      "單人",
+      "角色能力"
+    ]
+  },
+  {
+    "name_zh": "Pizza Theory ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/F9e74-JxJYLcZBkD1-N8ng__small@2x/img/jbafBDgKKB6__H-6ra0NvMQIXRk=/fit-in/400x300/filters:strip_icc()/pic1135828.jpg",
+    "image_version_id": "",
+    "bgg_id": 99808,
+    "name_en": "Pizza Theory",
+    "year": 2012,
+    "players": [
+      2,
+      3
+    ],
+    "time_min": 10,
+    "time_max": 15,
+    "weight": 1.6216,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/F9e74-JxJYLcZBkD1-N8ng__original/img/gbOTU2HdhDc3Zyltp3Qj_L4JDu4=/0x0/filters:format(jpeg)/pic1135828.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/F9e74-JxJYLcZBkD1-N8ng__small/img/qrBh1WhiFBCO68WGcaBajET99Bs=/fit-in/200x150/filters:strip_icc()/pic1135828.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/F9e74-JxJYLcZBkD1-N8ng__small@2x/img/jbafBDgKKB6__H-6ra0NvMQIXRk=/fit-in/400x300/filters:strip_icc()/pic1135828.jpg",
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "同時選擇行動"
+    ]
+  },
+  {
+    "name_zh": "Stephensons Rocket ‐ Dutch edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Wx6Ead43kbspM57T11cjfQ__small@2x/img/60BtDVIKh8oauxf3ldEOcCoPqh4=/fit-in/400x300/filters:strip_icc()/pic88259.jpg",
+    "image_version_id": "",
+    "bgg_id": 204,
+    "name_en": "Stephenson's Rocket",
+    "year": 1999,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 3.0558,
+    "categories": [
+      "Trains",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Majority / Influence",
+      "Auction: Once Around",
+      "Chaining",
+      "End Game Bonuses",
+      "Grid Movement",
+      "Hexagon Grid",
+      "Income",
+      "Investment",
+      "Network and Route Building",
+      "Set Collection",
+      "Stock Holding",
+      "Take That",
+      "Tile Placement",
+      "Victory Points as a Resource"
+    ],
+    "image_url": "https://cf.geekdo-images.com/8wlt4GYoByELYHDR9r4mzA__original/img/c5_VQijOHBFnfdw_QJ2_XtNWuiI=/0x0/filters:format(jpeg)/pic6773824.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/8wlt4GYoByELYHDR9r4mzA__small/img/9gO8bpdb9-WmfbNpw7bGtNmJ9_g=/fit-in/200x150/filters:strip_icc()/pic6773824.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/Wx6Ead43kbspM57T11cjfQ__small@2x/img/60BtDVIKh8oauxf3ldEOcCoPqh4=/fit-in/400x300/filters:strip_icc()/pic88259.jpg",
+    "categories_zh": [
+      "鐵道",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域控制",
+      "單圈競標",
+      "連鎖",
+      "終局加分",
+      "格子移動",
+      "六角格",
+      "收入",
+      "投資",
+      "路網建設",
+      "收集套組",
+      "持股／股權",
+      "互害",
+      "板塊擺放",
+      "分數作為資源"
+    ]
+  },
+  {
+    "name_zh": "Le Havre: The Inland Port ‐ English edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/T3b2GrRaMhGCxLIIxOEGhg__small@2x/img/VQLK6tM-lebIfK3J5IY9WKOslCs=/fit-in/400x300/filters:strip_icc()/pic1451680.jpg",
+    "image_version_id": "",
+    "bgg_id": 129051,
+    "name_en": "Le Havre: The Inland Port",
+    "year": 2012,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.5029,
+    "categories": [
+      "Economic",
+      "Industry / Manufacturing"
+    ],
+    "mechanics": [
+      "Action Points"
+    ],
+    "image_url": "https://cf.geekdo-images.com/T3b2GrRaMhGCxLIIxOEGhg__original/img/-VeZeBMc3VxUM8aDRuqw-ZN7Kn4=/0x0/filters:format(jpeg)/pic1451680.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/T3b2GrRaMhGCxLIIxOEGhg__small/img/1RoaqJycRngyl-PxRfP4WbTPkSU=/fit-in/200x150/filters:strip_icc()/pic1451680.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/T3b2GrRaMhGCxLIIxOEGhg__small@2x/img/VQLK6tM-lebIfK3J5IY9WKOslCs=/fit-in/400x300/filters:strip_icc()/pic1451680.jpg",
+    "categories_zh": [
+      "經濟",
+      "工業／製造"
+    ],
+    "mechanics_zh": [
+      "行動點"
+    ]
+  },
+  {
+    "name_zh": "Topoum ‐ English/Spanish edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 188314,
+    "name_en": "Topoum",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 2.4643,
+    "categories": [
+      "Territory Building",
+      "World War I"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/A2RK8sOw5lN-8M2xG2jTEA__original/img/7suB6tDcNr1a0-97Fy2T3j42Q-4=/0x0/filters:format(jpeg)/pic2770373.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/A2RK8sOw5lN-8M2xG2jTEA__small/img/Tk-6T7cg32Sk4GOSMNmRoCjh2Bw=/fit-in/200x150/filters:strip_icc()/pic2770373.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "領地建設",
+      "第一次世界大戰"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "板塊擺放"
+    ],
+    "image": "assets/img/188314-b4d6a774.jpg"
+  },
+  {
+    "name_zh": "Candle Quest ‐ Second edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/tkf6h5AdHqmt9ogSi5YfUA__small@2x/img/2fg1EiLeJWeXokKQqS2Xjnfmreg=/fit-in/400x300/filters:strip_icc()/pic1783467.jpg",
+    "image_version_id": "",
+    "bgg_id": 20920,
+    "name_en": "Candle Quest",
+    "year": 2005,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.6667,
+    "categories": [
+      "Card Game",
+      "Children's Game",
+      "Religious"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/tkf6h5AdHqmt9ogSi5YfUA__original/img/o-icfnBHTlD67XryRtTj9DT6vQc=/0x0/filters:format(jpeg)/pic1783467.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/tkf6h5AdHqmt9ogSi5YfUA__small/img/--z91NV4IBoCPMCS5HZCgj9BuWw=/fit-in/200x150/filters:strip_icc()/pic1783467.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/tkf6h5AdHqmt9ogSi5YfUA__small@2x/img/2fg1EiLeJWeXokKQqS2Xjnfmreg=/fit-in/400x300/filters:strip_icc()/pic1783467.jpg",
+    "categories_zh": [
+      "卡牌",
+      "兒童",
+      "宗教"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "Circus Train (Second Edition) ‐ English Second Convention Exclusive Edition (2013)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/keBvcXnepO53BgMVZxc6kQ__small@2x/img/0eksZq817skWKjRg2eemdvYnaow=/fit-in/400x300/filters:strip_icc()/pic1692591.jpg",
+    "image_version_id": "",
+    "bgg_id": 144566,
+    "name_en": "Circus Train (Second Edition)",
+    "year": 2013,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.4545,
+    "categories": [
+      "Economic",
+      "Trains"
+    ],
+    "mechanics": [
+      "Action Retrieval",
+      "Catch the Leader",
+      "Dice Rolling",
+      "End Game Bonuses",
+      "Hand Management",
+      "Point to Point Movement",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/WKBUWAqNU3eb-yCwssSbxA__original/img/ySX1ALujyTA7mNpzMcJrcP1FJsM=/0x0/filters:format(jpeg)/pic1695851.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/WKBUWAqNU3eb-yCwssSbxA__small/img/KjA3h-f5MYdYBsRjLC-CIyqxYyw=/fit-in/200x150/filters:strip_icc()/pic1695851.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/keBvcXnepO53BgMVZxc6kQ__small@2x/img/0eksZq817skWKjRg2eemdvYnaow=/fit-in/400x300/filters:strip_icc()/pic1692591.jpg",
+    "categories_zh": [
+      "經濟",
+      "鐵道"
+    ],
+    "mechanics_zh": [
+      "行動取回",
+      "追趕領先者",
+      "擲骰",
+      "終局加分",
+      "手牌管理",
+      "點對點移動",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "Meteor ‐ Second edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 166109,
+    "name_en": "Meteor",
+    "year": 2014,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.8571,
+    "categories": [
+      "Card Game",
+      "Real-time",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Hand Management",
+      "Real-Time"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mVC1JCvb488GJFhNF1idsA__original/img/G1UroUSm25FSY7LQXpPu6f6--20=/0x0/filters:format(png)/pic2256875.png",
+    "thumb_url": "https://cf.geekdo-images.com/mVC1JCvb488GJFhNF1idsA__small/img/Bx9UJsNZV8eF7kebFJlFoCqvtUw=/fit-in/200x150/filters:strip_icc()/pic2256875.png",
+    "versions_count": 3,
+    "categories_zh": [
+      "卡牌",
+      "即時制",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "手牌管理",
+      "即時制"
+    ],
+    "image": "assets/img/166109-5763e2c7.jpg"
+  },
+  {
+    "name_zh": "Spyrium ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/S7NQOKzOG--rxpRD_Py47Q__small@2x/img/Gx8gUj3A9CZd7VFhTU3-BbRlW2c=/fit-in/400x300/filters:strip_icc()/pic1797757.jpg",
+    "image_version_id": "",
+    "bgg_id": 137269,
+    "name_en": "Spyrium",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 75,
+    "time_max": 75,
+    "weight": 2.8974,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Industry / Manufacturing",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Auction: Dutch Priority",
+      "Events",
+      "Income",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ze4QFonaGDFj9QTapBQYlg__original/img/0wMKApUujUy_1RbbuZT7CC4kwfc=/0x0/filters:format(jpeg)/pic1808509.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/ze4QFonaGDFj9QTapBQYlg__small/img/opVobJGfklKTacqs512ty9kq5QE=/fit-in/200x150/filters:strip_icc()/pic1808509.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/S7NQOKzOG--rxpRD_Py47Q__small@2x/img/Gx8gUj3A9CZd7VFhTU3-BbRlW2c=/fit-in/400x300/filters:strip_icc()/pic1797757.jpg",
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "工業／製造",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "荷蘭式優先",
+      "事件",
+      "收入",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Magelaen ‐ Dutch edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/f528Od4QzXQg78fdgXwuJg__small@2x/img/tzrcL-pOtAn4rxoEZhehoW7E-o0=/fit-in/400x300/filters:strip_icc()/pic83534.jpg",
+    "image_version_id": "",
+    "bgg_id": 3267,
+    "name_en": "Pizarro & Co.",
+    "year": 2002,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.4429,
+    "categories": [
+      "Exploration",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Auction / Bidding"
+    ],
+    "image_url": "https://cf.geekdo-images.com/CFVfbvHNx-nwwnRtghP3lg__original/img/ExvmBqlGTTn-pPGLDGC0hiKEkAA=/0x0/filters:format(jpeg)/pic1515425.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/CFVfbvHNx-nwwnRtghP3lg__small/img/saeG5E_WjF0SzEvv_ZBhyduGb9w=/fit-in/200x150/filters:strip_icc()/pic1515425.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/f528Od4QzXQg78fdgXwuJg__small@2x/img/tzrcL-pOtAn4rxoEZhehoW7E-o0=/fit-in/400x300/filters:strip_icc()/pic83534.jpg",
+    "categories_zh": [
+      "探索",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "競標"
+    ]
+  },
+  {
+    "name_zh": "Samurai: The Card Game\n侍 卡牌版",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Wv-jswMoUIzmoB50i7QLGg__small/img/qVbi_L4lR_wRO_ni1kiQGUyD5-Y=/fit-in/200x150/filters:strip_icc()/pic829084.jpg",
+    "image_version_id": "",
+    "bgg_id": 35634,
+    "name_en": "Samurai: The Card Game",
+    "year": 2009,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.0811,
+    "categories": [
+      "Card Game",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Enclosure",
+      "End Game Bonuses",
+      "Hand Management",
+      "Highest-Lowest Scoring",
+      "Modular Board",
+      "Set Collection",
+      "Square Grid",
+      "Sudden Death Ending",
+      "Tile Placement",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/wVb3E8srr6Daz17vKQZssw__original/img/BMPdIr6IRGC7knToOFG8DxxtuTE=/0x0/filters:format(jpeg)/pic552609.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/wVb3E8srr6Daz17vKQZssw__small/img/6wOlCp2I1VeXreuEdaKREYZ0z08=/fit-in/200x150/filters:strip_icc()/pic552609.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/Wv-jswMoUIzmoB50i7QLGg__small/img/qVbi_L4lR_wRO_ni1kiQGUyD5-Y=/fit-in/200x150/filters:strip_icc()/pic829084.jpg",
+    "categories_zh": [
+      "卡牌",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "圍地",
+      "終局加分",
+      "手牌管理",
+      "最高最低得分",
+      "模組地圖",
+      "收集套組",
+      "方格",
+      "突然死亡結束",
+      "板塊擺放",
+      "可變設置"
     ]
   }
 ]
