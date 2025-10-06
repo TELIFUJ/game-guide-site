@@ -5385,7 +5385,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 2.3142,
+    "weight": 2.3145,
     "categories": [
       "Abstract Strategy",
       "Animals"
@@ -6893,7 +6893,7 @@
     ],
     "time_min": 15,
     "time_max": 20,
-    "weight": 1.3733,
+    "weight": 1.3709,
     "categories": [
       "Animals",
       "Card Game",
@@ -7965,7 +7965,7 @@
     ],
     "time_min": 20,
     "time_max": 60,
-    "weight": 1.0361,
+    "weight": 1.036,
     "categories": [
       "Deduction",
       "Party Game",
@@ -8667,7 +8667,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.286,
+    "weight": 3.2854,
     "categories": [
       "Renaissance"
     ],
@@ -11907,7 +11907,7 @@
     ],
     "time_min": 30,
     "time_max": 45,
-    "weight": 1.9174,
+    "weight": 1.9175,
     "categories": [
       "Dice",
       "Puzzle"
@@ -12507,7 +12507,7 @@
     ],
     "time_min": 120,
     "time_max": 120,
-    "weight": 3.9249,
+    "weight": 3.925,
     "categories": [
       "Deduction",
       "Fantasy",
@@ -21069,7 +21069,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 2.8287,
+    "weight": 2.8294,
     "categories": [
       "Environmental",
       "Medical"
@@ -21233,7 +21233,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.8484,
+    "weight": 1.8487,
     "categories": [
       "Card Game",
       "Fantasy",
@@ -23133,7 +23133,7 @@
     ],
     "time_min": 60,
     "time_max": 90,
-    "weight": 2.3569,
+    "weight": 2.3563,
     "categories": [
       "Animals",
       "Fantasy",
@@ -30739,7 +30739,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 2.3316,
+    "weight": 2.3249,
     "categories": [
       "Arabian",
       "City Building",
