@@ -3065,7 +3065,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.2701,
+    "weight": 1.2706,
     "categories": [
       "Animals",
       "Card Game"
@@ -3905,7 +3905,7 @@
     ],
     "time_min": 30,
     "time_max": 60,
-    "weight": 1.9174,
+    "weight": 1.9175,
     "categories": [
       "Trains"
     ],
@@ -6173,7 +6173,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.4621,
+    "weight": 1.4627,
     "categories": [
       "Arabian",
       "Card Game",
@@ -10233,7 +10233,7 @@
     ],
     "time_min": 120,
     "time_max": 180,
-    "weight": 2.85,
+    "weight": 2.8571,
     "categories": [
       "Expansion for Base-game",
       "Adventure",
@@ -26239,7 +26239,7 @@
     ],
     "time_min": 40,
     "time_max": 100,
-    "weight": 3.2549,
+    "weight": 3.2524,
     "categories": [
       "Card Game",
       "Economic"
