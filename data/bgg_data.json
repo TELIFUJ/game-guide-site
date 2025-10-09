@@ -2231,7 +2231,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.5842,
+    "weight": 1.5852,
     "categories": [
       "Bluffing",
       "Deduction",
@@ -3785,7 +3785,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 2.6895,
+    "weight": 2.6901,
     "categories": [
       "Adventure",
       "Exploration",
@@ -5281,7 +5281,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.1507,
+    "weight": 1.1519,
     "categories": [
       "Animals",
       "Dice"
@@ -9393,7 +9393,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.7787,
+    "weight": 1.7785,
     "categories": [
       "Card Game",
       "Economic",
@@ -9797,7 +9797,7 @@
     ],
     "time_min": 40,
     "time_max": 40,
-    "weight": 1.3781,
+    "weight": 1.3774,
     "categories": [
       "Deduction",
       "Party Game",
@@ -10123,7 +10123,7 @@
     ],
     "time_min": 45,
     "time_max": 45,
-    "weight": 1.668,
+    "weight": 1.6681,
     "categories": [
       "Card Game",
       "Farming",
@@ -11373,7 +11373,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.7156,
+    "weight": 1.7124,
     "categories": [
       "Abstract Strategy"
     ],
@@ -12237,7 +12237,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.319,
+    "weight": 1.3188,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -28393,7 +28393,7 @@
     ],
     "time_min": 45,
     "time_max": 60,
-    "weight": 1.4554,
+    "weight": 1.4602,
     "categories": [
       "Action / Dexterity",
       "Adventure",
@@ -30153,7 +30153,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 3.0558,
+    "weight": 3.0593,
     "categories": [
       "Trains",
       "Transportation"
