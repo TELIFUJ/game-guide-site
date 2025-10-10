@@ -8353,7 +8353,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.2582,
+    "weight": 1.2581,
     "categories": [
       "Card Game",
       "Deduction",
@@ -9499,7 +9499,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.1235,
+    "weight": 1.1232,
     "categories": [
       "Action / Dexterity",
       "Children's Game",
@@ -9929,7 +9929,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.4486,
+    "weight": 1.4516,
     "categories": [
       "Abstract Strategy",
       "Animals"
@@ -11419,7 +11419,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.0388,
+    "weight": 1.0387,
     "categories": [
       "Action / Dexterity",
       "Animals",
@@ -11969,7 +11969,7 @@
     ],
     "time_min": 45,
     "time_max": 60,
-    "weight": 2.2845,
+    "weight": 2.2843,
     "categories": [
       "Card Game",
       "City Building",
@@ -14233,7 +14233,7 @@
     ],
     "time_min": 120,
     "time_max": 180,
-    "weight": 2.6951,
+    "weight": 2.697,
     "categories": [
       "Adventure",
       "Fantasy",
@@ -17317,7 +17317,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 2.8516,
+    "weight": 2.8506,
     "categories": [
       "Abstract Strategy",
       "Medieval"
@@ -21069,7 +21069,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 2.8294,
+    "weight": 2.8288,
     "categories": [
       "Environmental",
       "Medical"
@@ -27101,7 +27101,7 @@
     ],
     "time_min": 90,
     "time_max": 90,
-    "weight": 3.377,
+    "weight": 3.3767,
     "categories": [
       "Dice",
       "Economic",
@@ -28193,7 +28193,7 @@
     ],
     "time_min": 60,
     "time_max": 60,
-    "weight": 2.0991,
+    "weight": 2.0989,
     "categories": [
       "Movies / TV / Radio theme"
     ],
@@ -29301,7 +29301,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.4827,
+    "weight": 3.4825,
     "categories": [
       "Abstract Strategy",
       "Ancient",
@@ -29371,7 +29371,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.4827,
+    "weight": 3.4825,
     "categories": [
       "Abstract Strategy",
       "Ancient",
@@ -29613,7 +29613,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 2.4386,
+    "weight": 2.4391,
     "categories": [
       "Card Game",
       "City Building",
