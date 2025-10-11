@@ -4661,7 +4661,7 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.0813,
+    "weight": 1.0811,
     "categories": [
       "Animals",
       "Card Game",
@@ -10999,7 +10999,7 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 2.5234,
+    "weight": 2.5209,
     "categories": [
       "Deduction",
       "Math",
@@ -22177,7 +22177,7 @@
     ],
     "time_min": 60,
     "time_max": 90,
-    "weight": 3.0617,
+    "weight": 3.0601,
     "categories": [
       "Economic",
       "Farming",
@@ -24879,7 +24879,7 @@
     ],
     "time_min": 90,
     "time_max": 90,
-    "weight": 3.2797,
+    "weight": 3.2814,
     "categories": [
       "Economic"
     ],
@@ -31558,5 +31558,875 @@
       "收集套組",
       "互害"
     ]
+  },
+  {
+    "name_zh": "叔叔的遺囑Der Letzte Wille ‐ German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/7cn9o4_9OX_LBhZarWj1jQ__small@2x/img/0A-rnRaWMOoghZGSFx_SjI7kh-8=/fit-in/400x300/filters:strip_icc()/pic1115748.jpg",
+    "image_version_id": "",
+    "bgg_id": 97842,
+    "name_en": "Last Will",
+    "year": 2011,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 75,
+    "weight": 2.7202,
+    "categories": [
+      "Card Game",
+      "Economic",
+      "Humor"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Hand Management",
+      "Victory Points as a Resource",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/lJ-yg0oUpHLWI6If6Q-JbA__original/img/c14HvRB3EME-flsZmQRIaJa3Nj4=/0x0/filters:format(jpeg)/pic2442432.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/lJ-yg0oUpHLWI6If6Q-JbA__small/img/mq1zlPHslpjaHqfXlJY_H-ZNF7Q=/fit-in/200x150/filters:strip_icc()/pic2442432.jpg",
+    "versions_count": 10,
+    "image": "https://cf.geekdo-images.com/7cn9o4_9OX_LBhZarWj1jQ__small@2x/img/0A-rnRaWMOoghZGSFx_SjI7kh-8=/fit-in/400x300/filters:strip_icc()/pic1115748.jpg",
+    "categories_zh": [
+      "卡牌",
+      "經濟",
+      "幽默"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "手牌管理",
+      "分數作為資源",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "工廠樂翻天Factory Funner ‐ EN/FR/GE/NL first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/_3uI7zhjYq5oXmIfEsS0Sw__small@2x/img/ql3IGTUIA7URp85_9xDdfmOYtk8=/fit-in/400x300/filters:strip_icc()/pic2651468.jpg",
+    "image_version_id": "",
+    "bgg_id": 183284,
+    "name_en": "Factory Funner",
+    "year": 2016,
+    "players": [
+      1,
+      6
+    ],
+    "time_min": 20,
+    "time_max": 40,
+    "weight": 2.375,
+    "categories": [
+      "Industry / Manufacturing",
+      "Puzzle",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Hexagon Grid",
+      "Network and Route Building",
+      "Real-Time",
+      "Solo / Solitaire Game",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/KSF17xv7uX1TAwfyXg7jGg__original/img/TUJcf326JXTt0yMQziK9itdVkUI=/0x0/filters:format(jpeg)/pic6068797.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/KSF17xv7uX1TAwfyXg7jGg__small/img/CZXtSqoJ7UPnPPtSskEZqFwwZgY=/fit-in/200x150/filters:strip_icc()/pic6068797.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/_3uI7zhjYq5oXmIfEsS0Sw__small@2x/img/ql3IGTUIA7URp85_9xDdfmOYtk8=/fit-in/400x300/filters:strip_icc()/pic2651468.jpg",
+    "categories_zh": [
+      "工業／製造",
+      "益智／拼圖",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "六角格",
+      "路網建設",
+      "即時制",
+      "單人",
+      "板塊擺放"
+    ]
+  },
+  {
+    "name_zh": "历史巨轮：人类文明新篇章Through the Ages: A New Story of Civilization ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/fVwPntkJKgaEo0rIC0RwpA__small@2x/img/W5bnSZ0wekpoUxybn6F5reQZTdU=/fit-in/400x300/filters:strip_icc()/pic2663291.jpg",
+    "image_version_id": "",
+    "bgg_id": 182028,
+    "name_en": "Through the Ages: A New Story of Civilization",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 4.4392,
+    "categories": [
+      "Card Game",
+      "Civilization",
+      "Economic"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Auction / Bidding",
+      "Auction: Dutch",
+      "Events",
+      "Income",
+      "Open Drafting",
+      "Player Elimination",
+      "Tags",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/fVwPntkJKgaEo0rIC0RwpA__original/img/1jawNpljTXwnT4km_2CjGwoUPR8=/0x0/filters:format(jpeg)/pic2663291.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/fVwPntkJKgaEo0rIC0RwpA__small/img/31usGlzlBReEFf60bcgbvDTjwCg=/fit-in/200x150/filters:strip_icc()/pic2663291.jpg",
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/fVwPntkJKgaEo0rIC0RwpA__small@2x/img/W5bnSZ0wekpoUxybn6F5reQZTdU=/fit-in/400x300/filters:strip_icc()/pic2663291.jpg",
+    "categories_zh": [
+      "卡牌",
+      "文明",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "競標",
+      "荷蘭式競標",
+      "事件",
+      "收入",
+      "公開輪抽",
+      "玩家淘汰",
+      "標籤",
+      "互害"
+    ]
+  },
+  {
+    "name_zh": "歷史巨輪 / 历史巨轮 ‐ Chinese edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/rtKycL2j55fwDCBSBFEYNA__small@2x/img/HUjGtSduqGZjG6sM3Z8B-HkXglM=/fit-in/400x300/filters:strip_icc()/pic670639.jpg",
+    "image_version_id": "",
+    "bgg_id": 25613,
+    "name_en": "Through the Ages: A Story of Civilization",
+    "year": 2006,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 4.1775,
+    "categories": [
+      "Civilization",
+      "Economic"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Auction / Bidding",
+      "Auction: Dutch",
+      "Hand Management",
+      "Open Drafting"
+    ],
+    "image_url": "https://cf.geekdo-images.com/3piN3YX4WmBRuIvbEG2Ygg__original/img/9it-9V5tij-EnowN_pLXQgl6k7c=/0x0/filters:format(jpeg)/pic236169.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/3piN3YX4WmBRuIvbEG2Ygg__small/img/TDXIygWwAHKc2o90uGnnAhIa7_4=/fit-in/200x150/filters:strip_icc()/pic236169.jpg",
+    "versions_count": 16,
+    "image": "https://cf.geekdo-images.com/rtKycL2j55fwDCBSBFEYNA__small@2x/img/HUjGtSduqGZjG6sM3Z8B-HkXglM=/fit-in/400x300/filters:strip_icc()/pic670639.jpg",
+    "categories_zh": [
+      "文明",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "競標",
+      "荷蘭式競標",
+      "手牌管理",
+      "公開輪抽"
+    ]
+  },
+  {
+    "name_zh": "Stone Age: The Expansion",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 107576,
+    "name_en": "Stone Age: The Expansion",
+    "year": 2011,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 90,
+    "weight": 2.5315,
+    "categories": [
+      "Expansion for Base-game",
+      "Prehistoric"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Set Collection",
+      "Trading",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/2KFqoe0iZ6dq7Tjuh_8xfQ__original/img/YBKa6CDs1-ydMwOefEObVY36pbM=/0x0/filters:format(png)/pic2455648.png",
+    "thumb_url": "https://cf.geekdo-images.com/2KFqoe0iZ6dq7Tjuh_8xfQ__small/img/nmjegvC9BVWnMSI2605R1RXaXc0=/fit-in/200x150/filters:strip_icc()/pic2455648.png",
+    "versions_count": 15,
+    "categories_zh": [
+      "基本款擴充",
+      "史前"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "收集套組",
+      "交易",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/107576-0bc287ba.jpg"
+  },
+  {
+    "name_zh": "玻璃之路Glass Road ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/JqyUU8PD4nzbRmojxMbCzg__small@2x/img/s9IRs2kUX793l3Yz2nJiSOYWa7c=/fit-in/400x300/filters:strip_icc()/pic2499302.jpg",
+    "image_version_id": "",
+    "bgg_id": 143693,
+    "name_en": "Glass Road",
+    "year": 2013,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 80,
+    "weight": 2.9566,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Industry / Manufacturing",
+      "Medieval"
+    ],
+    "mechanics": [
+      "Automatic Resource Growth",
+      "End Game Bonuses",
+      "Follow",
+      "Open Drafting",
+      "Set Collection",
+      "Simultaneous Action Selection",
+      "Solo / Solitaire Game",
+      "Tile Placement",
+      "Turn Order: Progressive",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/qJCgEh5Icl7Ed1z2F56yxg__original/img/uz0zO0sycM6HZNA3HTWW7-_ur_Y=/0x0/filters:format(jpeg)/pic5895433.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/qJCgEh5Icl7Ed1z2F56yxg__small/img/yGVr4jO888pg1GmCnukXbubTZmM=/fit-in/200x150/filters:strip_icc()/pic5895433.jpg",
+    "versions_count": 14,
+    "image": "https://cf.geekdo-images.com/JqyUU8PD4nzbRmojxMbCzg__small@2x/img/s9IRs2kUX793l3Yz2nJiSOYWa7c=/fit-in/400x300/filters:strip_icc()/pic2499302.jpg",
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "工業／製造",
+      "中世紀"
+    ],
+    "mechanics_zh": [
+      "資源自動成長",
+      "終局加分",
+      "跟隨",
+      "公開輪抽",
+      "收集套組",
+      "同時選擇行動",
+      "單人",
+      "板塊擺放",
+      "回合順序：逐步",
+      "可變設置"
+    ]
+  },
+  {
+    "name_zh": "祈禱與工作\nOra et Labora ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/A7KKsoZE-XoFyQNyf42MPw__small/img/zPWgntvG-STA7fH1uj4u6lC2Khw=/fit-in/200x150/filters:strip_icc()/pic1099928.jpg",
+    "image_version_id": "",
+    "bgg_id": 70149,
+    "name_en": "Ora et Labora",
+    "year": 2011,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 180,
+    "weight": 3.8889,
+    "categories": [
+      "City Building",
+      "Economic",
+      "Industry / Manufacturing",
+      "Medieval",
+      "Religious",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Increase Value of Unchosen Resources",
+      "Modular Board",
+      "Network and Route Building",
+      "Worker Placement",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image_url": "https://cf.geekdo-images.com/MLvyN4VJ3QNXBKxli8XLiA__original/img/eDqWAa7vUdsYE6_LXVNzIdClbhw=/0x0/filters:format(jpeg)/pic5089618.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/MLvyN4VJ3QNXBKxli8XLiA__small/img/mvTvon7ry-QKtYenVgg0LYUtdRc=/fit-in/200x150/filters:strip_icc()/pic5089618.jpg",
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/A7KKsoZE-XoFyQNyf42MPw__small/img/zPWgntvG-STA7fH1uj4u6lC2Khw=/fit-in/200x150/filters:strip_icc()/pic1099928.jpg",
+    "categories_zh": [
+      "城市建設",
+      "經濟",
+      "工業／製造",
+      "中世紀",
+      "宗教",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "未選資源增值",
+      "模組地圖",
+      "路網建設",
+      "Different Worker Types",
+      "Worker Placement, Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Mask of Moai ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 220499,
+    "name_en": "Mask of Moai",
+    "year": 2017,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 1.0,
+    "categories": [
+      "Electronic",
+      "Maze",
+      "Party Game",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Wlfz6yr9RjOmapZK40rIXg__original/img/XtUeCh3Gg9wqzZ4vWHpQwnNLbyw=/0x0/filters:format(png)/pic3439567.png",
+    "thumb_url": "https://cf.geekdo-images.com/Wlfz6yr9RjOmapZK40rIXg__small/img/kjs3a4QUjSEl7muTpPUrl3ls9NU=/fit-in/200x150/filters:strip_icc()/pic3439567.png",
+    "versions_count": 3,
+    "categories_zh": [
+      "電子",
+      "迷宮",
+      "派對",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "板塊擺放"
+    ],
+    "image": "assets/img/220499-7d942a77.jpg"
+  },
+  {
+    "name_zh": "Nautilus Industries ‐ Deluxe edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 158970,
+    "name_en": "Nautilus Industries",
+    "year": 2015,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.5,
+    "categories": [
+      "Economic",
+      "Nautical"
+    ],
+    "mechanics": [
+      "Commodity Speculation",
+      "Modular Board",
+      "Stock Holding"
+    ],
+    "image_url": "https://cf.geekdo-images.com/dgxwmGO30va4nwc5EbdVGw__original/img/vS6KMSCEBut6SIL8fHpJRjm_mC8=/0x0/filters:format(jpeg)/pic2087108.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/dgxwmGO30va4nwc5EbdVGw__small/img/9upxed0PKIEuy75Nk_YO6JCEXu4=/fit-in/200x150/filters:strip_icc()/pic2087108.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "經濟",
+      "航海"
+    ],
+    "mechanics_zh": [
+      "商品投機",
+      "模組地圖",
+      "持股／股權"
+    ],
+    "image": "assets/img/158970-4332d02a.jpg"
+  },
+  {
+    "name_zh": "Nations ‐ English second edition (2014)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 126042,
+    "name_en": "Nations",
+    "year": 2013,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 40,
+    "time_max": 200,
+    "weight": 3.5395,
+    "categories": [
+      "Card Game",
+      "Civilization",
+      "Economic"
+    ],
+    "mechanics": [
+      "Contracts",
+      "End Game Bonuses",
+      "Events",
+      "Hidden Victory Points",
+      "Income",
+      "Open Drafting",
+      "Tags",
+      "Turn Order: Stat-Based",
+      "Variable Player Powers",
+      "Variable Set-up",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-hn7gA50ci0n7j9u_-jHhA__original/img/1RkLWWHzepOqacKarc1176UofVs=/0x0/filters:format(png)/pic1591406.png",
+    "thumb_url": "https://cf.geekdo-images.com/-hn7gA50ci0n7j9u_-jHhA__small/img/rJqh_lHJ45NZHtxC5uq8xH2_Hzk=/fit-in/200x150/filters:strip_icc()/pic1591406.png",
+    "versions_count": 8,
+    "categories_zh": [
+      "卡牌",
+      "文明",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "合約",
+      "終局加分",
+      "事件",
+      "隱藏分數",
+      "收入",
+      "公開輪抽",
+      "標籤",
+      "回合順序：能力值",
+      "角色能力",
+      "可變設置",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/126042-8d975291.jpg"
+  },
+  {
+    "name_zh": "Nations: Dynasties ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 180539,
+    "name_en": "Nations: Dynasties",
+    "year": 2015,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 40,
+    "time_max": 200,
+    "weight": 3.8056,
+    "categories": [
+      "Card Game",
+      "Civilization",
+      "Economic",
+      "Expansion for Base-game"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/XvzpbqTGjDMXSKbzX1_TOQ__original/img/jvHuR9owjXKjq3lGNXGg2JCevXc=/0x0/filters:format(jpeg)/pic2635698.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/XvzpbqTGjDMXSKbzX1_TOQ__small/img/arye9_l_P0OOWcsFcu1rOw3G6kE=/fit-in/200x150/filters:strip_icc()/pic2635698.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "文明",
+      "經濟",
+      "基本款擴充"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "角色能力"
+    ],
+    "image": "assets/img/180539-80d97278.jpg"
+  },
+  {
+    "name_zh": "D-Day Dice ‐ Kickstarter edition in tin",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/IdOy4e8vAmU9qOCg9z11eA__small@2x/img/SHNbgjJJPKFKnI-TN1XH72DNS84=/fit-in/400x300/filters:strip_icc()/pic1231600.jpg",
+    "image_version_id": "",
+    "bgg_id": 101785,
+    "name_en": "D-Day Dice",
+    "year": 2012,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.0449,
+    "categories": [
+      "Dice",
+      "Wargame",
+      "World War II"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Push Your Luck",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/EltStYZ_sIKKFq6gGb3gRw__original/img/4cw-LRV5NQZVLcBErrL7bE5Lb0Q=/0x0/filters:format(jpeg)/pic1206256.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/EltStYZ_sIKKFq6gGb3gRw__small/img/3ziYGTJm9qc_532zXJq9iAiQ8zU=/fit-in/200x150/filters:strip_icc()/pic1206256.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/IdOy4e8vAmU9qOCg9z11eA__small@2x/img/SHNbgjJJPKFKnI-TN1XH72DNS84=/fit-in/400x300/filters:strip_icc()/pic1231600.jpg",
+    "categories_zh": [
+      "骰子",
+      "戰棋",
+      "第二次世界大戰"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "押注碰運氣",
+      "同時選擇行動"
+    ]
+  },
+  {
+    "name_zh": "D-Day Dice ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 101785,
+    "name_en": "D-Day Dice",
+    "year": 2012,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.0449,
+    "categories": [
+      "Dice",
+      "Wargame",
+      "World War II"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Push Your Luck",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/EltStYZ_sIKKFq6gGb3gRw__original/img/4cw-LRV5NQZVLcBErrL7bE5Lb0Q=/0x0/filters:format(jpeg)/pic1206256.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/EltStYZ_sIKKFq6gGb3gRw__small/img/3ziYGTJm9qc_532zXJq9iAiQ8zU=/fit-in/200x150/filters:strip_icc()/pic1206256.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "骰子",
+      "戰棋",
+      "第二次世界大戰"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "押注碰運氣",
+      "同時選擇行動"
+    ],
+    "image": "assets/img/101785-d09dfb06.jpg"
+  },
+  {
+    "name_zh": "D-Day Dice: Atlantikwall ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 102061,
+    "name_en": "D-Day Dice: Atlantikwall",
+    "year": 2012,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.3,
+    "categories": [
+      "Dice",
+      "Expansion for Base-game",
+      "World War II"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/lu8lBKepINk30kNyBsLGfw__original/img/9w4DEtl3ShK2HMZP5W7o4SaxTMA=/0x0/filters:format(jpeg)/pic1206258.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/lu8lBKepINk30kNyBsLGfw__small/img/gN6CaVyGHpS-eSLWA69UXB-EqbQ=/fit-in/200x150/filters:strip_icc()/pic1206258.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "骰子",
+      "基本款擴充",
+      "第二次世界大戰"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "同時選擇行動"
+    ],
+    "image": "assets/img/102061-94d5c9de.jpg"
+  },
+  {
+    "name_zh": "Appalachian Trail Game Backpack DELUX EDITION Extremly Rare Collectors edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/s-l1600.webp?raw=true",
+    "image_version_id": "",
+    "bgg_id": 170973,
+    "name_en": "Appalachian Trail Game: Backpacking Edition",
+    "year": 2014,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.5,
+    "categories": [
+      "Adventure",
+      "Animals",
+      "Educational",
+      "Environmental",
+      "Trivia"
+    ],
+    "mechanics": [
+      "Point to Point Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/DRGMDwFdLYGsqtnG4-LJBA__original/img/0amFMdYl2DKqWdKw-El4R5BS9Yg=/0x0/filters:format(png)/pic2645839.png",
+    "thumb_url": "https://cf.geekdo-images.com/DRGMDwFdLYGsqtnG4-LJBA__small/img/ri5Vjs3r79_uOxvJfiVuiyMcoi4=/fit-in/200x150/filters:strip_icc()/pic2645839.png",
+    "versions_count": 3,
+    "image": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/s-l1600.webp?raw=true",
+    "categories_zh": [
+      "冒險",
+      "動物",
+      "教育",
+      "環境議題",
+      "問答"
+    ],
+    "mechanics_zh": [
+      "點對點移動"
+    ]
+  },
+  {
+    "name_zh": "Gunship: First Strike!",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 109215,
+    "name_en": "Gunship: First Strike!",
+    "year": 2013,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.4167,
+    "categories": [
+      "Card Game",
+      "Dice",
+      "Science Fiction",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Movement",
+      "Dice Rolling",
+      "Hand Management",
+      "Modular Board",
+      "Push Your Luck"
+    ],
+    "image_url": "https://cf.geekdo-images.com/JJEhREYaT2QOIEE8ksMTaQ__original/img/RKIAAqKkMsu9_qQuCbUsMczlk2o=/0x0/filters:format(jpeg)/pic1179297.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/JJEhREYaT2QOIEE8ksMTaQ__small/img/IzCBT7fDWk8p8qvI6LQLfvHVBDg=/fit-in/200x150/filters:strip_icc()/pic1179297.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "骰子",
+      "科幻",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域移動",
+      "擲骰",
+      "手牌管理",
+      "模組地圖",
+      "押注碰運氣"
+    ],
+    "image": "assets/img/109215-19198e9d.jpg"
   }
 ]
