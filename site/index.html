@@ -1,92 +1,822 @@
-# --- 在 scripts/fetch_bgg.py 中，替換 parse_items 為下方版本 ---
-def parse_items(root):
-    def float_or_none(v):
-        try:
-            return None if v in (None, "NaN", "N/A") else float(v)
-        except:
-            return None
-    def int_or_none(v):
-        try:
-            return None if v in (None, "0", "N/A", "Not Ranked") else int(v)
-        except:
-            return None
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>Board Game Guide</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{
+      --border:#e5e7eb; --muted:#6b7280; --bg:#fafafa;
+      --chip-bg:#f8fafc; --chip-active:#eef2ff; --chip-active-b:#c7d2fe;
+    }
+    body{font:16px/1.5 system-ui;margin:20px;background:var(--bg);color:#222}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+    .card{position:relative;border:1px solid var(--border);padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    .poster{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f3f4f6;border-radius:8px;display:block}
+    .price{font-weight:700;margin-top:6px}
+    .price small{font-weight:400;color:var(--muted)}
+    input,select,label,button{font:inherit}
+    input,select{padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
+    .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+    .chip{display:inline-block;font-size:12px;padding:3px 8px;border:1px solid var(--border);border-radius:999px;background:var(--chip-bg);color:inherit;text-decoration:none;cursor:pointer;user-select:none}
+    .chip.active{background:var(--chip-active);border-color:var(--chip-active-b)}
+    .muted{color:var(--muted)}
+    .checkbox{display:flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
+    .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
+    .btn{padding:8px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .row{display:flex;gap:8px;align-items:center}
+    .fav-btn{position:absolute;top:10px;right:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;cursor:pointer}
+    .fav-btn .star{font-size:22px;line-height:1}
+    .fav-btn:hover{ transform:scale(1.06); box-shadow:0 4px 14px rgba(0,0,0,.08) }
+    .fav-btn.active{ background:#fff7cc; border-color:#facc15 }
+    .pagination{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}
+    .page-btn{padding:6px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer}
+    .page-btn.active{background:#eef2ff;border-color:#c7d2fe}
+    .page-btn:disabled{opacity:.5;cursor:not-allowed}
 
-    out=[]
-    for item in root.findall("item"):
-        try:
-            bid=int(item.get("id"))
-        except:
-            continue
+    /* Auto-complete */
+    .ac-wrap{position:relative;display:inline-block}
+    .ac-list{position:absolute;left:0;top:100%;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08);margin-top:6px;max-height:320px;overflow:auto;min-width:260px;width:100%}
+    .ac-item{padding:8px 10px;cursor:pointer;display:flex;gap:8px;align-items:center}
+    .ac-item:hover{background:#f5f7ff}
+    .ac-sub{font-size:12px;color:var(--muted)}
 
-        # 名稱
-        name_en=None
-        for n in item.findall("name"):
-            if n.get("type")=="primary":
-                name_en=n.get("value")
-                break
+    /* Focus + recommendations */
+    #focus{margin:16px 0 10px}
+    .focus-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .focus-title{font-weight:700}
+    .rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .reason{margin-top:6px;color:var(--muted);font-size:12px}
+    .clear-link{margin-left:auto;color:#2563eb;background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:6px 10px;cursor:pointer}
 
-        # 常用小工具
-        def val(tag, attr="value"):
-            el=item.find(tag)
-            return el.get(attr) if el is not None and el.get(attr) is not None else None
+    /* rating / rank badges */
+    .badge{display:inline-block;font-size:12px;padding:2px 6px;border:1px solid var(--border);border-radius:6px;background:#f3f4f6;margin-right:6px}
+    .badge.rank{background:#eef2ff;border-color:#c7d2fe}
+    .rating{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+    .rating .score{font-weight:800}
 
-        # 重量（策略強度）
-        avgw=item.find("statistics/ratings/averageweight")
-        weight=float_or_none(avgw.get("value")) if avgw is not None else None
+    /* comments */
+    .comments{border-top:1px solid var(--border);margin-top:10px;padding-top:10px}
+    .cmt{padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;margin-top:8px}
+    .cmt-head{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center;justify-content:space-between}
+    .cmt-body{margin-top:4px;white-space:pre-wrap}
+  </style>
+</head>
+<body>
 
-        # 影像
-        image_el=item.find("image"); thumb_el=item.find("thumbnail")
-        image_url=image_el.text if image_el is not None else None
-        thumb_url=thumb_el.text if thumb_el is not None else None
+<form class="filters" autocomplete="off" onsubmit="return false">
+  <div class="ac-wrap">
+    <input id="q" name="q_no_autofill"
+           placeholder="搜尋：中文名 / EN / 關鍵字（支援模糊）" style="min-width:280px"
+           autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div id="ac" class="ac-list" style="display:none"></div>
+  </div>
+  <button id="clearQ" class="btn" type="button">✕ 清除</button>
+  <button id="resetAll" class="btn" type="button">重置篩選</button>
 
-        # 類別 / 機制
-        categories=[l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
-        mechanics=[l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
+  <select id="catSel"><option value="">全部分類</option></select>
+  <select id="mechSel"><option value="">全部機制</option></select>
 
-        # 版本數
-        versions_el=item.find("versions")
-        versions_count=len(versions_el.findall("item")) if versions_el is not None else 0
+  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）"
+         autocomplete="off" inputmode="numeric" spellcheck="false">
+  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）"
+         autocomplete="off" inputmode="numeric" spellcheck="false">
 
-        # ===== 新增：評分、排名、評分人數 =====
-        ratings = item.find("statistics/ratings")
-        rating_avg = rating_bayes = None
-        users_rated = None
-        rank_overall = None
+  <label class="checkbox"><input type="checkbox" id="inclUsed"> 含二手價</label>
+  <label class="checkbox"><input type="checkbox" id="hotCat"> 熱門分類（≥10）</label>
+  <label class="checkbox"><input type="checkbox" id="hotMech"> 熱門機制（≥10）</label>
 
-        if ratings is not None:
-            a = ratings.find("average")
-            b = ratings.find("bayesaverage")
-            u = ratings.find("usersrated")
-            rating_avg   = float_or_none(a.get("value")) if a is not None else None
-            rating_bayes = float_or_none(b.get("value")) if b is not None else None
-            users_rated  = int_or_none(u.get("value")) if u is not None else None
+  <select id="sort">
+    <option value="">排序</option>
+    <option value="min_price_asc">最低價格（含二手）低→高</option>
+    <option value="min_price_desc">最低價格（含二手）高→低</option>
+    <option value="price_asc">售價（新品）低→高</option>
+    <option value="price_desc">售價（新品）高→低</option>
+    <option value="used_asc">二手價 低→高</option>
+    <option value="used_desc">二手價 高→低</option>
+    <option value="weight_asc">策略強度 低→高</option>
+    <option value="weight_desc">策略強度 高→低</option>
+  </select>
+</form>
 
-            ranks = ratings.find("ranks")
-            if ranks is not None:
-                for r in ranks.findall("rank"):
-                    # BGG 總榜（Overall）標識：name="boardgame"
-                    if (r.get("name") or "").lower() == "boardgame":
-                        rank_overall = int_or_none(r.get("value"))
-                        break
+<div class="bar">
+  <span id="stats">總數：0｜目前顯示：0｜收藏：0</span>
+  <div class="row">
+    每頁
+    <select id="pageSize">
+      <option>15</option><option>20</option><option>25</option><option selected>40</option>
+    </select> 筆
+  </div>
+  <div class="row">
+    <button id="prev" class="btn">‹ 上一頁</button>
+    <span id="pageInfo">第 1/1 頁</span>
+    <button id="next" class="btn">下一頁 ›</button>
+  </div>
+  <label class="checkbox"><input type="checkbox" id="onlyFav"> 只看收藏</label>
+  <label class="checkbox"><input type="checkbox" id="hideDup" checked> 隱藏重複（自動合併）</label>
+  <button id="dlCsv" class="btn">下載 CSV</button>
+  <button id="emailFav" class="btn">Email 收藏清單</button>
+</div>
 
-        out.append({
-            "bgg_id": bid,
-            "name_en": name_en,
-            "year": int_or_none(val("yearpublished")),
-            "players": [int_or_none(val("minplayers")), int_or_none(val("maxplayers"))],
-            "time_min": int_or_none(val("minplaytime")),
-            "time_max": int_or_none(val("maxplaytime")),
-            "weight": weight,
-            "categories": categories,
-            "mechanics": mechanics,
-            "image_url": image_url or thumb_url,
-            "thumb_url": thumb_url or image_url,
-            "versions_count": versions_count,
+<!-- 智慧推薦焦點區 -->
+<div id="focus" style="display:none">
+  <div class="focus-head">
+    <div class="focus-title">🔎 已選：<span id="focus-name"></span></div>
+    <button id="clearFocus" class="clear-link">清除預覽</button>
+  </div>
+  <div id="focus-card" class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
+  <div style="margin:10px 0 6px;font-weight:700">你可能也會喜歡</div>
+  <div id="rec" class="rec-grid"></div>
+</div>
 
-            # 新增欄位（HTML 已使用）
-            "rating_avg": rating_avg,
-            "rating_bayes": rating_bayes,
-            "users_rated": users_rated,
-            "rank_overall": rank_overall,
-        })
-    return out
+<!-- 上方數字分頁 -->
+<div id="pager" class="pagination" aria-label="pagination"></div>
+
+<div id="grid" class="grid"></div>
+
+<!-- 底部分頁 -->
+<div id="pager-bottom" class="pagination" aria-label="pagination"></div>
+
+<script>
+  // 避免瀏覽器沿用舊自動填入
+  document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
+
+  // ---- 路徑基準：支援 GitHub Pages 專案頁、本機與子資料夾 ----
+  const PATH_SEGS = location.pathname.split('/').filter(Boolean);
+  const REPO = PATH_SEGS.length ? PATH_SEGS[0] : '';
+  const BASE = (location.hostname.endsWith('github.io') && REPO)
+    ? `/${REPO}/`
+    : (location.pathname.endsWith('/') ? location.pathname : location.pathname.replace(/[^/]+$/, ''));
+
+  function absUrl(p){
+    if(!p) return '';
+    if(/^https?:\/\//i.test(p)) return p;
+    return BASE + String(p).replace(/^\/+/, '');
+  }
+
+  // ====== 英→中備援映射 ======
+  const CAT_MAP = {
+    "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Age of Reason":"啟蒙時代",
+    "American Civil War":"美國南北戰爭","American Indian Wars":"北美印第安戰爭","American Revolutionary War":"美國獨立戰爭",
+    "American West":"美國西部","Ancient":"古代","Animals":"動物","Arabian":"阿拉伯","Aviation / Flight":"航空／飛行",
+    "Bluffing":"唬人","Book":"書籍","Card Game":"卡牌","Children's Game":"兒童","City Building":"城市建設","Civil War":"內戰",
+    "Civilization":"文明","Collectible Components":"收藏要素","Comic Book / Strip":"漫畫","Deduction":"推理","Dice":"骰子",
+    "Economic":"經濟","Educational":"教育","Electronic":"電子","Environmental":"環境議題","Expansion for Base-game":"基本款擴充",
+    "Exploration":"探索","Fan Expansion":"玩家自製擴充","Fantasy":"奇幻","Farming":"農業","Fighting":"戰鬥","Game System":"遊戲系統",
+    "Horror":"恐怖","Humor":"幽默","Industry / Manufacturing":"工業／製造","Korean War":"韓戰","Mafia":"黑幫","Math":"數學",
+    "Mature / Adult":"限制級／成人","Maze":"迷宮","Medical":"醫療","Medieval":"中世紀","Memory":"記憶","Miniatures":"微縮模型",
+    "Modern Warfare":"現代戰爭","Movies / TV / Radio theme":"影視／廣播主題","Murder / Mystery":"懸疑／推理","Music":"音樂",
+    "Mythology":"神話","Napoleonic":"拿破崩時代","Nautical":"航海","Negotiation":"談判","Novel-based":"小說改編","Number":"數字",
+    "Party Game":"派對","Pike and Shot":"矛槍與火槍時代","Pirates":"海盜","Political":"政治","Post-Napoleonic":"拿破崙後時代",
+    "Prehistoric":"史前","Print & Play":"自印版","Puzzle":"益智／拼圖","Racing":"競速","Real-time":"即時制","Religious":"宗教",
+    "Renaissance":"文藝復興","Science Fiction":"科幻","Space Exploration":"太空探索","Spies / Secret Agents":"間諜","Sports":"運動",
+    "Territory Building":"領地建設","Third-party Expansion":"第三方擴充","Trains":"鐵道","Transportation":"交通","Travel":"旅遊",
+    "Trivia":"問答","Video Game Theme":"電玩主題","Vietnam War":"越戰","Wargame":"戰棋","Word Game":"字詞",
+    "World War I":"第一次世界大戰","World War II":"第二次世界大戰","Zombies":"殭屍"
+  };
+
+  const MECH_MAP = {
+    "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
+    "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"劇本／戰役卡驅動",
+    "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
+    "Contracts":"合約","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","End Game Bonuses":"終局加分",
+    "Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
+    "Line Drawing":"連線","Loans":"借貸","Memory":"記憶","Modular Board":"模組化地圖",
+    "Movement Points":"移動點","Network and Route Building":"路網建設","Negotiation":"談判",
+    "Open Drafting":"公開選牌","Ownership":"所有權","Pattern Recognition":"圖形辨識",
+    "Pick-up and Deliver":"取貨運送","Press Your Luck":"押注碰運氣","Rock-Paper-Scissors":"猜拳",
+    "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本／任務／戰役",
+    "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
+    "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
+    "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
+    "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
+    "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
+    "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人",
+    "Deck, Bag, and Pool Building":"卡／袋／池構築",
+    "Deck, Bag and Pool Building":"卡／袋／池構築",
+    "Different Worker Types":"不同工種工人",
+    "Worker Placement, Different Worker Types":"多工種工人放置"
+  };
+
+  const MIN_CAT_COUNT  = 10;
+  const MIN_MECH_COUNT = 10;
+  const DATA_URL = absUrl('data/games_full.json') + '?ts=' + Date.now();
+
+  const G = document.getElementById("grid"),
+        Q = document.getElementById("q"),
+        AC = document.getElementById("ac"),
+        CAT = document.getElementById("catSel"),
+        MECH = document.getElementById("mechSel"),
+        S = document.getElementById("sort"),
+        PMIN = document.getElementById("pmin"),
+        PMAX = document.getElementById("pmax"),
+        INCL = document.getElementById("inclUsed"),
+        HOTC = document.getElementById("hotCat"),
+        HOTM = document.getElementById("hotMech"),
+        ONLYF = document.getElementById("onlyFav"),
+        HIDED = document.getElementById("hideDup"),
+        STATS = document.getElementById("stats"),
+        PAGE_SIZE = document.getElementById("pageSize"),
+        PREV = document.getElementById("prev"),
+        NEXT = document.getElementById("next"),
+        PAGE_INFO = document.getElementById("pageInfo"),
+        DLCSV = document.getElementById("dlCsv"),
+        EMAIL = document.getElementById("emailFav"),
+        PAGER_TOP = document.getElementById("pager"),
+        PAGER_BOTTOM = document.getElementById("pager-bottom"),
+        FOCUS = document.getElementById("focus"),
+        FOCUS_NAME = document.getElementById("focus-name"),
+        FOCUS_CARD = document.getElementById("focus-card"),
+        REC = document.getElementById("rec"),
+        CLEAR_FOCUS = document.getElementById("clearFocus");
+
+  let DATA=[], page=1;
+
+  // 收藏
+  const favKey = 'bg_favs';
+  const favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
+  function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
+  function idOf(x){ return x.id || String(x.bgg_id || (x.name_zh||x.name_en)); }
+
+  // 類別 / 機制中文
+  function getCatsZh(x){
+    if (Array.isArray(x.categories_zh) && x.categories_zh.length) return x.categories_zh.slice(0,10);
+    const en = Array.isArray(x.categories) ? x.categories : [];
+    return en.map(s => CAT_MAP[s] || s).slice(0,10);
+  }
+  function getMechsZh(x){
+    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice();
+    const en = Array.isArray(x.mechanics) ? x.mechanics : [];
+    const normalize = s => (s || "").replace(/\u00A0/g," ").replace(/\s+/g," ").trim();
+    return [...new Set(en.map(s => MECH_MAP[normalize(s)] || normalize(s)))];
+  }
+
+  // 價格
+  function priceCandidates(x, includeUsed=true){
+    const out=[]; if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
+    if (includeUsed && x.used_price_twd!=null && x.used_price_twd!=="") out.push(Number(x.used_price_twd));
+    return out;
+  }
+  function minPrice(x, includeUsed=true){
+    const c=priceCandidates(x, includeUsed);
+    return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
+  }
+
+  // ===== 重複合併工具（僅顯示用，不改原資料）=====
+  function normalizeImgUrl(s){
+    s = String(s||'').toLowerCase();
+    s = s.replace(/^https?:\/\/[^/]+/, ''); // 去掉網域
+    s = s.replace(/[?#].*$/, '');           // 去掉 query/fragment
+    return s;
+  }
+  function dupKey(x){
+    return [
+      x.bgg_id || '',
+      (x.name_zh || x.name_en || '').trim().toLowerCase(),
+      normalizeImgUrl(x.image || x.image_url || x.thumb_url || '')
+    ].join('|');
+  }
+  function isBetter(a,b){
+    const ao = !!a.image_override, bo = !!b.image_override;
+    if (ao !== bo) return ao;
+    const ap = a.price_twd ?? Infinity, bp = b.price_twd ?? Infinity;
+    if (ap !== bp) return ap < bp;
+    const as = a.stock ?? -1, bs = b.stock ?? -1;
+    if (as !== bs) return as > bs;
+    return false;
+  }
+  function dedupList(list){
+    const pick = new Map();
+    const counts = new Map();
+    for (const x of list){
+      const k = dupKey(x);
+      const cur = pick.get(k);
+      if (!cur || isBetter(x, cur)) pick.set(k, x);
+      counts.set(k, (counts.get(k)||0)+1);
+    }
+    const out = [];
+    for (const [k, x] of pick.entries()){
+      const clone = {...x};
+      clone._variant_count = counts.get(k)||1;
+      out.push(clone);
+    }
+    return out;
+  }
+
+  // 匯出
+  function downloadCSV(rows){
+    const headers = ["name_zh","name_en","categories_zh","mechanics_zh","price_twd","used_price_twd","stock","bgg_url"];
+    const lines = [headers.join(",")];
+    rows.forEach(x=>{
+      const vals = [
+        (x.name_zh||"").replace(/,/g,"，"),
+        (x.name_en||"").replace(/,/g,"，"),
+        (getCatsZh(x).join("/")).replace(/,/g,"，"),
+        (getMechsZh(x).join("/")).replace(/,/g,"，"),
+        x.price_twd??"", x.used_price_twd??"", x.stock??"", (x.link_override||x.bgg_url_override||x.bgg_url||"")
+      ];
+      lines.push(vals.join(","));
+    });
+    const blob = new Blob(["\ufeff"+lines.join("\n")], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = "boardgames.csv"; a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function emailFavList(rows){
+    const body = rows.map((x,i)=>`${i+1}. ${x.name_zh||x.name_en||""}
+${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
+機制：${getMechsZh(x).join(" / ")}
+價格：${x.price_twd??"-"}｜二手：${x.used_price_twd??"-"}
+連結：${x.link_override||x.bgg_url_override||x.bgg_url||""}\n`).join("\n");
+    const mailto = `mailto:?subject=${encodeURIComponent("收藏清單")}&body=${encodeURIComponent(body)}`;
+    location.href = mailto;
+  }
+
+  // 圖片來源
+  function imageSrcOf(x){
+    const raw = x.image || x.image_url || x.thumb_url || '';
+    const url = absUrl(raw);
+    return url || 'https://via.placeholder.com/800?text=No+Image';
+  }
+
+  // ====== 載入資料 ======
+  fetch(DATA_URL).then(r=>r.json()).then(d=>{
+    DATA=d;
+    buildOptions();
+    const u = new URL(location.href);
+    const catQ = u.searchParams.get('cat'), mechQ = u.searchParams.get('mech'), pageQ = parseInt(u.searchParams.get('page')||'1',10);
+    if (catQ){ HOTC.checked=false; buildOptions(); ensureOption(CAT, catQ); CAT.value=catQ; }
+    if (mechQ){ HOTM.checked=false; buildOptions(); ensureOption(MECH, mechQ); MECH.value=mechQ; }
+    if (!Number.isNaN(pageQ) && pageQ>0) page = pageQ;
+    render();
+  }).catch(e=>{
+    console.error('Load data failed:', e, DATA_URL);
+    alert('無法載入資料：' + DATA_URL);
+  });
+
+  function ensureOption(sel, text){
+    if (![...sel.options].some(o=>o.value===text)){
+      const o=document.createElement('option'); o.value=text; o.textContent=text; sel.appendChild(o);
+    }
+  }
+
+  // === 核心：基礎過濾（可忽略某面向），讓數量動態聯動 ===
+  function filteredBase({ignoreCat=false, ignoreMech=false}={}){
+    let list = DATA.slice();
+
+    const q = Q.value.trim().toLowerCase();
+    if(q){
+      list = list.filter(x=>{
+        const blob = [x.name_zh||"", x.name_en||"", ...(x.aliases_zh||[]), ...(x.search_keywords||[])].join(" ").toLowerCase();
+        return blob.includes(q);
+      });
+    }
+
+    if(!ignoreCat){
+      const cSel = CAT.value;
+      if(cSel) list = list.filter(x => getCatsZh(x).includes(cSel));
+    }
+    if(!ignoreMech){
+      const mSel = MECH.value;
+      if(mSel) list = list.filter(x => getMechsZh(x).includes(mSel));
+    }
+
+    const includeUsed = INCL.checked;
+    const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
+    if (pmin>0 || pmax>0){
+      list = list.filter(x=>{
+        const cand = priceCandidates(x, includeUsed);
+        if (cand.length===0) return false;
+        return cand.some(p => (pmin? p>=pmin : true) && (pmax? p<=pmax : true));
+      });
+    }
+    if (ONLYF.checked) list = list.filter(x=>favs.has(idOf(x)));
+    if (HIDED.checked) list = dedupList(list);
+    return list;
+  }
+
+  // 下拉顯示「名稱 (數量)」，value 仍是純名稱（動態聯動）
+  function buildOptions(){
+    // 類別：忽略類別本身，其他條件 + 已選機制都算進來
+    const listForCat = filteredBase({ignoreCat:true});
+    const cCounts=new Map();
+    listForCat.forEach(x=>getCatsZh(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
+    const catVal = CAT.value;
+    CAT.innerHTML='<option value="">全部分類</option>';
+    [...cCounts.entries()]
+      .filter(([n,cnt])=>!HOTC.checked || cnt>=MIN_CAT_COUNT)
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .forEach(([n,cnt])=>{
+        const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; CAT.appendChild(o);
+      });
+    if (catVal && ![...CAT.options].some(o=>o.value===catVal)){
+      const o=document.createElement('option'); o.value=catVal; o.textContent=`${catVal} (0)`; CAT.appendChild(o);
+    }
+    CAT.value = catVal;
+
+    // 機制：忽略機制本身，其他條件 + 已選類別都算進來
+    const listForMech = filteredBase({ignoreMech:true});
+    const mCounts=new Map();
+    listForMech.forEach(x=>getMechsZh(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
+    const mechVal = MECH.value;
+    MECH.innerHTML='<option value="">全部機制</option>';
+    [...mCounts.entries()]
+      .filter(([n,cnt])=>!HOTM.checked || cnt>=MIN_MECH_COUNT)
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .forEach(([n,cnt])=>{
+        const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; MECH.appendChild(o);
+      });
+    if (mechVal && ![...MECH.options].some(o=>o.value===mechVal)){
+      const o=document.createElement('option'); o.value=mechVal; o.textContent=`${mechVal} (0)`; MECH.appendChild(o);
+    }
+    MECH.value = mechVal;
+  }
+
+  // 清除與重置
+  document.getElementById('clearQ').addEventListener('click', ()=>{ Q.value=""; page=1; buildOptions(); render(); });
+  document.getElementById('resetAll').addEventListener('click', ()=>{
+    Q.value=""; CAT.value=""; MECH.value="";
+    PMIN.value=""; PMAX.value=""; INCL.checked=false; HOTC.checked=false; HOTM.checked=false;
+    S.value=""; ONLYF.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
+    buildOptions(); page=1; render();
+  });
+
+  // 任何影響結果的輸入 -> 同步重算數字 & 重畫
+  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1; buildOptions(); render(); hideAC();}));
+  [HOTC,HOTM].forEach(el=>el.addEventListener('change',()=>{ buildOptions(); page=1; render(); }));
+  ONLYF.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
+  HIDED.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
+  PREV.addEventListener('click', ()=>{ if(page>1){page--; render(); scrollToTop();}});
+  NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); scrollToTop();}});
+  DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
+  EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
+  CLEAR_FOCUS.addEventListener('click', ()=>{ clearFocus(); });
+
+  function filtered(noPaging=false){
+    let list = filteredBase(); // 用統一的基礎過濾
+    const includeUsedForSort = INCL.checked;
+    switch (S.value){
+      case "min_price_asc":  list.sort((a,b)=> minPrice(a, includeUsedForSort) - minPrice(b, includeUsedForSort)); break;
+      case "min_price_desc": list.sort((a,b)=> minPrice(b, includeUsedForSort) - minPrice(a, includeUsedForSort)); break;
+      case "price_asc":      list.sort((a,b)=>(a.price_twd??1e12)-(b.price_twd??1e12)); break;
+      case "price_desc":     list.sort((a,b)=>(b.price_twd??-1)-(a.price_twd??-1)); break;
+      case "used_asc":       list.sort((a,b)=>(a.used_price_twd??1e12)-(b.used_price_twd??1e12)); break;
+      case "used_desc":      list.sort((a,b)=>(b.used_price_twd??-1)-(a.used_price_twd??-1)); break;
+      case "weight_asc":     list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12)); break;
+      case "weight_desc":    list.sort((a,b)=>(b.weight??-1)-(a.weight??-1)); break;
+    }
+    const total=list.length;
+    const ps = Number(PAGE_SIZE.value||40);
+    const pages = Math.max(1, Math.ceil(total/ps));
+    const start = (page-1)*ps, end = start+ps;
+    const pageRows = noPaging ? list : list.slice(start,end);
+    return {total, pages, pageRows, pagedAll:list};
+  }
+
+  function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
+
+  function toggleFav(id){
+    if (favs.has(id)) favs.delete(id); else favs.add(id);
+    saveFavs(); render();
+  }
+
+  function renderPagerInto(el, pages){
+    const MAX_LINKS = 9;
+    el.innerHTML = '';
+    const addBtn = (label, target, disabled=false, active=false)=>{
+      const b=document.createElement('button');
+      b.className='page-btn'+(active?' active':'');
+      b.textContent=label;
+      b.disabled=disabled;
+      b.onclick=()=>{ if(!disabled){ page=target; render(); scrollToTop(); } };
+      el.appendChild(b);
+    };
+    addBtn('« 首', 1, page===1);
+    addBtn('‹ 上', Math.max(1,page-1), page===1);
+    let start = Math.max(1, page - Math.floor(MAX_LINKS/2));
+    let end   = Math.min(pages, start + MAX_LINKS - 1);
+    start     = Math.max(1, end - MAX_LINKS + 1);
+    for(let i=start;i<=end;i++){
+      addBtn(String(i), i, false, i===page);
+    }
+    addBtn('下 ›', Math.min(pages,page+1), page===pages);
+    addBtn('末 »', pages, page===pages);
+  }
+
+  function render(){
+    const {total, pages, pageRows} = filtered();
+    const allFavCount = favs.size;
+
+    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
+    PAGE_INFO.textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
+    PREV.disabled = (page<=1);
+    NEXT.disabled = (page>=pages);
+
+    renderPagerInto(PAGER_TOP, pages);
+    renderPagerInto(PAGER_BOTTOM, pages);
+
+    G.innerHTML = pageRows.map(cardHtml).join('');
+
+    // 收藏／chip 篩選
+    G.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
+    G.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault();
+        const v=a.dataset.cat;
+        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
+        ensureOption(CAT, v); CAT.value=v; page=1; buildOptions(); render();
+        const url = new URL(location.href); url.searchParams.set('cat', v); url.searchParams.set('page','1');
+        history.replaceState(null,"",url);
+        scrollToTop();
+      };
+    });
+    G.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault();
+        const v=a.dataset.mech;
+        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
+        ensureOption(MECH, v); MECH.value=v; page=1; buildOptions(); render();
+        const url = new URL(location.href); url.searchParams.set('mech', v); url.searchParams.set('page','1');
+        history.replaceState(null,"",url);
+        scrollToTop();
+      };
+    });
+
+    // 點卡片可打開「焦點＋推薦」預覽（避開收藏/連結/籤籤）
+    G.querySelectorAll('.card').forEach(c=>{
+      c.addEventListener('click',(e)=>{
+        if (e.target.closest('.fav-btn') || e.target.closest('.chip') || e.target.closest('a')) return;
+        const id = c.dataset.id;
+        const item = DATA.find(x=>idOf(x)===id);
+        if(item){ showFocus(item); scrollToTop(); }
+      });
+    });
+
+    // 同步 URL 的 page 參數
+    const url = new URL(location.href);
+    url.searchParams.set('page', String(page));
+    history.replaceState(null,"",url);
+  }
+
+  function playersText(x){
+    const p = Array.isArray(x.players)? x.players : [];
+    if (p[0] && p[1]) return `${p[0]}–${p[1]}人`;
+    return '';
+  }
+
+  function cardHtml(x){
+    const cz = getCatsZh(x);
+    const mz = getMechsZh(x);
+    const imgSrc = imageSrcOf(x);
+    const id = idOf(x);
+    const fav = favs.has(id);
+    const chosenCat = CAT.value, chosenMech = MECH.value;
+    const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
+    const rating = (x.rating_bayes ?? x.rating_avg);
+    const rank = x.rank_overall;
+    const ppl = playersText(x);
+
+    return `
+      <div class="card" data-id="${id}">
+        <button class="fav-btn ${fav?'active':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite">
+          <span class="star">${fav?'⭐':'☆'}</span>
+        </button>
+
+        <img class="poster" loading="lazy" src="${imgSrc}"
+             alt="${x.name_zh||x.name_en||''}"
+             onerror="this.onerror=null;this.src='https://via.placeholder.com/800?text=No+Image'">
+
+        <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
+        ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
+
+        <div class="rating">
+          ${rating? `<span class="badge"><b class="score">${Number(rating).toFixed(1)}</b>/10</span>`:''}
+          ${rank? `<span class="badge rank">RANK #${rank}</span>`:''}
+          ${x.weight? `<span class="badge">策略強度 ${Number(x.weight).toFixed(2)}</span>`:''}
+          ${ppl? `<span class="badge">${ppl}</span>`:''}
+        </div>
+
+        <div class="chips" aria-label="categories">
+          ${cz.map(t=>`<a href="#" class="chip cat" data-cat="${t}">${t===chosenCat?`<b>${t}</b>`:t}</a>`).join('')}
+        </div>
+        <div class="chips" aria-label="mechanics">
+          ${mz.map(t=>`<a href="#" class="chip mech ${t===chosenMech?'active':''}" data-mech="${t}">${t}</a>`).join('')}
+        </div>
+
+        <div class="price">
+          ${x.price_msrp_twd?`<small>新品參考價（未折）$${x.price_msrp_twd}</small><br>`:''}
+          ${x.price_twd?`$${x.price_twd}`:''}
+          ${x.used_price_twd?` ｜二手 $${x.used_price_twd}`:''}
+        </div>
+        ${x._variant_count>1 ? `<div class="muted" style="margin-top:2px"><small>變體：${x._variant_count}</small></div>` : ''}
+        ${x.price_note?`<div class="muted" style="margin-top:4px">${x.price_note}</div>`:''}
+        ${x.used_note?`<div class="muted" style="margin-top:2px">${x.used_note}</div>`:''}
+        ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
+
+        <div style="margin-top:6px">
+          <a href="${link}" target="_blank" rel="nofollow noopener">BGG</a>
+        </div>
+      </div>`;
+  }
+
+  // ====== Auto-complete（模糊） ======
+  function hideAC(){ AC.style.display='none'; AC.innerHTML=''; }
+  function showAC(items){
+    if(!items.length){ hideAC(); return; }
+    AC.innerHTML = items.slice(0,8).map(it=>{
+      const sub = it.name_en ? `<span class="ac-sub">EN: ${it.name_en}</span>` : '';
+      return `<div class="ac-item" data-id="${idOf(it)}">
+        <div>
+          <div>${it.name_zh || it.name_en || ''}</div>
+          ${sub}
+        </div>
+      </div>`;
+    }).join('');
+    AC.style.display='block';
+    AC.querySelectorAll('.ac-item').forEach(el=>{
+      el.onclick = ()=>{
+        const item = DATA.find(x=>idOf(x)===el.dataset.id);
+        if(item){
+          Q.value = item.name_zh || item.name_en || '';
+          hideAC();
+          page=1;
+          buildOptions();
+          render();
+          showFocus(item);
+          scrollToTop();
+        }
+      };
+    });
+  }
+
+  function normText(s){
+    return (s||'').toLowerCase()
+      .replace(/桌遊|桌由|board ?game|bgg/g,'')
+      .replace(/[^\p{L}\p{N}]+/gu,'');
+  }
+  function bigrams(s){
+    const arr=[...s]; const out=new Set();
+    for(let i=0;i<arr.length-1;i++) out.add(arr[i]+arr[i+1]);
+    return out;
+  }
+  function jaccardSet(a,b){
+    if(!a.size && !b.size) return 0;
+    let inter=0;
+    for(const x of a) if(b.has(x)) inter++;
+    return inter / (a.size + b.size - inter);
+  }
+  function lcsLen(a,b){
+    const m=a.length, n=b.length;
+    const dp=Array.from({length:m+1},()=>Array(n+1).fill(0));
+    for(let i=1;i<=m;i++){
+      for(let j=1;j<=n;j++){
+        dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1]+1 : Math.max(dp[i-1][j], dp[i][j-1]);
+      }
+    }
+    return dp[m][n];
+  }
+  function nameScore(q, x){
+    const fields = [
+      x.name_zh||'', x.name_en||'',
+      ...(x.aliases_zh||[]), ...((x.search_keywords||[]).map(s=>String(s)))
+    ];
+    const qn = normText(q);
+    let best=0;
+    for(const f of fields){
+      const fn = normText(f);
+      if(!fn) continue;
+      let s=0;
+      if(fn.includes(qn)) s += 3;
+      if(qn.includes(fn) && fn.length>0) s += 2;
+      const j = jaccardSet(bigrams(fn), bigrams(qn)); s += 2*j;
+      const l = lcsLen(fn, qn); s += (l / Math.max(1, Math.max(fn.length, qn.length))) * 2;
+      if(s>best) best=s;
+    }
+    return best;
+  }
+
+  Q.addEventListener('input', ()=>{
+    const q = Q.value.trim();
+    if(!q){ hideAC(); clearFocus(false); buildOptions(); render(); return; }
+    const ranked = DATA
+      .map(x=>[x, nameScore(q, x)])
+      .filter(([x,s])=>s>0.15)
+      .sort((a,b)=>b[1]-a[1])
+      .map(([x])=>x);
+    showAC(ranked);
+  });
+  document.addEventListener('click', (e)=>{ if(!AC.contains(e.target) && e.target!==Q) hideAC(); });
+
+  // ====== 智慧推薦 ======
+  function jaccard(aArr,bArr){
+    const A = new Set(aArr), B = new Set(bArr);
+    if(!A.size && !B.size) return 0;
+    let inter=0; for(const x of A) if(B.has(x)) inter++;
+    return inter / (A.size + B.size - inter);
+  }
+  function common(aArr,bArr){ const A=new Set(aArr); return bArr.filter(x=>A.has(x)); }
+
+  function similarFor(seed, k=5){
+    const seedM = getMechsZh(seed), seedC = getCatsZh(seed);
+    const scored = DATA
+      .filter(x=> idOf(x)!==idOf(seed))
+      .map(x=>{
+        const m = getMechsZh(x), c = getCatsZh(x);
+        const s = 0.6*jaccard(seedM,m) + 0.4*jaccard(seedC,c);
+        return {x, s, commonM: common(seedM,m), commonC: common(seedC,c)};
+      })
+      .filter(o=>o.s>0)
+      .sort((a,b)=> b.s - a.s);
+    if(scored.length===0){
+      const q = seed.name_zh || seed.name_en || '';
+      const byName = DATA
+        .filter(x=>idOf(x)!==idOf(seed))
+        .map(x=>({x, s:nameScore(q,x)/8, commonM:[], commonC:[]}))
+        .sort((a,b)=>b.s-a.s);
+      return byName.slice(0,k);
+    }
+    return scored.slice(0,k);
+  }
+
+  function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m])); }
+
+  function showFocus(seed){
+    FOCUS_NAME.textContent = seed.name_zh || seed.name_en || '';
+    FOCUS_CARD.innerHTML = cardHtml(seed);
+    const sims = similarFor(seed, 5);
+    const cards = sims.map(o=>{
+      const x=o.x;
+      const reasonBits=[];
+      if(o.commonM.length) reasonBits.push(`共通機制：${o.commonM.slice(0,3).join("、")}`);
+      if(o.commonC.length) reasonBits.push(`共通分類：${o.commonC.slice(0,3).join("、")}`);
+      const reason = reasonBits.length? `<div class="reason">${reasonBits.join("　")}</div>` : '';
+      return `<div>${cardHtml(x)}${reason}</div>`;
+    }).join('');
+    REC.innerHTML = cards;
+    FOCUS.style.display='block';
+
+    // 讓推薦卡也能點 chip、收藏
+    FOCUS.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
+    FOCUS.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.cat;
+        if (HOTC.checked){ HOTC.checked=false; buildOptions(); }
+        ensureOption(CAT, v); CAT.value=v; page=1; buildOptions(); render(); scrollToTop();
+      };
+    });
+    FOCUS.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.mech;
+        if (HOTM.checked){ HOTM.checked=false; buildOptions(); }
+        ensureOption(MECH, v); MECH.value=v; page=1; buildOptions(); render(); scrollToTop();
+      };
+    });
+
+    // ★ 新增：推薦清單的卡片也能再聚焦，無限延伸
+    FOCUS.querySelectorAll('#rec .card').forEach(c=>{
+      c.addEventListener('click',(e)=>{
+        if (e.target.closest('.fav-btn') || e.target.closest('.chip') || e.target.closest('a')) return;
+        const id = c.dataset.id;
+        const item = DATA.find(x=>idOf(x)===id);
+        if(item){ showFocus(item); scrollToTop(); }
+      });
+    });
+
+    // 精選評論（如果資料有）
+    renderComments(seed);
+  }
+
+  function renderComments(game){
+    let cmts = Array.isArray(game.comments_top) ? game.comments_top.slice(0,3) : [];
+    let el = document.getElementById('comments');
+    if(!el){ el = document.createElement('div'); el.id='comments'; FOCUS.appendChild(el); }
+    if(cmts.length===0){ el.innerHTML=''; return; }
+    el.innerHTML = `
+      <div class="comments">
+        <div style="font-weight:700;margin:12px 0 6px">玩家評論（精選）</div>
+        ${cmts.map(c => `
+          <div class="cmt">
+            <div class="cmt-head">
+              <span>${escapeHtml(c.username||'Geek')}　${c.rating?`評分 ${c.rating}`:''}　${c.date?c.date.split('T')[0]:''}</span>
+              <a href="https://translate.google.com/?sl=auto&tl=zh-TW&text=${encodeURIComponent(c.text||'')}" target="_blank" rel="noopener">翻成中文</a>
+            </div>
+            <div class="cmt-body">${escapeHtml((c.text||'').slice(0,300))}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  function clearFocus(resetQuery=true){
+    if(resetQuery){ Q.value=''; }
+    FOCUS.style.display='none';
+    FOCUS_CARD.innerHTML=''; REC.innerHTML='';
+    const el = document.getElementById('comments'); if(el) el.innerHTML='';
+    render();
+  }
+</script>
+</body>
+</html>
