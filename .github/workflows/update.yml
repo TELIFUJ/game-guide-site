@@ -10,18 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    concurrency:
-      group: game-data-${{ github.ref }}
-      cancel-in-progress: false
-
-    env:
-      # 留言抓取的預設與保護（可以先不改）
-      COMMENTS_TTL_DAYS: "21"            # 快取有效天數
-      COMMENTS_PAGESIZE: "12"            # 每次向 BGG 拿幾則（越小越穩定）
-      COMMENTS_SLEEP_OK: "0.35"          # 成功後 sleep（秒）
-      COMMENTS_HARD_SECONDS: "840"       # 留言步驟最多跑 14 分鐘就收手（避免卡）
-      COMMENTS_MAX_MANUAL: "120"         # 手動觸發上限
-      COMMENTS_MAX_SCHEDULE: "800"       # 夜間排程上限
 
     steps:
       - name: Checkout repo
@@ -231,179 +219,11 @@ jobs:
           if __name__ == "__main__": main()
           PY
 
-          # --- scripts/fetch_comments.py（含快取、上限、退避、續跑指標） ---
-          cat <<'PY' > scripts/fetch_comments.py
-          import json, os, time, math, datetime as dt
-          import requests, xml.etree.ElementTree as ET
-          from pathlib import Path
-
-          INOUT  = Path("data/bgg_data.json")
-          CACHEF = Path("data/comments_cache.json")
-
-          def now_utc_iso():
-              return dt.datetime.utcnow().replace(microsecond=0).isoformat()+"Z"
-
-          def load_cache():
-              if CACHEF.exists():
-                  try: return json.loads(CACHEF.read_text(encoding="utf-8"))
-                  except: pass
-              return {"_meta":{"last_index":0}, "data":{}}
-
-          def save_cache(cache):
-              CACHEF.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
-
-          def ttl_expired(ts_str, ttl_days):
-              if not ts_str: return True
-              try:
-                  ts = dt.datetime.fromisoformat(ts_str.rstrip("Z"))
-              except:
-                  return True
-              return (dt.datetime.utcnow() - ts) > dt.timedelta(days=ttl_days)
-
-          def env_int(name, default):
-              try: return int(os.getenv(name, str(default)))
-              except: return default
-
-          def env_float(name, default):
-              try: return float(os.getenv(name, str(default)))
-              except: return default
-
-          def pick_max_limit():
-              # 手動（workflow_dispatch）抓少一點；排程（schedule）抓多一點
-              ev = os.getenv("GITHUB_EVENT_NAME","workflow_dispatch")
-              if ev == "schedule":
-                  return env_int("COMMENTS_MAX_SCHEDULE", 800)
-              return env_int("COMMENTS_MAX_MANUAL", 120)
-
-          def api_url(bid):
-              pagesize = env_int("COMMENTS_PAGESIZE", 12)
-              return f"https://boardgamegeek.com/xmlapi2/thing?id={bid}&comments=1&pagesize={pagesize}"
-
-          def fetch_one(bid, ok_sleep=0.35):
-              url = api_url(bid)
-              r = requests.get(url, timeout=60)
-              while r.status_code == 202:
-                  time.sleep(1.2); r = requests.get(url, timeout=60)
-              if r.status_code == 429:
-                  return None, 429
-              r.raise_for_status()
-              root = ET.fromstring(r.text)
-              item = root.find("item")
-              out=[]
-              if item is not None:
-                  for c in item.findall("comments/comment"):
-                      rating = c.get("rating")
-                      out.append({
-                          "username": c.get("username") or "",
-                          "rating": float(rating) if rating and rating not in ("","N/A") else None,
-                          "date": c.get("date") or "",
-                          "text": c.get("value") or ""
-                      })
-              time.sleep(ok_sleep)
-              return out, 200
-
-          def score_comment(c):
-              s = 0.0
-              if c.get("rating") is not None: s += float(c["rating"])
-              s += min(len(c.get("text","")), 400) / 400.0
-              return s
-
-          def main():
-              if not INOUT.exists():
-                  print("No data/bgg_data.json; skip comments."); return
-
-              ttl_days   = env_int("COMMENTS_TTL_DAYS", 21)
-              ok_sleep   = env_float("COMMENTS_SLEEP_OK", 0.35)
-              hard_secs  = env_int("COMMENTS_HARD_SECONDS", 840)
-              max_fetch  = pick_max_limit()
-              start_time = time.time()
-
-              rows = json.loads(INOUT.read_text(encoding="utf-8"))
-              # 聚合出 id 與排序（優先沒快取/過期，其次 rank）
-              ids = []
-              rank_map={}
-              seen=set()
-              for r in rows:
-                  bid = r.get("bgg_id")
-                  if not bid or bid in seen: continue
-                  seen.add(bid)
-                  ids.append(bid)
-                  rk = r.get("rank_overall")
-                  # 沒有 rank 的排後面
-                  rank_map[bid] = rk if isinstance(rk,int) else 10**9
-
-              cache = load_cache()
-              data = cache.get("data", {})
-              last_index = int(cache.get("_meta",{}).get("last_index", 0))
-
-              # 分類：過期/未過期
-              expired = []
-              fresh   = []
-              for bid in ids:
-                  ent = data.get(str(bid))
-                  if not ent or ttl_expired(ent.get("ts"), ttl_days):
-                      expired.append(bid)
-                  else:
-                      fresh.append(bid)
-
-              expired.sort(key=lambda x: (rank_map.get(x,10**9), x))
-              fresh.sort(key=lambda x: (rank_map.get(x,10**9), x))
-
-              # 先抓過期的，再從 fresh 依 last_index 輪流補
-              plan = expired[:]
-              if len(plan) < max_fetch and fresh:
-                  # 從 last_index 開始切一圈
-                  n = len(fresh)
-                  off = last_index % n
-                  seq = fresh[off:] + fresh[:off]
-                  need = max_fetch - len(plan)
-                  plan.extend(seq[:need])
-                  cache["_meta"]["last_index"] = (off + need) % n
-
-              done = 0
-              fail_429 = 0
-
-              for i, bid in enumerate(plan, 1):
-                  if time.time() - start_time > hard_secs:
-                      print(f"Hit hard time limit ~{hard_secs}s, stop early.")
-                      break
-                  try:
-                      cmts, code = fetch_one(bid, ok_sleep=ok_sleep)
-                      if code == 429:
-                          fail_429 += 1
-                          print(f"[{i}/{len(plan)}] 429 for {bid}, backoff...")
-                          time.sleep(2.0 * min(6, 1 + fail_429))  # 漸進退避
-                          if fail_429 >= 8:
-                              print("Too many 429s; stop early.")
-                              break
-                          continue
-                      fail_429 = 0
-                      top = sorted(cmts, key=score_comment, reverse=True)[:3]
-                      data[str(bid)] = {"ts": now_utc_iso(), "items": top}
-                      print(f"[{i}/{len(plan)}] comments for {bid}: {len(top)}")
-                      done += 1
-                  except Exception as e:
-                      print(f"comments for {bid} failed: {e}")
-
-              cache["data"] = data
-              save_cache(cache)
-
-              # 把快取寫回 rows
-              for r in rows:
-                  bid = r.get("bgg_id")
-                  ent = data.get(str(bid))
-                  r["comments_top"] = (ent or {}).get("items", [])
-
-              INOUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"fetch_comments: wrote for {done} ids (plan {len(plan)}/{len(ids)})")
-          if __name__ == "__main__":
-              main()
-          PY
-
           # --- scripts/apply_taxonomy_and_price.py ---
           cat <<'PY' > scripts/apply_taxonomy_and_price.py
-          import csv, json
+          import csv, json, urllib.parse
           from pathlib import Path
+
           BGG_IN      = Path("data/bgg_data.json")
           CATMAP_CSV  = Path("data/category_map_zh.csv")
           MECHMAP_CSV = Path("data/mechanism_map_zh.csv")
@@ -416,11 +236,23 @@ jobs:
                   for row in r:
                       en = (row.get(key_en) or "").strip()
                       zh = (row.get(key_zh) or "").strip()
-                      if en: m[en] = zh or en
+                      if en:
+                          m[en] = zh or en
               return m
 
           def parse_list_zh(s: str):
               return [x.strip() for x in str(s).replace("；",";").replace("/", ";").split(";") if x.strip()]
+
+          def with_cache_param(url: str, ver: str|None):
+              if not url or not ver: return url
+              import urllib.parse as up
+              u = up.urlsplit(url)
+              q = up.parse_qsl(u.query, keep_blank_values=True)
+              if any(k.lower()=="v" for k,_ in q):
+                  return url
+              q.append(("v", str(ver)))
+              new_q = up.urlencode(q)
+              return up.urlunsplit((u.scheme, u.netloc, u.path, new_q, u.fragment))
 
           def main():
               if not BGG_IN.exists():
@@ -431,21 +263,35 @@ jobs:
 
               rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
               out  = []
+
               for r in rows:
                   rr = dict(r)
+
                   if rr.get("alias_zh"):
                       rr["aliases_zh"] = [x.strip() for x in str(rr["alias_zh"]).split(";") if x.strip()]
+
+                  img_ovr = (rr.get("image_override") or "").strip()
+                  if img_ovr:
+                      ver = (str(rr.get("image_version_id")).strip()
+                             if rr.get("image_version_id") not in (None, "") else None)
+                      rr["image"] = with_cache_param(img_ovr, ver)
+
                   if rr.get("category_zh"):
-                      rr["categories_zh"] = parse_list_zh(rr["category_zh"])
+                      rr["categories_zh"] = [x.strip() for x in str(rr["category_zh"]).replace("；",";").split(";") if x.strip()]
                   else:
                       en = rr.get("categories") or []
                       rr["categories_zh"] = [catmap.get(x, x) for x in en]
+
                   mechs = rr.get("mechanics") or []
                   rr["mechanics_zh"] = [mechmap.get(x, x) for x in mechs]
+
                   out.append(rr)
+
               BGG_IN.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied.")
-          if __name__ == "__main__": main()
+              print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied (no fan-out).")
+
+          if __name__ == "__main__":
+              main()
           PY
 
           # --- scripts/fetch_version_image.py ---
@@ -475,13 +321,17 @@ jobs:
               rows = json.loads(INOUT.read_text(encoding="utf-8"))
               changed = False
               for r in rows:
-                  if r.get("image_override"): continue
+                  if r.get("image_override"):
+                      continue
                   raw = r.get("image_version_id")
                   v = (raw or "").strip() if isinstance(raw, str) else (str(raw).strip() if raw is not None else "")
-                  if not v: continue
-                  try: vid = int(v)
-                  except: 
-                      print(f"Skip invalid image_version_id: {v}"); continue
+                  if not v: 
+                      continue
+                  try:
+                      vid = int(v)
+                  except:
+                      print(f"Skip invalid image_version_id: {v}")
+                      continue
                   try:
                       url = fetch_version(vid)
                       if url:
@@ -608,6 +458,7 @@ jobs:
           cat <<'PY' > scripts/build_json.py
           import json, datetime, hashlib
           from pathlib import Path
+
           INPUT  = Path("data/bgg_data.json")
           OUTPUT = Path("data/games_full.json")
 
@@ -669,7 +520,6 @@ jobs:
         run: |
           python scripts/resolve_bgg.py
           python scripts/fetch_bgg.py
-          python scripts/fetch_comments.py
           python scripts/apply_taxonomy_and_price.py
           python scripts/make_mechanism_map.py
           python scripts/fetch_version_image.py
@@ -680,9 +530,9 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f data/comments_cache.json 2>/dev/null || true
           git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
           git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
-          git add data/comments_cache.json || true
           git add assets/img/* || true
           git commit -m "Auto-update game data" || echo "No changes to commit"
           git push || echo "No changes to push"
