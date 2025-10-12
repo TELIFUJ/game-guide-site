@@ -49,6 +49,13 @@
     .badge.rank{background:#eef2ff;border-color:#c7d2fe}
     .rating{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
     .rating .score{font-weight:800}
+
+    /* Auto-complete (補上基本樣式避免跑版) */
+    .ac-wrap{position:relative;display:inline-block}
+    .ac-list{position:absolute;left:0;top:100%;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08);margin-top:6px;max-height:320px;overflow:auto;min-width:260px;width:100%}
+    .ac-item{padding:8px 10px;cursor:pointer;display:flex;gap:8px;align-items:center}
+    .ac-item:hover{background:#f5f7ff}
+    .ac-sub{font-size:12px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -577,7 +584,8 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     const cz = getCatsZh(x);
     const mz = getMechsZh(x);
     const imgSrc = imageSrcOf(x);
-    const id = idOf(x);
+    theId = idOf(x);
+    const id = theId; // avoid minifier shadowing
     const fav = favs.has(id);
     const chosenCat = CAT.value, chosenMech = MECH.value;
     const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
@@ -741,12 +749,10 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         .filter(x=>idOf(x)!==idOf(seed))
         .map(x=>({x, s:nameScore(q,x)/8, commonM:[], commonC:[]}))
         .sort((a,b)=>b.s-a.s);
-      return byName.slice(0,k);
+    return byName.slice(0,k);
     }
     return scored.slice(0,k);
   }
-
-  function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m])); }
 
   function showFocus(seed){
     FOCUS_NAME.textContent = seed.name_zh || seed.name_en || '';
