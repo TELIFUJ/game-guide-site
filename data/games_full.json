@@ -415,7 +415,7 @@
     ],
     "time_min": 30,
     "time_max": 120,
-    "weight": 3.8654,
+    "weight": 3.8656,
     "categories": [
       "Animals",
       "Farming",
@@ -11956,7 +11956,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 4.5708,
+    "weight": 4.5712,
     "categories": [
       "City Building",
       "Economic",
@@ -17703,7 +17703,7 @@
     ],
     "time_min": 115,
     "time_max": 115,
-    "weight": 3.4516,
+    "weight": 3.4521,
     "categories": [
       "Economic",
       "Fighting",
@@ -23269,7 +23269,7 @@
     ],
     "time_min": 45,
     "time_max": 90,
-    "weight": 2.8951,
+    "weight": 2.8952,
     "categories": [
       "Economic",
       "Farming"
@@ -24787,7 +24787,7 @@
     ],
     "time_min": 120,
     "time_max": 180,
-    "weight": 3.6139,
+    "weight": 3.6137,
     "categories": [
       "Modern Warfare",
       "Political",
@@ -24862,7 +24862,7 @@
     ],
     "time_min": 120,
     "time_max": 120,
-    "weight": 4.4392,
+    "weight": 4.4389,
     "categories": [
       "Card Game",
       "Civilization",
@@ -30549,7 +30549,7 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.7785,
+    "weight": 1.7782,
     "categories": [
       "Card Game",
       "Economic",
@@ -33810,7 +33810,7 @@
     ],
     "time_min": 120,
     "time_max": 120,
-    "weight": 3.8597,
+    "weight": 3.8598,
     "categories": [
       "Economic",
       "Post-Napoleonic",
@@ -36540,7 +36540,7 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 3.2854,
+    "weight": 3.2848,
     "categories": [
       "Renaissance"
     ],
@@ -38058,7 +38058,7 @@
     ],
     "time_min": 30,
     "time_max": 45,
-    "weight": 1.5042,
+    "weight": 1.5028,
     "categories": [
       "Animals",
       "Arabian",
