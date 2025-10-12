@@ -235,7 +235,7 @@
   let DATA=[], page=1;
 
   // 收藏
-  const favKey = 'bg_favs';
+  const favKey = `bg_favs_${location.pathname.split('/')[1] || 'root'}`;
   const favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
   function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
   function idOf(x){ return x.id || String(x.bgg_id || (x.name_zh||x.name_en)); }
