@@ -34228,5 +34228,991 @@
       "分數作為資源",
       "控制區域"
     ]
+  },
+  {
+    "name_zh": "Rapa Nui ‐ German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 103132,
+    "name_en": "Rapa Nui",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 40,
+    "time_max": 40,
+    "weight": 2.069,
+    "categories": [
+      "Card Game",
+      "Economic"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Open Drafting",
+      "Stock Holding"
+    ],
+    "image_url": "https://cf.geekdo-images.com/g3Uq4yZd2cJgoZ3WpsyQ9A__original/img/igmDq29U1w4hYS52ulI7N9nTiRc=/0x0/filters:format(jpeg)/pic1043931.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/g3Uq4yZd2cJgoZ3WpsyQ9A__small/img/vY6iVyTh9SUMcWBkEj3Ab94wzD8=/fit-in/200x150/filters:strip_icc()/pic1043931.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "公開輪抽",
+      "持股／股權"
+    ],
+    "image": "assets/img/103132-08d030f5.jpg"
+  },
+  {
+    "name_zh": "Warriors of Jogu: Feint ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 221408,
+    "name_en": "Warriors of Jogu: Feint",
+    "year": 2017,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 2.1667,
+    "categories": [
+      "Bluffing",
+      "Card Game"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/ixnZh4KBPK46mcoqjLdB5Q__original/img/Jo8yia6Hinxugroejq6aFtSWEK4=/0x0/filters:format(png)/pic3712491.png",
+    "thumb_url": "https://cf.geekdo-images.com/ixnZh4KBPK46mcoqjLdB5Q__small/img/cAgRJOH3l0S9FrI3jaN9M5nylOs=/fit-in/200x150/filters:strip_icc()/pic3712491.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "唬人",
+      "卡牌"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "角色能力"
+    ],
+    "image": "assets/img/221408-c3cde3eb.jpg"
+  },
+  {
+    "name_zh": "Iberian Rails ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 206859,
+    "name_en": "Iberian Rails",
+    "year": 2017,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 70,
+    "time_max": 90,
+    "weight": 3.75,
+    "categories": [
+      "Economic",
+      "Trains"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Commodity Speculation",
+      "Network and Route Building",
+      "Stock Holding"
+    ],
+    "image_url": "https://cf.geekdo-images.com/NS0v5lfG4oJX75D0Q588Vw__original/img/q4pIR3BI3pdlHPHuAVZeR_QDqfA=/0x0/filters:format(jpeg)/pic3142350.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/NS0v5lfG4oJX75D0Q588Vw__small/img/A7fMCsGtWMdVAg1M7zVVB6Ieew8=/fit-in/200x150/filters:strip_icc()/pic3142350.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "鐵道"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "商品投機",
+      "路網建設",
+      "持股／股權"
+    ],
+    "image": "assets/img/206859-f3e82aa7.jpg"
+  },
+  {
+    "name_zh": "Monopoly: Star Wars ‐ English second edition (2016)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/MH_iUD0GMVEiWxDXHR9DYA__small/img/vsLiacoBTTDY5zPdReuIcSx_evA=/fit-in/200x150/filters:strip_icc()/pic5269318.jpg",
+    "image_version_id": "",
+    "bgg_id": 183521,
+    "name_en": "Monopoly: Star Wars",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 60,
+    "weight": 1.6364,
+    "categories": [
+      "Economic",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Roll / Spin and Move",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/MH_iUD0GMVEiWxDXHR9DYA__original/img/RME6mAOGeovRbSiJ_TlHDJjFu6E=/0x0/filters:format(jpeg)/pic5269318.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/MH_iUD0GMVEiWxDXHR9DYA__small/img/vsLiacoBTTDY5zPdReuIcSx_evA=/fit-in/200x150/filters:strip_icc()/pic5269318.jpg",
+    "versions_count": 6,
+    "image": "https://cf.geekdo-images.com/MH_iUD0GMVEiWxDXHR9DYA__small/img/vsLiacoBTTDY5zPdReuIcSx_evA=/fit-in/200x150/filters:strip_icc()/pic5269318.jpg",
+    "categories_zh": [
+      "經濟",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "擲骰／轉盤移動",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "Space Bastards ‐ Czech/English/German edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 106631,
+    "name_en": "Space Bastards",
+    "year": 2011,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.0714,
+    "categories": [
+      "Humor",
+      "Science Fiction",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Area Movement",
+      "Simultaneous Action Selection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/1wiJvYw4qD1UaIdl4FzBQQ__original/img/bRRY36AKzRnZgUKBa-Tw0Ex30qs=/0x0/filters:format(jpeg)/pic1101443.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/1wiJvYw4qD1UaIdl4FzBQQ__small/img/F_zCnIPi-BJsgldZuk4hJsCpzAs=/fit-in/200x150/filters:strip_icc()/pic1101443.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "幽默",
+      "科幻",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "區域移動",
+      "同時選擇行動"
+    ],
+    "image": "assets/img/106631-ee9edec8.jpg"
+  },
+  {
+    "name_zh": "Á moi les bonbons !!! / El Último Dulce ‐ French/Spanish first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/WTwtD-zoCPUeyK5II5wLEA__small/img/kXPb4R3-5Mx00X0Ae1WxQX0kIpU=/fit-in/200x150/filters:strip_icc()/pic1779197.jpg",
+    "image_version_id": "",
+    "bgg_id": 144631,
+    "name_en": "Futterneid",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 1.5714,
+    "categories": [
+      "Bluffing"
+    ],
+    "mechanics": [
+      "Commodity Speculation",
+      "Take That"
+    ],
+    "image_url": "https://cf.geekdo-images.com/fNwGfR9yPUFt_06wyxj1zg__original/img/1CsC6HjLnu34wfKiWcPoyMXTqBk=/0x0/filters:format(jpeg)/pic1746389.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/fNwGfR9yPUFt_06wyxj1zg__small/img/S6T-BM-L_li_ZmKxAtE_-RwjruA=/fit-in/200x150/filters:strip_icc()/pic1746389.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/WTwtD-zoCPUeyK5II5wLEA__small/img/kXPb4R3-5Mx00X0Ae1WxQX0kIpU=/fit-in/200x150/filters:strip_icc()/pic1779197.jpg",
+    "categories_zh": [
+      "唬人"
+    ],
+    "mechanics_zh": [
+      "商品投機",
+      "互害"
+    ]
+  },
+  {
+    "name_zh": "The Godfather: An Offer You Can't Refuse ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 175219,
+    "name_en": "The Godfather: An Offer You Can't Refuse",
+    "year": 2015,
+    "players": [
+      5,
+      20
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.0,
+    "categories": [
+      "Card Game",
+      "Mafia",
+      "Movies / TV / Radio theme"
+    ],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/VFoj50SLFYp0gzYAnk721A__original/img/DdvxzydB5ILevwXjGgxf43H69SU=/0x0/filters:format(jpeg)/pic2524011.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/VFoj50SLFYp0gzYAnk721A__small/img/ga9Sc9j1ii57HJQ9bMKgHEbow1I=/fit-in/200x150/filters:strip_icc()/pic2524011.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "黑幫",
+      "影視／廣播主題"
+    ],
+    "mechanics_zh": [],
+    "image": "assets/img/175219-cf6785d1.jpg"
+  },
+  {
+    "name_zh": "Terra Evolution ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/-hIqB8P3lCmnGMSgNZ8yfA__small/img/GXwnymCoX9IO9R10VCOH3OhJK3Y=/fit-in/200x150/filters:strip_icc()/pic1150681.jpg",
+    "image_version_id": "",
+    "bgg_id": 101718,
+    "name_en": "Terra Evolution",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.0435,
+    "categories": [
+      "Animals",
+      "Card Game",
+      "Prehistoric"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building",
+      "Hand Management",
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-hIqB8P3lCmnGMSgNZ8yfA__original/img/3ay051hjZeu0qTsq-9ay4fmmo4E=/0x0/filters:format(jpeg)/pic1150681.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/-hIqB8P3lCmnGMSgNZ8yfA__small/img/GXwnymCoX9IO9R10VCOH3OhJK3Y=/fit-in/200x150/filters:strip_icc()/pic1150681.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/-hIqB8P3lCmnGMSgNZ8yfA__small/img/GXwnymCoX9IO9R10VCOH3OhJK3Y=/fit-in/200x150/filters:strip_icc()/pic1150681.jpg",
+    "categories_zh": [
+      "動物",
+      "卡牌",
+      "史前"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "手牌管理",
+      "公開輪抽",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "Rocketville ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 21239,
+    "name_en": "Rocketville",
+    "year": 2006,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 1.5797,
+    "categories": [
+      "Political",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Hand Management",
+      "Point to Point Movement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/dkv_j_59yIRIl4dmM_3vvQ__original/img/i6JoPug6CINV1XqMumhCuqQMN_U=/0x0/filters:format(jpeg)/pic106858.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/dkv_j_59yIRIl4dmM_3vvQ__small/img/cX4_iO2hVZAhV-F36xoMk3Fd-Uc=/fit-in/200x150/filters:strip_icc()/pic106858.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "政治",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "手牌管理",
+      "點對點移動"
+    ],
+    "image": "assets/img/21239-349c8d78.jpg"
+  },
+  {
+    "name_zh": "Das Geheimnis von Monte Cristo ‐ German edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/rEuKzg_2771WmxAFffLOfQ__small/img/JaDnQzz_VH_8ez9hb47jMXWXJNo=/fit-in/200x150/filters:strip_icc()/pic900839.jpg",
+    "image_version_id": "",
+    "bgg_id": 90190,
+    "name_en": "The Secret of Monte Cristo",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.375,
+    "categories": [
+      "Exploration",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Area Majority / Influence",
+      "Variable Phase Order"
+    ],
+    "image_url": "https://cf.geekdo-images.com/HtKLQsNRfnEw9notuA26fg__original/img/Jr-m_zSAwTdivuovy82-gnnVt5s=/0x0/filters:format(jpeg)/pic899476.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/HtKLQsNRfnEw9notuA26fg__small/img/MJ2AUo_7gZhQ-ZuUnHoma0zcnJA=/fit-in/200x150/filters:strip_icc()/pic899476.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/rEuKzg_2771WmxAFffLOfQ__small/img/JaDnQzz_VH_8ez9hb47jMXWXJNo=/fit-in/200x150/filters:strip_icc()/pic900839.jpg",
+    "categories_zh": [
+      "探索",
+      "小說改編"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "區域控制",
+      "可變階段順序"
+    ]
+  },
+  {
+    "name_zh": "Journey: Wrath of Demons ‐ English first edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/Game-Contents-394x394.jpg?raw=true",
+    "image_version_id": "",
+    "bgg_id": 145599,
+    "name_en": "Journey: Wrath of Demons",
+    "year": 2015,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 75,
+    "weight": 2.6667,
+    "categories": [
+      "Adventure",
+      "Ancient",
+      "Dice",
+      "Fantasy",
+      "Miniatures",
+      "Mythology",
+      "Novel-based"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Modular Board",
+      "Pick-up and Deliver",
+      "Solo / Solitaire Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Qs17-dNtOitcAFAnBSEhpg__original/img/ZLEELskwR8K9JS8HWIhAanhyJrs=/0x0/filters:format(jpeg)/pic3835212.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Qs17-dNtOitcAFAnBSEhpg__small/img/v5waDAYz4m9PFL_DleMTF1Yzeus=/fit-in/200x150/filters:strip_icc()/pic3835212.jpg",
+    "versions_count": 4,
+    "image": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/Game-Contents-394x394.jpg?raw=true",
+    "categories_zh": [
+      "冒險",
+      "古代",
+      "骰子",
+      "奇幻",
+      "微縮模型",
+      "神話",
+      "小說改編"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "擲骰",
+      "格子移動",
+      "模組地圖",
+      "取貨運送",
+      "單人"
+    ]
+  },
+  {
+    "name_zh": "A Feast for Odin ‐ English edition, third printing",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/7qlF1wqkIhFJb-ho7FNxXg__small/img/ZQGza9GZa3ragFqLjr0DI4mhveE=/fit-in/200x150/filters:strip_icc()/pic4443642.jpg",
+    "image_version_id": "",
+    "bgg_id": 177736,
+    "name_en": "A Feast for Odin",
+    "year": 2016,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 120,
+    "weight": 3.8654,
+    "categories": [
+      "Animals",
+      "Farming",
+      "Industry / Manufacturing",
+      "Medieval",
+      "Puzzle"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Automatic Resource Growth",
+      "Dice Rolling",
+      "Enclosure",
+      "Grid Coverage",
+      "Hand Management",
+      "Income",
+      "Layering",
+      "Pattern Recognition",
+      "Push Your Luck",
+      "Solo / Solitaire Game",
+      "Square Grid",
+      "Tile Placement",
+      "Turn Order: Pass Order",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/s9oGMCo1fcfV4Dk3EnqLZw__original/img/N1X-0JB1GapFVhl98nP4tNFXMcM=/0x0/filters:format(png)/pic3146943.png",
+    "thumb_url": "https://cf.geekdo-images.com/s9oGMCo1fcfV4Dk3EnqLZw__small/img/AKxMMz2DTbBrEynhDROla8fdjJ4=/fit-in/200x150/filters:strip_icc()/pic3146943.png",
+    "versions_count": 22,
+    "image": "https://cf.geekdo-images.com/7qlF1wqkIhFJb-ho7FNxXg__small/img/ZQGza9GZa3ragFqLjr0DI4mhveE=/fit-in/200x150/filters:strip_icc()/pic4443642.jpg",
+    "categories_zh": [
+      "動物",
+      "農業",
+      "工業／製造",
+      "中世紀",
+      "益智／拼圖"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "資源自動成長",
+      "擲骰",
+      "圍地",
+      "格面覆蓋",
+      "手牌管理",
+      "收入",
+      "疊放",
+      "圖形辨識",
+      "押注碰運氣",
+      "單人",
+      "方格",
+      "板塊擺放",
+      "回合順序：棄權順序",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Village of Familiar ‐ English/Japanese edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/nD3SB1HMkr-SXoHvkwM1Ig__small/img/Xma-UlTz4EOIbxICLltfloRPj08=/fit-in/200x150/filters:strip_icc()/pic2606464.jpg",
+    "image_version_id": "",
+    "bgg_id": 180157,
+    "name_en": "Magical Treehouse",
+    "year": 2015,
+    "players": [
+      3,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 2.2,
+    "categories": [
+      "Fantasy",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/K7GfKGt5n86P_8fxwkiX5Q__original/img/tVYGQBQi8mISSJm5s4R2j7dpMH8=/0x0/filters:format(png)/pic4165851.png",
+    "thumb_url": "https://cf.geekdo-images.com/K7GfKGt5n86P_8fxwkiX5Q__small/img/R7FP_11m6g-oftOcT6ISqyGEpbg=/fit-in/200x150/filters:strip_icc()/pic4165851.png",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/nD3SB1HMkr-SXoHvkwM1Ig__small/img/Xma-UlTz4EOIbxICLltfloRPj08=/fit-in/200x150/filters:strip_icc()/pic2606464.jpg",
+    "categories_zh": [
+      "奇幻",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "Floating Market ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 170202,
+    "name_en": "Floating Market",
+    "year": 2015,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 45,
+    "weight": 1.64,
+    "categories": [
+      "Dice"
+    ],
+    "mechanics": [
+      "Betting and Bluffing",
+      "Dice Rolling",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vuxezjNowOBYgYQQ7b5eVA__original/img/sTkWvu4Mp-kFsq1yGtyEnODxHAU=/0x0/filters:format(png)/pic2337868.png",
+    "thumb_url": "https://cf.geekdo-images.com/vuxezjNowOBYgYQQ7b5eVA__small/img/2q8kyue4GNC-o0RB_23wg58Zx6M=/fit-in/200x150/filters:strip_icc()/pic2337868.png",
+    "versions_count": 1,
+    "categories_zh": [
+      "骰子"
+    ],
+    "mechanics_zh": [
+      "下注與唬人",
+      "擲骰",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/170202-31de14f1.jpg"
+  },
+  {
+    "name_zh": "Hurry'Cup! ‐ Multilingual edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 38504,
+    "name_en": "Hurry'Cup!",
+    "year": 2008,
+    "players": [
+      3,
+      6
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 1.3143,
+    "categories": [
+      "Action / Dexterity",
+      "Racing",
+      "Real-time",
+      "Sports"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Modular Board",
+      "Roll / Spin and Move"
+    ],
+    "image_url": "https://cf.geekdo-images.com/AOMQ3EP8fVay1OP33HtJIA__original/img/831hTFMpTawAxuGjSmpmzF5JmOM=/0x0/filters:format(jpeg)/pic375267.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/AOMQ3EP8fVay1OP33HtJIA__small/img/Wh2tcd2WpprgXk3kPG_9Nqogfmk=/fit-in/200x150/filters:strip_icc()/pic375267.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "動作／敏捷",
+      "競速",
+      "即時制",
+      "運動"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "模組地圖",
+      "擲骰／轉盤移動"
+    ],
+    "image": "assets/img/38504-fef31a02.jpg"
+  },
+  {
+    "name_zh": "Galaxy Trucker ‐ CGE/Rio Grande English edition 2008",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/c5da00UnZ7QMg6ah07lRmA__small/img/DZ_LPxxtZs2C_fsJII8oNobzVA8=/fit-in/200x150/filters:strip_icc()/pic916905.jpg",
+    "image_version_id": "",
+    "bgg_id": 31481,
+    "name_en": "Galaxy Trucker",
+    "year": 2007,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.3294,
+    "categories": [
+      "Real-time",
+      "Science Fiction",
+      "Space Exploration",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Events",
+      "Grid Coverage",
+      "Open Drafting",
+      "Pattern Building",
+      "Push Your Luck",
+      "Real-Time",
+      "Relative Movement",
+      "Square Grid",
+      "Team-Based Game",
+      "Tile Placement",
+      "Track Movement",
+      "Variable Set-up"
+    ],
+    "image_url": "https://cf.geekdo-images.com/gLFt1Kif5Cfag505_COYYw__original/img/5vUNCkVDoQpcTfmlhFzkS4e1EaQ=/0x0/filters:format(jpeg)/pic3926631.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/gLFt1Kif5Cfag505_COYYw__small/img/WOW_QsRuV1KyP8dLjP0yH6TlpvU=/fit-in/200x150/filters:strip_icc()/pic3926631.jpg",
+    "versions_count": 21,
+    "image": "https://cf.geekdo-images.com/c5da00UnZ7QMg6ah07lRmA__small/img/DZ_LPxxtZs2C_fsJII8oNobzVA8=/fit-in/200x150/filters:strip_icc()/pic916905.jpg",
+    "categories_zh": [
+      "即時制",
+      "科幻",
+      "太空探索",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "事件",
+      "格面覆蓋",
+      "公開輪抽",
+      "圖案建構",
+      "押注碰運氣",
+      "即時制",
+      "相對移動",
+      "方格",
+      "團隊",
+      "板塊擺放",
+      "軌道移動",
+      "可變設置"
+    ]
+  },
+  {
+    "name_zh": "Galaxy Trucker: The Big Expansion ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/lJcmLVnXqBYesqjdq1oYpg__small/img/S8GJ0Bl_J0lU8L11s9xkGkJdANw=/fit-in/200x150/filters:strip_icc()/pic384363.jpg",
+    "image_version_id": "",
+    "bgg_id": 38378,
+    "name_en": "Galaxy Trucker: The Big Expansion",
+    "year": 2008,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.6812,
+    "categories": [
+      "Expansion for Base-game",
+      "Real-time",
+      "Science Fiction",
+      "Space Exploration",
+      "Transportation"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Memory",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/lJcmLVnXqBYesqjdq1oYpg__original/img/Ld33tkSsEMfdaFThjGwS8Sd6VIs=/0x0/filters:format(jpeg)/pic384363.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/lJcmLVnXqBYesqjdq1oYpg__small/img/S8GJ0Bl_J0lU8L11s9xkGkJdANw=/fit-in/200x150/filters:strip_icc()/pic384363.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/lJcmLVnXqBYesqjdq1oYpg__small/img/S8GJ0Bl_J0lU8L11s9xkGkJdANw=/fit-in/200x150/filters:strip_icc()/pic384363.jpg",
+    "categories_zh": [
+      "基本款擴充",
+      "即時制",
+      "科幻",
+      "太空探索",
+      "交通"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "記憶",
+      "板塊擺放"
+    ]
+  },
+  {
+    "name_zh": "Trajan ‐ Multilingual edition 2012",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/iAXDsVAl3DIDTqS3hi2yoA__small/img/nJeZDsX4ywdbXKeWps_l21in8iU=/fit-in/200x150/filters:strip_icc()/pic1546257.jpg",
+    "image_version_id": "",
+    "bgg_id": 102680,
+    "name_en": "Trajan",
+    "year": 2011,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.626,
+    "categories": [
+      "Ancient"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Hand Management",
+      "Mancala",
+      "Open Drafting",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/djdeCr__iNV5rMnGnxNiaQ__original/img/-pxFp0FHDLLZK_hMT5kHG7IAQ7M=/0x0/filters:format(png)/pic4336095.png",
+    "thumb_url": "https://cf.geekdo-images.com/djdeCr__iNV5rMnGnxNiaQ__small/img/jULoayRVuV3c8cRqKOPsf7oMO5w=/fit-in/200x150/filters:strip_icc()/pic4336095.png",
+    "versions_count": 17,
+    "image": "https://cf.geekdo-images.com/iAXDsVAl3DIDTqS3hi2yoA__small/img/nJeZDsX4ywdbXKeWps_l21in8iU=/fit-in/200x150/filters:strip_icc()/pic1546257.jpg",
+    "categories_zh": [
+      "古代"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "手牌管理",
+      "曼卡拉",
+      "公開輪抽",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "Talat ‐ Multilingual third edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 39406,
+    "name_en": "Talat",
+    "year": 2008,
+    "players": [
+      2,
+      3
+    ],
+    "time_min": 33,
+    "time_max": 33,
+    "weight": 2.0,
+    "categories": [
+      "Abstract Strategy"
+    ],
+    "mechanics": [
+      "Grid Movement",
+      "Pattern Movement",
+      "Rock-Paper-Scissors",
+      "Square Grid",
+      "Static Capture"
+    ],
+    "image_url": "https://cf.geekdo-images.com/aRO6Jg95zTNHYbxz3Xh-6w__original/img/_n-LDxtupv_P6MvXlwhVReiDYrs=/0x0/filters:format(jpeg)/pic1199087.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/aRO6Jg95zTNHYbxz3Xh-6w__small/img/AqohQWI2z5vm0Kz3nrqhnvGH5Vk=/fit-in/200x150/filters:strip_icc()/pic1199087.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "抽象策略"
+    ],
+    "mechanics_zh": [
+      "格子移動",
+      "圖案移動",
+      "剪刀石頭布",
+      "方格",
+      "靜態捕獲"
+    ],
+    "image": "assets/img/39406-11815e4a.jpg"
   }
 ]
