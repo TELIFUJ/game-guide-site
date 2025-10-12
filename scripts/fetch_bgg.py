@@ -1,123 +1,129 @@
 # scripts/fetch_bgg.py
-import json, time, requests, xml.etree.ElementTree as ET
-from collections import defaultdict
+import requests, time, json, xml.etree.ElementTree as ET
 from pathlib import Path
 
-INPUT   = Path("data/bgg_ids.json")
-OUTPUT  = Path("data/bgg_data.json")
-API_THING = "https://boardgamegeek.com/xmlapi2/thing"
-BATCH   = 50
+INPUT = Path("data/bgg_ids.json")
+OUTPUT = Path("data/bgg_data.json")
+API_BASE = "https://boardgamegeek.com/xmlapi2/thing?stats=1&versions=1&id="
+BATCH = 20
 
-def fetch_batch(ids, backoff=2):
-    params = {
-        "id": ",".join(str(i) for i in ids),
-        "type": "boardgame",
-        "stats": "1"
-    }
-    r = requests.get(API_THING, params=params, timeout=60)
+def fetch_batch(ids):
+    url = API_BASE + ",".join(str(i) for i in ids)
+    r = requests.get(url, timeout=60)
     while r.status_code == 202:
-        time.sleep(backoff)
-        r = requests.get(API_THING, params=params, timeout=60)
-        backoff = min(backoff * 2, 16)
+        time.sleep(2); r = requests.get(url, timeout=60)
     r.raise_for_status()
     return ET.fromstring(r.text)
 
-def _text(it, tag):
-    el = it.find(tag)
-    return el.text if el is not None else None
+def _num(val):
+    try:
+        if val in (None, "", "Not Ranked", "NaN"): return None
+        return int(val) if str(val).isdigit() else float(val)
+    except: return None
 
 def parse_items(root):
-    out = []
-    for it in root.findall("item"):
-        try:
-            bid = int(it.get("id"))
-        except:
-            continue
-        name_el = it.find("name[@type='primary']")
-        name_en = name_el.get("value") if name_el is not None else None
+    out=[]
+    for item in root.findall("item"):
+        try: bid=int(item.get("id"))
+        except: continue
 
-        def _int(t):
-            try:
-                return int(t) if t not in (None, "", "0") else None
-            except:
-                return None
+        # 名稱
+        name_en=None
+        for n in item.findall("name"):
+            if n.get("type")=="primary":
+                name_en=n.get("value"); break
 
-        def _float(t):
-            try:
-                v = float(t)
-                return v if v > 0 else None
-            except:
-                return None
+        # 常用欄位
+        def val(tag, attr="value"):
+            el=item.find(tag)
+            return el.get(attr) if el is not None and el.get(attr) is not None else None
 
-        year        = _int(_text(it, "yearpublished"))
-        minplayers  = _int(_text(it, "minplayers"))
-        maxplayers  = _int(_text(it, "maxplayers"))
-        minplaytime = _int(_text(it, "minplaytime"))
-        maxplaytime = _int(_text(it, "maxplaytime"))
-        playingtime = _int(_text(it, "playingtime"))
-        image       = _text(it, "image")
-        thumb       = _text(it, "thumbnail")
+        avgw=item.find("statistics/ratings/averageweight")
+        weight=_num(avgw.get("value")) if avgw is not None else None
 
-        weight_el   = it.find("statistics/ratings/averageweight")
-        weight      = _float(weight_el.get("value")) if weight_el is not None else None
+        image_el=item.find("image"); thumb_el=item.find("thumbnail")
+        image_url=image_el.text if image_el is not None else None
+        thumb_url=thumb_el.text if thumb_el is not None else None
 
-        cats  = [ln.get("value") for ln in it.findall("link[@type='boardgamecategory']")]
-        mechs = [ln.get("value") for ln in it.findall("link[@type='boardgamemechanic']")]
+        categories=[l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
+        mechanics=[l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
+
+        versions_el=item.find("versions")
+        versions_count=len(versions_el.findall("item")) if versions_el is not None else 0
+
+        # ====== 評分／排名 ======
+        ratings = item.find("statistics/ratings")
+        rating_avg = rating_bayes = ratings_count = comments_count = None
+        rank_overall = rank_strategy = None
+        if ratings is not None:
+            a = ratings.find("average"); b = ratings.find("bayesaverage")
+            users = ratings.find("usersrated"); com = ratings.find("numcomments")
+            rating_avg    = _num(a.get("value") if a is not None else None)
+            rating_bayes  = _num(b.get("value") if b is not None else None)
+            ratings_count = _num(users.get("value") if users is not None else None)
+            comments_count= _num(com.get("value") if com is not None else None)
+            ranks = ratings.find("ranks")
+            if ranks is not None:
+                for rk in ranks.findall("rank"):
+                    name = rk.get("name"); val = rk.get("value")
+                    if name == "boardgame":
+                        rank_overall = _num(val)
+                    elif name == "strategygames":
+                        rank_strategy = _num(val)
 
         out.append({
             "bgg_id": bid,
             "name_en": name_en,
-            "year": year,
-            "players": None,       # (可留空；前端目前未用)
-            "time_min": minplaytime or playingtime,
-            "time_max": maxplaytime or playingtime,
+            "year": _num(val("yearpublished")),
+            "players": [_num(val("minplayers")), _num(val("maxplayers"))],
+            "time_min": _num(val("minplaytime")),
+            "time_max": _num(val("maxplaytime")),
             "weight": weight,
-            "categories": cats,
-            "mechanics": mechs,
-            "image_url": image,
-            "thumb_url": thumb,
-            "bgg_url": f"https://boardgamegeek.com/boardgame/{bid}"
+            "categories": categories,
+            "mechanics": mechanics,
+            "image_url": image_url or thumb_url,
+            "thumb_url": thumb_url or image_url,
+            "versions_count": versions_count,
+            "rating_avg": rating_avg,
+            "rating_bayes": rating_bayes,
+            "ratings_count": ratings_count,
+            "comments_count": comments_count,
+            "rank_overall": rank_overall,
+            "rank_strategy": rank_strategy,
         })
     return out
 
 def main():
     if not INPUT.exists():
         print("No data/bgg_ids.json; nothing to fetch."); return
+    base_rows=json.loads(INPUT.read_text(encoding="utf-8"))
 
-    base_rows = json.loads(INPUT.read_text(encoding="utf-8"))
-    # 讓「同一 bgg_id 多列」在這層 fan-out
+    from collections import defaultdict
     rows_by_id = defaultdict(list)
     ids_unique = []
-    for base in base_rows:
-        bid = base.get("bgg_id")
+    for r in base_rows:
+        bid = r.get("bgg_id")
         if not bid: continue
-        try:
-            bid = int(bid)
-        except:
-            continue
-        rows_by_id[bid].append(base)
-        if bid not in ids_unique:
-            ids_unique.append(bid)
+        bid = int(bid)
+        rows_by_id[bid].append(r)
+        if bid not in ids_unique: ids_unique.append(bid)
 
-    results = []
-    for i in range(0, len(ids_unique), BATCH):
-        chunk = ids_unique[i:i+BATCH]
+    results=[]
+    for i in range(0,len(ids_unique),BATCH):
+        chunk=ids_unique[i:i+BATCH]
         try:
-            root   = fetch_batch(chunk)
-            parsed = parse_items(root)   # 每個 id 只回來 1 筆
+            root=fetch_batch(chunk)
+            parsed=parse_items(root)
             for p in parsed:
-                bid = int(p["bgg_id"])
-                bases = rows_by_id.get(bid, [{}])
-                # fan-out：一個 BGG 筆 N 個 base → 產 N 筆
+                bid=int(p["bgg_id"])
+                bases = rows_by_id.get(bid,[{}])
                 for base in bases:
-                    results.append({**p, **base})
+                    results.append({**base, **p})
         except Exception as e:
             print(f"Batch {chunk} failed: {e}")
-        time.sleep(2)
-
+        time.sleep(3)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Fetched {len(results)} entries → {OUTPUT}")
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": main()
