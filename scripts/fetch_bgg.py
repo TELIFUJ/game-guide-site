@@ -15,11 +15,13 @@ def fetch_batch(ids):
     r.raise_for_status()
     return ET.fromstring(r.text)
 
-def _num(val):
+def _num(v, t=float):
+    if v in (None, "", "NaN", "not ranked", "Not Ranked", "0.0"):
+        return None
     try:
-        if val in (None, "", "Not Ranked", "NaN"): return None
-        return int(val) if str(val).isdigit() else float(val)
-    except: return None
+        return t(v)
+    except Exception:
+        return None
 
 def parse_items(root):
     out=[]
@@ -27,69 +29,61 @@ def parse_items(root):
         try: bid=int(item.get("id"))
         except: continue
 
-        # 名稱
+        # 基本
         name_en=None
         for n in item.findall("name"):
             if n.get("type")=="primary":
                 name_en=n.get("value"); break
 
-        # 常用欄位
         def val(tag, attr="value"):
             el=item.find(tag)
             return el.get(attr) if el is not None and el.get(attr) is not None else None
 
+        # 策略強度
         avgw=item.find("statistics/ratings/averageweight")
         weight=_num(avgw.get("value")) if avgw is not None else None
 
+        # ★ 評分（平均 / Bayesian）
+        r_avg_el   = item.find("statistics/ratings/average")
+        r_bayes_el = item.find("statistics/ratings/bayesaverage")
+        rating_avg   = _num(r_avg_el.get("value"))   if r_avg_el   is not None else None
+        rating_bayes = _num(r_bayes_el.get("value")) if r_bayes_el is not None else None
+
+        # ★ 排名（整體）
+        rank_overall = None
+        ranks_el = item.find("statistics/ratings/ranks")
+        if ranks_el is not None:
+            for rk in ranks_el.findall("rank"):
+                nm = rk.get("name") or ""
+                if nm in ("boardgame", "boardgameoverall"):
+                    rank_overall = _num(rk.get("value"), int)
+                    break
+
+        # 其他
         image_el=item.find("image"); thumb_el=item.find("thumbnail")
         image_url=image_el.text if image_el is not None else None
         thumb_url=thumb_el.text if thumb_el is not None else None
-
         categories=[l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
         mechanics=[l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
-
         versions_el=item.find("versions")
         versions_count=len(versions_el.findall("item")) if versions_el is not None else 0
-
-        # ====== 評分／排名 ======
-        ratings = item.find("statistics/ratings")
-        rating_avg = rating_bayes = ratings_count = comments_count = None
-        rank_overall = rank_strategy = None
-        if ratings is not None:
-            a = ratings.find("average"); b = ratings.find("bayesaverage")
-            users = ratings.find("usersrated"); com = ratings.find("numcomments")
-            rating_avg    = _num(a.get("value") if a is not None else None)
-            rating_bayes  = _num(b.get("value") if b is not None else None)
-            ratings_count = _num(users.get("value") if users is not None else None)
-            comments_count= _num(com.get("value") if com is not None else None)
-            ranks = ratings.find("ranks")
-            if ranks is not None:
-                for rk in ranks.findall("rank"):
-                    name = rk.get("name"); val = rk.get("value")
-                    if name == "boardgame":
-                        rank_overall = _num(val)
-                    elif name == "strategygames":
-                        rank_strategy = _num(val)
 
         out.append({
             "bgg_id": bid,
             "name_en": name_en,
-            "year": _num(val("yearpublished")),
-            "players": [_num(val("minplayers")), _num(val("maxplayers"))],
-            "time_min": _num(val("minplaytime")),
-            "time_max": _num(val("maxplaytime")),
+            "year": _num(val("yearpublished"), int),
+            "players": [_num(val("minplayers"), int), _num(val("maxplayers"), int)],
+            "time_min": _num(val("minplaytime"), int),
+            "time_max": _num(val("maxplaytime"), int),
             "weight": weight,
+            "rating_avg": rating_avg,
+            "rating_bayes": rating_bayes,
+            "rank_overall": rank_overall,
             "categories": categories,
             "mechanics": mechanics,
             "image_url": image_url or thumb_url,
             "thumb_url": thumb_url or image_url,
             "versions_count": versions_count,
-            "rating_avg": rating_avg,
-            "rating_bayes": rating_bayes,
-            "ratings_count": ratings_count,
-            "comments_count": comments_count,
-            "rank_overall": rank_overall,
-            "rank_strategy": rank_strategy,
         })
     return out
 
@@ -98,6 +92,7 @@ def main():
         print("No data/bgg_ids.json; nothing to fetch."); return
     base_rows=json.loads(INPUT.read_text(encoding="utf-8"))
 
+    # fan-out：同一 bgg_id 可能對應多列
     from collections import defaultdict
     rows_by_id = defaultdict(list)
     ids_unique = []
@@ -122,6 +117,7 @@ def main():
         except Exception as e:
             print(f"Batch {chunk} failed: {e}")
         time.sleep(3)
+
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Fetched {len(results)} entries → {OUTPUT}")
