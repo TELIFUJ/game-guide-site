@@ -75,8 +75,9 @@ jobs:
                               "name_zh","name_en_override","alias_zh","category_zh",
                               "price_msrp_twd","price_twd","used_price_twd",
                               "price_note","used_note","manual_override",
-                              "stock","description","image_override","image_version_id"
-                          ]
+                              "stock","description","image_override","image_version_id",
+                              "bgg_id","bgg_query"
+                          ] if k in r
                       }
                       bid = (r.get("bgg_id") or "").strip()
                       q   = (r.get("bgg_query") or "").strip()
@@ -92,7 +93,7 @@ jobs:
           if __name__ == "__main__": main()
           PY
 
-          # --- scripts/fetch_bgg.py ---
+          # --- scripts/fetch_bgg.py（更新：含評分與總排行） ---
           cat <<'PY' > scripts/fetch_bgg.py
           import requests, time, json, xml.etree.ElementTree as ET
           from pathlib import Path
@@ -110,27 +111,62 @@ jobs:
               r.raise_for_status()
               return ET.fromstring(r.text)
 
+          def _to_float(val):
+              try:
+                  if val in (None, "N/A", "NaN"): return None
+                  return float(val)
+              except Exception:
+                  return None
+
           def parse_items(root):
               out=[]
               for item in root.findall("item"):
                   try: bid=int(item.get("id"))
                   except: continue
+
                   name_en=None
                   for n in item.findall("name"):
                       if n.get("type")=="primary":
                           name_en=n.get("value"); break
+
                   def val(tag, attr="value"):
                       el=item.find(tag)
                       return el.get(attr) if el is not None and el.get(attr) is not None else None
-                  avgw=item.find("statistics/ratings/averageweight")
-                  weight=float(avgw.get("value")) if avgw is not None and avgw.get("value") not in (None,"NaN") else None
+
+                  # 策略強度
+                  weight_el=item.find("statistics/ratings/averageweight")
+                  weight=_to_float(weight_el.get("value")) if weight_el is not None else None
+
+                  # 評分與總排行
+                  ratings=item.find("statistics/ratings")
+                  rating_avg=rating_bayes=None
+                  rank_overall=None
+                  if ratings is not None:
+                      avg_el = ratings.find("average")
+                      bay_el = ratings.find("bayesaverage")
+                      rating_avg   = _to_float(avg_el.get("value")) if avg_el is not None else None
+                      rating_bayes = _to_float(bay_el.get("value")) if bay_el is not None else None
+                      ranks = ratings.find("ranks")
+                      if ranks is not None:
+                          for rk in ranks.findall("rank"):
+                              # overall：id="1" 或 name="boardgame"
+                              if rk.get("id")=="1" or rk.get("name")=="boardgame":
+                                  rv = rk.get("value")
+                                  if rv not in (None, "Not Ranked", "0", "N/A"):
+                                      try: rank_overall = int(rv)
+                                      except: pass
+                                  break
+
                   image_el=item.find("image"); thumb_el=item.find("thumbnail")
                   image_url=image_el.text if image_el is not None else None
                   thumb_url=thumb_el.text if thumb_el is not None else None
+
                   categories=[l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
                   mechanics=[l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
+
                   versions_el=item.find("versions")
                   versions_count=len(versions_el.findall("item")) if versions_el is not None else 0
+
                   out.append({
                       "bgg_id": bid,
                       "name_en": name_en,
@@ -140,6 +176,9 @@ jobs:
                       "time_min": int(val("minplaytime")) if val("minplaytime") else None,
                       "time_max": int(val("maxplaytime")) if val("maxplaytime") else None,
                       "weight": weight,
+                      "rating_avg": rating_avg,
+                      "rating_bayes": rating_bayes,
+                      "rank_overall": rank_overall,
                       "categories": categories,
                       "mechanics": mechanics,
                       "image_url": image_url or thumb_url,
@@ -184,6 +223,79 @@ jobs:
           if __name__ == "__main__": main()
           PY
 
+          # --- scripts/fetch_comments.py（新增：抓取前 20 則，挑 3 則精選） ---
+          cat <<'PY' > scripts/fetch_comments.py
+          # scripts/fetch_comments.py
+          import json, time, requests, xml.etree.ElementTree as ET
+          from pathlib import Path
+          INOUT = Path("data/bgg_data.json")
+
+          API = "https://boardgamegeek.com/xmlapi2/thing?id={id}&comments=1&pagesize=20"
+
+          def fetch_comments(bid, backoff=1.5):
+              url = API.format(id=bid)
+              r = requests.get(url, timeout=60)
+              while r.status_code == 202:
+                  time.sleep(backoff); r = requests.get(url, timeout=60)
+              if r.status_code == 429:
+                  time.sleep(backoff); return fetch_comments(bid, min(backoff*2, 12))
+              r.raise_for_status()
+              root = ET.fromstring(r.text)
+              item = root.find("item")
+              if item is None: return []
+
+              cmts = []
+              for c in item.findall("comments/comment"):
+                  cmts.append({
+                      "username": c.get("username") or "",
+                      "rating":  (float(c.get("rating")) if (c.get("rating") and c.get("rating") not in ("", "N/A")) else None),
+                      "date":    c.get("date") or "",
+                      "text":    c.get("value") or ""
+                  })
+              return cmts
+
+          def main():
+              if not INOUT.exists():
+                  print("No data/bgg_data.json; skip comments."); return
+              rows = json.loads(INOUT.read_text(encoding="utf-8"))
+
+              # 依 bgg_id 聚合
+              from collections import defaultdict
+              ids = []
+              for r in rows:
+                  b = r.get("bgg_id")
+                  if b and b not in ids:
+                      ids.append(b)
+
+              by_id_comments = {}
+              for i, bid in enumerate(ids, 1):
+                  try:
+                      cmts = fetch_comments(bid)
+                      # 打分 + 文字長度做簡單排序，挑前 3 則
+                      def score(c):
+                          s = 0.0
+                          if c.get("rating") is not None: s += float(c["rating"])
+                          s += min(len(c.get("text","")), 400) / 400.0
+                          return s
+                      cmts.sort(key=score, reverse=True)
+                      by_id_comments[bid] = cmts[:3]
+                      print(f"[{i}/{len(ids)}] comments for {bid}: {len(by_id_comments[bid])}")
+                      time.sleep(0.6)
+                  except Exception as e:
+                      print(f"comments for {bid} failed: {e}")
+
+              # 寫回 rows（同 bgg_id 的多列都附上）
+              for r in rows:
+                  bid = r.get("bgg_id")
+                  if bid in by_id_comments:
+                      r["comments_top"] = by_id_comments[bid]
+
+              INOUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+              print("fetch_comments: done.")
+          if __name__ == "__main__":
+              main()
+          PY
+
           # --- scripts/apply_taxonomy_and_price.py（不 fan-out；覆寫 image、套中文映射） ---
           cat <<'PY' > scripts/apply_taxonomy_and_price.py
           import csv, json, urllib.parse
@@ -210,13 +322,14 @@ jobs:
 
           def with_cache_param(url: str, ver: str|None):
               if not url or not ver: return url
-              u = urllib.parse.urlsplit(url)
-              q = urllib.parse.parse_qsl(u.query, keep_blank_values=True)
+              import urllib.parse as up
+              u = up.urlsplit(url)
+              q = up.parse_qsl(u.query, keep_blank_values=True)
               if any(k.lower()=="v" for k,_ in q):
                   return url
               q.append(("v", str(ver)))
-              new_q = urllib.parse.urlencode(q)
-              return urllib.parse.urlunsplit((u.scheme, u.netloc, u.path, new_q, u.fragment))
+              new_q = up.urlencode(q)
+              return up.urlunsplit((u.scheme, u.netloc, u.path, new_q, u.fragment))
 
           def main():
               if not BGG_IN.exists():
@@ -231,25 +344,21 @@ jobs:
               for r in rows:
                   rr = dict(r)
 
-                  # alias_zh -> aliases_zh（陣列）
                   if rr.get("alias_zh"):
                       rr["aliases_zh"] = [x.strip() for x in str(rr["alias_zh"]).split(";") if x.strip()]
 
-                  # 只要有 image_override 就直接寫進 image；並帶 v= 做快取破壞
                   img_ovr = (rr.get("image_override") or "").strip()
                   if img_ovr:
                       ver = (str(rr.get("image_version_id")).strip()
                              if rr.get("image_version_id") not in (None, "") else None)
                       rr["image"] = with_cache_param(img_ovr, ver)
 
-                  # 分類中文
                   if rr.get("category_zh"):
-                      rr["categories_zh"] = parse_list_zh(rr["category_zh"])
+                      rr["categories_zh"] = [x.strip() for x in str(rr["category_zh"]).replace("；",";").split(";") if x.strip()]
                   else:
                       en = rr.get("categories") or []
                       rr["categories_zh"] = [catmap.get(x, x) for x in en]
 
-                  # 機制中文
                   mechs = rr.get("mechanics") or []
                   rr["mechanics_zh"] = [mechmap.get(x, x) for x in mechs]
 
@@ -262,7 +371,7 @@ jobs:
               main()
           PY
 
-          # --- scripts/fetch_version_image.py（尊重 override；429 退避） ---
+          # --- scripts/fetch_version_image.py ---
           cat <<'PY' > scripts/fetch_version_image.py
           import json, time, requests, xml.etree.ElementTree as ET
           from pathlib import Path
@@ -320,7 +429,7 @@ jobs:
               main()
           PY
 
-          # --- scripts/download_images.py（尊重 override；同 ID 以 URL 雜湊避免覆蓋） ---
+          # --- scripts/download_images.py ---
           cat <<'PY' > scripts/download_images.py
           import json, requests, hashlib, time
           from pathlib import Path
@@ -422,7 +531,7 @@ jobs:
           if __name__=="__main__": main()
           PY
 
-          # --- scripts/build_json.py（強化 id；override 優先） ---
+          # --- scripts/build_json.py ---
           cat <<'PY' > scripts/build_json.py
           import json, datetime, hashlib
           from pathlib import Path
@@ -488,6 +597,7 @@ jobs:
         run: |
           python scripts/resolve_bgg.py
           python scripts/fetch_bgg.py
+          python scripts/fetch_comments.py     # ← 新增這行（在這裡！）
           python scripts/apply_taxonomy_and_price.py
           python scripts/make_mechanism_map.py
           python scripts/fetch_version_image.py
