@@ -36,13 +36,6 @@
     .page-btn.active{background:#eef2ff;border-color:#c7d2fe}
     .page-btn:disabled{opacity:.5;cursor:not-allowed}
 
-    /* Auto-complete */
-    .ac-wrap{position:relative;display:inline-block}
-    .ac-list{position:absolute;left:0;top:100%;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08);margin-top:6px;max-height:320px;overflow:auto;min-width:260px;width:100%}
-    .ac-item{padding:8px 10px;cursor:pointer;display:flex;gap:8px;align-items:center}
-    .ac-item:hover{background:#f5f7ff}
-    .ac-sub{font-size:12px;color:var(--muted)}
-
     /* Focus + recommendations */
     #focus{margin:16px 0 10px}
     .focus-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
@@ -56,12 +49,6 @@
     .badge.rank{background:#eef2ff;border-color:#c7d2fe}
     .rating{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
     .rating .score{font-weight:800}
-
-    /* comments */
-    .comments{border-top:1px solid var(--border);margin-top:10px;padding-top:10px}
-    .cmt{padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;margin-top:8px}
-    .cmt-head{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center;justify-content:space-between}
-    .cmt-body{margin-top:4px;white-space:pre-wrap}
   </style>
 </head>
 <body>
@@ -98,6 +85,9 @@
     <option value="used_desc">二手價 高→低</option>
     <option value="weight_asc">策略強度 低→高</option>
     <option value="weight_desc">策略強度 高→低</option>
+    <!-- 新增：評分排序 -->
+    <option value="rating_avg_desc">評分（平均）高→低</option>
+    <option value="rating_bayes_desc">評分（Geek）高→低</option>
   </select>
 </form>
 
@@ -264,6 +254,17 @@
     return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
   }
 
+  // === 評分工具（平均優先，無則用 Geek/Bayes） ===
+  function getRatingAvg(x){ return (typeof x.rating_avg === 'number') ? x.rating_avg : null; }
+  function getRatingBayes(x){ return (typeof x.rating_bayes === 'number') ? x.rating_bayes : null; }
+  function ratingBadgeHtml(x){
+    const va = getRatingAvg(x);
+    const vb = getRatingBayes(x);
+    if (va != null) return `<span class="badge"><b class="score">${va.toFixed(1)}</b>/10</span>`;
+    if (vb != null) return `<span class="badge"><b class="score">${vb.toFixed(1)}</b>/10</span>`;
+    return '';
+  }
+
   // ===== 重複合併工具（僅顯示用，不改原資料）=====
   function normalizeImgUrl(s){
     s = String(s||'').toLowerCase();
@@ -312,9 +313,9 @@
     rows.forEach(x=>{
       const vals = [
         (x.name_zh||"").replace(/,/g,"，"),
-        (x.name_en||"").replace(/,/g,"，"),
-        (getCatsZh(x).join("/")).replace(/,/g,"，"),
-        (getMechsZh(x).join("/")).replace(/,/g,"，"),
+        (x.name_en||"").replace(/,/g," "),
+        (getCatsZh(x).join("/")).replace(/,/g,"／"),
+        (getMechsZh(x).join("/")).replace(/,/g,"／"),
         x.price_twd??"", x.used_price_twd??"", x.stock??"", (x.link_override||x.bgg_url_override||x.bgg_url||"")
       ];
       lines.push(vals.join(","));
@@ -467,6 +468,11 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       case "used_desc":      list.sort((a,b)=>(b.used_price_twd??-1)-(a.used_price_twd??-1)); break;
       case "weight_asc":     list.sort((a,b)=>(a.weight??1e12)-(b.weight??1e12)); break;
       case "weight_desc":    list.sort((a,b)=>(b.weight??-1)-(a.weight??-1)); break;
+      // 新增：評分排序
+      case "rating_avg_desc":
+        list.sort((a,b)=> (getRatingAvg(b) ?? -1) - (getRatingAvg(a) ?? -1)); break;
+      case "rating_bayes_desc":
+        list.sort((a,b)=> (getRatingBayes(b) ?? -1) - (getRatingBayes(a) ?? -1)); break;
     }
     const total=list.length;
     const ps = Number(PAGE_SIZE.value||40);
@@ -575,7 +581,6 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     const fav = favs.has(id);
     const chosenCat = CAT.value, chosenMech = MECH.value;
     const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
-    const rating = (x.rating_bayes ?? x.rating_avg);
     const rank = x.rank_overall;
     const ppl = playersText(x);
 
@@ -593,7 +598,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
 
         <div class="rating">
-          ${rating? `<span class="badge"><b class="score">${Number(rating).toFixed(1)}</b>/10</span>`:''}
+          ${ratingBadgeHtml(x)}  <!-- 這裡會優先顯示 average(6.6)，沒有才用 bayes(5.8) -->
           ${rank? `<span class="badge rank">RANK #${rank}</span>`:''}
           ${x.weight? `<span class="badge">策略強度 ${Number(x.weight).toFixed(2)}</span>`:''}
           ${ppl? `<span class="badge">${ppl}</span>`:''}
@@ -775,7 +780,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       };
     });
 
-    // ★ 新增：推薦清單的卡片也能再聚焦，無限延伸
+    // 推薦清單卡片也可再聚焦
     FOCUS.querySelectorAll('#rec .card').forEach(c=>{
       c.addEventListener('click',(e)=>{
         if (e.target.closest('.fav-btn') || e.target.closest('.chip') || e.target.closest('a')) return;
@@ -784,37 +789,12 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         if(item){ showFocus(item); scrollToTop(); }
       });
     });
-
-    // 精選評論（如果資料有）
-    renderComments(seed);
-  }
-
-  function renderComments(game){
-    let cmts = Array.isArray(game.comments_top) ? game.comments_top.slice(0,3) : [];
-    let el = document.getElementById('comments');
-    if(!el){ el = document.createElement('div'); el.id='comments'; FOCUS.appendChild(el); }
-    if(cmts.length===0){ el.innerHTML=''; return; }
-    el.innerHTML = `
-      <div class="comments">
-        <div style="font-weight:700;margin:12px 0 6px">玩家評論（精選）</div>
-        ${cmts.map(c => `
-          <div class="cmt">
-            <div class="cmt-head">
-              <span>${escapeHtml(c.username||'Geek')}　${c.rating?`評分 ${c.rating}`:''}　${c.date?c.date.split('T')[0]:''}</span>
-              <a href="https://translate.google.com/?sl=auto&tl=zh-TW&text=${encodeURIComponent(c.text||'')}" target="_blank" rel="noopener">翻成中文</a>
-            </div>
-            <div class="cmt-body">${escapeHtml((c.text||'').slice(0,300))}</div>
-          </div>
-        `).join('')}
-      </div>
-    `;
   }
 
   function clearFocus(resetQuery=true){
     if(resetQuery){ Q.value=''; }
     FOCUS.style.display='none';
     FOCUS_CARD.innerHTML=''; REC.innerHTML='';
-    const el = document.getElementById('comments'); if(el) el.innerHTML='';
     render();
   }
 </script>
