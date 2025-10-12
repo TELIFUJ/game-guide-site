@@ -133,9 +133,11 @@ jobs:
                       el=item.find(tag)
                       return el.get(attr) if el is not None and el.get(attr) is not None else None
 
+                  # 策略強度
                   weight_el=item.find("statistics/ratings/averageweight")
                   weight=_to_float(weight_el.get("value")) if weight_el is not None else None
 
+                  # 評分與總排行
                   ratings=item.find("statistics/ratings")
                   rating_avg=rating_bayes=None
                   rank_overall=None
@@ -147,6 +149,7 @@ jobs:
                       ranks = ratings.find("ranks")
                       if ranks is not None:
                           for rk in ranks.findall("rank"):
+                              # overall：id="1" 或 name="boardgame"
                               if rk.get("id")=="1" or rk.get("name")=="boardgame":
                                   rv = rk.get("value")
                                   if rv not in (None, "Not Ranked", "0", "N/A"):
@@ -189,6 +192,7 @@ jobs:
                   print("No data/bgg_ids.json; nothing to fetch."); return
               base_rows=json.loads(INPUT.read_text(encoding="utf-8"))
 
+              # fan-out 來源：同一 bgg_id 可能多列
               from collections import defaultdict
               rows_by_id = defaultdict(list)
               ids_unique = []
@@ -530,7 +534,10 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 一次性清掉舊的留言檔與腳本（有就刪、沒有就忽略）
           git rm -f data/comments_cache.json 2>/dev/null || true
+          git rm -f scripts/fetch_comments.py 2>/dev/null || true
+          # 正常更新的檔案
           git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
           git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
           git add assets/img/* || true
