@@ -50,6 +50,12 @@
     .rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
     .reason{margin-top:6px;color:var(--muted);font-size:12px}
     .clear-link{margin-left:auto;color:#2563eb;background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:6px 10px;cursor:pointer}
+
+    /* rating / rank badges */
+    .badge{display:inline-block;font-size:12px;padding:2px 6px;border:1px solid var(--border);border-radius:6px;background:#f3f4f6;margin-right:6px}
+    .badge.rank{background:#eef2ff;border-color:#c7d2fe}
+    .rating{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
+    .rating .score{font-weight:800}
   </style>
 </head>
 <body>
@@ -61,6 +67,9 @@
            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <div id="ac" class="ac-list" style="display:none"></div>
   </div>
+  <!-- 新增：清除與重置 -->
+  <button id="clearQ" class="btn" type="button">✕ 清除</button>
+  <button id="resetAll" class="btn" type="button">重置篩選</button>
 
   <select id="catSel"><option value="">全部分類</option></select>
   <select id="mechSel"><option value="">全部機制</option></select>
@@ -303,7 +312,7 @@
         (getMechsZh(x).join("/")).replace(/,/g,"，"),
         x.price_twd??"", x.used_price_twd??"", x.stock??"", (x.link_override||x.bgg_url_override||x.bgg_url||"")
       ];
-      lines.push(vals.join(","));
+        lines.push(vals.join(","));
     });
     const blob = new Blob(["\ufeff"+lines.join("\n")], {type:"text/csv;charset=utf-8"});
     const a = document.createElement("a");
@@ -349,21 +358,37 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     }
   }
 
+  // 下拉顯示「名稱 (數量)」，value 仍是純名稱
   function buildOptions(){
     const cCounts=new Map();
     DATA.forEach(x=>getCatsZh(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
     CAT.innerHTML='<option value="">全部分類</option>';
-    [...cCounts.entries()].filter(([n,cnt])=>!HOTC.checked || cnt>=MIN_CAT_COUNT)
+    [...cCounts.entries()]
+      .filter(([n,cnt])=>!HOTC.checked || cnt>=MIN_CAT_COUNT)
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .forEach(([n])=>{ const o=document.createElement('option'); o.value=n; o.textContent=n; CAT.appendChild(o); });
+      .forEach(([n,cnt])=>{
+        const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; o.dataset.name=n; CAT.appendChild(o);
+      });
 
     const mCounts=new Map();
     DATA.forEach(x=>getMechsZh(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
     MECH.innerHTML='<option value="">全部機制</option>';
-    [...mCounts.entries()].filter(([n,cnt])=>!HOTM.checked || cnt>=MIN_MECH_COUNT)
+    [...mCounts.entries()]
+      .filter(([n,cnt])=>!HOTM.checked || cnt>=MIN_MECH_COUNT)
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .forEach(([n])=>{ const o=document.createElement('option'); o.value=n; o.textContent=n; MECH.appendChild(o); });
+      .forEach(([n,cnt])=>{
+        const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; o.dataset.name=n; MECH.appendChild(o);
+      });
   }
+
+  // 清除與重置
+  document.getElementById('clearQ').addEventListener('click', ()=>{ Q.value=""; page=1; render(); });
+  document.getElementById('resetAll').addEventListener('click', ()=>{
+    Q.value=""; CAT.value=""; MECH.value="";
+    PMIN.value=""; PMAX.value=""; INCL.checked=false; HOTC.checked=false; HOTM.checked=false;
+    S.value=""; ONLYF.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
+    buildOptions(); page=1; render();
+  });
 
   [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1;render(); hideAC();}));
   [HOTC,HOTM].forEach(el=>el.addEventListener('change',()=>{ buildOptions(); page=1; render(); }));
@@ -493,10 +518,26 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       };
     });
 
+    // 點卡片可打開「焦點＋推薦」預覽（避開收藏/連結/籤籤）
+    G.querySelectorAll('.card').forEach(c=>{
+      c.addEventListener('click',(e)=>{
+        if (e.target.closest('.fav-btn') || e.target.closest('.chip') || e.target.closest('a')) return;
+        const id = c.dataset.id;
+        const item = DATA.find(x=>idOf(x)===id);
+        if(item){ showFocus(item); scrollToTop(); }
+      });
+    });
+
     // 同步 URL 的 page 參數
     const url = new URL(location.href);
     url.searchParams.set('page', String(page));
     history.replaceState(null,"",url);
+  }
+
+  function playersText(x){
+    const p = Array.isArray(x.players)? x.players : [];
+    if (p[0] && p[1]) return `${p[0]}–${p[1]}人`;
+    return '';
   }
 
   function cardHtml(x){
@@ -507,9 +548,12 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     const fav = favs.has(id);
     const chosenCat = CAT.value, chosenMech = MECH.value;
     const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
+    const rating = (x.rating_bayes ?? x.rating_avg);
+    const rank = x.rank_overall;
+    const ppl = playersText(x);
 
     return `
-      <div class="card">
+      <div class="card" data-id="${id}">
         <button class="fav-btn ${fav?'active':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite">
           <span class="star">${fav?'⭐':'☆'}</span>
         </button>
@@ -520,6 +564,13 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 
         <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
         ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
+
+        <div class="rating">
+          ${rating? `<span class="badge"><b class="score">${Number(rating).toFixed(1)}</b>/10</span>`:''}
+          ${rank? `<span class="badge rank">RANK #${rank}</span>`:''}
+          ${x.weight? `<span class="badge">策略強度 ${Number(x.weight).toFixed(2)}</span>`:''}
+          ${ppl? `<span class="badge">${ppl}</span>`:''}
+        </div>
 
         <div class="chips" aria-label="categories">
           ${cz.map(t=>`<a href="#" class="chip cat" data-cat="${t}">${t===chosenCat?`<b>${t}</b>`:t}</a>`).join('')}
@@ -575,8 +626,8 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 
   function normText(s){
     return (s||'').toLowerCase()
-      .replace(/桌遊|桌由|board ?game|bgg/g,'') // 常見尾詞
-      .replace(/[^\p{L}\p{N}]+/gu,''); // 移除符號空白
+      .replace(/桌遊|桌由|board ?game|bgg/g,'')
+      .replace(/[^\p{L}\p{N}]+/gu,'');
   }
   function bigrams(s){
     const arr=[...s]; const out=new Set();
@@ -649,9 +700,8 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         const s = 0.6*jaccard(seedM,m) + 0.4*jaccard(seedC,c);
         return {x, s, commonM: common(seedM,m), commonC: common(seedC,c)};
       })
-      .filter(o=>o.s>0) // 至少有重疊
+      .filter(o=>o.s>0)
       .sort((a,b)=> b.s - a.s);
-    // 若完全沒有重疊，放寬條件改取名字相似
     if(scored.length===0){
       const q = seed.name_zh || seed.name_en || '';
       const byName = DATA
