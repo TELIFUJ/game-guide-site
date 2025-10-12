@@ -2650,33 +2650,35 @@
     "description": "",
     "image_override": "https://cf.geekdo-images.com/RWjKuiSincgYjPHinHWuPQ__small@2x/img/fpGWYViqaJCQ7CEhhuZgg-0kJP4=/fit-in/400x300/filters:strip_icc()/pic1302526.jpg",
     "image_version_id": "",
-    "bgg_id": 164668,
-    "name_en": "Schliess ab !",
-    "year": 0,
+    "bgg_id": 124290,
+    "name_en": "Open Sesame",
+    "year": 2012,
     "players": [
-      2,
-      4
+      3,
+      5
     ],
-    "time_min": 20,
-    "time_max": 20,
-    "weight": 0.0,
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.125,
     "categories": [
-      "Abstract Strategy"
+      "Arabian",
+      "Memory"
     ],
     "mechanics": [
-      "Enclosure",
-      "Tile Placement"
+      "Memory",
+      "Push Your Luck"
     ],
-    "image_url": "https://cf.geekdo-images.com/JKGETBADDizI8Nfl3eQexA__original/img/o_-ifsY4dkXTRkrngf6vROeN4y0=/0x0/filters:format(jpeg)/pic3893685.jpg",
-    "thumb_url": "https://cf.geekdo-images.com/JKGETBADDizI8Nfl3eQexA__small/img/j7unbGAcD-Iz7S2SB6zEXeRXWek=/fit-in/200x150/filters:strip_icc()/pic3893685.jpg",
-    "versions_count": 1,
+    "image_url": "https://cf.geekdo-images.com/zgpq--0ngmHKdpx_5mkDew__original/img/NIIBEtFdIcC_18xjE8zhqtUwmd4=/0x0/filters:format(png)/pic2604916.png",
+    "thumb_url": "https://cf.geekdo-images.com/zgpq--0ngmHKdpx_5mkDew__small/img/3GHwIsXWkdybeUlN4v5Gx8nbUsQ=/fit-in/200x150/filters:strip_icc()/pic2604916.png",
+    "versions_count": 2,
     "image": "https://cf.geekdo-images.com/RWjKuiSincgYjPHinHWuPQ__small@2x/img/fpGWYViqaJCQ7CEhhuZgg-0kJP4=/fit-in/400x300/filters:strip_icc()/pic1302526.jpg",
     "categories_zh": [
-      "抽象策略"
+      "阿拉伯",
+      "記憶"
     ],
     "mechanics_zh": [
-      "圍地",
-      "板塊擺放"
+      "記憶",
+      "押注碰運氣"
     ]
   },
   {
@@ -35214,5 +35216,2311 @@
       "靜態捕獲"
     ],
     "image": "assets/img/39406-11815e4a.jpg"
+  },
+  {
+    "name_zh": "Spaghetti ‐ Multilingual edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/c4TmP5Ea8M1oBqtdZR6evw__small/img/1jlo5FQLG37lZvT_9GGkPHOG8ow=/fit-in/200x150/filters:strip_icc()/pic3159338.jpg",
+    "image_version_id": "",
+    "bgg_id": 206802,
+    "name_en": "Spaghetti",
+    "year": 2016,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 20,
+    "time_max": 30,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity",
+      "Party Game",
+      "Real-time"
+    ],
+    "mechanics": [
+      "Real-Time",
+      "Set Collection"
+    ],
+    "image_url": "https://cf.geekdo-images.com/c4TmP5Ea8M1oBqtdZR6evw__original/img/r8bJKyP3hmpvWvcw6Dro7IU4aUg=/0x0/filters:format(jpeg)/pic3159338.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/c4TmP5Ea8M1oBqtdZR6evw__small/img/1jlo5FQLG37lZvT_9GGkPHOG8ow=/fit-in/200x150/filters:strip_icc()/pic3159338.jpg",
+    "versions_count": 10,
+    "image": "https://cf.geekdo-images.com/c4TmP5Ea8M1oBqtdZR6evw__small/img/1jlo5FQLG37lZvT_9GGkPHOG8ow=/fit-in/200x150/filters:strip_icc()/pic3159338.jpg",
+    "categories_zh": [
+      "動作／敏捷",
+      "派對",
+      "即時制"
+    ],
+    "mechanics_zh": [
+      "即時制",
+      "收集套組"
+    ]
+  },
+  {
+    "name_zh": "Super Motherload ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/4YJJKj_AfS0SzxlZGLa1eQ__small/img/b8OQi35WaFO5KawDqaBchfW1Z1A=/fit-in/200x150/filters:strip_icc()/pic2075678.jpg",
+    "image_version_id": "",
+    "bgg_id": 162286,
+    "name_en": "Super Motherload",
+    "year": 2015,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.2707,
+    "categories": [
+      "Science Fiction",
+      "Video Game Theme"
+    ],
+    "mechanics": [
+      "Deck, Bag, and Pool Building",
+      "Delayed Purchase",
+      "Hand Management",
+      "Set Collection",
+      "Tile Placement",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/3PMNKSFpTjthXH5yraVoHA__original/img/v-BqM8wXWQNUfaNrAwQpRrq08MI=/0x0/filters:format(jpeg)/pic3293385.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/3PMNKSFpTjthXH5yraVoHA__small/img/hg0dWfhEVXa-za87Ni5HgEjN2mA=/fit-in/200x150/filters:strip_icc()/pic3293385.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/4YJJKj_AfS0SzxlZGLa1eQ__small/img/b8OQi35WaFO5KawDqaBchfW1Z1A=/fit-in/200x150/filters:strip_icc()/pic2075678.jpg",
+    "categories_zh": [
+      "科幻",
+      "電玩主題"
+    ],
+    "mechanics_zh": [
+      "Deck, Bag, and Pool Building",
+      "延遲購買",
+      "手牌管理",
+      "收集套組",
+      "板塊擺放",
+      "角色能力"
+    ]
+  },
+  {
+    "name_zh": "Steampunk Rally ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/x7ZIq-jb6z10UJiv_8wsyg__small/img/URNMA8H29TNXaMhjNvxdV4Xvql8=/fit-in/200x150/filters:strip_icc()/pic2073821.jpg",
+    "image_version_id": "",
+    "bgg_id": 162007,
+    "name_en": "Steampunk Rally",
+    "year": 2015,
+    "players": [
+      2,
+      8
+    ],
+    "time_min": 45,
+    "time_max": 60,
+    "weight": 2.6222,
+    "categories": [
+      "Dice",
+      "Racing",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Closed Drafting",
+      "Deck, Bag, and Pool Building",
+      "Dice Rolling",
+      "Modular Board",
+      "Race",
+      "Resource to Move",
+      "Simultaneous Action Selection",
+      "Track Movement",
+      "Variable Player Powers",
+      "Worker Placement with Dice Workers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/x7ZIq-jb6z10UJiv_8wsyg__original/img/s3KmeeFsWo3DzkaVzfORXEHfGWM=/0x0/filters:format(jpeg)/pic2073821.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/x7ZIq-jb6z10UJiv_8wsyg__small/img/URNMA8H29TNXaMhjNvxdV4Xvql8=/fit-in/200x150/filters:strip_icc()/pic2073821.jpg",
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/x7ZIq-jb6z10UJiv_8wsyg__small/img/URNMA8H29TNXaMhjNvxdV4Xvql8=/fit-in/200x150/filters:strip_icc()/pic2073821.jpg",
+    "categories_zh": [
+      "骰子",
+      "競速",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "封閉輪抽",
+      "Deck, Bag, and Pool Building",
+      "擲骰",
+      "模組地圖",
+      "競速",
+      "資源換移動",
+      "同時選擇行動",
+      "軌道移動",
+      "角色能力",
+      "骰子工人"
+    ]
+  },
+  {
+    "name_zh": "Tzolk'in: The Mayan Calendar – Tribes & Prophecies ‐ Rio Grande English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/MoFm3Gwr2gN4MqtZBGkn1A__small/img/TMDB6zd80IBABZUN0FskSv1-A5c=/fit-in/200x150/filters:strip_icc()/pic1758469.png",
+    "image_version_id": "",
+    "bgg_id": 143065,
+    "name_en": "Tzolk'in: The Mayan Calendar – Tribes & Prophecies",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.6118,
+    "categories": [
+      "Ancient",
+      "Civilization",
+      "Economic",
+      "Expansion for Base-game",
+      "Farming",
+      "Mythology"
+    ],
+    "mechanics": [
+      "Set Collection",
+      "Variable Player Powers",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/MoFm3Gwr2gN4MqtZBGkn1A__original/img/23nzJYRCVGbfTsNQwVVAD8RV_7I=/0x0/filters:format(png)/pic1758469.png",
+    "thumb_url": "https://cf.geekdo-images.com/MoFm3Gwr2gN4MqtZBGkn1A__small/img/TMDB6zd80IBABZUN0FskSv1-A5c=/fit-in/200x150/filters:strip_icc()/pic1758469.png",
+    "versions_count": 8,
+    "image": "https://cf.geekdo-images.com/MoFm3Gwr2gN4MqtZBGkn1A__small/img/TMDB6zd80IBABZUN0FskSv1-A5c=/fit-in/200x150/filters:strip_icc()/pic1758469.png",
+    "categories_zh": [
+      "古代",
+      "文明",
+      "經濟",
+      "基本款擴充",
+      "農業",
+      "神話"
+    ],
+    "mechanics_zh": [
+      "收集套組",
+      "角色能力",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Tzolk'in: The Mayan Calendar ‐ Rio Grande/CGE English edition 2014",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/Pudgh4Nx1cK7pzJ1uMxstw__small/img/EYW9t1dxO_WZT8y59tOLIMKTvrU=/fit-in/200x150/filters:strip_icc()/pic5459643.jpg",
+    "image_version_id": "",
+    "bgg_id": 126163,
+    "name_en": "Tzolk'in: The Mayan Calendar",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 3.6646,
+    "categories": [
+      "Ancient",
+      "Civilization",
+      "Economic",
+      "Farming",
+      "Mythology"
+    ],
+    "mechanics": [
+      "Bias",
+      "End Game Bonuses",
+      "Track Movement",
+      "Turn Order: Claim Action",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/kXf7mDyDYuHg6oe8yTUIEA__original/img/f6-Au0KTnNR4nugSu2U-wPNbZCU=/0x0/filters:format(jpeg)/pic4604439.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/kXf7mDyDYuHg6oe8yTUIEA__small/img/or9mAn4ClljY_wO_zvsLJDqs9tU=/fit-in/200x150/filters:strip_icc()/pic4604439.jpg",
+    "versions_count": 23,
+    "image": "https://cf.geekdo-images.com/Pudgh4Nx1cK7pzJ1uMxstw__small/img/EYW9t1dxO_WZT8y59tOLIMKTvrU=/fit-in/200x150/filters:strip_icc()/pic5459643.jpg",
+    "categories_zh": [
+      "古代",
+      "文明",
+      "經濟",
+      "農業",
+      "神話"
+    ],
+    "mechanics_zh": [
+      "偏誤",
+      "終局加分",
+      "軌道移動",
+      "搶先手",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Alien Frontiers ‐ English fourth edition (2014)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/1CR5bzyErMdBWFwQOTapSA__small@2x/img/34pT9GW-LVgINULrqGGsD1ZVgYI=/fit-in/400x300/filters:strip_icc()/pic1657833.jpg",
+    "image_version_id": "",
+    "bgg_id": 48726,
+    "name_en": "Alien Frontiers",
+    "year": 2010,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.5668,
+    "categories": [
+      "Dice",
+      "Science Fiction",
+      "Space Exploration"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Dice Rolling",
+      "Open Drafting",
+      "Worker Placement with Dice Workers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/UWZTWLXFfg_6HpXJmviL3g__original/img/1EiMWmB4iGMDRbaXuvZQtlszM_Q=/0x0/filters:format(png)/pic3360924.png",
+    "thumb_url": "https://cf.geekdo-images.com/UWZTWLXFfg_6HpXJmviL3g__small/img/KBuRMq00g4PlosEQSUUTDLzsYN8=/fit-in/200x150/filters:strip_icc()/pic3360924.png",
+    "versions_count": 10,
+    "image": "https://cf.geekdo-images.com/1CR5bzyErMdBWFwQOTapSA__small@2x/img/34pT9GW-LVgINULrqGGsD1ZVgYI=/fit-in/400x300/filters:strip_icc()/pic1657833.jpg",
+    "categories_zh": [
+      "骰子",
+      "科幻",
+      "太空探索"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "擲骰",
+      "公開輪抽",
+      "骰子工人"
+    ]
+  },
+  {
+    "name_zh": "Alien Frontiers: Big Box ‐ English edition (2017)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "800",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 17461,
+    "name_en": "Ducklings",
+    "year": 0,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 0,
+    "time_max": 0,
+    "weight": 1.0,
+    "categories": [
+      "Children's Game",
+      "Racing"
+    ],
+    "mechanics": [
+      "Roll / Spin and Move"
+    ],
+    "image_url": "https://cf.geekdo-images.com/lc2lHTv8_3hkF0NopGqWFw__original/img/n25L2L_dTIQ-b2OqNHkynKRuTl0=/0x0/filters:format(jpeg)/pic75522.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/lc2lHTv8_3hkF0NopGqWFw__small/img/Y4_mffO4iPIP3zp7JVATikTdnB8=/fit-in/200x150/filters:strip_icc()/pic75522.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "兒童",
+      "競速"
+    ],
+    "mechanics_zh": [
+      "擲骰／轉盤移動"
+    ],
+    "image": "assets/img/17461-d6cb686b.jpg"
+  },
+  {
+    "name_zh": "Alien Frontiers: Outer Belt",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 70647,
+    "name_en": "Alien Frontiers: Outer Belt",
+    "year": 2014,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 2.6,
+    "categories": [
+      "Expansion for Base-game",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Dice Rolling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/gF6z3xyw39uHvFPma-3STg__original/img/b3rtOyG5shxQGSV8DBQTSL9O0fs=/0x0/filters:format(jpeg)/pic2034204.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/gF6z3xyw39uHvFPma-3STg__small/img/I5UTWhLUsoxXVIlygusMv-cBM6U=/fit-in/200x150/filters:strip_icc()/pic2034204.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "基本款擴充",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "擲骰"
+    ],
+    "image": "assets/img/70647-bc144c59.jpg"
+  },
+  {
+    "name_zh": "Hau La ‐ Saien multilingual edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/APixyIusiJBBAeCcKPAivw__small/img/1O952XKyU9Q-U33hF48__AjXkQs=/fit-in/200x150/filters:strip_icc()/pic763219.jpg",
+    "image_version_id": "",
+    "bgg_id": 57310,
+    "name_en": "Hau La",
+    "year": 2009,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 15,
+    "time_max": 15,
+    "weight": 1.0,
+    "categories": [
+      "Action / Dexterity"
+    ],
+    "mechanics": [
+      "Pattern Building"
+    ],
+    "image_url": "https://cf.geekdo-images.com/APixyIusiJBBAeCcKPAivw__original/img/gofoPi2qKVr8VDfNEPPss4vwpD4=/0x0/filters:format(jpeg)/pic763219.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/APixyIusiJBBAeCcKPAivw__small/img/1O952XKyU9Q-U33hF48__AjXkQs=/fit-in/200x150/filters:strip_icc()/pic763219.jpg",
+    "versions_count": 1,
+    "image": "https://cf.geekdo-images.com/APixyIusiJBBAeCcKPAivw__small/img/1O952XKyU9Q-U33hF48__AjXkQs=/fit-in/200x150/filters:strip_icc()/pic763219.jpg",
+    "categories_zh": [
+      "動作／敏捷"
+    ],
+    "mechanics_zh": [
+      "圖案建構"
+    ]
+  },
+  {
+    "name_zh": "Tempus ‐ PS-Games English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/-2nvRDPFv5tuId6QkScLQA__small/img/njcOZtvZJkF_tDkoLHcJ_JflmGQ=/fit-in/200x150/filters:strip_icc()/pic1619709.jpg",
+    "image_version_id": "",
+    "bgg_id": 17161,
+    "name_en": "Tempus",
+    "year": 2006,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 2.7994,
+    "categories": [
+      "Civilization",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Card Play Conflict Resolution",
+      "Catch the Leader",
+      "End Game Bonuses",
+      "Grid Movement",
+      "Hand Management",
+      "Hexagon Grid",
+      "Modular Board",
+      "Movement Points",
+      "Multi-Use Cards",
+      "Take That",
+      "Tech Trees / Tech Tracks",
+      "Tile Placement",
+      "Turn Order: Progressive",
+      "Variable Set-up",
+      "Zone of Control"
+    ],
+    "image_url": "https://cf.geekdo-images.com/HbByF3L0K1SdYldIlOJK_Q__original/img/I5ptZKlYNda-RllUrHfDcdkGTlU=/0x0/filters:format(jpeg)/pic218485.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/HbByF3L0K1SdYldIlOJK_Q__small/img/2LMtuAl4hssI5FCi5VfpApvdBi0=/fit-in/200x150/filters:strip_icc()/pic218485.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/-2nvRDPFv5tuId6QkScLQA__small/img/njcOZtvZJkF_tDkoLHcJ_JflmGQ=/fit-in/200x150/filters:strip_icc()/pic1619709.jpg",
+    "categories_zh": [
+      "文明",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "出牌解衝突",
+      "追趕領先者",
+      "終局加分",
+      "格子移動",
+      "手牌管理",
+      "六角格",
+      "模組地圖",
+      "移動點",
+      "多用途卡",
+      "互害",
+      "科技樹／軌道",
+      "板塊擺放",
+      "回合順序：逐步",
+      "可變設置",
+      "控制區域"
+    ]
+  },
+  {
+    "name_zh": "The Manhattan Project: Chain Reaction – Deluxe Edition ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "350",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/boDps-jn7lh3uiwCdsQlXg__small/img/d84vtWp1SVnGl5MQB7gfm83et1s=/fit-in/200x150/filters:strip_icc()/pic3109066.jpg",
+    "image_version_id": "",
+    "bgg_id": 177249,
+    "name_en": "The Manhattan Project: Chain Reaction",
+    "year": 2016,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 30,
+    "time_max": 40,
+    "weight": 1.8491,
+    "categories": [
+      "Card Game",
+      "Industry / Manufacturing",
+      "World War II"
+    ],
+    "mechanics": [
+      "Hand Management"
+    ],
+    "image_url": "https://cf.geekdo-images.com/YqmBrUSSNeqFao71khs9vw__original/img/IufTTLqPX2vSqtXxgmz9i6QVZbs=/0x0/filters:format(jpeg)/pic3099445.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/YqmBrUSSNeqFao71khs9vw__small/img/Q4xV-x547ZrrX4vT6uhrhUZ0eKg=/fit-in/200x150/filters:strip_icc()/pic3099445.jpg",
+    "versions_count": 5,
+    "image": "https://cf.geekdo-images.com/boDps-jn7lh3uiwCdsQlXg__small/img/d84vtWp1SVnGl5MQB7gfm83et1s=/fit-in/200x150/filters:strip_icc()/pic3109066.jpg",
+    "categories_zh": [
+      "卡牌",
+      "工業／製造",
+      "第二次世界大戰"
+    ],
+    "mechanics_zh": [
+      "手牌管理"
+    ]
+  },
+  {
+    "name_zh": "The Manhattan Project ‐ English fourth edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 63628,
+    "name_en": "The Manhattan Project",
+    "year": 2012,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 2.9556,
+    "categories": [
+      "Aviation / Flight",
+      "Economic",
+      "Industry / Manufacturing",
+      "World War II"
+    ],
+    "mechanics": [
+      "Action Retrieval",
+      "Auction: Dutch Priority",
+      "Closed Drafting",
+      "Race",
+      "Take That",
+      "Worker Placement",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image_url": "https://cf.geekdo-images.com/IFtZcDUsLDHpHpslQ-8Q8Q__original/img/1vLNKGGdXaI9yv4ENFud0oznh_s=/0x0/filters:format(jpeg)/pic1222522.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/IFtZcDUsLDHpHpslQ-8Q8Q__small/img/fUVcaL3kLx-JXcjK4z4KnbABuLo=/fit-in/200x150/filters:strip_icc()/pic1222522.jpg",
+    "versions_count": 13,
+    "categories_zh": [
+      "航空／飛行",
+      "經濟",
+      "工業／製造",
+      "第二次世界大戰"
+    ],
+    "mechanics_zh": [
+      "行動取回",
+      "荷蘭式優先",
+      "封閉輪抽",
+      "競速",
+      "互害",
+      "Different Worker Types",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image": "assets/img/63628-05939b38.jpg"
+  },
+  {
+    "name_zh": "The Manhattan Project: Nations Expansion ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/YkojzYPXakbPsO-axHo-QA__small/img/GcrkXd9xeME55fH-J2lcarHgiKY=/fit-in/200x150/filters:strip_icc()/pic1092706.jpg",
+    "image_version_id": "",
+    "bgg_id": 108421,
+    "name_en": "The Manhattan Project: Nations Expansion",
+    "year": 2012,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 2.5217,
+    "categories": [
+      "Economic",
+      "Expansion for Base-game",
+      "Industry / Manufacturing",
+      "Negotiation",
+      "World War II"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Take That",
+      "Variable Player Powers",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/YkojzYPXakbPsO-axHo-QA__original/img/SKxYGKzC5M0IL_6v1WUAO7MseNw=/0x0/filters:format(jpeg)/pic1092706.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/YkojzYPXakbPsO-axHo-QA__small/img/GcrkXd9xeME55fH-J2lcarHgiKY=/fit-in/200x150/filters:strip_icc()/pic1092706.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/YkojzYPXakbPsO-axHo-QA__small/img/GcrkXd9xeME55fH-J2lcarHgiKY=/fit-in/200x150/filters:strip_icc()/pic1092706.jpg",
+    "categories_zh": [
+      "經濟",
+      "基本款擴充",
+      "工業／製造",
+      "談判",
+      "第二次世界大戰"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "互害",
+      "角色能力",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "曼哈頓計畫:能源帝國",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/0V-FNt27-r5YwNjFzdhJ2A__small/img/qJqFIOeaVZPCEbxWwKkd-WzhIrg=/fit-in/200x150/filters:strip_icc()/pic3479779.jpg",
+    "image_version_id": "",
+    "bgg_id": 176734,
+    "name_en": "The Manhattan Project: Energy Empire",
+    "year": 2016,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.0282,
+    "categories": [
+      "Dice",
+      "Economic",
+      "Environmental",
+      "Industry / Manufacturing"
+    ],
+    "mechanics": [
+      "Contracts",
+      "Dice Rolling",
+      "Die Icon Resolution",
+      "End Game Bonuses",
+      "Events",
+      "Income",
+      "Market",
+      "Multi-Use Cards",
+      "Open Drafting",
+      "Solo / Solitaire Game",
+      "Tags",
+      "Track Movement",
+      "Variable Player Powers",
+      "Variable Set-up",
+      "Worker Placement",
+      "Worker Placement, Different Worker Types"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-aaspZ2Oq1VuAADvbUoeww__original/img/fr4sH1ViKPtRys-gjCY4dY8UuQE=/0x0/filters:format(jpeg)/pic3048617.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/-aaspZ2Oq1VuAADvbUoeww__small/img/6nMV_Bdtm2ShipBJfGle36DY1-U=/fit-in/200x150/filters:strip_icc()/pic3048617.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/0V-FNt27-r5YwNjFzdhJ2A__small/img/qJqFIOeaVZPCEbxWwKkd-WzhIrg=/fit-in/200x150/filters:strip_icc()/pic3479779.jpg",
+    "categories_zh": [
+      "骰子",
+      "經濟",
+      "環境議題",
+      "工業／製造"
+    ],
+    "mechanics_zh": [
+      "合約",
+      "擲骰",
+      "骰面圖示結算",
+      "終局加分",
+      "事件",
+      "收入",
+      "市集",
+      "多用途卡",
+      "公開輪抽",
+      "單人",
+      "標籤",
+      "軌道移動",
+      "角色能力",
+      "可變設置",
+      "Different Worker Types",
+      "Worker Placement, Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "The Manhattan Project: Second Stage ‐ First edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "350",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/uwrQ9j9autBmVaYkbmxqNw__small/img/W5333wEVH_vk1YSZLtLME5R8xA4=/fit-in/200x150/filters:strip_icc()/pic1431853.jpg",
+    "image_version_id": "",
+    "bgg_id": 128883,
+    "name_en": "The Manhattan Project: Second Stage",
+    "year": 2013,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 2.9333,
+    "categories": [
+      "Economic",
+      "Expansion for Base-game",
+      "Industry / Manufacturing",
+      "Negotiation",
+      "Spies / Secret Agents",
+      "World War II"
+    ],
+    "mechanics": [
+      "Open Drafting",
+      "Take That",
+      "Variable Player Powers",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/uwrQ9j9autBmVaYkbmxqNw__original/img/y1M9xnO2NXY0dHep2A8eOT4WXzs=/0x0/filters:format(jpeg)/pic1431853.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/uwrQ9j9autBmVaYkbmxqNw__small/img/W5333wEVH_vk1YSZLtLME5R8xA4=/fit-in/200x150/filters:strip_icc()/pic1431853.jpg",
+    "versions_count": 3,
+    "image": "https://cf.geekdo-images.com/uwrQ9j9autBmVaYkbmxqNw__small/img/W5333wEVH_vk1YSZLtLME5R8xA4=/fit-in/200x150/filters:strip_icc()/pic1431853.jpg",
+    "categories_zh": [
+      "經濟",
+      "基本款擴充",
+      "工業／製造",
+      "談判",
+      "間諜",
+      "第二次世界大戰"
+    ],
+    "mechanics_zh": [
+      "公開輪抽",
+      "互害",
+      "角色能力",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Steam Court ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 174491,
+    "name_en": "Steam Court",
+    "year": 2016,
+    "players": [
+      1,
+      12
+    ],
+    "time_min": 30,
+    "time_max": 90,
+    "weight": 1.5,
+    "categories": [
+      "Card Game",
+      "Party Game",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Hand Management",
+      "Solo / Solitaire Game",
+      "Trick-taking",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/r9Z2tiIVayZEQl1XJoISGg__original/img/jRrlMGHUzsnEtASquDcCKm910VI=/0x0/filters:format(jpeg)/pic2449683.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/r9Z2tiIVayZEQl1XJoISGg__small/img/JEGn9V-z_GLtpbo0LMI6FP_D9GA=/fit-in/200x150/filters:strip_icc()/pic2449683.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "卡牌",
+      "派對",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "手牌管理",
+      "單人",
+      "吃墩",
+      "角色能力"
+    ],
+    "image": "assets/img/174491-89055298.jpg"
+  },
+  {
+    "name_zh": "Rifugio ‐ Second edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/E19oWq1P6C90R3dnYnA5gA__small/img/G_hfpNdBA65bO54PvmGHzJj1Z44=/fit-in/200x150/filters:strip_icc()/pic7391172.png",
+    "image_version_id": "",
+    "bgg_id": 139807,
+    "name_en": "Rifugio",
+    "year": 2017,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 20,
+    "time_max": 60,
+    "weight": 1.5,
+    "categories": [
+      "Adventure",
+      "Exploration",
+      "Travel"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Grid Movement",
+      "Set Collection",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/E19oWq1P6C90R3dnYnA5gA__original/img/uOeW6DQv03WrWXRQTbh2ja0a4wE=/0x0/filters:format(png)/pic7391172.png",
+    "thumb_url": "https://cf.geekdo-images.com/E19oWq1P6C90R3dnYnA5gA__small/img/G_hfpNdBA65bO54PvmGHzJj1Z44=/fit-in/200x150/filters:strip_icc()/pic7391172.png",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/E19oWq1P6C90R3dnYnA5gA__small/img/G_hfpNdBA65bO54PvmGHzJj1Z44=/fit-in/200x150/filters:strip_icc()/pic7391172.png",
+    "categories_zh": [
+      "冒險",
+      "探索",
+      "旅遊"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "格子移動",
+      "收集套組",
+      "板塊擺放"
+    ]
+  },
+  {
+    "name_zh": "Jarl: The Vikings Tile-Laying Game ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 170901,
+    "name_en": "Jarl: The Vikings Tile-Laying Game",
+    "year": 2015,
+    "players": [
+      2,
+      2
+    ],
+    "time_min": 15,
+    "time_max": 25,
+    "weight": 2.6667,
+    "categories": [
+      "Abstract Strategy",
+      "Movies / TV / Radio theme"
+    ],
+    "mechanics": [
+      "Grid Movement",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/vLtNcUa0LwQL0hxnogM61A__original/img/bF9ZoO6_L_oXvpbYQdC6Dxbpifs=/0x0/filters:format(jpeg)/pic2373249.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/vLtNcUa0LwQL0hxnogM61A__small/img/USp3fDU33zr0ZXhl7JGhLhv1Jsc=/fit-in/200x150/filters:strip_icc()/pic2373249.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "抽象策略",
+      "影視／廣播主題"
+    ],
+    "mechanics_zh": [
+      "格子移動",
+      "板塊擺放"
+    ],
+    "image": "assets/img/170901-a954fee1.jpg"
+  },
+  {
+    "name_zh": "Scarborough Fair ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 159556,
+    "name_en": "Scarborough Fair",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 60,
+    "weight": 1.5,
+    "categories": [
+      "Economic",
+      "Renaissance"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/C6EZXwxDVSWJIGHn0rxH6A__original/img/b3W27dQ2CfxukNuntQCUFw_gvQk=/0x0/filters:format(jpeg)/pic2035396.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/C6EZXwxDVSWJIGHn0rxH6A__small/img/bhOn-LjuAaG_oDf5T6fzEN0KbCI=/fit-in/200x150/filters:strip_icc()/pic2035396.jpg",
+    "versions_count": 1,
+    "categories_zh": [
+      "經濟",
+      "文藝復興"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "Different Worker Types"
+    ],
+    "image": "assets/img/159556-04a8d928.jpg"
+  },
+  {
+    "name_zh": "Cranium ‐ English Canadian 3-in-1 edition 2009",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/iw90lCZPfubc0GUBHI1ieA__small/img/vSlRLy9ZQwfyzhPGjEA95s4WI5A=/fit-in/200x150/filters:strip_icc()/pic8952963.jpg",
+    "image_version_id": "",
+    "bgg_id": 891,
+    "name_en": "Cranium",
+    "year": 1998,
+    "players": [
+      4,
+      99
+    ],
+    "time_min": 60,
+    "time_max": 60,
+    "weight": 1.4156,
+    "categories": [
+      "Party Game",
+      "Puzzle",
+      "Trivia",
+      "Word Game"
+    ],
+    "mechanics": [
+      "Acting",
+      "Line Drawing",
+      "Paper-and-Pencil",
+      "Roll / Spin and Move",
+      "Singing",
+      "Team-Based Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/-RAQw4eCx3i__6ctz6-N9A__original/img/Z1nfWJlFJQiirtkqCoMmoDbIQIE=/0x0/filters:format(jpeg)/pic4994220.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/-RAQw4eCx3i__6ctz6-N9A__small/img/6zwKtSbuLcz8negvxaM4hRA6rBw=/fit-in/200x150/filters:strip_icc()/pic4994220.jpg",
+    "versions_count": 46,
+    "image": "https://cf.geekdo-images.com/iw90lCZPfubc0GUBHI1ieA__small/img/vSlRLy9ZQwfyzhPGjEA95s4WI5A=/fit-in/200x150/filters:strip_icc()/pic8952963.jpg",
+    "categories_zh": [
+      "派對",
+      "益智／拼圖",
+      "問答",
+      "字詞"
+    ],
+    "mechanics_zh": [
+      "演技／表演",
+      "連線描繪",
+      "紙筆",
+      "擲骰／轉盤移動",
+      "唱歌",
+      "團隊"
+    ]
+  },
+  {
+    "name_zh": "Town Center ‐ English/French third edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/TxKhPNnR8q60S6MRbTc0ag__small/img/lmBbWbClMivhOmVZ-fSw16H-l_g=/fit-in/200x150/filters:strip_icc()/pic1834531.jpg",
+    "image_version_id": "",
+    "bgg_id": 124545,
+    "name_en": "Town Center",
+    "year": 2012,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 30,
+    "time_max": 30,
+    "weight": 2.8966,
+    "categories": [
+      "Abstract Strategy",
+      "City Building",
+      "Economic"
+    ],
+    "mechanics": [
+      "Area Majority / Influence"
+    ],
+    "image_url": "https://cf.geekdo-images.com/TxKhPNnR8q60S6MRbTc0ag__original/img/wN-QsZu-Rgmw-OJR5SsC1DDT4GA=/0x0/filters:format(jpeg)/pic1834531.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/TxKhPNnR8q60S6MRbTc0ag__small/img/lmBbWbClMivhOmVZ-fSw16H-l_g=/fit-in/200x150/filters:strip_icc()/pic1834531.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/TxKhPNnR8q60S6MRbTc0ag__small/img/lmBbWbClMivhOmVZ-fSw16H-l_g=/fit-in/200x150/filters:strip_icc()/pic1834531.jpg",
+    "categories_zh": [
+      "抽象策略",
+      "城市建設",
+      "經濟"
+    ],
+    "mechanics_zh": [
+      "區域控制"
+    ]
+  },
+  {
+    "name_zh": "Pay Dirt ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/gdpRTb5A9lwsTu2wEG-5pg__small/img/8ZSt7bJMEOra7JW0ZYywvZHAUTg=/fit-in/200x150/filters:strip_icc()/pic1829538.jpg",
+    "image_version_id": "",
+    "bgg_id": 125050,
+    "name_en": "Pay Dirt",
+    "year": 2014,
+    "players": [
+      2,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 90,
+    "weight": 2.5625,
+    "categories": [
+      "Environmental",
+      "Industry / Manufacturing"
+    ],
+    "mechanics": [
+      "Auction / Bidding",
+      "Events",
+      "Open Drafting",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/gdpRTb5A9lwsTu2wEG-5pg__original/img/YPnbomoDedGSOAE197AwbOnh0go=/0x0/filters:format(jpeg)/pic1829538.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/gdpRTb5A9lwsTu2wEG-5pg__small/img/8ZSt7bJMEOra7JW0ZYywvZHAUTg=/fit-in/200x150/filters:strip_icc()/pic1829538.jpg",
+    "versions_count": 2,
+    "image": "https://cf.geekdo-images.com/gdpRTb5A9lwsTu2wEG-5pg__small/img/8ZSt7bJMEOra7JW0ZYywvZHAUTg=/fit-in/200x150/filters:strip_icc()/pic1829538.jpg",
+    "categories_zh": [
+      "環境議題",
+      "工業／製造"
+    ],
+    "mechanics_zh": [
+      "競標",
+      "事件",
+      "公開輪抽",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "Fallen City of Karez ‐ English edition ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/GYY_apgUHZ9TmZMVixNVMg__small/img/R7NVSK_e6nYqRim1iVoBb88ndHg=/fit-in/200x150/filters:strip_icc()/pic1332401.png",
+    "image_version_id": "",
+    "bgg_id": 125879,
+    "name_en": "Fallen City of Karez",
+    "year": 2012,
+    "players": [
+      1,
+      5
+    ],
+    "time_min": 120,
+    "time_max": 120,
+    "weight": 3.0625,
+    "categories": [
+      "City Building",
+      "Fantasy"
+    ],
+    "mechanics": [
+      "Dice Rolling",
+      "Modular Board",
+      "Worker Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/l1OiNQ27uIk47h2xQDGxHg__original/img/8U4kZI-m7Vx0EXgCNMOdQCwVWlc=/0x0/filters:format(jpeg)/pic1473388.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/l1OiNQ27uIk47h2xQDGxHg__small/img/DEfxixnM78e68KUB2LJ7ZUTUsCA=/fit-in/200x150/filters:strip_icc()/pic1473388.jpg",
+    "versions_count": 1,
+    "image": "https://cf.geekdo-images.com/GYY_apgUHZ9TmZMVixNVMg__small/img/R7NVSK_e6nYqRim1iVoBb88ndHg=/fit-in/200x150/filters:strip_icc()/pic1332401.png",
+    "categories_zh": [
+      "城市建設",
+      "奇幻"
+    ],
+    "mechanics_zh": [
+      "擲骰",
+      "模組地圖",
+      "Different Worker Types"
+    ]
+  },
+  {
+    "name_zh": "閱讀空氣。究極二選一みんなで空気読み。究極の二択 (The ultimate two choices) ‐ Japanese edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/1001mky01-768x614.jpg?raw=true",
+    "image_version_id": "",
+    "bgg_id": 455732,
+    "name_en": "みんなで空気読み。究極の二択 (The ultimate two choices)",
+    "year": 2024,
+    "players": [
+      3,
+      8
+    ],
+    "time_min": 10,
+    "time_max": 10,
+    "weight": 0.0,
+    "categories": [
+      "Party Game"
+    ],
+    "mechanics": [],
+    "image_url": null,
+    "thumb_url": null,
+    "versions_count": 1,
+    "image": "https://github.com/TELIFUJ/tabletop-paradise/blob/main/public/images/1001mky01-768x614.jpg?raw=true",
+    "categories_zh": [
+      "派對"
+    ],
+    "mechanics_zh": []
+  },
+  {
+    "name_zh": "UX in the Jungle",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "600",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 224922,
+    "name_en": "UX in the Jungle",
+    "year": 2017,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 3.0,
+    "categories": [
+      "Economic",
+      "Educational"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game",
+      "Grid Movement",
+      "Hand Management",
+      "Set Collection",
+      "Simulation",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/5XF3NTCgfFhntKmbPDkE4w__original/img/asAlMmp0wQjIUg9KuHyy8ez9HUs=/0x0/filters:format(png)/pic3515782.png",
+    "thumb_url": "https://cf.geekdo-images.com/5XF3NTCgfFhntKmbPDkE4w__small/img/gWKfiXd6FVb2Fq9jolkjfibBnZ0=/fit-in/200x150/filters:strip_icc()/pic3515782.png",
+    "versions_count": 2,
+    "categories_zh": [
+      "經濟",
+      "教育"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "格子移動",
+      "手牌管理",
+      "收集套組",
+      "模擬",
+      "角色能力"
+    ],
+    "image": "assets/img/224922-66722bbe.jpg"
+  },
+  {
+    "name_zh": "Flash Point: Fire Rescue – Dangerous Waters ‐ English edition 2013",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 140552,
+    "name_en": "Flash Point: Fire Rescue – Dangerous Waters",
+    "year": 2013,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.3333,
+    "categories": [
+      "Expansion for Base-game",
+      "Adventure"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Simulation",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Sqihx9yeScriA3bfXv6cbw__original/img/cqStPL4vvwh-NXQUmVC2QgkavCw=/0x0/filters:format(jpeg)/pic7003011.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Sqihx9yeScriA3bfXv6cbw__small/img/CuI6JZ_n2I-cHnMI6B1z97pyD1U=/fit-in/200x150/filters:strip_icc()/pic7003011.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "基本款擴充",
+      "冒險"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "擲骰",
+      "格子移動",
+      "模擬",
+      "角色能力"
+    ],
+    "image": "assets/img/140552-067b5a41.jpg"
+  },
+  {
+    "name_zh": "Flash Point: Fire Rescue – Honor & Duty ‐ English kickstarter edition (2014)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "300",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 162616,
+    "name_en": "Flash Point: Fire Rescue – Honor & Duty",
+    "year": 2014,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.2,
+    "categories": [
+      "Expansion for Base-game",
+      "Adventure"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Pick-up and Deliver",
+      "Simulation",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/6FtJWusdwT95OqPjKwK4Tw__original/img/sv-Gs04r_k-V-p3USCq1Ujs96nQ=/0x0/filters:format(jpeg)/pic2082907.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/6FtJWusdwT95OqPjKwK4Tw__small/img/Mjs7qKVS5duUuaIJpE9laV_6f6M=/fit-in/200x150/filters:strip_icc()/pic2082907.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "基本款擴充",
+      "冒險"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "擲骰",
+      "格子移動",
+      "取貨運送",
+      "模擬",
+      "角色能力"
+    ],
+    "image": "assets/img/162616-afd983e8.jpg"
+  },
+  {
+    "name_zh": "Flash Point: Fire Rescue",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/AvKeHE9qnvwS43CtlUYVoQ__small/img/lmXzUzFbZ9E58Np5wAnG0uWjS6M=/fit-in/200x150/filters:strip_icc()/pic6433812.jpg",
+    "image_version_id": "",
+    "bgg_id": 100901,
+    "name_en": "Flash Point: Fire Rescue",
+    "year": 2011,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.1969,
+    "categories": [
+      "Adventure"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Pick-up and Deliver",
+      "Simulation",
+      "Solo / Solitaire Game",
+      "Square Grid",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/v6bTbxeprDFj1nN4AenvjA__original/img/ri91i22ujLCZqxXKhFIdVDPGe8Y=/0x0/filters:format(jpeg)/pic1129370.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/v6bTbxeprDFj1nN4AenvjA__small/img/7AyBFA8JfZHKxC5ntwOjJTbIgWE=/fit-in/200x150/filters:strip_icc()/pic1129370.jpg",
+    "versions_count": 20,
+    "image": "https://cf.geekdo-images.com/AvKeHE9qnvwS43CtlUYVoQ__small/img/lmXzUzFbZ9E58Np5wAnG0uWjS6M=/fit-in/200x150/filters:strip_icc()/pic6433812.jpg",
+    "categories_zh": [
+      "冒險"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "擲骰",
+      "格子移動",
+      "取貨運送",
+      "模擬",
+      "單人",
+      "方格",
+      "角色能力"
+    ]
+  },
+  {
+    "name_zh": "Flash Point: Fire Rescue – Extreme Danger ‐ English edition 2013",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "500",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 139766,
+    "name_en": "Flash Point: Fire Rescue – Extreme Danger",
+    "year": 2013,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 45,
+    "time_max": 45,
+    "weight": 2.3043,
+    "categories": [
+      "Expansion for Base-game",
+      "Adventure"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Grid Movement",
+      "Simulation",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/LFRrLmALPK5GofldFDXF-g__original/img/eIroGRLopx9i896bvzdZSbImB_c=/0x0/filters:format(jpeg)/pic7003014.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/LFRrLmALPK5GofldFDXF-g__small/img/vaC946lrqk_70Cs0YpCIqcLSnZc=/fit-in/200x150/filters:strip_icc()/pic7003014.jpg",
+    "versions_count": 5,
+    "categories_zh": [
+      "基本款擴充",
+      "冒險"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "合作",
+      "擲骰",
+      "格子移動",
+      "模擬",
+      "角色能力"
+    ],
+    "image": "assets/img/139766-f921a197.jpg"
+  },
+  {
+    "name_zh": "Dos Rios ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 9408,
+    "name_en": "Dos Rios",
+    "year": 2004,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 70,
+    "time_max": 70,
+    "weight": 2.518,
+    "categories": [
+      "Economic",
+      "Farming",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Action Points",
+      "Modular Board"
+    ],
+    "image_url": "https://cf.geekdo-images.com/h0DWk5AEnZmkuBytAlWY7Q__original/img/na67bhMW-L6OTKysRd8qC_LNkxk=/0x0/filters:format(jpeg)/pic224460.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/h0DWk5AEnZmkuBytAlWY7Q__small/img/WS71DmI7uSSACeDQVFiE5G-RCOg=/fit-in/200x150/filters:strip_icc()/pic224460.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "經濟",
+      "農業",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "行動點",
+      "模組地圖"
+    ],
+    "image": "assets/img/9408-b7779d67.jpg"
+  },
+  {
+    "name_zh": "Mare Nostrum: Buildings ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 209278,
+    "name_en": "Mare Nostrum: Buildings",
+    "year": 2016,
+    "players": [
+      null,
+      null
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/h5FgVpTD5k0Y3BoZluS3lA__original/img/X8aa6xWSrTMRFXLE_nmpi5oRZAw=/0x0/filters:format(jpeg)/pic3284141.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/h5FgVpTD5k0Y3BoZluS3lA__small/img/B_-__Q_LeU7SmlgBLgI3rVNXh6o=/fit-in/200x150/filters:strip_icc()/pic3284141.jpg",
+    "versions_count": 1,
+    "categories_zh": [],
+    "mechanics_zh": [],
+    "image": "assets/img/209278-025a8d56.jpg"
+  },
+  {
+    "name_zh": "Mare Nostrum: Resource Chips ‐ First edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 209173,
+    "name_en": "Mare Nostrum: Resource Chips",
+    "year": 2016,
+    "players": [
+      null,
+      null
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/WgckaTV1EkxwZLajDg8TMg__original/img/PssnCZ6WZW5pDQpXoe9262EoMwA=/0x0/filters:format(jpeg)/pic3217719.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/WgckaTV1EkxwZLajDg8TMg__small/img/spNw4C7Als1d9EZhOtbROhl7abY=/fit-in/200x150/filters:strip_icc()/pic3217719.jpg",
+    "versions_count": 1,
+    "categories_zh": [],
+    "mechanics_zh": [],
+    "image": "assets/img/209173-12a7ab5e.jpg"
+  },
+  {
+    "name_zh": "Mare Nostrum: Empires ‐ English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/bCT1a-L84zgHRsIkNdH-lA__small/img/dTt5RE3rxMyv3pe6_DslE-DEboY=/fit-in/200x150/filters:strip_icc()/pic2648963.jpg",
+    "image_version_id": "",
+    "bgg_id": 174785,
+    "name_en": "Mare Nostrum: Empires",
+    "year": 2016,
+    "players": [
+      3,
+      5
+    ],
+    "time_min": 90,
+    "time_max": 120,
+    "weight": 2.9863,
+    "categories": [
+      "Ancient",
+      "Civilization",
+      "Economic",
+      "Mythology",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Dice Rolling",
+      "Set Collection",
+      "Trading",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/bCT1a-L84zgHRsIkNdH-lA__original/img/llYdd4trnj2VZSx8KHrt2d1LNQU=/0x0/filters:format(jpeg)/pic2648963.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/bCT1a-L84zgHRsIkNdH-lA__small/img/dTt5RE3rxMyv3pe6_DslE-DEboY=/fit-in/200x150/filters:strip_icc()/pic2648963.jpg",
+    "versions_count": 7,
+    "image": "https://cf.geekdo-images.com/bCT1a-L84zgHRsIkNdH-lA__small/img/dTt5RE3rxMyv3pe6_DslE-DEboY=/fit-in/200x150/filters:strip_icc()/pic2648963.jpg",
+    "categories_zh": [
+      "古代",
+      "文明",
+      "經濟",
+      "神話",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "擲骰",
+      "收集套組",
+      "交易",
+      "角色能力"
+    ]
+  },
+  {
+    "name_zh": "Mare Nostrum: Empires – Atlas Expansion ‐ English edition (2016)",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 180156,
+    "name_en": "Mare Nostrum: Empires – Atlas Expansion",
+    "year": 2016,
+    "players": [
+      2,
+      6
+    ],
+    "time_min": 90,
+    "time_max": 120,
+    "weight": 3.4545,
+    "categories": [
+      "Ancient",
+      "Civilization",
+      "Economic",
+      "Expansion for Base-game",
+      "Mythology",
+      "Wargame"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Dice Rolling",
+      "Set Collection",
+      "Trading",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/XyUq9Eqr-2zRKE74KnTM4Q__original/img/qq5k5cgdj2QrscH0OaXLAxVxTIE=/0x0/filters:format(jpeg)/pic3187544.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/XyUq9Eqr-2zRKE74KnTM4Q__small/img/91mNP4EWor0IswqRLBfW8bFVKhU=/fit-in/200x150/filters:strip_icc()/pic3187544.jpg",
+    "versions_count": 6,
+    "categories_zh": [
+      "古代",
+      "文明",
+      "經濟",
+      "基本款擴充",
+      "神話",
+      "戰棋"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "擲骰",
+      "收集套組",
+      "交易",
+      "角色能力"
+    ],
+    "image": "assets/img/180156-77c71850.jpg"
+  },
+  {
+    "name_zh": "Reef Encounter ‐ Z-Man English edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "400",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "2",
+    "description": "",
+    "image_override": "https://cf.geekdo-images.com/NPEB3liMIvwhve_ThaNLPQ__small/img/HJD2YRls9zyJKRXhWSHJCKVJpF4=/fit-in/200x150/filters:strip_icc()/pic1601087.jpg",
+    "image_version_id": "",
+    "bgg_id": 12962,
+    "name_en": "Reef Encounter",
+    "year": 2004,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 120,
+    "weight": 3.6761,
+    "categories": [
+      "Animals",
+      "Environmental",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Area Majority / Influence",
+      "Commodity Speculation",
+      "Hand Management",
+      "Open Drafting",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/Yp3TG2cLcY-AfBJogTiGHg__original/img/s6eJSgafse8-zpbu3jZO_gT9zJU=/0x0/filters:format(jpeg)/pic85905.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/Yp3TG2cLcY-AfBJogTiGHg__small/img/qPAI0c5Z0hkFv89bQR0sgJ2p8o8=/fit-in/200x150/filters:strip_icc()/pic85905.jpg",
+    "versions_count": 4,
+    "image": "https://cf.geekdo-images.com/NPEB3liMIvwhve_ThaNLPQ__small/img/HJD2YRls9zyJKRXhWSHJCKVJpF4=/fit-in/200x150/filters:strip_icc()/pic1601087.jpg",
+    "categories_zh": [
+      "動物",
+      "環境議題",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "區域控制",
+      "商品投機",
+      "手牌管理",
+      "公開輪抽",
+      "板塊擺放"
+    ]
+  },
+  {
+    "name_zh": "Reef Encounter of the Second Kind ‐ What''s Your Game?/Z-Man Edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "200",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 22304,
+    "name_en": "Reef Encounter of the Second Kind",
+    "year": 2006,
+    "players": [
+      2,
+      4
+    ],
+    "time_min": 60,
+    "time_max": 150,
+    "weight": 3.6667,
+    "categories": [
+      "Animals",
+      "Expansion for Base-game",
+      "Territory Building"
+    ],
+    "mechanics": [
+      "Commodity Speculation",
+      "Enclosure",
+      "Hand Management",
+      "Open Drafting",
+      "Set Collection",
+      "Tile Placement"
+    ],
+    "image_url": "https://cf.geekdo-images.com/oRJtRqsNej2tQ6Z6OZApbA__original/img/MnoBF0UT97U_K2p_LRKm7O93Mww=/0x0/filters:format(jpeg)/pic547285.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/oRJtRqsNej2tQ6Z6OZApbA__small/img/FvuGmveAsx9OpSZp5V4UAY2IVKo=/fit-in/200x150/filters:strip_icc()/pic547285.jpg",
+    "versions_count": 2,
+    "categories_zh": [
+      "動物",
+      "基本款擴充",
+      "領地建設"
+    ],
+    "mechanics_zh": [
+      "商品投機",
+      "圍地",
+      "手牌管理",
+      "公開輪抽",
+      "收集套組",
+      "板塊擺放"
+    ],
+    "image": "assets/img/22304-3d3b26af.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 180263,
+    "name_en": "The 7th Continent",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 1000,
+    "weight": 2.9005,
+    "categories": [
+      "Adventure",
+      "Card Game",
+      "Exploration",
+      "Science Fiction"
+    ],
+    "mechanics": [
+      "Area Movement",
+      "Cooperative Game",
+      "Hand Management",
+      "Map Addition",
+      "Modular Board",
+      "Narrative Choice / Paragraph",
+      "Scenario / Mission / Campaign Game",
+      "Solo / Solitaire Game",
+      "Storytelling",
+      "Variable Player Powers"
+    ],
+    "image_url": "https://cf.geekdo-images.com/OYne8uBCHv5oEgRfpOrV0A__original/img/jcTlhpYG2496xQtuQ277bFTIldY=/0x0/filters:format(jpeg)/pic2648303.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/OYne8uBCHv5oEgRfpOrV0A__small/img/_YPdmxegKIoZI_ButuMJzfw9UBo=/fit-in/200x150/filters:strip_icc()/pic2648303.jpg",
+    "versions_count": 4,
+    "categories_zh": [
+      "冒險",
+      "卡牌",
+      "探索",
+      "科幻"
+    ],
+    "mechanics_zh": [
+      "區域移動",
+      "合作",
+      "手牌管理",
+      "地圖擴增",
+      "模組地圖",
+      "段落式敘事",
+      "劇本／任務／戰役",
+      "單人",
+      "說故事",
+      "角色能力"
+    ],
+    "image": "assets/img/180263-0e5b1180.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent: Fear the Devourers ‐ English edition, first printing",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 186381,
+    "name_en": "The 7th Continent: Fear the Devourers",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 1000,
+    "weight": 2.5714,
+    "categories": [
+      "Adventure",
+      "Card Game",
+      "Expansion for Base-game",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Modular Board",
+      "Solo / Solitaire Game",
+      "Storytelling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/eR0kDP8doEvPD2e5FvXLuQ__original/img/mZLCJhEfkIphCrPXYvpf72uhuyo=/0x0/filters:format(png)/pic3723336.png",
+    "thumb_url": "https://cf.geekdo-images.com/eR0kDP8doEvPD2e5FvXLuQ__small/img/igxxHTVNVpE4QKAYd6XyovdoEXY=/fit-in/200x150/filters:strip_icc()/pic3723336.png",
+    "versions_count": 7,
+    "categories_zh": [
+      "冒險",
+      "卡牌",
+      "基本款擴充",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "模組地圖",
+      "單人",
+      "說故事"
+    ],
+    "image": "assets/img/186381-fb3b4364.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent: \"Bone\" Dice & Dice Bag ‐ First edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 186620,
+    "name_en": "The 7th Continent: \"Bone\" Dice & Dice Bag",
+    "year": 2016,
+    "players": [
+      null,
+      null
+    ],
+    "time_min": null,
+    "time_max": null,
+    "weight": 0.0,
+    "categories": [],
+    "mechanics": [],
+    "image_url": "https://cf.geekdo-images.com/CIPhPtWoJalvS3JSPJ0Iqg__original/img/OgHM0hbWyA9yQ5CrmYsbdN_r9a0=/0x0/filters:format(jpeg)/pic2978956.jpg",
+    "thumb_url": "https://cf.geekdo-images.com/CIPhPtWoJalvS3JSPJ0Iqg__small/img/-33Zga32TCSE7m-T0nRohbeqt9c=/fit-in/200x150/filters:strip_icc()/pic2978956.jpg",
+    "versions_count": 1,
+    "categories_zh": [],
+    "mechanics_zh": [],
+    "image": "assets/img/186620-0cf49eff.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent: The Forbidden Sanctuary ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 184186,
+    "name_en": "The 7th Continent: The Forbidden Sanctuary",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 1000,
+    "weight": 2.875,
+    "categories": [
+      "Adventure",
+      "Expansion for Base-game",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Modular Board",
+      "Solo / Solitaire Game"
+    ],
+    "image_url": "https://cf.geekdo-images.com/YLdWdjrb_Yzia6gxdX91yQ__original/img/OJ94fp7mEN5IxJ3bzkw4sWPXF0s=/0x0/filters:format(png)/pic3723344.png",
+    "thumb_url": "https://cf.geekdo-images.com/YLdWdjrb_Yzia6gxdX91yQ__small/img/Xai7hRvsVK9G-y7T7dFBLo_9BrY=/fit-in/200x150/filters:strip_icc()/pic3723344.png",
+    "versions_count": 5,
+    "categories_zh": [
+      "冒險",
+      "基本款擴充",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "模組地圖",
+      "單人"
+    ],
+    "image": "assets/img/184186-0c7b765c.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent: Swamp of Madness ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 184904,
+    "name_en": "The 7th Continent: Swamp of Madness",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 1000,
+    "weight": 3.0,
+    "categories": [
+      "Adventure",
+      "Expansion for Base-game",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Modular Board",
+      "Solo / Solitaire Game",
+      "Storytelling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/FaWKlOmYyEoUNT5HY0UAEA__original/img/68k3y_rhMvFKoY74AOkItm1nqtw=/0x0/filters:format(png)/pic3723342.png",
+    "thumb_url": "https://cf.geekdo-images.com/FaWKlOmYyEoUNT5HY0UAEA__small/img/M1CddnmFzGrTuwEWqj4s25vWIHg=/fit-in/200x150/filters:strip_icc()/pic3723342.png",
+    "versions_count": 4,
+    "categories_zh": [
+      "冒險",
+      "基本款擴充",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "模組地圖",
+      "單人",
+      "說故事"
+    ],
+    "image": "assets/img/184904-ab397f52.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent: Facing the Elements ‐ English edition, first printing ",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 186987,
+    "name_en": "The 7th Continent: Facing the Elements",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 1000,
+    "weight": 2.5,
+    "categories": [
+      "Adventure",
+      "Card Game",
+      "Expansion for Base-game",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Modular Board",
+      "Solo / Solitaire Game",
+      "Storytelling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/YXf1P_TfjRgQ_BMb39mH0A__original/img/lL3Dipb5CZg9sExQ-PQmlts2XzA=/0x0/filters:format(png)/pic3723334.png",
+    "thumb_url": "https://cf.geekdo-images.com/YXf1P_TfjRgQ_BMb39mH0A__small/img/BbMMUUT6SAbYXXngD1UY5VgDKUg=/fit-in/200x150/filters:strip_icc()/pic3723334.png",
+    "versions_count": 5,
+    "categories_zh": [
+      "冒險",
+      "卡牌",
+      "基本款擴充",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "模組地圖",
+      "單人",
+      "說故事"
+    ],
+    "image": "assets/img/186987-417f8ffc.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent: Path of Repentance ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 185743,
+    "name_en": "The 7th Continent: Path of Repentance",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 1000,
+    "weight": 2.1429,
+    "categories": [
+      "Adventure",
+      "Expansion for Base-game",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Modular Board",
+      "Solo / Solitaire Game",
+      "Storytelling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/KqQSA1nHrUo5q_gDiBnWJA__original/img/dLntLTDJ9f0I1e61Mo37r0zC2zg=/0x0/filters:format(png)/pic3723340.png",
+    "thumb_url": "https://cf.geekdo-images.com/KqQSA1nHrUo5q_gDiBnWJA__small/img/k4PXkAXZtDcsfpC1ijx-2t2eCG4=/fit-in/200x150/filters:strip_icc()/pic3723340.png",
+    "versions_count": 5,
+    "categories_zh": [
+      "冒險",
+      "基本款擴充",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "模組地圖",
+      "單人",
+      "說故事"
+    ],
+    "image": "assets/img/185743-2283764f.jpg"
+  },
+  {
+    "name_zh": "The 7th Continent: The Icy Maze ‐ English first edition",
+    "name_en_override": "",
+    "alias_zh": "",
+    "category_zh": "",
+    "price_msrp_twd": "",
+    "price_twd": "",
+    "used_price_twd": "",
+    "price_note": "",
+    "used_note": "",
+    "manual_override": "1",
+    "stock": "1",
+    "description": "",
+    "image_override": "",
+    "image_version_id": "",
+    "bgg_id": 183660,
+    "name_en": "The 7th Continent: The Icy Maze",
+    "year": 2017,
+    "players": [
+      1,
+      4
+    ],
+    "time_min": 5,
+    "time_max": 1000,
+    "weight": 2.8333,
+    "categories": [
+      "Adventure",
+      "Card Game",
+      "Expansion for Base-game",
+      "Exploration"
+    ],
+    "mechanics": [
+      "Cooperative Game",
+      "Modular Board",
+      "Solo / Solitaire Game",
+      "Storytelling"
+    ],
+    "image_url": "https://cf.geekdo-images.com/mLn9y2W_I6gZzynsKnOC2A__original/img/T4y0DQIerKGKcUivHkQbwCAF9m8=/0x0/filters:format(png)/pic3723346.png",
+    "thumb_url": "https://cf.geekdo-images.com/mLn9y2W_I6gZzynsKnOC2A__small/img/2LTq9d6UpJtyVTwiTv9qo-4baNo=/fit-in/200x150/filters:strip_icc()/pic3723346.png",
+    "versions_count": 5,
+    "categories_zh": [
+      "冒險",
+      "卡牌",
+      "基本款擴充",
+      "探索"
+    ],
+    "mechanics_zh": [
+      "合作",
+      "模組地圖",
+      "單人",
+      "說故事"
+    ],
+    "image": "assets/img/183660-0ca6ad23.jpg"
   }
 ]
