@@ -3,7 +3,11 @@ import json, datetime, hashlib, re
 from pathlib import Path
 
 INPUT  = Path("data/bgg_data.json")
-OUTPUT = Path("data/games_full.json")
+OUTDIR = Path("data")
+MANIFEST = OUTDIR / "manifest.json"
+
+RE_CJK = re.compile(r"[\u4E00-\u9FFF]")
+RE_ZH_KEYWORDS = re.compile(r"(chinese\s*ed(?:i|t)ion|中文版|繁體|簡體|简体)", re.IGNORECASE)
 
 def slugify(s: str) -> str:
     return (s or "").strip().lower().replace(" ", "_")
@@ -21,15 +25,7 @@ def make_id(r: dict) -> str:
         return f"{base}-{bid}"
     return base
 
-# ==== 中文優先工具 ====
-RE_CJK = re.compile(r"[\u4E00-\u9FFF]")  # CJK Unified Ideographs
-RE_ZH_KEYWORDS = re.compile(r"(chinese\s*ed(?:i|t)ion|中文版|繁體|簡體|简体)", re.IGNORECASE)
-
-def has_cjk(s: str) -> bool:
-    return bool(RE_CJK.search(s or ""))
-
-def zh_preferred_row(r: dict) -> bool:
-    """名稱含中任一 CJK 或資訊欄出現中文版本關鍵詞 → 中文優先"""
+def is_zh_pref(r: dict) -> bool:
     fields = [
         r.get("name_zh") or "",
         r.get("name_en_override") or r.get("name_en") or "",
@@ -40,10 +36,7 @@ def zh_preferred_row(r: dict) -> bool:
         r.get("description") or "",
     ]
     blob = " ".join(fields)
-    return has_cjk(fields[0]) or has_cjk(fields[1]) or has_cjk(blob) or bool(RE_ZH_KEYWORDS.search(blob))
-
-def name_key(x: dict) -> str:
-    return (x.get("name_zh") or x.get("name_en") or "").lower()
+    return bool(RE_CJK.search(blob)) or bool(RE_ZH_KEYWORDS.search(blob))
 
 def main():
     if not INPUT.exists():
@@ -66,8 +59,7 @@ def main():
         item["name_zh"] = name_zh or ""
         item["name_en"] = name_en or ""
         item["image"]   = image or ""
-        # 新增：中文優先旗標（前端可選用，不破壞相容）
-        item["is_zh_preferred"] = zh_preferred_row(r)
+        item["is_zh_preferred"] = is_zh_pref(r)
 
         if bid and not item.get("bgg_url"):
             item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
@@ -81,18 +73,23 @@ def main():
         item["updated_at"]=today
         items.append(item)
 
-    # 先以名稱做基礎字母排序（穩定）
-    items.sort(key=name_key)
-
-    # 再做「中文優先」穩定分區（不改兩側相對次序）
+    # 名稱排序 → 中文優先穩定分區
+    items.sort(key=lambda x: (x.get("name_zh") or x.get("name_en") or "").lower())
     zh_items  = [x for x in items if x.get("is_zh_preferred")]
     non_items = [x for x in items if not x.get("is_zh_preferred")]
     items = zh_items + non_items
 
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Built {len(items)} entries → {OUTPUT}")
-    print(f"  zh_preferred: {len(zh_items)} | non_zh: {len(non_items)}")
+    OUTDIR.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(items, ensure_ascii=False, separators=(",",":"))
+    h = hashlib.md5(payload.encode("utf-8")).hexdigest()[:10]
+    out_file = OUTDIR / f"games_full.{h}.json"
+    out_file.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # 也產生一份固定名（給舊前端回退）
+    (OUTDIR / "games_full.json").write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    MANIFEST.write_text(json.dumps({"games_full": f"data/games_full.{h}.json"}, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Built {len(items)} entries → {out_file} and manifest.json")
 
 if __name__ == "__main__":
     main()
