@@ -272,6 +272,15 @@
     return '';
   }
 
+  // ===== 中文優先判定（名稱含中文字或關鍵詞） =====
+  const RE_ZH = /[\u4E00-\u9FFF]/;
+  function isZhPreferred(x){
+    const nz = x.name_zh || '';
+    const ne = x.name_en || '';
+    const blob = `${nz} ${ne} ${(x.alias_zh||'')} ${(x.category_zh||'')} ${Array.isArray(x.tags)?x.tags.join(' '):''}`.toLowerCase();
+    return RE_ZH.test(nz) || RE_ZH.test(ne) || /chinese\s*ed(i|t)ion|中文版|繁體|簡體/.test(blob);
+  }
+
   // ===== 重複合併工具（僅顯示用，不改原資料）=====
   function normalizeImgUrl(s){
     s = String(s||'').toLowerCase();
@@ -350,6 +359,29 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     return url || 'https://via.placeholder.com/800?text=No+Image';
   }
 
+  // === 初始 UI 快照（不動收藏） ===
+  function serializeUI(){
+    return {
+      q: Q.value, cat: CAT.value, mech: MECH.value, sort: S.value,
+      pmin: PMIN.value, pmax: PMAX.value,
+      incl: INCL.checked, hotc: HOTC.checked, hotm: HOTM.checked,
+      onlyf: ONLYF.checked, hided: HIDED.checked, pagesize: PAGE_SIZE.value
+    };
+  }
+  function applyUI(st){
+    Q.value = st.q; CAT.value = st.cat; MECH.value = st.mech; S.value = st.sort;
+    PMIN.value = st.pmin; PMAX.value = st.pmax;
+    INCL.checked = st.incl; HOTC.checked = st.hotc; HOTM.checked = st.hotm;
+    ONLYF.checked = st.onlyf; HIDED.checked = st.hided; PAGE_SIZE.value = st.pagesize;
+    buildOptions(); page = 1; render();
+  }
+  let INITIAL_UI = null;
+  function restoreInitial(){
+    if (INITIAL_UI) applyUI(INITIAL_UI);
+    clearFocus(false);
+    scrollToTop();
+  }
+
   // ====== 載入資料 ======
   fetch(DATA_URL).then(r=>r.json()).then(d=>{
     DATA=d;
@@ -360,6 +392,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     if (mechQ){ HOTM.checked=false; buildOptions(); ensureOption(MECH, mechQ); MECH.value=mechQ; }
     if (!Number.isNaN(pageQ) && pageQ>0) page = pageQ;
     render();
+    if (!INITIAL_UI) INITIAL_UI = serializeUI(); // ← 記住「剛進站」狀態
   }).catch(e=>{
     console.error('Load data failed:', e, DATA_URL);
     alert('無法載入資料：' + DATA_URL);
@@ -443,14 +476,9 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     MECH.value = mechVal;
   }
 
-  // 清除與重置
-  document.getElementById('clearQ').addEventListener('click', ()=>{ Q.value=""; page=1; buildOptions(); render(); });
-  document.getElementById('resetAll').addEventListener('click', ()=>{
-    Q.value=""; CAT.value=""; MECH.value="";
-    PMIN.value=""; PMAX.value=""; INCL.checked=false; HOTC.checked=false; HOTM.checked=false;
-    S.value=""; ONLYF.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
-    buildOptions(); page=1; render();
-  });
+  // 清除與重置 → 一律「回初始」
+  document.getElementById('clearQ').addEventListener('click', restoreInitial);
+  document.getElementById('resetAll').addEventListener('click', restoreInitial);
 
   // 任何影響結果的輸入 -> 同步重算數字 & 重畫
   [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1; buildOptions(); render(); hideAC();}));
@@ -461,10 +489,11 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); scrollToTop();}});
   DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
-  CLEAR_FOCUS.addEventListener('click', ()=>{ clearFocus(); });
+  CLEAR_FOCUS.addEventListener('click', restoreInitial); // ← 改為回初始
 
   function filtered(noPaging=false){
     let list = filteredBase(); // 用統一的基礎過濾
+
     const includeUsedForSort = INCL.checked;
     switch (S.value){
       case "min_price_asc":  list.sort((a,b)=> minPrice(a, includeUsedForSort) - minPrice(b, includeUsedForSort)); break;
@@ -481,6 +510,14 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       case "rating_bayes_desc":
         list.sort((a,b)=> (getRatingBayes(b) ?? -1) - (getRatingBayes(a) ?? -1)); break;
     }
+
+    // ---- 中文優先（穩定分區：不破壞兩側原有相對順序）----
+    {
+      const zh = list.filter(isZhPreferred);
+      const non = list.filter(x => !isZhPreferred(x));
+      list = zh.concat(non);
+    }
+
     const total=list.length;
     const ps = Number(PAGE_SIZE.value||40);
     const pages = Math.max(1, Math.ceil(total/ps));
@@ -749,7 +786,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         .filter(x=>idOf(x)!==idOf(seed))
         .map(x=>({x, s:nameScore(q,x)/8, commonM:[], commonC:[]}))
         .sort((a,b)=>b.s-a.s);
-    return byName.slice(0,k);
+      return byName.slice(0,k);
     }
     return scored.slice(0,k);
   }
