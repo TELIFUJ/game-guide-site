@@ -73,9 +73,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.6176,
-    "rating_avg": 6.7071,
-    "rating_bayes": 5.72345,
-    "rank_overall": 5684,
+    "rating_avg": 6.70627,
+    "rating_bayes": 5.72327,
+    "rank_overall": 5687,
     "categories": [
       "Abstract Strategy",
       "Card Game"
@@ -125,7 +125,7 @@
     "weight": 1.1304,
     "rating_avg": 5.58748,
     "rating_bayes": 5.4872,
-    "rank_overall": 26927,
+    "rank_overall": 26938,
     "categories": [
       "Action / Dexterity",
       "Party Game"
@@ -173,9 +173,9 @@
     "time_min": 15,
     "time_max": 30,
     "weight": 1.6364,
-    "rating_avg": 6.10854,
-    "rating_bayes": 5.60822,
-    "rank_overall": 8703,
+    "rating_avg": 6.11162,
+    "rating_bayes": 5.60834,
+    "rank_overall": 8696,
     "categories": [
       "Card Game"
     ],
@@ -226,10 +226,10 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.1015,
-    "rating_avg": 5.47507,
-    "rating_bayes": 5.34766,
-    "rank_overall": 29160,
+    "weight": 1.1014,
+    "rating_avg": 5.47533,
+    "rating_bayes": 5.34773,
+    "rank_overall": 29171,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -287,9 +287,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.3667,
-    "rating_avg": 5.55498,
-    "rating_bayes": 5.49111,
-    "rank_overall": 26376,
+    "rating_avg": 5.55503,
+    "rating_bayes": 5.49116,
+    "rank_overall": 26374,
     "categories": [
       "Abstract Strategy",
       "Game System"
@@ -342,10 +342,10 @@
     ],
     "time_min": 30,
     "time_max": 30,
-    "weight": 1.0423,
-    "rating_avg": 5.29687,
-    "rating_bayes": 5.38806,
-    "rank_overall": 29095,
+    "weight": 1.0417,
+    "rating_avg": 5.29666,
+    "rating_bayes": 5.38795,
+    "rank_overall": 29106,
     "categories": [
       "Card Game"
     ],
@@ -397,7 +397,7 @@
     "weight": 2.2,
     "rating_avg": 6.16491,
     "rating_bayes": 5.51593,
-    "rank_overall": 19858,
+    "rank_overall": 19868,
     "categories": [
       "Animals",
       "Card Game"
@@ -447,7 +447,7 @@
     "weight": 2.0,
     "rating_avg": 6.11413,
     "rating_bayes": 5.49909,
-    "rank_overall": 24794,
+    "rank_overall": 24806,
     "categories": [
       "Card Game"
     ],
@@ -493,8 +493,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.652,
-    "rating_avg": 6.5056,
-    "rating_bayes": 6.29411,
+    "rating_avg": 6.50582,
+    "rating_bayes": 6.29414,
     "rank_overall": 1833,
     "categories": [
       "Card Game",
@@ -545,8 +545,8 @@
     "time_min": 5,
     "time_max": 30,
     "weight": 1.701,
-    "rating_avg": 6.86334,
-    "rating_bayes": 6.67736,
+    "rating_avg": 6.86318,
+    "rating_bayes": 6.67729,
     "rank_overall": 928,
     "categories": [
       "Card Game",
@@ -607,7 +607,7 @@
     "weight": 1.2632,
     "rating_avg": 5.6946,
     "rating_bayes": 5.51291,
-    "rank_overall": 20772,
+    "rank_overall": 20784,
     "categories": [
       "Bluffing",
       "Deduction",
@@ -657,8 +657,8 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.3333,
-    "rating_avg": 6.98039,
-    "rating_bayes": 6.43163,
+    "rating_avg": 6.98053,
+    "rating_bayes": 6.43181,
     "rank_overall": 1461,
     "categories": [
       "Dice",
@@ -713,7 +713,7 @@
     "weight": 1.0,
     "rating_avg": 6.67328,
     "rating_bayes": 5.56291,
-    "rank_overall": 11530,
+    "rank_overall": 11535,
     "categories": [
       "Children's Game",
       "Racing"
@@ -859,9 +859,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.1771,
-    "rating_avg": 4.52302,
-    "rating_bayes": 4.71108,
-    "rank_overall": 29285,
+    "rating_avg": 4.5235,
+    "rating_bayes": 4.71148,
+    "rank_overall": 29296,
     "categories": [
       "Children's Game"
     ],
@@ -919,7 +919,7 @@
     "weight": 1.0,
     "rating_avg": 5.47833,
     "rating_bayes": 5.4993,
-    "rank_overall": 24753,
+    "rank_overall": 24764,
     "categories": [
       "Action / Dexterity",
       "Children's Game"
@@ -961,9 +961,9 @@
     "time_min": 10,
     "time_max": 10,
     "weight": 1.0349,
-    "rating_avg": 6.33681,
-    "rating_bayes": 5.76223,
-    "rank_overall": 5122,
+    "rating_avg": 6.33625,
+    "rating_bayes": 5.76185,
+    "rank_overall": 5130,
     "categories": [
       "Children's Game",
       "Dice"
@@ -1013,7 +1013,7 @@
     "weight": 1.4545,
     "rating_avg": 5.985,
     "rating_bayes": 5.53364,
-    "rank_overall": 15306,
+    "rank_overall": 15311,
     "categories": [
       "Card Game"
     ],
@@ -1061,7 +1061,7 @@
     "weight": 1.0,
     "rating_avg": 5.94612,
     "rating_bayes": 5.52185,
-    "rank_overall": 18120,
+    "rank_overall": 18133,
     "categories": [
       "Children's Game",
       "Dice",
@@ -1113,7 +1113,7 @@
     "weight": 1.0,
     "rating_avg": 6.71687,
     "rating_bayes": 5.50791,
-    "rank_overall": 22378,
+    "rank_overall": 22389,
     "categories": [
       "Animals",
       "Children's Game"
@@ -1161,7 +1161,7 @@
     "weight": 1.0909,
     "rating_avg": 6.18434,
     "rating_bayes": 5.56342,
-    "rank_overall": 11472,
+    "rank_overall": 11479,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -1259,9 +1259,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.3808,
-    "rating_avg": 6.29669,
-    "rating_bayes": 6.0793,
-    "rank_overall": 2690,
+    "rating_avg": 6.29679,
+    "rating_bayes": 6.07941,
+    "rank_overall": 2689,
     "categories": [
       "Card Game",
       "Nautical",
@@ -1311,9 +1311,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.3808,
-    "rating_avg": 6.29669,
-    "rating_bayes": 6.0793,
-    "rank_overall": 2690,
+    "rating_avg": 6.29679,
+    "rating_bayes": 6.07941,
+    "rank_overall": 2689,
     "categories": [
       "Card Game",
       "Nautical",
@@ -1467,7 +1467,7 @@
     "weight": 1.3626,
     "rating_avg": 6.93247,
     "rating_bayes": 6.19652,
-    "rank_overall": 2196,
+    "rank_overall": 2198,
     "categories": [
       "Abstract Strategy",
       "Electronic"
@@ -1517,8 +1517,8 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.3242,
-    "rating_avg": 6.85369,
-    "rating_bayes": 6.44404,
+    "rating_avg": 6.85367,
+    "rating_bayes": 6.44397,
     "rank_overall": 1429,
     "categories": [
       "Card Game",
@@ -1573,7 +1573,7 @@
     "weight": 1.4286,
     "rating_avg": 5.88333,
     "rating_bayes": 5.50068,
-    "rank_overall": 24413,
+    "rank_overall": 24423,
     "categories": [
       "Animals",
       "Bluffing",
@@ -1630,7 +1630,7 @@
     "time_max": 60,
     "weight": 2.2471,
     "rating_avg": 7.00213,
-    "rating_bayes": 6.71804,
+    "rating_bayes": 6.71801,
     "rank_overall": 860,
     "categories": [
       "Adventure",
@@ -1745,7 +1745,7 @@
     "weight": 1.0,
     "rating_avg": 5.79347,
     "rating_bayes": 5.51965,
-    "rank_overall": 18755,
+    "rank_overall": 18765,
     "categories": [
       "Children's Game",
       "Deduction",
@@ -1853,7 +1853,7 @@
     "weight": 1.0,
     "rating_avg": 5.89913,
     "rating_bayes": 5.51617,
-    "rank_overall": 19770,
+    "rank_overall": 19778,
     "categories": [
       "Action / Dexterity",
       "Card Game",
@@ -1903,7 +1903,7 @@
     "weight": 1.0,
     "rating_avg": 5.89913,
     "rating_bayes": 5.51617,
-    "rank_overall": 19770,
+    "rank_overall": 19778,
     "categories": [
       "Action / Dexterity",
       "Card Game",
@@ -1999,7 +1999,7 @@
     "weight": 1.0,
     "rating_avg": 6.35339,
     "rating_bayes": 5.69974,
-    "rank_overall": 6092,
+    "rank_overall": 6094,
     "categories": [
       "Action / Dexterity",
       "Children's Game"
@@ -2043,7 +2043,7 @@
     "weight": 1.4138,
     "rating_avg": 4.85514,
     "rating_bayes": 5.19738,
-    "rank_overall": 29243,
+    "rank_overall": 29254,
     "categories": [
       "Card Game",
       "Number"
@@ -2091,7 +2091,7 @@
     "weight": 1.2639,
     "rating_avg": 5.78082,
     "rating_bayes": 5.55491,
-    "rank_overall": 12257,
+    "rank_overall": 12260,
     "categories": [
       "Animals",
       "Bluffing",
@@ -2149,7 +2149,7 @@
     "weight": 1.9966,
     "rating_avg": 7.04443,
     "rating_bayes": 6.59947,
-    "rank_overall": 1070,
+    "rank_overall": 1071,
     "categories": [
       "Card Game",
       "Comic Book / Strip"
@@ -2199,7 +2199,7 @@
     "weight": 1.1143,
     "rating_avg": 5.69819,
     "rating_bayes": 5.52755,
-    "rank_overall": 16632,
+    "rank_overall": 16640,
     "categories": [
       "Dice"
     ],
@@ -2369,7 +2369,7 @@
     "weight": 1.0,
     "rating_avg": 6.34386,
     "rating_bayes": 5.52277,
-    "rank_overall": 17867,
+    "rank_overall": 17878,
     "categories": [
       "Card Game",
       "Real-time"
@@ -2417,8 +2417,8 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.5852,
-    "rating_avg": 7.42773,
-    "rating_bayes": 7.22445,
+    "rating_avg": 7.42777,
+    "rating_bayes": 7.22446,
     "rank_overall": 276,
     "categories": [
       "Bluffing",
@@ -2535,7 +2535,7 @@
     "weight": 1.5,
     "rating_avg": 6.79929,
     "rating_bayes": 5.52315,
-    "rank_overall": 17772,
+    "rank_overall": 17784,
     "categories": [
       "Card Game"
     ],
@@ -2583,7 +2583,7 @@
     "weight": 1.5,
     "rating_avg": 6.54689,
     "rating_bayes": 5.53017,
-    "rank_overall": 16010,
+    "rank_overall": 16019,
     "categories": [
       "Action / Dexterity",
       "Children's Game",
@@ -2637,7 +2637,7 @@
     "weight": 1.1667,
     "rating_avg": 5.94211,
     "rating_bayes": 5.51081,
-    "rank_overall": 21478,
+    "rank_overall": 21490,
     "categories": [
       "Children's Game"
     ],
@@ -2785,7 +2785,7 @@
     "weight": 1.1875,
     "rating_avg": 5.10027,
     "rating_bayes": 5.46151,
-    "rank_overall": 28494,
+    "rank_overall": 28503,
     "categories": [
       "Action / Dexterity",
       "Animals",
@@ -2835,7 +2835,7 @@
     "weight": 1.0,
     "rating_avg": 5.29218,
     "rating_bayes": 5.47453,
-    "rank_overall": 27976,
+    "rank_overall": 27986,
     "categories": [
       "Card Game"
     ],
@@ -2883,7 +2883,7 @@
     "weight": 1.125,
     "rating_avg": 5.7772,
     "rating_bayes": 5.52028,
-    "rank_overall": 18566,
+    "rank_overall": 18572,
     "categories": [
       "Arabian",
       "Memory"
@@ -2931,9 +2931,9 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.6957,
-    "rating_avg": 7.00327,
-    "rating_bayes": 5.74885,
-    "rank_overall": 5297,
+    "rating_avg": 7.00876,
+    "rating_bayes": 5.75037,
+    "rank_overall": 5275,
     "categories": [
       "Memory"
     ],
@@ -2979,9 +2979,9 @@
     "time_min": 30,
     "time_max": 50,
     "weight": 1.6596,
-    "rating_avg": 6.94965,
-    "rating_bayes": 6.27358,
-    "rank_overall": 1901,
+    "rating_avg": 6.95107,
+    "rating_bayes": 6.27384,
+    "rank_overall": 1902,
     "categories": [
       "Deduction",
       "Horror",
@@ -3043,7 +3043,7 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.0755,
-    "rating_avg": 6.73109,
+    "rating_avg": 6.73103,
     "rating_bayes": 6.60692,
     "rank_overall": 1059,
     "categories": [
@@ -3094,7 +3094,7 @@
     ],
     "time_min": 25,
     "time_max": 30,
-    "weight": 1.6,
+    "weight": 1.6875,
     "rating_avg": 6.75299,
     "rating_bayes": 5.80878,
     "rank_overall": 4550,
@@ -3151,7 +3151,7 @@
     "weight": 1.0714,
     "rating_avg": 7.14466,
     "rating_bayes": 6.23799,
-    "rank_overall": 2029,
+    "rank_overall": 2031,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -3209,7 +3209,7 @@
     "weight": 2.2593,
     "rating_avg": 6.41415,
     "rating_bayes": 5.83582,
-    "rank_overall": 4298,
+    "rank_overall": 4303,
     "categories": [
       "Deduction",
       "Fighting",
@@ -3275,7 +3275,7 @@
     "weight": 1.0,
     "rating_avg": 6.03054,
     "rating_bayes": 5.53255,
-    "rank_overall": 15535,
+    "rank_overall": 15543,
     "categories": [
       "Action / Dexterity",
       "Children's Game"
@@ -3321,8 +3321,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.2712,
-    "rating_avg": 6.98107,
-    "rating_bayes": 6.82301,
+    "rating_avg": 6.98096,
+    "rating_bayes": 6.82299,
     "rank_overall": 712,
     "categories": [
       "Animals",
@@ -3377,7 +3377,7 @@
     "weight": 1.0,
     "rating_avg": 6.51528,
     "rating_bayes": 5.60958,
-    "rank_overall": 8639,
+    "rank_overall": 8640,
     "categories": [
       "Action / Dexterity"
     ],
@@ -3423,7 +3423,7 @@
     "weight": 1.0,
     "rating_avg": 5.47833,
     "rating_bayes": 5.49816,
-    "rank_overall": 25013,
+    "rank_overall": 25025,
     "categories": [
       "Action / Dexterity",
       "Party Game"
@@ -3469,8 +3469,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.233,
-    "rating_avg": 6.52958,
-    "rating_bayes": 6.37683,
+    "rating_avg": 6.52961,
+    "rating_bayes": 6.37687,
     "rank_overall": 1602,
     "categories": [
       "Bluffing",
@@ -3527,8 +3527,8 @@
     "time_min": 25,
     "time_max": 25,
     "weight": 1.8414,
-    "rating_avg": 7.51318,
-    "rating_bayes": 7.35649,
+    "rating_avg": 7.5132,
+    "rating_bayes": 7.35648,
     "rank_overall": 203,
     "categories": [
       "City Building"
@@ -3647,7 +3647,7 @@
     "time_min": 60,
     "time_max": 75,
     "weight": 2.5556,
-    "rating_avg": 7.14321,
+    "rating_avg": 7.14421,
     "rating_bayes": 6.14609,
     "rank_overall": 2384,
     "categories": [
@@ -3707,7 +3707,7 @@
     "weight": 0.0,
     "rating_avg": 6.17955,
     "rating_bayes": 5.51325,
-    "rank_overall": 20678,
+    "rank_overall": 20691,
     "categories": [
       "Card Game",
       "Fantasy"
@@ -3759,7 +3759,7 @@
     "weight": 2.0698,
     "rating_avg": 6.58858,
     "rating_bayes": 5.80153,
-    "rank_overall": 4633,
+    "rank_overall": 4634,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -3809,9 +3809,9 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.25,
-    "rating_avg": 6.11714,
-    "rating_bayes": 5.50755,
-    "rank_overall": 22492,
+    "rating_avg": 6.14167,
+    "rating_bayes": 5.50823,
+    "rank_overall": 22283,
     "categories": [
       "Action / Dexterity",
       "Card Game",
@@ -3917,7 +3917,7 @@
     "weight": 2.0192,
     "rating_avg": 6.48192,
     "rating_bayes": 5.93146,
-    "rank_overall": 3529,
+    "rank_overall": 3530,
     "categories": [
       "Fantasy"
     ],
@@ -3965,7 +3965,7 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 2.75,
-    "rating_avg": 8.63851,
+    "rating_avg": 8.63938,
     "rating_bayes": 6.35041,
     "rank_overall": null,
     "categories": [
@@ -4155,8 +4155,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 2.9688,
-    "rating_avg": 8.59834,
-    "rating_bayes": 6.82674,
+    "rating_avg": 8.59898,
+    "rating_bayes": 6.82729,
     "rank_overall": null,
     "categories": [
       "Expansion for Base-game",
@@ -4286,10 +4286,10 @@
     ],
     "time_min": 60,
     "time_max": 120,
-    "weight": 2.6901,
-    "rating_avg": 7.89448,
-    "rating_bayes": 7.48561,
-    "rank_overall": 139,
+    "weight": 2.6907,
+    "rating_avg": 7.8941,
+    "rating_bayes": 7.48519,
+    "rank_overall": 140,
     "categories": [
       "Adventure",
       "Exploration",
@@ -4415,8 +4415,8 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 1.9175,
-    "rating_avg": 7.52595,
-    "rating_bayes": 7.39812,
+    "rating_avg": 7.52583,
+    "rating_bayes": 7.3981,
     "rank_overall": 174,
     "categories": [
       "Trains"
@@ -4476,7 +4476,7 @@
     "time_max": 60,
     "weight": 1.8213,
     "rating_avg": 7.38755,
-    "rating_bayes": 7.2651,
+    "rating_bayes": 7.26517,
     "rank_overall": 249,
     "categories": [
       "Trains"
@@ -4535,8 +4535,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.9447,
-    "rating_avg": 6.50846,
-    "rating_bayes": 6.34615,
+    "rating_avg": 6.50849,
+    "rating_bayes": 6.34617,
     "rank_overall": 1680,
     "categories": [
       "Deduction",
@@ -4589,7 +4589,7 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.0488,
-    "rating_avg": 6.68823,
+    "rating_avg": 6.6862,
     "rating_bayes": 5.968,
     "rank_overall": 3286,
     "categories": [
@@ -4797,7 +4797,7 @@
     "weight": 1.125,
     "rating_avg": 6.71507,
     "rating_bayes": 5.5366,
-    "rank_overall": 14753,
+    "rank_overall": 14760,
     "categories": [
       "Action / Dexterity",
       "Card Game",
@@ -4853,7 +4853,7 @@
     "weight": 1.125,
     "rating_avg": 6.71507,
     "rating_bayes": 5.5366,
-    "rank_overall": 14753,
+    "rank_overall": 14760,
     "categories": [
       "Action / Dexterity",
       "Card Game",
@@ -4909,7 +4909,7 @@
     "weight": 2.2857,
     "rating_avg": 6.1115,
     "rating_bayes": 5.52369,
-    "rank_overall": 17629,
+    "rank_overall": 17639,
     "categories": [
       "Animals",
       "Card Game",
@@ -4963,7 +4963,7 @@
     "weight": 1.0,
     "rating_avg": 5.71135,
     "rating_bayes": 5.51516,
-    "rank_overall": 20104,
+    "rank_overall": 20112,
     "categories": [
       "Animals",
       "Children's Game"
@@ -5013,7 +5013,7 @@
     "weight": 1.0,
     "rating_avg": 5.96023,
     "rating_bayes": 5.51777,
-    "rank_overall": 19272,
+    "rank_overall": 19280,
     "categories": [
       "Humor",
       "Party Game"
@@ -5067,7 +5067,7 @@
     "weight": 1.0,
     "rating_avg": 4.62088,
     "rating_bayes": 5.48774,
-    "rank_overall": 26855,
+    "rank_overall": 26865,
     "categories": [
       "Card Game",
       "Fantasy"
@@ -5115,8 +5115,8 @@
     "time_min": 40,
     "time_max": 50,
     "weight": 2.0478,
-    "rating_avg": 7.36378,
-    "rating_bayes": 7.07353,
+    "rating_avg": 7.36386,
+    "rating_bayes": 7.07363,
     "rank_overall": 414,
     "categories": [
       "Card Game",
@@ -5169,8 +5169,8 @@
     "time_min": 10,
     "time_max": 20,
     "weight": 1.0847,
-    "rating_avg": 6.23357,
-    "rating_bayes": 5.96281,
+    "rating_avg": 6.23334,
+    "rating_bayes": 5.96272,
     "rank_overall": 3320,
     "categories": [
       "Animals",
@@ -5231,9 +5231,9 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.0809,
-    "rating_avg": 6.06666,
-    "rating_bayes": 5.88188,
-    "rank_overall": 3888,
+    "rating_avg": 6.06669,
+    "rating_bayes": 5.88187,
+    "rank_overall": 3889,
     "categories": [
       "Animals",
       "Card Game",
@@ -5335,8 +5335,8 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 2.4533,
-    "rating_avg": 7.14056,
-    "rating_bayes": 6.46187,
+    "rating_avg": 7.14047,
+    "rating_bayes": 6.46179,
     "rank_overall": 1380,
     "categories": [
       "Economic"
@@ -5387,7 +5387,7 @@
     "weight": 1.6667,
     "rating_avg": 5.94355,
     "rating_bayes": 5.5119,
-    "rank_overall": 21113,
+    "rank_overall": 21122,
     "categories": [
       "Animals",
       "Card Game"
@@ -5431,7 +5431,7 @@
     "weight": 1.1333,
     "rating_avg": 5.49785,
     "rating_bayes": 5.49581,
-    "rank_overall": 25529,
+    "rank_overall": 25542,
     "categories": [
       "Animals",
       "Bluffing",
@@ -5485,7 +5485,7 @@
     "weight": 1.0,
     "rating_avg": 6.06053,
     "rating_bayes": 5.53242,
-    "rank_overall": 15554,
+    "rank_overall": 15563,
     "categories": [
       "Animals",
       "Dice"
@@ -5535,7 +5535,7 @@
     "time_min": 10,
     "time_max": 20,
     "weight": 1.1182,
-    "rating_avg": 6.13491,
+    "rating_avg": 6.13504,
     "rating_bayes": 5.95843,
     "rank_overall": 3346,
     "categories": [
@@ -5595,7 +5595,7 @@
     "time_min": 10,
     "time_max": 20,
     "weight": 1.1182,
-    "rating_avg": 6.13491,
+    "rating_avg": 6.13504,
     "rating_bayes": 5.95843,
     "rank_overall": 3346,
     "categories": [
@@ -5705,7 +5705,7 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.0733,
-    "rating_avg": 6.98505,
+    "rating_avg": 6.98528,
     "rating_bayes": 6.65606,
     "rank_overall": 968,
     "categories": [
@@ -5765,7 +5765,7 @@
     "weight": 1.0,
     "rating_avg": 6.60672,
     "rating_bayes": 5.54806,
-    "rank_overall": 13038,
+    "rank_overall": 13048,
     "categories": [
       "Animals",
       "Children's Game"
@@ -5809,7 +5809,7 @@
     "weight": 1.0,
     "rating_avg": 5.67741,
     "rating_bayes": 5.5126,
-    "rank_overall": 20887,
+    "rank_overall": 20898,
     "categories": [
       "Animals",
       "Children's Game"
@@ -5857,7 +5857,7 @@
     "weight": 1.0,
     "rating_avg": 5.67741,
     "rating_bayes": 5.5126,
-    "rank_overall": 20887,
+    "rank_overall": 20898,
     "categories": [
       "Animals",
       "Children's Game"
@@ -5903,9 +5903,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.1519,
-    "rating_avg": 6.59664,
-    "rating_bayes": 6.39581,
-    "rank_overall": 1556,
+    "rating_avg": 6.59681,
+    "rating_bayes": 6.39592,
+    "rank_overall": 1554,
     "categories": [
       "Animals",
       "Dice"
@@ -5959,7 +5959,7 @@
     "weight": 1.5,
     "rating_avg": 6.4395,
     "rating_bayes": 5.51303,
-    "rank_overall": 20738,
+    "rank_overall": 20749,
     "categories": [
       "Animals",
       "Children's Game",
@@ -6015,8 +6015,8 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 2.3145,
-    "rating_avg": 7.3174,
-    "rating_bayes": 7.16996,
+    "rating_avg": 7.31741,
+    "rating_bayes": 7.16994,
     "rank_overall": 323,
     "categories": [
       "Abstract Strategy",
@@ -6077,7 +6077,7 @@
     "weight": 1.1429,
     "rating_avg": 5.42118,
     "rating_bayes": 5.49402,
-    "rank_overall": 25905,
+    "rank_overall": 25916,
     "categories": [
       "Animals",
       "Card Game"
@@ -6171,9 +6171,9 @@
     "time_min": 20,
     "time_max": 40,
     "weight": 1.7547,
-    "rating_avg": 7.04195,
-    "rating_bayes": 6.23779,
-    "rank_overall": 2030,
+    "rating_avg": 7.04193,
+    "rating_bayes": 6.23797,
+    "rank_overall": 2032,
     "categories": [
       "Abstract Strategy",
       "Animals",
@@ -6233,7 +6233,7 @@
     "weight": 1.6667,
     "rating_avg": 6.13655,
     "rating_bayes": 5.52271,
-    "rank_overall": 17888,
+    "rank_overall": 17898,
     "categories": [
       "Exploration",
       "Puzzle",
@@ -6285,7 +6285,7 @@
     "weight": 2.6,
     "rating_avg": 6.75637,
     "rating_bayes": 5.608,
-    "rank_overall": 8713,
+    "rank_overall": 8712,
     "categories": [
       "Dice",
       "Economic",
@@ -6337,9 +6337,9 @@
     "time_min": 10,
     "time_max": 10,
     "weight": 1.0513,
-    "rating_avg": 6.73325,
-    "rating_bayes": 6.48267,
-    "rank_overall": 1323,
+    "rating_avg": 6.73323,
+    "rating_bayes": 6.48263,
+    "rank_overall": 1325,
     "categories": [
       "Action / Dexterity",
       "Animals",
@@ -6447,9 +6447,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.1314,
-    "rating_avg": 7.08044,
-    "rating_bayes": 6.95393,
-    "rank_overall": 544,
+    "rating_avg": 7.08059,
+    "rating_bayes": 6.95403,
+    "rank_overall": 543,
     "categories": [
       "Card Game"
     ],
@@ -6501,8 +6501,8 @@
     "time_min": 25,
     "time_max": 35,
     "weight": 2.0962,
-    "rating_avg": 7.11916,
-    "rating_bayes": 6.3218,
+    "rating_avg": 7.12003,
+    "rating_bayes": 6.32213,
     "rank_overall": 1751,
     "categories": [
       "Bluffing",
@@ -6565,7 +6565,7 @@
     "weight": 1.8356,
     "rating_avg": 6.45617,
     "rating_bayes": 6.23207,
-    "rank_overall": 2048,
+    "rank_overall": 2050,
     "categories": [
       "Nautical"
     ],
@@ -6621,7 +6621,7 @@
     "weight": 1.8182,
     "rating_avg": 6.94363,
     "rating_bayes": 5.96321,
-    "rank_overall": 3316,
+    "rank_overall": 3315,
     "categories": [
       "Abstract Strategy",
       "Animals",
@@ -6671,7 +6671,7 @@
     "weight": 1.5714,
     "rating_avg": 6.0404,
     "rating_bayes": 5.53783,
-    "rank_overall": 14533,
+    "rank_overall": 14539,
     "categories": [
       "Animals",
       "Card Game"
@@ -6721,7 +6721,7 @@
     "weight": 1.303,
     "rating_avg": 6.19828,
     "rating_bayes": 5.74115,
-    "rank_overall": 5390,
+    "rank_overall": 5392,
     "categories": [
       "Exploration"
     ],
@@ -6813,8 +6813,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.463,
-    "rating_avg": 7.48248,
-    "rating_bayes": 7.36459,
+    "rating_avg": 7.48239,
+    "rating_bayes": 7.36451,
     "rank_overall": 199,
     "categories": [
       "Arabian",
@@ -6935,9 +6935,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.0,
-    "rating_avg": 6.23634,
+    "rating_avg": 6.23916,
     "rating_bayes": 5.64197,
-    "rank_overall": 7469,
+    "rank_overall": 7472,
     "categories": [
       "Action / Dexterity",
       "Animals"
@@ -6985,8 +6985,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.9695,
-    "rating_avg": 7.21574,
-    "rating_bayes": 7.01077,
+    "rating_avg": 7.21562,
+    "rating_bayes": 7.0107,
     "rank_overall": 477,
     "categories": [
       "Ancient",
@@ -7045,7 +7045,7 @@
     "weight": 1.0,
     "rating_avg": 5.99333,
     "rating_bayes": 5.5255,
-    "rank_overall": 17139,
+    "rank_overall": 17147,
     "categories": [
       "Card Game"
     ],
@@ -7091,7 +7091,7 @@
     "weight": 1.2,
     "rating_avg": 5.87888,
     "rating_bayes": 5.58863,
-    "rank_overall": 9684,
+    "rank_overall": 9686,
     "categories": [
       "Card Game",
       "Humor",
@@ -7189,8 +7189,8 @@
     "time_min": 45,
     "time_max": 60,
     "weight": 1.3025,
-    "rating_avg": 7.52924,
-    "rating_bayes": 7.05537,
+    "rating_avg": 7.52912,
+    "rating_bayes": 7.05527,
     "rank_overall": 433,
     "categories": [
       "Animals",
@@ -7249,9 +7249,9 @@
     "time_min": 15,
     "time_max": 20,
     "weight": 1.0545,
-    "rating_avg": 6.03434,
-    "rating_bayes": 5.75325,
-    "rank_overall": 5233,
+    "rating_avg": 6.0335,
+    "rating_bayes": 5.75285,
+    "rank_overall": 5236,
     "categories": [
       "Action / Dexterity",
       "Animals",
@@ -7303,9 +7303,9 @@
     "time_min": 10,
     "time_max": 20,
     "weight": 1.1348,
-    "rating_avg": 6.1399,
-    "rating_bayes": 5.85997,
-    "rank_overall": 4076,
+    "rating_avg": 6.13986,
+    "rating_bayes": 5.85999,
+    "rank_overall": 4075,
     "categories": [
       "Action / Dexterity",
       "Card Game",
@@ -7359,7 +7359,7 @@
     "weight": 2.0,
     "rating_avg": 6.53012,
     "rating_bayes": 5.53379,
-    "rank_overall": 15271,
+    "rank_overall": 15275,
     "categories": [
       "Dice",
       "Territory Building",
@@ -7421,9 +7421,9 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.1208,
-    "rating_avg": 7.42658,
+    "rating_avg": 7.42666,
     "rating_bayes": 6.96475,
-    "rank_overall": 530,
+    "rank_overall": 531,
     "categories": [
       "Economic"
     ],
@@ -7487,7 +7487,7 @@
     "weight": 1.625,
     "rating_avg": 6.39302,
     "rating_bayes": 5.68864,
-    "rank_overall": 6331,
+    "rank_overall": 6332,
     "categories": [
       "Adventure",
       "Novel-based",
@@ -7541,7 +7541,7 @@
     "weight": 1.1629,
     "rating_avg": 6.48912,
     "rating_bayes": 6.02698,
-    "rank_overall": 2942,
+    "rank_overall": 2943,
     "categories": [
       "Animals",
       "Card Game"
@@ -7591,7 +7591,7 @@
     "weight": 1.3709,
     "rating_avg": 7.06702,
     "rating_bayes": 6.50985,
-    "rank_overall": 1261,
+    "rank_overall": 1262,
     "categories": [
       "Animals",
       "Card Game",
@@ -7645,8 +7645,8 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.2493,
-    "rating_avg": 7.08652,
-    "rating_bayes": 6.85953,
+    "rating_avg": 7.08654,
+    "rating_bayes": 6.85954,
     "rank_overall": 665,
     "categories": [
       "Animals",
@@ -7705,7 +7705,7 @@
     "weight": 1.2143,
     "rating_avg": 5.89604,
     "rating_bayes": 5.55259,
-    "rank_overall": 12504,
+    "rank_overall": 12509,
     "categories": [
       "Action / Dexterity",
       "Animals",
@@ -7765,7 +7765,7 @@
     "weight": 1.1739,
     "rating_avg": 6.73164,
     "rating_bayes": 5.64583,
-    "rank_overall": 7349,
+    "rank_overall": 7351,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -7819,7 +7819,7 @@
     "weight": 1.3077,
     "rating_avg": 5.76346,
     "rating_bayes": 5.51953,
-    "rank_overall": 18793,
+    "rank_overall": 18803,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -7869,7 +7869,7 @@
     "weight": 1.0517,
     "rating_avg": 6.21043,
     "rating_bayes": 5.65286,
-    "rank_overall": 7174,
+    "rank_overall": 7175,
     "categories": [
       "Animals",
       "Card Game",
@@ -7917,8 +7917,8 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.5056,
-    "rating_avg": 7.55504,
-    "rating_bayes": 7.25251,
+    "rating_avg": 7.55459,
+    "rating_bayes": 7.25211,
     "rank_overall": 259,
     "categories": [
       "Animals",
@@ -8031,7 +8031,7 @@
     "weight": 2.6667,
     "rating_avg": 6.96381,
     "rating_bayes": 5.62431,
-    "rank_overall": 8023,
+    "rank_overall": 8024,
     "categories": [
       "Card Game",
       "Civilization"
@@ -8145,7 +8145,7 @@
     "weight": 1.25,
     "rating_avg": 5.59596,
     "rating_bayes": 5.50189,
-    "rank_overall": 24118,
+    "rank_overall": 24126,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -8201,9 +8201,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.2835,
-    "rating_avg": 5.83278,
+    "rating_avg": 5.83221,
     "rating_bayes": 5.64192,
-    "rank_overall": 7471,
+    "rank_overall": 7474,
     "categories": [
       "Card Game",
       "Fantasy",
@@ -8261,7 +8261,7 @@
     "weight": 1.0,
     "rating_avg": 5.58326,
     "rating_bayes": 5.49981,
-    "rank_overall": 24612,
+    "rank_overall": 24623,
     "categories": [
       "Animals",
       "Card Game"
@@ -8309,7 +8309,7 @@
     "weight": 1.5,
     "rating_avg": 5.94309,
     "rating_bayes": 5.51499,
-    "rank_overall": 20164,
+    "rank_overall": 20172,
     "categories": [
       "Animals",
       "Card Game",
@@ -8363,8 +8363,8 @@
     "time_min": 15,
     "time_max": 20,
     "weight": 1.3274,
-    "rating_avg": 7.15215,
-    "rating_bayes": 6.69994,
+    "rating_avg": 7.15195,
+    "rating_bayes": 6.70014,
     "rank_overall": 895,
     "categories": [
       "Animals",
@@ -8417,7 +8417,7 @@
     "weight": 2.25,
     "rating_avg": 8.30946,
     "rating_bayes": 5.57606,
-    "rank_overall": 10475,
+    "rank_overall": 10478,
     "categories": [
       "Deduction",
       "Murder / Mystery"
@@ -8465,9 +8465,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 1.6615,
-    "rating_avg": 7.05175,
-    "rating_bayes": 6.91543,
-    "rank_overall": 593,
+    "rating_avg": 7.05176,
+    "rating_bayes": 6.91545,
+    "rank_overall": 594,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -8537,7 +8537,7 @@
     "weight": 1.5333,
     "rating_avg": 6.17694,
     "rating_bayes": 5.59766,
-    "rank_overall": 9195,
+    "rank_overall": 9201,
     "categories": [
       "Animals",
       "Bluffing",
@@ -8635,9 +8635,9 @@
     "time_min": 30,
     "time_max": 40,
     "weight": 1.8824,
-    "rating_avg": 6.2946,
-    "rating_bayes": 5.63734,
-    "rank_overall": 7604,
+    "rating_avg": 6.29406,
+    "rating_bayes": 5.63748,
+    "rank_overall": 7606,
     "categories": [
       "Abstract Strategy"
     ],
@@ -8689,7 +8689,7 @@
     "weight": 1.0435,
     "rating_avg": 6.48711,
     "rating_bayes": 5.66537,
-    "rank_overall": 6860,
+    "rank_overall": 6863,
     "categories": [
       "Animals",
       "Children's Game",
@@ -8745,8 +8745,8 @@
     "time_min": 20,
     "time_max": 60,
     "weight": 1.0359,
-    "rating_avg": 7.59911,
-    "rating_bayes": 7.44065,
+    "rating_avg": 7.599,
+    "rating_bayes": 7.44054,
     "rank_overall": 154,
     "categories": [
       "Deduction",
@@ -8803,7 +8803,7 @@
     "weight": 1.1,
     "rating_avg": 6.48648,
     "rating_bayes": 5.60798,
-    "rank_overall": 8715,
+    "rank_overall": 8714,
     "categories": [
       "Card Game",
       "Humor",
@@ -8857,7 +8857,7 @@
     "weight": 1.2812,
     "rating_avg": 5.88756,
     "rating_bayes": 5.58277,
-    "rank_overall": 10048,
+    "rank_overall": 10053,
     "categories": [
       "Children's Game"
     ],
@@ -8905,7 +8905,7 @@
     "weight": 1.569,
     "rating_avg": 6.09307,
     "rating_bayes": 5.61592,
-    "rank_overall": 8356,
+    "rank_overall": 8358,
     "categories": [
       "Card Game"
     ],
@@ -8955,7 +8955,7 @@
     "weight": 1.5,
     "rating_avg": 5.81194,
     "rating_bayes": 5.51733,
-    "rank_overall": 19390,
+    "rank_overall": 19401,
     "categories": [
       "Action / Dexterity",
       "Party Game",
@@ -9005,7 +9005,7 @@
     "weight": 1.6667,
     "rating_avg": 7.16114,
     "rating_bayes": 5.5987,
-    "rank_overall": 9137,
+    "rank_overall": 9141,
     "categories": [
       "Puzzle",
       "Real-time"
@@ -9053,8 +9053,8 @@
     "time_min": 15,
     "time_max": 30,
     "weight": 1.3576,
-    "rating_avg": 7.41602,
-    "rating_bayes": 7.24073,
+    "rating_avg": 7.41603,
+    "rating_bayes": 7.24061,
     "rank_overall": 267,
     "categories": [
       "Card Game",
@@ -9109,7 +9109,7 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.2404,
-    "rating_avg": 7.18052,
+    "rating_avg": 7.18054,
     "rating_bayes": 7.00276,
     "rank_overall": 483,
     "categories": [
@@ -9165,8 +9165,8 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.2581,
-    "rating_avg": 7.53035,
-    "rating_bayes": 7.43475,
+    "rating_avg": 7.53038,
+    "rating_bayes": 7.43473,
     "rank_overall": 158,
     "categories": [
       "Card Game",
@@ -9295,7 +9295,7 @@
     "weight": 2.0,
     "rating_avg": 5.51847,
     "rating_bayes": 5.49304,
-    "rank_overall": 26055,
+    "rank_overall": 26067,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -9349,9 +9349,9 @@
     "time_min": 15,
     "time_max": 45,
     "weight": 1.1182,
-    "rating_avg": 7.17871,
-    "rating_bayes": 7.01466,
-    "rank_overall": 471,
+    "rating_avg": 7.17862,
+    "rating_bayes": 7.01462,
+    "rank_overall": 472,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -9503,9 +9503,9 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 3.2842,
-    "rating_avg": 7.83164,
-    "rating_bayes": 7.49558,
-    "rank_overall": 132,
+    "rating_avg": 7.8316,
+    "rating_bayes": 7.49547,
+    "rank_overall": 133,
     "categories": [
       "Renaissance"
     ],
@@ -9565,7 +9565,7 @@
     "weight": 1.2857,
     "rating_avg": 6.88373,
     "rating_bayes": 5.94723,
-    "rank_overall": 3415,
+    "rank_overall": 3416,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -9615,8 +9615,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.8889,
-    "rating_avg": 6.95017,
-    "rating_bayes": 6.34936,
+    "rating_avg": 6.94988,
+    "rating_bayes": 6.34929,
     "rank_overall": 1670,
     "categories": [
       "Transportation"
@@ -9717,7 +9717,7 @@
     "weight": 1.0,
     "rating_avg": 4.60048,
     "rating_bayes": 5.45154,
-    "rank_overall": 28703,
+    "rank_overall": 28714,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -9763,8 +9763,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.2462,
-    "rating_avg": 7.26727,
-    "rating_bayes": 6.45659,
+    "rating_avg": 7.26684,
+    "rating_bayes": 6.4565,
     "rank_overall": 1397,
     "categories": [
       "Card Game",
@@ -9817,7 +9817,7 @@
     "weight": 1.4711,
     "rating_avg": 6.06867,
     "rating_bayes": 5.67903,
-    "rank_overall": 6554,
+    "rank_overall": 6555,
     "categories": [
       "Puzzle",
       "Real-time"
@@ -9859,8 +9859,8 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 1.9432,
-    "rating_avg": 7.70688,
-    "rating_bayes": 7.52394,
+    "rating_avg": 7.70694,
+    "rating_bayes": 7.52406,
     "rank_overall": 120,
     "categories": [
       "Adventure",
@@ -9929,7 +9929,7 @@
     "weight": 1.4444,
     "rating_avg": 6.66887,
     "rating_bayes": 6.14966,
-    "rank_overall": 2369,
+    "rank_overall": 2370,
     "categories": [
       "Card Game"
     ],
@@ -9983,7 +9983,7 @@
     "weight": 1.0,
     "rating_avg": 6.46481,
     "rating_bayes": 5.51943,
-    "rank_overall": 18823,
+    "rank_overall": 18834,
     "categories": [
       "Deduction",
       "Party Game"
@@ -10029,9 +10029,9 @@
     "time_min": 9,
     "time_max": 19,
     "weight": 1.3333,
-    "rating_avg": 6.82664,
+    "rating_avg": 6.8215,
     "rating_bayes": 5.56291,
-    "rank_overall": 11529,
+    "rank_overall": 11534,
     "categories": [
       "Party Game"
     ],
@@ -10075,9 +10075,9 @@
     "time_min": 9,
     "time_max": 19,
     "weight": 1.3333,
-    "rating_avg": 6.82664,
+    "rating_avg": 6.8215,
     "rating_bayes": 5.56291,
-    "rank_overall": 11529,
+    "rank_overall": 11534,
     "categories": [
       "Party Game"
     ],
@@ -10175,9 +10175,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.9,
-    "rating_avg": 7.92294,
-    "rating_bayes": 6.36571,
-    "rank_overall": 1626,
+    "rating_avg": 7.92379,
+    "rating_bayes": 6.36666,
+    "rank_overall": 1625,
     "categories": [
       "Card Game",
       "Economic",
@@ -10233,9 +10233,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.8019,
-    "rating_avg": 7.56263,
-    "rating_bayes": 6.91492,
-    "rank_overall": 594,
+    "rating_avg": 7.56352,
+    "rating_bayes": 6.91555,
+    "rank_overall": 593,
     "categories": [
       "Card Game",
       "Comic Book / Strip",
@@ -10289,7 +10289,7 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.778,
-    "rating_avg": 7.41849,
+    "rating_avg": 7.41846,
     "rating_bayes": 7.2924,
     "rank_overall": 237,
     "categories": [
@@ -10345,8 +10345,8 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.2286,
-    "rating_avg": 6.83417,
-    "rating_bayes": 6.52627,
+    "rating_avg": 6.83412,
+    "rating_bayes": 6.52626,
     "rank_overall": 1222,
     "categories": [
       "Abstract Strategy",
@@ -10403,9 +10403,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.1228,
-    "rating_avg": 7.27093,
-    "rating_bayes": 6.96984,
-    "rank_overall": 522,
+    "rating_avg": 7.27095,
+    "rating_bayes": 6.9697,
+    "rank_overall": 521,
     "categories": [
       "Action / Dexterity",
       "Children's Game",
@@ -10463,7 +10463,7 @@
     "weight": 1.0,
     "rating_avg": 6.32782,
     "rating_bayes": 5.63722,
-    "rank_overall": 7609,
+    "rank_overall": 7612,
     "categories": [
       "Action / Dexterity",
       "Children's Game",
@@ -10513,7 +10513,7 @@
     "weight": 1.0,
     "rating_avg": 5.22571,
     "rating_bayes": 5.4945,
-    "rank_overall": 25812,
+    "rank_overall": 25822,
     "categories": [
       "Children's Game",
       "Party Game"
@@ -10563,7 +10563,7 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.485,
-    "rating_avg": 6.61105,
+    "rating_avg": 6.61087,
     "rating_bayes": 6.13718,
     "rank_overall": 2431,
     "categories": [
@@ -10617,7 +10617,7 @@
     "weight": 1.0,
     "rating_avg": 4.80256,
     "rating_bayes": 5.4897,
-    "rank_overall": 26580,
+    "rank_overall": 26591,
     "categories": [
       "Bluffing"
     ],
@@ -10661,7 +10661,7 @@
     "time_min": 20,
     "time_max": 40,
     "weight": 1.1889,
-    "rating_avg": 6.93213,
+    "rating_avg": 6.93214,
     "rating_bayes": 6.50463,
     "rank_overall": 1276,
     "categories": [
@@ -10723,8 +10723,8 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.1818,
-    "rating_avg": 7.05005,
-    "rating_bayes": 6.02335,
+    "rating_avg": 7.0496,
+    "rating_bayes": 6.02349,
     "rank_overall": 2960,
     "categories": [
       "Animals",
@@ -10777,7 +10777,7 @@
     "time_min": 40,
     "time_max": 40,
     "weight": 1.3768,
-    "rating_avg": 6.74688,
+    "rating_avg": 6.7469,
     "rating_bayes": 6.58882,
     "rank_overall": 1101,
     "categories": [
@@ -10831,8 +10831,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.037,
-    "rating_avg": 7.04679,
-    "rating_bayes": 6.35395,
+    "rating_avg": 7.0466,
+    "rating_bayes": 6.35398,
     "rank_overall": 1662,
     "categories": [
       "Party Game"
@@ -10881,7 +10881,7 @@
     "weight": 1.7895,
     "rating_avg": 6.69885,
     "rating_bayes": 6.03465,
-    "rank_overall": 2898,
+    "rank_overall": 2899,
     "categories": [
       "Abstract Strategy",
       "Animals"
@@ -10937,7 +10937,7 @@
     "weight": 1.0,
     "rating_avg": 5.8004,
     "rating_bayes": 5.50943,
-    "rank_overall": 21899,
+    "rank_overall": 21909,
     "categories": [
       "Action / Dexterity"
     ],
@@ -10976,10 +10976,10 @@
     ],
     "time_min": 15,
     "time_max": 15,
-    "weight": 1.4599,
-    "rating_avg": 6.60317,
-    "rating_bayes": 6.25261,
-    "rank_overall": 1973,
+    "weight": 1.4574,
+    "rating_avg": 6.60321,
+    "rating_bayes": 6.25254,
+    "rank_overall": 1972,
     "categories": [
       "Abstract Strategy",
       "Animals"
@@ -11033,7 +11033,7 @@
     "weight": 2.1333,
     "rating_avg": 6.148,
     "rating_bayes": 5.66742,
-    "rank_overall": 6804,
+    "rank_overall": 6806,
     "categories": [
       "Nautical"
     ],
@@ -11187,8 +11187,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.6681,
-    "rating_avg": 7.07495,
-    "rating_bayes": 6.95685,
+    "rating_avg": 7.07509,
+    "rating_bayes": 6.9569,
     "rank_overall": 539,
     "categories": [
       "Card Game",
@@ -11244,10 +11244,10 @@
     ],
     "time_min": 20,
     "time_max": 30,
-    "weight": 1.8046,
+    "weight": 1.8295,
     "rating_avg": 6.77443,
     "rating_bayes": 6.20202,
-    "rank_overall": 2172,
+    "rank_overall": 2173,
     "categories": [
       "Card Game",
       "Novel-based"
@@ -11299,7 +11299,7 @@
     "time_min": 20,
     "time_max": 30,
     "weight": 1.2091,
-    "rating_avg": 6.81155,
+    "rating_avg": 6.81142,
     "rating_bayes": 6.43071,
     "rank_overall": 1463,
     "categories": [
@@ -11359,7 +11359,7 @@
     "time_min": 120,
     "time_max": 180,
     "weight": 2.8571,
-    "rating_avg": 8.58639,
+    "rating_avg": 8.58611,
     "rating_bayes": 6.90096,
     "rank_overall": null,
     "categories": [
@@ -11437,8 +11437,8 @@
     "time_min": 120,
     "time_max": 180,
     "weight": 2.6996,
-    "rating_avg": 7.92243,
-    "rating_bayes": 7.68804,
+    "rating_avg": 7.92252,
+    "rating_bayes": 7.68802,
     "rank_overall": 71,
     "categories": [
       "Adventure",
@@ -11523,8 +11523,8 @@
     "time_min": 120,
     "time_max": 180,
     "weight": 3.2427,
-    "rating_avg": 7.25399,
-    "rating_bayes": 6.91303,
+    "rating_avg": 7.25385,
+    "rating_bayes": 6.9129,
     "rank_overall": 595,
     "categories": [
       "Adventure",
@@ -11601,7 +11601,7 @@
     "weight": 1.7143,
     "rating_avg": 6.18381,
     "rating_bayes": 5.53022,
-    "rank_overall": 15998,
+    "rank_overall": 16006,
     "categories": [
       "Card Game"
     ],
@@ -11649,9 +11649,9 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 2.6842,
-    "rating_avg": 6.87194,
-    "rating_bayes": 6.5063,
-    "rank_overall": 1269,
+    "rating_avg": 6.8718,
+    "rating_bayes": 6.50619,
+    "rank_overall": 1270,
     "categories": [
       "Card Game",
       "Fantasy"
@@ -11705,8 +11705,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.4535,
-    "rating_avg": 7.54353,
-    "rating_bayes": 7.16688,
+    "rating_avg": 7.54344,
+    "rating_bayes": 7.16689,
     "rank_overall": 330,
     "categories": [
       "Economic",
@@ -11765,8 +11765,8 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.6611,
-    "rating_avg": 7.27938,
-    "rating_bayes": 7.07542,
+    "rating_avg": 7.27943,
+    "rating_bayes": 7.07544,
     "rank_overall": 412,
     "categories": [
       "Animals",
@@ -11825,7 +11825,7 @@
     "weight": 1.7273,
     "rating_avg": 6.86028,
     "rating_bayes": 5.66934,
-    "rank_overall": 6758,
+    "rank_overall": 6759,
     "categories": [
       "Card Game",
       "Territory Building"
@@ -11879,7 +11879,7 @@
     "weight": 2.0709,
     "rating_avg": 6.23379,
     "rating_bayes": 5.81359,
-    "rank_overall": 4496,
+    "rank_overall": 4498,
     "categories": [
       "Animals",
       "Card Game"
@@ -11933,7 +11933,7 @@
     "weight": 2.2105,
     "rating_avg": 6.98137,
     "rating_bayes": 5.99572,
-    "rank_overall": 3119,
+    "rank_overall": 3121,
     "categories": [
       "Deduction",
       "Music",
@@ -12091,8 +12091,8 @@
     "time_min": 15,
     "time_max": 45,
     "weight": 1.8316,
-    "rating_avg": 7.76642,
-    "rating_bayes": 7.54564,
+    "rating_avg": 7.76635,
+    "rating_bayes": 7.54569,
     "rank_overall": 115,
     "categories": [
       "Deduction",
@@ -12149,9 +12149,9 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.6294,
-    "rating_avg": 6.58252,
-    "rating_bayes": 6.18908,
-    "rank_overall": 2222,
+    "rating_avg": 6.58258,
+    "rating_bayes": 6.18912,
+    "rank_overall": 2223,
     "categories": [
       "Animals",
       "Bluffing",
@@ -12215,7 +12215,7 @@
     "weight": 1.0,
     "rating_avg": 5.37848,
     "rating_bayes": 5.47608,
-    "rank_overall": 27899,
+    "rank_overall": 27910,
     "categories": [
       "Card Game"
     ],
@@ -12259,8 +12259,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.6582,
-    "rating_avg": 6.85953,
-    "rating_bayes": 6.50992,
+    "rating_avg": 6.85959,
+    "rating_bayes": 6.51007,
     "rank_overall": 1260,
     "categories": [
       "Card Game"
@@ -12313,9 +12313,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 2.5209,
-    "rating_avg": 7.63293,
-    "rating_bayes": 7.17826,
-    "rank_overall": 315,
+    "rating_avg": 7.63328,
+    "rating_bayes": 7.17836,
+    "rank_overall": 316,
     "categories": [
       "Deduction",
       "Math",
@@ -12367,7 +12367,7 @@
     "weight": 1.1538,
     "rating_avg": 5.97806,
     "rating_bayes": 5.51863,
-    "rank_overall": 19043,
+    "rank_overall": 19053,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -12421,7 +12421,7 @@
     "weight": 1.2941,
     "rating_avg": 6.41899,
     "rating_bayes": 5.70284,
-    "rank_overall": 6046,
+    "rank_overall": 6048,
     "categories": [
       "Animals",
       "Children's Game",
@@ -12533,9 +12533,9 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.798,
-    "rating_avg": 6.94033,
-    "rating_bayes": 6.21446,
-    "rank_overall": 2128,
+    "rating_avg": 6.93861,
+    "rating_bayes": 6.21373,
+    "rank_overall": 2130,
     "categories": [
       "Card Game",
       "Trains",
@@ -12591,8 +12591,8 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.2489,
-    "rating_avg": 7.80092,
-    "rating_bayes": 7.68579,
+    "rating_avg": 7.80089,
+    "rating_bayes": 7.68572,
     "rank_overall": 72,
     "categories": [
       "Economic",
@@ -12653,8 +12653,8 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.2489,
-    "rating_avg": 7.80092,
-    "rating_bayes": 7.68579,
+    "rating_avg": 7.80089,
+    "rating_bayes": 7.68572,
     "rank_overall": 72,
     "categories": [
       "Economic",
@@ -12765,8 +12765,8 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.0386,
-    "rating_avg": 6.76909,
-    "rating_bayes": 6.49318,
+    "rating_avg": 6.76858,
+    "rating_bayes": 6.49295,
     "rank_overall": 1298,
     "categories": [
       "Action / Dexterity",
@@ -12819,9 +12819,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 2.0,
-    "rating_avg": 6.31943,
+    "rating_avg": 6.31744,
     "rating_bayes": 5.54789,
-    "rank_overall": 13059,
+    "rank_overall": 13069,
     "categories": [
       "Abstract Strategy",
       "Children's Game"
@@ -12869,8 +12869,8 @@
     "time_min": 30,
     "time_max": 50,
     "weight": 2.2599,
-    "rating_avg": 7.43171,
-    "rating_bayes": 7.16735,
+    "rating_avg": 7.43228,
+    "rating_bayes": 7.1676,
     "rank_overall": 328,
     "categories": [
       "Deduction"
@@ -12921,8 +12921,8 @@
     "time_min": 42,
     "time_max": 42,
     "weight": 1.892,
-    "rating_avg": 7.19799,
-    "rating_bayes": 7.05687,
+    "rating_avg": 7.19798,
+    "rating_bayes": 7.05689,
     "rank_overall": 432,
     "categories": [
       "Deduction",
@@ -12991,7 +12991,7 @@
     "weight": 1.0811,
     "rating_avg": 5.40922,
     "rating_bayes": 5.38721,
-    "rank_overall": 29099,
+    "rank_overall": 29110,
     "categories": [
       "Card Game",
       "Humor",
@@ -13049,7 +13049,7 @@
     "weight": 1.0,
     "rating_avg": 5.71254,
     "rating_bayes": 5.52028,
-    "rank_overall": 18565,
+    "rank_overall": 18573,
     "categories": [
       "Humor",
       "Party Game"
@@ -13191,9 +13191,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.0826,
-    "rating_avg": 7.41405,
-    "rating_bayes": 6.76445,
-    "rank_overall": 788,
+    "rating_avg": 7.41403,
+    "rating_bayes": 6.76434,
+    "rank_overall": 789,
     "categories": [
       "Party Game"
     ],
@@ -13293,8 +13293,8 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.9168,
-    "rating_avg": 7.47061,
-    "rating_bayes": 7.32698,
+    "rating_avg": 7.4704,
+    "rating_bayes": 7.32692,
     "rank_overall": 215,
     "categories": [
       "Dice",
@@ -13359,8 +13359,8 @@
     "time_min": 45,
     "time_max": 60,
     "weight": 2.2843,
-    "rating_avg": 7.23181,
-    "rating_bayes": 7.05704,
+    "rating_avg": 7.23183,
+    "rating_bayes": 7.05706,
     "rank_overall": 431,
     "categories": [
       "Card Game",
@@ -13647,9 +13647,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.3186,
-    "rating_avg": 6.54132,
-    "rating_bayes": 6.41486,
-    "rank_overall": 1508,
+    "rating_avg": 6.54133,
+    "rating_bayes": 6.41489,
+    "rank_overall": 1510,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -13719,7 +13719,7 @@
     "weight": 1.0,
     "rating_avg": 5.99158,
     "rating_bayes": 5.51504,
-    "rank_overall": 20145,
+    "rank_overall": 20153,
     "categories": [
       "Children's Game",
       "Dice",
@@ -13827,8 +13827,8 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 1.9873,
-    "rating_avg": 6.89179,
-    "rating_bayes": 6.30572,
+    "rating_avg": 6.89208,
+    "rating_bayes": 6.3059,
     "rank_overall": 1801,
     "categories": [
       "Video Game Theme"
@@ -13887,7 +13887,7 @@
     "weight": 1.1429,
     "rating_avg": 6.67541,
     "rating_bayes": 5.93126,
-    "rank_overall": 3531,
+    "rank_overall": 3532,
     "categories": [
       "Children's Game",
       "Mythology"
@@ -13937,8 +13937,8 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.925,
-    "rating_avg": 7.63726,
-    "rating_bayes": 7.39866,
+    "rating_avg": 7.63733,
+    "rating_bayes": 7.39871,
     "rank_overall": 172,
     "categories": [
       "Deduction",
@@ -14007,7 +14007,7 @@
     "weight": 1.0,
     "rating_avg": 6.60408,
     "rating_bayes": 5.53478,
-    "rank_overall": 15087,
+    "rank_overall": 15096,
     "categories": [
       "Party Game",
       "Real-time"
@@ -14057,7 +14057,7 @@
     "weight": 1.0,
     "rating_avg": 6.50812,
     "rating_bayes": 5.60582,
-    "rank_overall": 8814,
+    "rank_overall": 8815,
     "categories": [
       "Action / Dexterity",
       "Children's Game",
@@ -14289,7 +14289,7 @@
     "weight": 1.6667,
     "rating_avg": 6.7366,
     "rating_bayes": 5.56473,
-    "rank_overall": 11364,
+    "rank_overall": 11372,
     "categories": [
       "Adventure",
       "Bluffing",
@@ -14449,7 +14449,7 @@
     "weight": 1.0882,
     "rating_avg": 5.67896,
     "rating_bayes": 5.52096,
-    "rank_overall": 18373,
+    "rank_overall": 18384,
     "categories": [
       "Card Game"
     ],
@@ -14493,9 +14493,9 @@
     "time_min": 15,
     "time_max": 20,
     "weight": 1.2222,
-    "rating_avg": 6.3409,
+    "rating_avg": 6.34172,
     "rating_bayes": 5.68824,
-    "rank_overall": 6341,
+    "rank_overall": 6344,
     "categories": [
       "Action / Dexterity",
       "Card Game",
@@ -14549,7 +14549,7 @@
     "weight": 1.0,
     "rating_avg": 5.49446,
     "rating_bayes": 5.50157,
-    "rank_overall": 24211,
+    "rank_overall": 24221,
     "categories": [
       "Action / Dexterity",
       "Children's Game",
@@ -14603,7 +14603,7 @@
     "weight": 1.0667,
     "rating_avg": 5.47117,
     "rating_bayes": 5.49481,
-    "rank_overall": 25748,
+    "rank_overall": 25760,
     "categories": [
       "Action / Dexterity",
       "Children's Game",
@@ -14771,7 +14771,7 @@
     "weight": 1.4,
     "rating_avg": 6.52609,
     "rating_bayes": 5.52317,
-    "rank_overall": 17766,
+    "rank_overall": 17778,
     "categories": [
       "Action / Dexterity",
       "Children's Game"
@@ -14815,7 +14815,7 @@
     "weight": 1.1071,
     "rating_avg": 5.74204,
     "rating_bayes": 5.52327,
-    "rank_overall": 17742,
+    "rank_overall": 17755,
     "categories": [
       "Dice",
       "Horror",
@@ -14869,7 +14869,7 @@
     "weight": 1.1667,
     "rating_avg": 5.42013,
     "rating_bayes": 5.48627,
-    "rank_overall": 27015,
+    "rank_overall": 27026,
     "categories": [
       "Animals",
       "Card Game",
@@ -14971,8 +14971,8 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 2.6495,
-    "rating_avg": 7.62178,
-    "rating_bayes": 7.39853,
+    "rating_avg": 7.62183,
+    "rating_bayes": 7.39863,
     "rank_overall": 173,
     "categories": [
       "Card Game",
@@ -15037,7 +15037,7 @@
     "weight": 2.098,
     "rating_avg": 6.68316,
     "rating_bayes": 5.93063,
-    "rank_overall": 3533,
+    "rank_overall": 3534,
     "categories": [
       "Ancient",
       "Card Game",
@@ -15089,8 +15089,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 3.2022,
-    "rating_avg": 7.9593,
-    "rating_bayes": 7.70861,
+    "rating_avg": 7.95922,
+    "rating_bayes": 7.70856,
     "rank_overall": 65,
     "categories": [
       "Economic"
@@ -15151,7 +15151,7 @@
     "weight": 1.625,
     "rating_avg": 6.74136,
     "rating_bayes": 5.60315,
-    "rank_overall": 8919,
+    "rank_overall": 8921,
     "categories": [
       "Dice",
       "Educational",
@@ -15257,7 +15257,7 @@
     "weight": 3.2353,
     "rating_avg": 7.04502,
     "rating_bayes": 5.92505,
-    "rank_overall": 3577,
+    "rank_overall": 3578,
     "categories": [
       "Economic",
       "Medieval"
@@ -15311,7 +15311,7 @@
     "weight": 2.0,
     "rating_avg": 6.08509,
     "rating_bayes": 5.51209,
-    "rank_overall": 21062,
+    "rank_overall": 21071,
     "categories": [
       "City Building",
       "Farming",
@@ -15365,9 +15365,9 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.0388,
-    "rating_avg": 6.53444,
-    "rating_bayes": 6.36941,
-    "rank_overall": 1618,
+    "rating_avg": 6.53424,
+    "rating_bayes": 6.36924,
+    "rank_overall": 1619,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -15427,7 +15427,7 @@
     "weight": 1.0833,
     "rating_avg": 5.19139,
     "rating_bayes": 5.40614,
-    "rank_overall": 29043,
+    "rank_overall": 29054,
     "categories": [
       "Action / Dexterity",
       "Animals",
@@ -15485,7 +15485,7 @@
     "weight": 1.0833,
     "rating_avg": 5.19139,
     "rating_bayes": 5.40614,
-    "rank_overall": 29043,
+    "rank_overall": 29054,
     "categories": [
       "Action / Dexterity",
       "Animals",
@@ -15543,7 +15543,7 @@
     "weight": 1.7,
     "rating_avg": 6.56178,
     "rating_bayes": 5.56491,
-    "rank_overall": 11343,
+    "rank_overall": 11351,
     "categories": [
       "Card Game",
       "Fantasy"
@@ -15591,9 +15591,9 @@
     "time_min": 20,
     "time_max": 30,
     "weight": 1.0,
-    "rating_avg": 7.11101,
-    "rating_bayes": 6.19637,
-    "rank_overall": 2197,
+    "rating_avg": 7.11175,
+    "rating_bayes": 6.19605,
+    "rank_overall": 2201,
     "categories": [
       "Humor",
       "Mature / Adult",
@@ -15645,8 +15645,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.0706,
-    "rating_avg": 7.37592,
-    "rating_bayes": 7.14493,
+    "rating_avg": 7.37604,
+    "rating_bayes": 7.14504,
     "rank_overall": 342,
     "categories": [
       "Humor",
@@ -15699,7 +15699,7 @@
     "weight": 1.2857,
     "rating_avg": 5.58345,
     "rating_bayes": 5.50319,
-    "rank_overall": 23754,
+    "rank_overall": 23764,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -15759,7 +15759,7 @@
     "weight": 2.0,
     "rating_avg": 6.07485,
     "rating_bayes": 5.53456,
-    "rank_overall": 15121,
+    "rank_overall": 15128,
     "categories": [
       "Card Game"
     ],
@@ -15801,7 +15801,7 @@
     "weight": 1.1111,
     "rating_avg": 5.48817,
     "rating_bayes": 5.49397,
-    "rank_overall": 25911,
+    "rank_overall": 25922,
     "categories": [
       "Abstract Strategy",
       "Animals",
@@ -15907,7 +15907,7 @@
     "time_min": 120,
     "time_max": 180,
     "weight": 2.697,
-    "rating_avg": 7.91267,
+    "rating_avg": 7.91252,
     "rating_bayes": 7.02198,
     "rank_overall": 464,
     "categories": [
@@ -15977,9 +15977,9 @@
     "time_min": 15,
     "time_max": 15,
     "weight": 1.6923,
-    "rating_avg": 6.55,
-    "rating_bayes": 5.7702,
-    "rank_overall": 5025,
+    "rating_avg": 6.5512,
+    "rating_bayes": 5.77054,
+    "rank_overall": 5023,
     "categories": [
       "Abstract Strategy",
       "Animals",
@@ -16033,7 +16033,7 @@
     "weight": 1.7243,
     "rating_avg": 6.92423,
     "rating_bayes": 6.5424,
-    "rank_overall": 1192,
+    "rank_overall": 1193,
     "categories": [
       "Card Game",
       "Medieval"
@@ -16137,8 +16137,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.0,
-    "rating_avg": 7.01001,
-    "rating_bayes": 6.68759,
+    "rating_avg": 7.01006,
+    "rating_bayes": 6.68766,
     "rank_overall": 917,
     "categories": [
       "Animals",
@@ -16199,7 +16199,7 @@
     "weight": 1.9459,
     "rating_avg": 6.57619,
     "rating_bayes": 5.91775,
-    "rank_overall": 3627,
+    "rank_overall": 3628,
     "categories": [
       "Adventure"
     ],
@@ -16253,7 +16253,7 @@
     "weight": 2.0909,
     "rating_avg": 6.48736,
     "rating_bayes": 5.59847,
-    "rank_overall": 9144,
+    "rank_overall": 9148,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -16315,7 +16315,7 @@
     "weight": 2.1905,
     "rating_avg": 7.29469,
     "rating_bayes": 6.37045,
-    "rank_overall": 1614,
+    "rank_overall": 1615,
     "categories": [
       "City Building",
       "Economic"
@@ -16439,7 +16439,7 @@
     "weight": 1.2,
     "rating_avg": 6.63668,
     "rating_bayes": 5.68673,
-    "rank_overall": 6377,
+    "rank_overall": 6376,
     "categories": [
       "Card Game",
       "Deduction",
@@ -16489,8 +16489,8 @@
     "time_min": 45,
     "time_max": 90,
     "weight": 2.8146,
-    "rating_avg": 7.39401,
-    "rating_bayes": 6.93313,
+    "rating_avg": 7.39383,
+    "rating_bayes": 6.93303,
     "rank_overall": 571,
     "categories": [
       "Ancient",
@@ -16551,8 +16551,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.5435,
-    "rating_avg": 6.86013,
-    "rating_bayes": 6.60473,
+    "rating_avg": 6.86003,
+    "rating_bayes": 6.6048,
     "rank_overall": 1061,
     "categories": [
       "Abstract Strategy"
@@ -16653,7 +16653,7 @@
     "weight": 1.1136,
     "rating_avg": 6.59034,
     "rating_bayes": 6.04462,
-    "rank_overall": 2856,
+    "rank_overall": 2857,
     "categories": [
       "Card Game",
       "Humor",
@@ -16711,7 +16711,7 @@
     "weight": 1.5,
     "rating_avg": 5.96291,
     "rating_bayes": 5.51472,
-    "rank_overall": 20250,
+    "rank_overall": 20259,
     "categories": [
       "Action / Dexterity",
       "Real-time"
@@ -16757,8 +16757,8 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 3.0601,
-    "rating_avg": 7.48614,
-    "rating_bayes": 7.28759,
+    "rating_avg": 7.48612,
+    "rating_bayes": 7.28758,
     "rank_overall": 238,
     "categories": [
       "Economic",
@@ -16817,8 +16817,8 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 3.0601,
-    "rating_avg": 7.48614,
-    "rating_bayes": 7.28759,
+    "rating_avg": 7.48612,
+    "rating_bayes": 7.28758,
     "rank_overall": 238,
     "categories": [
       "Economic",
@@ -16935,9 +16935,9 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 2.3491,
-    "rating_avg": 7.06581,
-    "rating_bayes": 6.76222,
-    "rank_overall": 793,
+    "rating_avg": 7.06624,
+    "rating_bayes": 6.76258,
+    "rank_overall": 791,
     "categories": [
       "Card Game",
       "Economic",
@@ -17005,7 +17005,7 @@
     "weight": 1.1579,
     "rating_avg": 6.19504,
     "rating_bayes": 5.74319,
-    "rank_overall": 5358,
+    "rank_overall": 5360,
     "categories": [
       "Racing"
     ],
@@ -17055,7 +17055,7 @@
     "time_min": 15,
     "time_max": 20,
     "weight": 1.0,
-    "rating_avg": 6.89008,
+    "rating_avg": 6.89021,
     "rating_bayes": 5.85913,
     "rank_overall": 4084,
     "categories": [
@@ -17173,7 +17173,7 @@
     "weight": 1.5128,
     "rating_avg": 6.68375,
     "rating_bayes": 6.10496,
-    "rank_overall": 2569,
+    "rank_overall": 2570,
     "categories": [
       "Dice",
       "Medieval"
@@ -17222,10 +17222,10 @@
     ],
     "time_min": 20,
     "time_max": 20,
-    "weight": 1.2,
-    "rating_avg": 6.51058,
-    "rating_bayes": 6.01899,
-    "rank_overall": 2982,
+    "weight": 1.1964,
+    "rating_avg": 6.50965,
+    "rating_bayes": 6.01857,
+    "rank_overall": 2984,
     "categories": [
       "Abstract Strategy",
       "Ancient"
@@ -17339,8 +17339,8 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.8462,
-    "rating_avg": 7.90653,
-    "rating_bayes": 7.74609,
+    "rating_avg": 7.90656,
+    "rating_bayes": 7.74605,
     "rank_overall": 54,
     "categories": [
       "Animals",
@@ -17401,7 +17401,7 @@
     "weight": 2.2402,
     "rating_avg": 6.82339,
     "rating_bayes": 6.42265,
-    "rank_overall": 1482,
+    "rank_overall": 1484,
     "categories": [
       "Card Game",
       "Nautical"
@@ -17469,7 +17469,7 @@
     "weight": 1.0,
     "rating_avg": 5.73305,
     "rating_bayes": 5.49947,
-    "rank_overall": 24701,
+    "rank_overall": 24712,
     "categories": [
       "Action / Dexterity",
       "Real-time"
@@ -17517,8 +17517,8 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.889,
-    "rating_avg": 7.56564,
-    "rating_bayes": 7.39993,
+    "rating_avg": 7.56567,
+    "rating_bayes": 7.4,
     "rank_overall": 171,
     "categories": [
       "Fantasy",
@@ -17643,8 +17643,8 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 1.1203,
-    "rating_avg": 7.21867,
-    "rating_bayes": 6.98117,
+    "rating_avg": 7.2186,
+    "rating_bayes": 6.98114,
     "rank_overall": 507,
     "categories": [
       "Party Game"
@@ -17695,7 +17695,7 @@
     "weight": 2.0638,
     "rating_avg": 6.61223,
     "rating_bayes": 5.91993,
-    "rank_overall": 3613,
+    "rank_overall": 3615,
     "categories": [
       "Exploration",
       "Nautical",
@@ -17749,7 +17749,7 @@
     "weight": 2.5,
     "rating_avg": 6.19221,
     "rating_bayes": 5.56332,
-    "rank_overall": 11484,
+    "rank_overall": 11490,
     "categories": [
       "Dice",
       "Mafia",
@@ -17799,8 +17799,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.2773,
-    "rating_avg": 7.07232,
-    "rating_bayes": 6.35853,
+    "rating_avg": 7.07246,
+    "rating_bayes": 6.35876,
     "rank_overall": 1648,
     "categories": [
       "Abstract Strategy",
@@ -17853,8 +17853,8 @@
     "time_min": 45,
     "time_max": 90,
     "weight": 2.7709,
-    "rating_avg": 7.29833,
-    "rating_bayes": 7.10812,
+    "rating_avg": 7.29837,
+    "rating_bayes": 7.10815,
     "rank_overall": 377,
     "categories": [
       "Ancient",
@@ -17927,7 +17927,7 @@
     "weight": 2.1,
     "rating_avg": 6.17021,
     "rating_bayes": 5.53406,
-    "rank_overall": 15206,
+    "rank_overall": 15213,
     "categories": [
       "Medieval"
     ],
@@ -17971,9 +17971,9 @@
     "time_min": 20,
     "time_max": 30,
     "weight": 1.2667,
-    "rating_avg": 6.53081,
-    "rating_bayes": 5.74721,
-    "rank_overall": 5318,
+    "rating_avg": 6.53213,
+    "rating_bayes": 5.74782,
+    "rank_overall": 5309,
     "categories": [
       "Abstract Strategy",
       "Animals",
@@ -18197,7 +18197,7 @@
     "weight": 3.6512,
     "rating_avg": 7.14469,
     "rating_bayes": 5.87166,
-    "rank_overall": 3969,
+    "rank_overall": 3971,
     "categories": [
       "City Building",
       "Science Fiction",
@@ -18371,7 +18371,7 @@
     "weight": 2.7636,
     "rating_avg": 6.89705,
     "rating_bayes": 5.74898,
-    "rank_overall": 5296,
+    "rank_overall": 5297,
     "categories": [
       "Economic",
       "Science Fiction",
@@ -18537,7 +18537,7 @@
     "weight": 3.814,
     "rating_avg": 7.23906,
     "rating_bayes": 5.9013,
-    "rank_overall": 3742,
+    "rank_overall": 3743,
     "categories": [
       "Economic"
     ],
@@ -18585,7 +18585,7 @@
     "weight": 3.045,
     "rating_avg": 7.18245,
     "rating_bayes": 6.58192,
-    "rank_overall": 1117,
+    "rank_overall": 1116,
     "categories": [
       "American West",
       "City Building",
@@ -18651,7 +18651,7 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.9121,
-    "rating_avg": 7.48659,
+    "rating_avg": 7.48676,
     "rating_bayes": 7.06774,
     "rank_overall": 423,
     "categories": [
@@ -18727,7 +18727,7 @@
     "weight": 2.6,
     "rating_avg": 7.1118,
     "rating_bayes": 5.80341,
-    "rank_overall": 4613,
+    "rank_overall": 4614,
     "categories": [
       "Economic",
       "Humor",
@@ -18793,7 +18793,7 @@
     "weight": 1.875,
     "rating_avg": 5.7686,
     "rating_bayes": 5.55081,
-    "rank_overall": 12697,
+    "rank_overall": 12704,
     "categories": [
       "Fantasy",
       "Humor",
@@ -18869,7 +18869,7 @@
     "weight": 2.7843,
     "rating_avg": 7.06019,
     "rating_bayes": 6.34452,
-    "rank_overall": 1688,
+    "rank_overall": 1689,
     "categories": [
       "Medieval",
       "Political"
@@ -18977,7 +18977,7 @@
     "weight": 2.54,
     "rating_avg": 6.32237,
     "rating_bayes": 5.68724,
-    "rank_overall": 6362,
+    "rank_overall": 6364,
     "categories": [
       "Environmental",
       "Exploration",
@@ -19033,7 +19033,7 @@
     "weight": 2.1026,
     "rating_avg": 6.4749,
     "rating_bayes": 5.89836,
-    "rank_overall": 3778,
+    "rank_overall": 3779,
     "categories": [
       "Industry / Manufacturing",
       "Renaissance"
@@ -19087,7 +19087,7 @@
     "weight": 2.8776,
     "rating_avg": 6.15681,
     "rating_bayes": 5.61266,
-    "rank_overall": 8491,
+    "rank_overall": 8493,
     "categories": [
       "City Building"
     ],
@@ -19143,7 +19143,7 @@
     "weight": 2.6667,
     "rating_avg": 6.16886,
     "rating_bayes": 5.51722,
-    "rank_overall": 19431,
+    "rank_overall": 19439,
     "categories": [
       "Bluffing",
       "Medieval"
@@ -19197,7 +19197,7 @@
     "weight": 1.8729,
     "rating_avg": 6.40818,
     "rating_bayes": 5.87057,
-    "rank_overall": 3979,
+    "rank_overall": 3980,
     "categories": [
       "Arabian"
     ],
@@ -19301,7 +19301,7 @@
     "weight": 2.7937,
     "rating_avg": 6.83458,
     "rating_bayes": 6.01152,
-    "rank_overall": 3026,
+    "rank_overall": 3027,
     "categories": [
       "Medieval"
     ],
@@ -19351,8 +19351,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 3.8503,
-    "rating_avg": 8.1977,
-    "rating_bayes": 7.96032,
+    "rating_avg": 8.19779,
+    "rating_bayes": 7.96039,
     "rank_overall": 20,
     "categories": [
       "Economic",
@@ -19431,8 +19431,8 @@
     "time_min": 120,
     "time_max": 180,
     "weight": 3.6135,
-    "rating_avg": 8.23323,
-    "rating_bayes": 8.04834,
+    "rating_avg": 8.23324,
+    "rating_bayes": 8.04831,
     "rank_overall": 14,
     "categories": [
       "Modern Warfare",
@@ -19503,8 +19503,8 @@
     "time_min": 300,
     "time_max": 300,
     "weight": 4.3689,
-    "rating_avg": 7.53769,
-    "rating_bayes": 6.76152,
+    "rating_avg": 7.53793,
+    "rating_bayes": 6.76156,
     "rank_overall": 794,
     "categories": [
       "Ancient",
@@ -19581,7 +19581,7 @@
     "weight": 2.025,
     "rating_avg": 6.51382,
     "rating_bayes": 5.7688,
-    "rank_overall": 5042,
+    "rank_overall": 5043,
     "categories": [
       "Arabian",
       "City Building",
@@ -19633,8 +19633,8 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 2.8172,
-    "rating_avg": 7.49342,
-    "rating_bayes": 7.25032,
+    "rating_avg": 7.49346,
+    "rating_bayes": 7.25029,
     "rank_overall": 260,
     "categories": [
       "Ancient",
@@ -19705,7 +19705,7 @@
     "weight": 1.9223,
     "rating_avg": 6.62528,
     "rating_bayes": 6.24859,
-    "rank_overall": 1992,
+    "rank_overall": 1991,
     "categories": [
       "Animals",
       "Racing"
@@ -19755,7 +19755,7 @@
     "weight": 3.5442,
     "rating_avg": 7.01224,
     "rating_bayes": 6.22196,
-    "rank_overall": 2090,
+    "rank_overall": 2091,
     "categories": [
       "Ancient",
       "Civilization"
@@ -19805,8 +19805,8 @@
     "time_min": 120,
     "time_max": 180,
     "weight": 3.5012,
-    "rating_avg": 7.6395,
-    "rating_bayes": 7.10334,
+    "rating_avg": 7.63908,
+    "rating_bayes": 7.10313,
     "rank_overall": 387,
     "categories": [
       "Economic",
@@ -19915,8 +19915,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 2.7772,
-    "rating_avg": 7.31959,
-    "rating_bayes": 7.11338,
+    "rating_avg": 7.31965,
+    "rating_bayes": 7.11345,
     "rank_overall": 369,
     "categories": [
       "Adventure",
@@ -19993,7 +19993,7 @@
     "weight": 2.6677,
     "rating_avg": 6.9928,
     "rating_bayes": 6.36551,
-    "rank_overall": 1627,
+    "rank_overall": 1628,
     "categories": [
       "Medieval",
       "Nautical"
@@ -20093,8 +20093,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.1807,
-    "rating_avg": 7.20365,
-    "rating_bayes": 6.79965,
+    "rating_avg": 7.20351,
+    "rating_bayes": 6.79955,
     "rank_overall": 737,
     "categories": [
       "American West",
@@ -20211,7 +20211,7 @@
     "weight": 2.1053,
     "rating_avg": 6.57136,
     "rating_bayes": 5.77523,
-    "rank_overall": 4951,
+    "rank_overall": 4953,
     "categories": [
       "Territory Building"
     ],
@@ -20261,8 +20261,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 3.4524,
-    "rating_avg": 7.25302,
-    "rating_bayes": 6.73316,
+    "rating_avg": 7.25309,
+    "rating_bayes": 6.73321,
     "rank_overall": 835,
     "categories": [
       "Animals",
@@ -20319,8 +20319,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 2.5882,
-    "rating_avg": 7.35603,
-    "rating_bayes": 7.15626,
+    "rating_avg": 7.35601,
+    "rating_bayes": 7.15624,
     "rank_overall": 334,
     "categories": [
       "Adventure",
@@ -20455,8 +20455,8 @@
     "time_min": 180,
     "time_max": 180,
     "weight": 3.1943,
-    "rating_avg": 7.35244,
-    "rating_bayes": 6.23491,
+    "rating_avg": 7.35332,
+    "rating_bayes": 6.23497,
     "rank_overall": 2041,
     "categories": [
       "Civil War",
@@ -20583,8 +20583,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 2.6482,
-    "rating_avg": 7.50508,
-    "rating_bayes": 7.3158,
+    "rating_avg": 7.50511,
+    "rating_bayes": 7.31582,
     "rank_overall": 223,
     "categories": [
       "Post-Napoleonic",
@@ -20647,7 +20647,7 @@
     "weight": 3.0816,
     "rating_avg": 6.66197,
     "rating_bayes": 5.85008,
-    "rank_overall": 4175,
+    "rank_overall": 4177,
     "categories": [
       "Farming",
       "Mythology"
@@ -20703,7 +20703,7 @@
     "weight": 2.4259,
     "rating_avg": 6.50568,
     "rating_bayes": 5.96317,
-    "rank_overall": 3317,
+    "rank_overall": 3316,
     "categories": [
       "Card Game",
       "Civilization"
@@ -20757,7 +20757,7 @@
     "weight": 3.2045,
     "rating_avg": 7.06272,
     "rating_bayes": 5.83672,
-    "rank_overall": 4290,
+    "rank_overall": 4291,
     "categories": [
       "Economic",
       "Exploration",
@@ -20817,7 +20817,7 @@
     "weight": 2.5,
     "rating_avg": 6.50938,
     "rating_bayes": 5.51266,
-    "rank_overall": 20865,
+    "rank_overall": 20876,
     "categories": [
       "Modern Warfare",
       "Wargame"
@@ -20927,7 +20927,7 @@
     "weight": 2.3125,
     "rating_avg": 6.92945,
     "rating_bayes": 6.02866,
-    "rank_overall": 2932,
+    "rank_overall": 2933,
     "categories": [
       "Animals",
       "Dice",
@@ -20985,7 +20985,7 @@
     "weight": 3.1957,
     "rating_avg": 5.88624,
     "rating_bayes": 5.55001,
-    "rank_overall": 12775,
+    "rank_overall": 12783,
     "categories": [
       "Economic",
       "Nautical",
@@ -21115,8 +21115,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.8506,
-    "rating_avg": 7.08255,
-    "rating_bayes": 6.75489,
+    "rating_avg": 7.08276,
+    "rating_bayes": 6.75504,
     "rank_overall": 804,
     "categories": [
       "Abstract Strategy",
@@ -21177,9 +21177,9 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.3789,
-    "rating_avg": 7.00441,
-    "rating_bayes": 6.40409,
-    "rank_overall": 1536,
+    "rating_avg": 7.00413,
+    "rating_bayes": 6.4038,
+    "rank_overall": 1537,
     "categories": [
       "City Building"
     ],
@@ -21231,7 +21231,7 @@
     "weight": 1.9,
     "rating_avg": 5.44659,
     "rating_bayes": 5.48944,
-    "rank_overall": 26615,
+    "rank_overall": 26626,
     "categories": [
       "Economic",
       "Medieval"
@@ -21285,8 +21285,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.3798,
-    "rating_avg": 7.11803,
-    "rating_bayes": 6.76844,
+    "rating_avg": 7.11784,
+    "rating_bayes": 6.76832,
     "rank_overall": 785,
     "categories": [
       "Card Game",
@@ -21343,7 +21343,7 @@
     "weight": 1.25,
     "rating_avg": 5.36176,
     "rating_bayes": 5.49695,
-    "rank_overall": 25286,
+    "rank_overall": 25297,
     "categories": [],
     "mechanics": [
       "Auction / Bidding",
@@ -21387,9 +21387,9 @@
     "time_min": 45,
     "time_max": 60,
     "weight": 2.1682,
-    "rating_avg": 6.25162,
-    "rating_bayes": 5.8628,
-    "rank_overall": 4045,
+    "rating_avg": 6.2522,
+    "rating_bayes": 5.86318,
+    "rank_overall": 4042,
     "categories": [
       "Fighting",
       "Industry / Manufacturing",
@@ -21445,8 +21445,8 @@
     "time_min": 60,
     "time_max": 150,
     "weight": 4.2155,
-    "rating_avg": 8.00822,
-    "rating_bayes": 7.6612,
+    "rating_avg": 8.00813,
+    "rating_bayes": 7.66125,
     "rank_overall": 78,
     "categories": [
       "Economic"
@@ -21563,8 +21563,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 4.5716,
-    "rating_avg": 8.17511,
-    "rating_bayes": 7.71345,
+    "rating_avg": 8.1753,
+    "rating_bayes": 7.71369,
     "rank_overall": 64,
     "categories": [
       "City Building",
@@ -21629,7 +21629,7 @@
     "weight": 2.8571,
     "rating_avg": 6.53645,
     "rating_bayes": 5.64214,
-    "rank_overall": 7462,
+    "rank_overall": 7465,
     "categories": [
       "Economic",
       "Renaissance"
@@ -21685,7 +21685,7 @@
     "weight": 2.9535,
     "rating_avg": 6.08932,
     "rating_bayes": 5.61721,
-    "rank_overall": 8311,
+    "rank_overall": 8313,
     "categories": [
       "Age of Reason",
       "Political",
@@ -21741,7 +21741,7 @@
     "weight": 1.8361,
     "rating_avg": 6.23878,
     "rating_bayes": 5.66927,
-    "rank_overall": 6761,
+    "rank_overall": 6762,
     "categories": [
       "Transportation"
     ],
@@ -21844,9 +21844,9 @@
     ],
     "time_min": 60,
     "time_max": 90,
-    "weight": 3.0801,
-    "rating_avg": 7.53119,
-    "rating_bayes": 7.13319,
+    "weight": 3.0833,
+    "rating_avg": 7.5313,
+    "rating_bayes": 7.13329,
     "rank_overall": 357,
     "categories": [
       "Economic",
@@ -21905,7 +21905,7 @@
     "weight": 2.9958,
     "rating_avg": 7.49641,
     "rating_bayes": 6.59885,
-    "rank_overall": 1072,
+    "rank_overall": 1073,
     "categories": [
       "Wargame",
       "World War II"
@@ -21961,7 +21961,7 @@
     "weight": 2.0857,
     "rating_avg": 6.48806,
     "rating_bayes": 5.60668,
-    "rank_overall": 8777,
+    "rank_overall": 8779,
     "categories": [
       "Adventure",
       "Exploration",
@@ -22071,7 +22071,7 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 2.9687,
-    "rating_avg": 7.43489,
+    "rating_avg": 7.43482,
     "rating_bayes": 6.92024,
     "rank_overall": 586,
     "categories": [
@@ -22137,8 +22137,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 2.8,
-    "rating_avg": 8.18899,
-    "rating_bayes": 7.12016,
+    "rating_avg": 8.18905,
+    "rating_bayes": 7.1202,
     "rank_overall": null,
     "categories": [
       "Renaissance"
@@ -22197,7 +22197,7 @@
     "weight": 2.1639,
     "rating_avg": 6.59367,
     "rating_bayes": 5.89278,
-    "rank_overall": 3817,
+    "rank_overall": 3818,
     "categories": [
       "Exploration",
       "Prehistoric"
@@ -22311,7 +22311,7 @@
     "weight": 2.76,
     "rating_avg": 6.71812,
     "rating_bayes": 5.60198,
-    "rank_overall": 8969,
+    "rank_overall": 8971,
     "categories": [
       "Economic",
       "Industry / Manufacturing"
@@ -22373,7 +22373,7 @@
     "weight": 2.6121,
     "rating_avg": 6.90313,
     "rating_bayes": 6.10488,
-    "rank_overall": 2570,
+    "rank_overall": 2571,
     "categories": [
       "Religious",
       "Renaissance"
@@ -22487,9 +22487,9 @@
     "time_min": 10,
     "time_max": 30,
     "weight": 2.1799,
-    "rating_avg": 7.32257,
-    "rating_bayes": 6.6535,
-    "rank_overall": 975,
+    "rating_avg": 7.3222,
+    "rating_bayes": 6.65326,
+    "rank_overall": 976,
     "categories": [
       "Industry / Manufacturing"
     ],
@@ -22545,7 +22545,7 @@
     "weight": 3.8571,
     "rating_avg": 6.27515,
     "rating_bayes": 5.51538,
-    "rank_overall": 20028,
+    "rank_overall": 20036,
     "categories": [
       "Abstract Strategy"
     ],
@@ -22591,9 +22591,9 @@
     "time_min": 70,
     "time_max": 70,
     "weight": 2.4444,
-    "rating_avg": 6.34594,
-    "rating_bayes": 5.82304,
-    "rank_overall": 4407,
+    "rating_avg": 6.3456,
+    "rating_bayes": 5.8229,
+    "rank_overall": 4408,
     "categories": [
       "Fantasy",
       "Fighting"
@@ -22641,7 +22641,7 @@
     "weight": 1.5556,
     "rating_avg": 5.97993,
     "rating_bayes": 5.57177,
-    "rank_overall": 10789,
+    "rank_overall": 10800,
     "categories": [
       "Dice"
     ],
@@ -22689,7 +22689,7 @@
     "weight": 2.2308,
     "rating_avg": 6.37861,
     "rating_bayes": 5.62975,
-    "rank_overall": 7845,
+    "rank_overall": 7847,
     "categories": [
       "Adventure",
       "Exploration",
@@ -22737,8 +22737,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.0137,
-    "rating_avg": 8.04822,
-    "rating_bayes": 7.86013,
+    "rating_avg": 8.04824,
+    "rating_bayes": 7.86017,
     "rank_overall": 37,
     "categories": [
       "Medieval",
@@ -22807,8 +22807,8 @@
     "time_min": 90,
     "time_max": 120,
     "weight": 3.3647,
-    "rating_avg": 8.24592,
-    "rating_bayes": 7.18837,
+    "rating_avg": 8.24599,
+    "rating_bayes": 7.18823,
     "rank_overall": null,
     "categories": [
       "Expansion for Base-game",
@@ -23007,8 +23007,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.2203,
-    "rating_avg": 8.38711,
-    "rating_bayes": 7.28143,
+    "rating_avg": 8.38744,
+    "rating_bayes": 7.28191,
     "rank_overall": null,
     "categories": [
       "Expansion for Base-game",
@@ -23067,7 +23067,7 @@
     "weight": 2.3333,
     "rating_avg": 6.21306,
     "rating_bayes": 5.75185,
-    "rank_overall": 5254,
+    "rank_overall": 5255,
     "categories": [
       "City Building",
       "Civilization",
@@ -23175,7 +23175,7 @@
     "weight": 3.2162,
     "rating_avg": 6.69473,
     "rating_bayes": 5.69778,
-    "rank_overall": 6145,
+    "rank_overall": 6143,
     "categories": [
       "City Building",
       "Political",
@@ -23295,9 +23295,9 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.0301,
-    "rating_avg": 6.86007,
-    "rating_bayes": 6.11025,
-    "rank_overall": 2543,
+    "rating_avg": 6.86034,
+    "rating_bayes": 6.11038,
+    "rank_overall": 2544,
     "categories": [
       "Economic"
     ],
@@ -23399,7 +23399,7 @@
     "weight": 1.6957,
     "rating_avg": 5.55871,
     "rating_bayes": 5.49651,
-    "rank_overall": 25383,
+    "rank_overall": 25394,
     "categories": [
       "Comic Book / Strip",
       "Humor"
@@ -23495,7 +23495,7 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 2.5671,
-    "rating_avg": 7.09859,
+    "rating_avg": 7.09848,
     "rating_bayes": 6.92904,
     "rank_overall": 575,
     "categories": [
@@ -23633,8 +23633,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 3.1151,
-    "rating_avg": 7.16604,
-    "rating_bayes": 6.85935,
+    "rating_avg": 7.166,
+    "rating_bayes": 6.85931,
     "rank_overall": 666,
     "categories": [
       "Science Fiction"
@@ -23747,7 +23747,7 @@
     "weight": 2.0,
     "rating_avg": 6.68471,
     "rating_bayes": 5.58888,
-    "rank_overall": 9669,
+    "rank_overall": 9672,
     "categories": [
       "Negotiation",
       "Zombies"
@@ -24077,7 +24077,7 @@
     "weight": 2.3636,
     "rating_avg": 6.43539,
     "rating_bayes": 5.5348,
-    "rank_overall": 15082,
+    "rank_overall": 15091,
     "categories": [
       "Abstract Strategy",
       "Ancient"
@@ -24127,7 +24127,7 @@
     "weight": 2.5,
     "rating_avg": 6.43058,
     "rating_bayes": 5.6662,
-    "rank_overall": 6831,
+    "rank_overall": 6832,
     "categories": [
       "Economic",
       "Miniatures"
@@ -24185,8 +24185,8 @@
     "time_min": 45,
     "time_max": 60,
     "weight": 2.3702,
-    "rating_avg": 7.04868,
-    "rating_bayes": 6.69931,
+    "rating_avg": 7.04837,
+    "rating_bayes": 6.69901,
     "rank_overall": 897,
     "categories": [
       "Dice",
@@ -24299,7 +24299,7 @@
     "weight": 2.0893,
     "rating_avg": 6.4501,
     "rating_bayes": 5.901,
-    "rank_overall": 3747,
+    "rank_overall": 3750,
     "categories": [
       "Humor",
       "Party Game",
@@ -24355,9 +24355,9 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.8333,
-    "rating_avg": 5.77897,
-    "rating_bayes": 5.57983,
-    "rank_overall": 10229,
+    "rating_avg": 5.77763,
+    "rating_bayes": 5.57937,
+    "rank_overall": 10269,
     "categories": [
       "Dice",
       "Trains",
@@ -24409,7 +24409,7 @@
     "weight": 1.0909,
     "rating_avg": 5.62913,
     "rating_bayes": 5.50802,
-    "rank_overall": 22339,
+    "rank_overall": 22351,
     "categories": [
       "Action / Dexterity",
       "Party Game"
@@ -24461,7 +24461,7 @@
     "weight": 1.6364,
     "rating_avg": 5.80227,
     "rating_bayes": 5.52887,
-    "rank_overall": 16327,
+    "rank_overall": 16334,
     "categories": [
       "Adventure"
     ],
@@ -24509,8 +24509,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 2.8673,
-    "rating_avg": 7.21001,
-    "rating_bayes": 6.64139,
+    "rating_avg": 7.20959,
+    "rating_bayes": 6.64109,
     "rank_overall": 1003,
     "categories": [
       "Ancient",
@@ -24569,7 +24569,7 @@
     "weight": 2.0645,
     "rating_avg": 6.6159,
     "rating_bayes": 5.88666,
-    "rank_overall": 3855,
+    "rank_overall": 3856,
     "categories": [
       "Real-time"
     ],
@@ -24623,9 +24623,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 2.5128,
-    "rating_avg": 6.01296,
-    "rating_bayes": 5.58297,
-    "rank_overall": 10043,
+    "rating_avg": 6.01281,
+    "rating_bayes": 5.58294,
+    "rank_overall": 10047,
     "categories": [
       "Abstract Strategy"
     ],
@@ -24669,9 +24669,9 @@
     "time_min": 40,
     "time_max": 40,
     "weight": 2.3871,
-    "rating_avg": 6.58786,
-    "rating_bayes": 5.76278,
-    "rank_overall": 5116,
+    "rating_avg": 6.58841,
+    "rating_bayes": 5.76321,
+    "rank_overall": 5107,
     "categories": [
       "Mythology",
       "Territory Building"
@@ -24835,7 +24835,7 @@
     "weight": 2.2857,
     "rating_avg": 6.55821,
     "rating_bayes": 5.62491,
-    "rank_overall": 7999,
+    "rank_overall": 8000,
     "categories": [
       "Abstract Strategy",
       "Fighting"
@@ -24885,7 +24885,7 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 2.9922,
-    "rating_avg": 7.07583,
+    "rating_avg": 7.07602,
     "rating_bayes": 6.53824,
     "rank_overall": 1204,
     "categories": [
@@ -25159,8 +25159,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.8282,
-    "rating_avg": 8.50893,
-    "rating_bayes": 8.35569,
+    "rating_avg": 8.50898,
+    "rating_bayes": 8.35574,
     "rank_overall": 2,
     "categories": [
       "Environmental",
@@ -25229,7 +25229,7 @@
     "weight": 2.4375,
     "rating_avg": 6.05248,
     "rating_bayes": 5.54794,
-    "rank_overall": 13053,
+    "rank_overall": 13063,
     "categories": [
       "Civilization",
       "Fantasy"
@@ -25277,7 +25277,7 @@
     "weight": 2.2,
     "rating_avg": 6.55,
     "rating_bayes": 5.53503,
-    "rank_overall": 15030,
+    "rank_overall": 15038,
     "categories": [
       "Card Game",
       "Economic",
@@ -25391,9 +25391,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.4667,
-    "rating_avg": 6.38731,
-    "rating_bayes": 5.7291,
-    "rank_overall": 5595,
+    "rating_avg": 6.38898,
+    "rating_bayes": 5.72935,
+    "rank_overall": 5594,
     "categories": [
       "Economic"
     ],
@@ -25499,7 +25499,7 @@
     "weight": 2.4,
     "rating_avg": 5.75,
     "rating_bayes": 5.50342,
-    "rank_overall": 23696,
+    "rank_overall": 23703,
     "categories": [
       "Animals",
       "Educational"
@@ -25549,7 +25549,7 @@
     "weight": 2.4167,
     "rating_avg": 5.31138,
     "rating_bayes": 5.48303,
-    "rank_overall": 27368,
+    "rank_overall": 27378,
     "categories": [
       "Card Game",
       "Civilization"
@@ -25599,7 +25599,7 @@
     "weight": 1.5625,
     "rating_avg": 6.04851,
     "rating_bayes": 5.5623,
-    "rank_overall": 11581,
+    "rank_overall": 11585,
     "categories": [
       "Animals",
       "Children's Game",
@@ -25765,7 +25765,7 @@
     "weight": 2.96,
     "rating_avg": 6.53126,
     "rating_bayes": 5.91017,
-    "rank_overall": 3681,
+    "rank_overall": 3682,
     "categories": [
       "Bluffing",
       "Medieval",
@@ -25881,9 +25881,9 @@
     "time_min": 150,
     "time_max": 150,
     "weight": 3.1138,
-    "rating_avg": 6.80526,
-    "rating_bayes": 5.96073,
-    "rank_overall": 3327,
+    "rating_avg": 6.80703,
+    "rating_bayes": 5.96163,
+    "rank_overall": 3323,
     "categories": [
       "Economic",
       "Science Fiction"
@@ -25995,7 +25995,7 @@
     "weight": 1.6667,
     "rating_avg": 6.76544,
     "rating_bayes": 5.83109,
-    "rank_overall": 4335,
+    "rank_overall": 4337,
     "categories": [
       "Card Game",
       "Puzzle"
@@ -26047,7 +26047,7 @@
     "weight": 2.1475,
     "rating_avg": 6.88205,
     "rating_bayes": 6.41738,
-    "rank_overall": 1498,
+    "rank_overall": 1499,
     "categories": [
       "Economic"
     ],
@@ -26167,7 +26167,7 @@
     "weight": 2.1875,
     "rating_avg": 5.50615,
     "rating_bayes": 5.4966,
-    "rank_overall": 25355,
+    "rank_overall": 25366,
     "categories": [
       "Educational",
       "Fighting",
@@ -26219,7 +26219,7 @@
     "weight": 2.3529,
     "rating_avg": 6.31022,
     "rating_bayes": 5.5403,
-    "rank_overall": 14135,
+    "rank_overall": 14139,
     "categories": [
       "Card Game",
       "Wargame",
@@ -26273,8 +26273,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.9733,
-    "rating_avg": 7.19954,
-    "rating_bayes": 7.06127,
+    "rating_avg": 7.19951,
+    "rating_bayes": 7.06123,
     "rank_overall": 428,
     "categories": [
       "Animals",
@@ -26519,7 +26519,7 @@
     "weight": 2.5,
     "rating_avg": 6.24901,
     "rating_bayes": 5.52559,
-    "rank_overall": 17120,
+    "rank_overall": 17129,
     "categories": [
       "Abstract Strategy",
       "Movies / TV / Radio theme",
@@ -26573,7 +26573,7 @@
     "weight": 4.3519,
     "rating_avg": 7.34393,
     "rating_bayes": 6.2388,
-    "rank_overall": 2022,
+    "rank_overall": 2024,
     "categories": [
       "Economic",
       "Industry / Manufacturing",
@@ -26635,7 +26635,7 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.6514,
-    "rating_avg": 7.4945,
+    "rating_avg": 7.49353,
     "rating_bayes": 6.42731,
     "rank_overall": null,
     "categories": [
@@ -26741,9 +26741,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.5055,
-    "rating_avg": 6.90304,
+    "rating_avg": 6.90291,
     "rating_bayes": 6.62161,
-    "rank_overall": 1030,
+    "rank_overall": 1031,
     "categories": [
       "Card Game",
       "Fantasy",
@@ -26797,8 +26797,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 2.1667,
-    "rating_avg": 6.68415,
-    "rating_bayes": 6.33259,
+    "rating_avg": 6.68404,
+    "rating_bayes": 6.33252,
     "rank_overall": 1724,
     "categories": [
       "Card Game",
@@ -27323,7 +27323,7 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 2.3563,
-    "rating_avg": 7.63463,
+    "rating_avg": 7.63472,
     "rating_bayes": 7.38615,
     "rank_overall": 182,
     "categories": [
@@ -27397,7 +27397,7 @@
     "time_min": 60,
     "time_max": 90,
     "weight": 2.2727,
-    "rating_avg": 8.06153,
+    "rating_avg": 8.06148,
     "rating_bayes": 6.30811,
     "rank_overall": null,
     "categories": [
@@ -27515,7 +27515,7 @@
     "weight": 1.5,
     "rating_avg": 5.76932,
     "rating_bayes": 5.52227,
-    "rank_overall": 18021,
+    "rank_overall": 18033,
     "categories": [
       "Abstract Strategy"
     ],
@@ -27563,7 +27563,7 @@
     "weight": 1.5,
     "rating_avg": 5.94075,
     "rating_bayes": 5.52816,
-    "rank_overall": 16496,
+    "rank_overall": 16506,
     "categories": [
       "Abstract Strategy",
       "American West",
@@ -27617,7 +27617,7 @@
     "weight": 2.1111,
     "rating_avg": 6.34452,
     "rating_bayes": 5.52066,
-    "rank_overall": 18461,
+    "rank_overall": 18470,
     "categories": [
       "Adventure",
       "Card Game",
@@ -27669,7 +27669,7 @@
     "weight": 1.875,
     "rating_avg": 5.40415,
     "rating_bayes": 5.49685,
-    "rank_overall": 25301,
+    "rank_overall": 25312,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -27729,7 +27729,7 @@
     "weight": 1.5714,
     "rating_avg": 5.52,
     "rating_bayes": 5.49757,
-    "rank_overall": 25151,
+    "rank_overall": 25163,
     "categories": [
       "Abstract Strategy",
       "Adventure"
@@ -27777,7 +27777,7 @@
     "weight": 1.3333,
     "rating_avg": 6.18395,
     "rating_bayes": 5.54235,
-    "rank_overall": 13831,
+    "rank_overall": 13836,
     "categories": [
       "Dice",
       "Sports"
@@ -27827,7 +27827,7 @@
     "weight": 1.3333,
     "rating_avg": 6.18395,
     "rating_bayes": 5.54235,
-    "rank_overall": 13831,
+    "rank_overall": 13836,
     "categories": [
       "Dice",
       "Sports"
@@ -27919,7 +27919,7 @@
     "weight": 1.6429,
     "rating_avg": 5.74107,
     "rating_bayes": 5.50879,
-    "rank_overall": 22096,
+    "rank_overall": 22105,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -27971,7 +27971,7 @@
     "weight": 1.1111,
     "rating_avg": 5.30364,
     "rating_bayes": 5.49609,
-    "rank_overall": 25476,
+    "rank_overall": 25485,
     "categories": [
       "Card Game"
     ],
@@ -28017,7 +28017,7 @@
     "weight": 1.3333,
     "rating_avg": 4.43939,
     "rating_bayes": 5.48409,
-    "rank_overall": 27265,
+    "rank_overall": 27276,
     "categories": [
       "Card Game"
     ],
@@ -28063,7 +28063,7 @@
     "weight": 1.3721,
     "rating_avg": 6.49758,
     "rating_bayes": 5.64099,
-    "rank_overall": 7500,
+    "rank_overall": 7501,
     "categories": [
       "Card Game",
       "Mythology"
@@ -28111,7 +28111,7 @@
     "weight": 2.25,
     "rating_avg": 6.44993,
     "rating_bayes": 5.60956,
-    "rank_overall": 8640,
+    "rank_overall": 8641,
     "categories": [
       "Animals",
       "Card Game",
@@ -28169,7 +28169,7 @@
     "weight": 2.0,
     "rating_avg": 5.8625,
     "rating_bayes": 5.5065,
-    "rank_overall": 22793,
+    "rank_overall": 22803,
     "categories": [
       "Humor",
       "Party Game",
@@ -28223,7 +28223,7 @@
     "weight": 1.0,
     "rating_avg": 6.06607,
     "rating_bayes": 5.55736,
-    "rank_overall": 12020,
+    "rank_overall": 12022,
     "categories": [
       "Action / Dexterity",
       "Humor"
@@ -28271,7 +28271,7 @@
     "weight": 2.0,
     "rating_avg": 6.26223,
     "rating_bayes": 5.55108,
-    "rank_overall": 12654,
+    "rank_overall": 12662,
     "categories": [
       "Bluffing",
       "Card Game"
@@ -28319,7 +28319,7 @@
     "weight": 1.5,
     "rating_avg": 5.56618,
     "rating_bayes": 5.49579,
-    "rank_overall": 25536,
+    "rank_overall": 25549,
     "categories": [
       "Card Game",
       "Fantasy",
@@ -28491,7 +28491,7 @@
     "weight": 2.3953,
     "rating_avg": 6.65349,
     "rating_bayes": 6.03531,
-    "rank_overall": 2895,
+    "rank_overall": 2896,
     "categories": [
       "Card Game",
       "Economic",
@@ -28543,7 +28543,7 @@
     "weight": 2.5,
     "rating_avg": 6.26842,
     "rating_bayes": 5.51325,
-    "rank_overall": 20676,
+    "rank_overall": 20689,
     "categories": [
       "Card Game",
       "Economic",
@@ -28601,7 +28601,7 @@
     "weight": 1.8889,
     "rating_avg": 6.10128,
     "rating_bayes": 5.60094,
-    "rank_overall": 9016,
+    "rank_overall": 9019,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -28655,7 +28655,7 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 2.1892,
-    "rating_avg": 7.42742,
+    "rating_avg": 7.42835,
     "rating_bayes": 6.52353,
     "rank_overall": null,
     "categories": [
@@ -28775,7 +28775,7 @@
     "weight": 1.7596,
     "rating_avg": 5.85977,
     "rating_bayes": 5.60422,
-    "rank_overall": 8873,
+    "rank_overall": 8874,
     "categories": [
       "Humor"
     ],
@@ -28823,7 +28823,7 @@
     "weight": 2.6339,
     "rating_avg": 6.71226,
     "rating_bayes": 6.00375,
-    "rank_overall": 3075,
+    "rank_overall": 3076,
     "categories": [
       "Economic",
       "Real-time",
@@ -28881,7 +28881,7 @@
     "weight": 1.7143,
     "rating_avg": 6.72177,
     "rating_bayes": 5.7619,
-    "rank_overall": 5127,
+    "rank_overall": 5128,
     "categories": [
       "Fantasy"
     ],
@@ -28933,7 +28933,7 @@
     "weight": 2.3636,
     "rating_avg": 6.32758,
     "rating_bayes": 5.65974,
-    "rank_overall": 7000,
+    "rank_overall": 6998,
     "categories": [
       "Economic",
       "Environmental",
@@ -28985,9 +28985,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 2.1463,
-    "rating_avg": 6.63927,
-    "rating_bayes": 5.75651,
-    "rank_overall": 5189,
+    "rating_avg": 6.63548,
+    "rating_bayes": 5.75589,
+    "rank_overall": 5196,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -29039,7 +29039,7 @@
     "time_min": 20,
     "time_max": 40,
     "weight": 2.567,
-    "rating_avg": 7.08161,
+    "rating_avg": 7.0812,
     "rating_bayes": 6.68863,
     "rank_overall": 916,
     "categories": [
@@ -29091,8 +29091,8 @@
     "time_min": 30,
     "time_max": 210,
     "weight": 3.7751,
-    "rating_avg": 7.92885,
-    "rating_bayes": 7.74089,
+    "rating_avg": 7.92881,
+    "rating_bayes": 7.74085,
     "rank_overall": 58,
     "categories": [
       "Animals",
@@ -29155,7 +29155,7 @@
     "weight": 2.6516,
     "rating_avg": 6.74203,
     "rating_bayes": 5.92293,
-    "rank_overall": 3593,
+    "rank_overall": 3596,
     "categories": [
       "Fantasy",
       "Wargame"
@@ -29209,8 +29209,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.2807,
-    "rating_avg": 7.79702,
-    "rating_bayes": 7.4451,
+    "rating_avg": 7.79703,
+    "rating_bayes": 7.44517,
     "rank_overall": 151,
     "categories": [
       "Economic"
@@ -29273,7 +29273,7 @@
     "weight": 3.5833,
     "rating_avg": 7.59599,
     "rating_bayes": 6.9929,
-    "rank_overall": 495,
+    "rank_overall": 496,
     "categories": [
       "Economic"
     ],
@@ -29327,7 +29327,7 @@
     "weight": 2.2857,
     "rating_avg": 7.20092,
     "rating_bayes": 5.85397,
-    "rank_overall": 4135,
+    "rank_overall": 4137,
     "categories": [
       "Sports"
     ],
@@ -29375,9 +29375,9 @@
     "time_min": 45,
     "time_max": 60,
     "weight": 2.3652,
-    "rating_avg": 6.98393,
-    "rating_bayes": 6.58749,
-    "rank_overall": 1106,
+    "rating_avg": 6.98364,
+    "rating_bayes": 6.58731,
+    "rank_overall": 1108,
     "categories": [
       "Ancient",
       "City Building",
@@ -29433,7 +29433,7 @@
     "weight": 2.3521,
     "rating_avg": 6.36756,
     "rating_bayes": 5.78109,
-    "rank_overall": 4883,
+    "rank_overall": 4885,
     "categories": [
       "Dice",
       "Fantasy",
@@ -29485,8 +29485,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.3095,
-    "rating_avg": 6.67934,
-    "rating_bayes": 5.87424,
+    "rating_avg": 6.67997,
+    "rating_bayes": 5.8742,
     "rank_overall": 3949,
     "categories": [
       "City Building",
@@ -29539,7 +29539,7 @@
     "weight": 3.1808,
     "rating_avg": 6.72545,
     "rating_bayes": 6.22101,
-    "rank_overall": 2095,
+    "rank_overall": 2096,
     "categories": [
       "Industry / Manufacturing",
       "Renaissance"
@@ -29659,7 +29659,7 @@
     "weight": 1.8974,
     "rating_avg": 6.72091,
     "rating_bayes": 5.79283,
-    "rank_overall": 4744,
+    "rank_overall": 4748,
     "categories": [
       "Dice",
       "Educational",
@@ -29715,7 +29715,7 @@
     "weight": 3.6377,
     "rating_avg": 7.18743,
     "rating_bayes": 6.29299,
-    "rank_overall": 1836,
+    "rank_overall": 1837,
     "categories": [
       "Medieval",
       "Religious",
@@ -29827,7 +29827,7 @@
     "weight": 1.8421,
     "rating_avg": 6.35781,
     "rating_bayes": 5.65478,
-    "rank_overall": 7119,
+    "rank_overall": 7120,
     "categories": [
       "Nautical",
       "Pirates",
@@ -29883,9 +29883,9 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.3525,
-    "rating_avg": 7.3393,
-    "rating_bayes": 6.55527,
-    "rank_overall": 1165,
+    "rating_avg": 7.33876,
+    "rating_bayes": 6.55479,
+    "rank_overall": 1167,
     "categories": [
       "Economic",
       "Industry / Manufacturing",
@@ -29943,8 +29943,8 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.8598,
-    "rating_avg": 7.86566,
-    "rating_bayes": 7.48904,
+    "rating_avg": 7.86594,
+    "rating_bayes": 7.48941,
     "rank_overall": 136,
     "categories": [
       "Economic",
@@ -30025,7 +30025,7 @@
     "weight": 2.5,
     "rating_avg": 6.51744,
     "rating_bayes": 5.53707,
-    "rank_overall": 14675,
+    "rank_overall": 14682,
     "categories": [
       "Economic"
     ],
@@ -30071,7 +30071,7 @@
     "weight": 1.5882,
     "rating_avg": 6.27489,
     "rating_bayes": 5.60513,
-    "rank_overall": 8840,
+    "rank_overall": 8841,
     "categories": [
       "Fantasy"
     ],
@@ -30115,8 +30115,8 @@
     "time_min": 30,
     "time_max": 150,
     "weight": 3.7089,
-    "rating_avg": 7.83658,
-    "rating_bayes": 7.66294,
+    "rating_avg": 7.83665,
+    "rating_bayes": 7.66295,
     "rank_overall": 77,
     "categories": [
       "City Building",
@@ -30179,8 +30179,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.7509,
-    "rating_avg": 7.42624,
-    "rating_bayes": 7.10606,
+    "rating_avg": 7.42619,
+    "rating_bayes": 7.10601,
     "rank_overall": 381,
     "categories": [
       "Card Game",
@@ -30317,7 +30317,7 @@
     "weight": 2.8846,
     "rating_avg": 6.98272,
     "rating_bayes": 6.06016,
-    "rank_overall": 2777,
+    "rank_overall": 2778,
     "categories": [
       "City Building",
       "Economic",
@@ -30381,7 +30381,7 @@
     "weight": 3.1702,
     "rating_avg": 6.89286,
     "rating_bayes": 6.11009,
-    "rank_overall": 2545,
+    "rank_overall": 2546,
     "categories": [
       "Economic",
       "Fantasy",
@@ -30439,8 +30439,8 @@
     "time_min": 75,
     "time_max": 100,
     "weight": 3.2415,
-    "rating_avg": 7.4965,
-    "rating_bayes": 7.21249,
+    "rating_avg": 7.49675,
+    "rating_bayes": 7.21277,
     "rank_overall": 290,
     "categories": [
       "City Building",
@@ -30495,8 +30495,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.5402,
-    "rating_avg": 7.24159,
-    "rating_bayes": 6.86065,
+    "rating_avg": 7.24171,
+    "rating_bayes": 6.86075,
     "rank_overall": 663,
     "categories": [
       "Economic",
@@ -30555,8 +30555,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.5802,
-    "rating_avg": 6.83873,
-    "rating_bayes": 6.32269,
+    "rating_avg": 6.83869,
+    "rating_bayes": 6.32257,
     "rank_overall": 1747,
     "categories": [
       "Abstract Strategy",
@@ -30785,7 +30785,7 @@
     "weight": 2.3409,
     "rating_avg": 6.94684,
     "rating_bayes": 6.12123,
-    "rank_overall": 2504,
+    "rank_overall": 2503,
     "categories": [
       "City Building",
       "Renaissance"
@@ -30839,7 +30839,7 @@
     "weight": 3.0,
     "rating_avg": 6.49492,
     "rating_bayes": 5.64385,
-    "rank_overall": 7414,
+    "rank_overall": 7415,
     "categories": [
       "Fantasy"
     ],
@@ -30891,7 +30891,7 @@
     "weight": 2.0,
     "rating_avg": 5.56918,
     "rating_bayes": 5.48335,
-    "rank_overall": 27335,
+    "rank_overall": 27344,
     "categories": [
       "Adventure",
       "Fantasy",
@@ -31003,7 +31003,7 @@
     "weight": 1.7551,
     "rating_avg": 6.78794,
     "rating_bayes": 6.43266,
-    "rank_overall": 1458,
+    "rank_overall": 1457,
     "categories": [
       "Action / Dexterity",
       "Exploration",
@@ -31073,7 +31073,7 @@
     "weight": 2.3864,
     "rating_avg": 6.29845,
     "rating_bayes": 5.66264,
-    "rank_overall": 6926,
+    "rank_overall": 6929,
     "categories": [
       "City Building",
       "Science Fiction"
@@ -31189,7 +31189,7 @@
     "weight": 3.0,
     "rating_avg": 6.74404,
     "rating_bayes": 5.61167,
-    "rank_overall": 8552,
+    "rank_overall": 8554,
     "categories": [
       "Ancient",
       "Fighting",
@@ -31239,7 +31239,7 @@
     "weight": 2.9524,
     "rating_avg": 6.95446,
     "rating_bayes": 5.62601,
-    "rank_overall": 7956,
+    "rank_overall": 7960,
     "categories": [
       "Aviation / Flight",
       "Exploration"
@@ -31353,7 +31353,7 @@
     "weight": 2.5,
     "rating_avg": 6.51809,
     "rating_bayes": 5.56243,
-    "rank_overall": 11571,
+    "rank_overall": 11574,
     "categories": [
       "Medieval",
       "Religious"
@@ -31401,7 +31401,7 @@
     "weight": 3.0,
     "rating_avg": 6.37136,
     "rating_bayes": 5.58298,
-    "rank_overall": 10041,
+    "rank_overall": 10045,
     "categories": [
       "City Building"
     ],
@@ -31449,7 +31449,7 @@
     "weight": 2.3158,
     "rating_avg": 6.49009,
     "rating_bayes": 5.75098,
-    "rank_overall": 5266,
+    "rank_overall": 5267,
     "categories": [
       "Science Fiction",
       "Territory Building"
@@ -31541,7 +31541,7 @@
     "weight": 2.1171,
     "rating_avg": 6.81789,
     "rating_bayes": 6.44101,
-    "rank_overall": 1435,
+    "rank_overall": 1436,
     "categories": [
       "City Building",
       "Dice",
@@ -31599,8 +31599,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.3762,
-    "rating_avg": 7.70613,
-    "rating_bayes": 7.49374,
+    "rating_avg": 7.7061,
+    "rating_bayes": 7.49371,
     "rank_overall": 135,
     "categories": [
       "Dice",
@@ -31795,8 +31795,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.2572,
-    "rating_avg": 7.09148,
-    "rating_bayes": 6.91107,
+    "rating_avg": 7.09174,
+    "rating_bayes": 6.91133,
     "rank_overall": 597,
     "categories": [
       "Post-Napoleonic",
@@ -31851,7 +31851,7 @@
     "weight": 2.1483,
     "rating_avg": 6.77334,
     "rating_bayes": 6.2644,
-    "rank_overall": 1929,
+    "rank_overall": 1931,
     "categories": [
       "American West"
     ],
@@ -31899,7 +31899,7 @@
     "weight": 3.3364,
     "rating_avg": 6.15766,
     "rating_bayes": 5.64613,
-    "rank_overall": 7339,
+    "rank_overall": 7342,
     "categories": [
       "Economic",
       "Farming",
@@ -31953,7 +31953,7 @@
     "weight": 1.4483,
     "rating_avg": 6.66968,
     "rating_bayes": 6.23734,
-    "rank_overall": 2033,
+    "rank_overall": 2035,
     "categories": [
       "Party Game"
     ],
@@ -32003,8 +32003,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 2.677,
-    "rating_avg": 7.23684,
-    "rating_bayes": 6.75126,
+    "rating_avg": 7.237,
+    "rating_bayes": 6.75139,
     "rank_overall": 809,
     "categories": [
       "Abstract Strategy",
@@ -32065,7 +32065,7 @@
     "weight": 1.2,
     "rating_avg": 5.04667,
     "rating_bayes": 5.48414,
-    "rank_overall": 27260,
+    "rank_overall": 27271,
     "categories": [
       "Card Game",
       "Fantasy"
@@ -32113,7 +32113,7 @@
     "weight": 1.0,
     "rating_avg": 5.83153,
     "rating_bayes": 5.51499,
-    "rank_overall": 20163,
+    "rank_overall": 20171,
     "categories": [
       "Children's Game"
     ],
@@ -32203,9 +32203,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.3114,
-    "rating_avg": 6.6823,
-    "rating_bayes": 6.42595,
-    "rank_overall": 1476,
+    "rating_avg": 6.68224,
+    "rating_bayes": 6.42587,
+    "rank_overall": 1475,
     "categories": [
       "Bluffing",
       "Deduction",
@@ -32375,7 +32375,7 @@
     "weight": 2.0581,
     "rating_avg": 6.09247,
     "rating_bayes": 5.76053,
-    "rank_overall": 5145,
+    "rank_overall": 5147,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -32437,7 +32437,7 @@
     "weight": 1.1667,
     "rating_avg": 5.73023,
     "rating_bayes": 5.50982,
-    "rank_overall": 21781,
+    "rank_overall": 21791,
     "categories": [
       "Abstract Strategy",
       "Maze"
@@ -32487,9 +32487,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.3593,
-    "rating_avg": 6.64526,
-    "rating_bayes": 6.0915,
-    "rank_overall": 2634,
+    "rating_avg": 6.64633,
+    "rating_bayes": 6.09195,
+    "rank_overall": 2633,
     "categories": [
       "Party Game"
     ],
@@ -32539,7 +32539,7 @@
     "weight": 1.9412,
     "rating_avg": 6.71681,
     "rating_bayes": 5.74775,
-    "rank_overall": 5310,
+    "rank_overall": 5313,
     "categories": [
       "Abstract Strategy",
       "Card Game",
@@ -32635,9 +32635,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.0833,
-    "rating_avg": 6.21852,
-    "rating_bayes": 5.63113,
-    "rank_overall": 7801,
+    "rating_avg": 6.21757,
+    "rating_bayes": 5.63094,
+    "rank_overall": 7812,
     "categories": [
       "Dice"
     ],
@@ -32687,7 +32687,7 @@
     "weight": 1.1481,
     "rating_avg": 6.22446,
     "rating_bayes": 5.65721,
-    "rank_overall": 7060,
+    "rank_overall": 7061,
     "categories": [
       "Action / Dexterity",
       "Prehistoric",
@@ -32779,8 +32779,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.0989,
-    "rating_avg": 7.0661,
-    "rating_bayes": 6.62905,
+    "rating_avg": 7.06591,
+    "rating_bayes": 6.62901,
     "rank_overall": 1017,
     "categories": [
       "Movies / TV / Radio theme"
@@ -32835,7 +32835,7 @@
     "weight": 1.6643,
     "rating_avg": 6.33676,
     "rating_bayes": 5.8077,
-    "rank_overall": 4561,
+    "rank_overall": 4560,
     "categories": [
       "Adventure",
       "Exploration",
@@ -32889,8 +32889,8 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.4695,
-    "rating_avg": 6.8572,
-    "rating_bayes": 6.31905,
+    "rating_avg": 6.85744,
+    "rating_bayes": 6.3193,
     "rank_overall": 1760,
     "categories": [
       "Abstract Strategy"
@@ -32941,9 +32941,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.2248,
-    "rating_avg": 6.38734,
-    "rating_bayes": 5.81955,
-    "rank_overall": 4444,
+    "rating_avg": 6.38704,
+    "rating_bayes": 5.8196,
+    "rank_overall": 4443,
     "categories": [
       "Science Fiction",
       "Space Exploration",
@@ -32995,8 +32995,8 @@
     "time_min": 45,
     "time_max": 60,
     "weight": 1.4602,
-    "rating_avg": 6.73273,
-    "rating_bayes": 6.35292,
+    "rating_avg": 6.73277,
+    "rating_bayes": 6.35299,
     "rank_overall": 1665,
     "categories": [
       "Action / Dexterity",
@@ -33059,7 +33059,7 @@
     "weight": 2.8214,
     "rating_avg": 6.65501,
     "rating_bayes": 5.68907,
-    "rank_overall": 6318,
+    "rank_overall": 6322,
     "categories": [
       "Economic"
     ],
@@ -33111,8 +33111,8 @@
     "time_min": 120,
     "time_max": 180,
     "weight": 3.2876,
-    "rating_avg": 7.40272,
-    "rating_bayes": 7.10307,
+    "rating_avg": 7.40268,
+    "rating_bayes": 7.10305,
     "rank_overall": 388,
     "categories": [
       "Adventure",
@@ -33183,7 +33183,7 @@
     "weight": 2.4342,
     "rating_avg": 6.68331,
     "rating_bayes": 6.15347,
-    "rank_overall": 2357,
+    "rank_overall": 2358,
     "categories": [
       "Horror",
       "Negotiation",
@@ -33239,7 +33239,7 @@
     "weight": 1.7857,
     "rating_avg": 6.24415,
     "rating_bayes": 5.67756,
-    "rank_overall": 6584,
+    "rank_overall": 6585,
     "categories": [
       "Animals",
       "Negotiation",
@@ -33291,8 +33291,8 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.5,
-    "rating_avg": 7.32161,
-    "rating_bayes": 6.67765,
+    "rating_avg": 7.32159,
+    "rating_bayes": 6.67774,
     "rank_overall": 927,
     "categories": [
       "Economic",
@@ -33355,7 +33355,7 @@
     "weight": 2.9091,
     "rating_avg": 6.9466,
     "rating_bayes": 5.56526,
-    "rank_overall": 11312,
+    "rank_overall": 11320,
     "categories": [
       "Bluffing",
       "Economic",
@@ -33415,9 +33415,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 1.7059,
-    "rating_avg": 5.49865,
+    "rating_avg": 5.50134,
     "rating_bayes": 5.4984,
-    "rank_overall": 24960,
+    "rank_overall": 24972,
     "categories": [
       "Industry / Manufacturing",
       "Science Fiction"
@@ -33463,8 +33463,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 2.1716,
-    "rating_avg": 7.34105,
-    "rating_bayes": 6.45014,
+    "rating_avg": 7.34119,
+    "rating_bayes": 6.45002,
     "rank_overall": 1416,
     "categories": [
       "American Indian Wars",
@@ -33525,8 +33525,8 @@
     "time_min": 60,
     "time_max": 180,
     "weight": 4.2606,
-    "rating_avg": 7.96937,
-    "rating_bayes": 7.53525,
+    "rating_avg": 7.96941,
+    "rating_bayes": 7.53528,
     "rank_overall": 116,
     "categories": [
       "Post-Napoleonic"
@@ -33589,7 +33589,7 @@
     "weight": 2.619,
     "rating_avg": 6.40198,
     "rating_bayes": 5.68721,
-    "rank_overall": 6363,
+    "rank_overall": 6365,
     "categories": [
       "Educational",
       "Industry / Manufacturing",
@@ -33649,7 +33649,7 @@
     "weight": 1.5862,
     "rating_avg": 6.49173,
     "rating_bayes": 5.82915,
-    "rank_overall": 4359,
+    "rank_overall": 4361,
     "categories": [
       "Dice"
     ],
@@ -33703,7 +33703,7 @@
     "weight": 2.518,
     "rating_avg": 6.44159,
     "rating_bayes": 5.8541,
-    "rank_overall": 4133,
+    "rank_overall": 4135,
     "categories": [
       "Economic"
     ],
@@ -33751,8 +33751,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 2.3268,
-    "rating_avg": 7.63231,
-    "rating_bayes": 6.88632,
+    "rating_avg": 7.63243,
+    "rating_bayes": 6.8864,
     "rank_overall": 626,
     "categories": [
       "Age of Reason",
@@ -33817,8 +33817,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.5861,
-    "rating_avg": 7.11759,
-    "rating_bayes": 6.60442,
+    "rating_avg": 7.11754,
+    "rating_bayes": 6.60453,
     "rank_overall": 1062,
     "categories": [
       "City Building",
@@ -34115,9 +34115,9 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.3913,
-    "rating_avg": 7.04339,
+    "rating_avg": 7.04369,
     "rating_bayes": 6.37024,
-    "rank_overall": 1615,
+    "rank_overall": 1616,
     "categories": [
       "Animals",
       "Farming"
@@ -34253,9 +34253,9 @@
     "time_min": 40,
     "time_max": 40,
     "weight": 1.6364,
-    "rating_avg": 6.53914,
-    "rating_bayes": 5.76686,
-    "rank_overall": 5065,
+    "rating_avg": 6.54163,
+    "rating_bayes": 5.76779,
+    "rank_overall": 5055,
     "categories": [
       "Card Game",
       "Farming"
@@ -34303,9 +34303,9 @@
     "time_min": 40,
     "time_max": 40,
     "weight": 1.6364,
-    "rating_avg": 6.53914,
-    "rating_bayes": 5.76686,
-    "rank_overall": 5065,
+    "rating_avg": 6.54163,
+    "rating_bayes": 5.76779,
+    "rank_overall": 5055,
     "categories": [
       "Card Game",
       "Farming"
@@ -34353,8 +34353,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 2.4391,
-    "rating_avg": 6.69814,
-    "rating_bayes": 6.489,
+    "rating_avg": 6.69851,
+    "rating_bayes": 6.48926,
     "rank_overall": 1305,
     "categories": [
       "Card Game",
@@ -34415,9 +34415,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.3571,
-    "rating_avg": 6.22804,
-    "rating_bayes": 5.62722,
-    "rank_overall": 7911,
+    "rating_avg": 6.23331,
+    "rating_bayes": 5.62849,
+    "rank_overall": 7887,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -34531,7 +34531,7 @@
     "weight": 2.3333,
     "rating_avg": 6.72961,
     "rating_bayes": 5.60974,
-    "rank_overall": 8636,
+    "rank_overall": 8638,
     "categories": [
       "Adventure",
       "Exploration"
@@ -34587,7 +34587,7 @@
     "weight": 1.8438,
     "rating_avg": 6.74899,
     "rating_bayes": 5.65091,
-    "rank_overall": 7219,
+    "rank_overall": 7221,
     "categories": [
       "Environmental",
       "Science Fiction"
@@ -34639,7 +34639,7 @@
     "weight": 2.6923,
     "rating_avg": 6.30299,
     "rating_bayes": 5.61689,
-    "rank_overall": 8325,
+    "rank_overall": 8326,
     "categories": [
       "Bluffing",
       "Environmental",
@@ -34707,7 +34707,7 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.3544,
-    "rating_avg": 7.01446,
+    "rating_avg": 7.01456,
     "rating_bayes": 6.53958,
     "rank_overall": 1201,
     "categories": [
@@ -34767,7 +34767,7 @@
     "weight": 1.25,
     "rating_avg": 6.17817,
     "rating_bayes": 5.61226,
-    "rank_overall": 8516,
+    "rank_overall": 8517,
     "categories": [
       "Action / Dexterity",
       "Electronic",
@@ -34821,9 +34821,9 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 2.7273,
-    "rating_avg": 7.30913,
-    "rating_bayes": 6.70944,
-    "rank_overall": 877,
+    "rating_avg": 7.30842,
+    "rating_bayes": 6.70889,
+    "rank_overall": 879,
     "categories": [
       "Adventure",
       "Card Game",
@@ -34887,7 +34887,7 @@
     "weight": 1.6216,
     "rating_avg": 6.11416,
     "rating_bayes": 5.60205,
-    "rank_overall": 8966,
+    "rank_overall": 8968,
     "categories": [
       "Abstract Strategy"
     ],
@@ -34935,7 +34935,7 @@
     "weight": 3.059,
     "rating_avg": 6.93683,
     "rating_bayes": 6.3454,
-    "rank_overall": 1683,
+    "rank_overall": 1684,
     "categories": [
       "Trains",
       "Transportation"
@@ -35109,7 +35109,7 @@
     "weight": 1.6667,
     "rating_avg": 6.63618,
     "rating_bayes": 5.51575,
-    "rank_overall": 19918,
+    "rank_overall": 19928,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -35161,7 +35161,7 @@
     "weight": 2.4545,
     "rating_avg": 7.06299,
     "rating_bayes": 5.68891,
-    "rank_overall": 6323,
+    "rank_overall": 6327,
     "categories": [
       "Economic",
       "Trains"
@@ -35221,7 +35221,7 @@
     "weight": 1.8571,
     "rating_avg": 6.04546,
     "rating_bayes": 5.58715,
-    "rank_overall": 9788,
+    "rank_overall": 9791,
     "categories": [
       "Card Game",
       "Real-time",
@@ -35273,8 +35273,8 @@
     "time_min": 75,
     "time_max": 75,
     "weight": 2.8974,
-    "rating_avg": 7.04102,
-    "rating_bayes": 6.63609,
+    "rating_avg": 7.04086,
+    "rating_bayes": 6.63601,
     "rank_overall": 1009,
     "categories": [
       "City Building",
@@ -35333,7 +35333,7 @@
     "weight": 2.4429,
     "rating_avg": 6.50342,
     "rating_bayes": 5.88903,
-    "rank_overall": 3841,
+    "rank_overall": 3842,
     "categories": [
       "Exploration",
       "Renaissance"
@@ -35379,9 +35379,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.0811,
-    "rating_avg": 6.32393,
-    "rating_bayes": 5.64452,
-    "rank_overall": 7390,
+    "rating_avg": 6.32329,
+    "rating_bayes": 5.64465,
+    "rank_overall": 7388,
     "categories": [
       "Card Game",
       "Medieval"
@@ -35445,8 +35445,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.6389,
-    "rating_avg": 7.24306,
-    "rating_bayes": 6.97598,
+    "rating_avg": 7.24314,
+    "rating_bayes": 6.97602,
     "rank_overall": 514,
     "categories": [
       "Renaissance"
@@ -35563,8 +35563,8 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.3249,
-    "rating_avg": 7.48398,
-    "rating_bayes": 6.82315,
+    "rating_avg": 7.48409,
+    "rating_bayes": 6.82313,
     "rank_overall": null,
     "categories": [
       "Arabian",
@@ -35623,7 +35623,7 @@
     "weight": 2.0,
     "rating_avg": 5.59091,
     "rating_bayes": 5.49977,
-    "rank_overall": 24616,
+    "rank_overall": 24627,
     "categories": [
       "Card Game",
       "Medical",
@@ -35673,7 +35673,7 @@
     "time_min": 90,
     "time_max": 120,
     "weight": 2.9031,
-    "rating_avg": 7.3762,
+    "rating_avg": 7.37613,
     "rating_bayes": 6.80932,
     "rank_overall": 726,
     "categories": [
@@ -35791,9 +35791,9 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.1,
-    "rating_avg": 6.32812,
-    "rating_bayes": 5.67538,
-    "rank_overall": 6634,
+    "rating_avg": 6.32866,
+    "rating_bayes": 5.67597,
+    "rank_overall": 6623,
     "categories": [
       "Fantasy"
     ],
@@ -35885,7 +35885,7 @@
     "weight": 1.4286,
     "rating_avg": 6.28108,
     "rating_bayes": 5.52699,
-    "rank_overall": 16765,
+    "rank_overall": 16774,
     "categories": [
       "Action / Dexterity",
       "Party Game",
@@ -35943,7 +35943,7 @@
     "weight": 2.1549,
     "rating_avg": 7.12184,
     "rating_bayes": 6.80685,
-    "rank_overall": 728,
+    "rank_overall": 729,
     "categories": [
       "Ancient",
       "Exploration",
@@ -36105,7 +36105,7 @@
     "weight": 1.5833,
     "rating_avg": 5.64962,
     "rating_bayes": 5.51196,
-    "rank_overall": 21096,
+    "rank_overall": 21104,
     "categories": [
       "Dice",
       "Real-time"
@@ -36205,7 +36205,7 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 1.8455,
-    "rating_avg": 7.1607,
+    "rating_avg": 7.16091,
     "rating_bayes": 6.79487,
     "rank_overall": 744,
     "categories": [
@@ -36271,8 +36271,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.6531,
-    "rating_avg": 8.02999,
-    "rating_bayes": 7.70094,
+    "rating_avg": 8.03005,
+    "rating_bayes": 7.70092,
     "rank_overall": null,
     "categories": [
       "Expansion for Base-game",
@@ -36345,7 +36345,7 @@
     "weight": 3.2421,
     "rating_avg": 7.26313,
     "rating_bayes": 6.10912,
-    "rank_overall": 2550,
+    "rank_overall": 2551,
     "categories": [
       "Adventure",
       "Exploration",
@@ -36409,7 +36409,7 @@
     "time_min": 15,
     "time_max": 0,
     "weight": 1.1034,
-    "rating_avg": 6.98575,
+    "rating_avg": 6.98557,
     "rating_bayes": 6.41226,
     "rank_overall": null,
     "categories": [
@@ -36471,8 +36471,8 @@
     "time_min": 45,
     "time_max": 75,
     "weight": 2.7202,
-    "rating_avg": 7.16358,
-    "rating_bayes": 6.8654,
+    "rating_avg": 7.1636,
+    "rating_bayes": 6.86546,
     "rank_overall": 654,
     "categories": [
       "Card Game",
@@ -36527,8 +36527,8 @@
     "time_min": 20,
     "time_max": 40,
     "weight": 2.4146,
-    "rating_avg": 7.14321,
-    "rating_bayes": 6.26474,
+    "rating_avg": 7.14306,
+    "rating_bayes": 6.2651,
     "rank_overall": 1928,
     "categories": [
       "Industry / Manufacturing",
@@ -36585,8 +36585,8 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 4.4388,
-    "rating_avg": 8.25648,
-    "rating_bayes": 8.02508,
+    "rating_avg": 8.25666,
+    "rating_bayes": 8.02526,
     "rank_overall": 15,
     "categories": [
       "Card Game",
@@ -36651,9 +36651,9 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 4.1775,
-    "rating_avg": 7.8225,
-    "rating_bayes": 7.56002,
-    "rank_overall": 108,
+    "rating_avg": 7.82239,
+    "rating_bayes": 7.55992,
+    "rank_overall": 109,
     "categories": [
       "Civilization",
       "Economic"
@@ -36761,8 +36761,8 @@
     "time_min": 20,
     "time_max": 80,
     "weight": 2.9566,
-    "rating_avg": 7.41184,
-    "rating_bayes": 7.10722,
+    "rating_avg": 7.41217,
+    "rating_bayes": 7.10749,
     "rank_overall": 378,
     "categories": [
       "City Building",
@@ -36897,7 +36897,7 @@
     "weight": 1.0,
     "rating_avg": 6.86837,
     "rating_bayes": 5.56175,
-    "rank_overall": 11620,
+    "rank_overall": 11624,
     "categories": [
       "Electronic",
       "Maze",
@@ -36951,7 +36951,7 @@
     "weight": 2.5,
     "rating_avg": 6.67025,
     "rating_bayes": 5.60766,
-    "rank_overall": 8731,
+    "rank_overall": 8732,
     "categories": [
       "Economic",
       "Nautical"
@@ -37001,8 +37001,8 @@
     "time_min": 40,
     "time_max": 200,
     "weight": 3.5395,
-    "rating_avg": 7.59596,
-    "rating_bayes": 7.25441,
+    "rating_avg": 7.59588,
+    "rating_bayes": 7.25433,
     "rank_overall": 258,
     "categories": [
       "Card Game",
@@ -37345,7 +37345,7 @@
     "weight": 2.4167,
     "rating_avg": 5.87823,
     "rating_bayes": 5.52115,
-    "rank_overall": 18327,
+    "rank_overall": 18338,
     "categories": [
       "Card Game",
       "Dice",
@@ -37759,8 +37759,8 @@
     "time_min": 75,
     "time_max": 75,
     "weight": 2.8672,
-    "rating_avg": 7.05953,
-    "rating_bayes": 6.2006,
+    "rating_avg": 7.06062,
+    "rating_bayes": 6.2009,
     "rank_overall": 2178,
     "categories": [
       "Ancient",
@@ -37885,9 +37885,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.0526,
-    "rating_avg": 3.51361,
+    "rating_avg": 3.51315,
     "rating_bayes": 4.82334,
-    "rank_overall": 29278,
+    "rank_overall": 29289,
     "categories": [
       "Animals",
       "Children's Game",
@@ -37949,7 +37949,7 @@
     "weight": 3.8098,
     "rating_avg": 7.43811,
     "rating_bayes": 6.43273,
-    "rank_overall": 1457,
+    "rank_overall": 1456,
     "categories": [
       "Medieval",
       "Negotiation",
@@ -38153,8 +38153,8 @@
     "time_min": 100,
     "time_max": 100,
     "weight": 2.9878,
-    "rating_avg": 8.08276,
-    "rating_bayes": 7.93119,
+    "rating_avg": 8.08259,
+    "rating_bayes": 7.93114,
     "rank_overall": 26,
     "categories": [
       "Ancient",
@@ -38229,8 +38229,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.0556,
-    "rating_avg": 8.29821,
-    "rating_bayes": 7.35314,
+    "rating_avg": 8.2985,
+    "rating_bayes": 7.35319,
     "rank_overall": null,
     "categories": [
       "Ancient",
@@ -38287,7 +38287,7 @@
     "weight": 3.8889,
     "rating_avg": 7.12538,
     "rating_bayes": 5.62264,
-    "rank_overall": 8085,
+    "rank_overall": 8083,
     "categories": [
       "Economic",
       "Negotiation",
@@ -38347,9 +38347,9 @@
     "time_min": 45,
     "time_max": 90,
     "weight": 2.375,
-    "rating_avg": 6.987,
+    "rating_avg": 6.99109,
     "rating_bayes": 5.64183,
-    "rank_overall": 7477,
+    "rank_overall": 7480,
     "categories": [
       "Bluffing",
       "Humor",
@@ -38405,7 +38405,7 @@
     "weight": 2.6215,
     "rating_avg": 6.67971,
     "rating_bayes": 6.17147,
-    "rank_overall": 2281,
+    "rank_overall": 2283,
     "categories": [
       "Economic",
       "Industry / Manufacturing",
@@ -38585,8 +38585,8 @@
     "time_min": 45,
     "time_max": 90,
     "weight": 2.8953,
-    "rating_avg": 7.96612,
-    "rating_bayes": 7.81577,
+    "rating_avg": 7.96604,
+    "rating_bayes": 7.81564,
     "rank_overall": 42,
     "categories": [
       "Economic",
@@ -38647,8 +38647,8 @@
     "time_min": 75,
     "time_max": 100,
     "weight": 3.0782,
-    "rating_avg": 7.29411,
-    "rating_bayes": 7.00606,
+    "rating_avg": 7.29399,
+    "rating_bayes": 7.00599,
     "rank_overall": 478,
     "categories": [
       "Economic",
@@ -38703,8 +38703,8 @@
     "time_min": 45,
     "time_max": 75,
     "weight": 2.7414,
-    "rating_avg": 7.31021,
-    "rating_bayes": 7.03645,
+    "rating_avg": 7.31019,
+    "rating_bayes": 7.03644,
     "rank_overall": 449,
     "categories": [
       "Economic",
@@ -38809,7 +38809,7 @@
     "weight": 2.2,
     "rating_avg": 6.36897,
     "rating_bayes": 5.51888,
-    "rank_overall": 18972,
+    "rank_overall": 18983,
     "categories": [
       "Economic",
       "Environmental",
@@ -38911,8 +38911,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.0085,
-    "rating_avg": 6.74097,
-    "rating_bayes": 6.31698,
+    "rating_avg": 6.74112,
+    "rating_bayes": 6.31703,
     "rank_overall": 1762,
     "categories": [
       "Ancient",
@@ -38973,7 +38973,7 @@
     "weight": 2.0189,
     "rating_avg": 6.85391,
     "rating_bayes": 5.89965,
-    "rank_overall": 3763,
+    "rank_overall": 3764,
     "categories": [
       "Card Game",
       "Exploration",
@@ -39027,7 +39027,7 @@
     "weight": 1.55,
     "rating_avg": 6.52835,
     "rating_bayes": 5.62981,
-    "rank_overall": 7842,
+    "rank_overall": 7845,
     "categories": [
       "Animals",
       "Educational",
@@ -39091,7 +39091,7 @@
     "weight": 2.2554,
     "rating_avg": 6.86519,
     "rating_bayes": 6.47067,
-    "rank_overall": 1357,
+    "rank_overall": 1356,
     "categories": [
       "Animals"
     ],
@@ -39149,8 +39149,8 @@
     "time_min": 115,
     "time_max": 115,
     "weight": 3.4527,
-    "rating_avg": 8.11042,
-    "rating_bayes": 7.95702,
+    "rating_avg": 8.11038,
+    "rating_bayes": 7.95697,
     "rank_overall": 22,
     "categories": [
       "Economic",
@@ -39287,7 +39287,7 @@
     "weight": 2.1667,
     "rating_avg": 7.16598,
     "rating_bayes": 5.57317,
-    "rank_overall": 10679,
+    "rank_overall": 10685,
     "categories": [
       "Bluffing",
       "Card Game"
@@ -39337,7 +39337,7 @@
     "weight": 3.75,
     "rating_avg": 6.9214,
     "rating_bayes": 5.67642,
-    "rank_overall": 6606,
+    "rank_overall": 6610,
     "categories": [
       "Economic",
       "Trains"
@@ -39391,7 +39391,7 @@
     "weight": 1.6364,
     "rating_avg": 5.23707,
     "rating_bayes": 5.45577,
-    "rank_overall": 28628,
+    "rank_overall": 28639,
     "categories": [
       "Economic",
       "Science Fiction"
@@ -39441,7 +39441,7 @@
     "weight": 3.0714,
     "rating_avg": 5.7356,
     "rating_bayes": 5.51532,
-    "rank_overall": 20047,
+    "rank_overall": 20055,
     "categories": [
       "Humor",
       "Science Fiction",
@@ -39495,7 +39495,7 @@
     "weight": 1.5714,
     "rating_avg": 5.64752,
     "rating_bayes": 5.50811,
-    "rank_overall": 22313,
+    "rank_overall": 22323,
     "categories": [
       "Bluffing"
     ],
@@ -39589,7 +39589,7 @@
     "weight": 2.0435,
     "rating_avg": 5.37212,
     "rating_bayes": 5.479,
-    "rank_overall": 27711,
+    "rank_overall": 27721,
     "categories": [
       "Animals",
       "Card Game",
@@ -39645,7 +39645,7 @@
     "weight": 1.5797,
     "rating_avg": 5.06678,
     "rating_bayes": 5.40706,
-    "rank_overall": 29037,
+    "rank_overall": 29048,
     "categories": [
       "Political",
       "Science Fiction"
@@ -39695,9 +39695,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.375,
-    "rating_avg": 6.13334,
-    "rating_bayes": 5.63741,
-    "rank_overall": 7603,
+    "rating_avg": 6.13952,
+    "rating_bayes": 5.6387,
+    "rank_overall": 7574,
     "categories": [
       "Exploration",
       "Novel-based"
@@ -39747,9 +39747,9 @@
     "time_min": 30,
     "time_max": 75,
     "weight": 2.6667,
-    "rating_avg": 6.74933,
+    "rating_avg": 6.75194,
     "rating_bayes": 5.65419,
-    "rank_overall": 7131,
+    "rank_overall": 7133,
     "categories": [
       "Adventure",
       "Ancient",
@@ -39815,8 +39815,8 @@
     "time_min": 30,
     "time_max": 120,
     "weight": 3.8648,
-    "rating_avg": 8.16539,
-    "rating_bayes": 7.9433,
+    "rating_avg": 8.16543,
+    "rating_bayes": 7.94335,
     "rank_overall": 25,
     "categories": [
       "Animals",
@@ -39899,7 +39899,7 @@
     "weight": 2.2,
     "rating_avg": 5.73182,
     "rating_bayes": 5.50728,
-    "rank_overall": 22579,
+    "rank_overall": 22588,
     "categories": [
       "Fantasy",
       "Real-time"
@@ -39949,7 +39949,7 @@
     "weight": 1.64,
     "rating_avg": 6.19534,
     "rating_bayes": 5.61799,
-    "rank_overall": 8274,
+    "rank_overall": 8276,
     "categories": [
       "Dice"
     ],
@@ -39999,7 +39999,7 @@
     "weight": 1.3143,
     "rating_avg": 5.45186,
     "rating_bayes": 5.49015,
-    "rank_overall": 26525,
+    "rank_overall": 26537,
     "categories": [
       "Action / Dexterity",
       "Racing",
@@ -40053,9 +40053,9 @@
     "time_min": 60,
     "time_max": 60,
     "weight": 2.3292,
-    "rating_avg": 7.32762,
-    "rating_bayes": 7.19091,
-    "rank_overall": 306,
+    "rating_avg": 7.32774,
+    "rating_bayes": 7.19097,
+    "rank_overall": 305,
     "categories": [
       "Real-time",
       "Science Fiction",
@@ -40187,8 +40187,8 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 3.626,
-    "rating_avg": 7.74693,
-    "rating_bayes": 7.47349,
+    "rating_avg": 7.7469,
+    "rating_bayes": 7.47347,
     "rank_overall": 143,
     "categories": [
       "Ancient"
@@ -40243,7 +40243,7 @@
     "weight": 2.0,
     "rating_avg": 6.24876,
     "rating_bayes": 5.57851,
-    "rank_overall": 10316,
+    "rank_overall": 10319,
     "categories": [
       "Abstract Strategy"
     ],
@@ -40297,7 +40297,7 @@
     "weight": 1.0,
     "rating_avg": 5.87683,
     "rating_bayes": 5.53116,
-    "rank_overall": 15807,
+    "rank_overall": 15818,
     "categories": [
       "Action / Dexterity",
       "Party Game",
@@ -40405,8 +40405,8 @@
     "time_min": 45,
     "time_max": 60,
     "weight": 2.6222,
-    "rating_avg": 7.13948,
-    "rating_bayes": 6.71444,
+    "rating_avg": 7.13918,
+    "rating_bayes": 6.71425,
     "rank_overall": 865,
     "categories": [
       "Dice",
@@ -40473,8 +40473,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.6118,
-    "rating_avg": 8.11192,
-    "rating_bayes": 7.18454,
+    "rating_avg": 8.11178,
+    "rating_bayes": 7.18459,
     "rank_overall": null,
     "categories": [
       "Ancient",
@@ -40533,8 +40533,8 @@
     "time_min": 90,
     "time_max": 90,
     "weight": 3.6638,
-    "rating_avg": 7.8482,
-    "rating_bayes": 7.68564,
+    "rating_avg": 7.84823,
+    "rating_bayes": 7.68567,
     "rank_overall": 73,
     "categories": [
       "Ancient",
@@ -40757,7 +40757,7 @@
     "weight": 1.0,
     "rating_avg": 6.12432,
     "rating_bayes": 5.52062,
-    "rank_overall": 18477,
+    "rank_overall": 18487,
     "categories": [
       "Action / Dexterity"
     ],
@@ -40801,7 +40801,7 @@
     "time_min": 60,
     "time_max": 120,
     "weight": 2.7994,
-    "rating_avg": 6.45212,
+    "rating_avg": 6.45271,
     "rating_bayes": 5.9993,
     "rank_overall": 3105,
     "categories": [
@@ -40881,7 +40881,7 @@
     "weight": 1.8491,
     "rating_avg": 6.45499,
     "rating_bayes": 5.91333,
-    "rank_overall": 3658,
+    "rank_overall": 3660,
     "categories": [
       "Card Game",
       "Industry / Manufacturing",
@@ -41055,7 +41055,7 @@
     "weight": 3.0281,
     "rating_avg": 7.72856,
     "rating_bayes": 7.13607,
-    "rank_overall": 354,
+    "rank_overall": 355,
     "categories": [
       "Dice",
       "Economic",
@@ -41199,7 +41199,7 @@
     "weight": 1.5,
     "rating_avg": 6.99905,
     "rating_bayes": 5.51839,
-    "rank_overall": 19096,
+    "rank_overall": 19104,
     "categories": [
       "Card Game",
       "Party Game",
@@ -41253,9 +41253,9 @@
     "time_min": 20,
     "time_max": 60,
     "weight": 1.5,
-    "rating_avg": 6.42482,
+    "rating_avg": 6.44072,
     "rating_bayes": 5.54973,
-    "rank_overall": 12807,
+    "rank_overall": 12815,
     "categories": [
       "Adventure",
       "Exploration",
@@ -41411,7 +41411,7 @@
     "weight": 1.4156,
     "rating_avg": 5.68351,
     "rating_bayes": 5.57272,
-    "rank_overall": 10711,
+    "rank_overall": 10718,
     "categories": [
       "Party Game",
       "Puzzle",
@@ -41473,7 +41473,7 @@
     "weight": 2.8966,
     "rating_avg": 6.34955,
     "rating_bayes": 5.63954,
-    "rank_overall": 7549,
+    "rank_overall": 7550,
     "categories": [
       "Abstract Strategy",
       "City Building",
@@ -41523,7 +41523,7 @@
     "weight": 2.5625,
     "rating_avg": 6.6712,
     "rating_bayes": 5.78232,
-    "rank_overall": 4869,
+    "rank_overall": 4870,
     "categories": [
       "Environmental",
       "Industry / Manufacturing"
@@ -41577,7 +41577,7 @@
     "weight": 3.0625,
     "rating_avg": 4.44873,
     "rating_bayes": 5.36962,
-    "rank_overall": 29134,
+    "rank_overall": 29145,
     "categories": [
       "City Building",
       "Fantasy"
@@ -41847,8 +41847,8 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.1969,
-    "rating_avg": 7.14842,
-    "rating_bayes": 6.97287,
+    "rating_avg": 7.14865,
+    "rating_bayes": 6.97295,
     "rank_overall": 518,
     "categories": [
       "Adventure"
@@ -41969,7 +41969,7 @@
     "weight": 2.518,
     "rating_avg": 6.40896,
     "rating_bayes": 5.84256,
-    "rank_overall": 4235,
+    "rank_overall": 4233,
     "categories": [
       "Economic",
       "Farming",
@@ -42339,7 +42339,7 @@
     "time_min": 5,
     "time_max": 1000,
     "weight": 2.8991,
-    "rating_avg": 7.74727,
+    "rating_avg": 7.74715,
     "rating_bayes": 7.44037,
     "rank_overall": 155,
     "categories": [
@@ -42787,7 +42787,7 @@
     "weight": 1.9375,
     "rating_avg": 6.66564,
     "rating_bayes": 5.722,
-    "rank_overall": 5709,
+    "rank_overall": 5710,
     "categories": [
       "Adventure",
       "Fantasy",
@@ -43091,9 +43091,9 @@
     "time_min": 30,
     "time_max": 45,
     "weight": 2.3243,
-    "rating_avg": 8.15838,
-    "rating_bayes": 6.74841,
-    "rank_overall": 813,
+    "rating_avg": 8.1588,
+    "rating_bayes": 6.75039,
+    "rank_overall": 811,
     "categories": [
       "Horror",
       "Movies / TV / Radio theme"
@@ -43149,8 +43149,8 @@
     "time_min": 120,
     "time_max": 120,
     "weight": 3.3966,
-    "rating_avg": 7.7255,
-    "rating_bayes": 7.46799,
+    "rating_avg": 7.72553,
+    "rating_bayes": 7.46804,
     "rank_overall": 146,
     "categories": [
       "Industry / Manufacturing",
@@ -43255,7 +43255,7 @@
     "weight": 2.3714,
     "rating_avg": 5.01781,
     "rating_bayes": 5.43234,
-    "rank_overall": 28918,
+    "rank_overall": 28929,
     "categories": [
       "Card Game",
       "Political",
@@ -43309,7 +43309,7 @@
     "weight": 1.7885,
     "rating_avg": 4.92661,
     "rating_bayes": 5.39742,
-    "rank_overall": 29071,
+    "rank_overall": 29082,
     "categories": [
       "American West",
       "Exploration"
@@ -43357,7 +43357,7 @@
     "weight": 2.1579,
     "rating_avg": 5.92047,
     "rating_bayes": 5.59101,
-    "rank_overall": 9539,
+    "rank_overall": 9547,
     "categories": [
       "Abstract Strategy",
       "Medieval",
@@ -43547,9 +43547,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.4444,
-    "rating_avg": 6.37919,
-    "rating_bayes": 5.62811,
-    "rank_overall": 7891,
+    "rating_avg": 6.3795,
+    "rating_bayes": 5.62845,
+    "rank_overall": 7889,
     "categories": [
       "Card Game"
     ],
@@ -43599,7 +43599,7 @@
     "weight": 1.7273,
     "rating_avg": 5.81292,
     "rating_bayes": 5.50824,
-    "rank_overall": 22266,
+    "rank_overall": 22275,
     "categories": [
       "City Building",
       "Dice",
@@ -43705,8 +43705,8 @@
     "time_min": 15,
     "time_max": 20,
     "weight": 1.0556,
-    "rating_avg": 6.75366,
-    "rating_bayes": 6.04148,
+    "rating_avg": 6.75318,
+    "rating_bayes": 6.04144,
     "rank_overall": 2868,
     "categories": [
       "Card Game",
@@ -43759,7 +43759,7 @@
     "weight": 1.0,
     "rating_avg": 4.58571,
     "rating_bayes": 5.48432,
-    "rank_overall": 27243,
+    "rank_overall": 27253,
     "categories": [
       "Real-time"
     ],
@@ -43805,7 +43805,7 @@
     "weight": 2.0,
     "rating_avg": 6.138,
     "rating_bayes": 5.52051,
-    "rank_overall": 18508,
+    "rank_overall": 18518,
     "categories": [
       "Card Game",
       "Civilization",
@@ -43857,7 +43857,7 @@
     "weight": 1.34,
     "rating_avg": 5.52798,
     "rating_bayes": 5.50316,
-    "rank_overall": 23769,
+    "rank_overall": 23778,
     "categories": [
       "Bluffing",
       "Card Game"
@@ -43905,7 +43905,7 @@
     "weight": 1.5152,
     "rating_avg": 5.66185,
     "rating_bayes": 5.52831,
-    "rank_overall": 16465,
+    "rank_overall": 16474,
     "categories": [
       "Card Game",
       "Dice"
@@ -44011,9 +44011,9 @@
     "time_min": 15,
     "time_max": 30,
     "weight": 1.0714,
-    "rating_avg": 5.33416,
-    "rating_bayes": 5.42757,
-    "rank_overall": 28948,
+    "rating_avg": 5.33319,
+    "rating_bayes": 5.42716,
+    "rank_overall": 28962,
     "categories": [
       "Card Game",
       "Movies / TV / Radio theme",
@@ -44063,7 +44063,7 @@
     "weight": 1.8333,
     "rating_avg": 6.29225,
     "rating_bayes": 5.5475,
-    "rank_overall": 13119,
+    "rank_overall": 13126,
     "categories": [
       "Animals",
       "Math",
@@ -44121,7 +44121,7 @@
     "weight": 1.35,
     "rating_avg": 6.3385,
     "rating_bayes": 5.64644,
-    "rank_overall": 7331,
+    "rank_overall": 7333,
     "categories": [
       "Card Game",
       "Deduction",
@@ -44177,7 +44177,7 @@
     "weight": 1.4,
     "rating_avg": 5.6878,
     "rating_bayes": 5.50544,
-    "rank_overall": 23135,
+    "rank_overall": 23144,
     "categories": [
       "Abstract Strategy",
       "Aviation / Flight"
@@ -44225,9 +44225,9 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.9048,
-    "rating_avg": 6.39848,
-    "rating_bayes": 6.0263,
-    "rank_overall": 2946,
+    "rating_avg": 6.3982,
+    "rating_bayes": 6.02612,
+    "rank_overall": 2947,
     "categories": [
       "Card Game",
       "Medical"
@@ -44327,7 +44327,7 @@
     "weight": 1.5,
     "rating_avg": 5.98405,
     "rating_bayes": 5.60556,
-    "rank_overall": 8823,
+    "rank_overall": 8824,
     "categories": [
       "Card Game",
       "Humor"
@@ -44435,9 +44435,9 @@
     "time_min": 10,
     "time_max": 10,
     "weight": 1.9187,
-    "rating_avg": 6.30673,
-    "rating_bayes": 5.86411,
-    "rank_overall": 4034,
+    "rating_avg": 6.30594,
+    "rating_bayes": 5.8638,
+    "rank_overall": 4038,
     "categories": [
       "Abstract Strategy"
     ],
@@ -44487,7 +44487,7 @@
     "weight": 2.1449,
     "rating_avg": 6.74093,
     "rating_bayes": 5.85028,
-    "rank_overall": 4172,
+    "rank_overall": 4174,
     "categories": [
       "Ancient",
       "Card Game"
@@ -44541,7 +44541,7 @@
     "weight": 2.5833,
     "rating_avg": 6.68915,
     "rating_bayes": 5.74688,
-    "rank_overall": 5322,
+    "rank_overall": 5323,
     "categories": [
       "Ancient",
       "Card Game",
@@ -44599,7 +44599,7 @@
     "weight": 1.8947,
     "rating_avg": 6.71316,
     "rating_bayes": 5.59773,
-    "rank_overall": 9192,
+    "rank_overall": 9198,
     "categories": [
       "Abstract Strategy",
       "Animals",
@@ -44653,7 +44653,7 @@
     "weight": 1.5312,
     "rating_avg": 6.43265,
     "rating_bayes": 5.68445,
-    "rank_overall": 6432,
+    "rank_overall": 6433,
     "categories": [
       "Animals"
     ],
@@ -44701,7 +44701,7 @@
     "weight": 2.0,
     "rating_avg": 6.77273,
     "rating_bayes": 5.51571,
-    "rank_overall": 19933,
+    "rank_overall": 19942,
     "categories": [
       "Fantasy",
       "Humor",
@@ -44753,7 +44753,7 @@
     "weight": 1.5,
     "rating_avg": 7.14313,
     "rating_bayes": 5.58016,
-    "rank_overall": 10204,
+    "rank_overall": 10208,
     "categories": [
       "Children's Game",
       "Prehistoric"
@@ -44803,7 +44803,7 @@
     "weight": 1.4286,
     "rating_avg": 6.17312,
     "rating_bayes": 5.53669,
-    "rank_overall": 14732,
+    "rank_overall": 14741,
     "categories": [
       "Card Game",
       "Children's Game",
@@ -44905,7 +44905,7 @@
     "weight": 1.9,
     "rating_avg": 6.09057,
     "rating_bayes": 5.53483,
-    "rank_overall": 15069,
+    "rank_overall": 15078,
     "categories": [
       "Card Game",
       "Nautical",
@@ -44965,7 +44965,7 @@
     "weight": 1.0,
     "rating_avg": 7.12024,
     "rating_bayes": 5.70762,
-    "rank_overall": 5956,
+    "rank_overall": 5957,
     "categories": [
       "Card Game",
       "Party Game",
@@ -45019,7 +45019,7 @@
     "weight": 1.5,
     "rating_avg": 5.44419,
     "rating_bayes": 5.49433,
-    "rank_overall": 25845,
+    "rank_overall": 25855,
     "categories": [
       "Card Game",
       "Children's Game"
@@ -45067,7 +45067,7 @@
     "weight": 1.5833,
     "rating_avg": 6.21788,
     "rating_bayes": 5.61555,
-    "rank_overall": 8368,
+    "rank_overall": 8372,
     "categories": [
       "Bluffing",
       "Deduction"
@@ -45115,7 +45115,7 @@
     "weight": 2.0833,
     "rating_avg": 6.45667,
     "rating_bayes": 5.5682,
-    "rank_overall": 11078,
+    "rank_overall": 11085,
     "categories": [
       "Card Game",
       "Fantasy",
@@ -45169,9 +45169,9 @@
     "time_min": 30,
     "time_max": 60,
     "weight": 1.8718,
-    "rating_avg": 5.98047,
-    "rating_bayes": 5.59047,
-    "rank_overall": 9572,
+    "rating_avg": 5.9874,
+    "rating_bayes": 5.59178,
+    "rank_overall": 9495,
     "categories": [
       "Card Game",
       "Music"
@@ -45219,7 +45219,7 @@
     "weight": 1.4167,
     "rating_avg": 5.65224,
     "rating_bayes": 5.51668,
-    "rank_overall": 19615,
+    "rank_overall": 19622,
     "categories": [
       "Card Game"
     ],
@@ -45267,7 +45267,7 @@
     "weight": 1.1875,
     "rating_avg": 6.49482,
     "rating_bayes": 5.59117,
-    "rank_overall": 9527,
+    "rank_overall": 9534,
     "categories": [
       "Animals",
       "Card Game",
@@ -45319,7 +45319,7 @@
     "weight": 1.1875,
     "rating_avg": 6.49482,
     "rating_bayes": 5.59117,
-    "rank_overall": 9527,
+    "rank_overall": 9534,
     "categories": [
       "Animals",
       "Card Game",
@@ -45371,7 +45371,7 @@
     "weight": 1.6,
     "rating_avg": 5.6236,
     "rating_bayes": 5.498,
-    "rank_overall": 25037,
+    "rank_overall": 25048,
     "categories": [
       "Card Game",
       "Spies / Secret Agents"
@@ -45419,7 +45419,7 @@
     "weight": 2.1364,
     "rating_avg": 6.5117,
     "rating_bayes": 5.69251,
-    "rank_overall": 6239,
+    "rank_overall": 6240,
     "categories": [
       "Card Game"
     ],
@@ -45469,7 +45469,7 @@
     "weight": 1.3333,
     "rating_avg": 5.99592,
     "rating_bayes": 5.54798,
-    "rank_overall": 13051,
+    "rank_overall": 13060,
     "categories": [
       "Card Game"
     ],
@@ -45517,7 +45517,7 @@
     "weight": 1.1,
     "rating_avg": 5.99542,
     "rating_bayes": 5.53923,
-    "rank_overall": 14310,
+    "rank_overall": 14315,
     "categories": [
       "Children's Game",
       "Horror",
@@ -45573,7 +45573,7 @@
     "weight": 1.1667,
     "rating_avg": 4.50884,
     "rating_bayes": 5.47006,
-    "rank_overall": 28185,
+    "rank_overall": 28195,
     "categories": [
       "Card Game",
       "Number"
@@ -45627,7 +45627,7 @@
     "weight": 1.625,
     "rating_avg": 6.08855,
     "rating_bayes": 5.6309,
-    "rank_overall": 7815,
+    "rank_overall": 7817,
     "categories": [
       "Card Game",
       "Farming",
@@ -45679,7 +45679,7 @@
     "weight": 1.625,
     "rating_avg": 6.09369,
     "rating_bayes": 5.59663,
-    "rank_overall": 9250,
+    "rank_overall": 9252,
     "categories": [
       "Abstract Strategy",
       "Card Game",
@@ -45843,7 +45843,7 @@
     "weight": 1.4286,
     "rating_avg": 5.87022,
     "rating_bayes": 5.52685,
-    "rank_overall": 16803,
+    "rank_overall": 16812,
     "categories": [
       "Card Game",
       "Party Game",
@@ -45895,7 +45895,7 @@
     "weight": 2.0,
     "rating_avg": 6.01977,
     "rating_bayes": 5.53652,
-    "rank_overall": 14767,
+    "rank_overall": 14773,
     "categories": [
       "Card Game"
     ],
@@ -45943,9 +45943,9 @@
     "time_min": 15,
     "time_max": 30,
     "weight": 1.4777,
-    "rating_avg": 7.19205,
-    "rating_bayes": 6.96452,
-    "rank_overall": 531,
+    "rating_avg": 7.19236,
+    "rating_bayes": 6.96483,
+    "rank_overall": 530,
     "categories": [
       "Card Game"
     ],
@@ -45997,7 +45997,7 @@
     "weight": 1.0,
     "rating_avg": 4.9215,
     "rating_bayes": 5.44609,
-    "rank_overall": 28790,
+    "rank_overall": 28801,
     "categories": [
       "Animals",
       "Bluffing",
@@ -46053,7 +46053,7 @@
     "weight": 2.0977,
     "rating_avg": 6.54067,
     "rating_bayes": 6.27511,
-    "rank_overall": 1897,
+    "rank_overall": 1898,
     "categories": [
       "Bluffing",
       "Civilization",
@@ -46129,7 +46129,7 @@
     "weight": 1.4038,
     "rating_avg": 5.38446,
     "rating_bayes": 5.4763,
-    "rank_overall": 27887,
+    "rank_overall": 27898,
     "categories": [
       "Card Game",
       "Music"
@@ -46179,7 +46179,7 @@
     "weight": 1.7895,
     "rating_avg": 6.73071,
     "rating_bayes": 5.73194,
-    "rank_overall": 5558,
+    "rank_overall": 5559,
     "categories": [
       "Card Game"
     ],
@@ -46225,7 +46225,7 @@
     "weight": 1.5385,
     "rating_avg": 5.22362,
     "rating_bayes": 5.4825,
-    "rank_overall": 27419,
+    "rank_overall": 27429,
     "categories": [
       "Card Game"
     ],
@@ -46271,7 +46271,7 @@
     "weight": 2.1579,
     "rating_avg": 5.80752,
     "rating_bayes": 5.56473,
-    "rank_overall": 11366,
+    "rank_overall": 11373,
     "categories": [
       "Animals",
       "Bluffing",
@@ -46331,7 +46331,7 @@
     "weight": 1.1379,
     "rating_avg": 5.96291,
     "rating_bayes": 5.59689,
-    "rank_overall": 9239,
+    "rank_overall": 9243,
     "categories": [
       "Card Game",
       "Memory"
@@ -46375,7 +46375,7 @@
     "weight": 1.0,
     "rating_avg": 4.255,
     "rating_bayes": 5.47538,
-    "rank_overall": 27932,
+    "rank_overall": 27942,
     "categories": [
       "Exploration"
     ],
@@ -46423,7 +46423,7 @@
     "weight": 1.75,
     "rating_avg": 5.99888,
     "rating_bayes": 5.52939,
-    "rank_overall": 16200,
+    "rank_overall": 16207,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -46479,7 +46479,7 @@
     "weight": 2.0164,
     "rating_avg": 6.73106,
     "rating_bayes": 6.03164,
-    "rank_overall": 2916,
+    "rank_overall": 2919,
     "categories": [
       "Card Game",
       "Trains",
@@ -46555,9 +46555,9 @@
     "time_min": 15,
     "time_max": 30,
     "weight": 1.5639,
-    "rating_avg": 6.59036,
-    "rating_bayes": 6.14018,
-    "rank_overall": 2420,
+    "rating_avg": 6.59006,
+    "rating_bayes": 6.13999,
+    "rank_overall": 2421,
     "categories": [
       "Card Game"
     ],
@@ -46607,7 +46607,7 @@
     "weight": 1.0,
     "rating_avg": 3.6143,
     "rating_bayes": 5.39652,
-    "rank_overall": 29072,
+    "rank_overall": 29083,
     "categories": [
       "Card Game"
     ],
@@ -46653,7 +46653,7 @@
     "weight": 1.6027,
     "rating_avg": 6.12426,
     "rating_bayes": 5.6263,
-    "rank_overall": 7943,
+    "rank_overall": 7948,
     "categories": [
       "Card Game",
       "Fighting",
@@ -46707,7 +46707,7 @@
     "weight": 2.5882,
     "rating_avg": 6.62816,
     "rating_bayes": 5.85063,
-    "rank_overall": 4167,
+    "rank_overall": 4169,
     "categories": [
       "Card Game",
       "Fighting",
@@ -46763,7 +46763,7 @@
     "weight": 2.0,
     "rating_avg": 6.30923,
     "rating_bayes": 5.55338,
-    "rank_overall": 12421,
+    "rank_overall": 12426,
     "categories": [
       "Card Game",
       "Word Game"
@@ -46863,7 +46863,7 @@
     "weight": 1.5102,
     "rating_avg": 5.90728,
     "rating_bayes": 5.5642,
-    "rank_overall": 11403,
+    "rank_overall": 11408,
     "categories": [
       "Card Game"
     ],
@@ -46959,7 +46959,7 @@
     "weight": 1.4348,
     "rating_avg": 6.34799,
     "rating_bayes": 5.65466,
-    "rank_overall": 7121,
+    "rank_overall": 7122,
     "categories": [
       "Abstract Strategy",
       "Card Game",
@@ -47015,7 +47015,7 @@
     "weight": 1.4167,
     "rating_avg": 6.006,
     "rating_bayes": 5.5816,
-    "rank_overall": 10105,
+    "rank_overall": 10110,
     "categories": [
       "Card Game",
       "Exploration"
@@ -47117,7 +47117,7 @@
     "weight": 1.9545,
     "rating_avg": 6.33392,
     "rating_bayes": 5.5809,
-    "rank_overall": 10155,
+    "rank_overall": 10161,
     "categories": [
       "Arabian",
       "Card Game"
@@ -47169,7 +47169,7 @@
     "weight": 1.7895,
     "rating_avg": 6.15471,
     "rating_bayes": 5.64373,
-    "rank_overall": 7415,
+    "rank_overall": 7418,
     "categories": [
       "Card Game",
       "Medieval"
@@ -47217,7 +47217,7 @@
     "weight": 1.5714,
     "rating_avg": 4.875,
     "rating_bayes": 5.47329,
-    "rank_overall": 28051,
+    "rank_overall": 28062,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -47277,7 +47277,7 @@
     "weight": 1.3,
     "rating_avg": 5.63678,
     "rating_bayes": 5.50337,
-    "rank_overall": 23712,
+    "rank_overall": 23721,
     "categories": [
       "Animals",
       "Card Game",
@@ -47329,7 +47329,7 @@
     "weight": 1.375,
     "rating_avg": 6.16577,
     "rating_bayes": 5.62684,
-    "rank_overall": 7925,
+    "rank_overall": 7928,
     "categories": [
       "Card Game",
       "Mythology"
@@ -47379,7 +47379,7 @@
     "weight": 1.9565,
     "rating_avg": 7.1117,
     "rating_bayes": 5.83805,
-    "rank_overall": 4282,
+    "rank_overall": 4283,
     "categories": [
       "Card Game",
       "Medieval",
@@ -47439,7 +47439,7 @@
     "weight": 1.9655,
     "rating_avg": 6.08459,
     "rating_bayes": 5.58796,
-    "rank_overall": 9723,
+    "rank_overall": 9725,
     "categories": [
       "Card Game"
     ],
@@ -47491,7 +47491,7 @@
     "weight": 1.25,
     "rating_avg": 5.49176,
     "rating_bayes": 5.49767,
-    "rank_overall": 25127,
+    "rank_overall": 25140,
     "categories": [
       "Card Game",
       "Party Game"
@@ -47581,7 +47581,7 @@
     "weight": 1.6364,
     "rating_avg": 6.49238,
     "rating_bayes": 5.58794,
-    "rank_overall": 9724,
+    "rank_overall": 9726,
     "categories": [
       "Card Game",
       "Fantasy",
@@ -47629,9 +47629,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.3871,
-    "rating_avg": 6.48614,
-    "rating_bayes": 5.95591,
-    "rank_overall": 3362,
+    "rating_avg": 6.48515,
+    "rating_bayes": 5.95555,
+    "rank_overall": 3365,
     "categories": [
       "Card Game"
     ],
@@ -47685,7 +47685,7 @@
     "weight": 1.16,
     "rating_avg": 5.39812,
     "rating_bayes": 5.45514,
-    "rank_overall": 28637,
+    "rank_overall": 28648,
     "categories": [
       "Card Game",
       "Deduction",
@@ -47741,7 +47741,7 @@
     "weight": 1.4667,
     "rating_avg": 5.81107,
     "rating_bayes": 5.50527,
-    "rank_overall": 23186,
+    "rank_overall": 23195,
     "categories": [
       "Card Game",
       "Educational",
@@ -47797,7 +47797,7 @@
     "weight": 1.2,
     "rating_avg": 5.72017,
     "rating_bayes": 5.52288,
-    "rank_overall": 17836,
+    "rank_overall": 17847,
     "categories": [
       "Card Game",
       "Travel"
@@ -47849,7 +47849,7 @@
     "weight": 2.0,
     "rating_avg": 6.23577,
     "rating_bayes": 5.5972,
-    "rank_overall": 9220,
+    "rank_overall": 9223,
     "categories": [
       "Card Game",
       "Comic Book / Strip",
@@ -47901,7 +47901,7 @@
     "time_min": 30,
     "time_max": 30,
     "weight": 1.2031,
-    "rating_avg": 6.32944,
+    "rating_avg": 6.33036,
     "rating_bayes": 5.85952,
     "rank_overall": 4081,
     "categories": [
@@ -47951,7 +47951,7 @@
     "weight": 1.2326,
     "rating_avg": 6.33583,
     "rating_bayes": 5.65499,
-    "rank_overall": 7118,
+    "rank_overall": 7119,
     "categories": [
       "Card Game",
       "Number"
@@ -48001,9 +48001,9 @@
     "time_min": 20,
     "time_max": 20,
     "weight": 1.0,
-    "rating_avg": 5.70092,
-    "rating_bayes": 5.51938,
-    "rank_overall": 18838,
+    "rating_avg": 5.70633,
+    "rating_bayes": 5.52,
+    "rank_overall": 18663,
     "categories": [
       "Animals",
       "Card Game",
@@ -48052,8 +48052,8 @@
     "time_max": 30,
     "weight": 1.2787,
     "rating_avg": 6.00319,
-    "rating_bayes": 5.71796,
-    "rank_overall": 5765,
+    "rating_bayes": 5.71802,
+    "rank_overall": 5767,
     "categories": [
       "Bluffing",
       "Card Game",
@@ -48107,7 +48107,7 @@
     "weight": 1.5556,
     "rating_avg": 6.53053,
     "rating_bayes": 5.5387,
-    "rank_overall": 14402,
+    "rank_overall": 14407,
     "categories": [
       "Card Game"
     ],
@@ -48153,7 +48153,7 @@
     "weight": 1.7059,
     "rating_avg": 6.54586,
     "rating_bayes": 5.76041,
-    "rank_overall": 5148,
+    "rank_overall": 5149,
     "categories": [
       "Card Game"
     ],
@@ -48203,7 +48203,7 @@
     "weight": 1.2857,
     "rating_avg": 5.50233,
     "rating_bayes": 5.49697,
-    "rank_overall": 25281,
+    "rank_overall": 25292,
     "categories": [
       "Card Game",
       "Mafia"
@@ -48247,7 +48247,7 @@
     "weight": 1.2444,
     "rating_avg": 5.78343,
     "rating_bayes": 5.55022,
-    "rank_overall": 12760,
+    "rank_overall": 12767,
     "categories": [
       "Animals",
       "Bluffing",
@@ -48351,7 +48351,7 @@
     "weight": 2.3333,
     "rating_avg": 6.78632,
     "rating_bayes": 5.54836,
-    "rank_overall": 12997,
+    "rank_overall": 13005,
     "categories": [
       "Card Game"
     ],
@@ -48401,7 +48401,7 @@
     "weight": 1.3176,
     "rating_avg": 5.741,
     "rating_bayes": 5.5681,
-    "rank_overall": 11093,
+    "rank_overall": 11100,
     "categories": [
       "Card Game"
     ],
@@ -48447,7 +48447,7 @@
     "weight": 1.3,
     "rating_avg": 5.47268,
     "rating_bayes": 5.49627,
-    "rank_overall": 25417,
+    "rank_overall": 25427,
     "categories": [
       "Card Game",
       "Humor"
@@ -48497,7 +48497,7 @@
     "weight": 1.4,
     "rating_avg": 6.12363,
     "rating_bayes": 5.54908,
-    "rank_overall": 12891,
+    "rank_overall": 12899,
     "categories": [
       "Animals",
       "Card Game"
@@ -48541,7 +48541,7 @@
     "weight": 1.3556,
     "rating_avg": 6.2852,
     "rating_bayes": 5.76624,
-    "rank_overall": 5074,
+    "rank_overall": 5076,
     "categories": [
       "Card Game"
     ],
@@ -48589,9 +48589,9 @@
     "time_min": 45,
     "time_max": 45,
     "weight": 2.0701,
-    "rating_avg": 6.9358,
-    "rating_bayes": 6.78728,
-    "rank_overall": 757,
+    "rating_avg": 6.93593,
+    "rating_bayes": 6.78749,
+    "rank_overall": 756,
     "categories": [
       "Medieval",
       "Territory Building"
