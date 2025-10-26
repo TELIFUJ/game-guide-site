@@ -27,7 +27,7 @@
     .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
     .btn{padding:8px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;cursor:pointer}
     .btn:active{transform:translateY(1px)}
-    .row{display:flex;gap:8px;align-items:center}
+    .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .fav-btn{position:absolute;top:10px;right:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;cursor:pointer}
     .fav-btn .star{font-size:22px;line-height:1}
     .fav-btn:hover{ transform:scale(1.06); box-shadow:0 4px 14px rgba(0,0,0,.08) }
@@ -61,12 +61,22 @@
     /* 隨機預覽：底部面板（dialog） */
     .modal{position:fixed;inset:0;display:none;z-index:1000;background:rgba(0,0,0,.35)}
     .modal[open]{display:block}
-    .sheet{position:absolute;left:0;right:0;bottom:0;max-height:80vh;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.15);padding:12px;overflow:auto}
+    .sheet{
+      position:absolute;left:0;right:0;bottom:0;max-height:80vh;
+      background:#fff;border-radius:16px 16px 0 0;
+      box-shadow:0 -10px 30px rgba(0,0,0,.15);
+      padding:12px;overflow:auto;outline:none;
+    }
     .sheet-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
     .sheet-title{font-weight:700}
     .sheet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
     .sheet .chip{display:flex;align-items:center;gap:6px}
     .sheet .chip input{accent-color:#4f46e5}
+    .mech-section-title{
+      font-weight:700;
+      font-size:14px;
+      grid-column:1 / -1;
+    }
 
     /* 行動：頂部僅搜尋、底部工具列 */
     #activeChips{overflow:auto;white-space:nowrap}
@@ -131,19 +141,27 @@
 
 <div class="bar" role="toolbar" aria-label="工具列">
   <span id="stats" aria-live="polite">總數：0｜目前顯示：0｜收藏：0</span>
+
   <div class="row">
     每頁
     <select id="pageSize" aria-label="每頁筆數">
       <option>15</option><option>20</option><option>25</option><option selected>40</option>
     </select> 筆
   </div>
+
   <div class="row" aria-label="分頁控制">
     <button id="prev" class="btn" aria-label="上一頁">‹ 上一頁</button>
     <span id="pageInfo">第 1/1 頁</span>
     <button id="next" class="btn" aria-label="下一頁">下一頁 ›</button>
   </div>
+
   <label class="checkbox"><input type="checkbox" id="onlyFav"> 只看收藏</label>
+
+  <!-- 新增：只看重複 -->
+  <label class="checkbox"><input type="checkbox" id="onlyDup"> 只看重複</label>
+
   <label class="checkbox"><input type="checkbox" id="hideDup" checked> 隱藏重複（自動合併）</label>
+
   <button id="openRandom" class="btn" type="button">隨機預覽 / 多選機制</button>
   <button id="dlCsv" class="btn">下載 CSV</button>
   <button id="emailFav" class="btn">Email 收藏清單</button>
@@ -186,17 +204,28 @@
 
 <!-- 隨機預覽 / 多選機制：Bottom Sheet -->
 <div id="randModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="randTitle" aria-hidden="true">
-  <div class="sheet" role="document">
+  <div class="sheet" role="document" tabindex="-1">
     <div class="sheet-head">
       <div id="randTitle" class="sheet-title">隨機預覽／多選機制</div>
       <button id="randClose" class="btn" style="margin-left:auto">關閉</button>
     </div>
+
+    <!-- 機制搜尋框 -->
+    <div class="row" style="gap:8px;margin-bottom:8px">
+      <input id="mechSearch"
+             placeholder="搜尋機制（例如 工人／合作）"
+             style="flex:1 1 auto;padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;">
+    </div>
+
+    <!-- 隨機/套用/清空 -->
     <div class="row" style="gap:8px;margin-bottom:8px">
       <button id="randPick" class="btn" type="button">隨機呈現</button>
       <button id="randApply" class="btn" type="button" title="套用所選機制（OR）">套用多選</button>
       <button id="randClear" class="btn" type="button">清空選取</button>
     </div>
+
     <div id="mechMulti" class="sheet-grid" aria-label="全部機制（可多選）"></div>
+
     <div style="margin:8px 0 4px;font-weight:700">抽出的結果</div>
     <div id="randGrid" class="rec-grid"></div>
   </div>
@@ -263,10 +292,10 @@
     "Worker Placement, Different Worker Types":"多工種工人放置"
   };
 
-  const MIN_CAT_COUNT  = 10; // 已不使用熱門開關，但保留常數以後如需
+  const MIN_CAT_COUNT  = 10;
   const MIN_MECH_COUNT = 10;
 
-  // 快取修復：移除 ?ts，使用 revalidate 策略
+  // 快取修復：移除 ?ts
   const DATA_URL = absUrl('data/games_full.json');
 
   const G = document.getElementById("grid"),
@@ -279,6 +308,7 @@
         PMAX = document.getElementById("pmax"),
         INCL = document.getElementById("inclUsed"),
         ONLYF = document.getElementById("onlyFav"),
+        ONLY_DUP = document.getElementById("onlyDup"),
         HIDED = document.getElementById("hideDup"),
         STATS = document.getElementById("stats"),
         PAGE_SIZE = document.getElementById("pageSize"),
@@ -312,6 +342,7 @@
   const RAND_GRID  = document.getElementById('randGrid');
   const RAND_MECHS = document.getElementById('mechMulti');
   const OPEN_RANDOM = document.getElementById('openRandom');
+  const MECH_SEARCH = document.getElementById('mechSearch');
 
   let DATA=[], page=1;
 
@@ -321,7 +352,7 @@
   function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
   function idOf(x){ return x.id || String(x.bgg_id || (x.name_zh||x.name_en)); }
 
-  // 中文偵測：任一名稱含中日韓字元即視為「有中文」
+  // 中文偵測
   const CJK_RE = /[\u4E00-\u9FFF\u3400-\u4DBF]/;
   function hasZhName(x){
     const s = (x.name_zh||'') + ' ' + (x.name_en||'');
@@ -362,11 +393,11 @@
     return '';
   }
 
-  // 重複合併工具（僅顯示用，不改原資料）
+  // 重複合併視覺
   function normalizeImgUrl(s){
     s = String(s||'').toLowerCase();
-    s = s.replace(/^https?:\/\/[^/]+/, ''); // 去網域
-    s = s.replace(/[?#].*$/, '');           // 去 query/fragment
+    s = s.replace(/^https?:\/\/[^/]+/, '');
+    s = s.replace(/[?#].*$/, '');
     return s;
   }
   function dupKey(x){
@@ -450,7 +481,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     if (mechQ){ ensureOption(MECH, mechQ); MECH.value=mechQ; }
     if (!Number.isNaN(pageQ) && pageQ>0) page = pageQ;
     render();
-    buildMechMultiSheet(); // 機制清單供多選
+    buildMechMultiSheet(); // 初次建表
   }).catch(e=>{
     console.error('Load data failed:', e, DATA_URL);
     alert('無法載入資料：' + DATA_URL);
@@ -470,7 +501,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     RAND_GRID.innerHTML='';
   }
 
-  // === 核心：基礎過濾（可忽略某面向），讓數量動態聯動 ===
+  // === 核心過濾 ===
   function filteredBase({ignoreCat=false, ignoreMech=false}={}){
     let list = DATA.slice();
 
@@ -493,7 +524,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       if(mSel) list = list.filter(x => getMechsZh(x).includes(mSel));
     }
 
-    // 多選機制（OR）：只要任一符合即保留
+    // 多選機制（OR）
     if (MECH_MULTI.size){
       list = list.filter(x=>{
         const mz = getMechsZh(x);
@@ -510,14 +541,29 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
         return cand.some(p => (pmin? p>=pmin : true) && (pmax? p<=pmax : true));
       });
     }
-    if (ONLYF.checked) list = list.filter(x=>favs.has(idOf(x)));
-    if (HIDED.checked) list = dedupList(list);
+    if (ONLYF.checked){
+      list = list.filter(x=>favs.has(idOf(x)));
+    }
+
+    // 先視覺合併（如果要用 onlyDup，我們仍需要 _variant_count）
+    if (HIDED.checked){
+      list = dedupList(list);
+    }
+
+    // 只看重複款（多版本／多賣家）
+    if (ONLY_DUP.checked){
+      if (!HIDED.checked){
+        list = dedupList(list);
+      }
+      list = list.filter(x => x._variant_count > 1);
+    }
+
     return list;
   }
 
-  // 下拉顯示「名稱 (數量)」，value 仍是純名稱（動態聯動）
+  // 下拉顯示「名稱 (數量)」
   function buildOptions(){
-    // 類別（計數）
+    // 類別
     const listForCat = filteredBase({ignoreCat:true});
     const cCounts=new Map();
     listForCat.forEach(x=>getCatsZh(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
@@ -533,7 +579,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     }
     CAT.value = catVal;
 
-    // 機制（計數）
+    // 機制
     const listForMech = filteredBase({ignoreMech:true});
     const mCounts=new Map();
     listForMech.forEach(x=>getMechsZh(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
@@ -550,20 +596,25 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     MECH.value = mechVal;
   }
 
-  // 清除與重置（不動收藏）
+  // 清除與重置
   function restoreInitial(){
     Q.value=""; CAT.value=""; MECH.value="";
     PMIN.value=""; PMAX.value=""; INCL.checked=false;
-    S.value=""; MSORT.value=""; ONLYF.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
+    S.value=""; MSORT.value=""; ONLYF.checked=false; ONLY_DUP.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
     clearFocus(); clearMultiSelect();
     buildOptions(); page=1; render(); hideAC();
   }
   document.getElementById('clearQ').addEventListener('click', ()=>{ Q.value=""; page=1; buildOptions(); render(); });
   document.getElementById('resetAll').addEventListener('click', restoreInitial);
 
-  // 任何影響結果的輸入 -> 同步重算數字 & 重畫
-  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>el.addEventListener('input',()=>{page=1; buildOptions(); render(); hideAC();}));
+  // 任何影響結果的輸入
+  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>{
+    el.addEventListener('input',()=>{
+      page=1; buildOptions(); render(); hideAC();
+    });
+  });
   ONLYF.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
+  ONLY_DUP.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
   HIDED.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
   PREV.addEventListener('click', ()=>{ if(page>1){page--; render(); scrollToTop();}});
   NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); scrollToTop();}});
@@ -571,13 +622,13 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
   CLEAR_FOCUS.addEventListener('click', ()=>{ clearFocus(); });
 
-  // ====== 排序（含「中文優先」常駐權重） ======
+  // ====== 排序（含中文優先） ======
   function compareWithChinesePriority(a,b, secondaryCmp){
     const z = (hasZhName(b) - hasZhName(a)); // 中文優先
     if (z) return z;
     const s = secondaryCmp(a,b);
     if (s) return s;
-    // 次次序：Bayes → 平均 → rank → 名稱
+    // 次序：Bayes → 平均 → rank → 名稱
     const r1 = (getRatingBayes(b)??-1) - (getRatingBayes(a)??-1); if (r1) return r1;
     const r2 = (getRatingAvg(b)??-1) - (getRatingAvg(a)??-1);     if (r2) return r2;
     const r3 = (a.rank_overall??1e9) - (b.rank_overall??1e9);     if (r3) return r3;
@@ -644,17 +695,59 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 
   function renderActiveChips(){
     const chips = [];
-    if (CAT.value)  chips.push({k:'cat',  text:`分類：${CAT.value}`,  onClear:()=>{CAT.value=''; buildOptions(); render();}});
-    if (MECH.value) chips.push({k:'mech', text:`機制：${MECH.value}`, onClear:()=>{MECH.value=''; buildOptions(); render();}});
-    if (MECH_MULTI && MECH_MULTI.size){
-      chips.push({k:'multi', text:`多機制 ×${MECH_MULTI.size}`, onClear:()=>{clearMultiSelect(); render();}});
+    if (CAT.value){
+      chips.push({
+        k:'cat',
+        text:`分類：${CAT.value}`,
+        onClear:()=>{CAT.value=''; buildOptions(); render();}
+      });
     }
-    if (INCL.checked) chips.push({k:'used', text:'含二手價', onClear:()=>{INCL.checked=false; render();}});
-    if (PMIN.value || PMAX.value) chips.push({k:'price', text:`價格${PMIN.value||''}–${PMAX.value||''}`, onClear:()=>{PMIN.value=''; PMAX.value=''; render();}});
+    if (MECH.value){
+      chips.push({
+        k:'mech',
+        text:`機制：${MECH.value}`,
+        onClear:()=>{MECH.value=''; buildOptions(); render();}
+      });
+    }
+    if (MECH_MULTI && MECH_MULTI.size){
+      const list = [...MECH_MULTI];
+      const previewList = list.slice(0,3).join('／');
+      const more = (list.length > 3) ? `…+${list.length-3}` : '';
+      chips.push({
+        k:'multi',
+        text:`多機制：${previewList}${more}`,
+        onClear:()=>{ clearMultiSelect(); render(); }
+      });
+    }
+    if (INCL.checked){
+      chips.push({
+        k:'used',
+        text:'含二手價',
+        onClear:()=>{INCL.checked=false; render();}
+      });
+    }
+    if (PMIN.value || PMAX.value){
+      chips.push({
+        k:'price',
+        text:`價格${PMIN.value||''}–${PMAX.value||''}`,
+        onClear:()=>{PMIN.value=''; PMAX.value=''; render();}
+      });
+    }
+    if (ONLY_DUP.checked){
+      chips.push({
+        k:'duponly',
+        text:'只看重複',
+        onClear:()=>{ONLY_DUP.checked=false; render();}
+      });
+    }
+
     ACTIVE_CHIPS.innerHTML = chips.map(c=>`<a href="#" class="chip" data-k="${c.k}" role="button">${c.text} ×</a>`).join('');
     ACTIVE_CHIPS.querySelectorAll('.chip').forEach(el=>{
-      el.addEventListener('click', (e)=>{ e.preventDefault();
-        const k = el.dataset.k; const item = chips.find(x=>x.k===k); if (item) item.onClear();
+      el.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const k = el.dataset.k;
+        const item = chips.find(x=>x.k===k);
+        if (item) item.onClear();
       });
     });
   }
@@ -678,7 +771,8 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
     });
     G.querySelectorAll('.chip.cat').forEach(a=>{
-      a.onclick=(e)=>{ e.preventDefault();
+      a.onclick=(e)=>{
+        e.preventDefault();
         const v=a.dataset.cat;
         ensureOption(CAT, v); CAT.value=v; page=1; buildOptions(); render();
         const url = new URL(location.href); url.searchParams.set('cat', v); url.searchParams.set('page','1');
@@ -687,7 +781,8 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       };
     });
     G.querySelectorAll('.chip.mech').forEach(a=>{
-      a.onclick=(e)=>{ e.preventDefault();
+      a.onclick=(e)=>{
+        e.preventDefault();
         const v=a.dataset.mech;
         ensureOption(MECH, v); MECH.value=v; page=1; buildOptions(); render();
         const url = new URL(location.href); url.searchParams.set('mech', v); url.searchParams.set('page','1');
@@ -793,7 +888,13 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     }).join('');
     AC.style.display='block';
     AC.querySelectorAll('.ac-item').forEach(el=>{
-      el.onclick = ()=>{ const item = DATA.find(x=>idOf(x)===el.dataset.id); if(item){ Q.value = item.name_zh || item.name_en || ''; hideAC(); page=1; buildOptions(); render(); showFocus(item); scrollToTop(); } };
+      el.onclick = ()=>{
+        const item = DATA.find(x=>idOf(x)===el.dataset.id);
+        if(item){
+          Q.value = item.name_zh || item.name_en || '';
+          hideAC(); page=1; buildOptions(); render(); showFocus(item); scrollToTop();
+        }
+      };
       el.addEventListener('keydown',(ev)=>{ if(ev.key==='Enter'){ ev.preventDefault(); el.click(); }});
     });
   }
@@ -894,10 +995,24 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     REC.innerHTML = cards;
     FOCUS.style.display='block';
 
-    // 推薦清單卡片也可再聚焦
-    FOCUS.querySelectorAll('.fav-btn').forEach(btn=>{ btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); }; });
-    FOCUS.querySelectorAll('.chip.cat').forEach(a=>{ a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.cat; ensureOption(CAT, v); CAT.value=v; page=1; buildOptions(); render(); scrollToTop(); }; });
-    FOCUS.querySelectorAll('.chip.mech').forEach(a=>{ a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.mech; ensureOption(MECH, v); MECH.value=v; page=1; buildOptions(); render(); scrollToTop(); }; });
+    // 推薦清單卡片互動
+    FOCUS.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
+    FOCUS.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{
+        e.preventDefault();
+        const v=a.dataset.cat;
+        ensureOption(CAT, v); CAT.value=v; page=1; buildOptions(); render(); scrollToTop();
+      };
+    });
+    FOCUS.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{
+        e.preventDefault();
+        const v=a.dataset.mech;
+        ensureOption(MECH, v); MECH.value=v; page=1; buildOptions(); render(); scrollToTop();
+      };
+    });
 
     FOCUS.querySelectorAll('#rec .card').forEach(c=>{
       c.addEventListener('click',(e)=>{
@@ -916,26 +1031,70 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     render();
   }
 
-  // ====== 隨機預覽／多選機制 ======
+  // ====== 多選機制面板 ======
+  function applyMechSearchFilter(){
+    if (!MECH_SEARCH) return;
+    const kw = MECH_SEARCH.value.trim().toLowerCase();
+    RAND_MECHS.querySelectorAll('label.chip').forEach(lbl=>{
+      const t = lbl.textContent.toLowerCase();
+      lbl.style.display = (kw && !t.includes(kw)) ? 'none' : '';
+    });
+  }
+
   function buildMechMultiSheet(){
     const counts = new Map();
     DATA.forEach(x=>getMechsZh(x).forEach(m=>counts.set(m,(counts.get(m)||0)+1)));
-    const items = [...counts.entries()].sort((a,b)=>b[1]-a[1]); // 依熱門度排列
-    RAND_MECHS.innerHTML = items.map(([m,c])=>`
-      <label class="chip"><input type="checkbox" value="${m}" ${MECH_MULTI.has(m)?'checked':''}> ${m} <span class="muted">(${c})</span></label>
-    `).join('');
+
+    const items = [...counts.entries()]
+      .sort((a,b)=> b[1]-a[1]); // 熱門度排序
+
+    const hot = items.slice(0,20);
+    const rest = items.slice(20).sort((a,b)=> a[0].localeCompare(b[0],'zh-Hant'));
+
+    function chipRow(m,c){
+      const checked = MECH_MULTI.has(m) ? 'checked' : '';
+      return `<label class="chip" style="cursor:pointer;">
+        <input type="checkbox" value="${m}" ${checked}>
+        ${m} <span class="muted">(${c})</span>
+      </label>`;
+    }
+
+    RAND_MECHS.innerHTML = `
+      <div class="mech-section-title" style="grid-column:1/-1;margin:4px 0 2px;">熱門機制（前20）</div>
+      ${hot.map(([m,c])=>chipRow(m,c)).join('')}
+      <div class="mech-section-title" style="grid-column:1/-1;margin:12px 0 2px;">全部機制</div>
+      ${rest.map(([m,c])=>chipRow(m,c)).join('')}
+    `;
+
+    // 綁 checkbox
     RAND_MECHS.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
       cb.addEventListener('change',()=>{
         if(cb.checked) MECH_MULTI.add(cb.value); else MECH_MULTI.delete(cb.value);
       });
     });
+
+    // 依目前搜尋字過濾一次
+    applyMechSearchFilter();
   }
-  function openRandom(){
+
+  // 打開 bottom sheet
+  // autoPick: 是否立即抽；resetMulti: 是否把前次多機制清掉
+  function openRandom(autoPick=true, resetMulti=false){
+    if (resetMulti){
+      clearMultiSelect(); // 同時會清 randGrid
+    }
     buildMechMultiSheet();
     RAND.setAttribute('open','');
     RAND.setAttribute('aria-hidden','false');
-    RAND.querySelector('.sheet').focus({preventScroll:true});
+    const sheetEl = RAND.querySelector('.sheet');
+    if (sheetEl) {
+      sheetEl.focus({preventScroll:true});
+    }
+    if (autoPick) {
+      randomPick();
+    }
   }
+
   function closeRandom(){
     RAND.removeAttribute('open');
     RAND.setAttribute('aria-hidden','true');
@@ -943,25 +1102,39 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   }
   document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && RAND.hasAttribute('open')) closeRandom(); });
 
-  // 抽籤（依目前「基礎過濾但忽略機制」取樣）
+  // 隨機抽樣：帶防呆訊息
   function randomPick(){
+    if (!DATA.length){
+      RAND_GRID.innerHTML = '<div class="muted" style="padding:12px;font-size:14px;">資料尚未載入，請稍後再試。</div>';
+      return;
+    }
+
     const pool = filteredBase({ignoreMech:true});
+    if (!pool.length){
+      RAND_GRID.innerHTML = '<div class="muted" style="padding:12px;font-size:14px;">目前的篩選條件太嚴格，沒有可抽的遊戲。請先清除條件。</div>';
+      return;
+    }
+
     const n = Math.min(12, pool.length);
     const picks = [];
     const used = new Set();
     while(picks.length<n){
       const i = Math.floor(Math.random()*pool.length);
-      if(!used.has(i)){ used.add(i); picks.push(pool[i]); }
+      if(!used.has(i)){
+        used.add(i);
+        picks.push(pool[i]);
+      }
     }
-    // 顯示於面板底部
+
     RAND_GRID.innerHTML = picks.map(cardHtml).join('');
-    RAND_GRID.querySelectorAll('.fav-btn').forEach(btn=>{ btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); }; });
+    RAND_GRID.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
+    });
   }
 
-  // 事件：開關與套用
-  OPEN_RANDOM.addEventListener('click', openRandom);
+  // 面板內按鈕
   RAND_CLOSE.addEventListener('click', closeRandom);
-  RAND_CLEAR.addEventListener('click', ()=>{ clearMultiSelect(); });
+  RAND_CLEAR.addEventListener('click', ()=>{ clearMultiSelect(); }); // 清多機制但不關面板
   RAND_APPLY.addEventListener('click', ()=>{
     // 沒選排序就預設以 Geek 分數排序
     if(!S.value){ S.value='rating_bayes_desc'; MSORT.value=S.value; }
@@ -970,11 +1143,28 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   });
   RAND_PICK.addEventListener('click', ()=>{ randomPick(); });
 
-  // 行動工具列綁定
+  // 綁定搜尋（避免重複綁 listener 的保險可以忽略，因為 DOM 只有一個 input）
+  if (MECH_SEARCH){
+    MECH_SEARCH.addEventListener('input', applyMechSearchFilter);
+  }
+
+  // 行動工具列與桌機的隨機入口
+  // 桌機版主按鈕：重抽 + 清上次多機制
+  OPEN_RANDOM.addEventListener('click', ()=>{
+    openRandom(true, /*resetMulti=*/true);
+  });
+  // 行動版「隨機」：同桌機，重抽 + 清上次多機制
+  MRANDOM.addEventListener('click', ()=>{
+    openRandom(true, /*resetMulti=*/true);
+  });
+  // 行動版「篩選」：想調整上一輪勾選，不要洗掉
+  MFILTER.addEventListener('click', ()=>{
+    openRandom(false, /*resetMulti=*/false);
+  });
+
+  // 其他行動工具列
   MSORT.addEventListener('change', ()=>{ S.value = MSORT.value; page=1; render(); });
   S.addEventListener('change', ()=>{ MSORT.value = S.value; });
-  MFILTER.addEventListener('click', openRandom);
-  MRANDOM.addEventListener('click', ()=>{ if(!RAND.hasAttribute('open')) openRandom(); randomPick(); });
   MCLEAR.addEventListener('click', restoreInitial);
   MSORT.value = S.value;
 
