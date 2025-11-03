@@ -1,271 +1,142 @@
 # scripts/fetch_bgg.py
-# -*- coding: utf-8 -*-
-import os, time, json, random, xml.etree.ElementTree as ET
+import os, time, json, random
 from pathlib import Path
+import xml.etree.ElementTree as ET
 import requests
 
-INPUT  = Path("data/bgg_ids.json")
-OUTPUT = Path("data/bgg_data.json")
+IDS_FILE   = Path("data/bgg_ids.json")
+OUT_FILE   = Path("data/bgg_data.json")
+TMP_FILE   = Path("data/.bgg_data.tmp.json")
 
-# --- 端點：優先使用 api.geekdo（較少觸發 WAF），可由環境變數覆寫 ---
-PRIMARY_HOST = os.getenv("BGG_PRIMARY_HOST", "api").lower()   # "api" 或 "www"
-if PRIMARY_HOST == "www":
-    PRIMARY_BASE  = "https://boardgamegeek.com/xmlapi2/thing"
-    FALLBACK_BASE = "https://api.geekdo.com/xmlapi2/thing"
-else:
-    PRIMARY_BASE  = "https://api.geekdo.com/xmlapi2/thing"
-    FALLBACK_BASE = "https://boardgamegeek.com/xmlapi2/thing"
+BATCH   = int(os.getenv("BGG_BATCH", "4"))       # 小批次，降低觸發風險
+SLEEP   = float(os.getenv("BGG_SLEEP", "6.0"))   # 每批等待秒數
+RETRY   = int(os.getenv("BGG_RETRY", "6"))       # 重試次數
+JITTER  = float(os.getenv("BGG_JITTER", "0.7"))  # 抖動比例
+VERSIONS= os.getenv("BGG_VERSIONS", "0")         # 是否含 versions
+HOSTS   = [h.strip() for h in os.getenv("BGG_HOSTS", "api.geekdo.com,boardgamegeek.com").split(",")]
+MIN_SAVE= int(os.getenv("BGG_MIN_SAVE", "50"))   # 最少成功數才覆蓋輸出
 
-# --- 可由 CI 覆寫 ---
-BATCH     = int(os.getenv("BGG_BATCH", "6"))                 # 更保守：6
-SLEEP     = float(os.getenv("BGG_SLEEP", "4.0"))             # 批次間隔（基準）
-RETRY     = int(os.getenv("BGG_RETRY", "6"))                 # 重試次數
-MIN_SAVE  = int(os.getenv("BGG_MIN_SAVE", "50"))             # 寫檔門檻
-USE_VERS  = int(os.getenv("BGG_VERSIONS", "0"))              # 是否帶 versions=1（預設關）
-JITTER    = float(os.getenv("BGG_JITTER", "0.6"))            # 退避抖動上限秒數
-WARMUP    = int(os.getenv("BGG_WARMUP", "1"))                # 是否做預熱請求（預設開）
+UA = os.getenv("HTTP_UA", "Mozilla/5.0 (compatible; GameGuideBot/1.0; +https://example.invalid)")
+AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE", "en-US,en;q=0.9")
 
-HEADERS = {
-    "User-Agent": os.getenv("BGG_UA", "game-guide-site/ci (https://github.com/TELIFUJ/game-guide-site)"),
-    "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
-    "Referer": "https://boardgamegeek.com/",
-}
+def load_ids():
+    data = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+    ids = []
+    for x in data:
+        if isinstance(x, dict) and "bgg_id" in x:
+            try: ids.append(int(x["bgg_id"]))
+            except: pass
+        else:
+            try: ids.append(int(x))
+            except: pass
+    return [i for i in ids if i > 0]
 
-def _num(v, t=float):
-    if v in (None, "", "NaN", "not ranked", "Not Ranked", "0.0"):
-        return None
-    try:
-        return t(v)
-    except Exception:
-        return None
-
-def parse_items(root):
-    out=[]
-    for item in root.findall("item"):
-        try:
-            bid=int(item.get("id"))
-        except:
-            continue
-        name_en=None
-        for n in item.findall("name"):
-            if n.get("type")=="primary":
-                name_en=n.get("value"); break
-
-        def val(tag, attr="value"):
-            el=item.find(tag)
-            return el.get(attr) if el is not None and el.get(attr) is not None else None
-
-        avgw=item.find("statistics/ratings/averageweight")
-        weight=_num(avgw.get("value")) if avgw is not None else None
-
-        r_avg_el   = item.find("statistics/ratings/average")
-        r_bayes_el = item.find("statistics/ratings/bayesaverage")
-        rating_avg   = _num(r_avg_el.get("value"))   if r_avg_el   is not None else None
-        rating_bayes = _num(r_bayes_el.get("value")) if r_bayes_el is not None else None
-
-        rank_overall=None
-        ranks_el=item.find("statistics/ratings/ranks")
-        if ranks_el is not None:
-            for rk in ranks_el.findall("rank"):
-                nm = rk.get("name") or ""
-                if nm in ("boardgame", "boardgameoverall"):
-                    rank_overall = _num(rk.get("value"), int)
-                    break
-
-        image_el=item.find("image"); thumb_el=item.find("thumbnail")
-        image_url=image_el.text if image_el is not None else None
-        thumb_url=thumb_el.text if thumb_el is not None else None
-        categories=[l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
-        mechanics=[l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
-
-        # 若未要求 versions=1，versions_el 可能不存在；給 0
-        versions_el=item.find("versions")
-        versions_count=len(versions_el.findall("item")) if versions_el is not None else 0
-
+def parse_xml(xml_text: str):
+    root = ET.fromstring(xml_text)
+    out = []
+    for it in root.findall("./item"):
+        bid = int(it.get("id", "0") or "0")
+        name_en, name_zh = "", ""
+        # 取最合適名稱
+        for nm in it.findall("./name"):
+            if nm.get("type") == "primary":
+                name_en = nm.get("value") or ""
+        # 取圖像
+        image = (it.findtext("./image") or "").strip()
+        thumb = (it.findtext("./thumbnail") or "").strip()
         out.append({
             "bgg_id": bid,
             "name_en": name_en,
-            "year": _num(val("yearpublished"), int),
-            "players": [_num(val("minplayers"), int), _num(val("maxplayers"), int)],
-            "time_min": _num(val("minplaytime"), int),
-            "time_max": _num(val("maxplaytime"), int),
-            "weight": weight,
-            "rating_avg": rating_avg,
-            "rating_bayes": rating_bayes,
-            "rank_overall": rank_overall,
-            "categories": categories,
-            "mechanics": mechanics,
-            "image_url": image_url or thumb_url,
-            "thumb_url": thumb_url or image_url,
-            "versions_count": versions_count,
+            "name_zh": name_zh,   # 留白，後續流程/人工覆蓋
+            "image": image or thumb,
+            "thumb_url": thumb,
+            "image_url": image,
         })
     return out
 
-def _cooldown(base_sleep, attempt):
-    t = base_sleep * attempt + random.random()*JITTER
-    time.sleep(t)
+def get_session():
+    s = requests.Session()
+    s.headers.update({
+        "User-Agent": UA,
+        "Accept": "text/xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": AC_LANG,
+        "Connection": "keep-alive",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache",
+        "Referer": "https://boardgamegeek.com/",
+    })
+    return s
 
-def _make_url(base, ids):
-    params = ["stats=1"]
-    if USE_VERS:
-        params.append("versions=1")
-    params.append("id=" + ",".join(str(i) for i in ids))
-    return f"{base}?{'&'.join(params)}"
-
-def request_xml(session, base, ids):
-    url = _make_url(base, ids)
-    for attempt in range(1, RETRY+1):
-        try:
-            r = session.get(url, timeout=60)
-            # 202 = queueing
-            if r.status_code == 202:
-                _cooldown(2.0, attempt)
-                continue
-            # 401/403/429：WAF/限流，退火後重試（改用另一端點或單筆）
-            if r.status_code in (401, 403, 429):
-                _cooldown(3.0, attempt)
-                continue
-            r.raise_for_status()
-            return ET.fromstring(r.text)
-        except Exception:
-            if attempt == RETRY:
-                return None
-            _cooldown(1.5, attempt)
+def fetch_batch(session: requests.Session, ids):
+    params = {"stats":"1","versions":VERSIONS,"id":",".join(str(i) for i in ids)}
+    last_err = None
+    for host in HOSTS:
+        url = f"https://{host}/xmlapi2/thing"
+        for k in range(RETRY):
+            try:
+                r = session.get(url, params=params, timeout=45)
+                sc = r.status_code
+                if sc == 200 and r.text.strip():
+                    return parse_xml(r.text)
+                # 對 401/403/429/503 做退避
+                if sc in (401,403,429,503):
+                    wait = SLEEP * (1 + random.random() * JITTER) * (1.5 ** k)
+                    time.sleep(wait)
+                    continue
+                # 其他錯誤：短暫等待
+                time.sleep(2.0)
+            except Exception as e:
+                last_err = e
+                time.sleep(2.0)
+        # 換下一個 host
+    # 整批失敗，回 None
     return None
 
-def fetch_with_fallback(session, ids):
-    # 先主要域名，失敗再試備援域名
-    root = request_xml(session, PRIMARY_BASE, ids)
-    if root is None:
-        root = request_xml(session, FALLBACK_BASE, ids)
-    return root
-
-def warmup_session(session):
-    if not WARMUP:
-        return
-    try:
-        # 取首頁幫忙設 Cookie（忽略錯誤）
-        session.get("https://boardgamegeek.com/", timeout=10)
-    except Exception:
-        pass
-    try:
-        session.get("https://api.geekdo.com/", timeout=10)
-    except Exception:
-        pass
-
-def merge_incremental(old_rows, new_rows):
-    """當本輪結果不足門檻時，做增量合併避免掉檔。以 (bgg_id, name_zh/name_en) 為 key。"""
-    def key(r):
-        bid = r.get("bgg_id")
-        nm  = (r.get("name_zh") or r.get("name_en") or "").strip().lower()
-        return (bid, nm)
-
-    out_map = {}
-    for r in old_rows:
-        out_map[key(r)] = r
-    for r in new_rows:
-        out_map[key(r)] = r  # 覆蓋/新增
-    return list(out_map.values())
+def fetch_single(session: requests.Session, idv: int):
+    res = fetch_batch(session, [idv])
+    return res[0] if res else None
 
 def main():
-    if not INPUT.exists():
-        print("No data/bgg_ids.json; nothing to fetch."); return
+    if not IDS_FILE.exists():
+        print("No data/bgg_ids.json; skip."); return
 
-    base_rows=json.loads(INPUT.read_text(encoding="utf-8"))
+    ids = load_ids()
+    session = get_session()
+    ok = []
+    # 先載入舊檔作為增量合併來源
+    old = []
+    if OUT_FILE.exists():
+        try: old = json.loads(OUT_FILE.read_text(encoding="utf-8"))
+        except: old = []
+    cache = {int(x.get("bgg_id", 0)): x for x in old if isinstance(x, dict)}
 
-    # fan-out：同一 bgg_id 可能對應多列
-    from collections import defaultdict
-    rows_by_id = defaultdict(list)
-    ids_unique = []
-    for r in base_rows:
-        bid = r.get("bgg_id")
-        if not bid: continue
-        bid = int(bid)
-        rows_by_id[bid].append(r)
-        if bid not in ids_unique: ids_unique.append(bid)
-
-    s = requests.Session()
-    s.headers.update(HEADERS)
-    warmup_session(s)
-
-    results=[]
-    failed_ids=[]
-
-    print(f"Resolved {len(ids_unique)} unique ids; primary={PRIMARY_BASE}, batch={BATCH}, sleep={SLEEP}s, retry={RETRY}, versions={USE_VERS}")
-
-    # 逐批抓
-    for i in range(0,len(ids_unique),BATCH):
-        chunk=ids_unique[i:i+BATCH]
-        root = fetch_with_fallback(s, chunk)
-
-        # 批次失敗 → 單筆補抓
-        if root is None:
-            print(f"Batch {chunk[:5]}... failed; fallback to single.")
-            for bid in chunk:
-                root1 = fetch_with_fallback(s, [bid])
-                if root1 is None:
-                    failed_ids.append(bid)
-                    continue
-                parsed = parse_items(root1)
-                bases = rows_by_id.get(bid,[{}])
-                if parsed:
-                    for base in bases:
-                        results.append({**base, **parsed[0]})
-                _cooldown(SLEEP/2.0, 1)  # 單筆間也稍退避
-            time.sleep(SLEEP + random.random()*JITTER)
-            continue
-
-        # 批次成功
-        parsed = parse_items(root)
-        by_id = {int(p["bgg_id"]): p for p in parsed}
-        for bid in chunk:
-            p = by_id.get(int(bid))
-            bases = rows_by_id.get(bid,[{}])
-            if p:
-                for base in bases:
-                    results.append({**base, **p})
-            else:
-                # 批次沒看到 → 單筆補抓
-                root1 = fetch_with_fallback(s, [bid])
-                if root1 is None:
-                    failed_ids.append(bid)
-                else:
-                    parsed1 = parse_items(root1)
-                    if parsed1:
-                        for base in bases:
-                            results.append({**base, **parsed1[0]})
-                    else:
-                        failed_ids.append(bid)
-        time.sleep(SLEEP + random.random()*JITTER)
-
-    # --- 寫檔策略：保護線 + 增量合併 ---
-    old_exists = OUTPUT.exists()
-    old_rows = []
-    if old_exists:
-        try:
-            old_rows = json.loads(OUTPUT.read_text(encoding="utf-8"))
-        except Exception:
-            old_rows = []
-
-    # 足夠多 → 直接覆蓋
-    if len(results) >= MIN_SAVE:
-        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"Fetched {len(results)} entries → {OUTPUT}")
-    else:
-        # 不足門檻：若有舊檔，做增量合併寫回；否則中止
-        if old_rows:
-            merged = merge_incremental(old_rows, results)
-            OUTPUT.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
-            print(f"WARNING: fetched {len(results)} (<{MIN_SAVE}); wrote merged file ({len(merged)} entries) to keep dataset healthy.")
+    for i in range(0, len(ids), BATCH):
+        chunk = ids[i:i+BATCH]
+        got = fetch_batch(session, chunk)
+        if got is None:
+            # 單筆回退，盡量撈回
+            for one in chunk:
+                it = fetch_single(session, one)
+                if it: ok.append(it)
         else:
-            msg = f"ABORT: fetched {len(results)} (<{MIN_SAVE}) and no previous data."
-            print(msg)
-            raise SystemExit(msg)
+            ok.extend(got)
 
-    if failed_ids:
-        print(f"Failed IDs ({len(failed_ids)}): {failed_ids[:50]}{' ...' if len(failed_ids)>50 else ''}")
+        # 批次間隔（含抖動）
+        time.sleep(SLEEP * (1 + random.random() * JITTER))
+
+    # 合併舊資料（新覆蓋舊）
+    merged = {int(x.get("bgg_id", 0)): x for x in ok if isinstance(x, dict)}
+    merged.update(cache)
+    final = list(merged.values())
+
+    TMP_FILE.parent.mkdir(parents=True, exist_ok=True)
+    TMP_FILE.write_text(json.dumps(final, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    if len(ok) >= MIN_SAVE or not OUT_FILE.exists():
+        TMP_FILE.replace(OUT_FILE)
+        print(f"Fetched {len(ok)} new / total {len(final)} → {OUT_FILE}")
+    else:
+        print(f"FETCH GUARD: only {len(ok)} (<{MIN_SAVE}) new; keep previous {OUT_FILE}")
 
 if __name__ == "__main__":
     main()
