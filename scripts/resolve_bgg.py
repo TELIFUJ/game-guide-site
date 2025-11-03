@@ -1,3 +1,9 @@
+--- a/scripts/resolve_bgg.py
++++ b/scripts/resolve_bgg.py
+@@
+ #!/usr/bin/env python3
+ # -*- coding: utf-8 -*-
++import os
 # scripts/resolve_bgg_ids.py  ← 若你要直接覆蓋原檔名，調回 fetch 段落的 import/呼叫即可
 import csv, json, re, time, random, xml.etree.ElementTree as ET
 from pathlib import Path
