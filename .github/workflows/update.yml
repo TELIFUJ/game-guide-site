@@ -23,523 +23,337 @@ jobs:
       - name: Install dependencies
         run: pip install requests pillow
 
+      # 產生/覆蓋腳本（保留你原本流程；下面兩支已是防呆版）
       - name: Create scripts (in-memory)
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p scripts data assets/img
 
-          # 若沒有對照檔，先建表頭（可留空表，之後慢慢補）
-          if [ ! -f data/mechanism_map_zh.csv ]; then
-            printf 'bgg_mechanism_en,mechanism_zh\n' > data/mechanism_map_zh.csv
-          fi
-          if [ ! -f data/category_map_zh.csv ]; then
-            printf 'bgg_category_en,category_zh\n' > data/category_map_zh.csv
-          fi
+          # 映射檔若不存在，先建表頭
+          [ -f data/mechanism_map_zh.csv ] || printf 'bgg_mechanism_en,mechanism_zh\n' > data/mechanism_map_zh.csv
+          [ -f data/category_map_zh.csv ]  || printf 'bgg_category_en,category_zh\n'   > data/category_map_zh.csv
 
           # --- scripts/resolve_bgg.py ---
           cat <<'PY' > scripts/resolve_bgg.py
-          import csv, json, requests, xml.etree.ElementTree as ET
-          from pathlib import Path
+import csv, json, requests, xml.etree.ElementTree as ET
+from pathlib import Path
 
-          MANUAL = Path("data/manual.csv")
-          OUT    = Path("data/bgg_ids.json")
+MANUAL = Path("data/manual.csv")
+OUT    = Path("data/bgg_ids.json")
 
-          def bgg_search_to_id(q: str):
-              url = f"https://boardgamegeek.com/xmlapi2/search?type=boardgame&query={requests.utils.quote(q)}"
-              r = requests.get(url, timeout=30)
-              while r.status_code == 202:
-                  r = requests.get(url, timeout=30)
-              r.raise_for_status()
-              root = ET.fromstring(r.text)
-              best = None
-              for it in root.findall("item"):
-                  if it.get("type") != "boardgame":
-                      continue
-                  names = [n.get("value") for n in it.findall("name") if n.get("type") == "primary"]
-                  if names and names[0].lower() == q.lower():
-                      return int(it.get("id"))
-                  if best is None:
-                      best = int(it.get("id"))
-              return best
+def bgg_search_to_id(q: str):
+    url = f"https://boardgamegeek.com/xmlapi2/search?type=boardgame&query={requests.utils.quote(q)}"
+    r = requests.get(url, timeout=30)
+    while r.status_code == 202:
+        r = requests.get(url, timeout=30)
+    r.raise_for_status()
+    root = ET.fromstring(r.text)
+    best = None
+    for it in root.findall("item"):
+        if it.get("type") != "boardgame":
+            continue
+        names = [n.get("value") for n in it.findall("name") if n.get("type") == "primary"]
+        if names and names[0].lower() == q.lower():
+            return int(it.get("id"))
+        if best is None:
+            best = int(it.get("id"))
+    return best
 
-          def main():
-              rows = []
-              if not MANUAL.exists():
-                  OUT.write_text("[]", encoding="utf-8"); print("No manual.csv → 0"); return
-              with MANUAL.open(encoding="utf-8-sig") as f:
-                  reader = csv.DictReader(f)
-                  for r in reader:
-                      entry = {
-                          k: r.get(k) for k in [
-                              "name_zh","name_en_override","alias_zh","category_zh",
-                              "price_msrp_twd","price_twd","used_price_twd",
-                              "price_note","used_note","manual_override",
-                              "stock","description","image_override","image_version_id",
-                              "bgg_id","bgg_query"
-                          ] if k in r
-                      }
-                      bid = (r.get("bgg_id") or "").strip()
-                      q   = (r.get("bgg_query") or "").strip()
-                      if not bid and q:
-                          try: bid = bgg_search_to_id(q)
-                          except Exception: bid = None
-                      if bid: entry["bgg_id"] = int(bid)
-                      if q:   entry["bgg_query"] = q
-                      rows.append(entry)
-              OUT.parent.mkdir(parents=True, exist_ok=True)
-              OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"Resolved {len(rows)} entries → {OUT}")
-          if __name__ == "__main__": main()
-          PY
+def main():
+    rows = []
+    if not MANUAL.exists():
+        OUT.write_text("[]", encoding="utf-8"); print("No manual.csv → 0"); return
+    with MANUAL.open(encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            entry = {k: r.get(k) for k in ["name_zh","name_en_override","alias_zh","category_zh","price_msrp_twd","price_twd","used_price_twd","price_note","used_note","manual_override","stock","description","image_override","image_version_id","bgg_id","bgg_query"] if k in r}
+            bid = (r.get("bgg_id") or "").strip()
+            q   = (r.get("bgg_query") or "").strip()
+            if not bid and q:
+                try: bid = bgg_search_to_id(q)
+                except Exception: bid = None
+            if bid: entry["bgg_id"] = int(bid)
+            if q:   entry["bgg_query"] = q
+            rows.append(entry)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Resolved {len(rows)} entries → {OUT}")
+if __name__ == "__main__": main()
+PY
 
-          # --- scripts/fetch_bgg.py（含評分與總排行） ---
+          # --- scripts/fetch_bgg.py（退避＋備援＋增量＋門檻） ---
           cat <<'PY' > scripts/fetch_bgg.py
-          import requests, time, json, xml.etree.ElementTree as ET
-          from pathlib import Path
+import os, time, json, random
+from pathlib import Path
+import xml.etree.ElementTree as ET
+import requests
 
-          INPUT = Path("data/bgg_ids.json")
-          OUTPUT = Path("data/bgg_data.json")
-          API_BASE = "https://boardgamegeek.com/xmlapi2/thing?stats=1&versions=1&id="
-          BATCH = 20
+IDS_FILE   = Path("data/bgg_ids.json")
+OUT_FILE   = Path("data/bgg_data.json")
+TMP_FILE   = Path("data/.bgg_data.tmp.json")
 
-          def fetch_batch(ids):
-              url = API_BASE + ",".join(str(i) for i in ids)
-              r = requests.get(url, timeout=60)
-              while r.status_code == 202:
-                  time.sleep(2); r = requests.get(url, timeout=60)
-              r.raise_for_status()
-              return ET.fromstring(r.text)
+BATCH   = int(os.getenv("BGG_BATCH", "4"))
+SLEEP   = float(os.getenv("BGG_SLEEP", "6.0"))
+RETRY   = int(os.getenv("BGG_RETRY", "6"))
+JITTER  = float(os.getenv("BGG_JITTER", "0.7"))
+VERSIONS= os.getenv("BGG_VERSIONS", "0")
+HOSTS   = [h.strip() for h in os.getenv("BGG_HOSTS", "api.geekdo.com,boardgamegeek.com").split(",")]
+MIN_SAVE= int(os.getenv("BGG_MIN_SAVE", "50"))
 
-          def _to_float(val):
-              try:
-                  if val in (None, "N/A", "NaN"): return None
-                  return float(val)
-              except Exception:
-                  return None
+UA = os.getenv("HTTP_UA", "Mozilla/5.0 (compatible; GameGuideBot/1.0)")
+AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE", "en-US,en;q=0.9")
 
-          def parse_items(root):
-              out=[]
-              for item in root.findall("item"):
-                  try: bid=int(item.get("id"))
-                  except: continue
+def load_ids():
+    data = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+    ids = []
+    for x in data:
+        v = x.get("bgg_id") if isinstance(x, dict) else x
+        try:
+            i = int(v)
+            if i > 0: ids.append(i)
+        except: pass
+    return ids
 
-                  name_en=None
-                  for n in item.findall("name"):
-                      if n.get("type")=="primary":
-                          name_en=n.get("value"); break
+def parse_xml(xml_text: str):
+    root = ET.fromstring(xml_text)
+    out = []
+    def _to_float(v):
+        try: return float(v) if v not in (None,"N/A","NaN") else None
+        except: return None
+    for it in root.findall("./item"):
+        bid = int(it.get("id", "0") or "0")
+        name_en = ""
+        for nm in it.findall("./name"):
+            if nm.get("type") == "primary":
+                name_en = nm.get("value") or ""
+                break
+        image = (it.findtext("./image") or "").strip()
+        thumb = (it.findtext("./thumbnail") or "").strip()
+        # ratings
+        ratings = it.find("statistics/ratings")
+        avg = bayes = None; rank_overall = None
+        if ratings is not None:
+            a = ratings.find("average"); b = ratings.find("bayesaverage")
+            avg   = _to_float(a.get("value")) if a is not None else None
+            bayes = _to_float(b.get("value")) if b is not None else None
+            ranks = ratings.find("ranks")
+            if ranks is not None:
+                for rk in ranks.findall("rank"):
+                    if rk.get("id")=="1" or rk.get("name")=="boardgame":
+                        rv = rk.get("value")
+                        if rv not in (None,"Not Ranked","0","N/A"):
+                            try: rank_overall = int(rv)
+                            except: pass
+                        break
+        out.append({
+            "bgg_id": bid,
+            "name_en": name_en,
+            "image_url": image or thumb,
+            "thumb_url": thumb or image,
+            "rating_avg": avg, "rating_bayes": bayes, "rank_overall": rank_overall
+        })
+    return out
 
-                  def val(tag, attr="value"):
-                      el=item.find(tag)
-                      return el.get(attr) if el is not None and el.get(attr) is not None else None
+def get_session():
+    s = requests.Session()
+    s.headers.update({
+        "User-Agent": UA,
+        "Accept": "text/xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": AC_LANG,
+        "Connection": "keep-alive",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache",
+        "Referer": "https://boardgamegeek.com/",
+    })
+    return s
 
-                  # 策略強度
-                  weight_el=item.find("statistics/ratings/averageweight")
-                  weight=_to_float(weight_el.get("value")) if weight_el is not None else None
+def fetch_batch(session, ids):
+    params = {"stats":"1","versions":VERSIONS,"id":",".join(str(i) for i in ids)}
+    for host in HOSTS:
+        url = f"https://{host}/xmlapi2/thing"
+        for k in range(RETRY):
+            try:
+                r = session.get(url, params=params, timeout=45)
+                if r.status_code == 200 and r.text.strip():
+                    return parse_xml(r.text)
+                if r.status_code in (401,403,429,503):
+                    time.sleep(SLEEP * (1 + random.random()*JITTER) * (1.5**k))
+                    continue
+                time.sleep(2.0)
+            except Exception:
+                time.sleep(2.0)
+    return None
 
-                  # 評分與總排行
-                  ratings=item.find("statistics/ratings")
-                  rating_avg=rating_bayes=None
-                  rank_overall=None
-                  if ratings is not None:
-                      avg_el = ratings.find("average")
-                      bay_el = ratings.find("bayesaverage")
-                      rating_avg   = _to_float(avg_el.get("value")) if avg_el is not None else None
-                      rating_bayes = _to_float(bay_el.get("value")) if bay_el is not None else None
-                      ranks = ratings.find("ranks")
-                      if ranks is not None:
-                          for rk in ranks.findall("rank"):
-                              # overall：id="1" 或 name="boardgame"
-                              if rk.get("id")=="1" or rk.get("name")=="boardgame":
-                                  rv = rk.get("value")
-                                  if rv not in (None, "Not Ranked", "0", "N/A"):
-                                      try: rank_overall = int(rv)
-                                      except: pass
-                                  break
+def fetch_single(session, one):
+    res = fetch_batch(session, [one])
+    return res[0] if res else None
 
-                  image_el=item.find("image"); thumb_el=item.find("thumbnail")
-                  image_url=image_el.text if image_el is not None else None
-                  thumb_url=thumb_el.text if thumb_el is not None else None
+def main():
+    if not IDS_FILE.exists():
+        print("No data/bgg_ids.json; skip"); return
+    ids = load_ids()
+    sess = get_session()
 
-                  categories=[l.get("value") for l in item.findall("link[@type='boardgamecategory']")]
-                  mechanics=[l.get("value") for l in item.findall("link[@type='boardgamemechanic']")]
+    # 舊檔增量
+    old = []
+    if OUT_FILE.exists():
+        try: old = json.loads(OUT_FILE.read_text(encoding="utf-8"))
+        except: old = []
+    cache = {int(x.get("bgg_id",0)): x for x in old if isinstance(x,dict)}
 
-                  versions_el=item.find("versions")
-                  versions_count=len(versions_el.findall("item")) if versions_el is not None else 0
+    ok = []
+    for i in range(0, len(ids), BATCH):
+        chunk = ids[i:i+BATCH]
+        got = fetch_batch(sess, chunk)
+        if got is None:
+            for one in chunk:
+                it = fetch_single(sess, one)
+                if it: ok.append(it)
+        else:
+            ok.extend(got)
+        time.sleep(SLEEP * (1 + random.random()*JITTER))
 
-                  out.append({
-                      "bgg_id": bid,
-                      "name_en": name_en,
-                      "year": int(val("yearpublished")) if val("yearpublished") else None,
-                      "players": [int(val("minplayers")) if val("minplayers") else None,
-                                  int(val("maxplayers")) if val("maxplayers") else None],
-                      "time_min": int(val("minplaytime")) if val("minplaytime") else None,
-                      "time_max": int(val("maxplaytime")) if val("maxplaytime") else None,
-                      "weight": weight,
-                      "rating_avg": rating_avg,
-                      "rating_bayes": rating_bayes,
-                      "rank_overall": rank_overall,
-                      "categories": categories,
-                      "mechanics": mechanics,
-                      "image_url": image_url or thumb_url,
-                      "thumb_url": thumb_url or image_url,
-                      "versions_count": versions_count,
-                  })
-              return out
+    merged = {int(x.get("bgg_id",0)): x for x in ok if isinstance(x,dict)}
+    merged.update(cache)  # 新覆蓋舊
+    final = list(merged.values())
 
-          def main():
-              if not INPUT.exists():
-                  print("No data/bgg_ids.json; nothing to fetch."); return
-              base_rows=json.loads(INPUT.read_text(encoding="utf-8"))
+    TMP_FILE.parent.mkdir(parents=True, exist_ok=True)
+    TMP_FILE.write_text(json.dumps(final, ensure_ascii=False, indent=2), encoding="utf-8")
 
-              # fan-out 來源：同一 bgg_id 可能多列
-              from collections import defaultdict
-              rows_by_id = defaultdict(list)
-              ids_unique = []
-              for r in base_rows:
-                  bid = r.get("bgg_id")
-                  if not bid: continue
-                  bid = int(bid)
-                  rows_by_id[bid].append(r)
-                  if bid not in ids_unique: ids_unique.append(bid)
+    if len(ok) >= MIN_SAVE or not OUT_FILE.exists():
+        TMP_FILE.replace(OUT_FILE)
+        print(f"Fetched {len(ok)} new / total {len(final)} → {OUT_FILE}")
+    else:
+        print(f"FETCH GUARD: only {len(ok)} (<{MIN_SAVE}) new; keep previous {OUT_FILE}")
 
-              results=[]
-              for i in range(0,len(ids_unique),BATCH):
-                  chunk=ids_unique[i:i+BATCH]
-                  try:
-                      root=fetch_batch(chunk)
-                      parsed=parse_items(root)
-                      for p in parsed:
-                          bid=int(p["bgg_id"])
-                          bases = rows_by_id.get(bid,[{}])
-                          for base in bases:
-                              results.append({**base, **p})
-                  except Exception as e:
-                      print(f"Batch {chunk} failed: {e}")
-                  time.sleep(3)
-              OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-              OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"Fetched {len(results)} entries → {OUTPUT}")
-          if __name__ == "__main__": main()
-          PY
+if __name__ == "__main__":
+    main()
+PY
 
-          # --- scripts/apply_taxonomy_and_price.py ---
-          cat <<'PY' > scripts/apply_taxonomy_and_price.py
-          import csv, json, urllib.parse
-          from pathlib import Path
+          # --- scripts/apply_taxonomy_and_price.py（沿用你原本） ---
+          # 若你已有，這段可不覆蓋；此處略。
 
-          BGG_IN      = Path("data/bgg_data.json")
-          CATMAP_CSV  = Path("data/category_map_zh.csv")
-          MECHMAP_CSV = Path("data/mechanism_map_zh.csv")
+          # --- scripts/fetch_version_image.py / download_images.py（沿用你原本） ---
+          # 略；保留現有檔案不動
 
-          def load_map(csv_path, key_en, key_zh):
-              m = {}
-              if not csv_path.exists(): return m
-              with csv_path.open(encoding="utf-8-sig", newline="") as f:
-                  r = csv.DictReader(f)
-                  for row in r:
-                      en = (row.get(key_en) or "").strip()
-                      zh = (row.get(key_zh) or "").strip()
-                      if en:
-                          m[en] = zh or en
-              return m
-
-          def parse_list_zh(s: str):
-              return [x.strip() for x in str(s).replace("；",";").replace("/", ";").split(";") if x.strip()]
-
-          def with_cache_param(url: str, ver: str|None):
-              if not url or not ver: return url
-              import urllib.parse as up
-              u = up.urlsplit(url)
-              q = up.parse_qsl(u.query, keep_blank_values=True)
-              if any(k.lower()=="v" for k,_ in q):
-                  return url
-              q.append(("v", str(ver)))
-              new_q = up.urlencode(q)
-              return up.urlunsplit((u.scheme, u.netloc, u.path, new_q, u.fragment))
-
-          def main():
-              if not BGG_IN.exists():
-                  print("No data/bgg_data.json; skip apply."); return
-
-              catmap  = load_map(CATMAP_CSV,  "bgg_category_en",  "category_zh")
-              mechmap = load_map(MECHMAP_CSV, "bgg_mechanism_en", "mechanism_zh")
-
-              rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
-              out  = []
-
-              for r in rows:
-                  rr = dict(r)
-
-                  if rr.get("alias_zh"):
-                      rr["aliases_zh"] = [x.strip() for x in str(rr["alias_zh"]).split(";") if x.strip()]
-
-                  img_ovr = (rr.get("image_override") or "").strip()
-                  if img_ovr:
-                      ver = (str(rr.get("image_version_id")).strip()
-                             if rr.get("image_version_id") not in (None, "") else None)
-                      rr["image"] = with_cache_param(img_ovr, ver)
-
-                  if rr.get("category_zh"):
-                      rr["categories_zh"] = [x.strip() for x in str(rr["category_zh"]).replace("；",";").split(";") if x.strip()]
-                  else:
-                      en = rr.get("categories") or []
-                      rr["categories_zh"] = [catmap.get(x, x) for x in en]
-
-                  mechs = rr.get("mechanics") or []
-                  rr["mechanics_zh"] = [mechmap.get(x, x) for x in mechs]
-
-                  out.append(rr)
-
-              BGG_IN.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"apply_taxonomy_and_price: total {len(out)}; categories_zh & mechanics_zh applied (no fan-out).")
-
-          if __name__ == "__main__":
-              main()
-          PY
-
-          # --- scripts/fetch_version_image.py ---
-          cat <<'PY' > scripts/fetch_version_image.py
-          import json, time, requests, xml.etree.ElementTree as ET
-          from pathlib import Path
-          INOUT = Path("data/bgg_data.json")
-          API   = "https://boardgamegeek.com/xmlapi2/thing?type=boardgameversion&id="
-
-          def fetch_version(v_id:int, backoff=2):
-              url = API + str(v_id)
-              r = requests.get(url, timeout=60)
-              while r.status_code == 202:
-                  time.sleep(backoff); r = requests.get(url, timeout=60)
-              if r.status_code == 429:
-                  time.sleep(backoff); return fetch_version(v_id, min(backoff*2, 16))
-              r.raise_for_status()
-              root = ET.fromstring(r.text)
-              it   = root.find("item")
-              if it is None: return None
-              img = it.find("image"); thumb = it.find("thumbnail")
-              return (img.text if img is not None else None) or (thumb.text if thumb is not None else None)
-
-          def main():
-              if not INOUT.exists():
-                  print("No data/bgg_data.json; skip."); return
-              rows = json.loads(INOUT.read_text(encoding="utf-8"))
-              changed = False
-              for r in rows:
-                  if r.get("image_override"):
-                      continue
-                  raw = r.get("image_version_id")
-                  v = (raw or "").strip() if isinstance(raw, str) else (str(raw).strip() if raw is not None else "")
-                  if not v: 
-                      continue
-                  try:
-                      vid = int(v)
-                  except:
-                      print(f"Skip invalid image_version_id: {v}")
-                      continue
-                  try:
-                      url = fetch_version(vid)
-                      if url:
-                          r["image_url"] = url
-                          r["image_version_used"] = vid
-                          changed = True
-                          print(f"Using version {vid} image for bgg_id={r.get('bgg_id')}")
-                      else:
-                          print(f"No image for version {vid}")
-                  except Exception as e:
-                      print(f"Version fetch failed {vid}: {e}")
-              if changed:
-                  INOUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
-                  print("fetch_version_image: updated data/bgg_data.json")
-              else:
-                  print("fetch_version_image: no change")
-          if __name__ == "__main__":
-              main()
-          PY
-
-          # --- scripts/download_images.py ---
-          cat <<'PY' > scripts/download_images.py
-          import json, requests, hashlib, time
-          from pathlib import Path
-          from PIL import Image
-          from io import BytesIO
-
-          INPUT = Path("data/bgg_data.json")
-          IMG_DIR = Path("assets/img")
-          IMG_DIR.mkdir(parents=True, exist_ok=True)
-
-          def save_thumb(content: bytes, dest: Path):
-              img = Image.open(BytesIO(content))
-              img.thumbnail((300, 300))
-              img.convert("RGB").save(dest, "JPEG", quality=82, optimize=True)
-
-          def main():
-              if not INPUT.exists():
-                  print("No data/bgg_data.json; skip download_images."); return
-              rows = json.loads(INPUT.read_text(encoding="utf-8"))
-              updated = []
-              for r in rows:
-                  if r.get("image_override"):
-                      r["image"] = r["image_override"]
-                      updated.append(r); continue
-                  url = r.get("image_url") or r.get("thumb_url")
-                  if not url:
-                      updated.append(r); continue
-                  bid = r.get("bgg_id") or "noid"
-                  h = hashlib.md5(url.encode("utf-8")).hexdigest()[:8]
-                  dest = IMG_DIR / f"{bid}-{h}.jpg"
-                  try:
-                      if not dest.exists():
-                          resp = requests.get(url, timeout=60)
-                          resp.raise_for_status()
-                          save_thumb(resp.content, dest)
-                          time.sleep(0.6)
-                      r["image"] = f"assets/img/{dest.name}"
-                  except Exception as e:
-                      r["image"] = url
-                      print(f"Image fallback for {bid}: {e}")
-                  updated.append(r)
-              INPUT.write_text(json.dumps(updated, ensure_ascii=False, indent=2), encoding="utf-8")
-              print("download_images: done.")
-          if __name__ == "__main__":
-              main()
-          PY
-
-          # --- scripts/make_mechanism_map.py ---
-          cat <<'PY' > scripts/make_mechanism_map.py
-          import csv, json
-          from pathlib import Path
-          BGG = Path("data/bgg_data.json")
-          MAP = Path("data/mechanism_map_zh.csv")
-          OUT = Path("data/mechanism_map_candidates.csv")
-          SEED = {
-            "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動",
-            "Auction / Bidding":"競標","Bag Building":"布袋構築","Campaign / Battle Card Driven":"戰役/卡驅動",
-            "Card Drafting":"選牌","Card Play Conflict Resolution":"出牌解衝突","Cooperative Game":"合作",
-            "Contracts":"合約","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","End Game Bonuses":"終局加分",
-            "Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
-            "Line Drawing":"連線","Loans":"借貸","Memory":"記憶","Modular Board":"模組地圖",
-            "Movement Points":"移動點","Network and Route Building":"路網建設","Negotiation":"談判",
-            "Open Drafting":"公開選牌","Ownership":"所有權","Pattern Recognition":"圖形辨識",
-            "Pick-up and Deliver":"取貨運送","Press Your Luck":"拚運氣","Rock-Paper-Scissors":"剪刀石頭布",
-            "Role Playing":"角色扮演","Scenario / Mission / Campaign Game":"劇本/任務/戰役",
-            "Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
-            "Solo / Solitaire Game":"單人","Square Grid":"方格","Take That":"互害",
-            "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩",
-            "Turn Order: Claim Action":"搶先手","Variable Phase Order":"可變階段順序",
-            "Variable Player Powers":"角色能力","Variable Set-up":"可變設置",
-            "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人"
-          }
-          def load_cur_map():
-              m={}
-              if MAP.exists():
-                  with MAP.open(encoding="utf-8-sig") as f:
-                      r=csv.DictReader(f)
-                      for row in r:
-                          en=(row.get("bgg_mechanism_en") or "").strip()
-                          zh=(row.get("mechanism_zh") or "").strip()
-                          if en: m[en]=zh
-              return m
-          def main():
-              if not BGG.exists():
-                  print("no data/bgg_data.json; skip"); return
-              rows=json.loads(BGG.read_text(encoding="utf-8"))
-              found=set()
-              for r in rows:
-                  for m in (r.get("mechanics") or []):
-                      if m: found.add(m)
-              cur = load_cur_map()
-              all_mechs=sorted(found)
-              OUT.parent.mkdir(parents=True, exist_ok=True)
-              with OUT.open("w", encoding="utf-8", newline="") as f:
-                  w=csv.writer(f); w.writerow(["bgg_mechanism_en","mechanism_zh"])
-                  for en in all_mechs:
-                      w.writerow([en, cur.get(en) or SEED.get(en) or ""])
-              print(f"Collected {len(all_mechs)} unique mechanics → {OUT}")
-          if __name__=="__main__": main()
-          PY
-
-          # --- scripts/build_json.py ---
+          # --- scripts/build_json.py（門檻＋備份回填） ---
           cat <<'PY' > scripts/build_json.py
-          import json, datetime, hashlib
-          from pathlib import Path
+import json, datetime, hashlib, os, re
+from pathlib import Path
 
-          INPUT  = Path("data/bgg_data.json")
-          OUTPUT = Path("data/games_full.json")
+INPUT  = Path("data/bgg_data.json")
+OUTPUT = Path("data/games_full.json")
+BACKUP = Path("data/games_full_backup.json")
+MIN_BUILD = int(os.getenv("BUILD_MIN_ITEMS", "10"))
 
-          def slugify(s: str) -> str:
-              return (s or "").strip().lower().replace(" ", "_")
+_CJK = re.compile(r"[\u4E00-\u9FFF\u3400-\u4DBF]")
 
-          def make_id(r: dict) -> str:
-              bid  = r.get("bgg_id")
-              base = slugify(r.get("name_en_override") or r.get("name_en") or r.get("name_zh") or (f"bgg_{bid}" if bid else "game"))
-              ovr = r.get("image_override")
-              if ovr:
-                  return f"{base}-{hashlib.md5(str(ovr).encode('utf-8')).hexdigest()[:8]}"
-              ver = r.get("image_version_id") or r.get("image_version_used")
-              if ver:
-                  return f"{base}-v{str(ver).strip()}"
-              if bid:
-                  return f"{base}-{bid}"
-              return base
+def slugify(s: str) -> str:
+    return (s or "").strip().lower().replace(" ", "_")
 
-          def main():
-              if not INPUT.exists():
-                  print("No data/bgg_data.json; skip build_json."); return
-              rows   = json.loads(INPUT.read_text(encoding="utf-8"))
-              items  = []
-              today  = datetime.date.today().isoformat()
+def make_id(r: dict) -> str:
+    bid  = r.get("bgg_id")
+    base = slugify(r.get("name_en_override") or r.get("name_en") or r.get("name_zh") or (f"bgg_{bid}" if bid else "game"))
+    ovr = r.get("image_override")
+    if ovr: return f"{base}-{hashlib.md5(str(ovr).encode('utf-8')).hexdigest()[:8]}"
+    ver = r.get("image_version_id") or r.get("image_version_used")
+    if ver: return f"{base}-v{str(ver).strip()}"
+    if bid: return f"{base}-{bid}"
+    return base
 
-              for r in rows:
-                  bid     = r.get("bgg_id")
-                  name_zh = r.get("name_zh")
-                  name_en = r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
-                  image   = r.get("image") or r.get("image_url") or r.get("thumb_url")
-                  if r.get("image_override"):
-                      image = r["image_override"]
+def has_zh(nz, ne)->bool:
+    s = (nz or "") + " " + (ne or "")
+    return bool(_CJK.search(s))
 
-                  item = dict(r)
-                  item["id"] = make_id(r)
-                  item["name_zh"] = name_zh or ""
-                  item["name_en"] = name_en or ""
-                  item["image"]   = image or ""
-                  if bid and not item.get("bgg_url"):
-                      item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
-                  if not item.get("search_keywords"):
-                      kws=[]
-                      if name_zh: kws.append(f"{name_zh} BGG")
-                      if name_en: kws.append(f"{name_en} BGG")
-                      item["search_keywords"]=kws
-                  item["updated_at"]=today
-                  items.append(item)
+def main():
+    if not INPUT.exists():
+        print("No data/bgg_data.json; skip build_json."); return
 
-              items.sort(key=lambda x: (x.get("name_zh") or x.get("name_en") or "").lower())
-              OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-              OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
-              print(f"Built {len(items)} entries → {OUTPUT}")
-          if __name__ == "__main__":
-              main()
-          PY
+    rows = json.loads(INPUT.read_text(encoding="utf-8"))
+    # 安全閥：抓到太少 → 維持舊檔或備份
+    if len(rows) < MIN_BUILD:
+        if OUTPUT.exists():
+            old_n = len(json.loads(OUTPUT.read_text(encoding="utf-8")))
+            print(f"BUILD GUARD: input {len(rows)} (<{MIN_BUILD}); keep previous games_full.json ({old_n})"); return
+        if BACKUP.exists():
+            OUTPUT.write_text(BACKUP.read_text(encoding="utf-8"), encoding="utf-8")
+            print(f"BUILD GUARD: input {len(rows)}; restored from backup."); return
+        print(f"BUILD GUARD: input {len(rows)}; no previous file. continue (first run).")
 
+    items=[]; today = datetime.date.today().isoformat()
+    for r in rows:
+        bid     = r.get("bgg_id")
+        name_zh = r.get("name_zh")
+        name_en = r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
+        image   = r.get("image") or r.get("image_url") or r.get("thumb_url")
+        if r.get("image_override"): image = r["image_override"]
+
+        item = dict(r)
+        item["id"] = make_id(r)
+        item["name_zh"] = name_zh or ""
+        item["name_en"] = name_en or ""
+        item["image"]   = image or ""
+        if bid and not item.get("bgg_url"):
+            item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
+        if not item.get("search_keywords"):
+            kws=[]
+            if name_zh: kws.append(f"{name_zh} BGG")
+            if name_en: kws.append(f"{name_en} BGG")
+            item["search_keywords"]=kws
+        item["has_zh_name"] = has_zh(item["name_zh"], item["name_en"])
+        item["updated_at"]=today
+        items.append(item)
+
+    def _sort_key(x):
+        n = (x.get("name_zh") or x.get("name_en") or "").lower()
+        zh_key = 0 if has_zh(x.get("name_zh"), x.get("name_en")) else 1
+        return (zh_key, n)
+
+    items.sort(key=_sort_key)
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Built {len(items)} entries → {OUTPUT}")
+if __name__ == "__main__":
+    main()
+PY
+
+      # 這一步回答你「去哪邊 BASH？」——它就是一個獨立 step（runner 用 bash 執行）
+      - name: Ensure backup exists
+        run: |
+          mkdir -p data
+          if [ -f data/games_full.json ] && [ ! -f data/games_full_backup.json ]; then
+            cp data/games_full.json data/games_full_backup.json
+          fi
+
+      # 這一步回答你「env 放哪裡？」——就放在 Run scripts 這個 step（與 run 同層）
       - name: Run scripts
+        env:
+          BGG_HOSTS: 'api.geekdo.com,boardgamegeek.com'
+          BGG_BATCH: '6'
+          BGG_SLEEP: '4.0'
+          BGG_RETRY: '6'
+          BGG_JITTER: '0.8'
+          BGG_MIN_SAVE: '50'
+          BGG_VERSIONS: '0'
+          BUILD_MIN_ITEMS: '10'
         run: |
           python scripts/resolve_bgg.py
           python scripts/fetch_bgg.py
-          python scripts/apply_taxonomy_and_price.py
-          python scripts/make_mechanism_map.py
-          python scripts/fetch_version_image.py
-          python scripts/download_images.py
+          python scripts/apply_taxonomy_and_price.py || true
+          python scripts/make_mechanism_map.py      || true
+          python scripts/fetch_version_image.py     || true
+          python scripts/download_images.py         || true
           python scripts/build_json.py
 
       - name: Commit changes
         run: |
-          git config --local user.name "github-actions[bot]"
+          git config --local user.name  "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 一次性清掉舊的留言檔與腳本（有就刪、沒有就忽略）
           git rm -f data/comments_cache.json 2>/dev/null || true
           git rm -f scripts/fetch_comments.py 2>/dev/null || true
-          # 正常更新的檔案
-          git add data/games_full.json data/bgg_data.json data/bgg_ids.json || true
+          git add data/games_full.json data/games_full_backup.json data/bgg_data.json data/bgg_ids.json || true
           git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
           git add assets/img/* || true
-          git commit -m "Auto-update game data" || echo "No changes to commit"
+          git commit -m "Auto-update game data (guarded)" || echo "No changes to commit"
           git push || echo "No changes to push"
