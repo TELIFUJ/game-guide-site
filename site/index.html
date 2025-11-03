@@ -1255,6 +1255,61 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       alert('讀取本機 JSON 失敗');
     }
   });
+</script><!-- 放在 index.html 最底，</body> 之前 -->
+<script>
+(function(){
+  const PRIMARY = 'data/games_full.json';
+  const BACKUP  = 'data/games_full_backup.json';
+
+  // 若頁面沒有備援 UI，就自動建立（不動你原本的 UI）
+  function ensureFallbackUI(){
+    let box = document.getElementById('fallback');
+    if (box) return box;
+    box = document.createElement('div');
+    box.id = 'fallback';
+    box.style.cssText = 'padding:8px;border:1px solid #ddd;margin:8px 0;display:none';
+    box.innerHTML =
+      '<p>目前資料載入失敗或為 0 筆，可改載備份。</p>' +
+      '<button id="btn-retry">重新載入</button> ' +
+      '<button id="btn-backup">載入備份</button>';
+    document.body.appendChild(box);
+    document.getElementById('btn-retry').onclick  = ()=>loadGames(PRIMARY);
+    document.getElementById('btn-backup').onclick = ()=>loadGames(BACKUP);
+    return box;
+  }
+  function showFallback(){ ensureFallbackUI().style.display = 'block'; }
+  function hideFallback(){ const b = document.getElementById('fallback'); if (b) b.style.display = 'none'; }
+
+  async function fetchJSON(url){
+    const r = await fetch(url, { cache:'no-store' });
+    if (!r.ok) throw new Error('http '+r.status);
+    return r.json();
+  }
+
+  // ☆ 若你的渲染函式不是 renderGames，請把下一行的名稱改成你的函式名
+  function render(data){ return window.renderGames(data); }
+
+  async function loadGames(url = PRIMARY){
+    try{
+      const data = await fetchJSON(url);
+      if (Array.isArray(data) && data.length > 0){
+        render(data);
+        hideFallback();
+        return;
+      }
+      showFallback();
+    }catch(e){
+      showFallback();
+    }
+  }
+
+  // 讓現有按鈕能呼叫（例如你原本就有「重新載入」）
+  window.loadGames = loadGames;
+
+  // 首次載入
+  document.addEventListener('DOMContentLoaded', ()=>loadGames());
+})();
 </script>
+
 </body>
 </html>
