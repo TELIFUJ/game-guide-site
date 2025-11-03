@@ -1,26 +1,29 @@
 # scripts/fetch_bgg.py
 # -*- coding: utf-8 -*-
-import os, time, json, xml.etree.ElementTree as ET
+import os, time, json, random, xml.etree.ElementTree as ET
 from pathlib import Path
 import requests
 
 INPUT  = Path("data/bgg_ids.json")
 OUTPUT = Path("data/bgg_data.json")
 
-# 主要與備援端點（兩個都用 https）
-PRIMARY_BASE = "https://boardgamegeek.com/xmlapi2/thing"
+# 主要與備援端點（均 https）
+PRIMARY_BASE  = "https://boardgamegeek.com/xmlapi2/thing"
 FALLBACK_BASE = "https://api.geekdo.com/xmlapi2/thing"
 
-# 可由 CI 覆寫
-BATCH = int(os.getenv("BGG_BATCH", "10"))              # 原 20 → 10（較保守）
-SLEEP = float(os.getenv("BGG_SLEEP", "2.5"))           # 批次間隔
-RETRY = int(os.getenv("BGG_RETRY", "4"))               # 重試次數
-MIN_SAVE = int(os.getenv("BGG_MIN_SAVE", "50"))        # 寫檔門檻（<50 視為異常）
+# 可由 CI 覆寫（預設較保守）
+BATCH    = int(os.getenv("BGG_BATCH", "5"))
+SLEEP    = float(os.getenv("BGG_SLEEP", "3.5"))   # 批次間固定間隔
+RETRY    = int(os.getenv("BGG_RETRY", "5"))       # 每個請求最大重試
+MIN_SAVE = int(os.getenv("BGG_MIN_SAVE", "50"))   # 寫檔門檻
 
 HEADERS = {
-    "User-Agent": os.getenv("BGG_UA", "game-guide-site/ci (https://github.com/TELIFUJ/game-guide-site)"),
-    "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
+    "User-Agent": os.getenv("BGG_UA", "game-guide-site/ci (+https://github.com/TELIFUJ/game-guide-site)"),
+    "Accept": "application/xml",
+    "Referer": "https://boardgamegeek.com/",
 }
+
+JITTER_LOW, JITTER_HIGH = 0.7, 1.3
 
 def _num(v, t=float):
     if v in (None, "", "NaN", "not ranked", "Not Ranked", "0.0"):
@@ -90,41 +93,59 @@ def parse_items(root):
         })
     return out
 
+def _sleep_backoff(base, attempt):
+    time.sleep(base * (1.7 ** (attempt - 1)) * random.uniform(JITTER_LOW, JITTER_HIGH))
+
 def request_xml(session, base, ids):
     # BGG 支援逗號分隔
     url = f"{base}?stats=1&versions=1&id=" + ",".join(str(i) for i in ids)
-    for attempt in range(1, RETRY+1):
+    for attempt in range(1, RETRY + 1):
         try:
             r = session.get(url, timeout=60)
-            # 202 = queueing
-            if r.status_code == 202:
-                time.sleep(2.0 * attempt)
+            code = r.status_code
+
+            # 202: 後端排隊，延後再取
+            if code == 202:
+                _sleep_backoff(2.0, attempt)
                 continue
-            # 401/403/429：WAF/限流，退火
-            if r.status_code in (401, 403, 429):
-                time.sleep(3.0 * attempt)
+
+            # WAF/限流：退避重試
+            if code in (401, 403, 429, 503):
+                _sleep_backoff(3.0, attempt)
                 continue
+
             r.raise_for_status()
-            return ET.fromstring(r.text)
-        except Exception as e:
-            # 最後一次也失敗，回 None
+            # 解析 XML；若站方回 HTML/error，將觸發 ParseError
+            try:
+                return ET.fromstring(r.text)
+            except ET.ParseError:
+                _sleep_backoff(2.0, attempt)
+                continue
+
+        except requests.RequestException:
             if attempt == RETRY:
                 return None
-            time.sleep(1.5 * attempt)
+            _sleep_backoff(1.5, attempt)
     return None
 
 def fetch_with_fallback(session, ids):
-    # 先主要域名，失敗再試備援域名
     root = request_xml(session, PRIMARY_BASE, ids)
     if root is None:
         root = request_xml(session, FALLBACK_BASE, ids)
     return root
 
+def atomic_write(path: Path, text: str):
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(text)
+    os.replace(tmp, path)
+
 def main():
     if not INPUT.exists():
-        print("No data/bgg_ids.json; nothing to fetch."); return
+        print("No data/bgg_ids.json; nothing to fetch.")
+        return
 
-    base_rows=json.loads(INPUT.read_text(encoding="utf-8"))
+    base_rows = json.loads(INPUT.read_text(encoding="utf-8"))
 
     # fan-out：同一 bgg_id 可能對應多列
     from collections import defaultdict
@@ -132,22 +153,24 @@ def main():
     ids_unique = []
     for r in base_rows:
         bid = r.get("bgg_id")
-        if not bid: continue
+        if not bid:
+            continue
         bid = int(bid)
         rows_by_id[bid].append(r)
-        if bid not in ids_unique: ids_unique.append(bid)
+        if bid not in ids_unique:
+            ids_unique.append(bid)
 
     s = requests.Session()
     s.headers.update(HEADERS)
 
-    results=[]
-    failed_ids=[]
+    results = []
+    failed_ids = []
 
     print(f"Resolved {len(ids_unique)} unique ids; batch={BATCH}, sleep={SLEEP}s, retry={RETRY}")
 
     # 逐批抓
-    for i in range(0,len(ids_unique),BATCH):
-        chunk=ids_unique[i:i+BATCH]
+    for i in range(0, len(ids_unique), BATCH):
+        chunk = ids_unique[i:i + BATCH]
         root = fetch_with_fallback(s, chunk)
 
         # 批次失敗 → 單筆補抓
@@ -158,21 +181,19 @@ def main():
                     failed_ids.append(bid)
                     continue
                 parsed = parse_items(root1)
-                bases = rows_by_id.get(bid,[{}])
+                bases = rows_by_id.get(bid, [{}])
                 if parsed:
                     for base in bases:
-                        # 單筆時 parsed 只會含該 id
                         results.append({**base, **parsed[0]})
             time.sleep(SLEEP)
             continue
 
         # 批次成功
         parsed = parse_items(root)
-        # 以 id 對回 base，保留 fan-out
         by_id = {int(p["bgg_id"]): p for p in parsed}
         for bid in chunk:
             p = by_id.get(int(bid))
-            bases = rows_by_id.get(bid,[{}])
+            bases = rows_by_id.get(bid, [{}])
             if p:
                 for base in bases:
                     results.append({**base, **p})
@@ -187,11 +208,11 @@ def main():
                         for base in bases:
                             results.append({**base, **parsed1[0]})
                     else:
-                        failed_ids.append(bid})
+                        failed_ids.append(bid)
 
         time.sleep(SLEEP)
 
-    # --- 寫檔策略：保護線 ---
+    # --- 寫檔守門：不足門檻不覆寫 ---
     old_exists = OUTPUT.exists()
     old_rows = []
     if old_exists:
@@ -202,17 +223,16 @@ def main():
 
     if len(results) >= MIN_SAVE:
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+        atomic_write(OUTPUT, json.dumps(results, ensure_ascii=False, indent=2))
         print(f"Fetched {len(results)} entries → {OUTPUT}")
     else:
         msg = f"WARNING: fetched {len(results)} (<{MIN_SAVE}) — keep previous file ({len(old_rows)} entries)."
         print(msg)
-        # 若完全沒有舊檔則回傳非 0；避免後續 build 空檔
         if not old_rows:
             raise SystemExit("ABORT: No previous data and current fetch below threshold.")
 
     if failed_ids:
-        print(f"Failed IDs ({len(failed_ids)}): {failed_ids[:50]}{' ...' if len(failed_ids)>50 else ''}")
+        print(f"Failed IDs ({len(failed_ids)}): {failed_ids[:50]}{' ...' if len(failed_ids) > 50 else ''}")
 
 if __name__ == "__main__":
     main()
