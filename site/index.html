@@ -87,7 +87,6 @@
         position:sticky; top:0; z-index:50; background:var(--bg);
         padding:10px 0 6px; gap:8px; border-bottom:1px solid var(--border)
       }
-      /* 行動隱藏次要控件（移到工具列/面板） */
       #catSel,#mechSel,#pmin,#pmax,#inclUsed,#sort,#pageSize,#prev,#next,#dlCsv,#emailFav{display:none!important}
       .filters .ac-wrap{flex:1 1 100%; width:100%}
       .mbar{
@@ -180,6 +179,17 @@
 
 <!-- 上方數字分頁 -->
 <div id="pager" class="pagination" aria-label="pagination"></div>
+
+<!-- 空狀態（當資料來源為 0 筆或載入失敗） -->
+<div id="empty" class="card" style="display:none;padding:14px">
+  <h3 style="margin:0 0 6px">目前無資料</h3>
+  <div class="muted">可能原因：資料尚未產生、網路問題、或 API 限流（BGG 401/403/429）。</div>
+  <div class="row" style="margin-top:10px">
+    <button id="retryLoad" class="btn" type="button">重新載入</button>
+    <button id="loadLocal" class="btn" type="button">載入本機 JSON</button>
+  </div>
+  <input id="localFile" type="file" accept="application/json" style="display:none">
+</div>
 
 <div id="grid" class="grid" aria-live="polite"></div>
 
@@ -324,7 +334,11 @@
         FOCUS_CARD = document.getElementById("focus-card"),
         REC = document.getElementById("rec"),
         CLEAR_FOCUS = document.getElementById("clearFocus"),
-        ACTIVE_CHIPS = document.getElementById("activeChips");
+        ACTIVE_CHIPS = document.getElementById("activeChips"),
+        EMPTY = document.getElementById("empty"),
+        RETRY_BTN = document.getElementById("retryLoad"),
+        LOADLOCAL_BTN = document.getElementById("loadLocal"),
+        LOCAL_FILE = document.getElementById("localFile");
 
   // 行動工具列
   const MBAR = document.getElementById('mbar');
@@ -471,21 +485,63 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     return url || 'https://via.placeholder.com/800?text=No+Image';
   }
 
-  // ====== 載入資料 ======
-  fetch(DATA_URL, {cache:'no-cache'}).then(r=>r.json()).then(d=>{
-    DATA=d;
-    buildOptions();
-    const u = new URL(location.href);
-    const catQ = u.searchParams.get('cat'), mechQ = u.searchParams.get('mech'), pageQ = parseInt(u.searchParams.get('page')||'1',10);
-    if (catQ){ ensureOption(CAT, catQ); CAT.value=catQ; }
-    if (mechQ){ ensureOption(MECH, mechQ); MECH.value=mechQ; }
-    if (!Number.isNaN(pageQ) && pageQ>0) page = pageQ;
-    render();
-    buildMechMultiSheet(); // 初次建表
-  }).catch(e=>{
-    console.error('Load data failed:', e, DATA_URL);
-    alert('無法載入資料：' + DATA_URL);
-  });
+  // ====== 三層資料載入：?data= → 正常檔 → 快照檔 ======
+  const urlParam = new URL(location.href).searchParams.get('data');
+  const DATA_CANDIDATES = [
+    urlParam ? absUrl(urlParam) : null,
+    DATA_URL,
+    absUrl('data/games_full.snap.json')
+  ].filter(Boolean);
+
+  async function loadFirstAvailable(urls){
+    for (const u of urls){
+      try{
+        const r = await fetch(u, {cache:'no-cache'});
+        if(!r.ok) continue;
+        const d = await r.json();
+        // 若 d 是陣列且 >=1 筆，直接使用；若 0 筆也回傳，交由空狀態顯示
+        if (Array.isArray(d)) return d;
+      }catch(e){ /* 試下一個 */ }
+    }
+    throw new Error('All data sources failed');
+  }
+
+  // ====== Debounce（僅用於 AC 排名重算） ======
+  function debounce(fn, ms){
+    let t=null;
+    return function(...args){
+      clearTimeout(t);
+      t = setTimeout(()=>fn.apply(this,args), ms);
+    }
+  }
+
+  // ====== 載入資料並初始化 ======
+  (async ()=>{
+    try{
+      DATA = await loadFirstAvailable(DATA_CANDIDATES);
+      buildOptions();
+
+      const u = new URL(location.href);
+      const catQ = u.searchParams.get('cat'), mechQ = u.searchParams.get('mech'), pageQ = parseInt(u.searchParams.get('page')||'1',10);
+      if (catQ){ ensureOption(CAT, catQ); CAT.value=catQ; }
+      if (mechQ){ ensureOption(MECH, mechQ); MECH.value=mechQ; }
+      if (!Number.isNaN(pageQ) && pageQ>0) page = pageQ;
+
+      // 空狀態判斷
+      if (!Array.isArray(DATA) || DATA.length === 0){
+        EMPTY.style.display = 'block';
+      }else{
+        EMPTY.style.display = 'none';
+      }
+
+      render();
+      buildMechMultiSheet();
+    }catch(e){
+      console.error('Load data failed:', e);
+      EMPTY.style.display = 'block';
+      alert('無法載入資料來源（主檔與備援皆失敗）');
+    }
+  })();
 
   function ensureOption(sel, text){
     if (![...sel.options].some(o=>o.value===text)){
@@ -497,8 +553,8 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   const MECH_MULTI = new Set();
   function clearMultiSelect(){
     MECH_MULTI.clear();
-    RAND_MECHS.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.checked=false);
-    RAND_GRID.innerHTML='';
+    if (RAND_MECHS) RAND_MECHS.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.checked=false);
+    if (RAND_GRID) RAND_GRID.innerHTML='';
   }
 
   // === 核心過濾 ===
@@ -756,7 +812,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     const {total, pages, pageRows} = filtered();
     const allFavCount = favs.size;
 
-    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${allFavCount}`;
+    STATS.textContent = `總數：${Array.isArray(DATA)?DATA.length:0}｜目前顯示：${total}｜收藏：${allFavCount}`;
     PAGE_INFO.textContent = `第 ${Math.min(page,pages)}/${pages} 頁`;
     PREV.disabled = (page<=1);
     NEXT.disabled = (page>=pages);
@@ -873,7 +929,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       </div>`;
   }
 
-  // ====== Auto-complete（模糊） ======
+  // ====== Auto-complete（模糊）＋ Debounce ======
   function hideAC(){ AC.style.display='none'; AC.innerHTML=''; }
   function showAC(items){
     if(!items.length){ hideAC(); return; }
@@ -942,15 +998,24 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
     return best;
   }
 
-  Q.addEventListener('input', ()=>{
-    const q = Q.value.trim();
-    if(!q){ hideAC(); clearFocus(false); buildOptions(); render(); return; }
+  const debouncedAC = debounce((q)=>{
+    if(!q){ hideAC(); return; }
     const ranked = DATA
       .map(x=>[x, nameScore(q, x)])
       .filter(([x,s])=>s>0.15)
       .sort((a,b)=>b[1]-a[1])
       .map(([x])=>x);
     showAC(ranked);
+  }, 160);
+
+  Q.addEventListener('input', ()=>{
+    const q = Q.value.trim();
+    if(!q){
+      hideAC(); clearFocus(false); buildOptions(); render(); return;
+    }
+    // 即時更新清單 + debounce 計算 AC
+    page=1; buildOptions(); render();
+    debouncedAC(q);
   });
   document.addEventListener('click', (e)=>{ if(!AC.contains(e.target) && e.target!==Q) hideAC(); });
 
@@ -1168,6 +1233,28 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   MCLEAR.addEventListener('click', restoreInitial);
   MSORT.value = S.value;
 
+  // ====== 空狀態互動 ======
+  RETRY_BTN.addEventListener('click', ()=>location.reload());
+  LOADLOCAL_BTN.addEventListener('click', ()=>LOCAL_FILE.click());
+  LOCAL_FILE.addEventListener('change', async (ev)=>{
+    const file = ev.target.files?.[0];
+    if(!file) return;
+    try{
+      const text = await file.text();
+      const json = JSON.parse(text);
+      if(!Array.isArray(json) || json.length===0){
+        alert('本機檔格式錯誤或為空陣列');
+        return;
+      }
+      DATA = json; page = 1;
+      EMPTY.style.display = 'none';
+      buildOptions(); render(); buildMechMultiSheet();
+      scrollToTop();
+    }catch(e){
+      console.error(e);
+      alert('讀取本機 JSON 失敗');
+    }
+  });
 </script>
 </body>
 </html>
