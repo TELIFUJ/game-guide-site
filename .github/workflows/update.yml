@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 可選：若你在 repo 的 Settings→Variables 設了 BGG_USERNAME，這步會帶入
+      # 若你在 Settings→Variables 設了 BGG_USERNAME，這步會帶入
       - name: Export variables
         run: |
           echo "BGG_USERNAME=${{ vars.BGG_USERNAME }}" >> $GITHUB_ENV
@@ -42,7 +42,7 @@ jobs:
           [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
 
-      # 你的原流程：先產出 data/bgg_ids.json
+      # 你的現有流程：產出 data/bgg_ids.json
       - name: Resolve IDs
         env:
           PYTHONUNBUFFERED: "1"
@@ -65,12 +65,12 @@ jobs:
               print('No bgg_ids.json; will fallback to username in fetch step if provided')
           PY
 
-      # ====== 抓取 BGG：修正了你遇到的語法錯誤（XPath 引號） ======
+      # ====== 核心：XML2 抓取（可帶/不帶 Token；支援 dict/list 兩種 ID 檔格式；含 202/429/5xx 重試） ======
       - name: Fetch BGG (XML2)
         env:
           PYTHONUNBUFFERED: "1"
-          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # 沒 Token 也能跑；有則自動帶 Authorization
-          BGG_USERNAME: ${{ env.BGG_USERNAME }}   # 若無 bgg_ids.json，會用收藏清單回退
+          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # 有就帶；沒有也能跑（若 BGG 當下仍允許）
+          BGG_USERNAME: ${{ env.BGG_USERNAME }}   # 若無 bgg_ids.json，則回退用收藏清單
         run: |
           python - <<'PY'
           import os, time, json, pathlib
@@ -99,27 +99,51 @@ jobs:
                  stop=stop_after_attempt(8))
           def _get_retry(url, params=None): return _get(url, params)
 
+          def _to_id_list(arr):
+            ids = []
+            for x in arr:
+              if isinstance(x, int) or (isinstance(x, str) and x.isdigit()):
+                ids.append(str(x))
+              elif isinstance(x, dict):
+                for k in ("id","bgg_id","bggid","thing_id"):
+                  v = x.get(k)
+                  if isinstance(v, (int,str)) and str(v).isdigit():
+                    ids.append(str(v)); break
+            ids = sorted(set(ids), key=lambda s:int(s))
+            return ids
+
           def load_ids():
+            # 1) 優先 data/bgg_ids.json
             if IDS.exists():
-              try:
-                arr = json.loads(IDS.read_text(encoding='utf-8'))
-                ids = [str(x) for x in arr if str(x).isdigit()]
-                if ids: return sorted(set(ids), key=lambda x:int(x))
-              except Exception as e: print("warn ids:", e)
+              raw = json.loads(IDS.read_text(encoding='utf-8'))
+              ids = _to_id_list(raw if isinstance(raw, list) else [raw])
+              if ids:
+                print(f"Use IDs from bgg_ids.json: {len(ids)}")
+                return ids
+              else:
+                print("Warn: bgg_ids.json exists but no numeric IDs parsed; fallback to username.")
+            # 2) 回退：用收藏清單（需 BGG_USERNAME）
             uname = os.getenv("BGG_USERNAME","").strip()
-            if not uname: return []
-            r = _get_retry(f"{HOST}/xmlapi2/collection", {"username":uname,"own":1,"excludesubtype":"boardgameexpansion"})
+            if not uname:
+              return []
+            r = _get_retry(f"{HOST}/xmlapi2/collection", {
+              "username": uname, "own": 1, "excludesubtype": "boardgameexpansion"
+            })
             root = etree.fromstring(r.content)
             ids = []
             for it in root.findall("item"):
               tid = it.get("objectid")
               if tid and tid.isdigit(): ids.append(tid)
             ids = sorted(set(ids), key=lambda x:int(x))
-            IDS.write_text(json.dumps(ids, ensure_ascii=False, indent=2), encoding='utf-8')
+            pathlib.Path("data/bgg_ids.json").write_text(json.dumps(ids, ensure_ascii=False, indent=2), encoding='utf-8')
+            print(f"Collected IDs from username={uname}: {len(ids)}")
             return ids
 
           def fetch_batch(batch):
-            r = _get_retry(f"{HOST}/xmlapi2/thing", {"id":",".join(batch),"stats":1,"versions":1,"type":"boardgame,boardgameexpansion"})
+            r = _get_retry(f"{HOST}/xmlapi2/thing", {
+              "id": ",".join(batch), "stats": 1, "versions": 1,
+              "type": "boardgame,boardgameexpansion"
+            })
             return etree.fromstring(r.content)
 
           def parse(root):
@@ -152,10 +176,11 @@ jobs:
               })
             return res
 
-          ids=load_ids()
+          ids = load_ids()
           if not ids:
             print("No IDs and no username; writing empty bgg_data.json")
             OUT.write_text("[]", encoding='utf-8'); raise SystemExit(0)
+
           ALL=[]; B=50
           for i in range(0,len(ids),B):
             root=fetch_batch(ids[i:i+B]); ALL+=parse(root); time.sleep(0.5)
@@ -186,7 +211,7 @@ jobs:
           BUILD_MIN_ITEMS: "1"
         run: python -u scripts/build_json.py
 
-      # 觀測三個檔案的筆數，方便快速定位
+      # 觀測三個檔案筆數，方便快速定位
       - name: Sanity check & head
         run: |
           python - <<'PY'
