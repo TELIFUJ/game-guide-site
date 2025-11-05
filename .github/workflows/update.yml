@@ -1,3 +1,21 @@
+name: Update Game Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 17 * * *"   # 台灣 01:00（UTC+8）
+
+concurrency:
+  group: update-game-data
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -25,7 +43,7 @@
           PYTHONUNBUFFERED: "1"
         run: python -u scripts/resolve_bgg.py || true
 
-      # 只在首次啟動用，先限縮 60 筆以快速出檔；之後可刪除此步驟
+      # 首次啟動先限縮 60 筆，確保前端不空白；之後可刪除此步驟
       - name: Bootstrap limit IDs to 60
         run: |
           python - <<'PY'
@@ -46,7 +64,7 @@
           BGG_SLEEP: "4.0"
           BGG_RETRY: "6"
           BGG_JITTER: "0.8"
-          BGG_MIN_SAVE: "1"     # 首次：有任意新筆數就覆蓋
+          BGG_MIN_SAVE: "1"
           BGG_VERSIONS: "0"
         run: python -u scripts/fetch_bgg.py
 
@@ -68,7 +86,7 @@
       - name: Build final JSON
         env:
           PYTHONUNBUFFERED: "1"
-          BUILD_MIN_ITEMS: "1"  # 首次：1 筆即可產出
+          BUILD_MIN_ITEMS: "1"   # 首次：1 筆即可產出
         run: python -u scripts/build_json.py
 
       - name: Sanity check (counts)
