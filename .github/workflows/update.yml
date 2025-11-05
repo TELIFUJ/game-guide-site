@@ -1,16 +1,3 @@
-name: Update Game Data
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 17 * * *"  # 台灣 01:00（UTC+8）
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -25,32 +12,64 @@ jobs:
 
       - name: Ensure backup exists
         run: |
-          mkdir -p data
+          mkdir -p data assets/img
           if [ -f data/games_full.json ] && [ ! -f data/games_full_backup.json ]; then
             cp data/games_full.json data/games_full_backup.json
           fi
           [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
-          mkdir -p assets/img
 
-      - name: Run scripts (bootstrap)
+      # ========= Run scripts, step by step =========
+      - name: Resolve IDs
         env:
+          PYTHONUNBUFFERED: "1"
+        run: python -u scripts/resolve_bgg.py || true
+
+      # 只在首次啟動用，先限縮 60 筆以快速出檔；之後可刪除此步驟
+      - name: Bootstrap limit IDs to 60
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p = pathlib.Path('data/bgg_ids.json')
+          if p.exists():
+              js = json.loads(p.read_text(encoding='utf-8'))
+              if isinstance(js, list) and len(js) > 60:
+                  p.write_text(json.dumps(js[:60], ensure_ascii=False, indent=2), encoding='utf-8')
+                  print('Bootstrap limit applied: 60')
+          PY
+
+      - name: Fetch BGG
+        env:
+          PYTHONUNBUFFERED: "1"
           BGG_HOSTS: "api.geekdo.com,boardgamegeek.com"
           BGG_BATCH: "6"
           BGG_SLEEP: "4.0"
           BGG_RETRY: "6"
           BGG_JITTER: "0.8"
-          BGG_MIN_SAVE: "1"
+          BGG_MIN_SAVE: "1"     # 首次：有任意新筆數就覆蓋
           BGG_VERSIONS: "0"
-          BUILD_MIN_ITEMS: "1"
-        run: |
-          python scripts/resolve_bgg.py || true
-          python scripts/fetch_bgg.py
-          python scripts/apply_taxonomy_and_price.py || true
-          python scripts/make_mechanism_map.py || true
-          python scripts/fetch_version_image.py || true
-          python scripts/download_images.py || true
-          python scripts/build_json.py
+        run: python -u scripts/fetch_bgg.py
+
+      - name: Apply taxonomy & price
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python -u scripts/apply_taxonomy_and_price.py || true
+
+      - name: Fetch version image (optional)
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python -u scripts/fetch_version_image.py || true
+
+      - name: Download images (thumbnails)
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python -u scripts/download_images.py || true
+
+      - name: Build final JSON
+        env:
+          PYTHONUNBUFFERED: "1"
+          BUILD_MIN_ITEMS: "1"  # 首次：1 筆即可產出
+        run: python -u scripts/build_json.py
 
       - name: Sanity check (counts)
         run: |
@@ -74,5 +93,5 @@ jobs:
           git add data/games_full.json data/games_full_backup.json data/bgg_data.json data/bgg_ids.json || true
           git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
           git add assets/img/* || true
-          git commit -m "Auto-update game data (bootstrap)" || echo "No changes to commit"
+          git commit -m "Auto-update game data (bootstrap, limited IDs)" || echo "No changes to commit"
           git push || echo "No changes to push"
