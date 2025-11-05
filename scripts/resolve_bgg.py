@@ -1,3 +1,10 @@
+# --- standard imports (minimal fix for NameError) ---
+import os
+# （可選，但建議保留，無害）
+import sys, json, time, random
+from pathlib import Path
+# ----------------------------------------------------
+
 --- a/scripts/resolve_bgg.py
 +++ b/scripts/resolve_bgg.py
 @@
