@@ -20,6 +20,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # 可選：若你在 repo 的 Settings→Variables 設了 BGG_USERNAME，這步會帶入
       - name: Export variables
         run: |
           echo "BGG_USERNAME=${{ vars.BGG_USERNAME }}" >> $GITHUB_ENV
@@ -41,13 +42,13 @@ jobs:
           [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
 
-      # ---- 你的原流程：解析 ID
+      # 你的原流程：先產出 data/bgg_ids.json
       - name: Resolve IDs
         env:
           PYTHONUNBUFFERED: "1"
         run: python -u scripts/resolve_bgg.py || true
 
-      # 首次啟動先限縮 60 筆（可移除）
+      # 首次上線避免空白：限縮 60 筆（之後可移除）
       - name: Bootstrap limit IDs to 60
         run: |
           python - <<'PY'
@@ -61,15 +62,15 @@ jobs:
               else:
                   print('Bootstrap not needed')
           else:
-              print('No bgg_ids.json; will fallback to username in fetch step if implemented')
+              print('No bgg_ids.json; will fallback to username in fetch step if provided')
           PY
 
-      # ---- 使用 XML2（支援 202/429/5xx 重試；可帶或不帶 BGG_TOKEN）
-           - name: Fetch BGG (XML2)
+      # ====== 抓取 BGG：修正了你遇到的語法錯誤（XPath 引號） ======
+      - name: Fetch BGG (XML2)
         env:
           PYTHONUNBUFFERED: "1"
-          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
-          BGG_USERNAME: ${{ env.BGG_USERNAME }}
+          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # 沒 Token 也能跑；有則自動帶 Authorization
+          BGG_USERNAME: ${{ env.BGG_USERNAME }}   # 若無 bgg_ids.json，會用收藏清單回退
         run: |
           python - <<'PY'
           import os, time, json, pathlib
@@ -86,7 +87,6 @@ jobs:
             headers["Authorization"] = f"Bearer {os.getenv('BGG_TOKEN')}"
 
           class Temp(Exception): ...
-
           def need_retry(s): return s in (202,429,500,502,503,504)
 
           def _get(url, params=None):
@@ -164,7 +164,7 @@ jobs:
           print(f"bgg_data.json rows={len(ALL)}")
           PY
 
-
+      # 你的後處理照舊
       - name: Apply taxonomy & price
         env:
           PYTHONUNBUFFERED: "1"
@@ -186,11 +186,11 @@ jobs:
           BUILD_MIN_ITEMS: "1"
         run: python -u scripts/build_json.py
 
-      # ---- 計數與前 3 筆示例，協助你在 log 立判根因
+      # 觀測三個檔案的筆數，方便快速定位
       - name: Sanity check & head
         run: |
           python - <<'PY'
-          import json, pathlib, itertools
+          import json, pathlib
           def load(p):
             p=pathlib.Path(p)
             return (p.exists(), json.loads(p.read_text(encoding='utf-8')) if p.exists() else [])
@@ -201,7 +201,7 @@ jobs:
           print('HEAD games_full.json:', [x.get('name') for x in d2[:3]])
           PY
 
-      # ---- 發佈：優先用 games_full；為 0 時以 bgg_data fallback，避免前端空白
+      # 發佈：優先用 games_full；為 0 時 fallback 到 bgg_data，避免前端空白
       - name: Publish -> public/data/games.json (with fallback)
         run: |
           python - <<'PY'
@@ -209,15 +209,13 @@ jobs:
           p_full = pathlib.Path('data/games_full.json')
           p_bgg  = pathlib.Path('data/bgg_data.json')
           p_out  = pathlib.Path('public/data/games.json')
-          public = p_out.parent; public.mkdir(parents=True, exist_ok=True)
-          def load(p):
-            return json.loads(p.read_text(encoding='utf-8')) if p.exists() else []
+          p_out.parent.mkdir(parents=True, exist_ok=True)
+          def load(p): return json.loads(p.read_text(encoding='utf-8')) if p.exists() else []
           full, raw = load(p_full), load(p_bgg)
           if len(full) > 0:
               p_out.write_text(json.dumps(full, ensure_ascii=False, indent=2), encoding='utf-8')
               print(f'Published games.json from games_full.json ({len(full)} rows).')
           elif len(raw) > 0:
-              # Fallback：直接發佈原始結構（前端欄位若有差，至少不會空白）
               p_out.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding='utf-8')
               print(f'Published games.json from bgg_data.json (fallback, {len(raw)} rows).')
               print('::warning:: games_full.json is empty; using fallback. Check build_json.py inputs.')
