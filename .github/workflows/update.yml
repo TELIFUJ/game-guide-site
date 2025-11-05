@@ -5,9 +5,14 @@ on:
   schedule:
     - cron: "0 17 * * *"  # 台灣 01:00（UTC+8）
 
+concurrency:
+  group: update-game-data
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
 
@@ -35,17 +40,17 @@ jobs:
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
           mkdir -p assets/img
 
-      # 跑你 repo 內現有的 scripts（不要再用「Create scripts(in-memory)」去覆蓋）
-      - name: Run scripts
+      # 跑 repo 內 scripts
+      - name: Run scripts (bootstrap: 放寬門檻一次)
         env:
           BGG_HOSTS: 'api.geekdo.com,boardgamegeek.com'  # 先打 api.geekdo.com，再備援 bgg
           BGG_BATCH: '6'          # 小批次
           BGG_SLEEP: '4.0'        # 批間延遲
           BGG_RETRY: '6'          # 重試次數
           BGG_JITTER: '0.8'       # 抖動，避免節律命中
-          BGG_MIN_SAVE: '50'      # 未達 50 筆不覆蓋舊檔
+          BGG_MIN_SAVE: '1'       # ← 先設 1 筆就覆蓋舊檔（之後再調回 30~50）
           BGG_VERSIONS: '0'       # 關 versions 降負荷
-          BUILD_MIN_ITEMS: '10'   # build guard：少於 10 筆不覆蓋
+          BUILD_MIN_ITEMS: '1'    # ← 先設 1 筆就產出（之後再調回 10）
         run: |
           python scripts/resolve_bgg.py || true
           python scripts/fetch_bgg.py
@@ -54,6 +59,19 @@ jobs:
           python scripts/fetch_version_image.py || true
           python scripts/download_images.py || true
           python scripts/build_json.py
+
+      - name: Sanity check (counts)
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p1 = pathlib.Path('data/bgg_data.json')
+          p2 = pathlib.Path('data/games_full.json')
+          n1 = len(json.loads(p1.read_text(encoding='utf-8'))) if p1.exists() else -1
+          n2 = len(json.loads(p2.read_text(encoding='utf-8'))) if p2.exists() else -1
+          print(f'INFO bgg_data.json rows={n1}, games_full.json rows={n2}')
+          if n2 <= 0:
+              print('::warning::games_full.json is empty; site will show empty state.')
+          PY
 
       - name: Commit changes
         run: |
@@ -66,5 +84,5 @@ jobs:
           git add data/games_full.json data/games_full_backup.json data/bgg_data.json data/bgg_ids.json || true
           git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
           git add assets/img/* || true
-          git commit -m "Auto-update game data (guarded)" || echo "No changes to commit"
+          git commit -m "Auto-update game data (bootstrap)" || echo "No changes to commit"
           git push || echo "No changes to push"
