@@ -65,7 +65,7 @@ jobs:
           PY
 
       # ---- 使用 XML2（支援 202/429/5xx 重試；可帶或不帶 BGG_TOKEN）
-      - name: Fetch BGG (XML2)
+           - name: Fetch BGG (XML2)
         env:
           PYTHONUNBUFFERED: "1"
           BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
@@ -146,8 +146,8 @@ jobs:
                 "usersrated": int(float(val(u.get("value") if u is not None else None))) if val(u.get("value") if u is not None else None) else None,
                 "image": (g("image") or "").strip(),
                 "thumbnail": (g("thumbnail") or "").strip(),
-                "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory'])"],
-                "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic'])"],
+                "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
+                "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
                 "source":"bgg"
               })
             return res
@@ -163,6 +163,7 @@ jobs:
           OUT.write_text(json.dumps(ALL, ensure_ascii=False, indent=2), encoding='utf-8')
           print(f"bgg_data.json rows={len(ALL)}")
           PY
+
 
       - name: Apply taxonomy & price
         env:
