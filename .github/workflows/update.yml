@@ -2,8 +2,14 @@ name: Build & Deploy Game Data
 
 on:
   workflow_dispatch:
+    inputs:
+      force_fetch:
+        description: "強制重新抓取 BGG（忽略快取/TTL）"
+        type: boolean
+        required: false
+        default: false
   schedule:
-    - cron: "15 21 * * *"   # 每日 05:15(+08)
+    - cron: "15 21 * * *"   # 每日 05:15 (+08)
 
 concurrency:
   group: build-deploy-game-data
@@ -32,8 +38,14 @@ jobs:
       HTTP_ACCEPT_LANGUAGE: "en-US,en;q=0.9"
       BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
 
-      # ---- 關鍵：讓 `from scripts...` 可用 ----
+      # ---- Python 匯入路徑 ----
       PYTHONPATH: ${{ github.workspace }}
+
+      # ---- 抓取 TTL（天），7 表示 7 天內用快取 ----
+      BGG_TTL_DAYS: "7"
+
+      # ---- 手動觸發時可強制抓取 ----
+      FORCE_FETCH: ${{ github.event.inputs.force_fetch == 'true' && '1' || '0' }}
 
     steps:
       - name: Checkout
@@ -48,7 +60,19 @@ jobs:
         run: pip install requests lxml pillow tenacity
 
       - name: Ensure dirs
-        run: mkdir -p data assets/img site/data || true
+        run: mkdir -p data assets/img site/assets/img site/data || true
+
+      # 先恢復前次 data/ 與圖片，盡量避免重抓
+      - name: Restore cache (data & images)
+        uses: actions/cache@v4
+        with:
+          path: |
+            data
+            site/assets/img
+          # 以 bgg_ids.json 內容為 key，搭配 VERSIONS；若尚未產生，會落到 restore-keys
+          key: bgg-data-v1-${{ hashFiles('data/bgg_ids.json') }}-${{ env.BGG_VERSIONS }}
+          restore-keys: |
+            bgg-data-v1-
 
       - name: Resolve IDs (optional)
         run: |
@@ -56,7 +80,55 @@ jobs:
             python -u scripts/resolve_bgg.py || true
           fi
 
+      # 決策：是否需要重新抓取（bgg_ids 變更 或 超過 TTL 或 強制抓）
+      - name: Plan fetch
+        id: plan
+        shell: python
+        run: |
+          import os, json, pathlib, hashlib, time
+          P = pathlib.Path
+          ids = P("data/bgg_ids.json")
+          out = P("data/bgg_data.json")
+          stamp = P("data/.bgg_stamp")            # 上次成功抓取時間戳
+          hfile = P("data/.bgg_ids.hash")         # 上次 ids hash
+          ttl_days = int(os.getenv("BGG_TTL_DAYS","7"))
+          force = os.getenv("FORCE_FETCH","0") == "1"
+
+          def sha(p):
+            return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else ""
+
+          cur_hash = sha(ids)
+          prev_hash = hfile.read_text().strip() if hfile.exists() else ""
+          ids_changed = (cur_hash != prev_hash)
+
+          now = time.time()
+          if not out.exists():
+            need = True; reason = ["no_data"]
+          else:
+            base_time = stamp.stat().st_mtime if stamp.exists() else out.stat().st_mtime
+            age_days = (now - base_time)/86400
+            need = age_days > ttl_days
+            reason = [f"age={age_days:.2f}>ttl={ttl_days}"] if need else []
+
+          if ids_changed:
+            need = True
+            reason.append("ids_changed")
+          if force:
+            need = True
+            reason.append("forced")
+
+          print("need_fetch:", need, "reason:", "|".join(reason) or "none")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+            f.write(f"do_fetch={'true' if need else 'false'}\n")
+            f.write(f"reason={'|'.join(reason) or 'none'}\n")
+
+      - name: Show fetch plan
+        run: |
+          echo "do_fetch = ${{ steps.plan.outputs.do_fetch }}"
+          echo "reason   = ${{ steps.plan.outputs.reason }}"
+
       - name: Fetch BGG (XML2)
+        if: steps.plan.outputs.do_fetch == 'true'
         shell: bash
         run: |
           python - <<'PY'
@@ -102,7 +174,6 @@ jobs:
               s.headers["Authorization"] = f"Bearer {TOKEN}"
             return s
 
-          # 解析 XML：避免 lxml FutureWarning（顯式 None 判斷）
           def parse(xml_text: str):
             root = etree.fromstring(xml_text.encode("utf-8"))
             res = []
@@ -253,6 +324,20 @@ jobs:
             python -u scripts/publish_games.py
           fi
 
+      # 抓取成功時更新快取標記（ids hash + stamp）
+      - name: Update cache markers
+        if: steps.plan.outputs.do_fetch == 'true'
+        shell: python
+        run: |
+          import pathlib, hashlib, time
+          ids = pathlib.Path("data/bgg_ids.json")
+          hfile = pathlib.Path("data/.bgg_ids.hash")
+          stamp = pathlib.Path("data/.bgg_stamp")
+          if ids.exists():
+            hfile.write_text(hashlib.sha256(ids.read_bytes()).hexdigest())
+          stamp.touch()
+
+      # 僅上傳 site/ 作為 Pages artifact，避免根路徑混亂
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
