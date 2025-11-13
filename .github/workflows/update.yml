@@ -1,221 +1,184 @@
-name: Update Game Data
+name: Build & Deploy Game Data
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 17 * * *"   # 台灣 01:00（UTC+8）
+    - cron: "15 21 * * *"   # 每日 05:15 +08
 
 concurrency:
-  group: update-game-data
+  group: build-game-data
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
     permissions:
       contents: write
+      pages: write
+      id-token: write
+    env:
+      BGG_HOSTS: boardgamegeek.com,api.geekdo.com
+      BGG_BATCH: "20"
+      BGG_SLEEP: "6.0"
+      BGG_RETRY: "6"
+      BGG_JITTER: "0.8"
+      BGG_VERSIONS: "0"
+      HTTP_UA: "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)"
+      HTTP_ACCEPT_LANGUAGE: "en-US,en;q=0.9"
+      BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Export variables
-        run: echo "BGG_USERNAME=${{ vars.BGG_USERNAME }}" >> $GITHUB_ENV
-
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install requests pillow lxml tenacity
+      - name: Install deps (requests/lxml/Pillow 可被後續腳本用到)
+        run: pip install requests lxml pillow
 
       - name: Ensure dirs and backups
         run: |
           mkdir -p data assets/img site/data || true
-          if [ -f data/games_full.json ] && [ ! -f data/games_full_backup.json ]; then
-            cp data/games_full.json data/games_full_backup.json
-          fi
+          [ -f data/games_full.json ] && [ ! -f data/games_full_backup.json ] && cp data/games_full.json data/games_full_backup.json || true
           [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
 
+      # 若你需要從 manual.csv 轉成 bgg_ids.json，保留這步；否則可移除
       - name: Resolve IDs (manual.csv → bgg_ids.json)
-        env:
-          PYTHONUNBUFFERED: "1"
         run: python -u scripts/resolve_bgg.py || true
 
       - name: Fetch BGG (XML2)
-        env:
-          PYTHONUNBUFFERED: "1"
-          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
-          BGG_USERNAME: ${{ env.BGG_USERNAME }}
+        shell: bash
         run: |
           python - <<'PY'
-          import os, time, json, pathlib, requests
+          import os, time, json, random, pathlib, requests
           from lxml import etree
-          from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
-
-          HOST = "https://boardgamegeek.com"
-          OUT = pathlib.Path("data/bgg_data.json")
-          IDS = pathlib.Path("data/bgg_ids.json")
-
-          headers = {
-            "User-Agent": "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)",
-            "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Referer": "https://boardgamegeek.com/"
-          }
-          tok=os.getenv("BGG_TOKEN")
-          if tok: headers["Authorization"]=f"Bearer {tok}"
-
-          class Temp(Exception): ...
-          def need_retry(c): return c in (202,429,500,502,503,504)
-
-          def _get(url, params=None):
-            r=requests.get(url, params=params, headers=headers, timeout=40)
-            if need_retry(r.status_code): raise Temp(str(r.status_code))
-            r.raise_for_status(); return r
-
-          @retry(reraise=True, retry=retry_if_exception_type(Temp),
-                 wait=wait_exponential(multiplier=1.5, min=2, max=32),
-                 stop=stop_after_attempt(8))
-          def _get_retry(url, params=None): return _get(url, params)
-
-          def _to_id_list(arr):
-            ids=[]
-            for x in arr:
-              if isinstance(x,(int,str)) and str(x).isdigit(): ids.append(str(x))
-              elif isinstance(x,dict):
-                for k in ("id","bgg_id","bggid","thing_id"):
-                  v=x.get(k)
-                  if isinstance(v,(int,str)) and str(v).isdigit():
-                    ids.append(str(v)); break
-            return sorted(set(ids), key=lambda s:int(s))
+          IDS_FILE = pathlib.Path("data/bgg_ids.json")
+          OUT_FILE = pathlib.Path("data/bgg_data.json")
+          TMP_FILE = pathlib.Path("data/.bgg_data.tmp.json")
+          BATCH=min(int(os.getenv("BGG_BATCH","20")),20); SLEEP=float(os.getenv("BGG_SLEEP","6"))
+          RETRY=int(os.getenv("BGG_RETRY","6")); JITTER=float(os.getenv("BGG_JITTER","0.8"))
+          VERSIONS=os.getenv("BGG_VERSIONS","0")
+          HOSTS=[h.strip() for h in os.getenv("BGG_HOSTS","boardgamegeek.com,api.geekdo.com").split(",")]
+          UA=os.getenv("HTTP_UA","PlayClass-BGG-Fetch/1.0")
+          AC_LANG=os.getenv("HTTP_ACCEPT_LANGUAGE","en-US,en;q=0.9")
+          TOKEN=os.getenv("BGG_TOKEN","").strip()
 
           def load_ids():
-            if IDS.exists():
-              raw=json.loads(IDS.read_text(encoding='utf-8'))
-              ids=_to_id_list(raw if isinstance(raw,list) else [raw])
-              if ids: print(f"Use IDs from bgg_ids.json: {len(ids)}"); return ids
-              else: print("Warn: bgg_ids.json exists but no numeric IDs parsed; fallback to username.")
-            uname=os.getenv("BGG_USERNAME","").strip()
-            if not uname: return []
-            r=_get_retry(f"{HOST}/xmlapi2/collection",{
-              "username": uname, "own": 1, "excludesubtype":"boardgameexpansion"
-            })
-            root=etree.fromstring(r.content)
-            ids=sorted({it.get("objectid") for it in root.findall("item") if (it.get("objectid") or "").isdigit()}, key=lambda x:int(x))
-            IDS.write_text(json.dumps(ids, ensure_ascii=False, indent=2), encoding='utf-8')
-            print(f"Collected IDs from username={uname}: {len(ids)}")
-            return ids
+              data=json.loads(IDS_FILE.read_text(encoding="utf-8"))
+              ids=[]
+              for x in data:
+                  try: ids.append(int(x["bgg_id"] if isinstance(x,dict) else x))
+                  except: pass
+              return [i for i in ids if i>0]
 
-          def fetch_batch(batch):
-            r=_get_retry(f"{HOST}/xmlapi2/thing",{
-              "id": ",".join(batch), "stats":1, "type":"boardgame,boardgameexpansion"
-            })
-            return etree.fromstring(r.content)
+          def get_session():
+              s=requests.Session()
+              s.headers.update({"User-Agent":UA,"Accept":"application/xml,text/xml;q=0.9,*/*;q=0.8",
+                                "Accept-Language":AC_LANG,"Referer":"https://boardgamegeek.com/"})
+              if TOKEN: s.headers["Authorization"]=f"Bearer {TOKEN}"
+              return s
 
-          def parse(root):
-            res=[]
-            for t in root.findall("item"):
-              def aval(tag, to=int):
-                el = t.find(tag)
-                v = el.get("value") if el is not None else None
-                try:
-                  return to(v) if v not in (None, "", "0", "N/A") else None
-                except Exception:
-                  return None
+          def parse(xml_text:str):
+              root=etree.fromstring(xml_text.encode("utf-8")); res=[]
+              def aval(node, tag, to=int):
+                  el=node.find(tag); v=el.get("value") if el is not None else None
+                  try: return to(v) if v not in (None,"","0","N/A") else None
+                  except: return None
+              for t in root.findall("./item"):
+                  try: bid=int(t.get("id")); 
+                  except: continue
+                  name_el=t.find("name[@type='primary']")
+                  def fnum(x,to=float):
+                      try: return to(x) if x not in (None,"","N/A") else None
+                      except: return None
+                  ratings=t.find("statistics/ratings")
+                  weight=fnum((ratings.find("averageweight") or {}).get("value")) if ratings is not None else None
+                  rating=fnum((ratings.find("average") or {}).get("value")) if ratings is not None else None
+                  users=fnum((ratings.find("usersrated") or {}).get("value"),to=float) if ratings is not None else None
+                  res.append({
+                      "id":bid,
+                      "name": (name_el.get("value") if name_el is not None else None),
+                      "year": aval(t,"yearpublished",int),
+                      "minplayers": aval(t,"minplayers",int),
+                      "maxplayers": aval(t,"maxplayers",int),
+                      "minplaytime": aval(t,"minplaytime",int),
+                      "maxplaytime": aval(t,"maxplaytime",int),
+                      "weight": weight, "rating": rating, "usersrated": (int(users) if users is not None else None),
+                      "image": (t.findtext("image") or "").strip(),
+                      "thumbnail": (t.findtext("thumbnail") or "").strip(),
+                      "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory'])"],
+                      "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic'])"],
+                      "source":"bgg",
+                      # 兼容舊鍵
+                      "bgg_id": bid,
+                      "image_url": (t.findtext("image") or "").strip() or (t.findtext("thumbnail") or "").strip(),
+                      "thumb_url": (t.findtext("thumbnail") or "").strip() or (t.findtext("image") or "").strip(),
+                  })
+              return res
 
-              name_el = t.find("name[@type='primary']")
-              stats = t.find("statistics/ratings")
-              w=v=r=u=None
-              if stats is not None:
-                w = (stats.find("averageweight") or {})
-                v = (stats.find("bayesaverage") or {})
-                r = (stats.find("average") or {})
-                u = (stats.find("usersrated") or {})
+          def fetch_batch(s, ids):
+              params={"stats":"1","versions":VERSIONS,"type":"boardgame,boardgameexpansion","id":",".join(str(i) for i in ids)}
+              for host in HOSTS:
+                  url=f"https://{host}/xmlapi2/thing"
+                  for k in range(RETRY):
+                      try:
+                          r=s.get(url,params=params,timeout=60)
+                          if r.status_code==200 and r.text.strip(): return parse(r.text)
+                          if r.status_code in (202,401,403,429,500,502,503,504):
+                              time.sleep(SLEEP*(1+random.random()*JITTER)*(1.6**k)); continue
+                          time.sleep(2.0)
+                      except Exception: time.sleep(2.0)
+              return None
 
-              res.append({
-                "id": int(t.get("id")),
-                "name": name_el.get("value") if name_el is not None else None,
-                "year": aval("yearpublished", int),
-                "minplayers": aval("minplayers", int),
-                "maxplayers": aval("maxplayers", int),
-                "minplaytime": aval("minplaytime", int),
-                "maxplaytime": aval("maxplaytime", int),
-                "weight": (float(w.get("value")) if w and w.get("value") not in (None,"","N/A") else None),
-                "rating": (float(r.get("value")) if r and r.get("value") not in (None,"","N/A") else None),
-                "rating_bayes": (float(v.get("value")) if v and v.get("value") not in (None,"","N/A") else None),
-                "usersrated": (int(float(u.get("value"))) if u and u.get("value") not in (None,"","N/A") else None),
-                "image": (t.findtext("image") or "").strip(),
-                "thumbnail": (t.findtext("thumbnail") or "").strip(),
-                "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
-                "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
-                "source":"bgg"
-              })
-            return res
+          def fetch_single(s, idv):
+              got=fetch_batch(s,[idv]); return got[0] if got else None
 
-          ids=load_ids()
-          if not ids:
-            pathlib.Path("data/bgg_data.json").write_text("[]", encoding='utf-8')
-            print("No IDs and no username; wrote empty bgg_data.json"); raise SystemExit(0)
+          if not IDS_FILE.exists():
+              print("No data/bgg_ids.json; skip."); raise SystemExit(0)
+          ids=load_ids(); s=get_session()
 
-          ALL=[]; B=20
-          for i in range(0,len(ids),B):
-            root=fetch_batch(ids[i:i+B]); ALL+=parse(root)
-            time.sleep(6.2)
-          ALL.sort(key=lambda x: (-(x["usersrated"] or 0), -(x.get("rating_bayes") or x.get("rating") or 0.0), x["id"]))
-          OUT.write_text(json.dumps(ALL, ensure_ascii=False, indent=2), encoding='utf-8')
-          print(f"bgg_data.json rows={len(ALL)}")
+          old=[]
+          if OUT_FILE.exists():
+              try: old=json.loads(OUT_FILE.read_text(encoding="utf-8"))
+              except: old=[]
+          cache={int(x.get("bgg_id",x.get("id",0))):x for x in old if isinstance(x,dict)}
+
+          ok=[]
+          for i in range(0,len(ids),BATCH):
+              chunk=ids[i:i+BATCH]; got=fetch_batch(s,chunk)
+              if got is None:
+                  for one in chunk:
+                      it=fetch_single(s,one)
+                      if it: ok.append(it)
+              else: ok.extend(got)
+              time.sleep(SLEEP*(1+random.random()*JITTER))
+
+          merged={int(x.get("bgg_id",x.get("id",0))):x for x in ok if isinstance(x,dict)}
+          merged.update(cache); final=list(merged.values())
+          TMP_FILE.parent.mkdir(parents=True,exist_ok=True)
+          TMP_FILE.write_text(json.dumps(final,ensure_ascii=False,indent=2),encoding="utf-8")
+          TMP_FILE.replace(OUT_FILE)
+          print(f"Fetched {len(ok)} new / total {len(final)} → {OUT_FILE}")
           PY
 
-      - name: Apply taxonomy & merge price/overrides
-        env: { PYTHONUNBUFFERED: "1" }
-        run: python -u scripts/apply_taxonomy_and_price.py
+      - name: Apply taxonomy & price merge
+        run: python scripts/apply_taxonomy_and_price.py
 
-      - name: Fetch version image (optional)
-        env: { PYTHONUNBUFFERED: "1" }
-        run: python -u scripts/fetch_version_image.py || true
-
-      - name: Download images (thumbnails)
-        env: { PYTHONUNBUFFERED: "1" }
-        run: python -u scripts/download_images.py || true
-
-      - name: Build final JSON
-        env:
-          PYTHONUNBUFFERED: "1"
-          BUILD_MIN_ITEMS: "300"
-        run: python -u scripts/build_json.py
-
-      - name: Sanity check & head
+      - name: Fetch version images (optional)
         run: |
-          python - <<'PY'
-          import json, pathlib
-          def load(p):
-            p=pathlib.Path(p)
-            return (p.exists(), json.loads(p.read_text(encoding='utf-8')) if p.exists() else [])
-          e1,d1 = load('data/bgg_data.json')
-          e2,d2 = load('data/games_full.json')
-          print(f'COUNT bgg_data.json={len(d1)} ; games_full.json={len(d2)}')
-          for k in ('year','minplayers','maxplayers','minplaytime','maxplaytime','price_twd','used_price_twd'):
-            miss=sum(1 for x in d2 if x.get(k) in (None,''))
-            print(f'MISS {k}: {miss}')
-          PY
+          if [ -f scripts/fetch_version_image.py ]; then python scripts/fetch_version_image.py; else echo "skip"; fi
 
-      - name: Publish games.json (normalize images + fallback)
-        env: { PYTHONUNBUFFERED: "1" }
-        run: python -u scripts/publish_games.py
-
-      - name: Commit changes
+      - name: Build site JSON
         run: |
-          git config --local user.name  "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm -f data/comments_cache.json 2>/dev/null || true
-          git rm -f scripts/fetch_bgg.py 2>/dev/null || true
-          git add data/games_full.json data/games_full_backup.json data/bgg_data.json data/bgg_ids.json || true
-          git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
-          git add assets/img/* || true
-          git add -f site/data/games.json || true
-          git commit -m "Fix: XML2 attribute parsing + merge manual prices/overrides → site/data/games.json" || echo "No changes to commit"
-          git push || echo "No changes to push"
+          if [ -f scripts/build_json.py ]; then python scripts/build_json.py; else echo "skip build_json.py"; fi
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with: { path: ./site }
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
