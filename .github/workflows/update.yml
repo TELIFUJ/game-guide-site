@@ -42,7 +42,6 @@ jobs:
           [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
 
-      # 你的現有流程：產出 data/bgg_ids.json
       - name: Resolve IDs
         env:
           PYTHONUNBUFFERED: "1"
@@ -65,11 +64,11 @@ jobs:
               print('No bgg_ids.json; will fallback to username in fetch step if provided')
           PY
 
-      # ====== 核心：XML2 抓取（可帶/不帶 Token；支援 dict/list 兩種 ID 檔格式；含 202/429/5xx 重試） ======
+      # ====== XML2 抓取（Token + 速率守規 + 回退）======
       - name: Fetch BGG (XML2)
         env:
           PYTHONUNBUFFERED: "1"
-          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # 有就帶；沒有也能跑（若 BGG 當下仍允許）
+          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # 必填：BGG Tokens 頁面建立後放這裡
           BGG_USERNAME: ${{ env.BGG_USERNAME }}   # 若無 bgg_ids.json，則回退用收藏清單
         run: |
           python - <<'PY'
@@ -82,20 +81,25 @@ jobs:
           OUT = pathlib.Path("data/bgg_data.json")
           IDS = pathlib.Path("data/bgg_ids.json")
 
-          headers = {"User-Agent": "PlayClass-BGG-Fetch/1.0"}
+          headers = {
+            "User-Agent": "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)",
+            "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://boardgamegeek.com/"
+          }
           if os.getenv("BGG_TOKEN"):
             headers["Authorization"] = f"Bearer {os.getenv('BGG_TOKEN')}"
 
           class Temp(Exception): ...
-          def need_retry(s): return s in (202,429,500,502,503,504)
+          def need_retry(code): return code in (202,429,500,502,503,504)
 
           def _get(url, params=None):
-            r = requests.get(url, params=params, headers=headers, timeout=30)
+            r = requests.get(url, params=params, headers=headers, timeout=40)
             if need_retry(r.status_code): raise Temp(str(r.status_code))
             r.raise_for_status(); return r
 
           @retry(reraise=True, retry=retry_if_exception_type(Temp),
-                 wait=wait_exponential(multiplier=1, min=1, max=16),
+                 wait=wait_exponential(multiplier=1.5, min=2, max=32),
                  stop=stop_after_attempt(8))
           def _get_retry(url, params=None): return _get(url, params)
 
@@ -109,8 +113,7 @@ jobs:
                   v = x.get(k)
                   if isinstance(v, (int,str)) and str(v).isdigit():
                     ids.append(str(v)); break
-            ids = sorted(set(ids), key=lambda s:int(s))
-            return ids
+            return sorted(set(ids), key=lambda s:int(s))
 
           def load_ids():
             # 1) 優先 data/bgg_ids.json
@@ -124,8 +127,7 @@ jobs:
                 print("Warn: bgg_ids.json exists but no numeric IDs parsed; fallback to username.")
             # 2) 回退：用收藏清單（需 BGG_USERNAME）
             uname = os.getenv("BGG_USERNAME","").strip()
-            if not uname:
-              return []
+            if not uname: return []
             r = _get_retry(f"{HOST}/xmlapi2/collection", {
               "username": uname, "own": 1, "excludesubtype": "boardgameexpansion"
             })
@@ -141,7 +143,8 @@ jobs:
 
           def fetch_batch(batch):
             r = _get_retry(f"{HOST}/xmlapi2/thing", {
-              "id": ",".join(batch), "stats": 1, "versions": 1,
+              "id": ",".join(batch),
+              "stats": 1,
               "type": "boardgame,boardgameexpansion"
             })
             return etree.fromstring(r.content)
@@ -181,9 +184,10 @@ jobs:
             print("No IDs and no username; writing empty bgg_data.json")
             OUT.write_text("[]", encoding='utf-8'); raise SystemExit(0)
 
-          ALL=[]; B=50
+          ALL=[]; B=20                               # 批次 ≤20
           for i in range(0,len(ids),B):
-            root=fetch_batch(ids[i:i+B]); ALL+=parse(root); time.sleep(0.5)
+            root=fetch_batch(ids[i:i+B]); ALL+=parse(root)
+            time.sleep(6.2)                          # 每請求 ≥6 秒
           ALL.sort(key=lambda x: (-(x["usersrated"] or 0), -(x["rating"] or 0.0), x["id"]))
           OUT.write_text(json.dumps(ALL, ensure_ascii=False, indent=2), encoding='utf-8')
           print(f"bgg_data.json rows={len(ALL)}")
@@ -211,7 +215,6 @@ jobs:
           BUILD_MIN_ITEMS: "1"
         run: python -u scripts/build_json.py
 
-      # 觀測三個檔案筆數，方便快速定位
       - name: Sanity check & head
         run: |
           python - <<'PY'
@@ -226,7 +229,6 @@ jobs:
           print('HEAD games_full.json:', [x.get('name') for x in d2[:3]])
           PY
 
-      # 發佈：優先用 games_full；為 0 時 fallback 到 bgg_data，避免前端空白
       - name: Publish -> public/data/games.json (with fallback)
         run: |
           python - <<'PY'
