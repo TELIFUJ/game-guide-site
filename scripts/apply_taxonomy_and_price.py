@@ -28,12 +28,10 @@ def _dedup_keep_order(xs: Iterable[str]) -> list[str]:
         if not x:
             continue
         if x not in seen:
-            seen.add(x)
-            out.append(x)
+            seen.add(x); out.append(x)
     return out
 
 def _parse_list_zh(s: str) -> list[str]:
-    # 支援 「； / 、 ; ,」 等分隔
     if s is None:
         return []
     tmp = re.sub(r"[，/；;、]", ";", str(s))
@@ -52,9 +50,6 @@ def with_cache_param(url: Optional[str], ver: Optional[str]) -> Optional[str]:
 
 _price_re = re.compile(r"[\d,]+(?:\.\d+)?")
 def _norm_price(v) -> Optional[int]:
-    """
-    將 'NT$1,200'、'1,200'、'1200.0' 轉成 int；空字串/None/非數字 => None
-    """
     if v is None:
         return None
     s = str(v).strip()
@@ -94,7 +89,22 @@ def main():
     out  = []
 
     for r in rows:
-        rr = dict(r)  # 就地更新（冪等）
+        rr = dict(r)  # 冪等
+
+        # --- 相容層（鍵名統一）：支援 YAML 內嵌 XML2 抓取 ---
+        if rr.get("id") is not None and rr.get("bgg_id") is None:
+            try:
+                rr["bgg_id"] = int(rr["id"])
+            except Exception:
+                pass
+        if not rr.get("name_en") and rr.get("name"):
+            rr["name_en"] = rr["name"]
+        if not rr.get("mechanics") and rr.get("mechanisms"):
+            rr["mechanics"] = rr["mechanisms"]
+        if not rr.get("image_url") and rr.get("image"):
+            rr["image_url"] = rr["image"]
+        if not rr.get("thumb_url") and rr.get("thumbnail"):
+            rr["thumb_url"] = rr["thumbnail"]
 
         # aliases_zh：兼容舊欄位 alias_zh（單字串）→ 陣列
         if rr.get("alias_zh"):
@@ -102,14 +112,14 @@ def main():
         elif rr.get("aliases_zh"):
             rr["aliases_zh"] = _dedup_keep_order([str(x).strip() for x in rr["aliases_zh"] if str(x).strip()])
 
-        # 只要有 image_override 就直接定案到 image，並加 v= 抗快取（與下載流程互不衝突）
+        # 有 image_override → 直接用，並加 v= 抗快取
         img_ovr = (rr.get("image_override") or "").strip()
         if img_ovr:
             ver = (str(rr.get("image_version_id")).strip()
                    if rr.get("image_version_id") not in (None, "") else None)
             rr["image"] = with_cache_param(img_ovr, ver)
 
-        # ---- 中文分類：優先順序  category_zh(字串) > categories_zh(清單) > EN+映射 ----
+        # ---- 中文分類：category_zh > categories_zh > EN+映射 ----
         if rr.get("category_zh"):
             rr["categories_zh"] = _dedup_keep_order(_parse_list_zh(rr["category_zh"]))
         else:
@@ -120,7 +130,7 @@ def main():
                 en = _as_list(rr.get("categories"))
                 rr["categories_zh"] = _map_zh_list(en, catmap)
 
-        # ---- 中文機制：若已有 mechanics_zh 就清理；否則用 EN+映射 ----
+        # ---- 中文機制：已有 mechanics_zh 則清理；否則 EN+映射 ----
         mz = _as_list(rr.get("mechanics_zh"))
         if mz:
             rr["mechanics_zh"] = _dedup_keep_order([str(x).replace("\u00A0", " ").strip() for x in mz if str(x).strip()])
@@ -128,31 +138,21 @@ def main():
             me = _as_list(rr.get("mechanics"))
             rr["mechanics_zh"] = _map_zh_list(me, mechmap)
 
-        # ---- BGG URL 補完（不覆蓋外部 override 鍵）----
+        # ---- BGG URL 補完 ----
         if not rr.get("bgg_url"):
             bid = rr.get("bgg_id")
             if bid:
                 rr["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
 
-        # ---- 價格欄位正規化（保留空為 None）----
+        # ---- 價格正規化 ----
         for k in ("price_twd", "used_price_twd", "price_msrp_twd"):
             rr[k] = _norm_price(rr.get(k))
 
-        # ---- 搜尋關鍵字輕量補充（不覆蓋既有）----
-        kw = set()
-        for s in rr.get("search_keywords", []):
-            if s is not None and str(s).strip():
-                kw.add(str(s).strip())
-        for s in rr.get("aliases_zh", []):
-            if s is not None and str(s).strip():
-                kw.add(str(s).strip())
-        # 注入中文分類/機制（可被 UI 模糊比對利用）
-        for s in rr.get("categories_zh", []):
-            if s:
-                kw.add(str(s))
-        for s in rr.get("mechanics_zh", []):
-            if s:
-                kw.add(str(s))
+        # ---- 搜尋關鍵字補充（不覆蓋既有）----
+        kw = set(s for s in rr.get("search_keywords", []) if s is not None and str(s).strip())
+        kw.update(s for s in rr.get("aliases_zh", []) if s)
+        kw.update(s for s in rr.get("categories_zh", []) if s)
+        kw.update(s for s in rr.get("mechanics_zh", []) if s)
         if kw:
             rr["search_keywords"] = sorted(kw)
 
