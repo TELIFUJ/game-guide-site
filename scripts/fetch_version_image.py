@@ -1,18 +1,31 @@
 # scripts/fetch_version_image.py
-import json, time, requests, xml.etree.ElementTree as ET
+import os, json, time, requests, xml.etree.ElementTree as ET
 from pathlib import Path
 
 INOUT = Path("data/bgg_data.json")
-API   = "https://boardgamegeek.com/xmlapi2/thing?type=boardgameversion&id="
+API   = "https://boardgamegeek.com/xmlapi2/thing"
 
-def fetch_version(v_id:int, backoff=2):
-    url = API + str(v_id)
-    r = requests.get(url, timeout=60)
-    while r.status_code == 202:
-        time.sleep(backoff); r = requests.get(url, timeout=60)
-    if r.status_code == 429:
-        time.sleep(backoff); return fetch_version(v_id, min(backoff*2, 16))
+UA = os.getenv("BGG_UA", "game-guide-site/ci (+https://github.com/TELIFUJ/game-guide-site)")
+TOKEN = os.getenv("BGG_TOKEN", "").strip()
+
+HEADERS = {
+    "User-Agent": UA,
+    "Accept": "application/xml",
+    "Referer": "https://boardgamegeek.com/",
+}
+if TOKEN:
+    HEADERS["Authorization"] = f"Bearer {TOKEN}"
+
+def _get(url, params=None, backoff=2, attempt=1, max_attempts=8):
+    r = requests.get(url, params=params, timeout=60, headers=HEADERS)
+    if r.status_code in (202, 429, 500, 502, 503, 504) and attempt < max_attempts:
+        time.sleep(backoff)
+        return _get(url, params, min(backoff * 1.7, 16), attempt + 1, max_attempts)
     r.raise_for_status()
+    return r
+
+def fetch_version(v_id: int):
+    r = _get(API, params={"type": "boardgameversion", "id": str(v_id)})
     root = ET.fromstring(r.text)
     it   = root.find("item")
     if it is None: return None
@@ -27,18 +40,16 @@ def main():
     changed = False
 
     for r in rows:
-        # 有 override 的一律尊重，不去改它
-        if r.get("image_override"):
+        if r.get("image_override"):  # 尊重 override
             continue
 
         raw = r.get("image_version_id")
         v = (raw or "").strip() if isinstance(raw, str) else (str(raw).strip() if raw is not None else "")
-        if not v: 
-            continue
+        if not v: continue
 
         try:
             vid = int(v)
-        except:
+        except Exception:
             print(f"Skip invalid image_version_id: {v}")
             continue
 
@@ -48,7 +59,7 @@ def main():
                 r["image_url"] = url
                 r["image_version_used"] = vid
                 changed = True
-                print(f"Using version {vid} image for bgg_id={r.get('bgg_id')}")
+                print(f"Using version {vid} image for bgg_id={r.get('bgg_id') or r.get('id')}")
             else:
                 print(f"No image for version {vid}")
         except Exception as e:
