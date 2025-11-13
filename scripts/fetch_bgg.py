@@ -8,16 +8,17 @@ IDS_FILE   = Path("data/bgg_ids.json")
 OUT_FILE   = Path("data/bgg_data.json")
 TMP_FILE   = Path("data/.bgg_data.tmp.json")
 
-BATCH   = int(os.getenv("BGG_BATCH", "6"))       # 小批次，降低觸發風險
-SLEEP   = float(os.getenv("BGG_SLEEP", "4.0"))   # 批間等待（秒）
-RETRY   = int(os.getenv("BGG_RETRY", "6"))       # 單 host 重試次數
-JITTER  = float(os.getenv("BGG_JITTER", "0.8"))  # 抖動比例
-VERSIONS= os.getenv("BGG_VERSIONS", "0")         # 關 versions 降負荷
-HOSTS   = [h.strip() for h in os.getenv("BGG_HOSTS", "api.geekdo.com,boardgamegeek.com").split(",")]
-MIN_SAVE= int(os.getenv("BGG_MIN_SAVE", "50"))   # 成功 < MIN_SAVE → 不覆蓋舊檔
+BATCH   = min(int(os.getenv("BGG_BATCH", "20")), 20)   # 批次 ≤20
+SLEEP   = float(os.getenv("BGG_SLEEP", "6.0"))         # 每請求 ≥6 秒
+RETRY   = int(os.getenv("BGG_RETRY", "6"))
+JITTER  = float(os.getenv("BGG_JITTER", "0.8"))
+VERSIONS= os.getenv("BGG_VERSIONS", "0")
+HOSTS   = [h.strip() for h in os.getenv("BGG_HOSTS", "boardgamegeek.com,api.geekdo.com").split(",")]
+MIN_SAVE= int(os.getenv("BGG_MIN_SAVE", "50"))
 
-UA = os.getenv("HTTP_UA", "Mozilla/5.0 (compatible; GameGuideBot/1.0)")
+UA = os.getenv("HTTP_UA", "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)")
 AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE", "en-US,en;q=0.9")
+TOKEN = os.getenv("BGG_TOKEN", "").strip()
 
 def load_ids():
     data = json.loads(IDS_FILE.read_text(encoding="utf-8"))
@@ -44,7 +45,6 @@ def parse_xml(xml_text: str):
                 break
         image = (it.findtext("./image") or "").strip()
         thumb = (it.findtext("./thumbnail") or "").strip()
-        # 取 ratings/weight/rank（若無就留空）
         ratings = it.find("./statistics/ratings")
         def _f(val):
             try:
@@ -89,17 +89,24 @@ def get_session():
     s = requests.Session()
     s.headers.update({
         "User-Agent": UA,
-        "Accept": "text/xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": AC_LANG,
         "Connection": "keep-alive",
         "Pragma": "no-cache",
         "Cache-Control": "no-cache",
         "Referer": "https://boardgamegeek.com/",
     })
+    if TOKEN:
+        s.headers["Authorization"] = f"Bearer {TOKEN}"
     return s
 
 def fetch_batch(session: requests.Session, ids):
-    params = {"stats": "1", "versions": VERSIONS, "id": ",".join(str(i) for i in ids)}
+    params = {
+        "stats": "1",
+        "versions": VERSIONS,
+        "type": "boardgame,boardgameexpansion",
+        "id": ",".join(str(i) for i in ids)
+    }
     for host in HOSTS:
         url = f"https://{host}/xmlapi2/thing"
         last_err = None
@@ -108,8 +115,8 @@ def fetch_batch(session: requests.Session, ids):
                 r = session.get(url, params=params, timeout=45)
                 if r.status_code == 200 and r.text.strip():
                     return parse_xml(r.text)
-                if r.status_code in (401, 403, 429, 503):
-                    wait = SLEEP * (1 + random.random() * JITTER) * (1.5 ** k)
+                if r.status_code in (202, 401, 403, 429, 500, 502, 503, 504):
+                    wait = SLEEP * (1 + random.random() * JITTER) * (1.6 ** k)
                     time.sleep(wait)
                     continue
                 time.sleep(2.0)
