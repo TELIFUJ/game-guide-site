@@ -1,76 +1,73 @@
-# scripts/build_json.py
-import json, re
-from pathlib import Path
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-IN  = Path("data/bgg_data.json")
-OUT = Path("data/games_full.json")
-SITE_OUT = Path("site/data/games.json")
-SITE_OUT.parent.mkdir(parents=True, exist_ok=True)
+"""
+產出兩份：
+1) data/games_full.json（完整清單，供檢查）
+2) site/data/games.json（網站實際讀取）
+並做舊鍵名相容與欄位補齊（players、time、rating_avg 等）
+"""
+
+import json, pathlib, sys
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+DATA_IN  = ROOT / "data" / "bgg_data.json"
+OUT_FULL = ROOT / "data" / "games_full.json"
+OUT_SITE = ROOT / "site" / "data" / "games.json"
 
 def _compat(r: dict) -> dict:
-    r = dict(r or {})
+    r = dict(r)
 
-    # ---- 保留原始鍵（若不存在則補齊為 None）----
-    for k in ("year","minplayers","maxplayers","minplaytime","maxplaytime","rating","usersrated"):
-        r.setdefault(k, r.get(k, None))
-
-    # ---- 新 → 舊鍵名（相容前端舊讀法）----
-    r.setdefault("min_players",  r.get("minplayers"))
-    r.setdefault("max_players",  r.get("maxplayers"))
+    # ---- 舊→新鍵名相容 ----
+    r.setdefault("min_players", r.get("minplayers"))
+    r.setdefault("max_players", r.get("maxplayers"))
     r.setdefault("min_playtime", r.get("minplaytime"))
     r.setdefault("max_playtime", r.get("maxplaytime"))
-    r.setdefault("rating_avg",   r.get("rating"))
-    r.setdefault("users_rated",  r.get("usersrated"))
+    r.setdefault("rating_avg",  r.get("rating"))         # 供前端 getRatingAvg()
+    # rating_bayes 若抓到就保留；沒有就不補
+
+    # players 陣列供前端徽章
+    mn_p = r.get("minplayers") or r.get("min_players")
+    mx_p = r.get("maxplayers") or r.get("max_players")
+    if mn_p or mx_p:
+        r["players"] = [mn_p or mx_p, mx_p or mn_p]
+
+    # BGG URL
+    bid = r.get("bgg_id") or r.get("id")
+    if bid:
+        r.setdefault("bgg_url", f"https://boardgamegeek.com/boardgame/{int(bid)}")
 
     # 影像相容
     if not r.get("image_url"):
-        r["image_url"] = (r.get("image") or r.get("thumbnail") or r.get("thumb_url") or "") or ""
+        r["image_url"] = (r.get("image") or r.get("thumbnail") or r.get("thumb_url") or "")
     if not r.get("thumb_url"):
-        r["thumb_url"] = (r.get("thumbnail") or r.get("image") or r.get("image_url") or "") or ""
+        r["thumb_url"] = (r.get("thumbnail") or r.get("image") or r.get("image_url") or "")
 
-    # 類別／機制陣列
-    r["categories"] = [x for x in (r.get("categories") or []) if isinstance(x, str) and x.strip()]
-    r["mechanisms"] = [x for x in (r.get("mechanisms") or []) if isinstance(x, str) and x.strip()]
-
-    # 顯示用（卡片）——可被前端直接使用
-    def _fmt_players(a,b):
-        try:
-            if a and b and a!=b: return f"{a}–{b}人"
-            if a and not b: return f"{a}人"
-            if not a and b: return f"{b}人"
-        except: pass
-        return None
-    def _fmt_time(a,b):
-        try:
-            if a and b and a!=b: return f"{a}–{b}分"
-            if a and not b: return f"{a}分"
-            if not a and b: return f"{b}分"
-        except: pass
-        return None
-
-    r["players_text"] = _fmt_players(r.get("minplayers"), r.get("maxplayers"))
-    r["playtime_text"] = _fmt_time(r.get("minplaytime"), r.get("maxplaytime"))
-
+    # 類別／機制：保留 BGG 原文
+    r.setdefault("categories", r.get("categories", []) or [])
+    r.setdefault("mechanics",  r.get("mechanisms", []) or r.get("mechanics", []) or [])
     return r
 
 def main():
-    rows = json.loads(IN.read_text(encoding="utf-8")) if IN.exists() else []
+    if not DATA_IN.exists():
+        print("bgg_data.json not found", file=sys.stderr)
+        sys.exit(0)
+
+    rows = json.loads(DATA_IN.read_text(encoding="utf-8"))
+    if not isinstance(rows, list):
+        rows = []
+
     rows = [_compat(x) for x in rows]
 
-    # 排序：以評分/人數 → 年份 → id
-    def _score(x):
-        return (
-            -(x.get("usersrated") or 0),
-            -(x.get("rating") or 0.0),
-            -(x.get("year") or 0),
-            x.get("id") or x.get("bgg_id") or 0
-        )
-    rows.sort(key=_score)
+    # 寫出
+    OUT_FULL.parent.mkdir(parents=True, exist_ok=True)
+    OUT_SITE.parent.mkdir(parents=True, exist_ok=True)
 
-    OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
-    SITE_OUT.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
-    print(f"games_full.json rows={len(rows)} ; wrote → {OUT}")
-    print(f"site/data/games.json rows={len(rows)} ; wrote → {SITE_OUT}")
+    OUT_FULL.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    OUT_SITE.write_text(json.dumps(rows, ensure_ascii=False, indent=0), encoding="utf-8")
+
+    print(f"games_full.json rows={len(rows)} ; wrote → {OUT_FULL}")
+    print(f"site/data/games.json rows={len(rows)} ; wrote → {OUT_SITE}")
 
 if __name__ == "__main__":
     main()
