@@ -1,165 +1,204 @@
 # scripts/apply_taxonomy_and_price.py
-# -*- coding: utf-8 -*-
-import csv, json, re, urllib.parse
+import json, re, csv, unicodedata
 from pathlib import Path
-from typing import Optional, Iterable
+from typing import Dict, List, Any, Optional
 
-BGG_IN      = Path("data/bgg_data.json")
-CATMAP_CSV  = Path("data/category_map_zh.csv")
-MECHMAP_CSV = Path("data/mechanism_map_zh.csv")
+BASE = Path("data")
+BGG_INOUT = BASE / "bgg_data.json"
+IDS_JSON  = BASE / "bgg_ids.json"
+MECH_MAP  = BASE / "mechanism_map_zh.csv"
+CAT_MAP   = BASE / "category_map_zh.csv"
 
-# ---------- helpers ----------
-def load_map(csv_path: Path, key_en: str, key_zh: str) -> dict:
-    m = {}
-    if not csv_path.exists():
-        return m
-    with csv_path.open(encoding="utf-8-sig", newline="") as f:
-        r = csv.DictReader(f)
-        for row in r:
-            en = (row.get(key_en) or "").strip()
-            zh = (row.get(key_zh) or "").strip()
-            if en:
-                m[en] = zh or en
-    return m
+MERGE_KEYS = [
+  "name_zh","name_en_override","alias_zh","category_zh",
+  "price_msrp_twd","price_twd","used_price_twd",
+  "price_note","used_note","manual_override","stock","description",
+  "image_override","image_version_id","link_override","bgg_url_override"
+]
 
-def _dedup_keep_order(xs: Iterable[str]) -> list[str]:
-    seen, out = set(), []
-    for x in xs:
-        if not x:
-            continue
-        if x not in seen:
-            seen.add(x); out.append(x)
+def _read_json(path: Path, default):
+    if not path.exists(): return default
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return default
+
+def _write_json(path: Path, obj):
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
+
+def _to_int(s) -> Optional[int]:
+    if s is None: return None
+    if isinstance(s, (int, float)): 
+        try: return int(s)
+        except: return None
+    t = str(s)
+    t = t.replace(",", "").replace("_","").replace("NTD","").replace("TWD","").replace("$","").strip()
+    t = re.sub(r"[^\d\-]", "", t)
+    try:
+        if t == "" or t == "-": return None
+        return int(t)
+    except:
+        return None
+
+def _norm_price(x):
+    v=_to_int(x)
+    return v if (v is not None and v >= 0) else None
+
+def _uniq(seq: List[Any]) -> List[Any]:
+    out=[]; seen=set()
+    for x in seq:
+        if x is None: continue
+        k=str(x).strip()
+        if not k: continue
+        if k not in seen:
+            seen.add(k); out.append(k)
     return out
 
-def _parse_list_zh(s: str) -> list[str]:
-    if s is None:
-        return []
-    tmp = re.sub(r"[，/；;、]", ";", str(s))
-    return [x.strip() for x in tmp.split(";") if x.strip()]
+def _load_map_csv(path: Path, key_col: str, val_col: str) -> Dict[str,str]:
+    if not path.exists(): return {}
+    m={}
+    with path.open("r", encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f):
+            k=(row.get(key_col) or "").strip()
+            v=(row.get(val_col) or "").strip()
+            if k and v:
+                m[k] = v
+    return m
 
-def with_cache_param(url: Optional[str], ver: Optional[str]) -> Optional[str]:
-    if not url or not ver:
-        return url
-    u = urllib.parse.urlsplit(url)
-    q = urllib.parse.parse_qsl(u.query, keep_blank_values=True)
-    if any(k.lower() == "v" for k, _ in q):
-        return url
-    q.append(("v", str(ver)))
-    new_q = urllib.parse.urlencode(q)
-    return urllib.parse.urlunsplit((u.scheme, u.netloc, u.path, new_q, u.fragment))
+def _norm_str(s: Optional[str]) -> Optional[str]:
+    if s is None: return None
+    t = unicodedata.normalize("NFKC", str(s)).strip()
+    return t if t else None
 
-_price_re = re.compile(r"[\d,]+(?:\.\d+)?")
-def _norm_price(v) -> Optional[int]:
-    if v is None:
-        return None
-    s = str(v).strip()
-    if not s:
-        return None
-    m = _price_re.search(s)
-    if not m:
-        return None
-    num = m.group(0).replace(",", "")
-    try:
-        return int(float(num))
-    except Exception:
-        return None
+def _keywords(parts: List[str]) -> List[str]:
+    bag=[]
+    for p in parts:
+        if not p: continue
+        t=unicodedata.normalize("NFKC", p)
+        t=re.sub(r"[^0-9A-Za-z\u4e00-\u9fff\u3040-\u30ff\u3400-\u4dbf]+"," ", t)
+        bag.extend(w for w in t.split() if w)
+    # 去重但保留原順序
+    seen=set(); out=[]
+    for w in bag:
+        k=w.lower()
+        if k not in seen:
+            seen.add(k); out.append(w)
+    return out
 
-def _as_list(v) -> list:
-    if isinstance(v, list):
-        return v
-    if v is None or v == "":
-        return []
-    return [v]
+def load_ids_json() -> Dict[int,Dict[str,Any]]:
+    data = _read_json(IDS_JSON, [])
+    out={}
+    if isinstance(data, list):
+        for r in data:
+            if not isinstance(r, dict): continue
+            bid = r.get("bgg_id") or r.get("id")
+            try:
+                bid = int(bid)
+            except:
+                continue
+            out[bid] = r
+    return out
 
-def _map_zh_list(en_list: list[str], mapping: dict) -> list[str]:
-    norm = lambda s: re.sub(r"\s+", " ", str(s or "")).replace("\u00A0", " ").strip()
-    out = [mapping.get(norm(x), norm(x)) for x in en_list if norm(x)]
-    return _dedup_keep_order(out)
-
-# ---------- main ----------
 def main():
-    if not BGG_IN.exists():
-        print("No data/bgg_data.json; skip apply.")
+    rows = _read_json(BGG_INOUT, [])
+    if not isinstance(rows, list):
+        print("bgg_data.json not a list; abort.")
         return
 
-    catmap  = load_map(CATMAP_CSV,  "bgg_category_en",  "category_zh")
-    mechmap = load_map(MECHMAP_CSV, "bgg_mechanism_en", "mechanism_zh")
+    ids_map = load_ids_json()
+    mech_map = _load_map_csv(MECH_MAP, "bgg_mechanism_en", "mechanism_zh")
+    cat_map  = _load_map_csv(CAT_MAP,  "bgg_category_en",  "category_zh")
 
-    rows = json.loads(BGG_IN.read_text(encoding="utf-8"))
-    out  = []
-
+    out=[]
+    miss_cnt={"price_twd":0,"used_price_twd":0}
     for r in rows:
-        rr = dict(r)  # 冪等
+        if not isinstance(r, dict): continue
+        rr = dict(r)
 
-        # --- 相容層（鍵名統一）：支援 YAML 內嵌 XML2 抓取 ---
-        if rr.get("id") is not None and rr.get("bgg_id") is None:
-            try:
-                rr["bgg_id"] = int(rr["id"])
-            except Exception:
-                pass
-        if not rr.get("name_en") and rr.get("name"):
-            rr["name_en"] = rr["name"]
-        if not rr.get("mechanics") and rr.get("mechanisms"):
-            rr["mechanics"] = rr["mechanisms"]
-        if not rr.get("image_url") and rr.get("image"):
-            rr["image_url"] = rr["image"]
-        if not rr.get("thumb_url") and rr.get("thumbnail"):
-            rr["thumb_url"] = rr["thumbnail"]
+        # 統一 bgg_id 欄位
+        bid = rr.get("bgg_id") or rr.get("id")
+        try: bid = int(bid) if bid is not None else None
+        except: bid = None
+        if bid is not None:
+            rr["bgg_id"] = bid
+            rr["id"] = bid  # 後續流程用 id
 
-        # aliases_zh：兼容舊欄位 alias_zh（單字串）→ 陣列
-        if rr.get("alias_zh"):
-            rr["aliases_zh"] = _dedup_keep_order(_parse_list_zh(rr.get("alias_zh")))
-        elif rr.get("aliases_zh"):
-            rr["aliases_zh"] = _dedup_keep_order([str(x).strip() for x in rr["aliases_zh"] if str(x).strip()])
+        # 合併 bgg_ids.json（只帶 MERGE_KEYS 且非空值）
+        if bid and bid in ids_map:
+            src = ids_map[bid]
+            for k in MERGE_KEYS:
+                v = src.get(k)
+                if v not in (None, ""):
+                    rr[k] = v
 
-        # 有 image_override → 直接用，並加 v= 抗快取
-        img_ovr = (rr.get("image_override") or "").strip()
-        if img_ovr:
-            ver = (str(rr.get("image_version_id")).strip()
-                   if rr.get("image_version_id") not in (None, "") else None)
-            rr["image"] = with_cache_param(img_ovr, ver)
-
-        # ---- 中文分類：category_zh > categories_zh > EN+映射 ----
-        if rr.get("category_zh"):
-            rr["categories_zh"] = _dedup_keep_order(_parse_list_zh(rr["category_zh"]))
+        # 名稱欄位整理
+        rr["name"] = _norm_str(rr.get("name")) or _norm_str(rr.get("name_en")) or rr.get("name")
+        if rr.get("name_en_override"):
+            rr["name_en"] = _norm_str(rr["name_en_override"])
         else:
-            cz = _as_list(rr.get("categories_zh"))
-            if cz:
-                rr["categories_zh"] = _dedup_keep_order([str(x).strip() for x in cz if str(x).strip()])
+            rr["name_en"] = rr.get("name")
+
+        # URL（尊重 override/link_override）
+        if rr.get("bgg_url_override"):
+            rr["bgg_url"] = _norm_str(rr["bgg_url_override"])
+        elif rr.get("link_override"):
+            rr["bgg_url"] = _norm_str(rr["link_override"])
+        elif bid:
+            rr["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
+
+        # 圖片 override
+        if rr.get("image_override"):
+            img = _norm_str(rr["image_override"])
+            if img:
+                rr["image"] = img
+                rr["thumbnail"] = rr.get("thumbnail") or img
+
+        # 類別/機制：產出中文映射（不覆蓋單欄位 category_zh，保留多值欄位）
+        cats = rr.get("categories") or []
+        mechs = rr.get("mechanisms") or []
+        cats_zh  = [cat_map.get(c, c) for c in cats]
+        mechs_zh = [mech_map.get(m, m) for m in mechs]
+        rr["categories_zh"] = _uniq(cats_zh)
+        rr["mechanisms_zh"] = _uniq(mechs_zh)
+
+        # 價格正規化（TWD）
+        for key in ("price_twd","used_price_twd","price_msrp_twd"):
+            if key in rr:
+                rr[key] = _norm_price(rr.get(key))
             else:
-                en = _as_list(rr.get("categories"))
-                rr["categories_zh"] = _map_zh_list(en, catmap)
+                rr[key] = None
+        if rr.get("price_twd") is None: miss_cnt["price_twd"] += 1
+        if rr.get("used_price_twd") is None: miss_cnt["used_price_twd"] += 1
 
-        # ---- 中文機制：已有 mechanics_zh 則清理；否則 EN+映射 ----
-        mz = _as_list(rr.get("mechanics_zh"))
-        if mz:
-            rr["mechanics_zh"] = _dedup_keep_order([str(x).replace("\u00A0", " ").strip() for x in mz if str(x).strip()])
-        else:
-            me = _as_list(rr.get("mechanics"))
-            rr["mechanics_zh"] = _map_zh_list(me, mechmap)
+        # 關鍵字
+        kw = _keywords([
+            rr.get("name"), rr.get("name_en"), rr.get("name_zh"), rr.get("alias_zh"),
+            *rr.get("categories", []), *rr.get("mechanisms", []),
+            *rr.get("categories_zh", []), *rr.get("mechanisms_zh", [])
+        ])
+        rr["search_keywords"] = kw
 
-        # ---- BGG URL 補完 ----
-        if not rr.get("bgg_url"):
-            bid = rr.get("bgg_id")
-            if bid:
-                rr["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
-
-        # ---- 價格正規化 ----
-        for k in ("price_twd", "used_price_twd", "price_msrp_twd"):
-            rr[k] = _norm_price(rr.get(k))
-
-        # ---- 搜尋關鍵字補充（不覆蓋既有）----
-        kw = set(s for s in rr.get("search_keywords", []) if s is not None and str(s).strip())
-        kw.update(s for s in rr.get("aliases_zh", []) if s)
-        kw.update(s for s in rr.get("categories_zh", []) if s)
-        kw.update(s for s in rr.get("mechanics_zh", []) if s)
-        if kw:
-            rr["search_keywords"] = sorted(kw)
+        # 其他數值欄位清洗（避免字串化）
+        for nkey in ("year","minplayers","maxplayers","minplaytime","maxplaytime","usersrated"):
+            v = rr.get(nkey)
+            try:
+                if v in (None,"","N/A"): rr[nkey]=None
+                else: rr[nkey]=int(float(v))
+            except:
+                rr[nkey]=None
+        for fkey in ("rating","rating_bayes","weight"):
+            v = rr.get(fkey)
+            try:
+                if v in (None,"","N/A"): rr[fkey]=None
+                else: rr[fkey]=float(v)
+            except:
+                rr[fkey]=None
 
         out.append(rr)
 
-    BGG_IN.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"apply_taxonomy_and_price: total {len(out)}; zh fields applied; prices normalized; image override respected.")
+    _write_json(BGG_INOUT, out)
+    print(f"apply_taxonomy_and_price: rows={len(out)} ; price_twd missing={miss_cnt['price_twd']} ; used_price_twd missing={miss_cnt['used_price_twd']}")
+    print("apply_taxonomy_and_price: wrote data/bgg_data.json")
 
 if __name__ == "__main__":
     main()
