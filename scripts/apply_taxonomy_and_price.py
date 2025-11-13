@@ -1,6 +1,7 @@
 # scripts/apply_taxonomy_and_price.py
 import re, json
 from pathlib import Path
+from scripts.common_image import normalize_bgg_image_url
 
 BGG_INOUT = Path("data/bgg_data.json")
 IDS_JSON  = Path("data/bgg_ids.json")
@@ -17,7 +18,7 @@ def load_ids_json():
     out = {}
     for r in data if isinstance(data, list) else []:
         bid = r.get("bgg_id")
-        if bid is None: 
+        if bid is None:
             continue
         try:
             out[int(bid)] = r
@@ -35,7 +36,7 @@ MERGE_KEYS = [
 _PRICE_KEYS = {"price_twd","used_price_twd","price_msrp_twd"}
 
 def _first_int(s):
-    if s is None: 
+    if s is None:
         return None
     if isinstance(s, (int, float)):
         try:
@@ -44,7 +45,6 @@ def _first_int(s):
         except Exception:
             return None
     s = str(s)
-    # 取區間最低，例如 "300~500" 或 "300-500"
     m = re.search(r"(\d{2,6})", s.replace(",", ""))
     return int(m.group(1)) if m else None
 
@@ -65,7 +65,7 @@ def enrich_search_keywords(r):
     ks = []
     for k in ("name","name_zh","name_en_override","alias_zh"):
         v = r.get(k)
-        if v: 
+        if v:
             ks.append(str(v))
     for arrk in ("categories","mechanisms"):
         for x in (r.get(arrk) or []):
@@ -104,13 +104,20 @@ def main():
 
         # ===== 圖片處理（尊重 override；version 由後續腳本補）=====
         if rr.get("image_override"):
-            rr["image_url"] = rr["image_override"]
+            ov = normalize_bgg_image_url(rr["image_override"])
+            rr["image_override"] = ov
+            rr["image_url"] = ov
         else:
-            # 若前一步 parser 只有 image/thumbnail，也補齊兼容欄位
             base_img = (rr.get("image") or rr.get("thumbnail") or "").strip()
             base_th  = (rr.get("thumbnail") or rr.get("image") or "").strip()
-            if base_img and not rr.get("image_url"): rr["image_url"] = base_img
-            if base_th  and not rr.get("thumb_url"): rr["thumb_url"]  = base_th
+            if base_img and not rr.get("image_url"):
+                rr["image_url"] = normalize_bgg_image_url(base_img)
+            if base_th  and not rr.get("thumb_url"):
+                rr["thumb_url"]  = normalize_bgg_image_url(base_th)
+
+        # 供前端最穩定使用：若缺少 image，回填為 image_url
+        if rr.get("image_url") and not rr.get("image"):
+            rr["image"] = rr["image_url"]
 
         # ===== URL 與關鍵字 =====
         rr = enrich_urls(rr)
