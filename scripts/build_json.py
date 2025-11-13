@@ -2,17 +2,23 @@
 import os, json, datetime, hashlib
 from pathlib import Path
 
-INPUT   = Path("data/bgg_data.json")
-OUTPUT  = Path("data/games_full.json")
-BACKUP  = Path("data/games_full_backup.json")
+INPUT    = Path("data/bgg_data.json")
+OUTPUT   = Path("data/games_full.json")
+BACKUP   = Path("data/games_full_backup.json")
 MIN_BUILD = int(os.getenv("BUILD_MIN_ITEMS", "10"))
 
 def slugify(s: str) -> str:
     return (s or "").strip().lower().replace(" ", "_")
 
 def make_id(r: dict) -> str:
-    bid  = r.get("bgg_id")
-    base = slugify(r.get("name_en_override") or r.get("name_en") or r.get("name_zh") or (f"bgg_{bid}" if bid else "game"))
+    bid  = r.get("bgg_id") or r.get("id")
+    base = slugify(
+        r.get("name_en_override")
+        or r.get("name_en")
+        or r.get("name")
+        or r.get("name_zh")
+        or (f"bgg_{bid}" if bid else "game")
+    )
     ovr = r.get("image_override")
     if ovr:
         return f"{base}-{hashlib.md5(str(ovr).encode('utf-8')).hexdigest()[:8]}"
@@ -36,7 +42,6 @@ def restore_from_backup(reason: str):
 
 def main():
     if not INPUT.exists():
-        # 沒有 input：保留舊檔或回填備份
         if OUTPUT.exists():
             print("BUILD GUARD: no bgg_data.json; keep previous games_full.json.")
             return
@@ -48,26 +53,46 @@ def main():
     today = datetime.date.today().isoformat()
 
     for r in rows:
-        bid     = r.get("bgg_id")
-        name_zh = r.get("name_zh")
-        name_en = r.get("name_en_override") or r.get("name_en") or r.get("bgg_query")
-        image   = r.get("image") or r.get("image_url") or r.get("thumb_url")
+        bid      = r.get("bgg_id") or r.get("id")
+        name_zh  = r.get("name_zh")
+        # 相容兩種來源：name_en 優先，否則用 name
+        name_en  = r.get("name_en_override") or r.get("name_en") or r.get("name") or r.get("bgg_query")
+        # 相容兩種來源：image / image_url / thumb_url / thumbnail
+        image    = r.get("image") or r.get("image_url") or r.get("thumb_url") or r.get("thumbnail")
         if r.get("image_override"):
             image = r["image_override"]
 
         item = dict(r)
-        item["id"]       = make_id(r)
-        item["name_zh"]  = name_zh or ""
-        item["name_en"]  = name_en or ""
-        item["image"]    = image or ""
+        item["id"]        = make_id(r)
+        item["name_zh"]   = name_zh or ""
+        item["name_en"]   = name_en or ""
+        item["image"]     = image or ""
+
+        # 產出 BGG 連結
         if bid and not item.get("bgg_url"):
             item["bgg_url"] = f"https://boardgamegeek.com/boardgame/{bid}"
+
+        # 產生搜尋關鍵字（給前端 fuzzy）
         if not item.get("search_keywords"):
             kws=[]
             if name_zh: kws.append(f"{name_zh} BGG")
             if name_en: kws.append(f"{name_en} BGG")
             item["search_keywords"]=kws
-        item["updated_at"]=today
+
+        # 將 XML2 的 rating 欄位對映到前端使用的 rating_avg
+        if item.get("rating_avg") is None and isinstance(item.get("rating"), (int, float)):
+            item["rating_avg"] = item["rating"]
+
+        # 方便前端顯示人數（若有 min/maxplayers）
+        try:
+            mp = int(r.get("minplayers") or 0)
+            xp = int(r.get("maxplayers") or 0)
+            if mp or xp:
+                item["players"] = [mp or None, xp or None]
+        except Exception:
+            pass
+
+        item["updated_at"] = today
         items.append(item)
 
     # 名稱排序（中文/英文）
@@ -81,7 +106,6 @@ def main():
         restore_from_backup(f"built {len(items)} (<{MIN_BUILD})")
         return
 
-    # 成功：寫 OUTPUT 並同步更新 BACKUP
     write_json(OUTPUT, items)
     write_json(BACKUP, items)
     print(f"Built {len(items)} entries → {OUTPUT} (backup refreshed)")
