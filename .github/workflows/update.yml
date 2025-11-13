@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 若你在 Settings→Variables 設了 BGG_USERNAME，這步會帶入
+      # 若你在 Settings → Variables 設了 BGG_USERNAME，這步會帶入
       - name: Export variables
         run: |
           echo "BGG_USERNAME=${{ vars.BGG_USERNAME }}" >> $GITHUB_ENV
@@ -35,19 +35,20 @@ jobs:
 
       - name: Ensure dirs and backups
         run: |
-          mkdir -p data assets/img public/data || true
+          mkdir -p data assets/img site/data || true
           if [ -f data/games_full.json ] && [ ! -f data/games_full_backup.json ]; then
             cp data/games_full.json data/games_full_backup.json
           fi
           [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
 
+      # 由 manual.csv 解析 ID（有就寫入 data/bgg_ids.json）
       - name: Resolve IDs
         env:
           PYTHONUNBUFFERED: "1"
         run: python -u scripts/resolve_bgg.py || true
 
-      # 首次上線避免空白：限縮 60 筆（之後可移除）
+      # 首次避免空白：若超過 60 筆先裁到 60（之後可移除）
       - name: Bootstrap limit IDs to 60
         run: |
           python - <<'PY'
@@ -64,12 +65,12 @@ jobs:
               print('No bgg_ids.json; will fallback to username in fetch step if provided')
           PY
 
-      # ====== XML2 抓取（Token + 速率守規 + 回退）======
+      # ====== 用 XML2 拉取資料（支援 BGG_TOKEN；含 202/429/5xx 重試與節流）======
       - name: Fetch BGG (XML2)
         env:
           PYTHONUNBUFFERED: "1"
-          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # 必填：BGG Tokens 頁面建立後放這裡
-          BGG_USERNAME: ${{ env.BGG_USERNAME }}   # 若無 bgg_ids.json，則回退用收藏清單
+          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # ← Settings → Secrets and variables → Actions 新增這個
+          BGG_USERNAME: ${{ env.BGG_USERNAME }}   # 若無 bgg_ids.json，回退用收藏清單
         run: |
           python - <<'PY'
           import os, time, json, pathlib
@@ -184,16 +185,15 @@ jobs:
             print("No IDs and no username; writing empty bgg_data.json")
             OUT.write_text("[]", encoding='utf-8'); raise SystemExit(0)
 
-          ALL=[]; B=20                               # 批次 ≤20
+          ALL=[]; B=20                          # 批次 ≤ 20
           for i in range(0,len(ids),B):
             root=fetch_batch(ids[i:i+B]); ALL+=parse(root)
-            time.sleep(6.2)                          # 每請求 ≥6 秒
+            time.sleep(6.2)                      # 每請求 ≥ 6 秒（禮貌節流）
           ALL.sort(key=lambda x: (-(x["usersrated"] or 0), -(x["rating"] or 0.0), x["id"]))
           OUT.write_text(json.dumps(ALL, ensure_ascii=False, indent=2), encoding='utf-8')
           print(f"bgg_data.json rows={len(ALL)}")
           PY
 
-      # 你的後處理照舊
       - name: Apply taxonomy & price
         env:
           PYTHONUNBUFFERED: "1"
@@ -229,13 +229,14 @@ jobs:
           print('HEAD games_full.json:', [x.get('name') for x in d2[:3]])
           PY
 
-      - name: Publish -> public/data/games.json (with fallback)
+      # 發佈到 site/data/games.json（前端 fetch('data/games.json') 可直接讀）
+      - name: Publish -> site/data/games.json (with fallback)
         run: |
           python - <<'PY'
           import json, pathlib, sys
           p_full = pathlib.Path('data/games_full.json')
           p_bgg  = pathlib.Path('data/bgg_data.json')
-          p_out  = pathlib.Path('public/data/games.json')
+          p_out  = pathlib.Path('site/data/games.json')
           p_out.parent.mkdir(parents=True, exist_ok=True)
           def load(p): return json.loads(p.read_text(encoding='utf-8')) if p.exists() else []
           full, raw = load(p_full), load(p_bgg)
@@ -261,6 +262,6 @@ jobs:
           git add data/games_full.json data/games_full_backup.json data/bgg_data.json data/bgg_ids.json || true
           git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
           git add assets/img/* || true
-          git add public/data/games.json || true
-          git commit -m "Auto-update game data + publish public/data/games.json (with fallback)" || echo "No changes to commit"
+          git add site/data/games.json || true
+          git commit -m "Auto-update game data + publish site/data/games.json (with fallback)" || echo "No changes to commit"
           git push || echo "No changes to push"
