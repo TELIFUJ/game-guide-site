@@ -6,7 +6,7 @@ from PIL import Image
 from io import BytesIO
 
 INPUT  = Path("data/bgg_data.json")
-IMG_DIR = Path("assets/img")
+IMG_DIR = Path("site/assets/img")
 IMG_DIR.mkdir(parents=True, exist_ok=True)
 
 HEADERS = {
