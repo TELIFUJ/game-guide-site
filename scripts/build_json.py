@@ -2,74 +2,104 @@
 # -*- coding: utf-8 -*-
 """
 產出兩份：
-1) data/games_full.json（完整清單，供檢查）
-2) site/data/games.json（網站實際讀取）
-並做舊鍵名相容與欄位補齊（players、time、rating_avg 等）
+1) data/games_full.json（完整檢查）
+2) site/data/games.json（網站讀取）
+維持欄位相容（players、time、rating_avg 等）。
 """
-import json, pathlib, math
-
+import json, pathlib, re, hashlib, unicodedata
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA_IN  = ROOT / "data" / "bgg_data.json"
 OUT_FULL = ROOT / "data" / "games_full.json"
 OUT_SITE = ROOT / "site" / "data" / "games.json"
 
-def _compat(r: dict) -> dict:
-    r = dict(r)
+def _norm_name(s: str) -> str:
+    s = s or ""
+    return unicodedata.normalize("NFKC", s).strip()
 
-    # ---- 舊→新鍵名相容 ----
+def _players_row(r):
+    mi = r.get("minplayers") or r.get("min_players")
+    ma = r.get("maxplayers") or r.get("max_players")
+    if mi and ma and mi != ma: return f"{mi}–{ma}人"
+    if mi: return f"{mi}人"
+    if ma: return f"{ma}人"
+    return ""
+
+def _time_row(r):
+    mi = r.get("minplaytime") or r.get("min_playtime")
+    ma = r.get("maxplaytime") or r.get("max_playtime")
+    if mi and ma and mi != ma: return f"{mi}–{ma}分"
+    if mi: return f"{mi}分"
+    if ma: return f"{ma}分"
+    return ""
+
+def _to_float(x):
+    try:
+        if x in (None, "", "N/A"): return None
+        return float(x)
+    except Exception:
+        return None
+
+def _slug(s: str) -> str:
+    s = re.sub(r"[^0-9A-Za-z\u4e00-\u9fff\- ]+", "", s)
+    s = re.sub(r"\s+", "-", s.strip()).lower()
+    return s[:120] or "n"
+
+def _ensure_fields(r: dict) -> dict:
+    """鍵名相容 & 補齊衍生欄位"""
+    r = dict(r)
+    # bgg id
+    r["bgg_id"] = r.get("bgg_id") or r.get("id")
+    # 相容鍵
     r.setdefault("min_players", r.get("minplayers"))
     r.setdefault("max_players", r.get("maxplayers"))
     r.setdefault("min_playtime", r.get("minplaytime"))
     r.setdefault("max_playtime", r.get("maxplaytime"))
 
-    # 評分統一鍵
-    if r.get("rating") is None and r.get("rating_avg") is not None:
-        r["rating"] = r.get("rating_avg")
-    # 同時輸出新舊兩種命名，避免前端歷史碼失效
-    r["rating_avg"]   = r.get("rating")        # 舊碼相容
-    r["rating_bayes"] = r.get("rating_bayes")  # 已是既有
-    r["users_rated"]  = r.get("usersrated") if r.get("users_rated") is None else r.get("users_rated")
-    r["weight_avg"]   = r.get("weight")        # 舊碼相容
+    # 評分相容：rating=玩家平均；rating_bayes=Bayes 平均
+    rating = _to_float(r.get("rating"))
+    rating_avg = _to_float(r.get("rating_avg"))
+    if rating_avg is None and rating is not None:
+        rating_avg = rating
+    r["rating_avg"] = rating_avg
+    r["rating"] = rating_avg  # 舊前端相容
+    r["rating_bayes"] = _to_float(r.get("rating_bayes"))
+    r["users_rated"] = r.get("users_rated") or r.get("usersrated")
 
-    # 影像欄位統一
-    img = r.get("image") or r.get("image_url") or r.get("thumbnail") or r.get("thumb_url") or ""
-    r["image"] = img
+    # 重量
+    r["weight_avg"] = _to_float(r.get("weight")) or _to_float(r.get("weight_avg"))
 
-    # 衍生顯示欄位（字串型，方便前端直接印）
-    def _rng(lo, hi):
-        if lo and hi and lo != hi:
-            return f"{lo}–{hi}"
-        return f"{lo}" if lo else (f"{hi}" if hi else "")
+    # players/time 文案
+    r["players_text"] = _players_row(r)
+    r["time_text"]    = _time_row(r)
 
-    r["players_str"] = _rng(r.get("min_players"), r.get("max_players"))
-    r["time_str"]    = _rng(r.get("min_playtime"), r.get("max_playtime"))
+    # 分類/機制
+    cats = [c for c in (r.get("categories") or []) if c]
+    mechs = [m for m in (r.get("mechanisms") or []) if m]
+    r["categories"] = cats
+    r["mechanisms"] = mechs
+    r["mechanism_count"] = len(mechs)
 
-    # 允許空陣列但不為 None
-    r["categories"] = r.get("categories") or []
-    r["mechanisms"] = r.get("mechanisms") or []
-
-    # 機制數量（卡片顯示用）
-    r["mechanism_count"] = len(r["mechanisms"])
-
-    # 供推薦計算的關鍵詞集合
-    r["_reco_keys"] = sorted(set([*r["categories"], *r["mechanisms"]]))
-
+    # 名稱與 slug
+    name = _norm_name(r.get("name") or "")
+    year = r.get("year")
+    r["name"] = name
+    r["title"] = f"{name}{(' ('+str(year)+')') if year else ''}"
+    base_for_slug = f"{name}-{r['bgg_id']}"
+    # 如 image_override 變化，讓卡片 slug 穩定
+    ov = r.get("image_override") or ""
+    md5 = hashlib.md5(ov.encode("utf-8")).hexdigest()[:6] if ov else "na"
+    r["slug"] = f"{_slug(base_for_slug)}-{md5}"
     return r
 
 def main():
     rows = json.loads(DATA_IN.read_text(encoding="utf-8")) if DATA_IN.exists() else []
-    fixed = [_compat(x) for x in rows]
-
-    # 完整檔
+    out = [_ensure_fields(r) for r in rows]
     OUT_FULL.parent.mkdir(parents=True, exist_ok=True)
-    OUT_FULL.write_text(json.dumps(fixed, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    # 網站檔（可直接用完整，或做精簡；這裡直接用）
     OUT_SITE.parent.mkdir(parents=True, exist_ok=True)
-    OUT_SITE.write_text(json.dumps(fixed, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-
-    print(f"games_full.json rows={len(fixed)} ; wrote → {OUT_FULL}")
-    print(f"site/data/games.json rows={len(fixed)} ; wrote → {OUT_SITE}")
+    OUT_FULL.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    OUT_SITE.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"games_full.json rows={len(out)} ; wrote → {OUT_FULL}")
+    print(f"site/data/games.json rows={len(out)} ; wrote → {OUT_SITE}")
 
 if __name__ == "__main__":
     main()
