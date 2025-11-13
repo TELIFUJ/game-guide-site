@@ -98,7 +98,6 @@ jobs:
               s.headers["Authorization"] = f"Bearer {TOKEN}"
             return s
 
-          # 解析 XML（屬性 @value）
           def parse(xml_text: str):
             root = etree.fromstring(xml_text.encode("utf-8"))
             res = []
@@ -118,10 +117,8 @@ jobs:
                 return None
 
             for t in root.findall("./item"):
-              try:
-                bid = int(t.get("id"))
-              except Exception:
-                continue
+              try: bid = int(t.get("id"))
+              except Exception: continue
 
               name_el = t.find("name[@type='primary']")
               ratings = t.find("statistics/ratings")
@@ -147,7 +144,6 @@ jobs:
                 "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
                 "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
                 "source":"bgg",
-                # 舊鍵相容（前端可能還讀取）
                 "bgg_id": bid,
                 "image_url": (t.findtext("image") or "").strip() or (t.findtext("thumbnail") or "").strip(),
                 "thumb_url": (t.findtext("thumbnail") or "").strip() or (t.findtext("image") or "").strip(),
@@ -222,6 +218,24 @@ jobs:
             python -u scripts/apply_taxonomy_and_price.py
           else
             echo "skip taxonomy/price merge"
+          fi
+
+      - name: Fetch version image (optional)
+        run: |
+          if [ -f scripts/fetch_version_image.py ]; then
+            python -u scripts/fetch_version_image.py
+          fi
+
+      - name: Download images & thumbnail
+        run: |
+          if [ -f scripts/download_images.py ]; then
+            python -u scripts/download_images.py
+          fi
+
+      - name: Normalize data
+        run: |
+          if [ -f scripts/normalize_bgg_data.py ]; then
+            python -u scripts/normalize_bgg_data.py
           fi
 
       - name: Build final site JSON
