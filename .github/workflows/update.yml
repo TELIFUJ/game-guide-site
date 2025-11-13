@@ -21,13 +21,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Export variables
-        run: |
-          echo "BGG_USERNAME=${{ vars.BGG_USERNAME }}" >> $GITHUB_ENV
+        run: echo "BGG_USERNAME=${{ vars.BGG_USERNAME }}" >> $GITHUB_ENV
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+          cache: "pip"                # 加速 pip
 
       - name: Install dependencies
         run: pip install requests pillow lxml tenacity
@@ -41,22 +41,19 @@ jobs:
           [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
           [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
 
-      # 由 manual.csv 解析 ID（有就寫入 data/bgg_ids.json）
       - name: Resolve IDs
         env:
           PYTHONUNBUFFERED: "1"
         run: python -u scripts/resolve_bgg.py || true
 
-      # ====== XML2 抓取（支援 Token；含 202/429/5xx 重試與節流）======
       - name: Fetch BGG (XML2)
         env:
           PYTHONUNBUFFERED: "1"
-          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}     # 必填：BGG Tokens 頁面建立後放這裡
-          BGG_USERNAME: ${{ env.BGG_USERNAME }}   # 若無 bgg_ids.json，回退用收藏清單
+          BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
+          BGG_USERNAME: ${{ env.BGG_USERNAME }}
         run: |
           python - <<'PY'
-          import os, time, json, pathlib
-          import requests
+          import os, time, json, pathlib, requests
           from lxml import etree
           from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
@@ -70,14 +67,14 @@ jobs:
             "Accept-Language": "en-US,en;q=0.9",
             "Referer": "https://boardgamegeek.com/"
           }
-          if os.getenv("BGG_TOKEN"):
-            headers["Authorization"] = f"Bearer {os.getenv('BGG_TOKEN')}"
+          tok=os.getenv("BGG_TOKEN")
+          if tok: headers["Authorization"]=f"Bearer {tok}"
 
           class Temp(Exception): ...
-          def need_retry(code): return code in (202,429,500,502,503,504)
+          def need_retry(c): return c in (202,429,500,502,503,504)
 
           def _get(url, params=None):
-            r = requests.get(url, params=params, headers=headers, timeout=40)
+            r=requests.get(url, params=params, headers=headers, timeout=40)
             if need_retry(r.status_code): raise Temp(str(r.status_code))
             r.raise_for_status(); return r
 
@@ -87,48 +84,36 @@ jobs:
           def _get_retry(url, params=None): return _get(url, params)
 
           def _to_id_list(arr):
-            ids = []
+            ids=[]
             for x in arr:
-              if isinstance(x, int) or (isinstance(x, str) and x.isdigit()):
-                ids.append(str(x))
-              elif isinstance(x, dict):
+              if isinstance(x,(int,str)) and str(x).isdigit(): ids.append(str(x))
+              elif isinstance(x,dict):
                 for k in ("id","bgg_id","bggid","thing_id"):
-                  v = x.get(k)
-                  if isinstance(v, (int,str)) and str(v).isdigit():
+                  v=x.get(k)
+                  if isinstance(v,(int,str)) and str(v).isdigit():
                     ids.append(str(v)); break
             return sorted(set(ids), key=lambda s:int(s))
 
           def load_ids():
-            # 1) 優先 data/bgg_ids.json
             if IDS.exists():
-              raw = json.loads(IDS.read_text(encoding='utf-8'))
-              ids = _to_id_list(raw if isinstance(raw, list) else [raw])
-              if ids:
-                print(f"Use IDs from bgg_ids.json: {len(ids)}")
-                return ids
-              else:
-                print("Warn: bgg_ids.json exists but no numeric IDs parsed; fallback to username.")
-            # 2) 回退：用收藏清單（需 BGG_USERNAME）
-            uname = os.getenv("BGG_USERNAME","").strip()
+              raw=json.loads(IDS.read_text(encoding='utf-8'))
+              ids=_to_id_list(raw if isinstance(raw,list) else [raw])
+              if ids: print(f"Use IDs from bgg_ids.json: {len(ids)}"); return ids
+              else: print("Warn: bgg_ids.json exists but no numeric IDs parsed; fallback to username.")
+            uname=os.getenv("BGG_USERNAME","").strip()
             if not uname: return []
-            r = _get_retry(f"{HOST}/xmlapi2/collection", {
-              "username": uname, "own": 1, "excludesubtype": "boardgameexpansion"
+            r=_get_retry(f"{HOST}/xmlapi2/collection",{
+              "username": uname, "own": 1, "excludesubtype":"boardgameexpansion"
             })
-            root = etree.fromstring(r.content)
-            ids = []
-            for it in root.findall("item"):
-              tid = it.get("objectid")
-              if tid and tid.isdigit(): ids.append(tid)
-            ids = sorted(set(ids), key=lambda x:int(x))
-            pathlib.Path("data/bgg_ids.json").write_text(json.dumps(ids, ensure_ascii=False, indent=2), encoding='utf-8')
+            root=etree.fromstring(r.content)
+            ids=sorted({it.get("objectid") for it in root.findall("item") if (it.get("objectid") or "").isdigit()}, key=lambda x:int(x))
+            IDS.write_text(json.dumps(ids, ensure_ascii=False, indent=2), encoding='utf-8')
             print(f"Collected IDs from username={uname}: {len(ids)}")
             return ids
 
           def fetch_batch(batch):
-            r = _get_retry(f"{HOST}/xmlapi2/thing", {
-              "id": ",".join(batch),
-              "stats": 1,
-              "type": "boardgame,boardgameexpansion"
+            r=_get_retry(f"{HOST}/xmlapi2/thing",{
+              "id": ",".join(batch), "stats":1, "type":"boardgame,boardgameexpansion"
             })
             return etree.fromstring(r.content)
 
@@ -136,11 +121,9 @@ jobs:
             res=[]
             for t in root.findall("item"):
               g=lambda p:t.findtext(p)
-              def val(x):
-                return None if x in (None,"N/A","0") else x
-              name = t.find("name[@type='primary']")
-              stats = t.find("statistics/ratings")
-              w=r=u=None
+              def val(x): return None if x in (None,"N/A","0") else x
+              name=t.find("name[@type='primary']")
+              stats=t.find("statistics/ratings"); w=r=u=None
               if stats is not None:
                 w=stats.find("averageweight"); r=stats.find("average"); u=stats.find("usersrated")
               res.append({
@@ -162,39 +145,36 @@ jobs:
               })
             return res
 
-          ids = load_ids()
+          ids=load_ids()
           if not ids:
-            print("No IDs and no username; writing empty bgg_data.json")
-            OUT.write_text("[]", encoding='utf-8'); raise SystemExit(0)
+            pathlib.Path("data/bgg_data.json").write_text("[]", encoding='utf-8')
+            print("No IDs and no username; wrote empty bgg_data.json"); raise SystemExit(0)
 
           ALL=[]; B=20
           for i in range(0,len(ids),B):
             root=fetch_batch(ids[i:i+B]); ALL+=parse(root)
-            time.sleep(6.2)   # 禮貌節流
+            time.sleep(6.2)
           ALL.sort(key=lambda x: (-(x["usersrated"] or 0), -(x["rating"] or 0.0), x["id"]))
           OUT.write_text(json.dumps(ALL, ensure_ascii=False, indent=2), encoding='utf-8')
           print(f"bgg_data.json rows={len(ALL)}")
           PY
 
       - name: Apply taxonomy & price
-        env:
-          PYTHONUNBUFFERED: "1"
+        env: { PYTHONUNBUFFERED: "1" }
         run: python -u scripts/apply_taxonomy_and_price.py || true
 
       - name: Fetch version image (optional)
-        env:
-          PYTHONUNBUFFERED: "1"
+        env: { PYTHONUNBUFFERED: "1" }
         run: python -u scripts/fetch_version_image.py || true
 
       - name: Download images (thumbnails)
-        env:
-          PYTHONUNBUFFERED: "1"
+        env: { PYTHONUNBUFFERED: "1" }
         run: python -u scripts/download_images.py || true
 
       - name: Build final JSON
         env:
           PYTHONUNBUFFERED: "1"
-          BUILD_MIN_ITEMS: "300"   # 保障量，<300 不覆蓋舊檔
+          BUILD_MIN_ITEMS: "300"
         run: python -u scripts/build_json.py
 
       - name: Sanity check & head
@@ -211,39 +191,20 @@ jobs:
           print('HEAD games_full.json:', [x.get('name') for x in d2[:3]])
           PY
 
-      # 發佈到 site/data/games.json（前端 fetch('data/games.json')）
-      - name: Publish -> site/data/games.json (with fallback)
-        run: |
-          python - <<'PY'
-          import json, pathlib, sys
-          p_full = pathlib.Path('data/games_full.json')
-          p_bgg  = pathlib.Path('data/bgg_data.json')
-          p_out  = pathlib.Path('site/data/games.json')
-          p_out.parent.mkdir(parents=True, exist_ok=True)
-          def load(p): return json.loads(p.read_text(encoding='utf-8')) if p.exists() else []
-          full, raw = load(p_full), load(p_bgg)
-          if len(full) > 0:
-              p_out.write_text(json.dumps(full, ensure_ascii=False, indent=2), encoding='utf-8')
-              print(f'Published games.json from games_full.json ({len(full)} rows).')
-          elif len(raw) > 0:
-              p_out.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding='utf-8')
-              print(f'Published games.json from bgg_data.json (fallback, {len(raw)} rows).')
-              print('::warning:: games_full.json is empty; using fallback. Check build_json.py inputs.')
-          else:
-              p_out.write_text("[]", encoding="utf-8")
-              print('::error:: No data to publish (both files empty).')
-              sys.exit(1)
-          PY
+      # 發佈（正規化圖片 + 三層 fallback）
+      - name: Publish games.json (normalize images + fallback)
+        env: { PYTHONUNBUFFERED: "1" }
+        run: python -u scripts/publish_games.py
 
       - name: Commit changes
         run: |
-          git config --local user.name "github-actions[bot]"
+          git config --local user.name  "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm -f data/comments_cache.json 2>/dev/null || true
           git rm -f scripts/fetch_comments.py 2>/dev/null || true
           git add data/games_full.json data/games_full_backup.json data/bgg_data.json data/bgg_ids.json || true
           git add data/mechanism_map_zh.csv data/mechanism_map_candidates.csv || true
           git add assets/img/* || true
-          git add site/data/games.json || true
-          git commit -m "Auto-update game data + publish site/data/games.json (with fallback)" || echo "No changes to commit"
+          git add -f site/data/games.json || true   # site 在 .gitignore，必須強制加入
+          git commit -m "Auto-update game data + normalized images → site/data/games.json" || echo "No changes to commit"
           git push || echo "No changes to push"
