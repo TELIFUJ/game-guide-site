@@ -193,6 +193,45 @@
 <!-- 底部分頁 -->
 <div id="pager-bottom" class="pagination" aria-label="pagination"></div>
 
+<!-- 行動版底部工具列 -->
+<div id="mbar" class="mbar" aria-label="行動工具列">
+  <button id="mRandom" class="btn" type="button">隨機</button>
+  <button id="mFilter" class="btn" type="button">多選機制</button>
+  <select id="mSort" aria-label="排序">
+    <option value="">排序</option>
+    <option value="rating_bayes_desc">評分（Geek）高→低</option>
+    <option value="rating_avg_desc">評分（平均）高→低</option>
+    <option value="min_price_asc">最低價格（含二手）低→高</option>
+    <option value="min_price_desc">最低價格（含二手）高→低</option>
+    <option value="price_asc">售價（新品）低→高</option>
+    <option value="price_desc">售價（新品）高→低</option>
+    <option value="weight_asc">策略強度 低→高</option>
+    <option value="weight_desc">策略強度 高→低</option>
+  </select>
+  <button id="mClear" class="btn" type="button">重置</button>
+</div>
+
+<!-- 隨機預覽 / 多選機制 bottom sheet -->
+<dialog id="randModal" class="modal" aria-hidden="true">
+  <div class="sheet" tabindex="-1">
+    <div class="sheet-head">
+      <div class="sheet-title">隨機預覽 / 多選機制</div>
+      <button id="randClose" class="btn" type="button">關閉</button>
+    </div>
+    <div class="row" style="margin-bottom:8px">
+      <input id="mechSearch" type="search" placeholder="搜尋機制..." style="flex:1">
+      <button id="randClear" class="btn" type="button">清除機制</button>
+      <button id="randPick" class="btn" type="button">重新隨機</button>
+      <button id="randApply" class="btn" type="button">套用條件</button>
+    </div>
+    <div id="mechMulti" class="sheet-grid" aria-label="多選機制"></div>
+    <div style="margin-top:12px">
+      <div class="sheet-title" style="margin-bottom:4px">隨機預覽結果</div>
+      <div id="randGrid" class="sheet-grid"></div>
+    </div>
+  </div>
+</dialog>
+
 <script>
   // 避免瀏覽器沿用舊自動填入
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
@@ -605,7 +644,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   function restoreInitial(){
     Q.value=""; CAT.value=""; MECH.value="";
     PMIN.value=""; PMAX.value=""; INCL.checked=false;
-    S.value=""; MSORT.value=""; ONLYF.checked=false; ONLY_DUP.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
+    S.value=""; if (MSORT) MSORT.value=""; ONLYF.checked=false; ONLY_DUP.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
     clearFocus(); clearMultiSelect();
     buildOptions(); page=1; render(); hideAC();
   }
@@ -628,10 +667,6 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   CLEAR_FOCUS.addEventListener('click', ()=>{ clearFocus(); });
 
   // ====== 排序（含中文優先） ======
-  function hasZhName(x){
-    const s = (x.name_zh||'') + ' ' + (x.name_en||'');
-    return /[\u4E00-\u9FFF\u3400-\u4DBF]/.test(s);
-  }
   function compareWithChinesePriority(a,b, secondaryCmp){
     const z = (hasZhName(b) - hasZhName(a)); // 中文優先
     if (z) return z;
@@ -1061,7 +1096,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 
   // ====== 多選機制面板 ======
   function applyMechSearchFilter(){
-    if (!MECH_SEARCH) return;
+    if (!MECH_SEARCH || !RAND_MECHS) return;
     const kw = MECH_SEARCH.value.trim().toLowerCase();
     RAND_MECHS.querySelectorAll('label.chip').forEach(lbl=>{
       const t = lbl.textContent.toLowerCase();
@@ -1070,6 +1105,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   }
 
   function buildMechMultiSheet(){
+    if (!RAND_MECHS) return;
     const counts = new Map();
     DATA.forEach(x=>getMechsZh(x).forEach(m=>counts.set(m,(counts.get(m)||0)+1)));
 
@@ -1107,6 +1143,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
 
   // 打開 bottom sheet
   function openRandom(autoPick=true, resetMulti=false){
+    if (!RAND) return;
     if (resetMulti){
       clearMultiSelect(); // 同時會清 randGrid
     }
@@ -1123,22 +1160,23 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   }
 
   function closeRandom(){
+    if (!RAND) return;
     RAND.removeAttribute('open');
     RAND.setAttribute('aria-hidden','true');
-    RAND_GRID.innerHTML='';
+    if (RAND_GRID) RAND_GRID.innerHTML='';
   }
-  document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && RAND.hasAttribute('open')) closeRandom(); });
+  document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && RAND && RAND.hasAttribute('open')) closeRandom(); });
 
   // 隨機抽樣：帶防呆訊息
   function randomPick(){
     if (!DATA.length){
-      RAND_GRID.innerHTML = '<div class="muted" style="padding:12px;font-size:14px;">資料尚未載入，請稍後再試。</div>';
+      if (RAND_GRID) RAND_GRID.innerHTML = '<div class="muted" style="padding:12px;font-size:14px;">資料尚未載入，請稍後再試。</div>';
       return;
     }
 
     const pool = filteredBase({ignoreMech:true});
     if (!pool.length){
-      RAND_GRID.innerHTML = '<div class="muted" style="padding:12px;font-size:14px;">目前的篩選條件太嚴格，沒有可抽的遊戲。請先清除條件。</div>';
+      if (RAND_GRID) RAND_GRID.innerHTML = '<div class="muted" style="padding:12px;font-size:14px;">目前的篩選條件太嚴格，沒有可抽的遊戲。請先清除條件。</div>';
       return;
     }
 
@@ -1153,6 +1191,7 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
       }
     }
 
+    if (!RAND_GRID) return;
     RAND_GRID.innerHTML = picks.map(cardHtml).join('');
     RAND_GRID.querySelectorAll('.fav-btn').forEach(btn=>{
       btn.onclick = (e)=>{ e.preventDefault(); toggleFav(btn.dataset.id); };
@@ -1160,31 +1199,34 @@ ${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
   }
 
   // 面板內按鈕
-  RAND_CLOSE.addEventListener('click', closeRandom);
-  RAND_CLEAR.addEventListener('click', ()=>{ clearMultiSelect(); }); // 清多機制但不關面板
-  RAND_APPLY.addEventListener('click', ()=>{
-    if(!S.value){ S.value='rating_bayes_desc'; MSORT.value=S.value; }
+  if (RAND_CLOSE) RAND_CLOSE.addEventListener('click', closeRandom);
+  if (RAND_CLEAR) RAND_CLEAR.addEventListener('click', ()=>{ clearMultiSelect(); });
+  if (RAND_APPLY) RAND_APPLY.addEventListener('click', ()=>{
+    if(!S.value){ S.value='rating_bayes_desc'; if (MSORT) MSORT.value=S.value; }
     closeRandom();
     page=1; render();
   });
-  RAND_PICK.addEventListener('click', ()=>{ randomPick(); });
+  if (RAND_PICK) RAND_PICK.addEventListener('click', ()=>{ randomPick(); });
 
   // 行動工具列與桌機的隨機入口
-  OPEN_RANDOM.addEventListener('click', ()=>{
+  if (OPEN_RANDOM) OPEN_RANDOM.addEventListener('click', ()=>{
     openRandom(true, /*resetMulti=*/true);
   });
-  MRANDOM.addEventListener('click', ()=>{
+  if (MRANDOM) MRANDOM.addEventListener('click', ()=>{
     openRandom(true, /*resetMulti=*/true);
   });
-  MFILTER.addEventListener('click', ()=>{
+  if (MFILTER) MFILTER.addEventListener('click', ()=>{
     openRandom(false, /*resetMulti=*/false);
   });
 
   // 其他行動工具列
-  MSORT.addEventListener('change', ()=>{ S.value = MSORT.value; page=1; render(); });
-  S.addEventListener('change', ()=>{ MSORT.value = S.value; });
-  MCLEAR.addEventListener('click', restoreInitial);
-  MSORT.value = S.value;
+  if (MSORT) MSORT.addEventListener('change', ()=>{ S.value = MSORT.value; page=1; render(); });
+  S.addEventListener('change', ()=>{ if (MSORT) MSORT.value = S.value; });
+  if (MCLEAR) MCLEAR.addEventListener('click', restoreInitial);
+  if (MSORT) MSORT.value = S.value;
+
+  // 機制搜尋輸入綁定
+  if (MECH_SEARCH) MECH_SEARCH.addEventListener('input', applyMechSearchFilter);
 
   // ====== 空狀態互動 ======
   RETRY_BTN.addEventListener('click', ()=>location.reload());
