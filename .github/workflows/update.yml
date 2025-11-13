@@ -3,19 +3,20 @@ name: Build & Deploy Game Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 21 * * *"  # 每日 05:15 +08
+    - cron: "15 21 * * *"   # 每日 05:15(+08)
 
 concurrency:
   group: build-deploy-game-data
   cancel-in-progress: true
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
     environment:
       name: github-pages
 
@@ -29,7 +30,6 @@ jobs:
       HTTP_UA: "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)"
       HTTP_ACCEPT_LANGUAGE: "en-US,en;q=0.9"
       BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
-      BGG_USERNAME: ${{ vars.BGG_USERNAME }}
 
     steps:
       - name: Checkout
@@ -43,19 +43,14 @@ jobs:
       - name: Install dependencies
         run: pip install requests lxml pillow tenacity
 
-      - name: Ensure dirs and seed files
-        shell: bash
-        run: |
-          mkdir -p data assets/img site/data || true
-          [ -f data/mechanism_map_zh.csv ] || echo 'bgg_mechanism_en,mechanism_zh' > data/mechanism_map_zh.csv
-          [ -f data/category_map_zh.csv ]  || echo 'bgg_category_en,category_zh'     > data/category_map_zh.csv
-          if [ -f data/games_full.json ] && [ ! -f data/games_full_backup.json ]; then
-            cp data/games_full.json data/games_full_backup.json
-          fi
+      - name: Ensure dirs
+        run: mkdir -p data assets/img site/data || true
 
-      - name: Resolve IDs (manual.csv → bgg_ids.json)
+      - name: Resolve IDs (optional)
         run: |
-          if [ -f scripts/resolve_bgg.py ]; then python -u scripts/resolve_bgg.py || true; fi
+          if [ -f scripts/resolve_bgg.py ]; then
+            python -u scripts/resolve_bgg.py || true
+          fi
 
       - name: Fetch BGG (XML2)
         shell: bash
@@ -68,129 +63,153 @@ jobs:
           OUT_FILE = pathlib.Path("data/bgg_data.json")
           TMP_FILE = pathlib.Path("data/.bgg_data.tmp.json")
 
-          BATCH   = min(int(os.getenv("BGG_BATCH","20")), 20)
-          SLEEP   = float(os.getenv("BGG_SLEEP","6"))
-          RETRY   = int(os.getenv("BGG_RETRY","6"))
-          JITTER  = float(os.getenv("BGG_JITTER","0.8"))
-          VERSIONS= os.getenv("BGG_VERSIONS","0")
+          BATCH   = min(int(os.getenv("BGG_BATCH", "20")), 20)
+          SLEEP   = float(os.getenv("BGG_SLEEP", "6.0"))
+          RETRY   = int(os.getenv("BGG_RETRY", "6"))
+          JITTER  = float(os.getenv("BGG_JITTER", "0.8"))
+          VERSIONS= os.getenv("BGG_VERSIONS", "0")
           HOSTS   = [h.strip() for h in os.getenv("BGG_HOSTS","boardgamegeek.com,api.geekdo.com").split(",")]
-          UA      = os.getenv("HTTP_UA","PlayClass-BGG-Fetch/1.0")
-          AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE","en-US,en;q=0.9")
+          UA      = os.getenv("HTTP_UA", "PlayClass-BGG-Fetch/1.0")
+          AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE", "en-US,en;q=0.9")
           TOKEN   = os.getenv("BGG_TOKEN","").strip()
 
           def load_ids():
-              data = json.loads(IDS_FILE.read_text(encoding="utf-8"))
-              ids  = []
-              for x in data:
-                  try: ids.append(int(x["bgg_id"] if isinstance(x,dict) else x))
-                  except: pass
-              return [i for i in ids if i>0]
+            data = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+            ids=[]
+            for x in data:
+              try:
+                ids.append(int(x["bgg_id"] if isinstance(x,dict) else x))
+              except Exception:
+                pass
+            return [i for i in ids if i>0]
 
           def get_session():
-              s = requests.Session()
-              s.headers.update({
-                "User-Agent": UA,
-                "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
-                "Accept-Language": AC_LANG,
-                "Referer": "https://boardgamegeek.com/",
-              })
-              if TOKEN: s.headers["Authorization"] = f"Bearer {TOKEN}"
-              return s
+            s = requests.Session()
+            s.headers.update({
+              "User-Agent": UA,
+              "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": AC_LANG,
+              "Referer": "https://boardgamegeek.com/",
+              "Connection":"keep-alive",
+              "Cache-Control":"no-cache",
+              "Pragma":"no-cache",
+            })
+            if TOKEN:
+              s.headers["Authorization"] = f"Bearer {TOKEN}"
+            return s
 
-          # 解析 XML2：數值從 attribute @value 取得（修正 FutureWarning）
+          # 解析 XML（屬性 @value）
           def parse(xml_text: str):
-              root = etree.fromstring(xml_text.encode("utf-8"))
-              res  = []
+            root = etree.fromstring(xml_text.encode("utf-8"))
+            res = []
 
-              def aval(node, tag, to=int):
-                  el = node.find(tag)
-                  v  = el.get("value") if (el is not None) else None
-                  try: return to(v) if v not in (None,"","0","N/A") else None
-                  except: return None
+            def aval(node, tag, to=int):
+              el = node.find(tag)
+              v = el.get("value") if el is not None else None
+              try:
+                return to(v) if v not in (None, "", "0", "N/A") else None
+              except Exception:
+                return None
 
-              def fnum(x, to=float):
-                  try: return to(x) if x not in (None,"","N/A") else None
-                  except: return None
+            def fnum(x, to=float):
+              try:
+                return to(x) if x not in (None,"","N/A") else None
+              except Exception:
+                return None
 
-              for t in root.findall("./item"):
-                  try: bid = int(t.get("id"))
-                  except: continue
+            for t in root.findall("./item"):
+              try:
+                bid = int(t.get("id"))
+              except Exception:
+                continue
 
-                  name_el = t.find("name[@type='primary']")
-                  ratings = t.find("statistics/ratings")
+              name_el = t.find("name[@type='primary']")
+              ratings = t.find("statistics/ratings")
+              weight  = fnum((ratings.find("averageweight") or {}).get("value")) if ratings is not None else None
+              rating  = fnum((ratings.find("average") or {}).get("value")) if ratings is not None else None
+              bayes   = fnum((ratings.find("bayesaverage") or {}).get("value")) if ratings is not None else None
+              users   = fnum((ratings.find("usersrated") or {}).get("value"), to=float) if ratings is not None else None
 
-                  w_el = ratings.find("averageweight") if ratings is not None else None
-                  r_el = ratings.find("average")        if ratings is not None else None
-                  u_el = ratings.find("usersrated")     if ratings is not None else None
-
-                  weight = fnum(w_el.get("value")) if (w_el is not None) else None
-                  rating = fnum(r_el.get("value")) if (r_el is not None) else None
-                  users  = fnum(u_el.get("value"), to=float) if (u_el is not None) else None
-
-                  res.append({
-                      "id": bid,
-                      "name": (name_el.get("value") if name_el is not None else None),
-                      "year": aval(t,"yearpublished",int),
-                      "minplayers":  aval(t,"minplayers",int),
-                      "maxplayers":  aval(t,"maxplayers",int),
-                      "minplaytime": aval(t,"minplaytime",int),
-                      "maxplaytime": aval(t,"maxplaytime",int),
-                      "weight": weight,
-                      "rating": rating,
-                      "usersrated": (int(users) if users is not None else None),
-                      "image":     (t.findtext("image") or "").strip(),
-                      "thumbnail": (t.findtext("thumbnail") or "").strip(),
-                      "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
-                      "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
-                      "source": "bgg",
-                      "bgg_id": bid,
-                      "image_url": (t.findtext("image") or "").strip() or (t.findtext("thumbnail") or "").strip(),
-                      "thumb_url": (t.findtext("thumbnail") or "").strip() or (t.findtext("image") or "").strip(),
-                  })
-              return res
+              row = {
+                "id": bid,
+                "name": (name_el.get("value") if name_el is not None else None),
+                "year": aval(t,"yearpublished",int),
+                "minplayers": aval(t,"minplayers",int),
+                "maxplayers": aval(t,"maxplayers",int),
+                "minplaytime": aval(t,"minplaytime",int),
+                "maxplaytime": aval(t,"maxplaytime",int),
+                "weight": weight,
+                "rating": rating,
+                "rating_bayes": bayes,
+                "usersrated": (int(users) if users is not None else None),
+                "image": (t.findtext("image") or "").strip(),
+                "thumbnail": (t.findtext("thumbnail") or "").strip(),
+                "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
+                "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
+                "source":"bgg",
+                # 舊鍵相容（前端可能還讀取）
+                "bgg_id": bid,
+                "image_url": (t.findtext("image") or "").strip() or (t.findtext("thumbnail") or "").strip(),
+                "thumb_url": (t.findtext("thumbnail") or "").strip() or (t.findtext("image") or "").strip(),
+              }
+              res.append(row)
+            return res
 
           def fetch_batch(s, ids):
-              params = {"stats":"1","versions":VERSIONS,"type":"boardgame,boardgameexpansion","id":",".join(str(i) for i in ids)}
-              for host in HOSTS:
-                  url = f"https://{host}/xmlapi2/thing"
-                  for k in range(RETRY):
-                      try:
-                          r = s.get(url, params=params, timeout=60)
-                          if r.status_code==200 and r.text.strip(): return parse(r.text)
-                          if r.status_code in (202,401,403,429,500,502,503,504):
-                              time.sleep(SLEEP*(1+random.random()*JITTER)*(1.6**k)); continue
-                          time.sleep(2.0)
-                      except Exception:
-                          time.sleep(2.0)
-              return None
+            params = {
+              "stats": "1",
+              "versions": VERSIONS,
+              "type": "boardgame,boardgameexpansion",
+              "id": ",".join(str(i) for i in ids)
+            }
+            for host in HOSTS:
+              url = f"https://{host}/xmlapi2/thing"
+              for k in range(RETRY):
+                try:
+                  r = s.get(url, params=params, timeout=60)
+                  if r.status_code == 200 and r.text.strip():
+                    return parse(r.text)
+                  if r.status_code in (202,401,403,429,500,502,503,504):
+                    time.sleep(SLEEP * (1 + random.random()*JITTER) * (1.6**k))
+                    continue
+                  time.sleep(2.0)
+                except Exception:
+                  time.sleep(2.0)
+            return None
 
           def fetch_single(s, idv):
-              got = fetch_batch(s, [idv]); return got[0] if got else None
+            got = fetch_batch(s,[idv])
+            return got[0] if got else None
 
           if not IDS_FILE.exists():
-              print("No data/bgg_ids.json; skip."); raise SystemExit(0)
+            print("No data/bgg_ids.json; skip.")
+            raise SystemExit(0)
 
-          ids = load_ids(); s = get_session()
+          ids = load_ids()
+          s   = get_session()
 
           old=[]
           if OUT_FILE.exists():
-              try: old=json.loads(OUT_FILE.read_text(encoding="utf-8"))
-              except: old=[]
+            try: old=json.loads(OUT_FILE.read_text(encoding="utf-8"))
+            except: old=[]
           cache={int(x.get("bgg_id",x.get("id",0))):x for x in old if isinstance(x,dict)}
 
           ok=[]
           for i in range(0,len(ids),BATCH):
-              chunk=ids[i:i+BATCH]; got=fetch_batch(s,chunk)
-              if got is None:
-                  for one in chunk:
-                      it=fetch_single(s,one)
-                      if it: ok.append(it)
-              else:
-                  ok.extend(got)
-              time.sleep(SLEEP*(1+random.random()*JITTER))
+            chunk=ids[i:i+BATCH]
+            got=fetch_batch(s,chunk)
+            if got is None:
+              for one in chunk:
+                it=fetch_single(s,one)
+                if it: ok.append(it)
+            else:
+              ok.extend(got)
+            time.sleep(SLEEP*(1+random.random()*JITTER))
 
           merged={int(x.get("bgg_id",x.get("id",0))):x for x in ok if isinstance(x,dict)}
-          merged.update(cache); final=list(merged.values())
+          merged.update(cache)
+          final=list(merged.values())
+
           TMP_FILE.parent.mkdir(parents=True,exist_ok=True)
           TMP_FILE.write_text(json.dumps(final,ensure_ascii=False,indent=2),encoding="utf-8")
           TMP_FILE.replace(OUT_FILE)
@@ -198,25 +217,15 @@ jobs:
           PY
 
       - name: Apply taxonomy & price merge
-        run: python -u scripts/apply_taxonomy_and_price.py
-
-      - name: Build site JSON
-        run: python -u scripts/build_json.py
-
-      - name: Sanity check & head
         run: |
-          python - <<'PY'
-          import json, pathlib
-          def load(p):
-              p=pathlib.Path(p)
-              return (p.exists(), json.loads(p.read_text(encoding='utf-8')) if p.exists() else [])
-          e1,d1 = load('data/bgg_data.json')
-          e2,d2 = load('data/games_full.json')
-          print(f'COUNT bgg_data.json={len(d1)} ; games_full.json={len(d2)}')
-          for k in ('year','minplayers','maxplayers','minplaytime','maxplaytime','rating','usersrated','price_twd','used_price_twd'):
-              miss=sum(1 for x in d2 if x.get(k) in (None,''))
-              print(f'MISS {k}: {miss}')
-          PY
+          if [ -f scripts/apply_taxonomy_and_price.py ]; then
+            python -u scripts/apply_taxonomy_and_price.py
+          else
+            echo "skip taxonomy/price merge"
+          fi
+
+      - name: Build final site JSON
+        run: python -u scripts/build_json.py
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
@@ -224,5 +233,4 @@ jobs:
           path: ./site
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
