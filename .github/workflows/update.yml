@@ -16,6 +16,9 @@ jobs:
       contents: write
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+
     env:
       BGG_HOSTS: boardgamegeek.com,api.geekdo.com
       BGG_BATCH: "20"
@@ -94,14 +97,14 @@ jobs:
               if TOKEN: s.headers["Authorization"] = f"Bearer {TOKEN}"
               return s
 
-          # 解析 XML2：數值從 attribute @value 取得
+          # 解析 XML2：數值從 attribute @value 取得（修正 FutureWarning）
           def parse(xml_text: str):
               root = etree.fromstring(xml_text.encode("utf-8"))
               res  = []
 
               def aval(node, tag, to=int):
                   el = node.find(tag)
-                  v  = el.get("value") if el is not None else None
+                  v  = el.get("value") if (el is not None) else None
                   try: return to(v) if v not in (None,"","0","N/A") else None
                   except: return None
 
@@ -115,9 +118,14 @@ jobs:
 
                   name_el = t.find("name[@type='primary']")
                   ratings = t.find("statistics/ratings")
-                  weight  = fnum((ratings.find("averageweight") or {}).get("value")) if ratings is not None else None
-                  rating  = fnum((ratings.find("average")       or {}).get("value")) if ratings is not None else None
-                  users   = fnum((ratings.find("usersrated")    or {}).get("value"), to=float) if ratings is not None else None
+
+                  w_el = ratings.find("averageweight") if ratings is not None else None
+                  r_el = ratings.find("average")        if ratings is not None else None
+                  u_el = ratings.find("usersrated")     if ratings is not None else None
+
+                  weight = fnum(w_el.get("value")) if (w_el is not None) else None
+                  rating = fnum(r_el.get("value")) if (r_el is not None) else None
+                  users  = fnum(u_el.get("value"), to=float) if (u_el is not None) else None
 
                   res.append({
                       "id": bid,
@@ -135,7 +143,6 @@ jobs:
                       "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
                       "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
                       "source": "bgg",
-                      # 相容舊鍵
                       "bgg_id": bid,
                       "image_url": (t.findtext("image") or "").strip() or (t.findtext("thumbnail") or "").strip(),
                       "thumb_url": (t.findtext("thumbnail") or "").strip() or (t.findtext("image") or "").strip(),
@@ -193,10 +200,6 @@ jobs:
       - name: Apply taxonomy & price merge
         run: python -u scripts/apply_taxonomy_and_price.py
 
-      - name: Fetch version images (optional)
-        run: |
-          if [ -f scripts/fetch_version_image.py ]; then python -u scripts/fetch_version_image.py || true; else echo "skip"; fi
-
       - name: Build site JSON
         run: python -u scripts/build_json.py
 
@@ -210,7 +213,7 @@ jobs:
           e1,d1 = load('data/bgg_data.json')
           e2,d2 = load('data/games_full.json')
           print(f'COUNT bgg_data.json={len(d1)} ; games_full.json={len(d2)}')
-          for k in ('year','minplayers','maxplayers','minplaytime','maxplaytime','price_twd','used_price_twd'):
+          for k in ('year','minplayers','maxplayers','minplaytime','maxplaytime','rating','usersrated','price_twd','used_price_twd'):
               miss=sum(1 for x in d2 if x.get(k) in (None,''))
               print(f'MISS {k}: {miss}')
           PY
@@ -221,4 +224,5 @@ jobs:
           path: ./site
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
