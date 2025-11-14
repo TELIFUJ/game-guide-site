@@ -6,9 +6,6 @@
 <title>Board Game Guide</title>
 
 <style>
-/* ===============================
-   全域色彩變數與 RWD 基礎
-=============================== */
 :root{
   --c-border:#1e90ff;
   --c-muted:#6b7280;
@@ -20,9 +17,7 @@
   --w-max:1280px;
 }
 
-/* ===============================
-   GLOBAL
-=============================== */
+/* GLOBAL */
 body{
   font:16px/1.5 system-ui, sans-serif;
   margin:0;
@@ -37,9 +32,7 @@ body{
   margin:0 auto;
 }
 
-/* ===============================
-   HEADER（搜尋、篩選、排序、隨機）
-=============================== */
+/* HEADER */
 header{
   background:#fff;
   border-bottom:1px solid var(--c-border);
@@ -73,9 +66,18 @@ header button:hover{
   color:#fff;
 }
 
-/* ===============================
-   GRID（遊戲卡片區）
-=============================== */
+/* 清除篩選按鈕 */
+#CLEAR_BTN{
+  background:#ffecec;
+  color:#c00;
+  border:1px solid #c00;
+}
+#CLEAR_BTN:hover{
+  background:#c00;
+  color:#fff;
+}
+
+/* GRID */
 #GRID{
   padding:16px;
   display:grid;
@@ -120,9 +122,7 @@ header button:hover{
   font-size:14px;
 }
 
-/* ===============================
-   CHIPS（分類 + 機制）
-=============================== */
+/* CHIPS */
 .chip{
   display:inline-block;
   padding:4px 8px;
@@ -140,9 +140,7 @@ header button:hover{
   cursor:pointer;
 }
 
-/* ===============================
-   詳情視窗
-=============================== */
+/* DETAIL */
 #DETAIL{
   position:fixed;
   inset:0;
@@ -160,7 +158,7 @@ header button:hover{
   max-width:860px;
   border-radius:12px;
   padding:20px;
-  max-height:100%;
+  max-height:90vh;
   overflow:auto;
   box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
@@ -172,9 +170,7 @@ header button:hover{
   margin-bottom:14px;
 }
 
-/* ===============================
-   RWD 微調
-=============================== */
+/* RWD */
 @media (max-width:640px){
   header{ padding:10px; }
   #GRID{ padding:10px; gap:14px; }
@@ -184,9 +180,9 @@ header button:hover{
 </style>
 </head>
 <body>
-
 <header>
   <input id="Q" placeholder="搜尋：中文 / 英文 / 關鍵字" />
+
   <select id="CAT"></select>
   <select id="MECH"></select>
 
@@ -200,6 +196,7 @@ header button:hover{
   </select>
 
   <button id="RANDOM_BTN">隨機預覽</button>
+  <button id="CLEAR_BTN">清除篩選</button>
 </header>
 
 <!-- Cards -->
@@ -209,11 +206,7 @@ header button:hover{
 <div id="DETAIL">
   <div class="panel" id="DETAIL_INNER"></div>
 </div>
-
 <script>
-/* ========================================================
-   Part 1 結束 — 以下 Part 2 / 3 會接續 JS 主程式
-======================================================== */
 /* ========================================================
    全域變數
 ======================================================== */
@@ -224,7 +217,7 @@ const $ = (s)=>document.querySelector(s);
 
 /* ========================================================
    BasePath 自動偵測 + JSON 載入
-   （確保 GitHub Pages /site/ or / 無論如何都能載到）
+   （支援 Pages: / 或 /site/）
 ======================================================== */
 async function loadData(){
   const candidates = [
@@ -250,7 +243,7 @@ async function loadData(){
 }
 
 /* ========================================================
-   工具：搜尋比對
+   工具：搜尋比對（模糊）
 ======================================================== */
 function textMatch(t,q){
   if(!q) return true;
@@ -260,35 +253,42 @@ function textMatch(t,q){
 }
 
 /* ========================================================
-   下拉選單（分類 / 機制）
+   下拉選單：分類＋機制（含「顯示數量」）
 ======================================================== */
 function buildOptions(){
-  const cat = new Set();
-  const mech = new Set();
+  const cat = new Map();
+  const mech = new Map();
 
   for(const g of DATA){
-    (g.categories_zh || g.categories || []).forEach(c=>cat.add(c));
-    (g.mechanisms_zh || g.mechanisms || []).forEach(m=>mech.add(m));
+    (g.categories_zh || g.categories || []).forEach(c=>{
+      cat.set(c, (cat.get(c)||0)+1);
+    });
+    (g.mechanisms_zh || g.mechanisms || []).forEach(m=>{
+      mech.set(m, (mech.get(m)||0)+1);
+    });
   }
 
   CAT.innerHTML =
     `<option value="">全部分類</option>` +
-    [...cat].sort().map(c=>`<option value="${c}">${c}</option>`).join("");
+    [...cat.entries()]
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .map(([c,n])=>`<option value="${c}">${c}（${n}）</option>`).join("");
 
   MECH.innerHTML =
     `<option value="">全部機制</option>` +
-    [...mech].sort().map(m=>`<option value="${m}">${m}</option>`).join("");
+    [...mech.entries()]
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .map(([m,n])=>`<option value="${m}">${m}（${n}）</option>`).join("");
 }
 
 /* ========================================================
-   主渲染：產生卡片
+   主渲染：卡片
 ======================================================== */
 function fmt(v){ return v==null ? "-" : v; }
 
 function render(){
   const q = Q.value.trim();
 
-  // === 篩選 ===
   let list = DATA.filter(g => {
     const okSearch =
       textMatch(g.name_zh, q) ||
@@ -311,7 +311,7 @@ function render(){
     return true;
   });
 
-  // === 排序 ===
+  // 排序
   const key = SORT.value;
   list.sort((a,b) => {
     let A = a[key], B = b[key];
@@ -326,7 +326,6 @@ function render(){
     return 0;
   });
 
-  // === 渲染卡片 ===
   GRID.innerHTML = list.map(g => cardHTML(g)).join("");
 }
 
@@ -374,7 +373,7 @@ function cardHTML(g){
 }
 
 /* ========================================================
-   CHIPS 點擊 → 過濾
+   CHIPS 篩選器
 ======================================================== */
 function chipFilter(type, value, event){
   event.stopPropagation();
@@ -392,6 +391,17 @@ function chipFilter(type, value, event){
 }
 
 /* ========================================================
+   清除篩選
+======================================================== */
+CLEAR_BTN.addEventListener("click", ()=>{
+  Q.value = "";
+  FILTER_CAT = "";
+  FILTER_MECH = "";
+  CAT.value = "";
+  MECH.value = "";
+  render();
+});
+/* ========================================================
    詳情視窗（open / close）
 ======================================================== */
 function openDetail(id){
@@ -407,7 +417,8 @@ function openDetail(id){
     .map(m => `<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
 
   DETAIL_INNER.innerHTML = `
-    <button onclick="closeDetail()" style="float:right;margin-bottom:10px;">關閉</button>
+    <button onclick="closeDetail()" 
+      style="float:right;margin-bottom:10px;">關閉</button>
 
     <img class="detail-img" src="${g.image || g.thumbnail || ""}"
       onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
@@ -436,8 +447,9 @@ function openDetail(id){
 function closeDetail(){
   DETAIL.style.display = "none";
 }
+
 /* ========================================================
-   推薦系統（重點：分類 + 機制交集 → 加權排序）
+   推薦系統（分類＋機制交集 → 加權）
 ======================================================== */
 function buildRecommend(g){
   const baseCats = new Set(g.categories_zh || g.categories || []);
@@ -448,12 +460,10 @@ function buildRecommend(g){
 
     let score = 0;
 
-    // 機制匹配（權重較高）
     (x.mechanisms_zh || x.mechanisms || []).forEach(m=>{
       if(baseMechs.has(m)) score += 3;
     });
 
-    // 分類匹配
     (x.categories_zh || x.categories || []).forEach(c=>{
       if(baseCats.has(c)) score += 1;
     });
@@ -483,13 +493,12 @@ RANDOM_BTN.addEventListener("click", ()=>{
 });
 
 /* ========================================================
-   RWD：自動調整卡片與圖片比例（手機用 4:3）
+   RWD：自動切換卡片比例（手機 4:3 / 桌機 1:1）
 ======================================================== */
 function applyRWD(){
   const grid = document.querySelector("#GRID");
 
   if(window.innerWidth < 640){
-    // 手機模式
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "4 / 3";
       img.style.objectFit = "cover";
@@ -499,7 +508,6 @@ function applyRWD(){
       "repeat(auto-fill,minmax(180px,1fr))";
 
   }else{
-    // 桌機模式
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "1 / 1";
       img.style.objectFit = "cover";
@@ -514,7 +522,7 @@ window.addEventListener("resize", applyRWD);
 window.addEventListener("load", applyRWD);
 
 /* ========================================================
-   ESC 關閉詳情視窗
+   ESC 關閉詳情
 ======================================================== */
 document.addEventListener("keydown", e=>{
   if(e.key === "Escape"){
@@ -523,7 +531,7 @@ document.addEventListener("keydown", e=>{
 });
 
 /* ========================================================
-   點背景關閉詳情視窗
+   點背景關閉詳情
 ======================================================== */
 DETAIL.addEventListener("click", e=>{
   if(e.target === DETAIL){
@@ -532,11 +540,7 @@ DETAIL.addEventListener("click", e=>{
 });
 
 /* ========================================================
-   初始化
+   初始化 — 最重要：載入資料
 ======================================================== */
 loadData();
-
 </script>
-
-</body>
-</html>
