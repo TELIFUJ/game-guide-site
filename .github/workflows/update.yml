@@ -122,6 +122,7 @@ jobs:
         run: |
           python - <<'PY'
           import os, time, json, random, pathlib, requests
+          from collections import OrderedDict
           from lxml import etree
 
           IDS_FILE = pathlib.Path("data/bgg_ids.json")
@@ -138,15 +139,37 @@ jobs:
           AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE", "en-US,en;q=0.9")
           TOKEN   = os.getenv("BGG_TOKEN","").strip()
 
-          def load_ids():
-            data = json.loads(IDS_FILE.read_text(encoding="utf-8"))
-            ids=[]
-            for x in data:
+          # ---- robust id parser ----
+          def as_id(x):
+            if isinstance(x, int):
+              return x
+            if isinstance(x, str):
+              s = x.strip()
+              if s.isdigit():
+                return int(s)
               try:
-                ids.append(int(x["bgg_id"] if isinstance(x,dict) else x))
+                return int(float(s))
               except Exception:
-                pass
-            return [i for i in ids if i>0]
+                return None
+            if isinstance(x, dict):
+              for k in ("bgg_id","id","BGG ID","bggId","bggid","bgg","game_id"):
+                if k in x and x[k] is not None:
+                  try:
+                    return int(str(x[k]).strip())
+                  except Exception:
+                    pass
+            return None
+
+          def load_ids():
+            raw = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+            ids = [as_id(it) for it in raw]
+            ids = [i for i in ids if i and i > 0]
+            # keep order, drop dups
+            ids = list(OrderedDict.fromkeys(ids).keys())
+            if not ids:
+              raise SystemExit("No valid BGG IDs parsed from data/bgg_ids.json")
+            print(f"IDs parsed: {len(ids)}")
+            return ids
 
           def get_session():
             s = requests.Session()
@@ -182,10 +205,6 @@ jobs:
               ar = ratings.find("average") if ratings is not None else None
               ab = ratings.find("bayesaverage") if ratings is not None else None
               ur = ratings.find("usersrated") if ratings is not None else None
-              weight = fnum(aw.get("value") if aw is not None else None)
-              rating = fnum(ar.get("value") if ar is not None else None)
-              bayes  = fnum(ab.get("value") if ab is not None else None)
-              users  = fnum(ur.get("value") if ur is not None else None, to=float)
               row = {
                 "id": bid,
                 "name": (name_el.get("value") if name_el is not None else None),
@@ -194,10 +213,10 @@ jobs:
                 "maxplayers": aval(t,"maxplayers",int),
                 "minplaytime": aval(t,"minplaytime",int),
                 "maxplaytime": aval(t,"maxplaytime",int),
-                "weight": weight,
-                "rating": rating,
-                "rating_bayes": bayes,
-                "usersrated": (int(users) if users is not None else None),
+                "weight": fnum(aw.get("value") if aw is not None else None),
+                "rating": fnum(ar.get("value") if ar is not None else None),
+                "rating_bayes": fnum(ab.get("value") if ab is not None else None),
+                "usersrated": (int(fnum(ur.get("value")) or 0) if ur is not None else None),
                 "image": (t.findtext("image") or "").strip(),
                 "thumbnail": (t.findtext("thumbnail") or "").strip(),
                 "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
@@ -211,23 +230,25 @@ jobs:
             return res
 
           def fetch_batch(s, ids):
-            params = {"stats":"1","versions":os.getenv("BGG_VERSIONS","0"),
-                      "type":"boardgame,boardgameexpansion",
-                      "id":",".join(str(i) for i in ids)}
-            for host in [h.strip() for h in os.getenv("BGG_HOSTS","boardgamegeek.com,api.geekdo.com").split(",")]:
+            params = {
+              "stats":"1",
+              "versions": VERSIONS,
+              "type":"boardgame,boardgameexpansion",
+              "id":",".join(str(i) for i in ids)
+            }
+            for host in HOSTS:
               url = f"https://{host}/xmlapi2/thing"
-              for k in range(int(os.getenv("BGG_RETRY","6"))):
+              for k in range(RETRY):
                 try:
                   r = s.get(url, params=params, timeout=60)
                   if r.status_code == 200 and r.text.strip():
                     return parse(r.text)
                   if r.status_code in (202,401,403,429,500,502,503,504):
-                    import random, time
-                    time.sleep(float(os.getenv("BGG_SLEEP","6.0")) * (1 + random.random()*float(os.getenv("BGG_JITTER","0.8"))) * (1.6**k))
+                    time.sleep(SLEEP * (1 + random.random()*JITTER) * (1.6**k))
                     continue
-                  import time; time.sleep(2.0)
+                  time.sleep(2.0)
                 except Exception:
-                  import time; time.sleep(2.0)
+                  time.sleep(2.0)
             return None
 
           def fetch_single(s, idv):
@@ -235,22 +256,21 @@ jobs:
             return got[0] if got else None
 
           if not IDS_FILE.exists():
-            print("No data/bgg_ids.json; skip."); raise SystemExit(0)
+            print("No data/bgg_ids.json; skip.")
+            raise SystemExit(0)
 
-          ids = json.loads(IDS_FILE.read_text(encoding="utf-8"))
-          ids = [int(x["bgg_id"] if isinstance(x,dict) else x) for x in ids if int(x["bgg_id"] if isinstance(x,dict) else x) > 0]
-
+          ids = load_ids()
           s   = get_session()
-          old = []
+
+          old=[]
           if OUT_FILE.exists():
             try: old=json.loads(OUT_FILE.read_text(encoding="utf-8"))
             except: old=[]
           cache={int(x.get("bgg_id",x.get("id",0))):x for x in old if isinstance(x,dict)}
 
           ok=[]
-          BATCH=int(os.getenv("BGG_BATCH","20"))
-          for i in range(0,len(ids),min(BATCH,20)):
-            chunk=ids[i:i+min(BATCH,20)]
+          for i in range(0,len(ids),BATCH):
+            chunk=ids[i:i+BATCH]
             got=fetch_batch(s,chunk)
             if got is None:
               for one in chunk:
@@ -258,8 +278,7 @@ jobs:
                 if it: ok.append(it)
             else:
               ok.extend(got)
-            import time, random
-            time.sleep(float(os.getenv("BGG_SLEEP","6.0"))*(1+random.random()*float(os.getenv("BGG_JITTER","0.8"))))
+            time.sleep(SLEEP*(1+random.random()*JITTER))
 
           merged={int(x.get("bgg_id",x.get("id",0))):x for x in ok if isinstance(x,dict)}
           merged.update(cache)
