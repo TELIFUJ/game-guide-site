@@ -1,95 +1,48 @@
-# scripts/publish_games.py
-import json, pathlib, glob
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+publish_games.py
+
+目的：
+- 統一資料來源：以前這支腳本會直接從 bgg_data.json 重算欄位與圖片，
+  容易跟 build_json.py 打架，導致前面修正被覆蓋。
+- 現在改成「只做 passthrough」：
+  - 讀取 data/games_full.json
+  - 寫出 site/data/games.json
+  如此 build_json.py 就是唯一的真實來源。
+"""
+
+import json
+import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-SITE = ROOT / "site" / "data"
-IMG_DIR = ROOT / "assets" / "img"
+FULL = ROOT / "data" / "games_full.json"
+FALLBACK = ROOT / "data" / "bgg_data.json"
+OUT = ROOT / "site" / "data" / "games.json"
 
-INP = DATA / "bgg_data.json"
-OUT = SITE / "games.json"
+def main() -> int:
+    if FULL.exists():
+        src = FULL
+        rows = json.loads(FULL.read_text(encoding="utf-8"))
+        mode = "games_full"
+    else:
+        # 極端狀況：若 build_json 還沒跑成功，就退回用 bgg_data.json 原始資料
+        if not FALLBACK.exists():
+            print("[publish_games] ERROR: 找不到 games_full.json 或 bgg_data.json，無法發布。")
+            return 1
+        src = FALLBACK
+        rows = json.loads(FALLBACK.read_text(encoding="utf-8"))
+        mode = "bgg_data (fallback)"
 
-rows = json.loads(INP.read_text(encoding="utf-8")) if INP.exists() else []
-SITE.parent.mkdir(parents=True, exist_ok=True)
+    if not isinstance(rows, list):
+        print(f"[publish_games] ERROR: {src} 內容不是 list")
+        return 1
 
-# 允許以下本地命名：
-# 1) image_override 指向本地相對路徑（非 http）
-# 2) 以 bgg_id 命名（12345.jpg / 12345.png / 12345.webp ...）
-# 3) 以 bgg_id 作為前綴（12345-xxxx.jpg / 12345_anything.jpeg ...）
-def local_image_path(r):
-    ov = (r.get("image_override") or "").strip()
-    if ov and not ov.lower().startswith(("http://", "https://")):
-        p = IMG_DIR / ov
-        if p.exists():
-            return f"assets/img/{ov}"
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
 
-    bid = r.get("bgg_id") or r.get("id")
-    if not bid:
-        return None
-    # 完整比對：12345.*
-    for p in IMG_DIR.glob(f"{bid}.*"):
-        if p.is_file():
-            return f"assets/img/{p.name}"
-    # 前綴比對：12345-*.*
-    for p in IMG_DIR.glob(f"{bid}-*.*"):
-        if p.is_file():
-            return f"assets/img/{p.name}"
-    return None
+    print(f"publish_games: mode={mode} ; rows={len(rows)} → {OUT}")
+    return 0
 
-out = []
-normalized = 0
-missing = 0
-
-for r in rows:
-    if not isinstance(r, dict):
-        continue
-
-    img_local = local_image_path(r)
-    img_remote = (
-        r.get("image")
-        or r.get("image_url")
-        or r.get("thumbnail")
-        or r.get("thumb_url")
-        or ""
-    )
-
-    display_image = img_local or img_remote
-    if img_local:
-        normalized += 1
-    if not display_image:
-        missing += 1
-
-    item = {
-        "id": r.get("bgg_id") or r.get("id"),
-        "name": r.get("name"),
-        "name_zh": r.get("name_zh"),
-        "year": r.get("year"),
-        "minplayers": r.get("minplayers") or r.get("min_players"),
-        "maxplayers": r.get("maxplayers") or r.get("max_players"),
-        "minplaytime": r.get("minplaytime") or r.get("min_playtime"),
-        "maxplaytime": r.get("maxplaytime") or r.get("max_playtime"),
-        "weight": r.get("weight"),
-        "rating": r.get("rating") or r.get("rating_avg"),
-        "rating_bayes": r.get("rating_bayes"),
-        "users_rated": r.get("usersrated") or r.get("users_rated"),
-
-        # 中文主欄位，英文備份
-        "categories": r.get("categories"),
-        "categories_en": r.get("categories_en"),
-        "mechanisms": r.get("mechanisms"),
-        "mechanisms_en": r.get("mechanisms_en"),
-
-        # 價格
-        "price": r.get("price"),
-        "price_used": r.get("price_used"),
-
-        # 圖片
-        "image": display_image,
-    }
-    out.append(item)
-
-OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-print(
-    f"publish_games: total={len(out)} ; normalized={normalized} ; missing_image={missing}\n"
-    f"wrote → {OUT}"
-)
+if __name__ == "__main__":
+    raise SystemExit(main())
