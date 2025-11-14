@@ -7,7 +7,7 @@ on:
         description: "強制重新抓取 BGG（忽略快取/TTL）"
         type: boolean
         required: false
-        default: false
+        default: true   # 手動觸發預設強制抓；若不想，改回 false
   schedule:
     - cron: "15 21 * * *"   # 每日 05:15 (+08)
 
@@ -41,10 +41,10 @@ jobs:
       # ---- Python 匯入路徑 ----
       PYTHONPATH: ${{ github.workspace }}
 
-      # ---- 抓取 TTL（天），7 表示 7 天內用快取 ----
+      # ---- 抓取 TTL（天）----
       BGG_TTL_DAYS: "7"
 
-      # ---- 手動觸發時可強制抓取 ----
+      # ---- 手動觸發可強制抓取 ----
       FORCE_FETCH: ${{ github.event.inputs.force_fetch == 'true' && '1' || '0' }}
 
     steps:
@@ -62,7 +62,7 @@ jobs:
       - name: Ensure dirs
         run: mkdir -p data assets/img site/assets/img site/data || true
 
-      # 先恢復前次 data/ 與圖片，盡量避免重抓
+      # 先恢復 data/ 與圖片，減少重抓
       - name: Restore cache (data & images)
         uses: actions/cache@v4
         with:
@@ -80,7 +80,7 @@ jobs:
             python -u scripts/resolve_bgg.py || true
           fi
 
-      # 決策：是否需要重新抓取（bgg_ids 變更 或 超過 TTL 或 強制抓）
+      # 決策：是否重新抓取（ids 變更 / 超過 TTL / 強制抓）
       - name: Plan fetch
         id: plan
         shell: python
@@ -89,8 +89,8 @@ jobs:
           P = pathlib.Path
           ids = P("data/bgg_ids.json")
           out = P("data/bgg_data.json")
-          stamp = P("data/.bgg_stamp")            # 上次成功抓取時間戳
-          hfile = P("data/.bgg_ids.hash")         # 上次 ids hash
+          stamp = P("data/.bgg_stamp")
+          hfile = P("data/.bgg_ids.hash")
           ttl_days = int(os.getenv("BGG_TTL_DAYS","7"))
           force = os.getenv("FORCE_FETCH","0") == "1"
 
@@ -111,11 +111,9 @@ jobs:
             reason = [f"age={age_days:.2f}>ttl={ttl_days}"] if need else []
 
           if ids_changed:
-            need = True
-            reason.append("ids_changed")
+            need = True; reason.append("ids_changed")
           if force:
-            need = True
-            reason.append("forced")
+            need = True; reason.append("forced")
 
           print("need_fetch:", need, "reason:", "|".join(reason) or "none")
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -127,7 +125,7 @@ jobs:
           echo "do_fetch = ${{ steps.plan.outputs.do_fetch }}"
           echo "reason   = ${{ steps.plan.outputs.reason }}"
 
-      # ⚠️ Inline 抓取，避免找不到 scripts/fetch_bgg.py
+      # Inline 抓取，避免找不到某個 scripts/*.py
       - name: Fetch BGG (XML2)
         if: steps.plan.outputs.do_fetch == 'true'
         shell: bash
@@ -178,37 +176,26 @@ jobs:
           def parse(xml_text: str):
             root = etree.fromstring(xml_text.encode("utf-8"))
             res = []
-
             def aval(node, tag, to=int):
-              el = node.find(tag)
-              v = el.get("value") if el is not None else None
-              try:
-                return to(v) if v not in (None, "", "0", "N/A") else None
-              except Exception:
-                return None
-
+              el = node.find(tag); v = el.get("value") if el is not None else None
+              try: return to(v) if v not in (None,"","0","N/A") else None
+              except: return None
             def fnum(x, to=float):
-              try:
-                return to(x) if x not in (None,"","N/A") else None
-              except Exception:
-                return None
-
+              try: return to(x) if x not in (None,"","N/A") else None
+              except: return None
             for t in root.findall("./item"):
               try: bid = int(t.get("id"))
-              except Exception: continue
-
+              except: continue
               name_el = t.find("name[@type='primary']")
               ratings = t.find("statistics/ratings")
               aw = ratings.find("averageweight") if ratings is not None else None
               ar = ratings.find("average") if ratings is not None else None
               ab = ratings.find("bayesaverage") if ratings is not None else None
               ur = ratings.find("usersrated") if ratings is not None else None
-
               weight = fnum(aw.get("value") if aw is not None else None)
               rating = fnum(ar.get("value") if ar is not None else None)
               bayes  = fnum(ab.get("value") if ab is not None else None)
               users  = fnum(ur.get("value") if ur is not None else None, to=float)
-
               row = {
                 "id": bid,
                 "name": (name_el.get("value") if name_el is not None else None),
@@ -260,8 +247,7 @@ jobs:
             return got[0] if got else None
 
           if not IDS_FILE.exists():
-            print("No data/bgg_ids.json; skip.")
-            raise SystemExit(0)
+            print("No data/bgg_ids.json; skip."); raise SystemExit(0)
 
           ids = load_ids()
           s   = get_session()
@@ -325,12 +311,12 @@ jobs:
             python -u scripts/publish_games.py
           fi
 
-      # 更新快取標記（ids hash + stamp）
+      # 更新快取標記
       - name: Update cache markers
         if: steps.plan.outputs.do_fetch == 'true'
         shell: python
         run: |
-          import pathlib, hashlib, time
+          import pathlib, hashlib
           ids = pathlib.Path("data/bgg_ids.json")
           hfile = pathlib.Path("data/.bgg_ids.hash")
           stamp = pathlib.Path("data/.bgg_stamp")
@@ -338,7 +324,7 @@ jobs:
             hfile.write_text(hashlib.sha256(ids.read_bytes()).hexdigest())
           stamp.touch()
 
-      # 同步圖片到 site，並輸出數量指標
+      # 每次都同步圖片到 site，避免前端找不到圖
       - name: Sync images into site
         run: |
           mkdir -p site/assets/img
@@ -346,7 +332,6 @@ jobs:
           echo "images_in_site=$(find site/assets/img -type f | wc -l)" | tee -a $GITHUB_STEP_SUMMARY
           du -sh site || true
 
-      # 僅上傳 site/ 作為 Pages artifact
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
