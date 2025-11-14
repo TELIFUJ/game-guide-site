@@ -7,13 +7,13 @@ on:
         description: "強制重新抓取 BGG（忽略快取/TTL）"
         type: boolean
         required: false
-        default: true   # 手動觸發預設強制抓；若不想，改回 false
+        default: true
   schedule:
     - cron: "15 21 * * *"   # 每日 05:15 (+08)
 
 concurrency:
-  group: build-deploy-game-data
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -27,7 +27,6 @@ jobs:
       name: github-pages
 
     env:
-      # ---- BGG 抓取參數 ----
       BGG_HOSTS: boardgamegeek.com,api.geekdo.com
       BGG_BATCH: "20"
       BGG_SLEEP: "6.0"
@@ -37,14 +36,8 @@ jobs:
       HTTP_UA: "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)"
       HTTP_ACCEPT_LANGUAGE: "en-US,en;q=0.9"
       BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
-
-      # ---- Python 匯入路徑 ----
       PYTHONPATH: ${{ github.workspace }}
-
-      # ---- 抓取 TTL（天）----
       BGG_TTL_DAYS: "7"
-
-      # ---- 手動觸發可強制抓取 ----
       FORCE_FETCH: ${{ github.event.inputs.force_fetch == 'true' && '1' || '0' }}
 
     steps:
@@ -62,7 +55,6 @@ jobs:
       - name: Ensure dirs
         run: mkdir -p data assets/img site/assets/img site/data || true
 
-      # 先恢復 data/ 與圖片，減少重抓
       - name: Restore cache (data & images)
         uses: actions/cache@v4
         with:
@@ -80,7 +72,6 @@ jobs:
             python -u scripts/resolve_bgg.py || true
           fi
 
-      # 決策：是否重新抓取（ids 變更 / 超過 TTL / 強制抓）
       - name: Plan fetch
         id: plan
         shell: python
@@ -125,7 +116,6 @@ jobs:
           echo "do_fetch = ${{ steps.plan.outputs.do_fetch }}"
           echo "reason   = ${{ steps.plan.outputs.reason }}"
 
-      # Inline 抓取，避免找不到某個 scripts/*.py
       - name: Fetch BGG (XML2)
         if: steps.plan.outputs.do_fetch == 'true'
         shell: bash
@@ -221,25 +211,23 @@ jobs:
             return res
 
           def fetch_batch(s, ids):
-            params = {
-              "stats": "1",
-              "versions": VERSIONS,
-              "type": "boardgame,boardgameexpansion",
-              "id": ",".join(str(i) for i in ids)
-            }
-            for host in HOSTS:
+            params = {"stats":"1","versions":os.getenv("BGG_VERSIONS","0"),
+                      "type":"boardgame,boardgameexpansion",
+                      "id":",".join(str(i) for i in ids)}
+            for host in [h.strip() for h in os.getenv("BGG_HOSTS","boardgamegeek.com,api.geekdo.com").split(",")]:
               url = f"https://{host}/xmlapi2/thing"
-              for k in range(RETRY):
+              for k in range(int(os.getenv("BGG_RETRY","6"))):
                 try:
                   r = s.get(url, params=params, timeout=60)
                   if r.status_code == 200 and r.text.strip():
                     return parse(r.text)
                   if r.status_code in (202,401,403,429,500,502,503,504):
-                    time.sleep(SLEEP * (1 + random.random()*JITTER) * (1.6**k))
+                    import random, time
+                    time.sleep(float(os.getenv("BGG_SLEEP","6.0")) * (1 + random.random()*float(os.getenv("BGG_JITTER","0.8"))) * (1.6**k))
                     continue
-                  time.sleep(2.0)
+                  import time; time.sleep(2.0)
                 except Exception:
-                  time.sleep(2.0)
+                  import time; time.sleep(2.0)
             return None
 
           def fetch_single(s, idv):
@@ -249,18 +237,20 @@ jobs:
           if not IDS_FILE.exists():
             print("No data/bgg_ids.json; skip."); raise SystemExit(0)
 
-          ids = load_ids()
-          s   = get_session()
+          ids = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+          ids = [int(x["bgg_id"] if isinstance(x,dict) else x) for x in ids if int(x["bgg_id"] if isinstance(x,dict) else x) > 0]
 
-          old=[]
+          s   = get_session()
+          old = []
           if OUT_FILE.exists():
             try: old=json.loads(OUT_FILE.read_text(encoding="utf-8"))
             except: old=[]
           cache={int(x.get("bgg_id",x.get("id",0))):x for x in old if isinstance(x,dict)}
 
           ok=[]
-          for i in range(0,len(ids),BATCH):
-            chunk=ids[i:i+BATCH]
+          BATCH=int(os.getenv("BGG_BATCH","20"))
+          for i in range(0,len(ids),min(BATCH,20)):
+            chunk=ids[i:i+min(BATCH,20)]
             got=fetch_batch(s,chunk)
             if got is None:
               for one in chunk:
@@ -268,7 +258,8 @@ jobs:
                 if it: ok.append(it)
             else:
               ok.extend(got)
-            time.sleep(SLEEP*(1+random.random()*JITTER))
+            import time, random
+            time.sleep(float(os.getenv("BGG_SLEEP","6.0"))*(1+random.random()*float(os.getenv("BGG_JITTER","0.8"))))
 
           merged={int(x.get("bgg_id",x.get("id",0))):x for x in ok if isinstance(x,dict)}
           merged.update(cache)
@@ -281,8 +272,7 @@ jobs:
           PY
 
       - name: Apply taxonomy & price merge
-        run: |
-          python -u scripts/apply_taxonomy_and_price.py
+        run: python -u scripts/apply_taxonomy_and_price.py
 
       - name: Normalize data & enrich (ranking)
         run: |
@@ -311,7 +301,6 @@ jobs:
             python -u scripts/publish_games.py
           fi
 
-      # 更新快取標記
       - name: Update cache markers
         if: steps.plan.outputs.do_fetch == 'true'
         shell: python
@@ -324,7 +313,6 @@ jobs:
             hfile.write_text(hashlib.sha256(ids.read_bytes()).hexdigest())
           stamp.touch()
 
-      # 每次都同步圖片到 site，避免前端找不到圖
       - name: Sync images into site
         run: |
           mkdir -p site/assets/img
