@@ -1,813 +1,396 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <title>Board Game Guide</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>桌遊導覽</title>
 
-  <!-- 乾淨版 UI：保留舊功能、改善排版 -->
-  <style>
-    :root{
-      --border:#e2e8f0;
-      --bg:#f8fafc;
-      --muted:#64748b;
-      --chip:#f1f5f9;
-      --chip-active:#e0e7ff;
-      --chip-active-b:#a5b4fc;
-    }
-    body{
-      margin:0;
-      padding:0 0 60px 0;
-      background:var(--bg);
-      font:15px/1.6 system-ui;
-      color:#0f172a;
-    }
-    header{
-      padding:14px 16px;
-      background:white;
-      border-bottom:1px solid var(--border);
-      position:sticky;top:0;z-index:20;
-    }
-    .filters{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    input,select,button{
-      font:inherit;
-      padding:8px 10px;
-      border:1px solid var(--border);
-      border-radius:8px;
-      background:white;
-    }
-    .btn{
-      cursor:pointer;
-      background:#fff;
-    }
-    .btn:active{ transform:translateY(1px); }
+<!-- 基本樣式：RWD、卡片、按鈕 -->
+<style>
+:root {
+  --max-width: 1200px;
+  --card-radius: 14px;
+  --chip-radius: 14px;
+  --bg: #fafafa;
+  --chip-bg: #eef2f7;
+  --chip-text: #333;
+  --border: #e0e0e0;
+  --shadow: rgba(0,0,0,0.1);
+}
 
-    /* Search */
-    .ac-wrap{position:relative;flex:1;min-width:260px;}
-    #q{width:100%;}
-    #ac{
-      position:absolute;top:100%;left:0;right:0;
-      background:white;
-      border:1px solid var(--border);
-      border-radius:10px;
-      margin-top:6px;
-      box-shadow:0 4px 18px rgba(0,0,0,.08);
-      display:none;
-      max-height:260px;
-      overflow:auto;
-      z-index:50;
-    }
-    .ac-item{
-      padding:8px 10px;
-      cursor:pointer;
-      border-bottom:1px solid #f1f5f9;
-    }
-    .ac-item:hover{background:#eef2ff;}
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+}
 
-    /* 卡片 Grid */
-    #grid{
-      padding:16px;
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-      gap:14px;
-    }
-    .card{
-      background:white;
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px;
-      box-shadow:0 1px 3px rgba(0,0,0,.04);
-      position:relative;
-      cursor:pointer;
-    }
-    .poster{
-      width:100%;
-      aspect-ratio:1/1;
-      object-fit:contain;
-      border-radius:8px;
-      background:#f1f5f9;
-    }
-    .chips{
-      margin-top:5px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-    }
-    .chip{
-      padding:3px 8px;
-      background:var(--chip);
-      border:1px solid var(--border);
-      border-radius:999px;
-      font-size:12px;
-      cursor:pointer;
-    }
-    .chip.active{
-      background:var(--chip-active);
-      border-color:var(--chip-active-b);
-    }
+/* 主要容器 */
+.wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px;
+}
 
-    /* Badge */
-    .badge{
-      background:#f1f5f9;
-      padding:2px 6px;
-      border-radius:6px;
-      font-size:12px;
-      border:1px solid var(--border);
-    }
+/* 搜尋區 + 篩選列 */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
 
-    /* Focus (推薦＋預覽) */
-    #focus{
-      display:none;
-      padding:16px;
-      background:white;
-      border-bottom:1px solid var(--border);
-    }
-    .rec-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-      gap:12px;
-      margin-top:10px;
-    }
+/* Input 與 Select 都統一設計 */
+.filters input,
+.filters select,
+button {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
 
-    /* 分頁 */
-    .pagination{
-      padding:16px;
-      display:flex;
-      gap:6px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .page-btn{
-      padding:6px 10px;
-      border:1px solid var(--border);
-      background:white;
-      border-radius:8px;
-      cursor:pointer;
-    }
-    .page-btn.active{
-      background:#e0e7ff;
-      border-color:#a5b4fc;
-    }
+button {
+  background: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #f1f1f1;
+}
 
-    /* 隨機預覽（底部 modal） */
-    dialog.modal{
-      inset:0;position:fixed;display:none;
-      background:rgba(0,0,0,.35);
-      z-index:1000;
-    }
-    dialog[open]{display:block;}
-    .sheet{
-      position:absolute;
-      left:0;right:0;bottom:0;
-      background:white;
-      border-radius:16px 16px 0 0;
-      padding:16px;
-      max-height:80vh;
-      overflow:auto;
-    }
+/* 卡片區設定 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
 
-  </style>
+/* 卡片 */
+.card {
+  background: white;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
+/* 卡片圖片：自動比例裁切 */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #ddd;
+}
+
+/* 卡片內容 */
+.card-body {
+  padding: 10px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+/* 遊戲名稱 */
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* 英文副標 */
+.subtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Chips（分類與機制） */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.chip {
+  padding: 3px 8px;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: var(--chip-radius);
+  font-size: 12px;
+}
+
+/* 二手價格 / 庫存 */
+.price-stock {
+  margin-top: auto;
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* BGG 分數區 */
+.rating {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3367d6;
+}
+
+/* 手機優化：卡片圖片略縮小高度 */
+@media(max-width: 600px){
+  .card img {
+    height: 150px;
+  }
+  .title {
+    font-size: 15px;
+  }
+}
+
+/* 隨機預覽 modal */
+#previewModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 3000;
+}
+
+#previewModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 12px black;
+}
+
+#previewClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+</style>
 </head>
 <body>
 
-<header>
-  <form class="filters" onsubmit="return false">
-    <div class="ac-wrap">
-      <input id="q" placeholder="搜尋：中文名 / 英文名 / 關鍵字">
-      <div id="ac"></div>
-    </div>
+<div class="wrapper">
 
-    <button id="clearQ" class="btn" type="button">清除</button>
-    <button id="resetAll" class="btn" type="button">重置</button>
+  <!-- 搜尋與篩選區 -->
+  <div class="filters">
+    <input id="search" placeholder="搜尋：中文名 / EN / 關鍵字">
+    <select id="catSelect"><option value="">全部分類</option></select>
+    <select id="mechSelect"><option value="">全部機制</option></select>
 
-    <select id="catSel"><option value="">分類</option></select>
-    <select id="mechSel"><option value="">機制</option></select>
-
-    <input id="pmin" type="number" placeholder="最低價">
-    <input id="pmax" type="number" placeholder="最高價">
-
-    <label><input type="checkbox" id="inclUsed"> 含二手</label>
-    <select id="sort">
-      <option value="">排序</option>
-      <option value="rating_bayes_desc">Geek 評分高→低</option>
-      <option value="rating_avg_desc">平均評分高→低</option>
-      <option value="min_price_asc">最低價低→高</option>
-      <option value="min_price_desc">最低價高→低</option>
-      <option value="weight_asc">策略低→高</option>
-      <option value="weight_desc">策略高→低</option>
+    <select id="sortSelect">
+      <option value="name_zh">按名稱</option>
+      <option value="rating_bayes">BGG 榜分（貝葉斯）</option>
+      <option value="rating_avg">玩家平均分</option>
+      <option value="weight">重量</option>
+      <option value="used_price_twd">二手價格</option>
     </select>
-  </form>
-</header>
 
-<div id="activeChips" class="chips" style="padding:10px 16px;"></div>
+    <button id="randomBtn">隨機預覽</button>
+  </div>
 
-<div id="focus">
-  <h3>🔎 遊戲預覽：<span id="focus-name"></span></h3>
-  <div id="focus-card"></div>
+  <!-- 卡片容器 -->
+  <div id="list" class="grid"></div>
 
-  <h3 style="margin-top:14px">你可能也會喜歡</h3>
-  <div id="rec" class="rec-grid"></div>
-
-  <button id="clearFocus" class="btn" type="button" style="margin-top:12px">清除預覽</button>
 </div>
 
-<div id="grid"></div>
-
-<div id="pager" class="pagination"></div>
-
-<!-- 隨機預覽 Modal -->
-<dialog id="randModal" class="modal">
-  <div class="sheet">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-      <strong>隨機預覽 / 多機制選擇</strong>
-      <button id="randClose" class="btn">關閉</button>
-    </div>
-
-    <input id="mechSearch" placeholder="搜尋機制…" style="width:100%;margin-bottom:8px;">
-    <button id="randPick" class="btn" type="button">重新抽選</button>
-    <button id="randApply" class="btn" type="button">套用機制</button>
-    <button id="randClear" class="btn" type="button">取消所有</button>
-
-    <div id="mechMulti" style="margin-top:12px;"></div>
-
-    <h4 style="margin-top:16px">抽選結果</h4>
-    <div id="randGrid" class="rec-grid"></div>
-  </div>
-</dialog>
+<!-- 隨機預覽 modal -->
+<div id="previewModal">
+  <div id="previewClose">關閉</div>
+  <img id="previewImg">
+</div>
 
 <script>
-/* =====================
-   JS 第一段：基礎工具、資料載入
-   （功能完整、排版乾淨、新 UI） 
-======================*/
-
-document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
-
-function absUrl(p){
-  if(!p) return '';
-  if(/^https?:\/\//i.test(p)) return p;
-  const base = location.pathname.endsWith('/') ? location.pathname : location.pathname.replace(/[^/]+$/,'');
-  return base + p.replace(/^\/+/,'');
-}
-
-const DATA_CANDIDATES = [
-  absUrl('data/games.json'),
-  absUrl('site/data/games.json'),
-  '/data/games.json'
-];
-
+/* ========== 全域變數 ========== */
 let DATA = [];
-let page = 1;
+let UNIQUE_CATS = new Set();
+let UNIQUE_MECHS = new Set();
 
-function usersRated(x){ return x.users_rated ?? x.usersrated ?? null; }
-function ratingAvg(x){ return x.rating_avg ?? x.rating ?? null; }
-function ratingBayes(x){ return x.rating_bayes ?? null; }
-function getCats(x){ return Array.isArray(x.categories)? x.categories : []; }
-function getMechs(x){
-  const raw = x.mechanisms || x.mechanics || [];
-  return Array.isArray(raw)? raw : [];
-}
-function idOf(x){ return x.id || x.bgg_id || x.name_zh || x.name_en || ''; }
+/* ==========================================================
+   讀取 JSON
+========================================================== */
+async function loadData(){
+  try{
+    const res = await fetch("data/games.json");
+    DATA = await res.json();
 
-/* ===========================
-   JS 第二段：UI 建置、過濾、排序
-=========================== */
+    // 建立分類與機制（含中文）
+    DATA.forEach(g=>{
+      (g.categories_zh || g.categories || []).forEach(c=>UNIQUE_CATS.add(c));
+      (g.mechanisms_zh || g.mechanisms || []).forEach(m=>UNIQUE_MECHS.add(m));
+    });
 
-/* 中文名優先 */
-const CJK_RE = /[\u4E00-\u9FFF\u3400-\u4DBF]/;
-function hasZhName(x){
-  const s=(x.name_zh||"")+" "+(x.name_en||"");
-  return CJK_RE.test(s);
-}
-
-/* 影像來源處理 */
-function imgCandidates(x){
-  const out=[];
-  if(x.image_override) out.push(x.image_override);
-  if(x.image && !/^https?:/i.test(x.image)) out.push(x.image);
-  if(x.image_local) out.push(x.image_local);
-  if(x.image_url) out.push(x.image_url);
-  if(x.thumb_url) out.push(x.thumb_url);
-  if(x.image && /^https?:/i.test(x.image)) out.push(x.image);
-  return out.map(absUrl);
-}
-
-function imgFallback(el){
-  const list=(el.dataset.srcs||"").split("|").filter(Boolean);
-  const cur=el.src;
-  const idx=list.indexOf(cur);
-  const nxt=list[idx+1];
-  if(nxt){ el.src=nxt; }
-  else { el.onerror=null; el.src="https://via.placeholder.com/800?text=No+Image"; }
-}
-
-/* 價格 */
-function priceCandidates(x, includeUsed=true){
-  const out=[];
-  if(x.price_twd!=null) out.push(Number(x.price_twd));
-  if(includeUsed && x.used_price_twd!=null) out.push(Number(x.used_price_twd));
-  return out;
-}
-function minPrice(x, includeUsed=true){
-  const c=priceCandidates(x, includeUsed);
-  return c.length? Math.min(...c) : Infinity;
-}
-
-/* 變體合併 */
-function normalizeImgUrl(s){
-  return String(s||"").toLowerCase().replace(/^https?:\/\/[^/]+/,"").replace(/[?#].*$/,"");
-}
-function dupKey(x){
-  return [
-    x.bgg_id || "",
-    (x.name_zh||x.name_en||"").trim().toLowerCase(),
-    normalizeImgUrl(x.image_override||x.image||x.image_url||x.thumb_url||"")
-  ].join("|");
-}
-function isBetter(a,b){
-  const ao=!!a.image_override, bo=!!b.image_override;
-  if(ao!==bo) return ao;
-  const ap=a.price_twd ?? Infinity, bp=b.price_twd ?? Infinity;
-  if(ap!==bp) return ap < bp;
-  const as=a.stock ?? -1, bs=b.stock ?? -1;
-  return as > bs;
-}
-function dedup(list){
-  const pick=new Map(), cnt=new Map();
-  for(const x of list){
-    const k=dupKey(x);
-    const cur=pick.get(k);
-    if(!cur || isBetter(x,cur)) pick.set(k,x);
-    cnt.set(k,(cnt.get(k)||0)+1);
+    buildSelectors();
+    render();
+  }catch(e){
+    console.error(e);
+    document.getElementById("list").innerHTML =
+      "<p style='padding:20px'>資料載入失敗</p>";
   }
-  const out=[];
-  for(const [k,x] of pick.entries()){
-    out.push({...x,_variant_count:cnt.get(k)});
-  }
-  return out;
 }
 
-/* Badge */
-function ratingBadges(x){
-  const a=ratingAvg(x);
-  const b=ratingBayes(x);
-  const u=usersRated(x);
-  let s="";
-  if(a!=null) s+=`<span class="badge"><b>${a.toFixed(1)}</b>/10</span> `;
-  if(b!=null) s+=`<span class="badge">Geek ${b.toFixed(1)}</span> `;
-  if(u!=null) s+=`<span class="badge">${u} 評</span> `;
-  return s;
+
+/* ==========================================================
+   建立分類、機制選單（含中文）
+========================================================== */
+function buildSelectors(){
+  const catSelect = document.getElementById("catSelect");
+  const mechSelect = document.getElementById("mechSelect");
+
+  [...UNIQUE_CATS].sort().forEach(c=>{
+    let opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    catSelect.appendChild(opt);
+  });
+
+  [...UNIQUE_MECHS].sort().forEach(m=>{
+    let opt = document.createElement("option");
+    opt.value = m;
+    opt.textContent = m;
+    mechSelect.appendChild(opt);
+  });
 }
 
-/* 卡片 HTML */
-function cardHtml(x){
-  const cz=getCats(x);
-  const mz=getMechs(x);
 
-  const srcs=imgCandidates(x);
-  const first=srcs[0] || "https://via.placeholder.com/800?text=No+Image";
+/* ==========================================================
+   主渲染：搜尋、篩選、排序 → 產生卡片
+========================================================== */
+function render(){
+  const kw = document.getElementById("search").value.trim().toLowerCase();
+  const cat = document.getElementById("catSelect").value;
+  const mech = document.getElementById("mechSelect").value;
+  const sortKey = document.getElementById("sortSelect").value;
 
-  const id=idOf(x);
+  let list = DATA.filter(g=>{
+
+    // 搜尋：中文、英文、作者、分類、機制都能搜
+    let hit = false;
+    const text = `
+      ${g.name_zh||""}
+      ${g.name_en||g.name||""}
+      ${(g.categories_zh||g.categories||[]).join(" ")}
+      ${(g.mechanisms_zh||g.mechanisms||[]).join(" ")}
+    `.toLowerCase();
+    if(!kw || text.includes(kw)) hit = true;
+    if(!hit) return false;
+
+    // 分類
+    if(cat){
+      const cats = g.categories_zh || g.categories || [];
+      if(!cats.includes(cat)) return false;
+    }
+
+    // 機制
+    if(mech){
+      const mechs = g.mechanisms_zh || g.mechanisms || [];
+      if(!mechs.includes(mech)) return false;
+    }
+
+    return true;
+  });
+
+  // 排序
+  list.sort((a,b)=>{
+    let A = a[sortKey] ?? 0;
+    let B = b[sortKey] ?? 0;
+    if(typeof A === "string") A = A.toLowerCase();
+    if(typeof B === "string") B = B.toLowerCase();
+    return A > B ? 1 : -1;
+  });
+
+  // 渲染
+  const box = document.getElementById("list");
+  box.innerHTML = list.map(g=>createCard(g)).join("");
+}
+
+
+/* ==========================================================
+   卡片模板（含圖片、分類 Chips、BGG 分數、庫存、二手價）
+========================================================== */
+function createCard(g){
+  const img = g.image || g.thumbnail || "assets/img/noimg.png";
+
+  const cats = (g.categories_zh || g.categories || [])
+    .map(c=>`<span class="chip">${c}</span>`).join("");
+
+  const mechs = (g.mechanisms_zh || g.mechanisms || [])
+    .map(m=>`<span class="chip">${m}</span>`).join("");
 
   return `
-<div class="card" data-id="${id}">
-  <img class="poster" src="${first}" data-srcs="${srcs.join("|")}"
-       alt="${x.name_zh||x.name_en||""}" onerror="imgFallback(this)">
-  <h3 style="margin:6px 0 4px">${x.name_zh||x.name_en||""}</h3>
-  ${x.name_en? `<div style="color:var(--muted);font-size:13px">${x.name_en}</div>` : ""}
+  <div class="card">
+    <img src="${img}" onclick="openPreview('${img}')">
 
-  <div style="margin-top:6px">${ratingBadges(x)}
-    ${x.weight? `<span class="badge">策略 ${Number(x.weight).toFixed(2)}</span>` : ""}
+    <div class="card-body">
+      <div class="title">${g.name_zh || g.name}</div>
+      <div class="subtitle">${g.name_en || ""}</div>
+
+      <div class="rating">BGG：${g.rating_bayes ?? "—"}</div>
+
+      <div class="chips">${cats}${mechs}</div>
+
+      <div class="price-stock">
+        <span>${g.used_price_twd ? "二手 $" + g.used_price_twd : ""}</span>
+        <span>${g.stock ? "庫存：" + g.stock : ""}</span>
+      </div>
+    </div>
   </div>
-
-  <div class="chips">
-    ${cz.map(c=>`<span class="chip" data-cat="${c}">${c}</span>`).join("")}
-  </div>
-  <div class="chips">
-    ${mz.map(m=>`<span class="chip" data-mech="${m}">${m}</span>`).join("")}
-  </div>
-
-  <div style="margin-top:8px;font-weight:700">
-    ${x.price_twd? `$${x.price_twd}` : ""}
-    ${x.used_price_twd? `｜二手 $${x.used_price_twd}` : ""}
-  </div>
-
-  ${x._variant_count>1? `<div style="color:var(--muted);font-size:12px">變體 ${x._variant_count}</div>` : ""}
-</div>`;
+  `;
+}
+/* ==========================================================
+   隨機預覽（從所有遊戲中抽 1 張圖）
+========================================================== */
+function openRandom(){
+  if(!DATA.length) return;
+  const g = DATA[Math.floor(Math.random()*DATA.length)];
+  const img = g.image || g.thumbnail || "assets/img/noimg.png";
+  openPreview(img);
 }
 
-/* UI 元件 */
-const G=document.getElementById("grid");
-const Q=document.getElementById("q");
-const AC=document.getElementById("ac");
-const CAT=document.getElementById("catSel");
-const MECH=document.getElementById("mechSel");
-const SORT=document.getElementById("sort");
-const PMIN=document.getElementById("pmin");
-const PMAX=document.getElementById("pmax");
-const INCL=document.getElementById("inclUsed");
-const ACTIVE=document.getElementById("activeChips");
-const FOCUS=document.getElementById("focus");
-const FOCUS_NAME=document.getElementById("focus-name");
-const FOCUS_CARD=document.getElementById("focus-card");
-const REC=document.getElementById("rec");
-const CLEAR_FOCUS=document.getElementById("clearFocus");
-const PAGER=document.getElementById("pager");
-
-/* 多選機制 */
-let MECH_MULTI=new Set();
-
-/* 建立分類 / 機制選單 */
-function buildOptions(){
-  // 分類
-  const cCounts=new Map();
-  DATA.forEach(x=>getCats(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
-  const cv=CAT.value;
-  CAT.innerHTML='<option value="">分類</option>';
-  [...cCounts.entries()]
-    .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-    .forEach(([n,c])=>{
-      const o=document.createElement("option");
-      o.value=n; o.textContent=`${n} (${c})`;
-      CAT.appendChild(o);
-    });
-  CAT.value=cv;
-
-  // 機制
-  const mCounts=new Map();
-  DATA.forEach(x=>getMechs(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
-  const mv=MECH.value;
-  MECH.innerHTML='<option value="">機制</option>';
-  [...mCounts.entries()]
-    .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-    .forEach(([n,c])=>{
-      const o=document.createElement("option");
-      o.value=n; o.textContent=`${n} (${c})`;
-      MECH.appendChild(o);
-    });
-  MECH.value=mv;
+/* 開啟預覽 Modal */
+function openPreview(src){
+  document.getElementById("previewImg").src = src;
+  document.getElementById("previewModal").style.display = "flex";
 }
 
-/* 基礎過濾 */
-function filteredBase(){
-  let list=DATA.slice();
-  const q=Q.value.trim().toLowerCase();
-
-  if(q){
-    list=list.filter(x=>{
-      const blob=[
-        x.name_zh||"",
-        x.name_en||"",
-        x.name||"",
-        ...(x.aliases_zh||[]),
-        ...((x.search_keywords||[]).map(String))
-      ].join(" ").toLowerCase();
-      return blob.includes(q);
-    });
-  }
-
-  if(CAT.value){
-    list=list.filter(x=>getCats(x).includes(CAT.value));
-  }
-
-  if(MECH.value){
-    list=list.filter(x=>getMechs(x).includes(MECH.value));
-  }
-
-  if(MECH_MULTI.size){
-    list=list.filter(x=>{
-      const ms=getMechs(x);
-      return ms.some(m=>MECH_MULTI.has(m));
-    });
-  }
-
-  const pmin=Number(PMIN.value||0);
-  const pmax=Number(PMAX.value||0);
-  const includeUsed=INCL.checked;
-  if(pmin>0 || pmax>0){
-    list=list.filter(x=>{
-      const c=priceCandidates(x, includeUsed);
-      if(!c.length) return false;
-      return c.some(v=> (pmin? v>=pmin : true) && (pmax? v<=pmax : true));
-    });
-  }
-
-  list=dedup(list);
-  return list;
+/* 關閉預覽 Modal */
+function closePreview(){
+  document.getElementById("previewModal").style.display = "none";
 }
+document.getElementById("previewClose").onclick = closePreview;
 
-/* 排序 */
-function compareWithCjk(a,b,cmp){
-  const z=hasZhName(b)-hasZhName(a);
-  if(z) return z;
-  const s=cmp(a,b);
-  if(s) return s;
-  const r1=(ratingBayes(b)??-1)-(ratingBayes(a)??-1);
-  if(r1) return r1;
-  const r2=(ratingAvg(b)??-1)-(ratingAvg(a)??-1);
-  if(r2) return r2;
-  return (a.name_zh||a.name_en||"").localeCompare(b.name_zh||b.name_en||"",'zh-Hant');
-}
-
-function filtered(){
-  let list=filteredBase();
-  const includeUsed=INCL.checked;
-
-  const map={
-    "min_price_asc":(a,b)=> minPrice(a,includeUsed)-minPrice(b,includeUsed),
-    "min_price_desc":(a,b)=> minPrice(b,includeUsed)-minPrice(a,includeUsed),
-    "weight_asc":(a,b)=>(a.weight??99)-(b.weight??99),
-    "weight_desc":(a,b)=>(b.weight??-1)-(a.weight??-1),
-    "rating_avg_desc":(a,b)=>(ratingAvg(b)??-1)-(ratingAvg(a)??-1),
-    "rating_bayes_desc":(a,b)=>(ratingBayes(b)??-1)-(ratingBayes(a)??-1)
-  };
-
-  const sec=map[SORT.value||""] || (()=>0);
-  list.sort((a,b)=>compareWithCjk(a,b, sec));
-
-  const ps=40;
-  const total=list.length;
-  const pages=Math.max(1, Math.ceil(total/ps));
-  const start=(page-1)*ps, end=start+ps;
-  const rows=list.slice(start,end);
-
-  return {total,pages,rows};
-}
-
-/* 分頁 UI */
-function renderPager(pages){
-  PAGER.innerHTML="";
-  const add=(txt,target,active=false)=>{
-    const b=document.createElement("button");
-    b.className="page-btn"+(active?" active":"");
-    b.textContent=txt;
-    b.onclick=()=>{ page=target; render(); };
-    PAGER.appendChild(b);
-  };
-
-  for(let i=1;i<=pages;i++){
-    add(i,i,i===page);
-  }
-}
-
-/* ===========================
-   JS 第三段：渲染卡片、焦點預覽、推薦、隨機預覽
-=========================== */
-
-/* 渲染 Grid */
-function render(){
-  const {total,pages,rows}=filtered();
-
-  G.innerHTML= rows.map(cardHtml).join("");
-
-  G.querySelectorAll(".card").forEach(div=>{
-    div.addEventListener("click",()=>{
-      const id=div.dataset.id;
-      const x=DATA.find(v=> idOf(v)==id );
-      if(x) showFocus(x);
-    });
-  });
-
-  renderPager(pages);
-  buildActiveChips();
-}
-
-/* ===== 焦點預覽（Focus） ===== */
-function showFocus(x){
-  FOCUS_NAME.textContent=x.name_zh||x.name_en||"";
-  FOCUS_CARD.innerHTML=cardHtml(x);
-
-  REC.innerHTML= recommend(x)
-    .map(cardHtml)
-    .join("");
-
-  FOCUS.style.display="block";
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-CLEAR_FOCUS.onclick=()=>{
-  FOCUS.style.display="none";
-  FOCUS_CARD.innerHTML="";
-  REC.innerHTML="";
-};
-
-/* ===== 推薦「你可能也會喜歡」 ===== */
-function recommend(x){
-  const cats=getCats(x);
-  const mechs=getMechs(x);
-
-  const list=filteredBase();
-
-  const arr=list
-    .filter(v=> idOf(v)!==idOf(x))
-    .map(v=>{
-      const c2=getCats(v), m2=getMechs(v);
-      const overlapC=c2.filter(c=>cats.includes(c)).length;
-      const overlapM=m2.filter(m=>mechs.includes(m)).length;
-      const w=(v.weight??0)-(x.weight??0);
-      const dw=Math.abs(w);
-      return {
-        v,
-        score: overlapM*10 + overlapC*4 - dw*0.5
-      };
-    })
-    .filter(o=>o.score>0)
-    .sort((a,b)=>b.score-a.score)
-    .slice(0,8)
-    .map(o=>o.v);
-
-  return arr;
-}
-
-/* ===== 多選 Chips UI ===== */
-function buildActiveChips(){
-  const chips=[];
-  if(CAT.value){
-    chips.push(`<span class="chip active">${CAT.value} <b data-del="cat">✕</b></span>`);
-  }
-  if(MECH.value){
-    chips.push(`<span class="chip active">${MECH.value} <b data-del="mech">✕</b></span>`);
-  }
-  MECH_MULTI.forEach(m=>{
-    chips.push(`<span class="chip active">${m} <b data-del="multi" data-m="${m}">✕</b></span>`);
-  });
-
-  ACTIVE.innerHTML=chips.join("");
-
-  ACTIVE.querySelectorAll("b[data-del]").forEach(b=>{
-    b.addEventListener("click",ev=>{
-      const t=b.dataset.del;
-      if(t==="cat") CAT.value="";
-      else if(t==="mech") MECH.value="";
-      else if(t==="multi"){
-        MECH_MULTI.delete(b.dataset.m);
-      }
-      page=1;
-      render();
-    });
-  });
-}
-
-/* ====== 隨機預覽（Random Preview modal） ====== */
-const randModal=document.getElementById("randModal");
-const randClose=document.getElementById("randClose");
-const mechMultiDiv=document.getElementById("mechMulti");
-const mechSearch=document.getElementById("mechSearch");
-const randPick=document.getElementById("randPick");
-const randApply=document.getElementById("randApply");
-const randClear=document.getElementById("randClear");
-const randGrid=document.getElementById("randGrid");
-
-function buildMechMultiUI(){
-  const mCounts=new Map();
-  DATA.forEach(x=>getMechs(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
-  let arr=[...mCounts.entries()];
-  const q=mechSearch.value.trim().toLowerCase();
-  if(q) arr=arr.filter(([n])=>n.toLowerCase().includes(q));
-
-  mechMultiDiv.innerHTML=arr
-    .sort((a,b)=>b[1]-a[1])
-    .map(([n,c])=>{
-      const active=MECH_MULTI.has(n)? "active":"";
-      return `<span class="chip ${active}" data-mech="${n}">${n} (${c})</span>`;
-    }).join("");
-
-  mechMultiDiv.querySelectorAll(".chip").forEach(ch=>{
-    ch.onclick=()=>{
-      const m=ch.dataset.mech;
-      if(MECH_MULTI.has(m)) MECH_MULTI.delete(m);
-      else MECH_MULTI.add(m);
-      buildMechMultiUI();
-    }
-  });
-}
-
-function randomGames(){
-  const base=filteredBase();
-  const pick=[];
-  const n=Math.min(6, base.length);
-  while(pick.length<n){
-    const r=base[Math.floor(Math.random()*base.length)];
-    if(!pick.includes(r)) pick.push(r);
-  }
-  return pick;
-}
-
-randPick.onclick=()=>{
-  const arr=randomGames();
-  randGrid.innerHTML=arr.map(cardHtml).join("");
-};
-
-randApply.onclick=()=>{
-  randModal.close();
-  page=1;
-  render();
-};
-
-randClear.onclick=()=>{
-  MECH_MULTI.clear();
-  buildMechMultiUI();
-  randGrid.innerHTML="";
-};
-
-randClose.onclick=()=>randModal.close();
-
-/* ===== 搜尋自動完成 ===== */
-Q.oninput=function(){
-  const q=Q.value.trim().toLowerCase();
-  if(!q){ AC.style.display="none"; return; }
-  const arr=DATA.filter(x=>{
-    const b=`${x.name_zh||""} ${x.name_en||""}`.toLowerCase();
-    return b.includes(q);
-  }).slice(0,20);
-
-  AC.innerHTML=arr.map(x=>`<div class="ac-item" data-id="${idOf(x)}">${x.name_zh||x.name_en}</div>`).join("");
-
-  AC.querySelectorAll(".ac-item").forEach(it=>{
-    it.onclick=()=>{
-      const x=DATA.find(v=>idOf(v)==it.dataset.id);
-      if(x) showFocus(x);
-      AC.style.display="none";
-    };
-  });
-
-  AC.style.display="block";
-};
-
-document.addEventListener("click",e=>{
-  if(!AC.contains(e.target) && e.target!==Q){
-    AC.style.display="none";
-  }
+/* 按下 ESC 關閉預覽 */
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape") closePreview();
 });
 
-/* ===== 清除搜尋 ===== */
-document.getElementById("clearQ").onclick=()=>{
-  Q.value="";
-  page=1;
-  render();
-};
 
-/* ===== 重置所有篩選 ===== */
-document.getElementById("resetAll").onclick=()=>{
-  Q.value="";
-  CAT.value="";
-  MECH.value="";
-  PMIN.value="";
-  PMAX.value="";
-  INCL.checked=true;
-  MECH_MULTI.clear();
-  page=1;
-  render();
-};
+/* ==========================================================
+   搜尋 & 篩選 & 排序事件綁定
+========================================================== */
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("catSelect").addEventListener("change", render);
+document.getElementById("mechSelect").addEventListener("change", render);
+document.getElementById("sortSelect").addEventListener("change", render);
+document.getElementById("randomBtn").addEventListener("click", openRandom);
 
-/* 下拉改變 → 重繪 */
-[CAT,MECH,SORT,PMIN,PMAX,INCL].forEach(el=>{
-  el.onchange=()=>{ page=1; render(); };
-});
 
-/* ===== 熱鍵 ===== */
-document.body.onkeyup=function(e){
-  if(e.key==="f" && e.shiftKey){
-    randModal.showModal();
-    buildMechMultiUI();
-    randGrid.innerHTML="";
-  }
-};
-
-/* ===========================
-   資料載入
-=========================== */
-async function loadData(){
-  for(const url of DATA_CANDIDATES){
-    try{
-      const r=await fetch(url);
-      if(r.ok){
-        const j=await r.json();
-        if(Array.isArray(j)){
-          DATA=j;
-          break;
-        }
-      }
-    }catch(e){}
-  }
-
-  if(!DATA.length){
-    G.innerHTML="<p style='padding:20px;text-align:center'>資料載入失敗</p>";
-    return;
-  }
-
-  buildOptions();
-  render();
-}
-
+/* ==========================================================
+   啟動
+========================================================== */
 loadData();
-
 </script>
+
 </body>
 </html>
