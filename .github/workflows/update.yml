@@ -1,45 +1,22 @@
-name: Build & Deploy Game Data
+name: Update game data & Deploy Pages (v1.2)
 
 on:
   workflow_dispatch:
-    inputs:
-      force_fetch:
-        description: "強制重新抓取 BGG（忽略快取/TTL）"
-        type: boolean
-        required: false
-        default: true
   schedule:
-    - cron: "15 21 * * *"   # 每日 05:15 (+08)
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: false
+    - cron: "37 17 * * *"   # 每日 01:37+08 部署
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-
-    env:
-      BGG_HOSTS: boardgamegeek.com,api.geekdo.com
-      BGG_BATCH: "20"
-      BGG_SLEEP: "6.0"
-      BGG_RETRY: "6"
-      BGG_JITTER: "0.8"
-      BGG_VERSIONS: "0"
-      HTTP_UA: "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)"
-      HTTP_ACCEPT_LANGUAGE: "en-US,en;q=0.9"
-      BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
-      PYTHONPATH: ${{ github.workspace }}
-      BGG_TTL_DAYS: "7"
-      FORCE_FETCH: ${{ github.event.inputs.force_fetch == 'true' && '1' || '0' }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,302 +24,68 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.x"
 
-      - name: Install dependencies
-        run: pip install requests lxml pillow tenacity
-
-      - name: Ensure dirs
-        run: mkdir -p data assets/img site/assets/img site/data || true
-
-      - name: Restore cache (data & images)
+      - name: Cache pip
         uses: actions/cache@v4
         with:
-          path: |
-            data
-            assets/img
-            site/assets/img
-          key: bgg-data-v1-${{ hashFiles('data/bgg_ids.json') }}-${{ env.BGG_VERSIONS }}
-          restore-keys: |
-            bgg-data-v1-
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
 
-      - name: Resolve IDs (optional)
+      - name: Install deps (best-effort)
         run: |
-          if [ -f scripts/resolve_bgg.py ]; then
-            python -u scripts/resolve_bgg.py || true
-          fi
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt || true; fi
+          pip install requests lxml tenacity || true
 
-      - name: Plan fetch
-        id: plan
-        shell: python
+      # === 你的資料流程（保留可選步驟） ===
+      - name: Fetch BGG (optional)
+        if: ${{ hashFiles('scripts/fetch_bgg*.py') != '' }}
         run: |
-          import os, pathlib, hashlib, time
-          P = pathlib.Path
-          ids = P("data/bgg_ids.json")
-          out = P("data/bgg_data.json")
-          stamp = P("data/.bgg_stamp")
-          hfile = P("data/.bgg_ids.hash")
-          ttl_days = int(os.getenv("BGG_TTL_DAYS","7"))
-          force = os.getenv("FORCE_FETCH","0") == "1"
+          python -u scripts/fetch_bgg.py || true
 
-          def sha(p):
-            return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else ""
-
-          cur_hash = sha(ids)
-          prev_hash = hfile.read_text().strip() if hfile.exists() else ""
-          ids_changed = (cur_hash != prev_hash)
-
-          now = time.time()
-          if not out.exists():
-            need = True; reason = ["no_data"]
-          else:
-            base_time = stamp.stat().st_mtime if stamp.exists() else out.stat().st_mtime
-            age_days = (now - base_time)/86400
-            need = age_days > ttl_days
-            reason = [f"age={age_days:.2f}>ttl={ttl_days}"] if need else []
-
-          if ids_changed:
-            need = True; reason.append("ids_changed")
-          if force:
-            need = True; reason.append("forced")
-
-          print("need_fetch:", need, "reason:", "|".join(reason) or "none")
-          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-            f.write(f"do_fetch={'true' if need else 'false'}\n")
-            f.write(f"reason={'|'.join(reason) or 'none'}\n")
-
-      - name: Show fetch plan
+      - name: Apply taxonomy & price (optional)
         run: |
-          echo "do_fetch = ${{ steps.plan.outputs.do_fetch }}"
-          echo "reason   = ${{ steps.plan.outputs.reason }}"
+          if [ -f scripts/apply_taxonomy_and_price.py ]; then python -u scripts/apply_taxonomy_and_price.py; fi
+          if [ -f scripts/normalize_bgg_data.py ]; then python -u scripts/normalize_bgg_data.py; fi
+          if [ -f scripts/fetch_version_image.py ]; then python -u scripts/fetch_version_image.py; fi
 
-      - name: Fetch BGG (XML2)
-        if: steps.plan.outputs.do_fetch == 'true'
-        shell: bash
+      - name: Download images → assets/img
         run: |
-          python - <<'PY'
-          import os, time, json, random, pathlib, requests
-          from collections import OrderedDict
-          from lxml import etree
+          python -u scripts/download_images.py || true
 
-          IDS_FILE = pathlib.Path("data/bgg_ids.json")
-          OUT_FILE = pathlib.Path("data/bgg_data.json")
-          TMP_FILE = pathlib.Path("data/.bgg_data.tmp.json")
-
-          BATCH   = min(int(os.getenv("BGG_BATCH", "20")), 20)
-          SLEEP   = float(os.getenv("BGG_SLEEP", "6.0"))
-          RETRY   = int(os.getenv("BGG_RETRY", "6"))
-          JITTER  = float(os.getenv("BGG_JITTER", "0.8"))
-          VERSIONS= os.getenv("BGG_VERSIONS", "0")
-          HOSTS   = [h.strip() for h in os.getenv("BGG_HOSTS","boardgamegeek.com,api.geekdo.com").split(",")]
-          UA      = os.getenv("HTTP_UA", "PlayClass-BGG-Fetch/1.0")
-          AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE", "en-US,en;q=0.9")
-          TOKEN   = os.getenv("BGG_TOKEN","").strip()
-
-          # ---- robust id parser ----
-          def as_id(x):
-            if isinstance(x, int):
-              return x
-            if isinstance(x, str):
-              s = x.strip()
-              if s.isdigit():
-                return int(s)
-              try:
-                return int(float(s))
-              except Exception:
-                return None
-            if isinstance(x, dict):
-              for k in ("bgg_id","id","BGG ID","bggId","bggid","bgg","game_id"):
-                if k in x and x[k] is not None:
-                  try:
-                    return int(str(x[k]).strip())
-                  except Exception:
-                    pass
-            return None
-
-          def load_ids():
-            raw = json.loads(IDS_FILE.read_text(encoding="utf-8"))
-            ids = [as_id(it) for it in raw]
-            ids = [i for i in ids if i and i > 0]
-            # keep order, drop dups
-            ids = list(OrderedDict.fromkeys(ids).keys())
-            if not ids:
-              raise SystemExit("No valid BGG IDs parsed from data/bgg_ids.json")
-            print(f"IDs parsed: {len(ids)}")
-            return ids
-
-          def get_session():
-            s = requests.Session()
-            s.headers.update({
-              "User-Agent": UA,
-              "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
-              "Accept-Language": AC_LANG,
-              "Referer": "https://boardgamegeek.com/",
-              "Connection":"keep-alive",
-              "Cache-Control":"no-cache",
-              "Pragma":"no-cache",
-            })
-            if TOKEN:
-              s.headers["Authorization"] = f"Bearer {TOKEN}"
-            return s
-
-          def parse(xml_text: str):
-            root = etree.fromstring(xml_text.encode("utf-8"))
-            res = []
-            def aval(node, tag, to=int):
-              el = node.find(tag); v = el.get("value") if el is not None else None
-              try: return to(v) if v not in (None,"","0","N/A") else None
-              except: return None
-            def fnum(x, to=float):
-              try: return to(x) if x not in (None,"","N/A") else None
-              except: return None
-            for t in root.findall("./item"):
-              try: bid = int(t.get("id"))
-              except: continue
-              name_el = t.find("name[@type='primary']")
-              ratings = t.find("statistics/ratings")
-              aw = ratings.find("averageweight") if ratings is not None else None
-              ar = ratings.find("average") if ratings is not None else None
-              ab = ratings.find("bayesaverage") if ratings is not None else None
-              ur = ratings.find("usersrated") if ratings is not None else None
-              row = {
-                "id": bid,
-                "name": (name_el.get("value") if name_el is not None else None),
-                "year": aval(t,"yearpublished",int),
-                "minplayers": aval(t,"minplayers",int),
-                "maxplayers": aval(t,"maxplayers",int),
-                "minplaytime": aval(t,"minplaytime",int),
-                "maxplaytime": aval(t,"maxplaytime",int),
-                "weight": fnum(aw.get("value") if aw is not None else None),
-                "rating": fnum(ar.get("value") if ar is not None else None),
-                "rating_bayes": fnum(ab.get("value") if ab is not None else None),
-                "usersrated": (int(fnum(ur.get("value")) or 0) if ur is not None else None),
-                "image": (t.findtext("image") or "").strip(),
-                "thumbnail": (t.findtext("thumbnail") or "").strip(),
-                "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
-                "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
-                "source":"bgg",
-                "bgg_id": bid,
-                "image_url": (t.findtext("image") or "").strip() or (t.findtext("thumbnail") or "").strip(),
-                "thumb_url": (t.findtext("thumbnail") or "").strip() or (t.findtext("image") or "").strip(),
-              }
-              res.append(row)
-            return res
-
-          def fetch_batch(s, ids):
-            params = {
-              "stats":"1",
-              "versions": VERSIONS,
-              "type":"boardgame,boardgameexpansion",
-              "id":",".join(str(i) for i in ids)
-            }
-            for host in HOSTS:
-              url = f"https://{host}/xmlapi2/thing"
-              for k in range(RETRY):
-                try:
-                  r = s.get(url, params=params, timeout=60)
-                  if r.status_code == 200 and r.text.strip():
-                    return parse(r.text)
-                  if r.status_code in (202,401,403,429,500,502,503,504):
-                    time.sleep(SLEEP * (1 + random.random()*JITTER) * (1.6**k))
-                    continue
-                  time.sleep(2.0)
-                except Exception:
-                  time.sleep(2.0)
-            return None
-
-          def fetch_single(s, idv):
-            got = fetch_batch(s,[idv])
-            return got[0] if got else None
-
-          if not IDS_FILE.exists():
-            print("No data/bgg_ids.json; skip.")
-            raise SystemExit(0)
-
-          ids = load_ids()
-          s   = get_session()
-
-          old=[]
-          if OUT_FILE.exists():
-            try: old=json.loads(OUT_FILE.read_text(encoding="utf-8"))
-            except: old=[]
-          cache={int(x.get("bgg_id",x.get("id",0))):x for x in old if isinstance(x,dict)}
-
-          ok=[]
-          for i in range(0,len(ids),BATCH):
-            chunk=ids[i:i+BATCH]
-            got=fetch_batch(s,chunk)
-            if got is None:
-              for one in chunk:
-                it=fetch_single(s,one)
-                if it: ok.append(it)
-            else:
-              ok.extend(got)
-            time.sleep(SLEEP*(1+random.random()*JITTER))
-
-          merged={int(x.get("bgg_id",x.get("id",0))):x for x in ok if isinstance(x,dict)}
-          merged.update(cache)
-          final=list(merged.values())
-
-          TMP_FILE.parent.mkdir(parents=True,exist_ok=True)
-          TMP_FILE.write_text(json.dumps(final,ensure_ascii=False,indent=2),encoding="utf-8")
-          TMP_FILE.replace(OUT_FILE)
-          print(f"Fetched {len(ok)} new / total {len(final)} → {OUT_FILE}")
-          PY
-
-      - name: Apply taxonomy & price merge
-        run: python -u scripts/apply_taxonomy_and_price.py
-
-      - name: Normalize data & enrich (ranking)
+      - name: Build JSON (array) → site/data
         run: |
-          if [ -f scripts/normalize_bgg_data.py ]; then
-            python -u scripts/normalize_bgg_data.py
-          fi
+          python -u scripts/build_json.py
 
-      - name: Use version image if specified
+      - name: Publish games (safety fuse)
         run: |
-          if [ -f scripts/fetch_version_image.py ]; then
-            python -u scripts/fetch_version_image.py
-          fi
+          python -u scripts/publish_games.py || true
 
-      - name: Download & thumbnail images (best-effort)
-        run: |
-          if [ -f scripts/download_images.py ]; then
-            python -u scripts/download_images.py || true
-          fi
-
-      - name: Build final site JSON (full + site)
-        run: python -u scripts/build_json.py
-
-      - name: Publish site data (normalize image URLs)
-        run: |
-          if [ -f scripts/publish_games.py ]; then
-            python -u scripts/publish_games.py
-          fi
-
-      - name: Update cache markers
-        if: steps.plan.outputs.do_fetch == 'true'
-        shell: python
-        run: |
-          import pathlib, hashlib
-          ids = pathlib.Path("data/bgg_ids.json")
-          hfile = pathlib.Path("data/.bgg_ids.hash")
-          stamp = pathlib.Path("data/.bgg_stamp")
-          if ids.exists():
-            hfile.write_text(hashlib.sha256(ids.read_bytes()).hexdigest())
-          stamp.touch()
-
-      - name: Sync images into site
+      - name: Sync images into site/assets/img
         run: |
           mkdir -p site/assets/img
-          rsync -a --delete assets/img/ site/assets/img/ || true
-          echo "images_in_site=$(find site/assets/img -type f | wc -l)" | tee -a $GITHUB_STEP_SUMMARY
-          du -sh site || true
+          rsync -a --delete assets/img/ site/assets/img/
+          echo "synced images: $(ls -1 site/assets/img | wc -l)"
 
-      - name: Upload Pages Artifact
+      - name: Sanity check
+        run: |
+          test -s site/data/games.json || (echo "site/data/games.json missing" && exit 1)
+          jq 'type' site/data/games.json || true
+          echo "Top-5:" && jq '.[0:5] | map({id,name,image})' site/data/games.json || true
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site
+          path: site
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
