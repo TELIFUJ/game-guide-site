@@ -11,6 +11,9 @@ fetch_bgg.py
 - 解析分類、機制、中文名稱
 - 解析圖片
 - 完全相容 build_json.py 流程
+- 自動支援兩種 ID 格式：
+    1) [117814, 142239, ...]
+    2) [{"bgg_id":117814}, {"bgg_id":142239}]
 """
 
 import json
@@ -27,23 +30,25 @@ OUT_FILE = ROOT / "data" / "bgg_data.json"
 HOST = "https://boardgamegeek.com/xmlapi2"
 HEADERS = {"User-Agent": "BoardGameGuide-Fetch/1.0"}
 
+
 # ----------------------------------------------------
 # API 請求（帶 retry）
 # ----------------------------------------------------
 class BGGError(Exception):
     pass
 
+
 @retry(
     stop=stop_after_attempt(6),
     wait=wait_exponential(multiplier=1, min=1, max=10),
-    retry=retry_if_exception_type(BGGError)
+    retry=retry_if_exception_type(BGGError),
 )
 def bgg_request(ids):
     """呼叫 BGG XML2 /thing，帶 retry"""
     params = {
         "id": ",".join(str(i) for i in ids),
         "type": "boardgame,boardgameexpansion,boardgameaccessory",
-        "stats": 1
+        "stats": 1,
     }
 
     r = requests.get(f"{HOST}/thing", params=params, headers=HEADERS, timeout=20)
@@ -76,7 +81,7 @@ def parse_items(xml_text):
             val = n.get("value") or ""
             if ntype == "primary":
                 name = val
-            # 偵測中文：如果包含中文 unicode
+            # 偵測中文
             if any("\u4e00" <= ch <= "\u9fff" for ch in val):
                 name_zh = val
 
@@ -84,7 +89,8 @@ def parse_items(xml_text):
         year = int(year[0]) if year else None
 
         # Stats
-        stats = item.xpath("./statistics/ratings")[0] if item.xpath("./statistics/ratings") else None
+        stats = item.xpath("./statistics/ratings")
+        stats = stats[0] if stats else None
 
         if stats is not None:
             try:
@@ -127,21 +133,23 @@ def parse_items(xml_text):
         thumb = item.xpath("./thumbnail/text()")
         thumb = thumb[0] if thumb else None
 
-        items.append({
-            "bgg_id": gid,
-            "name": name,
-            "name_zh": name_zh,
-            "year": year,
-            "rating_bayes": rating_bayes,
-            "rating_avg": rating_avg,
-            "users_rated": users_rated,
-            "weight": weight,
-            "categories": categories,
-            "mechanisms": mechanisms,
-            "image": image,
-            "thumbnail": thumb,
-            "source": "bgg"
-        })
+        items.append(
+            {
+                "bgg_id": gid,
+                "name": name,
+                "name_zh": name_zh,
+                "year": year,
+                "rating_bayes": rating_bayes,
+                "rating_avg": rating_avg,
+                "users_rated": users_rated,
+                "weight": weight,
+                "categories": categories,
+                "mechanisms": mechanisms,
+                "image": image,
+                "thumbnail": thumb,
+                "source": "bgg",
+            }
+        )
 
     return items
 
@@ -154,30 +162,39 @@ def main():
         print(f"[ERROR] 找不到 bgg_ids.json：{IDS_FILE}")
         return
 
-    ids = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+    raw_ids = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+
+    # 自動處理兩種格式
+    if isinstance(raw_ids, list) and len(raw_ids) > 0:
+        if isinstance(raw_ids[0], dict) and "bgg_id" in raw_ids[0]:
+            ids = [x["bgg_id"] for x in raw_ids]
+        else:
+            ids = raw_ids
+    else:
+        print("[ERROR] bgg_ids.json 格式錯誤")
+        return
+
     print(f"Total BGG IDs: {len(ids)}")
 
     results = []
-
-    # 一次抓 50 筆（避免 429）
-    BATCH = 50
+    BATCH = 50  # 避免 429
 
     for i in range(0, len(ids), BATCH):
-        batch = ids[i: i+BATCH]
-        print(f"Fetching {i} ~ {i+len(batch)} ...")
+        batch = ids[i : i + BATCH]
+        print(f"Fetching {i} ~ {i + len(batch)} ...")
 
         try:
             xml = bgg_request(batch)
             items = parse_items(xml)
             results.extend(items)
-            time.sleep(1.2)  # 避免 429
+            time.sleep(1.2)  # 降低 429 風險
         except Exception as e:
             print("ERROR batch:", batch, e)
 
     # 輸出
     OUT_FILE.write_text(
         json.dumps(results, ensure_ascii=False, indent=2),
-        encoding="utf-8"
+        encoding="utf-8",
     )
 
     print(f"[OK] Write → {OUT_FILE} ({len(results)} items)")
