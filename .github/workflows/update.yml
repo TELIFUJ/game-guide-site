@@ -27,6 +27,7 @@ jobs:
       name: github-pages
 
     env:
+      # ---- BGG 抓取參數 ----
       BGG_HOSTS: boardgamegeek.com,api.geekdo.com
       BGG_BATCH: "20"
       BGG_SLEEP: "6.0"
@@ -36,8 +37,14 @@ jobs:
       HTTP_UA: "PlayClass-BGG-Fetch/1.0 (contact: you@example.com)"
       HTTP_ACCEPT_LANGUAGE: "en-US,en;q=0.9"
       BGG_TOKEN: ${{ secrets.BGG_TOKEN }}
+
+      # ---- Python 匯入路徑 ----
       PYTHONPATH: ${{ github.workspace }}
+
+      # ---- 抓取 TTL（天），7 表示 7 天內用快取 ----
       BGG_TTL_DAYS: "7"
+
+      # ---- 手動觸發時可強制抓取 ----
       FORCE_FETCH: ${{ github.event.inputs.force_fetch == 'true' && '1' || '0' }}
 
     steps:
@@ -55,7 +62,7 @@ jobs:
       - name: Ensure dirs
         run: mkdir -p data assets/img site/assets/img site/data || true
 
-      # ① 快取同時包含 assets/img（來源）與 site/assets/img（目標）
+      # 先恢復前次 data/ 與圖片，盡量避免重抓
       - name: Restore cache (data & images)
         uses: actions/cache@v4
         with:
@@ -73,29 +80,43 @@ jobs:
             python -u scripts/resolve_bgg.py || true
           fi
 
+      # 決策：是否需要重新抓取（bgg_ids 變更 或 超過 TTL 或 強制抓）
       - name: Plan fetch
         id: plan
         shell: python
         run: |
-          import os, json, pathlib, hashlib, time
+          import os, pathlib, hashlib, time
           P = pathlib.Path
           ids = P("data/bgg_ids.json")
           out = P("data/bgg_data.json")
-          stamp = P("data/.bgg_stamp")
-          hfile = P("data/.bgg_ids.hash")
+          stamp = P("data/.bgg_stamp")            # 上次成功抓取時間戳
+          hfile = P("data/.bgg_ids.hash")         # 上次 ids hash
           ttl_days = int(os.getenv("BGG_TTL_DAYS","7"))
           force = os.getenv("FORCE_FETCH","0") == "1"
-          def sha(p): return (p.read_bytes() and __import__("hashlib").sha256(p.read_bytes()).hexdigest()) if p.exists() else ""
-          cur_hash = sha(ids); prev_hash = hfile.read_text().strip() if hfile.exists() else ""
+
+          def sha(p):
+            return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else ""
+
+          cur_hash = sha(ids)
+          prev_hash = hfile.read_text().strip() if hfile.exists() else ""
           ids_changed = (cur_hash != prev_hash)
-          now=time.time()
+
+          now = time.time()
           if not out.exists():
-            need=True; reason=["no_data"]
+            need = True; reason = ["no_data"]
           else:
-            base = stamp.stat().st_mtime if stamp.exists() else out.stat().st_mtime
-            age = (now-base)/86400; need = age>ttl_days; reason=[f"age={age:.2f}>ttl={ttl_days}"] if need else []
-          if ids_changed: need=True; reason.append("ids_changed")
-          if force: need=True; reason.append("forced")
+            base_time = stamp.stat().st_mtime if stamp.exists() else out.stat().st_mtime
+            age_days = (now - base_time)/86400
+            need = age_days > ttl_days
+            reason = [f"age={age_days:.2f}>ttl={ttl_days}"] if need else []
+
+          if ids_changed:
+            need = True
+            reason.append("ids_changed")
+          if force:
+            need = True
+            reason.append("forced")
+
           print("need_fetch:", need, "reason:", "|".join(reason) or "none")
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
             f.write(f"do_fetch={'true' if need else 'false'}\n")
@@ -106,14 +127,176 @@ jobs:
           echo "do_fetch = ${{ steps.plan.outputs.do_fetch }}"
           echo "reason   = ${{ steps.plan.outputs.reason }}"
 
+      # ⚠️ Inline 抓取，避免找不到 scripts/fetch_bgg.py
       - name: Fetch BGG (XML2)
         if: steps.plan.outputs.do_fetch == 'true'
         shell: bash
         run: |
-          python -u scripts/fetch_bgg.py || true
+          python - <<'PY'
+          import os, time, json, random, pathlib, requests
+          from lxml import etree
+
+          IDS_FILE = pathlib.Path("data/bgg_ids.json")
+          OUT_FILE = pathlib.Path("data/bgg_data.json")
+          TMP_FILE = pathlib.Path("data/.bgg_data.tmp.json")
+
+          BATCH   = min(int(os.getenv("BGG_BATCH", "20")), 20)
+          SLEEP   = float(os.getenv("BGG_SLEEP", "6.0"))
+          RETRY   = int(os.getenv("BGG_RETRY", "6"))
+          JITTER  = float(os.getenv("BGG_JITTER", "0.8"))
+          VERSIONS= os.getenv("BGG_VERSIONS", "0")
+          HOSTS   = [h.strip() for h in os.getenv("BGG_HOSTS","boardgamegeek.com,api.geekdo.com").split(",")]
+          UA      = os.getenv("HTTP_UA", "PlayClass-BGG-Fetch/1.0")
+          AC_LANG = os.getenv("HTTP_ACCEPT_LANGUAGE", "en-US,en;q=0.9")
+          TOKEN   = os.getenv("BGG_TOKEN","").strip()
+
+          def load_ids():
+            data = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+            ids=[]
+            for x in data:
+              try:
+                ids.append(int(x["bgg_id"] if isinstance(x,dict) else x))
+              except Exception:
+                pass
+            return [i for i in ids if i>0]
+
+          def get_session():
+            s = requests.Session()
+            s.headers.update({
+              "User-Agent": UA,
+              "Accept": "application/xml,text/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": AC_LANG,
+              "Referer": "https://boardgamegeek.com/",
+              "Connection":"keep-alive",
+              "Cache-Control":"no-cache",
+              "Pragma":"no-cache",
+            })
+            if TOKEN:
+              s.headers["Authorization"] = f"Bearer {TOKEN}"
+            return s
+
+          def parse(xml_text: str):
+            root = etree.fromstring(xml_text.encode("utf-8"))
+            res = []
+
+            def aval(node, tag, to=int):
+              el = node.find(tag)
+              v = el.get("value") if el is not None else None
+              try:
+                return to(v) if v not in (None, "", "0", "N/A") else None
+              except Exception:
+                return None
+
+            def fnum(x, to=float):
+              try:
+                return to(x) if x not in (None,"","N/A") else None
+              except Exception:
+                return None
+
+            for t in root.findall("./item"):
+              try: bid = int(t.get("id"))
+              except Exception: continue
+
+              name_el = t.find("name[@type='primary']")
+              ratings = t.find("statistics/ratings")
+              aw = ratings.find("averageweight") if ratings is not None else None
+              ar = ratings.find("average") if ratings is not None else None
+              ab = ratings.find("bayesaverage") if ratings is not None else None
+              ur = ratings.find("usersrated") if ratings is not None else None
+
+              weight = fnum(aw.get("value") if aw is not None else None)
+              rating = fnum(ar.get("value") if ar is not None else None)
+              bayes  = fnum(ab.get("value") if ab is not None else None)
+              users  = fnum(ur.get("value") if ur is not None else None, to=float)
+
+              row = {
+                "id": bid,
+                "name": (name_el.get("value") if name_el is not None else None),
+                "year": aval(t,"yearpublished",int),
+                "minplayers": aval(t,"minplayers",int),
+                "maxplayers": aval(t,"maxplayers",int),
+                "minplaytime": aval(t,"minplaytime",int),
+                "maxplaytime": aval(t,"maxplaytime",int),
+                "weight": weight,
+                "rating": rating,
+                "rating_bayes": bayes,
+                "usersrated": (int(users) if users is not None else None),
+                "image": (t.findtext("image") or "").strip(),
+                "thumbnail": (t.findtext("thumbnail") or "").strip(),
+                "categories": [x.get("value") for x in t.findall("link[@type='boardgamecategory']")],
+                "mechanisms": [x.get("value") for x in t.findall("link[@type='boardgamemechanic']")],
+                "source":"bgg",
+                "bgg_id": bid,
+                "image_url": (t.findtext("image") or "").strip() or (t.findtext("thumbnail") or "").strip(),
+                "thumb_url": (t.findtext("thumbnail") or "").strip() or (t.findtext("image") or "").strip(),
+              }
+              res.append(row)
+            return res
+
+          def fetch_batch(s, ids):
+            params = {
+              "stats": "1",
+              "versions": VERSIONS,
+              "type": "boardgame,boardgameexpansion",
+              "id": ",".join(str(i) for i in ids)
+            }
+            for host in HOSTS:
+              url = f"https://{host}/xmlapi2/thing"
+              for k in range(RETRY):
+                try:
+                  r = s.get(url, params=params, timeout=60)
+                  if r.status_code == 200 and r.text.strip():
+                    return parse(r.text)
+                  if r.status_code in (202,401,403,429,500,502,503,504):
+                    time.sleep(SLEEP * (1 + random.random()*JITTER) * (1.6**k))
+                    continue
+                  time.sleep(2.0)
+                except Exception:
+                  time.sleep(2.0)
+            return None
+
+          def fetch_single(s, idv):
+            got = fetch_batch(s,[idv])
+            return got[0] if got else None
+
+          if not IDS_FILE.exists():
+            print("No data/bgg_ids.json; skip.")
+            raise SystemExit(0)
+
+          ids = load_ids()
+          s   = get_session()
+
+          old=[]
+          if OUT_FILE.exists():
+            try: old=json.loads(OUT_FILE.read_text(encoding="utf-8"))
+            except: old=[]
+          cache={int(x.get("bgg_id",x.get("id",0))):x for x in old if isinstance(x,dict)}
+
+          ok=[]
+          for i in range(0,len(ids),BATCH):
+            chunk=ids[i:i+BATCH]
+            got=fetch_batch(s,chunk)
+            if got is None:
+              for one in chunk:
+                it=fetch_single(s,one)
+                if it: ok.append(it)
+            else:
+              ok.extend(got)
+            time.sleep(SLEEP*(1+random.random()*JITTER))
+
+          merged={int(x.get("bgg_id",x.get("id",0))):x for x in ok if isinstance(x,dict)}
+          merged.update(cache)
+          final=list(merged.values())
+
+          TMP_FILE.parent.mkdir(parents=True,exist_ok=True)
+          TMP_FILE.write_text(json.dumps(final,ensure_ascii=False,indent=2),encoding="utf-8")
+          TMP_FILE.replace(OUT_FILE)
+          print(f"Fetched {len(ok)} new / total {len(final)} → {OUT_FILE}")
+          PY
 
       - name: Apply taxonomy & price merge
-        run: python -u scripts/apply_taxonomy_and_price.py
+        run: |
+          python -u scripts/apply_taxonomy_and_price.py
 
       - name: Normalize data & enrich (ranking)
         run: |
@@ -133,13 +316,6 @@ jobs:
             python -u scripts/download_images.py || true
           fi
 
-      # ② 關鍵：把 assets/img 同步到 site/assets/img（前端以相對路徑讀圖）
-      - name: Sync images into site
-        run: |
-          mkdir -p site/assets/img
-          rsync -a --delete assets/img/ site/assets/img/ || true
-          echo "images_in_site=$(find site/assets/img -type f | wc -l)"
-
       - name: Build final site JSON (full + site)
         run: python -u scripts/build_json.py
 
@@ -149,22 +325,28 @@ jobs:
             python -u scripts/publish_games.py
           fi
 
+      # 更新快取標記（ids hash + stamp）
       - name: Update cache markers
         if: steps.plan.outputs.do_fetch == 'true'
         shell: python
         run: |
           import pathlib, hashlib, time
-          ids=pathlib.Path("data/bgg_ids.json")
-          h=pathlib.Path("data/.bgg_ids.hash"); s=pathlib.Path("data/.bgg_stamp")
-          if ids.exists(): h.write_text(hashlib.sha256(ids.read_bytes()).hexdigest())
-          s.touch()
+          ids = pathlib.Path("data/bgg_ids.json")
+          hfile = pathlib.Path("data/.bgg_ids.hash")
+          stamp = pathlib.Path("data/.bgg_stamp")
+          if ids.exists():
+            hfile.write_text(hashlib.sha256(ids.read_bytes()).hexdigest())
+          stamp.touch()
 
-      # ③ 部署前檢查：大小＆檔數應顯著提升
-      - name: Sanity check site bundle
+      # 同步圖片到 site，並輸出數量指標
+      - name: Sync images into site
         run: |
+          mkdir -p site/assets/img
+          rsync -a --delete assets/img/ site/assets/img/ || true
+          echo "images_in_site=$(find site/assets/img -type f | wc -l)" | tee -a $GITHUB_STEP_SUMMARY
           du -sh site || true
-          echo "images_in_site=$(find site/assets/img -type f | wc -l)"
 
+      # 僅上傳 site/ 作為 Pages artifact
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
