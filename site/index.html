@@ -1,395 +1,551 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>桌遊導覽</title>
+<meta charset="UTF-8">
+<title>Board Game Guide</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<!-- 基本樣式：RWD、卡片、按鈕 -->
 <style>
-:root {
-  --max-width: 1200px;
-  --card-radius: 14px;
-  --chip-radius: 14px;
-  --bg: #fafafa;
-  --chip-bg: #eef2f7;
-  --chip-text: #333;
-  --border: #e0e0e0;
-  --shadow: rgba(0,0,0,0.1);
+/* ============================
+   全域色彩與變數
+============================ */
+:root{
+  --c-border:#1e90ff;
+  --c-muted:#6b7280;
+  --c-bg:#fafafa;
+  --chip-bg:#eef6ff;
+  --chip-active:#d9ebff;
+  --chip-active-border:#1e90ff;
+  --card-shadow:0 2px 6px rgba(0,0,0,0.08);
+  --w-max:1280px;
 }
 
-body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  background: var(--bg);
+/* ============================
+   Global
+============================ */
+body{
+  font:16px/1.5 system-ui, sans-serif;
+  margin:0;
+  background:var(--c-bg);
+  color:#1f2937;
+  padding-bottom:80px;
 }
 
-/* 主要容器 */
-.wrapper {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 12px;
+/* 容器限制 */
+.container{
+  width:100%;
+  max-width:var(--w-max);
+  margin:0 auto;
 }
 
-/* 搜尋區 + 篩選列 */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
+/* ============================
+   Header（搜尋列、下拉、排序）
+============================ */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--c-border);
+  padding:12px 16px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  position:sticky;
+  top:0;
+  z-index:20;
 }
 
-/* Input 與 Select 都統一設計 */
-.filters input,
-.filters select,
-button {
-  padding: 8px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  font-size: 14px;
+header input,
+header select,
+header button{
+  font:inherit;
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+  background:#fff;
 }
 
-button {
-  background: white;
-  cursor: pointer;
+header button{
+  color:var(--c-border);
+  border:1px solid var(--c-border);
+  cursor:pointer;
 }
-button:hover {
-  background: #f1f1f1;
-}
-
-/* 卡片區設定 */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+header button:hover{
+  background:var(--c-border);
+  color:#fff;
 }
 
-/* 卡片 */
-.card {
-  background: white;
-  border-radius: var(--card-radius);
-  border: 1px solid var(--border);
-  box-shadow: 0 2px 4px var(--shadow);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+/* ============================
+   Grid（遊戲卡片區）
+============================ */
+#GRID{
+  padding:16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:18px;
+  max-width:var(--w-max);
+  margin:0 auto;
 }
 
-/* 卡片圖片：自動比例裁切 */
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  background: #ddd;
+.card{
+  background:#fff;
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:0.15s;
+  cursor:pointer;
 }
 
-/* 卡片內容 */
-.card-body {
-  padding: 10px 14px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1;
+.card:hover{
+  border-color:var(--c-border);
+  box-shadow:var(--card-shadow);
 }
 
-/* 遊戲名稱 */
-.title {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
+/* 封面圖片（正方形） */
+.cover{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  background:#f3f4f6;
+  border-radius:10px;
 }
 
-/* 英文副標 */
-.subtitle {
-  font-size: 13px;
-  color: #666;
+/* 標題與副標 */
+.title{
+  font-size:18px;
+  font-weight:700;
+}
+.subtitle{
+  color:var(--c-muted);
+  font-size:14px;
 }
 
-/* Chips（分類與機制） */
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 4px;
+/* ============================
+   Chips（分類 / 機制）
+============================ */
+.chip{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:8px;
+  background:var(--chip-bg);
+  font-size:13px;
+  margin:2px;
+  border:1px solid transparent;
+  user-select:none;
 }
 
-.chip {
-  padding: 3px 8px;
-  background: var(--chip-bg);
-  color: var(--chip-text);
-  border-radius: var(--chip-radius);
-  font-size: 12px;
+.chip:hover{
+  background:var(--chip-active);
+  border-color:var(--chip-active-border);
+  cursor:pointer;
 }
 
-/* 二手價格 / 庫存 */
-.price-stock {
-  margin-top: auto;
-  font-size: 14px;
-  color: #333;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
+/* ============================
+   詳情視窗（Overlay + Panel）
+============================ */
+#DETAIL{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:none;
+  justify-content:center;
+  align-items:flex-start;
+  padding:20px;
+  z-index:50;
 }
 
-/* BGG 分數區 */
-.rating {
-  font-size: 14px;
-  font-weight: 600;
-  color: #3367d6;
+#DETAIL .panel{
+  background:#fff;
+  width:100%;
+  max-width:860px;
+  border-radius:12px;
+  padding:20px;
+  max-height:100%;
+  overflow:auto;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* 手機優化：卡片圖片略縮小高度 */
-@media(max-width: 600px){
-  .card img {
-    height: 150px;
+/* 詳情圖片 */
+.detail-img{
+  width:100%;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:14px;
+}
+
+/* RWD 微調 */
+@media (max-width:640px){
+  header{
+    padding:10px;
   }
-  .title {
-    font-size: 15px;
+  #GRID{
+    padding:10px;
+    gap:14px;
   }
-}
-
-/* 隨機預覽 modal */
-#previewModal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  z-index: 3000;
-}
-
-#previewModal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 12px black;
-}
-
-#previewClose {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 15px;
+  .card{
+    padding:10px;
+  }
+  #DETAIL .panel{
+    padding:14px;
+  }
 }
 </style>
+
 </head>
 <body>
 
-<div class="wrapper">
+<header>
+  <input id="Q" placeholder="搜尋：中文 / 英文 / 關鍵字">
+  <select id="CAT"></select>
+  <select id="MECH"></select>
+  <select id="SORT">
+    <option value="name_zh">按名稱（中文）</option>
+    <option value="rating_bayes">BGG Bayes</option>
+    <option value="rating_avg">玩家平均</option>
+    <option value="users_rated">評分人數</option>
+    <option value="weight">重量</option>
+    <option value="used_price_twd">二手價格</option>
+  </select>
+  <button id="RANDOM_BTN">隨機預覽</button>
+</header>
 
-  <!-- 搜尋與篩選區 -->
-  <div class="filters">
-    <input id="search" placeholder="搜尋：中文名 / EN / 關鍵字">
-    <select id="catSelect"><option value="">全部分類</option></select>
-    <select id="mechSelect"><option value="">全部機制</option></select>
+<div id="GRID"></div>
 
-    <select id="sortSelect">
-      <option value="name_zh">按名稱</option>
-      <option value="rating_bayes">BGG 榜分（貝葉斯）</option>
-      <option value="rating_avg">玩家平均分</option>
-      <option value="weight">重量</option>
-      <option value="used_price_twd">二手價格</option>
-    </select>
-
-    <button id="randomBtn">隨機預覽</button>
-  </div>
-
-  <!-- 卡片容器 -->
-  <div id="list" class="grid"></div>
-
-</div>
-
-<!-- 隨機預覽 modal -->
-<div id="previewModal">
-  <div id="previewClose">關閉</div>
-  <img id="previewImg">
+<!-- 詳情視窗 -->
+<div id="DETAIL">
+  <div class="panel" id="DETAIL_INNER"></div>
 </div>
 
 <script>
-/* ========== 全域變數 ========== */
+/* -------------------------------------------
+   以下開始 JS 主程式
+   Part 1 結束，Part 2 會從這裡接續
+-------------------------------------------- */
+/* ===============================
+   全域資料與輔助函式
+=============================== */
 let DATA = [];
-let UNIQUE_CATS = new Set();
-let UNIQUE_MECHS = new Set();
+let FILTER_CAT = "";
+let FILTER_MECH = "";
 
-/* ==========================================================
-   讀取 JSON
-========================================================== */
-async function loadData(){
-  try{
-    const res = await fetch("data/games.json");
-    DATA = await res.json();
+/* selector 快捷 */
+const $ = (sel) => document.querySelector(sel);
 
-    // 建立分類與機制（含中文）
-    DATA.forEach(g=>{
-      (g.categories_zh || g.categories || []).forEach(c=>UNIQUE_CATS.add(c));
-      (g.mechanisms_zh || g.mechanisms || []).forEach(m=>UNIQUE_MECHS.add(m));
-    });
+/* 文字比對（搜尋） */
+function textMatch(t, q){
+  if(!q) return true;
+  if(!t) return false;
+  q = q.toLowerCase();
+  return t.toLowerCase().includes(q);
+}
 
-    buildSelectors();
-    render();
-  }catch(e){
-    console.error(e);
-    document.getElementById("list").innerHTML =
-      "<p style='padding:20px'>資料載入失敗</p>";
+/* ===============================
+   產生分類 + 機制下拉
+=============================== */
+function buildOptions(){
+  const catSet = new Set();
+  const mechSet = new Set();
+
+  for(const g of DATA){
+    let cats = g.categories_zh || g.categories || [];
+    let mechs = g.mechanisms_zh || g.mechanisms || [];
+
+    for(const c of cats) catSet.add(c);
+    for(const m of mechs) mechSet.add(m);
   }
+
+  CAT.innerHTML =
+    `<option value="">全部分類</option>` +
+    [...catSet].sort().map(c =>
+      `<option value="${c}">${c}</option>`).join("");
+
+  MECH.innerHTML =
+    `<option value="">全部機制</option>` +
+    [...mechSet].sort().map(m =>
+      `<option value="${m}">${m}</option>`).join("");
 }
 
-
-/* ==========================================================
-   建立分類、機制選單（含中文）
-========================================================== */
-function buildSelectors(){
-  const catSelect = document.getElementById("catSelect");
-  const mechSelect = document.getElementById("mechSelect");
-
-  [...UNIQUE_CATS].sort().forEach(c=>{
-    let opt = document.createElement("option");
-    opt.value = c;
-    opt.textContent = c;
-    catSelect.appendChild(opt);
-  });
-
-  [...UNIQUE_MECHS].sort().forEach(m=>{
-    let opt = document.createElement("option");
-    opt.value = m;
-    opt.textContent = m;
-    mechSelect.appendChild(opt);
-  });
-}
-
-
-/* ==========================================================
-   主渲染：搜尋、篩選、排序 → 產生卡片
-========================================================== */
+/* ===============================
+   主渲染：產生卡片列表
+=============================== */
 function render(){
-  const kw = document.getElementById("search").value.trim().toLowerCase();
-  const cat = document.getElementById("catSelect").value;
-  const mech = document.getElementById("mechSelect").value;
-  const sortKey = document.getElementById("sortSelect").value;
+  let q = Q.value.trim();
 
-  let list = DATA.filter(g=>{
+  let list = DATA.filter(g => {
+    let okSearch =
+      textMatch(g.name_zh, q) ||
+      textMatch(g.name_en, q) ||
+      textMatch(g.name, q) ||
+      (g.search_keywords || []).some(k => textMatch(k, q));
 
-    // 搜尋：中文、英文、作者、分類、機制都能搜
-    let hit = false;
-    const text = `
-      ${g.name_zh||""}
-      ${g.name_en||g.name||""}
-      ${(g.categories_zh||g.categories||[]).join(" ")}
-      ${(g.mechanisms_zh||g.mechanisms||[]).join(" ")}
-    `.toLowerCase();
-    if(!kw || text.includes(kw)) hit = true;
-    if(!hit) return false;
+    if(!okSearch) return false;
 
-    // 分類
-    if(cat){
-      const cats = g.categories_zh || g.categories || [];
-      if(!cats.includes(cat)) return false;
+    if(FILTER_CAT){
+      let cats = g.categories_zh || g.categories || [];
+      if(!cats.includes(FILTER_CAT)) return false;
     }
 
-    // 機制
-    if(mech){
-      const mechs = g.mechanisms_zh || g.mechanisms || [];
-      if(!mechs.includes(mech)) return false;
+    if(FILTER_MECH){
+      let mechs = g.mechanisms_zh || g.mechanisms || [];
+      if(!mechs.includes(FILTER_MECH)) return false;
     }
 
     return true;
   });
 
-  // 排序
+  /* 排序 */
+  const key = SORT.value;
   list.sort((a,b)=>{
-    let A = a[sortKey] ?? 0;
-    let B = b[sortKey] ?? 0;
+    let A = a[key]; 
+    let B = b[key];
+    if(A == null) A = -999999;
+    if(B == null) B = -999999;
+
     if(typeof A === "string") A = A.toLowerCase();
     if(typeof B === "string") B = B.toLowerCase();
-    return A > B ? 1 : -1;
+
+    if(A > B) return 1;
+    if(A < B) return -1;
+    return 0;
   });
 
-  // 渲染
-  const box = document.getElementById("list");
-  box.innerHTML = list.map(g=>createCard(g)).join("");
+  GRID.innerHTML = list.map(g => cardHTML(g)).join("");
 }
 
-
-/* ==========================================================
-   卡片模板（含圖片、分類 Chips、BGG 分數、庫存、二手價）
-========================================================== */
-function createCard(g){
-  const img = g.image || g.thumbnail || "assets/img/noimg.png";
+/* ===============================
+   卡片 HTML
+=============================== */
+function cardHTML(g){
+  const img = g.image || g.thumbnail || "";
 
   const cats = (g.categories_zh || g.categories || [])
-    .map(c=>`<span class="chip">${c}</span>`).join("");
+    .map(c => `<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`).join("");
 
   const mechs = (g.mechanisms_zh || g.mechanisms || [])
-    .map(m=>`<span class="chip">${m}</span>`).join("");
+    .map(m => `<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
 
   return `
-  <div class="card">
-    <img src="${img}" onclick="openPreview('${img}')">
+  <div class="card" onclick="openDetail('${g.id}')">
+    <img class="cover" src="${img}" alt="">
+    <div class="title">${g.name_zh || g.name_en || g.name}</div>
+    <div class="subtitle">${g.name_en || ""}</div>
 
-    <div class="card-body">
-      <div class="title">${g.name_zh || g.name}</div>
-      <div class="subtitle">${g.name_en || ""}</div>
+    <div style="font-size:14px;color:#555;">
+      BGG：
+      <a href="${g.bgg_url || '#'}" target="_blank">前往頁面</a>
+    </div>
 
-      <div class="rating">BGG：${g.rating_bayes ?? "—"}</div>
+    <div>${cats}</div>
+    <div>${mechs}</div>
 
-      <div class="chips">${cats}${mechs}</div>
+    <div style="margin-top:6px;font-size:14px;">
+      評分：${fmt(g.rating_bayes)}（Bayes）
+    </div>
+    <div style="font-size:14px;">
+      玩家平均：${fmt(g.rating_avg)}　重度：${fmt(g.weight)}
+    </div>
 
-      <div class="price-stock">
-        <span>${g.used_price_twd ? "二手 $" + g.used_price_twd : ""}</span>
-        <span>${g.stock ? "庫存：" + g.stock : ""}</span>
-      </div>
+    <div style="font-size:14px;margin-top:4px;">
+      二手：${g.used_price_twd ? "NT$"+g.used_price_twd : "-"}
+    </div>
+    <div style="font-size:14px;">
+      庫存：${g.stock ?? 0}
     </div>
   </div>
   `;
 }
-/* ==========================================================
-   隨機預覽（從所有遊戲中抽 1 張圖）
-========================================================== */
-function openRandom(){
-  if(!DATA.length) return;
-  const g = DATA[Math.floor(Math.random()*DATA.length)];
-  const img = g.image || g.thumbnail || "assets/img/noimg.png";
-  openPreview(img);
+
+/* 數字格式化 */
+function fmt(v){
+  return (v == null) ? "-" : v;
 }
 
-/* 開啟預覽 Modal */
-function openPreview(src){
-  document.getElementById("previewImg").src = src;
-  document.getElementById("previewModal").style.display = "flex";
+/* ===============================
+   點擊 Chips → 套用過濾
+=============================== */
+function chipFilter(type, value, event){
+  event.stopPropagation();
+  if(type === "cat"){
+    FILTER_CAT = value;
+    CAT.value = value;
+  }else{
+    FILTER_MECH = value;
+    MECH.value = value;
+  }
+  render();
 }
 
-/* 關閉預覽 Modal */
-function closePreview(){
-  document.getElementById("previewModal").style.display = "none";
-}
-document.getElementById("previewClose").onclick = closePreview;
+/* ===============================
+   詳情視窗
+=============================== */
+function openDetail(id){
+  const g = DATA.find(x => x.id === id);
+  if(!g) return;
 
-/* 按下 ESC 關閉預覽 */
-document.addEventListener("keydown", e=>{
-  if(e.key === "Escape") closePreview();
+  DETAIL.style.display = "flex";
+
+  const cats = (g.categories_zh || g.categories || [])
+    .map(c => `<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`).join("");
+
+  const mechs = (g.mechanisms_zh || g.mechanisms || [])
+    .map(m => `<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
+
+  DETAIL_INNER.innerHTML = `
+    <button onclick="closeDetail()" style="float:right;margin-bottom:10px;">關閉</button>
+
+    <img class="detail-img" src="${g.image || g.thumbnail || ''}">
+    <h2>${g.name_zh || g.name_en || g.name}</h2>
+    <p>${g.name_en || ""}</p>
+
+    <p>BGG Bayes：${fmt(g.rating_bayes)}</p>
+    <p>玩家平均：${fmt(g.rating_avg)}</p>
+    <p>評分人數：${fmt(g.users_rated)}</p>
+    <p>重量：${fmt(g.weight)}</p>
+
+    <h3>分類</h3>
+    ${cats}
+
+    <h3>機制</h3>
+    ${mechs}
+
+    <h3>你可能也會喜歡</h3>
+    <div id="RECO"></div>
+  `;
+
+  buildRecommend(g);
+}
+
+function closeDetail(){
+  DETAIL.style.display = "none";
+}
+
+/* ===============================
+   推薦系統（基於分類 + 機制）
+=============================== */
+function buildRecommend(g){
+  const baseCats = new Set(g.categories_zh || g.categories || []);
+  const baseMechs = new Set(g.mechanisms_zh || g.mechanisms || []);
+
+  let scored = DATA.map(x => {
+    if(x.id === g.id) return null;
+
+    let score = 0;
+
+    (x.mechanisms_zh || x.mechanisms || [])
+      .forEach(m => { if(baseMechs.has(m)) score += 3; });
+
+    (x.categories_zh || x.categories || [])
+      .forEach(c => { if(baseCats.has(c)) score += 1; });
+
+    return {g:x, score};
+  })
+  .filter(x => x && x.score > 0)
+  .sort((a,b) => b.score - a.score)
+  .slice(0, 6);
+
+  RECO.innerHTML = scored.map(r => `
+    <div class="card" onclick="openDetail('${r.g.id}')">
+      <img class="cover" src="${r.g.image || r.g.thumbnail || ''}">
+      <div>${r.g.name_zh || r.g.name_en || r.g.name}</div>
+    </div>
+  `).join("");
+}
+
+/* ===============================
+   隨機預覽
+=============================== */
+RANDOM_BTN.addEventListener("click", ()=>{
+  if(DATA.length === 0) return;
+  const r = DATA[Math.floor(Math.random() * DATA.length)];
+  openDetail(r.id);
 });
 
+/* ===============================
+   事件綁定
+=============================== */
+Q.addEventListener("input", render);
+CAT.addEventListener("change", e=>{
+  FILTER_CAT = e.target.value;
+  render();
+});
+MECH.addEventListener("change", e=>{
+  FILTER_MECH = e.target.value;
+  render();
+});
+SORT.addEventListener("change", render);
 
-/* ==========================================================
-   搜尋 & 篩選 & 排序事件綁定
-========================================================== */
-document.getElementById("search").addEventListener("input", render);
-document.getElementById("catSelect").addEventListener("change", render);
-document.getElementById("mechSelect").addEventListener("change", render);
-document.getElementById("sortSelect").addEventListener("change", render);
-document.getElementById("randomBtn").addEventListener("click", openRandom);
+/* ===============================
+   JSON 載入（主資料來源）
+=============================== */
+async function loadData(){
+  try{
+    const res = await fetch("data/games.json");
+    DATA = await res.json();
+    buildOptions();
+    render();
+  }catch(err){
+    console.error("資料載入失敗：", err);
+  }
+}
 
-
-/* ==========================================================
-   啟動
-========================================================== */
 loadData();
+
+/* Part 2 結束，Part 3 會緊接在後面 */
+/* ===============================
+   RWD：自動縮放卡片、圖片避免過大
+=============================== */
+function applyRWD(){
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(c=>{
+    c.style.cursor = "pointer";
+  });
+
+  // 行動裝置：卡片變大、圖片比例改為 4:3
+  if(window.innerWidth < 640){
+    document.querySelectorAll(".cover").forEach(img=>{
+      img.style.aspectRatio = "4 / 3";
+      img.style.objectFit = "cover";
+    });
+
+    document.querySelector(".grid").style.gridTemplateColumns =
+      "repeat(auto-fill,minmax(180px,1fr))";
+  }else{
+    document.querySelectorAll(".cover").forEach(img=>{
+      img.style.aspectRatio = "1 / 1";
+      img.style.objectFit = "cover";
+    });
+
+    document.querySelector(".grid").style.gridTemplateColumns =
+      "repeat(auto-fill,minmax(260px,1fr))";
+  }
+}
+
+window.addEventListener("resize", ()=>applyRWD());
+window.addEventListener("load", ()=>applyRWD());
+
+/* ===============================
+   ESC 關閉詳情視窗
+=============================== */
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape"){
+    closeDetail();
+  }
+});
+
+/* ===============================
+   點擊背景關閉詳情
+=============================== */
+DETAIL.addEventListener("click", e=>{
+  if(e.target === DETAIL){
+    closeDetail();
+  }
+});
+
+/* ===============================
+   完成
+=============================== */
 </script>
 
 </body>
