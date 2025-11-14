@@ -1,203 +1,141 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-fetch_bgg.py
-最終穩定版（2025）
-抓取 BGG XML2 API → 產生 data/bgg_data.json
 
-特色：
-- 自動 retry（處理 429）
-- 解析分數：Bayes / Avg / UsersRated / Weight
-- 解析分類、機制、中文名稱
-- 解析圖片
-- 完全相容 build_json.py 流程
-- 自動支援兩種 ID 格式：
-    1) [117814, 142239, ...]
-    2) [{"bgg_id":117814}, {"bgg_id":142239}]
+"""
+fetch_bgg.py — Clean-Safe 版（2025）
+速度快、不中斷、log 乾淨
+抓不到的直接跳過，不 retry storm。
 """
 
-import json
-import time
-import pathlib
-import requests
+import json, time, pathlib, requests
 from lxml import etree
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 IDS_FILE = ROOT / "data" / "bgg_ids.json"
 OUT_FILE = ROOT / "data" / "bgg_data.json"
 
-HOST = "https://boardgamegeek.com/xmlapi2"
+HOST = "https://boardgamegeek.com/xmlapi2/thing"
 HEADERS = {"User-Agent": "BoardGameGuide-Fetch/1.0"}
 
-
-# ----------------------------------------------------
-# API 請求（帶 retry）
-# ----------------------------------------------------
-class BGGError(Exception):
-    pass
-
-
-@retry(
-    stop=stop_after_attempt(6),
-    wait=wait_exponential(multiplier=1, min=1, max=10),
-    retry=retry_if_exception_type(BGGError),
-)
-def bgg_request(ids):
-    """呼叫 BGG XML2 /thing，帶 retry"""
-    params = {
-        "id": ",".join(str(i) for i in ids),
-        "type": "boardgame,boardgameexpansion,boardgameaccessory",
-        "stats": 1,
-    }
-
-    r = requests.get(f"{HOST}/thing", params=params, headers=HEADERS, timeout=20)
-
-    if r.status_code == 429:
-        raise BGGError("BGG 429 Too Many Requests")
-
-    if r.status_code != 200:
-        raise BGGError(f"BGG HTTP {r.status_code}")
-
-    return r.text
+def safe_request(batch):
+    """乾淨的請求，不 retry storm，失敗就跳過"""
+    try:
+        r = requests.get(
+            HOST,
+            params={
+                "id": ",".join(str(i) for i in batch),
+                "stats": 1
+            },
+            headers=HEADERS,
+            timeout=12
+        )
+        if r.status_code != 200:
+            print("跳過 batch（HTTP）:", batch)
+            return None
+        return r.text
+    except Exception as e:
+        print("跳過 batch（例外）:", batch, e)
+        return None
 
 
-# ----------------------------------------------------
-# 解析 XML
-# ----------------------------------------------------
 def parse_items(xml_text):
-    """解析 BGG XML 回傳遊戲清單"""
+    """解析 XML"""
+    if not xml_text:
+        return []
+
+    out = []
     root = etree.fromstring(xml_text.encode("utf-8"))
-    items = []
 
     for item in root.xpath("//item"):
         gid = int(item.get("id"))
-
-        # 名稱（英文、中文）
         name = ""
         name_zh = None
+
         for n in item.xpath("./name"):
-            ntype = n.get("type")
             val = n.get("value") or ""
-            if ntype == "primary":
+            if n.get("type") == "primary":
                 name = val
-            # 偵測中文
-            if any("\u4e00" <= ch <= "\u9fff" for ch in val):
+            if any("\u4e00" <= c <= "\u9fff" for c in val):
                 name_zh = val
 
         year = item.xpath("./yearpublished/@value")
         year = int(year[0]) if year else None
 
-        # Stats
+        # stats
         stats = item.xpath("./statistics/ratings")
-        stats = stats[0] if stats else None
+        if stats:
+            stats = stats[0]
+            def getf(p):
+                try: return float(stats.xpath(p)[0])
+                except: return None
 
-        if stats is not None:
-            try:
-                rating_bayes = float(stats.xpath("./bayesaverage/@value")[0])
-            except:
-                rating_bayes = None
+            def geti(p):
+                try: return int(stats.xpath(p)[0])
+                except: return None
 
-            try:
-                rating_avg = float(stats.xpath("./average/@value")[0])
-            except:
-                rating_avg = None
-
-            try:
-                users_rated = int(stats.xpath("./usersrated/@value")[0])
-            except:
-                users_rated = None
-
-            try:
-                weight = float(stats.xpath("./averageweight/@value")[0])
-            except:
-                weight = None
+            rating_bayes = getf("./bayesaverage/@value")
+            rating_avg = getf("./average/@value")
+            users_rated = geti("./usersrated/@value")
+            weight = getf("./averageweight/@value")
         else:
             rating_bayes = rating_avg = users_rated = weight = None
 
-        # 分類 / 機制
-        categories = []
-        mechanisms = []
-        for link in item.xpath("./link"):
-            ltype = link.get("type")
-            val = link.get("value")
-            if ltype == "boardgamecategory":
-                categories.append(val)
-            elif ltype == "boardgamemechanic":
-                mechanisms.append(val)
+        # categories / mechanisms
+        categories = [l.get("value") for l in item.xpath("./link[@type='boardgamecategory']")]
+        mechanisms = [l.get("value") for l in item.xpath("./link[@type='boardgamemechanic']")]
 
-        # 圖片
-        image = item.xpath("./image/text()")
-        image = image[0] if image else None
+        # images
+        image = (item.xpath("./image/text()") or [None])[0]
+        thumb = (item.xpath("./thumbnail/text()") or [None])[0]
 
-        thumb = item.xpath("./thumbnail/text()")
-        thumb = thumb[0] if thumb else None
+        out.append({
+            "bgg_id": gid,
+            "name": name,
+            "name_zh": name_zh,
+            "year": year,
+            "rating_bayes": rating_bayes,
+            "rating_avg": rating_avg,
+            "users_rated": users_rated,
+            "weight": weight,
+            "categories": categories,
+            "mechanisms": mechanisms,
+            "image": image,
+            "thumbnail": thumb,
+            "source": "bgg"
+        })
 
-        items.append(
-            {
-                "bgg_id": gid,
-                "name": name,
-                "name_zh": name_zh,
-                "year": year,
-                "rating_bayes": rating_bayes,
-                "rating_avg": rating_avg,
-                "users_rated": users_rated,
-                "weight": weight,
-                "categories": categories,
-                "mechanisms": mechanisms,
-                "image": image,
-                "thumbnail": thumb,
-                "source": "bgg",
-            }
-        )
-
-    return items
+    return out
 
 
-# ----------------------------------------------------
-# 主程式
-# ----------------------------------------------------
 def main():
     if not IDS_FILE.exists():
-        print(f"[ERROR] 找不到 bgg_ids.json：{IDS_FILE}")
+        print("找不到 bgg_ids.json")
         return
 
-    raw_ids = json.loads(IDS_FILE.read_text(encoding="utf-8"))
+    raw = json.loads(IDS_FILE.read_text("utf-8"))
 
-    # 自動處理兩種格式
-    if isinstance(raw_ids, list) and len(raw_ids) > 0:
-        if isinstance(raw_ids[0], dict) and "bgg_id" in raw_ids[0]:
-            ids = [x["bgg_id"] for x in raw_ids]
-        else:
-            ids = raw_ids
-    else:
-        print("[ERROR] bgg_ids.json 格式錯誤")
-        return
+    # 取出所有數字 BGG ID
+    ids = []
+    for x in raw:
+        if isinstance(x, int):
+            ids.append(x)
+        elif isinstance(x, dict) and "bgg_id" in x:
+            ids.append(x["bgg_id"])
 
-    print(f"Total BGG IDs: {len(ids)}")
+    print("[OK] Valid BGG IDs:", len(ids))
 
     results = []
-    BATCH = 50  # 避免 429
+    BATCH = 10  # 小批次 → 不會卡
 
     for i in range(0, len(ids), BATCH):
-        batch = ids[i : i + BATCH]
-        print(f"Fetching {i} ~ {i + len(batch)} ...")
+        batch = ids[i:i+BATCH]
+        xml = safe_request(batch)
+        items = parse_items(xml)
+        results.extend(items)
+        time.sleep(0.8)
 
-        try:
-            xml = bgg_request(batch)
-            items = parse_items(xml)
-            results.extend(items)
-            time.sleep(1.2)  # 降低 429 風險
-        except Exception as e:
-            print("ERROR batch:", batch, e)
-
-    # 輸出
-    OUT_FILE.write_text(
-        json.dumps(results, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-
-    print(f"[OK] Write → {OUT_FILE} ({len(results)} items)")
+    OUT_FILE.write_text(json.dumps(results, ensure_ascii=False, indent=2), "utf-8")
+    print("[OK] Done → data/bgg_data.json")
 
 
 if __name__ == "__main__":

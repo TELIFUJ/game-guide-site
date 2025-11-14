@@ -1,104 +1,72 @@
-# scripts/apply_taxonomy_and_price.py
-import json, csv, pathlib
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+apply_taxonomy_and_price.py — 2025 最終穩定版
+合併 override.json → bgg_data.json
+補上價格 / 庫存 / 中文類別 / 搜尋關鍵字
+"""
+
+import json, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-INP  = DATA / "bgg_data.json"
-OUT  = DATA / "bgg_data.json"   # 覆寫回去
+BGG_FILE = ROOT / "data" / "bgg_data.json"
+OVERRIDE_FILE = ROOT / "data" / "override.json"
 
-MECH_CSV = DATA / "mechanism_map_zh.csv"
-CATE_CSV = DATA / "category_map_zh.csv"
-MANUAL_CSV = DATA / "manual.csv"
-PRICE_RULES = DATA / "price_rules.json"
+# ------------------------------------------------------
+# 載入 BGG 資料
+# ------------------------------------------------------
+if BGG_FILE.exists():
+    base_list = json.loads(BGG_FILE.read_text("utf-8"))
+    base = {g["bgg_id"]: g for g in base_list}
+else:
+    base = {}
 
-def load_map(path, en_keys, zh_keys):
-    if not path.exists(): return {}
-    with path.open(encoding="utf-8") as f:
-        rdr = csv.DictReader(f)
-        res = {}
-        for r in rdr:
-            en = None; zh = None
-            for k in en_keys:
-                if k in r and r[k]:
-                    en = r[k].strip()
-                    break
-            for k in zh_keys:
-                if k in r and r[k]:
-                    zh = r[k].strip()
-                    break
-            if en:
-                res[en.lower()] = zh or en
-        return res
+# ------------------------------------------------------
+# 載入 override（價格 / 庫存 / 中文分類）
+# ------------------------------------------------------
+if OVERRIDE_FILE.exists():
+    overrides = json.loads(OVERRIDE_FILE.read_text("utf-8"))
+else:
+    overrides = []
 
-def load_manual():
-    m = {}
-    if not MANUAL_CSV.exists(): return m
-    with MANUAL_CSV.open(encoding="utf-8") as f:
-        rdr = csv.DictReader(f)
-        for r in rdr:
-            try:
-                bid = int(str(r.get("bgg_id") or r.get("id") or "").strip())
-            except:
-                continue
-            m[bid] = {
-                "name_zh": r.get("name_zh") or r.get("zh"),
-                "image_override": r.get("image_override") or r.get("image"),
-                "price": r.get("price"),
-                "price_used": r.get("price_used") or r.get("price_second"),
-            }
-    return m
-
-def load_price_rules():
-    if PRICE_RULES.exists():
-        try:
-            return json.loads(PRICE_RULES.read_text(encoding="utf-8"))
-        except:
-            return {}
-    return {}
-
-mech_map = load_map(MECH_CSV, ["bgg_mechanism_en","mechanism_en","mechanism"], ["mechanism_zh","zh"])
-cate_map = load_map(CATE_CSV, ["bgg_category_en","category_en","category"], ["category_zh","zh"])
-manual = load_manual()
-price_rules = load_price_rules()
-
-rows = json.loads(INP.read_text(encoding="utf-8")) if INP.exists() else []
-out = []
-tax_count = 0; price_count = 0; override_count = 0
-
-for r in rows:
-    if not isinstance(r, dict): 
+for row in overrides:
+    gid = row.get("bgg_id")
+    if gid not in base:
         continue
-    bid = int(r.get("bgg_id") or r.get("id") or 0)
 
-    # 備份英文 → 轉中文（若有對照表）
-    cats_en = list(r.get("categories") or [])
-    mechs_en = list(r.get("mechanisms") or [])
-    r["categories_en"] = cats_en
-    r["mechanisms_en"] = mechs_en
-    cats_zh = [(cate_map.get(c.lower(), c) if isinstance(c,str) else c) for c in cats_en]
-    mechs_zh = [(mech_map.get(m.lower(), m) if isinstance(m,str) else m) for m in mechs_en]
-    if cats_zh != cats_en or mechs_zh != mechs_en:
-        tax_count += 1
-    # 直接覆蓋主欄位，前端無需修改即可顯示中文
-    r["categories"] = cats_zh
-    r["mechanisms"] = mechs_zh
+    g = base[gid]
 
-    # 手動覆寫
-    if bid in manual:
-        m = manual[bid]
-        if m.get("name_zh"): r["name_zh"] = m["name_zh"]
-        if m.get("image_override"): r["image_override"] = m["image_override"]
-        if m.get("price"): r["price"] = m["price"]
-        if m.get("price_used"): r["price_used"] = m["price_used"]
-        override_count += 1
+    for k in [
+        "name_zh", "price_msrp_twd", "price_twd", "used_price_twd",
+        "manual_override", "stock", "category_zh", "alias_zh",
+        "image_override", "bgg_url_override"
+    ]:
+        if row.get(k) not in [None, "", []]:
+            g[k] = row[k]
 
-    # 規則價（若有）
-    if price_rules:
-        p = price_rules.get(str(bid)) or price_rules.get(bid)
-        if isinstance(p, dict):
-            r.update(p); price_count += 1
+# ------------------------------------------------------
+# 建立搜尋關鍵字
+# ------------------------------------------------------
+for g in base.values():
+    keys = []
+    for k in ["name", "name_zh", "alias_zh"]:
+        if g.get(k):
+            keys.append(g[k])
 
-    out.append(r)
+    keys.extend(g.get("categories", []))
+    keys.extend(g.get("mechanisms", []))
 
-OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Merged taxonomy({tax_count}) price({price_count}) overrides({override_count}) → total {len(out)} → {OUT}")
+    if g.get("category_zh"):
+        keys.append(g["category_zh"])
+
+    g["search_keywords"] = keys
+
+# ------------------------------------------------------
+# 寫回去
+# ------------------------------------------------------
+BGG_FILE.write_text(
+    json.dumps(list(base.values()), ensure_ascii=False, indent=2),
+    "utf-8"
+)
+
+print("[OK] apply_taxonomy_and_price.py 完成")
