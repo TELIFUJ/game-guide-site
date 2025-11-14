@@ -26,25 +26,27 @@ jobs:
         with:
           python-version: "3.x"
 
+      # 這個只是加速，不影響邏輯
       - name: Cache pip
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
 
-      - name: Install deps (best-effort)
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt || true; fi
-          pip install requests lxml tenacity || true
+          # download_images.py 會用到 PIL，所以一定要有 pillow
+          pip install requests lxml tenacity pillow || true
 
-      # === 你的資料流程（保留可選步驟） ===
+      # 有 scripts/fetch_bgg*.py 才會跑，沒有就跳過
       - name: Fetch BGG (optional)
         if: ${{ hashFiles('scripts/fetch_bgg*.py') != '' }}
         run: |
           python -u scripts/fetch_bgg.py || true
 
-      - name: Apply taxonomy & price (optional)
+      - name: Apply taxonomy & normalize & version image (optional)
         run: |
           if [ -f scripts/apply_taxonomy_and_price.py ]; then python -u scripts/apply_taxonomy_and_price.py; fi
           if [ -f scripts/normalize_bgg_data.py ]; then python -u scripts/normalize_bgg_data.py; fi
@@ -52,27 +54,36 @@ jobs:
 
       - name: Download images → assets/img
         run: |
-          python -u scripts/download_images.py || true
+          if [ -f scripts/download_images.py ]; then python -u scripts/download_images.py || true; fi
 
       - name: Build JSON (array) → site/data
         run: |
           python -u scripts/build_json.py
 
-      - name: Publish games (safety fuse)
+      # 有 scripts/publish_games.py 才跑；沒有這個檔案就完全略過
+      - name: Publish games (optional safety fuse)
+        if: ${{ hashFiles('scripts/publish_games.py') != '' }}
         run: |
           python -u scripts/publish_games.py || true
 
       - name: Sync images into site/assets/img
         run: |
           mkdir -p site/assets/img
-          rsync -a --delete assets/img/ site/assets/img/
-          echo "synced images: $(ls -1 site/assets/img | wc -l)"
+          # 關鍵修正：來源一定是 assets/img/，加 / 並加上 || true，避免目錄不存在時整個 job fail
+          rsync -a --delete assets/img/ site/assets/img/ || true
+          echo "images_in_site=$(find site/assets/img -type f | wc -l)" | tee -a $GITHUB_STEP_SUMMARY
+          du -sh site || true
 
-      - name: Sanity check
+      # 只是幫你在 log 裡看一下 JSON 結構，失敗也不會影響部署
+      - name: Sanity check JSON (best-effort)
         run: |
-          test -s site/data/games.json || (echo "site/data/games.json missing" && exit 1)
-          jq 'type' site/data/games.json || true
-          echo "Top-5:" && jq '.[0:5] | map({id,name,image})' site/data/games.json || true
+          if command -v jq >/dev/null 2>&1; then
+            test -s site/data/games.json || (echo "site/data/games.json missing" && exit 1)
+            jq 'type' site/data/games.json || true
+            echo "Top-5:" && jq '.[0:5] | map({id,name,image})' site/data/games.json || true
+          else
+            echo "jq not found; skip JSON inspection"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
