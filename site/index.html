@@ -5,11 +5,14 @@
   <title>Board Game Guide</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-    :root{ --border:#e5e7eb; --muted:#6b7280; --bg:#fafafa; --chip-bg:#f8fafc; --chip-active:#eef2ff; --chip-active-b:#c7d2fe; }
+    :root{
+      --border:#e5e7eb; --muted:#6b7280; --bg:#fafafa;
+      --chip-bg:#f8fafc; --chip-active:#eef2ff; --chip-active-b:#c7d2fe;
+    }
     body{font:16px/1.5 system-ui;margin:20px;background:var(--bg);color:#222}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-    .card{position:relative;border:1px solid var(--border);padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);outline:none}
+    .card{position:relative;border:1px solid var(--border);padding:14px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04); outline:none; cursor:pointer}
     .card:focus-visible{box-shadow:0 0 0 3px #c7d2fe}
     .poster{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f3f4f6;border-radius:8px;display:block}
     .price{font-weight:700;margin-top:6px}
@@ -17,55 +20,79 @@
     input,select,label,button{font:inherit}
     input,select{padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
     .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
-    .chip{display:inline-block;font-size:12px;padding:3px 8px;border:1px solid var(--border);border-radius:999px;background:var(--chip-bg);cursor:pointer;user-select:none;text-decoration:none;color:inherit}
+    .chip{display:inline-block;font-size:12px;padding:3px 8px;border:1px solid var(--border);border-radius:999px;background:var(--chip-bg);color:inherit;text-decoration:none;cursor:pointer;user-select:none}
     .chip.active{background:var(--chip-active);border-color:var(--chip-active-b)}
     .muted{color:var(--muted)}
     .checkbox{display:flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid #d1d5db;border-radius:8px;background:#fff}
     .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
     .btn{padding:8px 12px;border:1px solid #d1d5db;border-radius:8px;background:#fff;cursor:pointer}
+    .btn:active{transform:translateY(1px)}
     .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .fav-btn{position:absolute;top:10px;right:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.06);cursor:pointer}
+    .fav-btn{position:absolute;top:10px;right:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;cursor:pointer}
     .fav-btn .star{font-size:22px;line-height:1}
+    .fav-btn:hover{ transform:scale(1.06); box-shadow:0 4px 14px rgba(0,0,0,.08) }
     .fav-btn.active{ background:#fff7cc; border-color:#facc15 }
     .pagination{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}
     .page-btn{padding:6px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer}
     .page-btn.active{background:#eef2ff;border-color:#c7d2fe}
     .page-btn:disabled{opacity:.5;cursor:not-allowed}
-    #focus{margin:16px 0 10px}
+
+    /* Focus + recommendations */
+    #focus{margin:16px 0 10px; display:none}
     .focus-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
     .focus-title{font-weight:700}
     .rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
     .reason{margin-top:6px;color:var(--muted);font-size:12px}
     .clear-link{margin-left:auto;color:#2563eb;background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:6px 10px;cursor:pointer}
+
+    /* rating / rank badges */
     .badge{display:inline-block;font-size:12px;padding:2px 6px;border:1px solid var(--border);border-radius:6px;background:#f3f4f6;margin-right:6px}
     .badge.rank{background:#eef2ff;border-color:#c7d2fe}
     .rating{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}
     .rating .score{font-weight:800}
+
+    /* Auto-complete */
     .ac-wrap{position:relative;display:inline-block}
     .ac-list{position:absolute;left:0;top:100%;z-index:1000;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08);margin-top:6px;max-height:320px;overflow:auto;min-width:260px;width:100%}
     .ac-item{padding:8px 10px;cursor:pointer;display:flex;gap:8px;align-items:center}
     .ac-item:hover{background:#f5f7ff}
     .ac-sub{font-size:12px;color:var(--muted)}
+
+    /* 隨機預覽：底部面板（dialog） */
     .modal{position:fixed;inset:0;display:none;z-index:1000;background:rgba(0,0,0,.35)}
     .modal[open]{display:block}
-    .sheet{ position:absolute;left:0;right:0;bottom:0;max-height:80vh;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.15);padding:12px;overflow:auto;outline:none; }
+    .sheet{
+      position:absolute;left:0;right:0;bottom:0;max-height:80vh;
+      background:#fff;border-radius:16px 16px 0 0;
+      box-shadow:0 -10px 30px rgba(0,0,0,.15);
+      padding:12px;overflow:auto;outline:none;
+    }
     .sheet-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
     .sheet-title{font-weight:700}
     .sheet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
     .sheet .chip{display:flex;align-items:center;gap:6px}
     .sheet .chip input{accent-color:#4f46e5}
     .mech-section-title{font-weight:700;font-size:14px;grid-column:1 / -1;}
+
+    /* 行動：頂部僅搜尋、底部工具列 */
     #activeChips{overflow:auto;white-space:nowrap}
     .mbar{display:none}
     @media (max-width:640px){
-      .filters{ position:sticky; top:0; z-index:50; background:var(--bg); padding:10px 0 6px; gap:8px; border-bottom:1px solid var(--border) }
+      .filters{
+        position:sticky; top:0; z-index:50; background:var(--bg);
+        padding:10px 0 6px; gap:8px; border-bottom:1px solid var(--border)
+      }
       #catSel,#mechSel,#pmin,#pmax,#inclUsed,#sort,#pageSize,#prev,#next,#dlCsv,#emailFav{display:none!important}
       .filters .ac-wrap{flex:1 1 100%; width:100%}
-      .mbar{ position:sticky; bottom:0; left:0; right:0; display:flex; gap:8px; align-items:center; justify-content:space-between; padding:8px; background:#fff; border-top:1px solid var(--border); z-index:60; box-shadow:0 -2px 10px rgba(0,0,0,.05); padding-bottom: calc(8px + env(safe-area-inset-bottom)) }
+      .mbar{
+        position:sticky; bottom:0; left:0; right:0;
+        display:flex; gap:8px; align-items:center; justify-content:space-between;
+        padding:8px; background:#fff; border-top:1px solid var(--border);
+        z-index:60; box-shadow:0 -2px 10px rgba(0,0,0,.05);
+        padding-bottom: calc(8px + env(safe-area-inset-bottom))
+      }
       .mbar .btn,.mbar select{flex:1 1 25%}
     }
-    .chips-wrap{margin:6px 0 8px}
-    .chips-title{font-size:12px;color:var(--muted);margin-right:6px}
   </style>
 </head>
 <body>
@@ -83,8 +110,8 @@
   <select id="catSel" aria-label="分類"><option value="">全部分類</option></select>
   <select id="mechSel" aria-label="機制"><option value="">全部機制</option></select>
 
-  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）" autocomplete="off" inputmode="numeric" spellcheck="false" aria-label="最低價（含二手）">
-  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）" autocomplete="off" inputmode="numeric" spellcheck="false" aria-label="最高價（含二手）">
+  <input id="pmin" name="pmin_no_autofill" type="number" placeholder="最低價（含二手）" inputmode="numeric" aria-label="最低價（含二手）">
+  <input id="pmax" name="pmax_no_autofill" type="number" placeholder="最高價（含二手）" inputmode="numeric" aria-label="最高價（含二手）">
 
   <label class="checkbox" for="inclUsed"><input type="checkbox" id="inclUsed"> 含二手價</label>
 
@@ -101,39 +128,37 @@
   </select>
 </form>
 
-<div class="chips-wrap">
-  <span class="chips-title">分類：</span><div id="chipsCat" class="chips" style="display:inline-flex"></div>
-</div>
-<div class="chips-wrap">
-  <span class="chips-title">機制：</span><div id="chipsMech" class="chips" style="display:inline-flex"></div>
-</div>
-
 <div id="activeChips" class="chips" aria-label="已選條件"></div>
 
 <div class="bar" role="toolbar" aria-label="工具列">
   <span id="stats" aria-live="polite">總數：0｜目前顯示：0｜收藏：0</span>
-  <div class="row">每頁
+
+  <div class="row">
+    每頁
     <select id="pageSize" aria-label="每頁筆數">
       <option>15</option><option>20</option><option>25</option><option selected>40</option>
     </select> 筆
   </div>
+
   <div class="row" aria-label="分頁控制">
     <button id="prev" class="btn" aria-label="上一頁">‹ 上一頁</button>
     <span id="pageInfo">第 1/1 頁</span>
     <button id="next" class="btn" aria-label="下一頁">下一頁 ›</button>
   </div>
+
   <label class="checkbox"><input type="checkbox" id="onlyFav"> 只看收藏</label>
   <label class="checkbox"><input type="checkbox" id="onlyDup"> 只看重複</label>
   <label class="checkbox"><input type="checkbox" id="hideDup" checked> 隱藏重複（自動合併）</label>
+
   <button id="openRandom" class="btn" type="button">隨機預覽 / 多選機制</button>
   <button id="dlCsv" class="btn">下載 CSV</button>
   <button id="emailFav" class="btn">Email 收藏清單</button>
 </div>
 
-<div id="focus" style="display:none">
+<div id="focus">
   <div class="focus-head">
     <div class="focus-title">🔎 已選：<span id="focus-name"></span></div>
-    <button id="clearFocus" class="clear-link">清除預覽</button>
+    <button id="clearFocus" class="clear-link" type="button">清除預覽</button>
   </div>
   <div id="focus-card" class="grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
   <div style="margin:10px 0 6px;font-weight:700">你可能也會喜歡</div>
@@ -141,12 +166,19 @@
 </div>
 
 <div id="pager" class="pagination" aria-label="pagination"></div>
+
 <div id="empty" class="card" style="display:none;padding:14px">
   <h3 style="margin:0 0 6px">目前無資料</h3>
-  <div class="muted">可能原因：資料尚未產生、網路問題、或 API 限流。</div>
+  <div class="muted">可能原因：資料尚未產生、網路問題、或 API 限流（BGG 401/403/429）。</div>
+  <div class="row" style="margin-top:10px">
+    <button id="retryLoad" class="btn" type="button">重新載入</button>
+    <button id="loadLocal" class="btn" type="button">載入本機 JSON</button>
+  </div>
+  <input id="localFile" type="file" accept="application/json" style="display:none">
 </div>
 
 <div id="grid" class="grid" aria-live="polite"></div>
+
 <div id="pager-bottom" class="pagination" aria-label="pagination"></div>
 
 <div id="mbar" class="mbar" aria-label="行動工具列">
@@ -166,22 +198,63 @@
   <button id="mClear" class="btn" type="button">重置</button>
 </div>
 
+<dialog id="randModal" class="modal" aria-hidden="true">
+  <div class="sheet" tabindex="-1">
+    <div class="sheet-head">
+      <div class="sheet-title">隨機預覽 / 多選機制</div>
+      <button id="randClose" class="btn" type="button">關閉</button>
+    </div>
+    <div class="row" style="margin-bottom:8px">
+      <input id="mechSearch" type="search" placeholder="搜尋機制..." style="flex:1">
+      <button id="randClear" class="btn" type="button">清除機制</button>
+      <button id="randPick" class="btn" type="button">重新隨機</button>
+      <button id="randApply" class="btn" type="button">套用條件</button>
+    </div>
+    <div id="mechMulti" class="sheet-grid" aria-label="多選機制"></div>
+    <div style="margin-top:12px">
+      <div class="sheet-title" style="margin-bottom:4px">隨機預覽結果</div>
+      <div id="randGrid" class="sheet-grid"></div>
+    </div>
+  </div>
+</dialog>
+
 <script>
-  // 防瀏覽器自動填入
+  // 防止瀏覽器自動填：name 動態化
   document.getElementById('q').setAttribute('name','q_'+Math.random().toString(36).slice(2));
 
-  // —— BASE：同時支援 /repo/ 與 /repo/site/ —— //
+  // —— Base / 路徑容錯：同時支援 /repo/ 與 /repo/site/，且嘗試 /data 與 /site/data —— //
   const BASE = (location.pathname.endsWith('/') ? location.pathname : location.pathname.replace(/[^/]+$/, ''));
+  const REPO_ROOT = (()=>{
+    const parts = location.pathname.split('/').filter(Boolean);
+    return parts.length ? ('/' + parts[0] + '/') : '/';
+  })();
   function absUrl(p){
     if(!p) return '';
     if(/^https?:\/\//i.test(p)) return p;
-    return BASE + String(p).replace(/^\/+/, '');
+    return (BASE + String(p).replace(/^\/+/, ''));
   }
+  const urlParam = new URL(location.href).searchParams.get('data');
+  const DATA_CANDIDATES = [
+    urlParam ? absUrl(urlParam) : null,
+    absUrl('data/games.json'),
+    REPO_ROOT + 'site/data/games.json',
+    REPO_ROOT + 'data/games.json'
+  ].filter(Boolean);
 
-  // 英→中備援映射（節錄）
-  const CAT_MAP={ "Abstract Strategy":"抽象策略","Adventure":"冒險","Animals":"動物","Card Game":"卡牌","Children's Game":"兒童","Economic":"經濟","Educational":"教育","Fantasy":"奇幻","Horror":"恐怖","Party Game":"派對","Puzzle":"益智／拼圖","Racing":"競速","Science Fiction":"科幻","Sports":"運動","Trains":"鐵道","Word Game":"字詞" };
-  const MECH_MAP={ "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動","Auction / Bidding":"競標","Bag Building":"布袋構築","Card Drafting":"選牌","Cooperative Game":"合作","Deck Construction":"牌庫構築","Dice Rolling":"擲骰","Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動","Network and Route Building":"路網建設","Negotiation":"談判","Pick-up and Deliver":"取貨運送","Press Your Luck":"碰運氣","Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動","Take That":"互害","Tile Placement":"板塊擺放","Trick-taking":"吃墩","Variable Player Powers":"角色能力","Worker Placement":"工人放置" };
+  // —— EN→ZH 映射（節錄） —— //
+  const CAT_MAP = { "Abstract Strategy":"抽象策略","Action / Dexterity":"動作／敏捷","Adventure":"冒險","Animals":"動物","Card Game":"卡牌","Children's Game":"兒童","City Building":"城市建設","Civilization":"文明","Deduction":"推理","Dice":"骰子","Economic":"經濟","Educational":"教育","Fantasy":"奇幻","Horror":"恐怖","Party Game":"派對","Puzzle":"益智／拼圖","Racing":"競速","Science Fiction":"科幻","Sports":"運動","Wargame":"戰棋","Word Game":"字詞" };
+  const MECH_MAP = {
+    "Action Points":"行動點","Area Majority / Influence":"區域控制","Area Movement":"區域移動","Auction / Bidding":"競標",
+    "Bag Building":"布袋構築","Card Drafting":"選牌","Cooperative Game":"合作","Deck Construction":"牌庫構築","Dice Rolling":"擲骰",
+    "End Game Bonuses":"終局加分","Grid Movement":"格子移動","Hand Management":"手牌管理","Hidden Movement":"隱藏移動",
+    "Modular Board":"模組化地圖","Network and Route Building":"路網建設","Negotiation":"談判","Open Drafting":"公開選牌",
+    "Pick-up and Deliver":"取貨運送","Press Your Luck":"碰運氣","Set Collection":"收集套組","Simultaneous Action Selection":"同時選擇行動",
+    "Tile Placement":"板塊擺放","Trading":"交易","Trick-taking":"吃墩","Variable Player Powers":"角色能力",
+    "Worker Placement":"工人放置","Worker Placement with Dice Workers":"骰子工人","Deck, Bag, and Pool Building":"卡／袋／池構築",
+    "Different Worker Types":"不同工種工人","Worker Placement, Different Worker Types":"多工種工人放置"
+  };
 
+  // —— DOM —— //
   const G = document.getElementById("grid"),
         Q = document.getElementById("q"),
         AC = document.getElementById("ac"),
@@ -210,38 +283,68 @@
         CLEAR_FOCUS = document.getElementById("clearFocus"),
         ACTIVE_CHIPS = document.getElementById("activeChips"),
         EMPTY = document.getElementById("empty"),
-        CHIPS_CAT = document.getElementById("chipsCat"),
-        CHIPS_MECH = document.getElementById("chipsMech");
+        RETRY_BTN = document.getElementById("retryLoad"),
+        LOADLOCAL_BTN = document.getElementById("loadLocal"),
+        LOCAL_FILE = document.getElementById("localFile");
 
   const MBAR = document.getElementById('mbar');
   const MSORT = document.getElementById('mSort');
+  const MFILTER = document.getElementById('mFilter');
+  const MRANDOM = document.getElementById('mRandom');
+  const MCLEAR  = document.getElementById('mClear');
 
+  const RAND = document.getElementById('randModal');
+  const RAND_CLOSE = document.getElementById('randClose');
+  const RAND_APPLY = document.getElementById('randApply');
+  const RAND_CLEAR = document.getElementById('randClear');
+  const RAND_PICK  = document.getElementById('randPick');
+  const RAND_GRID  = document.getElementById('randGrid');
+  const RAND_MECHS = document.getElementById('mechMulti');
+  const OPEN_RANDOM = document.getElementById('openRandom');
+  const MECH_SEARCH = document.getElementById('mechSearch');
+
+  // —— State —— //
   let DATA=[], page=1;
   const favKey = `bg_favs_${location.pathname.split('/')[1] || 'root'}`;
   const favs = new Set(JSON.parse(localStorage.getItem(favKey) || '[]'));
   function saveFavs(){ localStorage.setItem(favKey, JSON.stringify([...favs])); }
   function idOf(x){ return x.id || String(x.bgg_id || (x.name_zh||x.name_en)); }
 
+  // —— 同義鍵工具 —— //
+  const arr = v => Array.isArray(v) ? v : (v==null ? [] : [v]);
+  const num = v => (v==null||v==="") ? null : Number(v);
+  function usersRated(x){ return num(x.users_rated ?? x.usersrated); }
+  function ratingAvg(x){ return (typeof x.rating_avg === 'number') ? x.rating_avg : (typeof x.rating === 'number' ? x.rating : null); }
+  function ratingBayes(x){ return (typeof x.rating_bayes === 'number') ? x.rating_bayes : null; }
+
+  // 中文名存在優先
   const CJK_RE = /[\u4E00-\u9FFF\u3400-\u4DBF]/;
-  function hasZhName(x){ return CJK_RE.test(((x.name_zh||'')+' '+(x.name_en||''))); }
-
-  function normalizeSpace(s){ return String(s||"").replace(/\u00A0/g," ").replace(/\s+/g," ").trim(); }
-
-  function getCatsZh(x){
-    if (Array.isArray(x.categories_zh) && x.categories_zh.length) return x.categories_zh.slice(0,10);
-    const en = Array.isArray(x.categories) ? x.categories : [];
-    return en.map(s => CAT_MAP[normalizeSpace(s)] || normalizeSpace(s)).slice(0,10);
+  function hasZhName(x){
+    const s = (x.name_zh||'') + ' ' + (x.name_en||'');
+    return CJK_RE.test(s);
   }
-  function getMechsArr(x){
-    const cands = [x.mechanics_zh, x.mechanisms_zh, x.mechanics, x.mechanisms, x.mechs, x.mech];
-    for (const a of cands){ if (Array.isArray(a) && a.length) return a; }
-    return [];
+
+  // 分類/機制（支援 mechanisms / mechanics；*重點修正*）
+  function getCatsZh(x){
+    const en = Array.isArray(x.categories) ? x.categories : [];
+    return en.map(s => CAT_MAP[s] || s);
+  }
+  function getMechsEnRaw(x){
+    const m1 = Array.isArray(x.mechanisms) ? x.mechanisms : [];
+    const m2 = Array.isArray(x.mechanics)  ? x.mechanics  : [];
+    return m1.length ? m1 : m2;
   }
   function getMechsZh(x){
-    const raw = getMechsArr(x);
-    return [...new Set(raw.map(s => MECH_MAP[normalizeSpace(s)] || normalizeSpace(s)))];
+    if (Array.isArray(x.mechanics_zh) && x.mechanics_zh.length) return x.mechanics_zh.slice();
+    const en = getMechsEnRaw(x);
+    const normalize = s => (String(s||"").replace(/\u00A0/g," ").replace(/\s+/g," ").trim());
+    return [...new Set(en.map(s => {
+      const n = normalize(s);
+      return MECH_MAP[n] || n;
+    }))];
   }
 
+  // 價格 / 排序輔助
   function priceCandidates(x, includeUsed=true){
     const out=[]; if (x.price_twd!=null && x.price_twd!=="") out.push(Number(x.price_twd));
     if (includeUsed && x.used_price_twd!=null && x.used_price_twd!=="") out.push(Number(x.used_price_twd));
@@ -252,73 +355,66 @@
     return c.length? Math.min(...c) : Number.POSITIVE_INFINITY;
   }
 
-  function getRatingAvg(x){ return (typeof x.rating_avg === 'number') ? x.rating_avg : null; }
-  function getRatingBayes(x){ return (typeof x.rating_bayes === 'number') ? x.rating_bayes : null; }
-
-  function ratingBadges(x){
-    const parts=[];
-    const vb = getRatingBayes(x), va = getRatingAvg(x), ur = (typeof x.users_rated==='number')?x.users_rated:null;
-    if (vb!=null) parts.push(`<span class="badge"><b class="score">${vb.toFixed(2)}</b> Geek</span>`);
-    if (va!=null) parts.push(`<span class="badge"><b class="score">${va.toFixed(2)}</b> Avg</span>`);
-    if (ur!=null) parts.push(`<span class="badge">${ur} 人</span>`);
-    return parts.join('');
+  // 評分徽章（*重點修正*：支援 rating 與 rating_bayes）
+  function ratingBadgeHtml(x){
+    const va = ratingAvg(x), vb = ratingBayes(x), ur = usersRated(x);
+    const a = (va!=null) ? `<span class="badge"><b class="score">${va.toFixed(1)}</b>/10</span>` : '';
+    const b = (vb!=null) ? `<span class="badge">Geek ${vb.toFixed(1)}</span>` : '';
+    const u = (ur!=null) ? `<span class="badge">${ur} 評</span>` : '';
+    return a + b + u;
   }
 
-  function imageSrcOf(x){
-    const cand = [x.image_override, x.image_local, x.image_path, x.image, x.image_url, x.thumb, x.thumb_url, x.thumbnail_url]
-      .find(s => s && String(s).trim());
-    return absUrl(cand||'');
+  // 影像來源：嚴守「本地優先」並逐步回退；支援 onerror 連環回退
+  function imgCandidates(x){
+    const cand = [];
+    if (x.image_override) cand.push(x.image_override);
+    // 若 image 欄位就是相對路徑，視為本地
+    if (x.image && !/^https?:/i.test(x.image)) cand.push(x.image);
+    // 若有 image_local 類自訂欄位也納入（兼容）
+    if (x.image_local) cand.push(x.image_local);
+    // BGG 遠端
+    if (x.image_url) cand.push(x.image_url);
+    if (x.thumb_url) cand.push(x.thumb_url);
+    // 最後再嘗試 image（可能是遠端）
+    if (x.image && /^https?:/i.test(x.image)) cand.push(x.image);
+    return cand.filter(Boolean).map(absUrl);
   }
-  const SVG_FALLBACK = 'data:image/svg+xml;base64,' +
-    btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800"><rect width="100%" height="100%" fill="#e5e7eb"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#9ca3af" font-family="system-ui" font-size="28">No Image</text></svg>`);
+  function imgFallback(el){
+    const list = (el.dataset.srcs||'').split('|').filter(Boolean);
+    const cur = el.getAttribute('src');
+    const idx = list.indexOf(cur);
+    const next = list[idx+1];
+    if (next){ el.src = next; }
+    else { el.onerror=null; el.src='https://via.placeholder.com/800?text=No+Image'; }
+  }
 
-  function playersText(x){
-    const p = Array.isArray(x.players)? x.players : [];
-    if (p[0] && p[1]) return `${p[0]}–${p[1]}人`; return '';
+  // 搜尋/AC
+  function normText(s){
+    return (s||'').toLowerCase()
+      .replace(/桌遊|桌由|board ?game|bgg/g,'')
+      .replace(/[^\p{L}\p{N}]+/gu,'');
   }
-  function timeText(x){
-    const a = x.min_playtime ?? x.minplaytime;
-    const b = x.max_playtime ?? x.maxplaytime;
-    if (a && b) return `${a}–${b}分`; if (a) return `${a}分`; if (b) return `${b}分`; return '';
+  function bigrams(s){ const a=[...s]; const out=new Set(); for(let i=0;i<a.length-1;i++) out.add(a[i]+a[i+1]); return out; }
+  function jaccardSet(a,b){ if(!a.size&&!b.size) return 0; let inter=0; for(const x of a) if(b.has(x)) inter++; return inter/(a.size+b.size-inter); }
+  function lcsLen(a,b){ const m=a.length,n=b.length; const d=Array.from({length:m+1},()=>Array(n+1).fill(0)); for(let i=1;i<=m;i++){for(let j=1;j<=n;j++){d[i][j]=(a[i-1]===b[j-1])?d[i-1][j-1]+1:Math.max(d[i-1][j],d[i][j-1]);}} return d[m][n]; }
+  function nameScore(q, x){
+    const fields = [ x.name_zh||'', x.name_en||'', ...(x.aliases_zh||[]), ...arr(x.search_keywords).map(String) ];
+    const qn = normText(q);
+    let best=0;
+    for(const f of fields){
+      const fn = normText(f); if(!fn) continue;
+      let s=0;
+      if(fn.includes(qn)) s += 3;
+      if(qn.includes(fn) && fn.length>0) s += 2;
+      s += 2*jaccardSet(bigrams(fn), bigrams(qn));
+      s += (lcsLen(fn, qn) / Math.max(1, Math.max(fn.length, qn.length))) * 2;
+      best=Math.max(best,s);
+    }
+    return best;
   }
 
-  function cardHtml(x){
-    const cz = getCatsZh(x), mz = getMechsZh(x);
-    const imgSrc = imageSrcOf(x);
-    const id = idOf(x); const fav = favs.has(id);
-    const chosenCat = CAT.value, chosenMech = MECH.value;
-    const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
-    const rank = x.rank_overall; const ppl = playersText(x); const tminmax = timeText(x);
-    return `
-      <div class="card" data-id="${id}">
-        <button class="fav-btn ${fav?'active':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite"><span class="star">${fav?'⭐':'☆'}</span></button>
-        <img class="poster" loading="lazy" decoding="async" referrerpolicy="no-referrer" crossorigin="anonymous"
-             src="${imgSrc}" alt="${x.name_zh||x.name_en||''}"
-             onerror="this.onerror=null;this.src='${SVG_FALLBACK}'">
-        <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
-        ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
-        <div class="rating">
-          ${ratingBadges(x)}
-          ${rank? `<span class="badge rank">RANK #${rank}</span>`:''}
-          ${x.weight? `<span class="badge">策略強度 ${Number(x.weight).toFixed(2)}</span>`:''}
-          ${ppl? `<span class="badge">${ppl}</span>`:''}
-          ${tminmax? `<span class="badge">${tminmax}</span>`:''}
-        </div>
-        <div class="chips" aria-label="categories">
-          ${cz.map(t=>`<a href="#" class="chip cat" data-cat="${t}">${t===chosenCat?`<b>${t}</b>`:t}</a>`).join('')}
-        </div>
-        <div class="chips" aria-label="mechanics">
-          ${mz.map(t=>`<a href="#" class="chip mech ${t===chosenMech?'active':''}" data-mech="${t}">${t}</a>`).join('')}
-        </div>
-        <div class="price">
-          ${x.price_msrp_twd?`<small>新品參考價（未折）$${x.price_msrp_twd}</small><br>`:''}
-          ${x.price_twd?`$${x.price_twd}`:''}
-          ${x.used_price_twd?` ｜二手 $${x.used_price_twd}`:''}
-        </div>
-        ${x.stock?`<div><small>庫存：${x.stock}</small></div>`:''}
-        <div style="margin-top:6px"><a href="${link}" target="_blank" rel="nofollow noopener">BGG</a></div>
-      </div>`;
-  }
+  // 狀態 + 選單建置
+  let MECH_MULTI = new Set();
 
   function ensureOption(sel, text){
     if (![...sel.options].some(o=>o.value===text)){
@@ -326,23 +422,64 @@
     }
   }
 
+  function buildOptions(){
+    // 分類
+    const cCounts=new Map();
+    DATA.forEach(x=>getCatsZh(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
+    const catVal = CAT.value;
+    CAT.innerHTML='<option value="">全部分類</option>';
+    [...cCounts.entries()].sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .forEach(([n,cnt])=>{
+        const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; CAT.appendChild(o);
+      });
+    if (catVal && ![...CAT.options].some(o=>o.value===catVal)){
+      const o=document.createElement('option'); o.value=catVal; o.textContent=`${catVal} (0)`; CAT.appendChild(o);
+    }
+    CAT.value = catVal;
+
+    // 機制（*重點修正*：讀 mechanisms / mechanics）
+    const mCounts=new Map();
+    DATA.forEach(x=>getMechsZh(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
+    const mechVal = MECH.value;
+    MECH.innerHTML='<option value="">全部機制</option>';
+    [...mCounts.entries()].sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .forEach(([n,cnt])=>{
+        const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; MECH.appendChild(o);
+      });
+    if (mechVal && ![...MECH.options].some(o=>o.value===mechVal)){
+      const o=document.createElement('option'); o.value=mechVal; o.textContent=`${mechVal} (0)`; MECH.appendChild(o);
+    }
+    MECH.value = mechVal;
+  }
+
+  function clearMultiSelect(){
+    MECH_MULTI = new Set();
+    if (RAND_MECHS) RAND_MECHS.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.checked=false);
+    if (RAND_GRID) RAND_GRID.innerHTML='';
+  }
+
+  // 篩選核心
   function filteredBase({ignoreCat=false, ignoreMech=false}={}){
     let list = DATA.slice();
+
     const q = Q.value.trim().toLowerCase();
     if(q){
       list = list.filter(x=>{
-        const blob = [x.name_zh||"", x.name_en||"", ...(x.aliases_zh||[]), ...(x.search_keywords||[])].join(" ").toLowerCase();
+        const blob = [x.name_zh||"", x.name_en||"", ...(x.aliases_zh||[]), ...arr(x.search_keywords)].join(" ").toLowerCase();
         return blob.includes(q);
       });
     }
-    if(!ignoreCat){
-      const cSel = CAT.value;
-      if(cSel) list = list.filter(x => getCatsZh(x).includes(cSel));
+
+    if(!ignoreCat && CAT.value){
+      list = list.filter(x => getCatsZh(x).includes(CAT.value));
     }
-    if(!ignoreMech){
-      const mSel = MECH.value;
-      if(mSel) list = list.filter(x => getMechsZh(x).includes(mSel));
+    if(!ignoreMech && MECH.value){
+      list = list.filter(x => getMechsZh(x).includes(MECH.value));
     }
+    if (MECH_MULTI.size){
+      list = list.filter(x=> getMechsZh(x).some(m=>MECH_MULTI.has(m)));
+    }
+
     const includeUsed = INCL.checked;
     const pmin = Number(PMIN.value||0), pmax = Number(PMAX.value||0);
     if (pmin>0 || pmax>0){
@@ -352,76 +489,70 @@
         return cand.some(p => (pmin? p>=pmin : true) && (pmax? p<=pmax : true));
       });
     }
+    if (ONLYF.checked){
+      list = list.filter(x=>favs.has(idOf(x)));
+    }
+
+    if (HIDED.checked){
+      list = dedupList(list);
+    }
+    if (ONLY_DUP.checked){
+      if (!HIDED.checked) list = dedupList(list);
+      list = list.filter(x => x._variant_count > 1);
+    }
     return list;
   }
 
-  function buildChipsOverview(){
-    // 分類 chips（含筆數）
-    const listForCat = filteredBase({ignoreCat:true});
-    const cCounts=new Map();
-    listForCat.forEach(x=>getCatsZh(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
-    CHIPS_CAT.innerHTML = [...cCounts.entries()]
-      .sort((a,b)=>b[1]-a[1]).slice(0,30)
-      .map(([n,cnt])=>`<a href="#" class="chip" data-kind="cat" data-val="${n}">${n} <span class="muted">(${cnt})</span></a>`).join('');
-
-    // 機制 chips（含筆數）
-    const listForMech = filteredBase({ignoreMech:true});
-    const mCounts=new Map();
-    listForMech.forEach(x=>getMechsZh(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
-    CHIPS_MECH.innerHTML = [...mCounts.entries()]
-      .sort((a,b)=>b[1]-a[1]).slice(0,30)
-      .map(([n,cnt])=>`<a href="#" class="chip" data-kind="mech" data-val="${n}">${n} <span class="muted">(${cnt})</span></a>`).join('');
-
-    [CHIPS_CAT, CHIPS_MECH].forEach(container=>{
-      container.querySelectorAll('.chip').forEach(a=>{
-        a.onclick=(e)=>{
-          e.preventDefault();
-          const kind=a.dataset.kind, val=a.dataset.val;
-          if(kind==='cat'){ ensureOption(CAT,val); CAT.value=val; }
-          if(kind==='mech'){ ensureOption(MECH,val); MECH.value=val; }
-          page=1; buildOptions(); render(); window.scrollTo({top:0,behavior:'smooth'});
-        };
-      });
-    });
+  function normalizeImgUrl(s){
+    s = String(s||'').toLowerCase();
+    s = s.replace(/^https?:\/\/[^/]+/, '');
+    s = s.replace(/[?#].*$/, '');
+    return s;
+  }
+  function dupKey(x){
+    return [
+      x.bgg_id || '',
+      (x.name_zh || x.name_en || '').trim().toLowerCase(),
+      normalizeImgUrl(x.image_override || x.image || x.image_url || x.thumb_url || '')
+    ].join('|');
+  }
+  function isBetter(a,b){
+    const ao = !!a.image_override, bo = !!b.image_override;
+    if (ao !== bo) return ao;
+    const ap = a.price_twd ?? Infinity, bp = b.price_twd ?? Infinity;
+    if (ap !== bp) return ap < bp;
+    const as = a.stock ?? -1, bs = b.stock ?? -1;
+    if (as !== bs) return as > bs;
+    return false;
+  }
+  function dedupList(list){
+    const pick = new Map();
+    const counts = new Map();
+    for (const x of list){
+      const k = dupKey(x);
+      const cur = pick.get(k);
+      if (!cur || isBetter(x, cur)) pick.set(k, x);
+      counts.set(k, (counts.get(k)||0)+1);
+    }
+    const out = [];
+    for (const [k, x] of pick.entries()){
+      const clone = {...x};
+      clone._variant_count = counts.get(k)||1;
+      out.push(clone);
+    }
+    return out;
   }
 
-  function buildOptions(){
-    const listForCat = filteredBase({ignoreCat:true});
-    const cCounts=new Map();
-    listForCat.forEach(x=>getCatsZh(x).forEach(c=>cCounts.set(c,(cCounts.get(c)||0)+1)));
-    const catVal = CAT.value;
-    CAT.innerHTML='<option value="">全部分類</option>';
-    [...cCounts.entries()].sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant')).forEach(([n,cnt])=>{
-      const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; CAT.appendChild(o);
-    });
-    if (catVal && ![...CAT.options].some(o=>o.value===catVal)){ ensureOption(CAT, `${catVal}`); }
-    CAT.value = catVal;
-
-    const listForMech = filteredBase({ignoreMech:true});
-    const mCounts=new Map();
-    listForMech.forEach(x=>getMechsZh(x).forEach(m=>mCounts.set(m,(mCounts.get(m)||0)+1)));
-    const mechVal = MECH.value;
-    MECH.innerHTML='<option value="">全部機制</option>';
-    [...mCounts.entries()].sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant')).forEach(([n,cnt])=>{
-      const o=document.createElement('option'); o.value=n; o.textContent=`${n} (${cnt})`; MECH.appendChild(o);
-    });
-    if (mechVal && ![...MECH.options].some(o=>o.value===mechVal)){ ensureOption(MECH, `${mechVal}`); }
-    MECH.value = mechVal;
-
-    buildChipsOverview();
-  }
-
+  // 排序
   function compareWithChinesePriority(a,b, secondaryCmp){
     const z = (hasZhName(b) - hasZhName(a));
     if (z) return z;
-    const s = secondaryCmp(a,b);
-    if (s) return s;
-    const r1 = (getRatingBayes(b)??-1) - (getRatingBayes(a)??-1); if (r1) return r1;
-    const r2 = (getRatingAvg(b)??-1) - (getRatingAvg(a)??-1);     if (r2) return r2;
-    const r3 = (a.rank_overall??1e9) - (b.rank_overall??1e9);     if (r3) return r3;
+    const s = secondaryCmp(a,b); if (s) return s;
+    const r1 = (ratingBayes(b)??-1) - (ratingBayes(a)??-1); if (r1) return r1;
+    const r2 = (ratingAvg(b)??-1)  - (ratingAvg(a)??-1);  if (r2) return r2;
+    const r3 = (a.rank_overall??1e9) - (b.rank_overall??1e9); if (r3) return r3;
     return String((a.name_zh||a.name_en||'')).localeCompare((b.name_zh||b.name_en||''), 'zh-Hant');
   }
-
   function filtered(noPaging=false){
     let list = filteredBase();
     const includeUsedForSort = INCL.checked;
@@ -429,20 +560,94 @@
       "min_price_asc":  (a,b)=> minPrice(a, includeUsedForSort) - minPrice(b, includeUsedForSort),
       "min_price_desc": (a,b)=> minPrice(b, includeUsedForSort) - minPrice(a, includeUsedForSort),
       "price_asc":      (a,b)=> (a.price_twd??1e12) - (b.price_twd??1e12),
-      "price_desc":     (a,b)=> (b.price_twd??-1) - (a.price_twd??-1),
+      "price_desc":     (a,b)=> (b.price_twd??-1)    - (a.price_twd??-1),
+      "used_asc":       (a,b)=> (a.used_price_twd??1e12) - (b.used_price_twd??1e12),
+      "used_desc":      (a,b)=> (b.used_price_twd??-1)    - (a.used_price_twd??-1),
       "weight_asc":     (a,b)=> (a.weight??1e12) - (b.weight??1e12),
-      "weight_desc":     (a,b)=> (b.weight??-1) - (a.weight??-1),
-      "rating_avg_desc":(a,b)=> (getRatingAvg(b) ?? -1) - (getRatingAvg(a) ?? -1),
-      "rating_bayes_desc":(a,b)=> (getRatingBayes(b) ?? -1) - (getRatingBayes(a) ?? -1),
+      "weight_desc":    (a,b)=> (b.weight??-1)    - (a.weight??-1),
+      "rating_avg_desc":(a,b)=> (ratingAvg(b) ?? -1) - (ratingAvg(a) ?? -1),
+      "rating_bayes_desc":(a,b)=> (ratingBayes(b) ?? -1) - (ratingBayes(a) ?? -1),
       "":               (a,b)=> 0
     };
     const sec = cmpMap[S.value || ""];
     list.sort((a,b)=>compareWithChinesePriority(a,b, sec));
-    const total=list.length, ps = Number(PAGE_SIZE.value||40);
+
+    const total=list.length;
+    const ps = Number(PAGE_SIZE.value||40);
     const pages = Math.max(1, Math.ceil(total/ps));
     const start = (page-1)*ps, end = start+ps;
     const pageRows = noPaging ? list : list.slice(start,end);
     return {total, pages, pageRows, pagedAll:list};
+  }
+
+  // 卡片渲染
+  function playersText(x){
+    const p = Array.isArray(x.players)? x.players : [];
+    if (p[0] && p[1]) return `${p[0]}–${p[1]}人`;
+    return '';
+  }
+  function timeText(x){
+    const a = x.min_playtime ?? x.minplaytime;
+    const b = x.max_playtime ?? x.maxplaytime;
+    if (a && b) return `${a}–${b}分`;
+    if (a) return `${a}分`;
+    if (b) return `${b}分`;
+    return '';
+  }
+
+  function cardHtml(x){
+    const cz = getCatsZh(x);
+    const mz = getMechsZh(x);
+    const id = idOf(x);
+    const fav = favs.has(id);
+    const chosenCat = CAT.value, chosenMech = MECH.value;
+    const link = x.link_override || x.bgg_url_override || x.bgg_url || '#';
+    const rank = x.rank_overall;
+    const ppl = playersText(x);
+    const tminmax = timeText(x);
+    const srcs = imgCandidates(x);
+    const first = srcs[0] || 'https://via.placeholder.com/800?text=No+Image';
+
+    return `
+      <div class="card" data-id="${id}">
+        <button class="fav-btn ${fav?'active':''}" title="${fav?'取消收藏':'加入收藏'}" data-id="${id}" aria-label="favorite" type="button">
+          <span class="star">${fav?'⭐':'☆'}</span>
+        </button>
+
+        <img class="poster" loading="lazy" src="${first}" data-srcs="${srcs.join('|')}"
+             alt="${x.name_zh||x.name_en||''}" onerror="imgFallback(this)">
+
+        <h3 style="margin:.5rem 0 0">${x.name_zh||x.name_en||''}</h3>
+        ${x.name_en?`<div class="muted">${x.name_en}</div>`:''}
+
+        <div class="rating">
+          ${ratingBadgeHtml(x)}
+          ${rank? `<span class="badge rank">RANK #${rank}</span>`:''}
+          ${x.weight? `<span class="badge">策略強度 ${Number(x.weight).toFixed(2)}</span>`:''}
+          ${ppl? `<span class="badge">${ppl}</span>`:''}
+          ${tminmax? `<span class="badge">${tminmax}</span>`:''}
+        </div>
+
+        <div class="chips" aria-label="categories">
+          ${cz.slice(0,10).map(t=>`<a href="#" class="chip cat" data-cat="${t}">${t===chosenCat?`<b>${t}</b>`:t}</a>`).join('')}
+        </div>
+        <div class="chips" aria-label="mechanics">
+          ${mz.map(t=>`<a href="#" class="chip mech ${t===chosenMech?'active':''}" data-mech="${t}">${t}</a>`).join('')}
+        </div>
+
+        <div class="price">
+          ${x.price_msrp_twd?`<small>新品參考價（未折）$${x.price_msrp_twd}</small><br>`:''}
+          ${x.price_twd?`$${x.price_twd}`:''}
+          ${x.used_price_twd?` ｜二手 $${x.used_price_twd}`:''}
+        </div>
+        ${x._variant_count>1 ? `<div class="muted" style="margin-top:2px"><small>變體：${x._variant_count}</small></div>` : ''}
+        ${x.price_note?`<div class="muted" style="margin-top:4px">${x.price_note}</div>`:''}
+        ${x.used_note?`<div class="muted" style="margin-top:2px">${x.used_note}</div>`:''}
+
+        <div style="margin-top:6px">
+          <a href="${link}" target="_blank" rel="nofollow noopener">BGG</a>
+        </div>
+      </div>`;
   }
 
   function renderPagerInto(el, pages){
@@ -451,7 +656,8 @@
     const addBtn = (label, target, disabled=false, active=false)=>{
       const b=document.createElement('button');
       b.className='page-btn'+(active?' active':'' );
-      b.textContent=label; b.disabled=disabled;
+      b.textContent=label;
+      b.disabled=disabled;
       b.onclick=()=>{ if(!disabled){ page=target; render(); window.scrollTo({top:0,behavior:'smooth'}); } };
       el.appendChild(b);
     };
@@ -460,15 +666,37 @@
     let start = Math.max(1, page - Math.floor(MAX_LINKS/2));
     let end   = Math.min(pages, start + MAX_LINKS - 1);
     start     = Math.max(1, end - MAX_LINKS + 1);
-    for(let i=start;i<=end;i++){ addBtn(String(i), i, false, i===page); }
+    for(let i=start;i<=end;i++){
+      addBtn(String(i), i, false, i===page);
+    }
     addBtn('下 ›', Math.min(pages,page+1), page===pages);
     addBtn('末 »', pages, page===pages);
   }
 
   function renderActiveChips(){
     const chips = [];
-    if (CAT.value){ chips.push({k:'cat',text:`分類：${CAT.value}`,onClear:()=>{CAT.value=''; buildOptions(); render();}}); }
-    if (MECH.value){ chips.push({k:'mech',text:`機制：${MECH.value}`,onClear:()=>{MECH.value=''; buildOptions(); render();}}); }
+    if (CAT.value){
+      chips.push({k:'cat',text:`分類：${CAT.value}`,onClear:()=>{CAT.value=''; buildOptions(); render();}});
+    }
+    if (MECH.value){
+      chips.push({k:'mech',text:`機制：${MECH.value}`,onClear:()=>{MECH.value=''; buildOptions(); render();}});
+    }
+    if (MECH_MULTI && MECH_MULTI.size){
+      const list = [...MECH_MULTI];
+      const previewList = list.slice(0,3).join('／');
+      const more = (list.length > 3) ? `…+${list.length-3}` : '';
+      chips.push({k:'multi',text:`多機制：${previewList}${more}`,onClear:()=>{ clearMultiSelect(); render(); }});
+    }
+    if (INCL.checked){
+      chips.push({k:'used',text:'含二手價',onClear:()=>{INCL.checked=false; render();}});
+    }
+    if (PMIN.value || PMAX.value){
+      chips.push({k:'price',text:`價格${PMIN.value||''}–${PMAX.value||''}`,onClear:()=>{PMIN.value=''; PMAX.value=''; render();}});
+    }
+    if (ONLY_DUP.checked){
+      chips.push({k:'duponly',text:'只看重複',onClear:()=>{ONLY_DUP.checked=false; render();}});
+    }
+
     ACTIVE_CHIPS.innerHTML = chips.map(c=>`<a href="#" class="chip" data-k="${c.k}" role="button">${c.text} ×</a>`).join('');
     ACTIVE_CHIPS.querySelectorAll('.chip').forEach(el=>{
       el.addEventListener('click',(e)=>{ e.preventDefault(); const k=el.dataset.k; const item=chips.find(x=>x.k===k); if(item) item.onClear(); });
@@ -476,70 +704,300 @@
   }
 
   function render(){
-    const {total, pages, pageRows} = filtered(false);
-    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${(JSON.parse(localStorage.getItem('${favKey}')||'[]')).length}`;
+    const {total, pages, pageRows} = filtered();
+    STATS.textContent = `總數：${DATA.length}｜目前顯示：${total}｜收藏：${favs.size}`;
     PAGE_INFO.textContent = `第 ${page}/${pages} 頁`;
     renderPagerInto(PAGER_TOP, pages);
     renderPagerInto(PAGER_BOTTOM, pages);
     renderActiveChips();
     G.innerHTML = pageRows.map(cardHtml).join('');
 
-    // 收藏與 chips click
-    G.querySelectorAll('.fav-btn').forEach(btn=>{ btn.onclick = (e)=>{ e.preventDefault(); const id=btn.dataset.id; if(favs.has(id)) favs.delete(id); else favs.add(id); saveFavs(); render(); }; });
-    G.querySelectorAll('.chip.cat').forEach(a=>{ a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.cat; ensureOption(CAT, v); CAT.value=v; page=1; buildOptions(); render(); }; });
-    G.querySelectorAll('.chip.mech').forEach(a=>{ a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.mech; ensureOption(MECH, v); MECH.value=v; page=1; buildOptions(); render(); }; });
-
-    // 點卡片 → Focus + 推薦
+    // 綁定卡片互動：收藏、chips、點卡片進 Focus
+    G.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); e.stopPropagation(); const id=btn.dataset.id; if (favs.has(id)) favs.delete(id); else favs.add(id); saveFavs(); render(); };
+    });
+    G.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.cat; ensureOption(CAT,v); CAT.value=v; page=1; buildOptions(); render(); };
+    });
+    G.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.mech; ensureOption(MECH,v); MECH.value=v; page=1; buildOptions(); render(); };
+    });
     G.querySelectorAll('.card').forEach(c=>{
       c.addEventListener('click',(e)=>{
-        if (e.target.closest('.fav-btn') || e.target.closest('.chip') || e.target.tagName==='A') return;
-        const id = c.dataset.id; const item = DATA.find(x=>idOf(x)===id);
+        if (e.target.closest('.fav-btn') || e.target.closest('.chip') || e.target.closest('a')) return;
+        const id = c.dataset.id;
+        const item = DATA.find(x=>idOf(x)===id);
         if(item){ showFocus(item); window.scrollTo({top:0,behavior:'smooth'}); }
       });
     });
   }
 
+  function showFocus(seed){
+    FOCUS_NAME.textContent = seed.name_zh || seed.name_en || '';
+    FOCUS_CARD.innerHTML = cardHtml(seed);
+    const sims = similarFor(seed, 5);
+    const cards = sims.map(o=>{
+      const x=o.x;
+      const reasonBits=[];
+      if(o.commonM.length) reasonBits.push(`共通機制：${o.commonM.slice(0,3).join("、")}`);
+      if(o.commonC.length) reasonBits.push(`共通分類：${o.commonC.slice(0,3).join("、")}`);
+      const reason = reasonBits.length? `<div class="reason">${reasonBits.join("　")}</div>` : '';
+      return `<div>${cardHtml(x)}${reason}</div>`;
+    }).join('');
+    REC.innerHTML = cards;
+    FOCUS.style.display='block';
+
+    // 讓 Focus 區的元件也可互動
+    FOCUS.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); const id=btn.dataset.id; if (favs.has(id)) favs.delete(id); else favs.add(id); saveFavs(); render(); showFocus(seed); };
+    });
+    FOCUS.querySelectorAll('.chip.cat').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.cat; ensureOption(CAT, v); CAT.value=v; page=1; buildOptions(); render(); };
+    });
+    FOCUS.querySelectorAll('.chip.mech').forEach(a=>{
+      a.onclick=(e)=>{ e.preventDefault(); const v=a.dataset.mech; ensureOption(MECH, v); MECH.value=v; page=1; buildOptions(); render(); };
+    });
+    FOCUS.querySelectorAll('#rec .card').forEach(c=>{
+      c.addEventListener('click',(e)=>{
+        if (e.target.closest('.fav-btn') || e.target.closest('.chip') || e.target.closest('a')) return;
+        const id = c.dataset.id;
+        const item = DATA.find(x=>idOf(x)===id);
+        if(item){ showFocus(item); }
+      });
+    });
+  }
+  function clearFocus(resetQuery=true){
+    if(resetQuery){ Q.value=''; }
+    FOCUS.style.display='none';
+    FOCUS_CARD.innerHTML=''; REC.innerHTML='';
+    render();
+  }
+
+  function jaccard(aArr,bArr){ const A = new Set(aArr), B = new Set(bArr); if(!A.size && !B.size) return 0; let inter=0; for(const x of A) if(B.has(x)) inter++; return inter / (A.size + B.size - inter); }
+  function common(aArr,bArr){ const A=new Set(aArr); return bArr.filter(x=>A.has(x)); }
   function similarFor(seed, k=5){
     const seedM = getMechsZh(seed), seedC = getCatsZh(seed);
-    const A = new Set(seedM), B = new Set(seedC);
-    function jaccard(arr, set){ if(!arr.length && !set.size) return 0; let inter=0; arr.forEach(v=>{ if(set.has(v)) inter++; }); return inter/(arr.length+set.size-inter); }
-    const scored = DATA.filter(x=> idOf(x)!==idOf(seed)).map(x=>{
-      const m = getMechsZh(x), c = getCatsZh(x);
-      const s = 0.6*jaccard(m,A) + 0.4*jaccard(c,B);
-      return {x, s, cm: m.filter(v=>A.has(v)), cc: c.filter(v=>B.has(v))};
-    }).filter(o=>o.s>0).sort((a,b)=> b.s - a.s).slice(0,k);
-    return scored.length? scored : DATA.filter(x=>idOf(x)!==idOf(seed)).slice(0,k).map(x=>({x,s:0,cm:[],cc:[]}));
-  }
-  function showFocus(seed){
-    document.getElementById('focus-name').textContent = seed.name_zh || seed.name_en || '';
-    document.getElementById('focus-card').innerHTML = cardHtml(seed);
-    const sims = similarFor(seed, 5);
-    document.getElementById('rec').innerHTML = sims.map(o=>{
-      const reason = (o.cm.length||o.cc.length)? `<div class="reason">${o.cm.length?`共通機制：${o.cm.slice(0,3).join("、")}`:""} ${o.cc.length?`　共通分類：${o.cc.slice(0,3).join("、")}`:""}</div>`:'';
-      return `<div>${cardHtml(o.x)}${reason}</div>`;
-    }).join('');
-    document.getElementById('focus').style.display='block';
-  }
-  function clearFocus(){ document.getElementById('focus').style.display='none'; document.getElementById('focus-card').innerHTML=''; document.getElementById('rec').innerHTML=''; }
-
-  // 資料載入
-  const urlParam = new URL(location.href).searchParams.get('data');
-  const DATA_URLS = [ urlParam ? absUrl(urlParam) : null, absUrl('data/games.json') ].filter(Boolean);
-  (async ()=>{
-    for (const u of DATA_URLS){
-      try{ const r = await fetch(u, {cache:'no-cache'}); if(r.ok){ const d = await r.json(); if(Array.isArray(d)){ DATA=d; break; } } }catch(e){}
+    const scored = DATA
+      .filter(x=> idOf(x)!==idOf(seed))
+      .map(x=>{
+        const m = getMechsZh(x), c = getCatsZh(x);
+        const s = 0.6*jaccard(seedM,m) + 0.4*jaccard(seedC,c);
+        return {x, s, commonM: common(seedM,m), commonC: common(seedC,c)};
+      })
+      .filter(o=>o.s>0)
+      .sort((a,b)=> b.s - a.s);
+    if(scored.length===0){
+      const q = seed.name_zh || seed.name_en || '';
+      const byName = DATA
+        .filter(x=>idOf(x)!==idOf(seed))
+        .map(x=>({x, s:nameScore(q,x)/8, commonM:[], commonC:[]}))
+        .sort((a,b)=>b.s-a.s);
+      return byName.slice(0,k);
     }
-    if(!Array.isArray(DATA) || !DATA.length){ document.getElementById('empty').style.display='block'; return; }
-    buildOptions(); render();
+    return scored.slice(0,k);
+  }
+
+  // 隨機面板
+  function buildMechMultiSheet(){
+    if (!RAND_MECHS) return;
+    const counts = new Map();
+    DATA.forEach(x=>getMechsZh(x).forEach(m=>counts.set(m,(counts.get(m)||0)+1)));
+    const items = [...counts.entries()].sort((a,b)=> b[1]-a[1]);
+    const hot = items.slice(0,20);
+    const rest = items.slice(20).sort((a,b)=> a[0].localeCompare(b[0],'zh-Hant'));
+    function chipRow(m,c){
+      const checked = MECH_MULTI.has(m) ? 'checked' : '';
+      return `<label class="chip" style="cursor:pointer;"><input type="checkbox" value="${m}" ${checked}> ${m} <span class="muted">(${c})</span></label>`;
+    }
+    RAND_MECHS.innerHTML = `
+      <div class="mech-section-title">熱門機制（前20）</div>
+      ${hot.map(([m,c])=>chipRow(m,c)).join('')}
+      <div class="mech-section-title" style="margin-top:8px">全部機制</div>
+      ${rest.map(([m,c])=>chipRow(m,c)).join('')}
+    `;
+    RAND_MECHS.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+      cb.addEventListener('change',()=>{ if(cb.checked) MECH_MULTI.add(cb.value); else MECH_MULTI.delete(cb.value); });
+    });
+  }
+  function openRandom(autoPick=true, resetMulti=false){
+    if (resetMulti) clearMultiSelect();
+    buildMechMultiSheet();
+    RAND.setAttribute('open','');
+    RAND.setAttribute('aria-hidden','false');
+    const sheetEl = RAND.querySelector('.sheet'); if (sheetEl) sheetEl.focus({preventScroll:true});
+    if (autoPick) randomPick();
+  }
+  function closeRandom(){
+    RAND.removeAttribute('open');
+    RAND.setAttribute('aria-hidden','true');
+    if (RAND_GRID) RAND_GRID.innerHTML='';
+  }
+  function randomPick(){
+    const pool = filteredBase({ignoreMech:true});
+    if (!pool.length){
+      RAND_GRID.innerHTML = '<div class="muted" style="padding:12px;font-size:14px;">目前的篩選條件太嚴格，沒有可抽的遊戲。請先清除條件。</div>';
+      return;
+    }
+    const n = Math.min(12, pool.length);
+    const picks = [];
+    const used = new Set();
+    while(picks.length<n){
+      const i = Math.floor(Math.random()*pool.length);
+      if(!used.has(i)){ used.add(i); picks.push(pool[i]); }
+    }
+    RAND_GRID.innerHTML = picks.map(cardHtml).join('');
+    RAND_GRID.querySelectorAll('.fav-btn').forEach(btn=>{
+      btn.onclick = (e)=>{ e.preventDefault(); const id=btn.dataset.id; if (favs.has(id)) favs.delete(id); else favs.add(id); saveFavs(); render(); };
+    });
+    if (picks.length){ showFocus(picks[0]); }
+  }
+
+  // 事件綁定
+  document.getElementById('clearQ').addEventListener('click', ()=>{ Q.value=""; page=1; buildOptions(); render(); hideAC(); });
+  document.getElementById('resetAll').addEventListener('click', ()=>{ restoreInitial(); });
+  [Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=>{
+    el.addEventListener('input',()=>{ page=1; buildOptions(); render(); hideAC(); });
+  });
+  ONLYF.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
+  ONLY_DUP.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
+  HIDED.addEventListener('change', ()=>{ page=1; buildOptions(); render(); });
+  PREV.addEventListener('click', ()=>{ if(page>1){page--; render(); window.scrollTo({top:0,behavior:'smooth'});} });
+  NEXT.addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); window.scrollTo({top:0,behavior:'smooth'});} });
+  DLCSV.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); downloadCSV(pagedAll); });
+  EMAIL.addEventListener('click', ()=>{ const {pagedAll} = filtered(true); emailFavList(pagedAll); });
+  CLEAR_FOCUS.addEventListener('click', ()=>{ clearFocus(); });
+
+  if (MSORT) MSORT.addEventListener('change', ()=>{ S.value = MSORT.value; page=1; render(); });
+  S.addEventListener('change', ()=>{ if (MSORT) MSORT.value = S.value; });
+  if (MCLEAR) MCLEAR.addEventListener('click', restoreInitial);
+  if (MRANDOM) MRANDOM.addEventListener('click', ()=>{ openRandom(true,true); });
+  if (MFILTER) MFILTER.addEventListener('click', ()=>{ openRandom(false,false); });
+  if (OPEN_RANDOM) OPEN_RANDOM.addEventListener('click', ()=>{ openRandom(true,true); });
+
+  if (document.getElementById('mechSearch')) document.getElementById('mechSearch').addEventListener('input', ()=>{
+    const kw = MECH_SEARCH.value.trim().toLowerCase();
+    RAND_MECHS.querySelectorAll('label.chip').forEach(lbl=>{
+      const t = lbl.textContent.toLowerCase();
+      lbl.style.display = (kw && !t.includes(kw)) ? 'none' : '';
+    });
+  });
+  if (RAND_CLOSE) RAND_CLOSE.addEventListener('click', closeRandom);
+  if (RAND_CLEAR) RAND_CLEAR.addEventListener('click', ()=>{ clearMultiSelect(); buildMechMultiSheet(); });
+  if (RAND_APPLY) RAND_APPLY.addEventListener('click', ()=>{ if(!S.value){ S.value='rating_bayes_desc'; if (MSORT) MSORT.value=S.value; } closeRandom(); page=1; render(); });
+  if (RAND_PICK) RAND_PICK.addEventListener('click', randomPick);
+
+  // 匯出/Email
+  function downloadCSV(rows){
+    const headers = ["name_zh","name_en","categories_zh","mechanics_zh","price_twd","used_price_twd","stock","bgg_url"];
+    const lines = [headers.join(",")];
+    rows.forEach(x=>{
+      const vals = [
+        (x.name_zh||"").replace(/,/g,"，"),
+        (x.name_en||"").replace(/,/g," "),
+        (getCatsZh(x).join("/")).replace(/,/g,"／"),
+        (getMechsZh(x).join("/")).replace(/,/g,"／"),
+        x.price_twd??"", x.used_price_twd??"", x.stock??"", (x.link_override||x.bgg_url_override||x.bgg_url||"")
+      ];
+      lines.push(vals.join(","));
+    });
+    const blob = new Blob(["\ufeff"+lines.join("\n")], {type:"text/csv;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = "boardgames.csv"; a.click();
+    URL.revokeObjectURL(a.href);
+  }
+  function emailFavList(rows){
+    const body = rows.map((x,i)=>`${i+1}. ${x.name_zh||x.name_en||""}
+${x.name_en?`EN: ${x.name_en}\n`:""}分類：${getCatsZh(x).join(" / ")}
+機制：${getMechsZh(x).join(" / ")}
+價格：${x.price_twd??"-"}｜二手：${x.used_price_twd??"-"}
+連結：${x.link_override||x.bgg_url_override||x.bgg_url||""}\n`).join("\n");
+    const mailto = `mailto:?subject=${encodeURIComponent("收藏清單")}&body=${encodeURIComponent(body)}`;
+    location.href = mailto;
+  }
+
+  // AC
+  function hideAC(){ AC.style.display='none'; AC.innerHTML=''; }
+  function showAC(items){
+    if(!items.length){ hideAC(); return; }
+    AC.innerHTML = items.slice(0,8).map(it=>{
+      const sub = it.name_en ? `<span class="ac-sub">EN: ${it.name_en}</span>` : '';
+      return `<div class="ac-item" data-id="${idOf(it)}" role="option" tabindex="0"><div><div>${it.name_zh || it.name_en || ''}</div>${sub}</div></div>`;
+    }).join('');
+    AC.style.display='block';
+    AC.querySelectorAll('.ac-item').forEach(el=>{
+      el.onclick = ()=>{
+        const item = DATA.find(x=>idOf(x)===el.dataset.id);
+        if(item){ Q.value = item.name_zh || item.name_en || ''; hideAC(); page=1; buildOptions(); render(); showFocus(item); window.scrollTo({top:0,behavior:'smooth'}); }
+      };
+      el.addEventListener('keydown',(ev)=>{ if(ev.key==='Enter'){ ev.preventDefault(); el.click(); }});
+    });
+  }
+  function debounce(fn, ms){ let t=null; return function(...args){ clearTimeout(t); t=setTimeout(()=>fn.apply(this,args),ms);} }
+  const debouncedAC = debounce((q)=>{
+    if(!q){ hideAC(); return; }
+    const ranked = DATA.map(x=>[x,nameScore(q,x)]).filter(([x,s])=>s>0.15).sort((a,b)=>b[1]-a[1]).map(([x])=>x);
+    showAC(ranked);
+  }, 160);
+  Q.addEventListener('input', ()=>{
+    const q = Q.value.trim();
+    if(!q){ hideAC(); clearFocus(false); buildOptions(); render(); return; }
+    page=1; buildOptions(); render();
+    debouncedAC(q);
+  });
+  document.addEventListener('click', (e)=>{ if(!AC.contains(e.target) && e.target!==Q) hideAC(); });
+
+  // 初始化
+  function restoreInitial(){
+    Q.value=""; CAT.value=""; MECH.value="";
+    PMIN.value=""; PMAX.value=""; INCL.checked=false;
+    S.value=""; if (MSORT) MSORT.value=""; ONLYF.checked=false; ONLY_DUP.checked=false; HIDED.checked=true; PAGE_SIZE.value="40";
+    clearFocus(); clearMultiSelect();
+    buildOptions(); page=1; render(); hideAC();
+  }
+
+  async function loadFirstAvailable(urls){
+    for (const u of urls){
+      try{
+        const r = await fetch(u, {cache:'no-cache'});
+        if(!r.ok) continue;
+        const d = await r.json();
+        if (Array.isArray(d) && d.length>=0) return d;
+      }catch(e){}
+    }
+    throw new Error('All data sources failed');
+  }
+
+  (async ()=>{
+    try{
+      DATA = await loadFirstAvailable(DATA_CANDIDATES);
+      // 重設頁面狀態與選單
+      buildOptions();
+      const u = new URL(location.href);
+      const catQ = u.searchParams.get('cat'), mechQ = u.searchParams.get('mech'), pageQ = parseInt(u.searchParams.get('page')||'1',10);
+      if (catQ){ ensureOption(CAT, catQ); CAT.value=catQ; }
+      if (mechQ){ ensureOption(MECH, mechQ); MECH.value=mechQ; }
+      if (!Number.isNaN(pageQ) && pageQ>0) page = pageQ;
+      EMPTY.style.display = (Array.isArray(DATA) && DATA.length) ? 'none' : 'block';
+      render();
+      buildMechMultiSheet();
+    }catch(e){
+      console.error('Load data failed:', e);
+      EMPTY.style.display = 'block';
+      alert('無法載入資料來源（主檔與備援皆失敗）');
+    }
   })();
 
-  // 互動
-  document.getElementById('clearQ').addEventListener('click', ()=>{ Q.value=""; page=1; buildOptions(); render(); });
-  document.getElementById('resetAll').addEventListener('click', ()=>{ Q.value=""; CAT.value=""; MECH.value=""; PMIN.value=""; PMAX.value=""; INCL.checked=false; S.value=""; if (MSORT) MSORT.value=""; page=1; buildOptions(); render(); });
-  ;[Q,CAT,MECH,S,PMIN,PMAX,INCL,PAGE_SIZE].forEach(el=> el.addEventListener('input',()=>{ page=1; buildOptions(); render(); }));
-  document.getElementById('prev').addEventListener('click', ()=>{ const {pages}=filtered(); if(page>1){page--; render(); window.scrollTo({top:0,behavior:'smooth'});} });
-  document.getElementById('next').addEventListener('click', ()=>{ const {pages}=filtered(); if(page<pages){page++; render(); window.scrollTo({top:0,behavior:'smooth'});} });
-
+  // 重新載入／本機 JSON
+  RETRY_BTN.addEventListener('click', ()=>location.reload());
+  LOADLOCAL_BTN.addEventListener('click', ()=>LOCAL_FILE.click());
+  LOCAL_FILE.addEventListener('change', async (ev)=>{
+    const file = ev.target.files?.[0]; if(!file) return;
+    try{
+      const text = await file.text(); const json = JSON.parse(text);
+      if(!Array.isArray(json)){ alert('本機檔格式錯誤（需為陣列）'); return; }
+      DATA = json; page = 1; EMPTY.style.display = 'none'; buildOptions(); render(); buildMechMultiSheet(); window.scrollTo({top:0,behavior:'smooth'});
+    }catch(e){ console.error(e); alert('讀取本機 JSON 失敗'); }
+  });
 </script>
 </body>
 </html>
