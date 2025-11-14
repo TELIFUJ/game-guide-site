@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Board Game Guide</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
-/* ============================
-   全域色彩與變數
-============================ */
+/* ===============================
+   全域色彩變數與 RWD 基礎
+=============================== */
 :root{
   --c-border:#1e90ff;
   --c-muted:#6b7280;
@@ -20,9 +20,9 @@
   --w-max:1280px;
 }
 
-/* ============================
-   Global
-============================ */
+/* ===============================
+   GLOBAL
+=============================== */
 body{
   font:16px/1.5 system-ui, sans-serif;
   margin:0;
@@ -31,16 +31,15 @@ body{
   padding-bottom:80px;
 }
 
-/* 容器限制 */
 .container{
   width:100%;
   max-width:var(--w-max);
   margin:0 auto;
 }
 
-/* ============================
-   Header（搜尋列、下拉、排序）
-============================ */
+/* ===============================
+   HEADER（搜尋、篩選、排序、隨機）
+=============================== */
 header{
   background:#fff;
   border-bottom:1px solid var(--c-border);
@@ -74,9 +73,9 @@ header button:hover{
   color:#fff;
 }
 
-/* ============================
-   Grid（遊戲卡片區）
-============================ */
+/* ===============================
+   GRID（遊戲卡片區）
+=============================== */
 #GRID{
   padding:16px;
   display:grid;
@@ -103,7 +102,6 @@ header button:hover{
   box-shadow:var(--card-shadow);
 }
 
-/* 封面圖片（正方形） */
 .cover{
   width:100%;
   aspect-ratio:1/1;
@@ -112,19 +110,19 @@ header button:hover{
   border-radius:10px;
 }
 
-/* 標題與副標 */
 .title{
   font-size:18px;
   font-weight:700;
 }
+
 .subtitle{
   color:var(--c-muted);
   font-size:14px;
 }
 
-/* ============================
-   Chips（分類 / 機制）
-============================ */
+/* ===============================
+   CHIPS（分類 + 機制）
+=============================== */
 .chip{
   display:inline-block;
   padding:4px 8px;
@@ -142,9 +140,9 @@ header button:hover{
   cursor:pointer;
 }
 
-/* ============================
-   詳情視窗（Overlay + Panel）
-============================ */
+/* ===============================
+   詳情視窗
+=============================== */
 #DETAIL{
   position:fixed;
   inset:0;
@@ -167,7 +165,6 @@ header button:hover{
   box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* 詳情圖片 */
 .detail-img{
   width:100%;
   object-fit:cover;
@@ -175,31 +172,24 @@ header button:hover{
   margin-bottom:14px;
 }
 
-/* RWD 微調 */
+/* ===============================
+   RWD 微調
+=============================== */
 @media (max-width:640px){
-  header{
-    padding:10px;
-  }
-  #GRID{
-    padding:10px;
-    gap:14px;
-  }
-  .card{
-    padding:10px;
-  }
-  #DETAIL .panel{
-    padding:14px;
-  }
+  header{ padding:10px; }
+  #GRID{ padding:10px; gap:14px; }
+  .card{ padding:10px; }
+  #DETAIL .panel{ padding:14px; }
 }
 </style>
-
 </head>
 <body>
 
 <header>
-  <input id="Q" placeholder="搜尋：中文 / 英文 / 關鍵字">
+  <input id="Q" placeholder="搜尋：中文 / 英文 / 關鍵字" />
   <select id="CAT"></select>
   <select id="MECH"></select>
+
   <select id="SORT">
     <option value="name_zh">按名稱（中文）</option>
     <option value="rating_bayes">BGG Bayes</option>
@@ -208,9 +198,11 @@ header button:hover{
     <option value="weight">重量</option>
     <option value="used_price_twd">二手價格</option>
   </select>
+
   <button id="RANDOM_BTN">隨機預覽</button>
 </header>
 
+<!-- Cards -->
 <div id="GRID"></div>
 
 <!-- 詳情視窗 -->
@@ -219,62 +211,86 @@ header button:hover{
 </div>
 
 <script>
-/* -------------------------------------------
-   以下開始 JS 主程式
-   Part 1 結束，Part 2 會從這裡接續
--------------------------------------------- */
-/* ===============================
-   全域資料與輔助函式
-=============================== */
+/* ========================================================
+   Part 1 結束 — 以下 Part 2 / 3 會接續 JS 主程式
+======================================================== */
+/* ========================================================
+   全域變數
+======================================================== */
 let DATA = [];
 let FILTER_CAT = "";
 let FILTER_MECH = "";
+const $ = (s)=>document.querySelector(s);
 
-/* selector 快捷 */
-const $ = (sel) => document.querySelector(sel);
+/* ========================================================
+   BasePath 自動偵測 + JSON 載入
+   （確保 GitHub Pages /site/ or / 無論如何都能載到）
+======================================================== */
+async function loadData(){
+  const candidates = [
+    "data/games.json",
+    "./data/games.json",
+    "../data/games.json",
+    "site/data/games.json",
+    "./site/data/games.json"
+  ];
 
-/* 文字比對（搜尋） */
-function textMatch(t, q){
+  for(const url of candidates){
+    try{
+      const r = await fetch(url);
+      if(r.ok){
+        DATA = await r.json();
+        break;
+      }
+    }catch(e){}
+  }
+
+  buildOptions();
+  render();
+}
+
+/* ========================================================
+   工具：搜尋比對
+======================================================== */
+function textMatch(t,q){
   if(!q) return true;
   if(!t) return false;
   q = q.toLowerCase();
   return t.toLowerCase().includes(q);
 }
 
-/* ===============================
-   產生分類 + 機制下拉
-=============================== */
+/* ========================================================
+   下拉選單（分類 / 機制）
+======================================================== */
 function buildOptions(){
-  const catSet = new Set();
-  const mechSet = new Set();
+  const cat = new Set();
+  const mech = new Set();
 
   for(const g of DATA){
-    let cats = g.categories_zh || g.categories || [];
-    let mechs = g.mechanisms_zh || g.mechanisms || [];
-
-    for(const c of cats) catSet.add(c);
-    for(const m of mechs) mechSet.add(m);
+    (g.categories_zh || g.categories || []).forEach(c=>cat.add(c));
+    (g.mechanisms_zh || g.mechanisms || []).forEach(m=>mech.add(m));
   }
 
   CAT.innerHTML =
     `<option value="">全部分類</option>` +
-    [...catSet].sort().map(c =>
-      `<option value="${c}">${c}</option>`).join("");
+    [...cat].sort().map(c=>`<option value="${c}">${c}</option>`).join("");
 
   MECH.innerHTML =
     `<option value="">全部機制</option>` +
-    [...mechSet].sort().map(m =>
-      `<option value="${m}">${m}</option>`).join("");
+    [...mech].sort().map(m=>`<option value="${m}">${m}</option>`).join("");
 }
 
-/* ===============================
-   主渲染：產生卡片列表
-=============================== */
-function render(){
-  let q = Q.value.trim();
+/* ========================================================
+   主渲染：產生卡片
+======================================================== */
+function fmt(v){ return v==null ? "-" : v; }
 
+function render(){
+  const q = Q.value.trim();
+
+  // === 篩選 ===
   let list = DATA.filter(g => {
-    let okSearch =
+    const okSearch =
       textMatch(g.name_zh, q) ||
       textMatch(g.name_en, q) ||
       textMatch(g.name, q) ||
@@ -283,23 +299,22 @@ function render(){
     if(!okSearch) return false;
 
     if(FILTER_CAT){
-      let cats = g.categories_zh || g.categories || [];
+      const cats = g.categories_zh || g.categories || [];
       if(!cats.includes(FILTER_CAT)) return false;
     }
 
     if(FILTER_MECH){
-      let mechs = g.mechanisms_zh || g.mechanisms || [];
+      const mechs = g.mechanisms_zh || g.mechanisms || [];
       if(!mechs.includes(FILTER_MECH)) return false;
     }
 
     return true;
   });
 
-  /* 排序 */
+  // === 排序 ===
   const key = SORT.value;
-  list.sort((a,b)=>{
-    let A = a[key]; 
-    let B = b[key];
+  list.sort((a,b) => {
+    let A = a[key], B = b[key];
     if(A == null) A = -999999;
     if(B == null) B = -999999;
 
@@ -311,12 +326,13 @@ function render(){
     return 0;
   });
 
+  // === 渲染卡片 ===
   GRID.innerHTML = list.map(g => cardHTML(g)).join("");
 }
 
-/* ===============================
+/* ========================================================
    卡片 HTML
-=============================== */
+======================================================== */
 function cardHTML(g){
   const img = g.image || g.thumbnail || "";
 
@@ -328,45 +344,41 @@ function cardHTML(g){
 
   return `
   <div class="card" onclick="openDetail('${g.id}')">
-    <img class="cover" src="${img}" alt="">
+    <img class="cover" src="${img}"
+      onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+
     <div class="title">${g.name_zh || g.name_en || g.name}</div>
     <div class="subtitle">${g.name_en || ""}</div>
 
-    <div style="font-size:14px;color:#555;">
-      BGG：
-      <a href="${g.bgg_url || '#'}" target="_blank">前往頁面</a>
+    <div style="font-size:14px;color:#444;">
+      <b>Bayes</b>：${fmt(g.rating_bayes)}
+      ｜ <b>均分</b>：${fmt(g.rating_avg)}
+      ｜ <b>重度</b>：${fmt(g.weight)}
     </div>
 
     <div>${cats}</div>
     <div>${mechs}</div>
 
-    <div style="margin-top:6px;font-size:14px;">
-      評分：${fmt(g.rating_bayes)}（Bayes）
-    </div>
-    <div style="font-size:14px;">
-      玩家平均：${fmt(g.rating_avg)}　重度：${fmt(g.weight)}
-    </div>
-
-    <div style="font-size:14px;margin-top:4px;">
+    <div style="margin-top:4px;font-size:14px;">
       二手：${g.used_price_twd ? "NT$"+g.used_price_twd : "-"}
     </div>
     <div style="font-size:14px;">
       庫存：${g.stock ?? 0}
     </div>
+
+    <div style="margin-top:4px;font-size:13px;">
+      <a href="${g.bgg_url}" target="_blank">前往 BGG</a>
+    </div>
   </div>
   `;
 }
 
-/* 數字格式化 */
-function fmt(v){
-  return (v == null) ? "-" : v;
-}
-
-/* ===============================
-   點擊 Chips → 套用過濾
-=============================== */
+/* ========================================================
+   CHIPS 點擊 → 過濾
+======================================================== */
 function chipFilter(type, value, event){
   event.stopPropagation();
+
   if(type === "cat"){
     FILTER_CAT = value;
     CAT.value = value;
@@ -374,12 +386,14 @@ function chipFilter(type, value, event){
     FILTER_MECH = value;
     MECH.value = value;
   }
+
+  window.scrollTo({ top:0, behavior:"smooth" });
   render();
 }
 
-/* ===============================
-   詳情視窗
-=============================== */
+/* ========================================================
+   詳情視窗（open / close）
+======================================================== */
 function openDetail(id){
   const g = DATA.find(x => x.id === id);
   if(!g) return;
@@ -395,11 +409,13 @@ function openDetail(id){
   DETAIL_INNER.innerHTML = `
     <button onclick="closeDetail()" style="float:right;margin-bottom:10px;">關閉</button>
 
-    <img class="detail-img" src="${g.image || g.thumbnail || ''}">
+    <img class="detail-img" src="${g.image || g.thumbnail || ""}"
+      onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+
     <h2>${g.name_zh || g.name_en || g.name}</h2>
     <p>${g.name_en || ""}</p>
 
-    <p>BGG Bayes：${fmt(g.rating_bayes)}</p>
+    <p>Bayes：${fmt(g.rating_bayes)}</p>
     <p>玩家平均：${fmt(g.rating_avg)}</p>
     <p>評分人數：${fmt(g.users_rated)}</p>
     <p>重量：${fmt(g.weight)}</p>
@@ -420,10 +436,9 @@ function openDetail(id){
 function closeDetail(){
   DETAIL.style.display = "none";
 }
-
-/* ===============================
-   推薦系統（基於分類 + 機制）
-=============================== */
+/* ========================================================
+   推薦系統（重點：分類 + 機制交集 → 加權排序）
+======================================================== */
 function buildRecommend(g){
   const baseCats = new Set(g.categories_zh || g.categories || []);
   const baseMechs = new Set(g.mechanisms_zh || g.mechanisms || []);
@@ -433,119 +448,94 @@ function buildRecommend(g){
 
     let score = 0;
 
-    (x.mechanisms_zh || x.mechanisms || [])
-      .forEach(m => { if(baseMechs.has(m)) score += 3; });
+    // 機制匹配（權重較高）
+    (x.mechanisms_zh || x.mechanisms || []).forEach(m=>{
+      if(baseMechs.has(m)) score += 3;
+    });
 
-    (x.categories_zh || x.categories || [])
-      .forEach(c => { if(baseCats.has(c)) score += 1; });
+    // 分類匹配
+    (x.categories_zh || x.categories || []).forEach(c=>{
+      if(baseCats.has(c)) score += 1;
+    });
 
-    return {g:x, score};
+    return { g:x, score };
   })
   .filter(x => x && x.score > 0)
-  .sort((a,b) => b.score - a.score)
+  .sort((a,b)=> b.score - a.score)
   .slice(0, 6);
 
   RECO.innerHTML = scored.map(r => `
     <div class="card" onclick="openDetail('${r.g.id}')">
-      <img class="cover" src="${r.g.image || r.g.thumbnail || ''}">
+      <img class="cover" src="${r.g.image || r.g.thumbnail || ''}"
+        onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
       <div>${r.g.name_zh || r.g.name_en || r.g.name}</div>
     </div>
   `).join("");
 }
 
-/* ===============================
+/* ========================================================
    隨機預覽
-=============================== */
+======================================================== */
 RANDOM_BTN.addEventListener("click", ()=>{
   if(DATA.length === 0) return;
   const r = DATA[Math.floor(Math.random() * DATA.length)];
   openDetail(r.id);
 });
 
-/* ===============================
-   事件綁定
-=============================== */
-Q.addEventListener("input", render);
-CAT.addEventListener("change", e=>{
-  FILTER_CAT = e.target.value;
-  render();
-});
-MECH.addEventListener("change", e=>{
-  FILTER_MECH = e.target.value;
-  render();
-});
-SORT.addEventListener("change", render);
-
-/* ===============================
-   JSON 載入（主資料來源）
-=============================== */
-async function loadData(){
-  try{
-    const res = await fetch("data/games.json");
-    DATA = await res.json();
-    buildOptions();
-    render();
-  }catch(err){
-    console.error("資料載入失敗：", err);
-  }
-}
-
-loadData();
-
-/* Part 2 結束，Part 3 會緊接在後面 */
-/* ===============================
-   RWD：自動縮放卡片、圖片避免過大
-=============================== */
+/* ========================================================
+   RWD：自動調整卡片與圖片比例（手機用 4:3）
+======================================================== */
 function applyRWD(){
-  const cards = document.querySelectorAll(".card");
-  cards.forEach(c=>{
-    c.style.cursor = "pointer";
-  });
+  const grid = document.querySelector("#GRID");
 
-  // 行動裝置：卡片變大、圖片比例改為 4:3
   if(window.innerWidth < 640){
+    // 手機模式
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "4 / 3";
       img.style.objectFit = "cover";
     });
 
-    document.querySelector(".grid").style.gridTemplateColumns =
+    grid.style.gridTemplateColumns =
       "repeat(auto-fill,minmax(180px,1fr))";
+
   }else{
+    // 桌機模式
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "1 / 1";
       img.style.objectFit = "cover";
     });
 
-    document.querySelector(".grid").style.gridTemplateColumns =
+    grid.style.gridTemplateColumns =
       "repeat(auto-fill,minmax(260px,1fr))";
   }
 }
 
-window.addEventListener("resize", ()=>applyRWD());
-window.addEventListener("load", ()=>applyRWD());
+window.addEventListener("resize", applyRWD);
+window.addEventListener("load", applyRWD);
 
-/* ===============================
+/* ========================================================
    ESC 關閉詳情視窗
-=============================== */
+======================================================== */
 document.addEventListener("keydown", e=>{
   if(e.key === "Escape"){
     closeDetail();
   }
 });
 
-/* ===============================
-   點擊背景關閉詳情
-=============================== */
+/* ========================================================
+   點背景關閉詳情視窗
+======================================================== */
 DETAIL.addEventListener("click", e=>{
   if(e.target === DETAIL){
     closeDetail();
   }
 });
 
-/* ===============================
-   完成
-=============================== */
+/* ========================================================
+   初始化
+======================================================== */
+loadData();
+
 </script>
 
 </body>
