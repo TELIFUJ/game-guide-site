@@ -1,5 +1,5 @@
 # scripts/publish_games.py
-import json, pathlib, mimetypes, re
+import json, pathlib, glob
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -12,34 +12,51 @@ OUT = SITE / "games.json"
 rows = json.loads(INP.read_text(encoding="utf-8")) if INP.exists() else []
 SITE.parent.mkdir(parents=True, exist_ok=True)
 
+# 允許以下本地命名：
+# 1) image_override 指向本地相對路徑（非 http）
+# 2) 以 bgg_id 命名（12345.jpg / 12345.png / 12345.webp ...）
+# 3) 以 bgg_id 作為前綴（12345-xxxx.jpg / 12345_anything.jpeg ...）
 def local_image_path(r):
-    # 1) 指定覆寫檔名
     ov = (r.get("image_override") or "").strip()
-    if ov and not ov.lower().startswith(("http://","https://")):
+    if ov and not ov.lower().startswith(("http://", "https://")):
         p = IMG_DIR / ov
-        return f"assets/img/{ov}" if p.exists() else None
-    # 2) 以 bgg_id 命名的檔案（常見）
+        if p.exists():
+            return f"assets/img/{ov}"
+
     bid = r.get("bgg_id") or r.get("id")
-    for ext in (".jpg",".jpeg",".png",".webp"):
-        p = IMG_DIR / f"{bid}{ext}"
-        if p.exists(): return f"assets/img/{bid}{ext}"
-    # 3) 若覆寫是 URL → 不視為本地
+    if not bid:
+        return None
+    # 完整比對：12345.*
+    for p in IMG_DIR.glob(f"{bid}.*"):
+        if p.is_file():
+            return f"assets/img/{p.name}"
+    # 前綴比對：12345-*.*
+    for p in IMG_DIR.glob(f"{bid}-*.*"):
+        if p.is_file():
+            return f"assets/img/{p.name}"
     return None
 
 out = []
-normalized = 0; missing = 0
+normalized = 0
+missing = 0
+
 for r in rows:
-    if not isinstance(r, dict): 
+    if not isinstance(r, dict):
         continue
-    img = local_image_path(r)
-    remote = r.get("image") or r.get("image_url") or r.get("thumbnail") or r.get("thumb_url")
-    if img:
+
+    img_local = local_image_path(r)
+    img_remote = (
+        r.get("image")
+        or r.get("image_url")
+        or r.get("thumbnail")
+        or r.get("thumb_url")
+        or ""
+    )
+
+    display_image = img_local or img_remote
+    if img_local:
         normalized += 1
-        display_image = img
-    elif remote:
-        display_image = remote
-    else:
-        display_image = ""
+    if not display_image:
         missing += 1
 
     item = {
@@ -55,19 +72,24 @@ for r in rows:
         "rating": r.get("rating") or r.get("rating_avg"),
         "rating_bayes": r.get("rating_bayes"),
         "users_rated": r.get("usersrated") or r.get("users_rated"),
-        # 直接輸出中文；英文保留到 *_en 以供 CSV/搜尋
+
+        # 中文主欄位，英文備份
         "categories": r.get("categories"),
         "categories_en": r.get("categories_en"),
         "mechanisms": r.get("mechanisms"),
         "mechanisms_en": r.get("mechanisms_en"),
+
         # 價格
         "price": r.get("price"),
         "price_used": r.get("price_used"),
+
         # 圖片
         "image": display_image,
     }
     out.append(item)
 
 OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"publish_games: total={len(out)} ; normalized={normalized} ; missing_image={missing}\n"
-      f"wrote → {OUT}")
+print(
+    f"publish_games: total={len(out)} ; normalized={normalized} ; missing_image={missing}\n"
+    f"wrote → {OUT}"
+)
