@@ -1,71 +1,63 @@
-name: Update game data & Deploy Pages (v1.3)
+name: Update Game Guide
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ "main" ]
   schedule:
-    - cron: "37 17 * * *"
+    - cron: "0 18 * * *"   # 每天台灣凌晨 2 點
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
-
-concurrency:
-  group: pages-deploy
-  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
 
-      - name: Install deps
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests lxml tenacity pillow || true
+    # ------------------------------------------
+    # 這裡只跑「從 CSV 建立資料」→ 最安全
+    # ------------------------------------------
+    - name: Install deps
+      run: |
+        pip install pillow requests
 
-      - name: Fetch BGG
-        run: |
-          python -u scripts/fetch_bgg.py || true
+    - name: Build from CSV
+      run: |
+        python3 scripts/build_from_csv.py
+        ls -lh site/data/games.json
 
-      - name: Apply override & taxonomy
-        run: |
-          python -u scripts/apply_taxonomy_and_price.py
-
-      - name: Normalize
-        run: |
-          python -u scripts/normalize_bgg_data.py
-
-      - name: Build json
-        run: |
-          python -u scripts/build_json.py
-
-      - name: Sync images
-        run: |
-          mkdir -p site/assets/img
-          rsync -a --delete assets/img/ site/assets/img/ || true
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
+    # ------------------------------------------
+    # 上傳產生出的靜態網站 artifact（給 deploy 用）
+    # ------------------------------------------
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./site
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Deploy
+      uses: actions/deploy-pages@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifact_name: github-pages
+        preview: false

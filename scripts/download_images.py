@@ -1,107 +1,36 @@
-# scripts/download_images.py
-# -*- coding: utf-8 -*-
-import json, requests, hashlib, time, re
-from pathlib import Path
-from PIL import Image
-from io import BytesIO
+#!/usr/bin/env python3
+import json, pathlib, requests, hashlib
 
-INPUT   = Path("data/bgg_data.json")
-# 關鍵修正：下載源頭一律放在 assets/img，讓 cache + rsync 正常運作
-IMG_DIR = Path("assets/img")
-IMG_DIR.mkdir(parents=True, exist_ok=True)
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+DATA = ROOT / "data" / "bgg_data.json"
+OUT = ROOT / "assets" / "img"
+OUT.mkdir(parents=True, exist_ok=True)
 
-HEADERS = {
-    "User-Agent": "GameGuide Image Fetcher/1.0 (+https://github.com/TELIFUJ/game-guide-site)",
-    "Referer": "https://boardgamegeek.com/",
-    "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
-}
-
-HTTP_RE = re.compile(r"^https?://", re.I)
-
-
-def _is_local_path(u: str) -> bool:
-    if not u:
-        return False
-    u = u.strip()
-    return not HTTP_RE.match(u)
-
-
-def _localize_path(name: str) -> str:
-    # 供前端使用的相對路徑（index.html 位於 site/ 底下）
-    # GH Pages 實際路徑會是 /game-guide-site/assets/img/<name>
-    return f"assets/img/{name}"
-
-
-def save_thumb(content: bytes, dest: Path):
-    img = Image.open(BytesIO(content))
-    img.thumbnail((512, 512))
-    img.convert("RGB").save(dest, "JPEG", quality=82, optimize=True)
-
+def hash_url(url):
+    return hashlib.md5(url.encode("utf-8")).hexdigest()[:8]
 
 def main():
-    if not INPUT.exists():
-        print("No data/bgg_data.json; skip download_images.")
-        return
-
-    rows = json.loads(INPUT.read_text(encoding="utf-8"))
-    updated = []
-
+    rows = json.loads(DATA.read_text("utf-8"))
     for r in rows:
-        # override：尊重使用者指定（不下載）
-        if r.get("image_override"):
-            url = str(r.get("image_override"))
-            ver = (str(r.get("image_version_id")).strip()
-                   if r.get("image_version_id") not in (None, "") else None)
-            if ver:
-                sep = "&" if "?" in url else "?"
-                url = f"{url}{sep}v={ver}"
-            r["image"] = url
-            updated.append(r)
-            continue
-
-        # 取圖來源（兼容 bgg 抓取器欄位）
-        url = (
-            r.get("image_url")
-            or r.get("thumb_url")
-            or r.get("image")
-            or r.get("thumbnail")
-        )
-
+        bid = r.get("bgg_id")
+        url = r.get("image_url")
         if not url:
-            updated.append(r)
             continue
 
-        bid = r.get("bgg_id") or r.get("id") or "noid"
+        ext = ".jpg"
+        fname = f"{bid}-{hash_url(url)}{ext}"
+        path = OUT / fname
 
-        # 若既是本地相對路徑，不下載，直接寫回
-        if _is_local_path(url):
-            # 可能是 "site/assets/img/xxx.jpg" 或 "assets/img/xxx.jpg"
-            name = Path(url).name
-            r["image"] = _localize_path(name)
-            updated.append(r)
+        if path.exists():
             continue
-
-        # 遠端 URL：下載並以 URL 雜湊命名，避免覆蓋
-        h = hashlib.md5(url.encode("utf-8")).hexdigest()[:8]
-        dest = IMG_DIR / f"{bid}-{h}.jpg"
 
         try:
-            if not dest.exists():
-                resp = requests.get(url, timeout=60, headers=HEADERS)
-                resp.raise_for_status()
-                save_thumb(resp.content, dest)
-                time.sleep(0.6)  # 節流
-            r["image"] = _localize_path(dest.name)
-        except Exception as e:
-            # 下載失敗就保留原網址，前端仍可顯示
-            r["image"] = url
-            print(f"Image fallback for {bid}: {e}")
-
-        updated.append(r)
-
-    INPUT.write_text(json.dumps(updated, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("download_images: done.")
-
+            img = requests.get(url, timeout=20)
+            if img.status_code == 200:
+                path.write_bytes(img.content)
+                print("[OK] saved", fname)
+        except:
+            print("[ERR] download fail", bid)
 
 if __name__ == "__main__":
     main()

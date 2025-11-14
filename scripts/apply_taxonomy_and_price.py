@@ -70,3 +70,4 @@ BGG_FILE.write_text(
 )
 
 print("[OK] apply_taxonomy_and_price.py 完成")
+
