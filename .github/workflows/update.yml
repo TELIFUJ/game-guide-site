@@ -1,8 +1,14 @@
-name: Update Game Data
+name: Update Game Guide (CSV)
 
 on:
-  push:
   workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -17,33 +23,34 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install deps
         run: |
-          pip install requests pillow lxml
+          pip install pillow requests
 
-      - name: Fetch BGG Data
-        env:
-          BGG_API_KEY: ${{ secrets.BGG_API_KEY }}
+      # 只跑 CSV → JSON，不跑 BGG API
+      - name: Build from CSV
         run: |
-          python3 scripts/fetch_bgg.py
-
-      - name: Build JSON
-        run: |
-          python3 scripts/build_json.py
+          python3 scripts/build_from_csv.py
+          ls -lh site/data/games.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: ./site
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - name: Deploy
         uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: github-pages
+          preview: false
