@@ -7,17 +7,15 @@
 
 <style>
 :root{
-  --c-border:#1e90ff;
+  --c-border:#d1d5db;
   --c-muted:#6b7280;
   --c-bg:#fafafa;
-  --chip-bg:#eef6ff;
-  --chip-active:#d9ebff;
-  --chip-active-border:#1e90ff;
-  --card-shadow:0 2px 6px rgba(0,0,0,0.08);
+  --chip-bg:#f3f4f6;
+  --chip-hover:#e5e7eb;
   --w-max:1280px;
 }
 
-/* GLOBAL */
+/* GLOBAL --------------------------------------------*/
 body{
   font:16px/1.5 system-ui, sans-serif;
   margin:0;
@@ -32,7 +30,7 @@ body{
   margin:0 auto;
 }
 
-/* HEADER */
+/* HEADER --------------------------------------------*/
 header{
   background:#fff;
   border-bottom:1px solid var(--c-border);
@@ -52,32 +50,30 @@ header button{
   font:inherit;
   padding:8px 10px;
   border-radius:6px;
-  border:1px solid #d1d5db;
+  border:1px solid var(--c-border);
   background:#fff;
 }
 
 header button{
-  color:var(--c-border);
-  border:1px solid var(--c-border);
   cursor:pointer;
 }
+
 header button:hover{
-  background:var(--c-border);
-  color:#fff;
+  background:#e5e7eb;
 }
 
 /* 清除篩選按鈕 */
 #CLEAR_BTN{
   background:#ffecec;
-  color:#c00;
-  border:1px solid #c00;
+  color:#b91c1c;
+  border:1px solid #b91c1c;
 }
 #CLEAR_BTN:hover{
-  background:#c00;
+  background:#b91c1c;
   color:#fff;
 }
 
-/* GRID */
+/* GRID --------------------------------------------*/
 #GRID{
   padding:16px;
   display:grid;
@@ -90,7 +86,7 @@ header button:hover{
 .card{
   background:#fff;
   border-radius:12px;
-  border:1px solid #e5e7eb;
+  border:1px solid var(--c-border);
   padding:12px;
   display:flex;
   flex-direction:column;
@@ -100,10 +96,10 @@ header button:hover{
 }
 
 .card:hover{
-  border-color:var(--c-border);
-  box-shadow:var(--card-shadow);
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
 }
 
+/* COVER --------------------------------------------*/
 .cover{
   width:100%;
   aspect-ratio:1/1;
@@ -112,6 +108,7 @@ header button:hover{
   border-radius:10px;
 }
 
+/* CARD TEXT --------------------------------------------*/
 .title{
   font-size:18px;
   font-weight:700;
@@ -122,7 +119,7 @@ header button:hover{
   font-size:14px;
 }
 
-/* CHIPS */
+/* CHIPS --------------------------------------------*/
 .chip{
   display:inline-block;
   padding:4px 8px;
@@ -130,17 +127,16 @@ header button:hover{
   background:var(--chip-bg);
   font-size:13px;
   margin:2px;
-  border:1px solid transparent;
+  border:1px solid var(--c-border);
   user-select:none;
 }
 
 .chip:hover{
-  background:var(--chip-active);
-  border-color:var(--chip-active-border);
+  background:var(--chip-hover);
   cursor:pointer;
 }
 
-/* DETAIL */
+/* DETAIL MODAL --------------------------------------------*/
 #DETAIL{
   position:fixed;
   inset:0;
@@ -170,7 +166,7 @@ header button:hover{
   margin-bottom:14px;
 }
 
-/* RWD */
+/* RWD --------------------------------------------*/
 @media (max-width:640px){
   header{ padding:10px; }
   #GRID{ padding:10px; gap:14px; }
@@ -180,6 +176,7 @@ header button:hover{
 </style>
 </head>
 <body>
+
 <header>
   <input id="Q" placeholder="搜尋：中文 / 英文 / 關鍵字" />
 
@@ -217,52 +214,34 @@ let FILTER_MECH = "";
 const $ = (s)=>document.querySelector(s);
 
 /* ========================================================
-   ✔✔✔ 修正版 loadData() - 永不錯位的 Games JSON 載入器
+   BasePath 自動偵測 + JSON 載入
+   （支援 GitHub Pages：根目錄 & /site/ 兩種）
 ======================================================== */
 async function loadData(){
-
-  const path = window.location.pathname;
-  const repoMatch = path.match(/^\/([^\/]+)\//);
-  const repo = repoMatch ? repoMatch[1] : "";
-
-  const candidates = [];
-
-  // 與 index.html 同層
-  candidates.push("data/games.json");
-  candidates.push("./data/games.json");
-
-  // site/data
-  candidates.push("site/data/games.json");
-  candidates.push("./site/data/games.json");
-
-  // GitHub Pages repo 前綴
-  if(repo){
-    candidates.push(`/${repo}/data/games.json`);
-    candidates.push(`/${repo}/site/data/games.json`);
-  }
-
-  console.log("嘗試路徑：", candidates);
+  const candidates = [
+    "data/games.json",
+    "./data/games.json",
+    "site/data/games.json",
+    "./site/data/games.json",
+    "../data/games.json"
+  ];
 
   for(const url of candidates){
     try{
       const r = await fetch(url);
       if(r.ok){
         DATA = await r.json();
-        console.log("載入成功：", url, "rows=", DATA.length);
-        buildOptions();
-        render();
-        return;
+        break;
       }
-    }catch(e){
-      console.log("錯誤：", url, e);
-    }
+    }catch(e){}
   }
 
-  alert("無法載入 games.json，請確認 data/ 或 site/data 是否存在。");
+  buildOptions();
+  render();
 }
 
 /* ========================================================
-   搜尋比對
+   工具：文字模糊搜尋
 ======================================================== */
 function textMatch(t,q){
   if(!q) return true;
@@ -272,7 +251,7 @@ function textMatch(t,q){
 }
 
 /* ========================================================
-   分類/機制下拉
+   下拉選單：分類＋機制（含「顯示數量」）
 ======================================================== */
 function buildOptions(){
   const cat = new Map();
@@ -280,10 +259,10 @@ function buildOptions(){
 
   for(const g of DATA){
     (g.categories_zh || g.categories || []).forEach(c=>{
-      cat.set(c,(cat.get(c)||0)+1);
+      cat.set(c, (cat.get(c)||0)+1);
     });
     (g.mechanisms_zh || g.mechanisms || []).forEach(m=>{
-      mech.set(m,(mech.get(m)||0)+1);
+      mech.set(m, (mech.get(m)||0)+1);
     });
   }
 
@@ -291,37 +270,47 @@ function buildOptions(){
     `<option value="">全部分類</option>` +
     [...cat.entries()]
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .map(([c,n])=>`<option value="${c}">${c}（${n}）</option>`).join("");
+      .map(([c,n])=>`<option value="${c}">${c}（${n}）</option>`)
+      .join("");
 
   MECH.innerHTML =
     `<option value="">全部機制</option>` +
     [...mech.entries()]
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .map(([m,n])=>`<option value="${m}">${m}（${n}）</option>`).join("");
+      .map(([m,n])=>`<option value="${m}">${m}（${n}）</option>`)
+      .join("");
+}
+<script>
+/* ========================================================
+   格式化：空值→"-"
+======================================================== */
+function fmt(v){ 
+  return v==null ? "-" : v;
 }
 
 /* ========================================================
-   主渲染器
+   主渲染流程（搜尋 → 過濾 → 排序 → 產生卡片）
 ======================================================== */
-function fmt(v){ return v==null ? "-" : v; }
-
 function render(){
   const q = Q.value.trim();
 
-  let list = DATA.filter(g=>{
+  let list = DATA.filter(g => {
+    // 搜尋（中文／英文／BGG 名字／keywords）
     const okSearch =
-      textMatch(g.name_zh,q) ||
-      textMatch(g.name_en,q) ||
-      textMatch(g.name,q) ||
-      (g.search_keywords||[]).some(k=>textMatch(k,q));
+      textMatch(g.name_zh, q) ||
+      textMatch(g.name_en, q) ||
+      textMatch(g.name, q) ||
+      (g.search_keywords || []).some(k => textMatch(k, q));
 
     if(!okSearch) return false;
 
+    // 分類過濾
     if(FILTER_CAT){
       const cats = g.categories_zh || g.categories || [];
       if(!cats.includes(FILTER_CAT)) return false;
     }
 
+    // 機制過濾
     if(FILTER_MECH){
       const mechs = g.mechanisms_zh || g.mechanisms || [];
       if(!mechs.includes(FILTER_MECH)) return false;
@@ -330,33 +319,53 @@ function render(){
     return true;
   });
 
+  /* --------------------------------------
+     排序（舊版行為：null→最小，字串→小寫比較）
+  -------------------------------------- */
   const key = SORT.value;
-  list.sort((a,b)=>{
-    let A=a[key], B=b[key];
-    if(A==null) A=-999999;
-    if(B==null) B=-999999;
-    if(typeof A==="string") A=A.toLowerCase();
-    if(typeof B==="string") B=B.toLowerCase();
-    return A>B?1:A<B?-1:0;
+
+  list.sort((a,b) => {
+    let A = a[key];
+    let B = b[key];
+
+    if(A == null) A = -999999;
+    if(B == null) B = -999999;
+
+    if(typeof A === "string") A = A.toLowerCase();
+    if(typeof B === "string") B = B.toLowerCase();
+
+    if(A > B) return 1;
+    if(A < B) return -1;
+    return 0;
   });
 
-  GRID.innerHTML = list.map(g=>cardHTML(g)).join("");
+  /* --------------------------------------
+     生成卡片
+  -------------------------------------- */
+  GRID.innerHTML = list.map(g => cardHTML(g)).join("");
 }
 
 /* ========================================================
-   卡片
+   卡片 HTML（含圖片 fallback）
 ======================================================== */
 function cardHTML(g){
   const img = g.image || g.thumbnail || "";
 
   const cats = (g.categories_zh || g.categories || [])
-    .map(c=>`<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`).join("");
+    .map(c => `
+      <span class="chip" onclick="chipFilter('cat','${c}',event)">
+        ${c}
+      </span>`).join("");
 
   const mechs = (g.mechanisms_zh || g.mechanisms || [])
-    .map(m=>`<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
+    .map(m => `
+      <span class="chip" onclick="chipFilter('mech','${m}',event)">
+        ${m}
+      </span>`).join("");
 
   return `
   <div class="card" onclick="openDetail('${g.id}')">
+
     <img class="cover" src="${img}"
       onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
 
@@ -364,9 +373,9 @@ function cardHTML(g){
     <div class="subtitle">${g.name_en || ""}</div>
 
     <div style="font-size:14px;color:#444;">
-      <b>Bayes</b>：${fmt(g.rating_bayes)}
-      ｜ <b>均分</b>：${fmt(g.rating_avg)}
-      ｜ <b>重度</b>：${fmt(g.weight)}
+      <b>Bayes</b>：${fmt(g.rating_bayes)} ｜ 
+      <b>均分</b>：${fmt(g.rating_avg)} ｜ 
+      <b>重度</b>：${fmt(g.weight)}
     </div>
 
     <div>${cats}</div>
@@ -375,6 +384,7 @@ function cardHTML(g){
     <div style="margin-top:4px;font-size:14px;">
       二手：${g.used_price_twd ? "NT$"+g.used_price_twd : "-"}
     </div>
+
     <div style="font-size:14px;">
       庫存：${g.stock ?? 0}
     </div>
@@ -382,53 +392,64 @@ function cardHTML(g){
     <div style="margin-top:4px;font-size:13px;">
       <a href="${g.bgg_url}" target="_blank">前往 BGG</a>
     </div>
-  </div>
-  `;
+  </div>`;
 }
 
 /* ========================================================
-   CHIPS
+   chips 過濾（含 auto scroll to top）
 ======================================================== */
-function chipFilter(type,value,event){
+function chipFilter(type, value, event){
   event.stopPropagation();
-  if(type==="cat"){
-    FILTER_CAT=value; CAT.value=value;
+
+  if(type === "cat"){
+    FILTER_CAT = value;
+    CAT.value = value;
   }else{
-    FILTER_MECH=value; MECH.value=value;
+    FILTER_MECH = value;
+    MECH.value = value;
   }
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  window.scrollTo({ top:0, behavior:"smooth" });
   render();
 }
 
-/* 清除篩選 */
-CLEAR_BTN.addEventListener("click",()=>{
-  Q.value="";
-  FILTER_CAT="";
-  FILTER_MECH="";
-  CAT.value="";
-  MECH.value="";
+/* ========================================================
+   清除篩選
+======================================================== */
+CLEAR_BTN.addEventListener("click", ()=>{
+  Q.value = "";
+  FILTER_CAT = "";
+  FILTER_MECH = "";
+  CAT.value = "";
+  MECH.value = "";
   render();
 });
-
+</script>
+<script>
 /* ========================================================
-   詳情
+   詳情視窗開啟
 ======================================================== */
 function openDetail(id){
-  const g=DATA.find(x=>x.id===id);
+  const g = DATA.find(x => x.id === id);
   if(!g) return;
-  DETAIL.style.display="flex";
+
+  DETAIL.style.display = "flex";
 
   const cats = (g.categories_zh || g.categories || [])
-    .map(c=>`<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`).join("");
+    .map(c => `<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`)
+    .join("");
 
   const mechs = (g.mechanisms_zh || g.mechanisms || [])
-    .map(m=>`<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
+    .map(m => `<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`)
+    .join("");
 
-  DETAIL_INNER.innerHTML=`
-    <button onclick="closeDetail()" style="float:right;margin-bottom:10px;">關閉</button>
+  DETAIL_INNER.innerHTML = `
+    <button onclick="closeDetail()" 
+            style="float:right;margin-bottom:10px;">關閉</button>
 
-    <img class="detail-img" src="${g.image || g.thumbnail || ""}"
-      onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+    <img class="detail-img" 
+         src="${g.image || g.thumbnail || ''}"
+         onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
 
     <h2>${g.name_zh || g.name_en || g.name}</h2>
     <p>${g.name_en || ""}</p>
@@ -451,91 +472,107 @@ function openDetail(id){
   buildRecommend(g);
 }
 
-function closeDetail(){ DETAIL.style.display="none"; }
-
 /* ========================================================
-   推薦（分類＋機制交集）
+   詳情視窗關閉
 ======================================================== */
-function buildRecommend(g){
-  const baseCats=new Set(g.categories_zh || g.categories || []);
-  const baseMechs=new Set(g.mechanisms_zh || g.mechanisms || []);
-
-  let scored = DATA.map(x=>{
-    if(x.id===g.id) return null;
-
-    let s=0;
-    (x.mechanisms_zh || x.mechanisms || []).forEach(m=>{
-      if(baseMechs.has(m)) s+=3;
-    });
-    (x.categories_zh || x.categories || []).forEach(c=>{
-      if(baseCats.has(c)) s+=1;
-    });
-
-    return {g:x,score:s};
-  })
-  .filter(x=>x && x.score>0)
-  .sort((a,b)=>b.score-a.score)
-  .slice(0,6);
-
-  RECO.innerHTML = scored.map(r=>`
-    <div class="card" onclick="openDetail('${r.g.id}')">
-      <img class="cover" src="${r.g.image || r.g.thumbnail || ''}"
-        onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
-      <div>${r.g.name_zh || r.g.name_en || r.g.name}</div>
-    </div>
-  `).join("");
+function closeDetail(){
+  DETAIL.style.display = "none";
 }
 
 /* ========================================================
-   隨機預覽
+   點背景關閉詳情
 ======================================================== */
-RANDOM_BTN.addEventListener("click",()=>{
-  if(DATA.length===0) return;
-  const r = DATA[Math.floor(Math.random()*DATA.length)];
+DETAIL.addEventListener("click", e=>{
+  if(e.target === DETAIL){
+    closeDetail();
+  }
+});
+
+/* ========================================================
+   ESC 關閉詳情
+======================================================== */
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape"){
+    closeDetail();
+  }
+});
+
+/* ========================================================
+   推薦系統（你可能也會喜歡）
+   — 分類交集 + 機制交集（3分 / 1分）
+======================================================== */
+function buildRecommend(g){
+  const baseCats  = new Set(g.categories_zh || g.categories || []);
+  const baseMechs = new Set(g.mechanisms_zh || g.mechanisms || []);
+
+  let scored = DATA.map(x => {
+    if(x.id === g.id) return null;
+
+    let score = 0;
+
+    (x.mechanisms_zh || x.mechanisms || []).forEach(m=>{
+      if(baseMechs.has(m)) score += 3;
+    });
+
+    (x.categories_zh || x.categories || []).forEach(c=>{
+      if(baseCats.has(c)) score += 1;
+    });
+
+    return { g:x, score };
+  })
+  .filter(x => x && x.score > 0)
+  .sort((a,b)=> b.score - a.score)
+  .slice(0, 6);
+
+  RECO.innerHTML =
+    scored.map(r => `
+      <div class="card" onclick="openDetail('${r.g.id}')">
+        <img class="cover" 
+             src="${r.g.image || r.g.thumbnail || ''}"
+             onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+        <div>${r.g.name_zh || r.g.name_en || r.g.name}</div>
+      </div>
+    `).join("");
+}
+
+/* ========================================================
+   隨機預覽（Random Card）
+======================================================== */
+RANDOM_BTN.addEventListener("click", ()=>{
+  if(DATA.length === 0) return;
+  const r = DATA[Math.floor(Math.random() * DATA.length)];
   openDetail(r.id);
 });
 
 /* ========================================================
-   RWD
+   RWD：手機（4:3）／桌機（1:1）
 ======================================================== */
 function applyRWD(){
-  const grid=$("#GRID");
+  const grid = document.querySelector("#GRID");
 
-  if(window.innerWidth<640){
+  if(window.innerWidth < 640){
     document.querySelectorAll(".cover").forEach(img=>{
-      img.style.aspectRatio="4/3";
-      img.style.objectFit="cover";
+      img.style.aspectRatio = "4 / 3";
+      img.style.objectFit = "cover";
     });
-    grid.style.gridTemplateColumns="repeat(auto-fill,minmax(180px,1fr))";
+    grid.style.gridTemplateColumns =
+      "repeat(auto-fill,minmax(180px,1fr))";
 
   }else{
     document.querySelectorAll(".cover").forEach(img=>{
-      img.style.aspectRatio="1/1";
-      img.style.objectFit="cover";
+      img.style.aspectRatio = "1 / 1";
+      img.style.objectFit = "cover";
     });
-    grid.style.gridTemplateColumns="repeat(auto-fill,minmax(260px,1fr))";
+    grid.style.gridTemplateColumns =
+      "repeat(auto-fill,minmax(260px,1fr))";
   }
 }
 
-window.addEventListener("resize",applyRWD);
-window.addEventListener("load",applyRWD);
+window.addEventListener("resize", applyRWD);
+window.addEventListener("load", applyRWD);
 
 /* ========================================================
-   ESC 關閉
-======================================================== */
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape") closeDetail();
-});
-
-/* 點背景關閉 */
-DETAIL.addEventListener("click",e=>{
-  if(e.target===DETAIL) closeDetail();
-});
-
-/* ========================================================
-   初始化（最重要）
+   初始化
 ======================================================== */
 loadData();
 </script>
-</body>
-</html>
