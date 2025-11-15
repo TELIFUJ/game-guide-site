@@ -180,6 +180,7 @@ header button:hover{
 </style>
 </head>
 <body>
+
 <header>
   <input id="Q" placeholder="搜尋：中文 / 英文 / 原名 / 關鍵字" />
 
@@ -199,14 +200,11 @@ header button:hover{
   <button id="CLEAR_BTN">清除篩選</button>
 </header>
 
-<!-- Cards -->
 <div id="GRID"></div>
 
-<!-- 詳情視窗 -->
 <div id="DETAIL">
   <div class="panel" id="DETAIL_INNER"></div>
 </div>
-
 <script>
 /* ========================================================
    全域變數
@@ -217,16 +215,14 @@ let FILTER_MECH = "";
 const $ = (s)=>document.querySelector(s);
 
 /* ========================================================
-   BasePath 自動偵測 + JSON 載入
-   （Pages 同時支援 / 與 /site/）
+   BasePath 自動偵測 + JSON 載入（支援 / 或 /site/）
 ======================================================== */
 async function loadData(){
   const candidates = [
     "data/games.json",
     "./data/games.json",
-    "../data/games.json",
     "site/data/games.json",
-    "./site/data/games.json"
+    "./site/data/games.json",
   ];
 
   for(const url of candidates){
@@ -241,6 +237,7 @@ async function loadData(){
 
   buildOptions();
   render();
+  applyRWD();
 }
 
 /* ========================================================
@@ -254,7 +251,7 @@ function textMatch(t,q){
 }
 
 /* ========================================================
-   下拉選單：分類＋機制（顯示數量）
+   建立「分類」「機制」下拉選單（含顯示數量）
 ======================================================== */
 function buildOptions(){
   const cat = new Map();
@@ -264,6 +261,7 @@ function buildOptions(){
     (g.categories_zh || g.categories || []).forEach(c=>{
       cat.set(c, (cat.get(c)||0)+1);
     });
+
     (g.mechanisms_zh || g.mechanisms || []).forEach(m=>{
       mech.set(m, (mech.get(m)||0)+1);
     });
@@ -273,18 +271,17 @@ function buildOptions(){
     `<option value="">全部分類</option>` +
     [...cat.entries()]
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .map(([c,n])=>`<option value="${c}">${c}（${n}）</option>`)
-      .join("");
+      .map(([c,n])=>`<option value="${c}">${c}（${n}）</option>`).join("");
 
   MECH.innerHTML =
     `<option value="">全部機制</option>` +
     [...mech.entries()]
       .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .map(([m,n])=>`<option value="${m}">${m}（${n}）</option>`)
-      .join("");
+      .map(([m,n])=>`<option value="${m}">${m}（${n}）</option>`).join("");
 }
+
 /* ========================================================
-   主渲染：卡片
+   主渲染：卡片（含多種排序）
 ======================================================== */
 function fmt(v){ return v==null ? "-" : v; }
 
@@ -292,12 +289,12 @@ function render(){
   const q = Q.value.trim();
 
   let list = DATA.filter(g => {
+
     const okSearch =
       textMatch(g.name_zh, q) ||
       textMatch(g.name_en, q) ||
       textMatch(g.name, q) ||
       (g.search_keywords || []).some(k => textMatch(k, q));
-
     if(!okSearch) return false;
 
     if(FILTER_CAT){
@@ -309,13 +306,15 @@ function render(){
       const mechs = g.mechanisms_zh || g.mechanisms || [];
       if(!mechs.includes(FILTER_MECH)) return false;
     }
+
     return true;
   });
 
-  /* 排序 */
   const key = SORT.value;
-  list.sort((a,b) => {
+
+  list.sort((a,b)=>{
     let A = a[key], B = b[key];
+
     if(A == null) A = -999999;
     if(B == null) B = -999999;
 
@@ -329,7 +328,6 @@ function render(){
 
   GRID.innerHTML = list.map(g => cardHTML(g)).join("");
 }
-
 /* ========================================================
    卡片 HTML
 ======================================================== */
@@ -360,45 +358,18 @@ function cardHTML(g){
     <div>${mechs}</div>
 
     <div style="margin-top:4px;font-size:14px;">
-      二手：${g.used_price_twd ? "NT$"+g.used_price_twd : "-"}</div>
-
-    <div style="font-size:14px;">庫存：${g.stock ?? 0}</div>
+      二手：${g.used_price_twd ? "NT$"+g.used_price_twd : "-"}
+    </div>
+    <div style="font-size:14px;">
+      庫存：${g.stock ?? 0}
+    </div>
 
     <div style="margin-top:4px;font-size:13px;">
       <a href="${g.bgg_url}" target="_blank">前往 BGG</a>
     </div>
-  </div>`;
+  </div>
+  `;
 }
-
-/* ========================================================
-   CHIPS 點擊 → 過濾
-======================================================== */
-function chipFilter(type, value, event){
-  event.stopPropagation();
-
-  if(type === "cat"){
-    FILTER_CAT = value;
-    CAT.value = value;
-  }else{
-    FILTER_MECH = value;
-    MECH.value = value;
-  }
-
-  window.scrollTo({ top:0, behavior:"smooth" });
-  render();
-}
-
-/* ========================================================
-   清除篩選
-======================================================== */
-CLEAR_BTN.addEventListener("click", ()=>{
-  Q.value = "";
-  FILTER_CAT = "";
-  FILTER_MECH = "";
-  CAT.value = "";
-  MECH.value = "";
-  render();
-});
 
 /* ========================================================
    詳情視窗（open / close）
@@ -481,8 +452,26 @@ function buildRecommend(g){
     </div>
   `).join("");
 }
+
 /* ========================================================
-   隨機預覽（Random Preview）
+   點背景關閉詳情
+======================================================== */
+DETAIL.addEventListener("click", e=>{
+  if(e.target === DETAIL){
+    closeDetail();
+  }
+});
+
+/* ========================================================
+   ESC 關閉詳情
+======================================================== */
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape"){
+    closeDetail();
+  }
+});
+/* ========================================================
+   隨機預覽
 ======================================================== */
 RANDOM_BTN.addEventListener("click", ()=>{
   if(DATA.length === 0) return;
@@ -497,7 +486,7 @@ function applyRWD(){
   const grid = document.querySelector("#GRID");
 
   if(window.innerWidth < 640){
-    /* 手機模式 */
+    // 手機：4:3
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "4 / 3";
       img.style.objectFit = "cover";
@@ -507,7 +496,7 @@ function applyRWD(){
       "repeat(auto-fill,minmax(180px,1fr))";
 
   }else{
-    /* 桌機模式 */
+    // 桌機：1:1
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "1 / 1";
       img.style.objectFit = "cover";
@@ -522,24 +511,6 @@ window.addEventListener("resize", applyRWD);
 window.addEventListener("load", applyRWD);
 
 /* ========================================================
-   ESC 關閉詳情
-======================================================== */
-document.addEventListener("keydown", e=>{
-  if(e.key === "Escape"){
-    closeDetail();
-  }
-});
-
-/* ========================================================
-   點背景關閉詳情（深色遮罩點擊可關閉）
-======================================================== */
-DETAIL.addEventListener("click", e=>{
-  if(e.target === DETAIL){
-    closeDetail();
-  }
-});
-
-/* ========================================================
-   初始化 — 最重要：載入資料
+   初始化 — 必須最後執行
 ======================================================== */
 loadData();
