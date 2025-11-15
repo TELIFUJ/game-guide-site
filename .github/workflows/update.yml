@@ -5,7 +5,7 @@ on:
   push:
     branches: [ "main" ]
   schedule:
-    - cron: "0 18 * * *"   # 每天台灣凌晨 2 點
+    - cron: "0 18 * * *"
 
 permissions:
   contents: write
@@ -25,21 +25,22 @@ jobs:
       with:
         python-version: "3.11"
 
-    # ------------------------------------------
-    # 這裡只跑「從 CSV 建立資料」→ 最安全
-    # ------------------------------------------
     - name: Install deps
       run: |
         pip install pillow requests
 
-    - name: Build from CSV
+    - name: Fetch BGG Data
+      env:
+        BGG_API_KEY: ${{ secrets.BGG_API_KEY }}
+      run: |
+        python3 scripts/fetch_bgg.py
+        ls -lh data/bgg_data.json
+
+    - name: Build JSON
       run: |
         python3 scripts/build_from_csv.py
         ls -lh site/data/games.json
 
-    # ------------------------------------------
-    # 上傳產生出的靜態網站 artifact（給 deploy 用）
-    # ------------------------------------------
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
@@ -49,15 +50,16 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages   # ★★★ 必須有，不然一定 400 ★★★
+      url: ${{ steps.deploy.outputs.page_url }}
+
     permissions:
       contents: write
       pages: write
       id-token: write
 
     steps:
-    - name: Deploy
-      uses: actions/deploy-pages@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        artifact_name: github-pages
-        preview: false
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
