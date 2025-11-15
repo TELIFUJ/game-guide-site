@@ -66,7 +66,6 @@ header button:hover{
   color:#fff;
 }
 
-/* 清除篩選按鈕 */
 #CLEAR_BTN{
   background:#ffecec;
   color:#c00;
@@ -170,7 +169,6 @@ header button:hover{
   margin-bottom:14px;
 }
 
-/* RWD */
 @media (max-width:640px){
   header{ padding:10px; }
   #GRID{ padding:10px; gap:14px; }
@@ -205,34 +203,44 @@ header button:hover{
 <div id="DETAIL">
   <div class="panel" id="DETAIL_INNER"></div>
 </div>
+
 <script>
-/* ========================================================
-   全域變數
-======================================================== */
 let DATA = [];
 let FILTER_CAT = "";
 let FILTER_MECH = "";
 const $ = (s)=>document.querySelector(s);
 
 /* ========================================================
-   BasePath 自動偵測 + JSON 載入（支援 / 或 /site/）
+   強化版路徑解析：100% 相容 GitHub Pages
 ======================================================== */
 async function loadData(){
-  const candidates = [
-    "data/games.json",
-    "./data/games.json",
-    "site/data/games.json",
-    "./site/data/games.json",
+  const repo = "/game-guide-site";
+  const paths = [
+    `${repo}/site/data/games.json`,
+    `/site/data/games.json`,
+    `site/data/games.json`,
+    `./site/data/games.json`,
+    `${repo}/data/games.json`,
+    `/data/games.json`,
+    `data/games.json`,
+    `./data/games.json`,
   ];
+  console.log("候選 JSON：", paths);
 
-  for(const url of candidates){
+  for(const url of paths){
     try{
       const r = await fetch(url);
       if(r.ok){
         DATA = await r.json();
+        console.log("成功載入：", url, DATA.length);
         break;
       }
     }catch(e){}
+  }
+
+  if(!DATA.length){
+    alert("無法載入 JSON。請確認路徑。");
+    return;
   }
 
   buildOptions();
@@ -240,9 +248,7 @@ async function loadData(){
   applyRWD();
 }
 
-/* ========================================================
-   工具：搜尋比對（模糊）
-======================================================== */
+/* ======================================================== */
 function textMatch(t,q){
   if(!q) return true;
   if(!t) return false;
@@ -250,9 +256,7 @@ function textMatch(t,q){
   return t.toLowerCase().includes(q);
 }
 
-/* ========================================================
-   建立「分類」「機制」下拉選單（含顯示數量）
-======================================================== */
+/* ======================================================== */
 function buildOptions(){
   const cat = new Map();
   const mech = new Map();
@@ -261,7 +265,6 @@ function buildOptions(){
     (g.categories_zh || g.categories || []).forEach(c=>{
       cat.set(c, (cat.get(c)||0)+1);
     });
-
     (g.mechanisms_zh || g.mechanisms || []).forEach(m=>{
       mech.set(m, (mech.get(m)||0)+1);
     });
@@ -280,16 +283,13 @@ function buildOptions(){
       .map(([m,n])=>`<option value="${m}">${m}（${n}）</option>`).join("");
 }
 
-/* ========================================================
-   主渲染：卡片（含多種排序）
-======================================================== */
+/* ======================================================== */
 function fmt(v){ return v==null ? "-" : v; }
 
 function render(){
   const q = Q.value.trim();
 
   let list = DATA.filter(g => {
-
     const okSearch =
       textMatch(g.name_zh, q) ||
       textMatch(g.name_en, q) ||
@@ -328,9 +328,8 @@ function render(){
 
   GRID.innerHTML = list.map(g => cardHTML(g)).join("");
 }
-/* ========================================================
-   卡片 HTML
-======================================================== */
+
+/* ======================================================== */
 function cardHTML(g){
   const img = g.image || g.thumbnail || "";
 
@@ -371,9 +370,7 @@ function cardHTML(g){
   `;
 }
 
-/* ========================================================
-   詳情視窗（open / close）
-======================================================== */
+/* ======================================================== */
 function openDetail(id){
   const g = DATA.find(x => x.id === id);
   if(!g) return;
@@ -418,9 +415,7 @@ function closeDetail(){
   DETAIL.style.display = "none";
 }
 
-/* ========================================================
-   推薦系統（分類＋機制交集 → 加權）
-======================================================== */
+/* ======================================================== */
 function buildRecommend(g){
   const baseCats = new Set(g.categories_zh || g.categories || []);
   const baseMechs = new Set(g.mechanisms_zh || g.mechanisms || []);
@@ -453,40 +448,40 @@ function buildRecommend(g){
   `).join("");
 }
 
-/* ========================================================
-   點背景關閉詳情
-======================================================== */
-DETAIL.addEventListener("click", e=>{
-  if(e.target === DETAIL){
-    closeDetail();
+/* ======================================================== */
+function chipFilter(type,val,event){
+  event.stopPropagation();
+  if(type === "cat"){
+    FILTER_CAT = val;
+    CAT.value = val;
+  }else{
+    FILTER_MECH = val;
+    MECH.value = val;
   }
-});
+  render();
+}
 
-/* ========================================================
-   ESC 關閉詳情
-======================================================== */
-document.addEventListener("keydown", e=>{
-  if(e.key === "Escape"){
-    closeDetail();
-  }
-});
-/* ========================================================
-   隨機預覽
-======================================================== */
+CLEAR_BTN.onclick = ()=>{
+  FILTER_CAT = "";
+  FILTER_MECH = "";
+  CAT.value = "";
+  MECH.value = "";
+  Q.value = "";
+  render();
+};
+
+/* ======================================================== */
 RANDOM_BTN.addEventListener("click", ()=>{
   if(DATA.length === 0) return;
   const r = DATA[Math.floor(Math.random() * DATA.length)];
   openDetail(r.id);
 });
 
-/* ========================================================
-   RWD：自動切換卡片比例（手機 4:3 / 桌機 1:1）
-======================================================== */
+/* ======================================================== */
 function applyRWD(){
   const grid = document.querySelector("#GRID");
 
   if(window.innerWidth < 640){
-    // 手機：4:3
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "4 / 3";
       img.style.objectFit = "cover";
@@ -496,7 +491,6 @@ function applyRWD(){
       "repeat(auto-fill,minmax(180px,1fr))";
 
   }else{
-    // 桌機：1:1
     document.querySelectorAll(".cover").forEach(img=>{
       img.style.aspectRatio = "1 / 1";
       img.style.objectFit = "cover";
@@ -510,7 +504,8 @@ function applyRWD(){
 window.addEventListener("resize", applyRWD);
 window.addEventListener("load", applyRWD);
 
-/* ========================================================
-   初始化 — 必須最後執行
-======================================================== */
 loadData();
+</script>
+
+</body>
+</html>
