@@ -827,45 +827,59 @@ function closeFocus(){
 }
 
 function buildRecommend(base){
-  const baseCats = new Set(base._cats);
-  const baseMechs = new Set(base._mechs);
+  const baseCats  = new Set(base.categories   || base.categories_zh   || []);
+  const baseMechs = new Set(base.mechanisms  || base.mechanisms_zh   || []);
 
-  const scored = DATA.map(g=>{
-    if(g.id === base.id) return null;
-    let score = 0;
+  // 依分類／機制算分數
+  const scored = DATA
+    .filter(g => g.id !== base.id)
+    .map(g => {
+      let score = 0;
 
-    g._mechs.forEach(m => { if(baseMechs.has(m)) score += 3; });
-    g._cats.forEach(c => { if(baseCats.has(c)) score += 1; });
+      (g.mechanisms_zh || g.mechanisms || []).forEach(m => {
+        if (baseMechs.has(m)) score += 3;
+      });
 
-    if(base.weight && g.weight){
-      const diff = Math.abs(base.weight - g.weight);
-      if(diff <= 0.3) score += 2;
-      else if(diff <= 0.7) score += 1;
-    }
+      (g.categories_zh || g.categories || []).forEach(c => {
+        if (baseCats.has(c)) score += 1;
+      });
 
-    return score>0 ? {g, score} : null;
-  }).filter(Boolean)
-    .sort((a,b)=>b.score - a.score)
-    .slice(0,6);
+      return { g, score };
+    })
+    .filter(x => x.score > 0)
+    .sort((a,b) => b.score - a.score)
+    .slice(0, 8);   // 最多顯示 8 款推薦
 
-  const box = $("#FOCUS_RECO");
-  if(!scored.length){
-    box.innerHTML = `<div class="empty-msg" style="padding:8px 0;font-size:13px;">暫時沒有明顯相似的遊戲。</div>`;
+  const box = document.querySelector("#RECO_LIST");
+  if (!box) return;
+
+  if (!scored.length){
+    box.innerHTML = `<p>暫時沒有明顯相似的遊戲。</p>`;
     return;
   }
 
-  box.innerHTML = scored.map(r=>{
-    const g = r.g;
-    const title = escapeHtml(g.name_zh || g.name_en || g.name || "");
+  box.innerHTML = scored.map(({g}) => {
+    const img = g.image || g.thumbnail || "";
+    const title = g.name_zh || g.name_en || g.name || "";
+    const sub   = g.name_en || "";
+    const used  = g.used_price_twd ? `NT$${g.used_price_twd}` : "-";
+    const stock = (g.stock ?? "") === "" ? "-" : g.stock;
+
     return `
-      <div class="focus-reco-card" data-id="${escapeHtml(g.id)}">
-        <img src="${escapeHtml(g.image || "")}" alt="${title}" onerror="this.style.visibility='hidden';" />
-        <div style="margin-top:2px;font-weight:600;">${title}</div>
-        <div style="font-size:12px;color:#6b7280;">Bayes：${fmtNum(g.rating_bayes)} ｜ 重度：${fmtNum(g.weight)}</div>
+      <div class="card" style="max-width:220px; cursor:pointer;"
+           onclick="scrollToCard('${g.id}')">
+        <img class="cover" src="${img}"
+             onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+        <div class="title" style="font-size:15px;">${title}</div>
+        <div class="subtitle" style="font-size:13px;">${sub}</div>
+        <div style="font-size:13px;color:#444;margin-top:4px;">
+          二手：${used} ｜ 庫存：${stock}
+        </div>
       </div>
     `;
   }).join("");
 }
+
 
 /* ========= 事件綁定 ========= */
 function bindEvents(){
