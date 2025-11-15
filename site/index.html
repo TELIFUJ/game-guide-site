@@ -1,3 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Board Game Guide</title>
+
+<style>
+:root{
+  --c-border:#1e90ff;
+  --c-muted:#6b7280;
+  --c-bg:#fafafa;
+  --chip-bg:#eef6ff;
+  --chip-active:#d9ebff;
+  --chip-active-border:#1e90ff;
+  --card-shadow:0 2px 6px rgba(0,0,0,0.08);
+  --w-max:1280px;
+}
+
+/* GLOBAL */
+body{
+  font:16px/1.5 system-ui, sans-serif;
+  margin:0;
+  background:var(--c-bg);
+  color:#1f2937;
+  padding-bottom:80px;
+}
+
+.container{
+  width:100%;
+  max-width:var(--w-max);
+  margin:0 auto;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--c-border);
+  padding:12px 16px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+header input,
+header select,
+header button{
+  font:inherit;
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+  background:#fff;
+}
+
+header button{
+  color:var(--c-border);
+  border:1px solid var(--c-border);
+  cursor:pointer;
+}
+header button:hover{
+  background:var(--c-border);
+  color:#fff;
+}
+
+/* 清除篩選按鈕 */
+#CLEAR_BTN{
+  background:#ffecec;
+  color:#c00;
+  border:1px solid #c00;
+}
+#CLEAR_BTN:hover{
+  background:#c00;
+  color:#fff;
+}
+
+/* GRID */
+#GRID{
+  padding:16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:18px;
+  max-width:var(--w-max);
+  margin:0 auto;
+}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:0.15s;
+  cursor:pointer;
+}
+
+.card:hover{
+  border-color:var(--c-border);
+  box-shadow:var(--card-shadow);
+}
+
+.cover{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  background:#f3f4f6;
+  border-radius:10px;
+}
+
+.title{
+  font-size:18px;
+  font-weight:700;
+}
+
+.subtitle{
+  color:var(--c-muted);
+  font-size:14px;
+}
+
+/* CHIPS */
+.chip{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:8px;
+  background:var(--chip-bg);
+  font-size:13px;
+  margin:2px;
+  border:1px solid transparent;
+  user-select:none;
+}
+
+.chip:hover{
+  background:var(--chip-active);
+  border-color:var(--chip-active-border);
+  cursor:pointer;
+}
+
+/* DETAIL */
+#DETAIL{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:none;
+  justify-content:center;
+  align-items:flex-start;
+  padding:20px;
+  z-index:50;
+}
+
+#DETAIL .panel{
+  background:#fff;
+  width:100%;
+  max-width:860px;
+  border-radius:12px;
+  padding:20px;
+  max-height:90vh;
+  overflow:auto;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+.detail-img{
+  width:100%;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:14px;
+}
+
+/* RWD */
+@media (max-width:640px){
+  header{ padding:10px; }
+  #GRID{ padding:10px; gap:14px; }
+  .card{ padding:10px; }
+  #DETAIL .panel{ padding:14px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <input id="Q" placeholder="搜尋：中文 / 英文 / 關鍵字" />
+
+  <select id="CAT"></select>
+  <select id="MECH"></select>
+
+  <select id="SORT">
+    <option value="name_zh">按名稱（中文）</option>
+    <option value="rating_bayes">BGG Bayes</option>
+    <option value="rating_avg">玩家平均</option>
+    <option value="users_rated">評分人數</option>
+    <option value="weight">重量</option>
+    <option value="used_price_twd">二手價格</option>
+  </select>
+
+  <button id="RANDOM_BTN">隨機預覽</button>
+  <button id="CLEAR_BTN">清除篩選</button>
+</header>
+
+<!-- Cards -->
+<div id="GRID"></div>
+
+<!-- 詳情視窗 -->
+<div id="DETAIL">
+  <div class="panel" id="DETAIL_INNER"></div>
+</div>
+
 <script>
 /* ========================================================
    全域變數
@@ -8,49 +217,325 @@ let FILTER_MECH = "";
 const $ = (s)=>document.querySelector(s);
 
 /* ========================================================
-   修正版：BasePath 自動偵測 + JSON 載入
-   （支援 GitHub Pages 所有部署情況）
+   ✔✔✔ 修正版 loadData() - 永不錯位的 Games JSON 載入器
 ======================================================== */
 async function loadData(){
-  // 自動取得 repo 名（避免 /site/site/）
+
   const path = window.location.pathname;
   const repoMatch = path.match(/^\/([^\/]+)\//);
   const repo = repoMatch ? repoMatch[1] : "";
 
   const candidates = [];
 
-  // 1) 與 index.html 同層
+  // 與 index.html 同層
   candidates.push("data/games.json");
   candidates.push("./data/games.json");
 
-  // 2) /site/data/
+  // site/data
   candidates.push("site/data/games.json");
   candidates.push("./site/data/games.json");
 
-  // 3) GitHub Pages Repo 路徑（例如 /game-guide-site-v2/）
+  // GitHub Pages repo 前綴
   if(repo){
     candidates.push(`/${repo}/data/games.json`);
     candidates.push(`/${repo}/site/data/games.json`);
   }
 
-  console.log("候選路徑：", candidates);
+  console.log("嘗試路徑：", candidates);
 
   for(const url of candidates){
     try{
       const r = await fetch(url);
       if(r.ok){
         DATA = await r.json();
-        console.log("載入成功：", url, "rows =", DATA.length);
+        console.log("載入成功：", url, "rows=", DATA.length);
         buildOptions();
         render();
         return;
-      }else{
-        console.log("嘗試失敗：", url, r.status);
       }
     }catch(e){
       console.log("錯誤：", url, e);
     }
   }
 
-  alert("無法載入 games.json，請確認資料是否存在於 data/ 或 site/data/");
+  alert("無法載入 games.json，請確認 data/ 或 site/data 是否存在。");
 }
+
+/* ========================================================
+   搜尋比對
+======================================================== */
+function textMatch(t,q){
+  if(!q) return true;
+  if(!t) return false;
+  q = q.toLowerCase();
+  return t.toLowerCase().includes(q);
+}
+
+/* ========================================================
+   分類/機制下拉
+======================================================== */
+function buildOptions(){
+  const cat = new Map();
+  const mech = new Map();
+
+  for(const g of DATA){
+    (g.categories_zh || g.categories || []).forEach(c=>{
+      cat.set(c,(cat.get(c)||0)+1);
+    });
+    (g.mechanisms_zh || g.mechanisms || []).forEach(m=>{
+      mech.set(m,(mech.get(m)||0)+1);
+    });
+  }
+
+  CAT.innerHTML =
+    `<option value="">全部分類</option>` +
+    [...cat.entries()]
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .map(([c,n])=>`<option value="${c}">${c}（${n}）</option>`).join("");
+
+  MECH.innerHTML =
+    `<option value="">全部機制</option>` +
+    [...mech.entries()]
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .map(([m,n])=>`<option value="${m}">${m}（${n}）</option>`).join("");
+}
+
+/* ========================================================
+   主渲染器
+======================================================== */
+function fmt(v){ return v==null ? "-" : v; }
+
+function render(){
+  const q = Q.value.trim();
+
+  let list = DATA.filter(g=>{
+    const okSearch =
+      textMatch(g.name_zh,q) ||
+      textMatch(g.name_en,q) ||
+      textMatch(g.name,q) ||
+      (g.search_keywords||[]).some(k=>textMatch(k,q));
+
+    if(!okSearch) return false;
+
+    if(FILTER_CAT){
+      const cats = g.categories_zh || g.categories || [];
+      if(!cats.includes(FILTER_CAT)) return false;
+    }
+
+    if(FILTER_MECH){
+      const mechs = g.mechanisms_zh || g.mechanisms || [];
+      if(!mechs.includes(FILTER_MECH)) return false;
+    }
+
+    return true;
+  });
+
+  const key = SORT.value;
+  list.sort((a,b)=>{
+    let A=a[key], B=b[key];
+    if(A==null) A=-999999;
+    if(B==null) B=-999999;
+    if(typeof A==="string") A=A.toLowerCase();
+    if(typeof B==="string") B=B.toLowerCase();
+    return A>B?1:A<B?-1:0;
+  });
+
+  GRID.innerHTML = list.map(g=>cardHTML(g)).join("");
+}
+
+/* ========================================================
+   卡片
+======================================================== */
+function cardHTML(g){
+  const img = g.image || g.thumbnail || "";
+
+  const cats = (g.categories_zh || g.categories || [])
+    .map(c=>`<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`).join("");
+
+  const mechs = (g.mechanisms_zh || g.mechanisms || [])
+    .map(m=>`<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
+
+  return `
+  <div class="card" onclick="openDetail('${g.id}')">
+    <img class="cover" src="${img}"
+      onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+
+    <div class="title">${g.name_zh || g.name_en || g.name}</div>
+    <div class="subtitle">${g.name_en || ""}</div>
+
+    <div style="font-size:14px;color:#444;">
+      <b>Bayes</b>：${fmt(g.rating_bayes)}
+      ｜ <b>均分</b>：${fmt(g.rating_avg)}
+      ｜ <b>重度</b>：${fmt(g.weight)}
+    </div>
+
+    <div>${cats}</div>
+    <div>${mechs}</div>
+
+    <div style="margin-top:4px;font-size:14px;">
+      二手：${g.used_price_twd ? "NT$"+g.used_price_twd : "-"}
+    </div>
+    <div style="font-size:14px;">
+      庫存：${g.stock ?? 0}
+    </div>
+
+    <div style="margin-top:4px;font-size:13px;">
+      <a href="${g.bgg_url}" target="_blank">前往 BGG</a>
+    </div>
+  </div>
+  `;
+}
+
+/* ========================================================
+   CHIPS
+======================================================== */
+function chipFilter(type,value,event){
+  event.stopPropagation();
+  if(type==="cat"){
+    FILTER_CAT=value; CAT.value=value;
+  }else{
+    FILTER_MECH=value; MECH.value=value;
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
+  render();
+}
+
+/* 清除篩選 */
+CLEAR_BTN.addEventListener("click",()=>{
+  Q.value="";
+  FILTER_CAT="";
+  FILTER_MECH="";
+  CAT.value="";
+  MECH.value="";
+  render();
+});
+
+/* ========================================================
+   詳情
+======================================================== */
+function openDetail(id){
+  const g=DATA.find(x=>x.id===id);
+  if(!g) return;
+  DETAIL.style.display="flex";
+
+  const cats = (g.categories_zh || g.categories || [])
+    .map(c=>`<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`).join("");
+
+  const mechs = (g.mechanisms_zh || g.mechanisms || [])
+    .map(m=>`<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
+
+  DETAIL_INNER.innerHTML=`
+    <button onclick="closeDetail()" style="float:right;margin-bottom:10px;">關閉</button>
+
+    <img class="detail-img" src="${g.image || g.thumbnail || ""}"
+      onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+
+    <h2>${g.name_zh || g.name_en || g.name}</h2>
+    <p>${g.name_en || ""}</p>
+
+    <p>Bayes：${fmt(g.rating_bayes)}</p>
+    <p>玩家平均：${fmt(g.rating_avg)}</p>
+    <p>評分人數：${fmt(g.users_rated)}</p>
+    <p>重量：${fmt(g.weight)}</p>
+
+    <h3>分類</h3>
+    ${cats}
+
+    <h3>機制</h3>
+    ${mechs}
+
+    <h3>你可能也會喜歡</h3>
+    <div id="RECO"></div>
+  `;
+
+  buildRecommend(g);
+}
+
+function closeDetail(){ DETAIL.style.display="none"; }
+
+/* ========================================================
+   推薦（分類＋機制交集）
+======================================================== */
+function buildRecommend(g){
+  const baseCats=new Set(g.categories_zh || g.categories || []);
+  const baseMechs=new Set(g.mechanisms_zh || g.mechanisms || []);
+
+  let scored = DATA.map(x=>{
+    if(x.id===g.id) return null;
+
+    let s=0;
+    (x.mechanisms_zh || x.mechanisms || []).forEach(m=>{
+      if(baseMechs.has(m)) s+=3;
+    });
+    (x.categories_zh || x.categories || []).forEach(c=>{
+      if(baseCats.has(c)) s+=1;
+    });
+
+    return {g:x,score:s};
+  })
+  .filter(x=>x && x.score>0)
+  .sort((a,b)=>b.score-a.score)
+  .slice(0,6);
+
+  RECO.innerHTML = scored.map(r=>`
+    <div class="card" onclick="openDetail('${r.g.id}')">
+      <img class="cover" src="${r.g.image || r.g.thumbnail || ''}"
+        onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+      <div>${r.g.name_zh || r.g.name_en || r.g.name}</div>
+    </div>
+  `).join("");
+}
+
+/* ========================================================
+   隨機預覽
+======================================================== */
+RANDOM_BTN.addEventListener("click",()=>{
+  if(DATA.length===0) return;
+  const r = DATA[Math.floor(Math.random()*DATA.length)];
+  openDetail(r.id);
+});
+
+/* ========================================================
+   RWD
+======================================================== */
+function applyRWD(){
+  const grid=$("#GRID");
+
+  if(window.innerWidth<640){
+    document.querySelectorAll(".cover").forEach(img=>{
+      img.style.aspectRatio="4/3";
+      img.style.objectFit="cover";
+    });
+    grid.style.gridTemplateColumns="repeat(auto-fill,minmax(180px,1fr))";
+
+  }else{
+    document.querySelectorAll(".cover").forEach(img=>{
+      img.style.aspectRatio="1/1";
+      img.style.objectFit="cover";
+    });
+    grid.style.gridTemplateColumns="repeat(auto-fill,minmax(260px,1fr))";
+  }
+}
+
+window.addEventListener("resize",applyRWD);
+window.addEventListener("load",applyRWD);
+
+/* ========================================================
+   ESC 關閉
+======================================================== */
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closeDetail();
+});
+
+/* 點背景關閉 */
+DETAIL.addEventListener("click",e=>{
+  if(e.target===DETAIL) closeDetail();
+});
+
+/* ========================================================
+   初始化（最重要）
+======================================================== */
+loadData();
+</script>
+</body>
+</html>
