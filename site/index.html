@@ -40,7 +40,7 @@ header{
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:10px;
+  gap:8px;
   position:sticky;
   top:0;
   z-index:20;
@@ -50,7 +50,7 @@ header input,
 header select,
 header button{
   font:inherit;
-  padding:8px 10px;
+  padding:6px 8px;
   border-radius:6px;
   border:1px solid #d1d5db;
   background:#fff;
@@ -76,12 +76,81 @@ header button:hover{
   color:#fff;
 }
 
+/* STATS + LAYOUT */
+#STATS{
+  max-width:var(--w-max);
+  margin:8px auto 0;
+  padding:0 16px 4px;
+  font-size:14px;
+  color:#4b5563;
+}
+
+/* FOCUS 區塊（點卡片後的詳情＋推薦） */
+#FOCUS{
+  max-width:var(--w-max);
+  margin:4px auto 0;
+  padding:0 16px;
+}
+.focus-card{
+  background:#fff;
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+  padding:14px 16px;
+  box-shadow:var(--card-shadow);
+}
+.focus-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+}
+.focus-title{
+  font-size:18px;
+  font-weight:700;
+}
+.focus-layout{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.focus-main{
+  flex:1 1 260px;
+}
+.focus-side{
+  flex:1 1 220px;
+}
+.focus-img{
+  width:100%;
+  border-radius:12px;
+  object-fit:cover;
+  background:#f3f4f6;
+  aspect-ratio:4/3;
+  margin-bottom:8px;
+}
+
+.focus-sub{
+  font-size:14px;
+  color:var(--c-muted);
+}
+
+.focus-meta{
+  font-size:14px;
+  margin:4px 0 8px;
+}
+
+.focus-section-title{
+  margin:8px 0 4px;
+  font-size:15px;
+  font-weight:600;
+}
+
 /* GRID */
 #GRID{
-  padding:16px;
+  padding:12px 16px 0;
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-  gap:18px;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
   max-width:var(--w-max);
   margin:0 auto;
 }
@@ -90,10 +159,10 @@ header button:hover{
   background:#fff;
   border-radius:12px;
   border:1px solid #e5e7eb;
-  padding:12px;
+  padding:10px;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:8px;
   transition:0.15s;
   cursor:pointer;
 }
@@ -112,22 +181,22 @@ header button:hover{
 }
 
 .title{
-  font-size:18px;
+  font-size:16px;
   font-weight:700;
 }
 
 .subtitle{
   color:var(--c-muted);
-  font-size:14px;
+  font-size:13px;
 }
 
 /* CHIPS */
 .chip{
   display:inline-block;
-  padding:4px 8px;
+  padding:3px 7px;
   border-radius:8px;
   background:var(--chip-bg);
-  font-size:13px;
+  font-size:12px;
   margin:2px;
   border:1px solid transparent;
   user-select:none;
@@ -139,41 +208,83 @@ header button:hover{
   cursor:pointer;
 }
 
-/* DETAIL */
-#DETAIL{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-  display:none;
-  justify-content:center;
-  align-items:flex-start;
-  padding:20px;
-  z-index:50;
+/* 推薦列表（在同一頁） */
+.focus-reco-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:8px;
+  margin-top:4px;
 }
 
-#DETAIL .panel{
+.focus-reco-card{
   background:#fff;
-  width:100%;
-  max-width:860px;
-  border-radius:12px;
-  padding:20px;
-  max-height:90vh;
-  overflow:auto;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  padding:6px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  cursor:pointer;
+  transition:0.12s;
 }
-
-.detail-img{
+.focus-reco-card:hover{
+  border-color:var(--c-border);
+  box-shadow:var(--card-shadow);
+}
+.focus-reco-img{
   width:100%;
+  aspect-ratio:4/3;
   object-fit:cover;
-  border-radius:12px;
-  margin-bottom:14px;
+  border-radius:8px;
+  background:#f3f4f6;
+}
+.focus-reco-name{
+  font-size:13px;
 }
 
+/* PAGER */
+#PAGER{
+  max-width:var(--w-max);
+  margin:8px auto 0;
+  padding:8px 16px 16px;
+  text-align:center;
+  font-size:14px;
+}
+#PAGER button{
+  font:inherit;
+  padding:4px 10px;
+  margin:0 4px;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+  background:#fff;
+  cursor:pointer;
+}
+#PAGER button:hover{
+  border-color:var(--c-border);
+}
+
+/* RWD */
 @media (max-width:640px){
-  header{ padding:10px; }
-  #GRID{ padding:10px; gap:14px; }
-  .card{ padding:10px; }
-  #DETAIL .panel{ padding:14px; }
+  header{
+    padding:10px;
+    gap:6px;
+  }
+  #GRID{
+    padding:10px;
+    gap:12px;
+  }
+  .card{
+    padding:8px;
+  }
+  .cover{
+    aspect-ratio:4/3;
+  }
+  .focus-layout{
+    flex-direction:column;
+  }
+  .focus-img{
+    aspect-ratio:4/3;
+  }
 }
 </style>
 </head>
@@ -194,38 +305,42 @@ header button:hover{
     <option value="used_price_twd">二手價格</option>
   </select>
 
+  <select id="PAGE_SIZE_SEL">
+    <option value="15">每頁 15 筆</option>
+    <option value="25" selected>每頁 25 筆</option>
+    <option value="50">每頁 50 筆</option>
+  </select>
+
   <button id="RANDOM_BTN">隨機預覽</button>
   <button id="CLEAR_BTN">清除篩選</button>
 </header>
 
+<div id="STATS"></div>
+<div id="FOCUS"></div>
 <div id="GRID"></div>
-
-<div id="DETAIL">
-  <div class="panel" id="DETAIL_INNER"></div>
-</div>
+<div id="PAGER"></div>
 
 <script>
 let DATA = [];
 let FILTER_CAT = "";
 let FILTER_MECH = "";
+let PAGE = 1;
+let PAGE_SIZE = 25;
 const $ = (s)=>document.querySelector(s);
 
 /* ========================================================
-   強化版路徑解析：100% 相容 GitHub Pages
+   JSON 路徑（只讀，不動你的 pipeline）
 ======================================================== */
 async function loadData(){
-  const repo = "/game-guide-site";
   const paths = [
-    `${repo}/site/data/games.json`,
-    `/site/data/games.json`,
-    `site/data/games.json`,
-    `./site/data/games.json`,
-    `${repo}/data/games.json`,
-    `/data/games.json`,
-    `data/games.json`,
-    `./data/games.json`,
+    "site/data/games.json",
+    "./site/data/games.json",
+    "../site/data/games.json",
+    "data/games.json",
+    "./data/games.json",
+    "../data/games.json",
   ];
-  console.log("候選 JSON：", paths);
+  console.log("候選 JSON 路徑：", paths);
 
   for(const url of paths){
     try{
@@ -235,17 +350,19 @@ async function loadData(){
         console.log("成功載入：", url, DATA.length);
         break;
       }
-    }catch(e){}
+    }catch(e){
+      console.warn("載入失敗：", url, e);
+    }
   }
 
-  if(!DATA.length){
-    alert("無法載入 JSON。請確認路徑。");
+  if(!Array.isArray(DATA) || !DATA.length){
+    alert("無法載入遊戲資料 JSON，請檢查 site/data/games.json。");
     return;
   }
 
   buildOptions();
+  attachEvents();
   render();
-  applyRWD();
 }
 
 /* ======================================================== */
@@ -263,9 +380,11 @@ function buildOptions(){
 
   for(const g of DATA){
     (g.categories_zh || g.categories || []).forEach(c=>{
+      if(!c) return;
       cat.set(c, (cat.get(c)||0)+1);
     });
     (g.mechanisms_zh || g.mechanisms || []).forEach(m=>{
+      if(!m) return;
       mech.set(m, (mech.get(m)||0)+1);
     });
   }
@@ -284,11 +403,15 @@ function buildOptions(){
 }
 
 /* ======================================================== */
-function fmt(v){ return v==null ? "-" : v; }
+function fmt(v){
+  return v==null || v==="" ? "-" : v;
+}
 
+/* ========================================================
+   主渲染 + 分頁
+======================================================== */
 function render(){
   const q = Q.value.trim();
-
   let list = DATA.filter(g => {
     const okSearch =
       textMatch(g.name_zh, q) ||
@@ -306,27 +429,52 @@ function render(){
       const mechs = g.mechanisms_zh || g.mechanisms || [];
       if(!mechs.includes(FILTER_MECH)) return false;
     }
-
     return true;
   });
 
   const key = SORT.value;
-
   list.sort((a,b)=>{
     let A = a[key], B = b[key];
-
     if(A == null) A = -999999;
     if(B == null) B = -999999;
-
     if(typeof A === "string") A = A.toLowerCase();
     if(typeof B === "string") B = B.toLowerCase();
-
     if(A > B) return 1;
     if(A < B) return -1;
     return 0;
   });
 
-  GRID.innerHTML = list.map(g => cardHTML(g)).join("");
+  const totalAll = DATA.length;
+  const total = list.length;
+  if(total === 0){
+    GRID.innerHTML = "<p style='padding:12px 16px;'>沒有符合條件的遊戲。</p>";
+    STATS.textContent = `總數 ${totalAll} 款，符合篩選 0 款。`;
+    PAGER.innerHTML = "";
+    return;
+  }
+
+  const pageCount = Math.ceil(total / PAGE_SIZE);
+  if(PAGE > pageCount) PAGE = pageCount;
+  if(PAGE < 1) PAGE = 1;
+
+  const start = (PAGE-1)*PAGE_SIZE;
+  const end = start + PAGE_SIZE;
+  const pageList = list.slice(start, end);
+
+  GRID.innerHTML = pageList.map(g => cardHTML(g)).join("");
+
+  STATS.textContent =
+    `總數 ${totalAll} 款，符合篩選 ${total} 款，顯示第 ${start+1}–${Math.min(end,total)} 筆（第 ${PAGE} / ${pageCount} 頁）`;
+
+  if(pageCount <= 1){
+    PAGER.innerHTML = "";
+  }else{
+    PAGER.innerHTML = `
+      <button data-page="prev" ${PAGE===1 ? "disabled" : ""}>上一頁</button>
+      <span>第 ${PAGE} / ${pageCount} 頁</span>
+      <button data-page="next" ${PAGE===pageCount ? "disabled" : ""}>下一頁</button>
+    `;
+  }
 }
 
 /* ======================================================== */
@@ -344,10 +492,10 @@ function cardHTML(g){
     <img class="cover" src="${img}"
       onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
 
-    <div class="title">${g.name_zh || g.name_en || g.name}</div>
+    <div class="title">${g.name_zh || g.name_en || g.name || "(未命名)"}</div>
     <div class="subtitle">${g.name_en || ""}</div>
 
-    <div style="font-size:14px;color:#444;">
+    <div style="font-size:13px;color:#444;">
       <b>Bayes</b>：${fmt(g.rating_bayes)}
       ｜ <b>均分</b>：${fmt(g.rating_avg)}
       ｜ <b>重度</b>：${fmt(g.weight)}
@@ -356,26 +504,27 @@ function cardHTML(g){
     <div>${cats}</div>
     <div>${mechs}</div>
 
-    <div style="margin-top:4px;font-size:14px;">
+    <div style="margin-top:2px;font-size:13px;">
       二手：${g.used_price_twd ? "NT$"+g.used_price_twd : "-"}
-    </div>
-    <div style="font-size:14px;">
-      庫存：${g.stock ?? 0}
+      ｜ 庫存：${g.stock ?? 0}
     </div>
 
-    <div style="margin-top:4px;font-size:13px;">
-      <a href="${g.bgg_url}" target="_blank">前往 BGG</a>
+    <div style="margin-top:2px;font-size:12px;">
+      ${g.bgg_url ? `<a href="${g.bgg_url}" target="_blank">前往 BGG</a>` : ""}
     </div>
   </div>
   `;
 }
 
-/* ======================================================== */
+/* ========================================================
+   同頁詳情＋推薦
+======================================================== */
 function openDetail(id){
   const g = DATA.find(x => x.id === id);
-  if(!g) return;
-
-  DETAIL.style.display = "flex";
+  if(!g){
+    console.warn("找不到遊戲 id:", id);
+    return;
+  }
 
   const cats = (g.categories_zh || g.categories || [])
     .map(c => `<span class="chip" onclick="chipFilter('cat','${c}',event)">${c}</span>`).join("");
@@ -383,52 +532,65 @@ function openDetail(id){
   const mechs = (g.mechanisms_zh || g.mechanisms || [])
     .map(m => `<span class="chip" onclick="chipFilter('mech','${m}',event)">${m}</span>`).join("");
 
-  DETAIL_INNER.innerHTML = `
-    <button onclick="closeDetail()" 
-      style="float:right;margin-bottom:10px;">關閉</button>
+  const recoHtml = buildRecommendHTML(g);
 
-    <img class="detail-img" src="${g.image || g.thumbnail || ""}"
-      onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+  FOCUS.innerHTML = `
+    <div class="focus-card">
+      <div class="focus-header">
+        <div class="focus-title">${g.name_zh || g.name_en || g.name || "(未命名)"}</div>
+        <button onclick="closeFocus()" style="padding:4px 10px;font-size:13px;">關閉詳情</button>
+      </div>
 
-    <h2>${g.name_zh || g.name_en || g.name}</h2>
-    <p>${g.name_en || ""}</p>
+      <div class="focus-layout">
+        <div class="focus-main">
+          <img class="focus-img" src="${g.image || g.thumbnail || ""}"
+            onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+          <div class="focus-sub">${g.name_en || ""}</div>
+          <div class="focus-meta">
+            <div>Bayes：${fmt(g.rating_bayes)}｜玩家平均：${fmt(g.rating_avg)}｜評分人數：${fmt(g.users_rated)}</div>
+            <div>重量：${fmt(g.weight)}｜年份：${fmt(g.year)}</div>
+            ${g.bgg_url ? `<div>BGG：<a href="${g.bgg_url}" target="_blank">${g.bgg_url}</a></div>` : ""}
+          </div>
 
-    <p>Bayes：${fmt(g.rating_bayes)}</p>
-    <p>玩家平均：${fmt(g.rating_avg)}</p>
-    <p>評分人數：${fmt(g.users_rated)}</p>
-    <p>重量：${fmt(g.weight)}</p>
+          ${g.description ? `<div style="font-size:13px;margin-top:4px;">${g.description}</div>` : ""}
+        </div>
 
-    <h3>分類</h3>
-    ${cats}
+        <div class="focus-side">
+          <div class="focus-section-title">分類</div>
+          <div>${cats || "<span style='font-size:13px;color:#9ca3af;'>尚未標註</span>"}</div>
 
-    <h3>機制</h3>
-    ${mechs}
+          <div class="focus-section-title">機制</div>
+          <div>${mechs || "<span style='font-size:13px;color:#9ca3af;'>尚未標註</span>"}</div>
 
-    <h3>你可能也會喜歡</h3>
-    <div id="RECO"></div>
+          <div class="focus-section-title">你可能也會喜歡</div>
+          <div class="focus-reco-grid">
+            ${recoHtml || "<span style='font-size:13px;color:#9ca3af;'>暫時沒有推薦</span>"}
+          </div>
+        </div>
+      </div>
+    </div>
   `;
 
-  buildRecommend(g);
+  // 捲到詳情區塊
+  const top = FOCUS.getBoundingClientRect().top + window.scrollY - 70;
+  window.scrollTo({ top, behavior:"smooth" });
 }
 
-function closeDetail(){
-  DETAIL.style.display = "none";
+function closeFocus(){
+  FOCUS.innerHTML = "";
 }
 
-/* ======================================================== */
-function buildRecommend(g){
+function buildRecommendHTML(g){
   const baseCats = new Set(g.categories_zh || g.categories || []);
   const baseMechs = new Set(g.mechanisms_zh || g.mechanisms || []);
 
-  let scored = DATA.map(x => {
+  const scored = DATA.map(x => {
     if(x.id === g.id) return null;
-
     let score = 0;
 
     (x.mechanisms_zh || x.mechanisms || []).forEach(m=>{
       if(baseMechs.has(m)) score += 3;
     });
-
     (x.categories_zh || x.categories || []).forEach(c=>{
       if(baseCats.has(c)) score += 1;
     });
@@ -439,18 +601,20 @@ function buildRecommend(g){
   .sort((a,b)=> b.score - a.score)
   .slice(0, 6);
 
-  RECO.innerHTML = scored.map(r => `
-    <div class="card" onclick="openDetail('${r.g.id}')">
-      <img class="cover" src="${r.g.image || r.g.thumbnail || ''}"
+  return scored.map(r => `
+    <div class="focus-reco-card" onclick="openDetail('${r.g.id}')">
+      <img class="focus-reco-img" src="${r.g.image || r.g.thumbnail || ''}"
         onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
-      <div>${r.g.name_zh || r.g.name_en || r.g.name}</div>
+      <div class="focus-reco-name">${r.g.name_zh || r.g.name_en || r.g.name}</div>
     </div>
   `).join("");
 }
 
-/* ======================================================== */
+/* ========================================================
+   Chips 篩選
+======================================================== */
 function chipFilter(type,val,event){
-  event.stopPropagation();
+  if(event) event.stopPropagation();
   if(type === "cat"){
     FILTER_CAT = val;
     CAT.value = val;
@@ -458,52 +622,76 @@ function chipFilter(type,val,event){
     FILTER_MECH = val;
     MECH.value = val;
   }
+  PAGE = 1;
   render();
 }
 
-CLEAR_BTN.onclick = ()=>{
-  FILTER_CAT = "";
-  FILTER_MECH = "";
-  CAT.value = "";
-  MECH.value = "";
-  Q.value = "";
-  render();
-};
+/* ========================================================
+   事件綁定
+======================================================== */
+function attachEvents(){
+  Q.addEventListener("input", ()=>{
+    PAGE = 1;
+    render();
+  });
 
-/* ======================================================== */
-RANDOM_BTN.addEventListener("click", ()=>{
-  if(DATA.length === 0) return;
-  const r = DATA[Math.floor(Math.random() * DATA.length)];
-  openDetail(r.id);
-});
+  CAT.addEventListener("change", ()=>{
+    FILTER_CAT = CAT.value || "";
+    PAGE = 1;
+    render();
+  });
 
-/* ======================================================== */
-function applyRWD(){
-  const grid = document.querySelector("#GRID");
+  MECH.addEventListener("change", ()=>{
+    FILTER_MECH = MECH.value || "";
+    PAGE = 1;
+    render();
+  });
 
-  if(window.innerWidth < 640){
-    document.querySelectorAll(".cover").forEach(img=>{
-      img.style.aspectRatio = "4 / 3";
-      img.style.objectFit = "cover";
-    });
+  SORT.addEventListener("change", ()=>{
+    PAGE = 1;
+    render();
+  });
 
-    grid.style.gridTemplateColumns =
-      "repeat(auto-fill,minmax(180px,1fr))";
+  PAGE_SIZE_SEL.addEventListener("change", ()=>{
+    PAGE_SIZE = parseInt(PAGE_SIZE_SEL.value || "25", 10) || 25;
+    PAGE = 1;
+    render();
+  });
 
-  }else{
-    document.querySelectorAll(".cover").forEach(img=>{
-      img.style.aspectRatio = "1 / 1";
-      img.style.objectFit = "cover";
-    });
+  CLEAR_BTN.addEventListener("click", ()=>{
+    FILTER_CAT = "";
+    FILTER_MECH = "";
+    CAT.value = "";
+    MECH.value = "";
+    Q.value = "";
+    PAGE = 1;
+    closeFocus();
+    render();
+  });
 
-    grid.style.gridTemplateColumns =
-      "repeat(auto-fill,minmax(260px,1fr))";
-  }
+  RANDOM_BTN.addEventListener("click", ()=>{
+    if(!DATA.length) return;
+    const r = DATA[Math.floor(Math.random() * DATA.length)];
+    // 先切換到包含它的頁數
+    const idx = DATA.findIndex(x => x.id === r.id);
+    if(idx >= 0){
+      PAGE = Math.floor(idx / PAGE_SIZE) + 1;
+      render();
+    }
+    openDetail(r.id);
+  });
+
+  PAGER.addEventListener("click", (e)=>{
+    const btn = e.target.closest("button[data-page]");
+    if(!btn) return;
+    const dir = btn.getAttribute("data-page");
+    if(dir === "prev") PAGE--;
+    if(dir === "next") PAGE++;
+    render();
+  });
 }
 
-window.addEventListener("resize", applyRWD);
-window.addEventListener("load", applyRWD);
-
+/* ======================================================== */
 loadData();
 </script>
 
