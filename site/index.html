@@ -16,6 +16,7 @@
       --text-muted: #6b7280;
       --chip-bg: #f3f4f6;
       --danger: #b91c1c;
+      --control-height: 34px; /* 所有控制元件統一高度 */
     }
     * { box-sizing: border-box; }
 
@@ -60,7 +61,7 @@
       margin-bottom: 0.4rem;
     }
 
-    /* 搜尋框：尺寸跟 select 一樣高 */
+    /* 搜尋框：高度綁定 select */
     .search-box {
       flex: 2 1 220px;
       min-width: 200px;
@@ -69,8 +70,9 @@
       gap: 0.4rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      padding: 0.32rem 0.8rem;
+      padding: 0 0.8rem;
       background: #f9fafb;
+      height: var(--control-height);
     }
     .search-box input {
       border: none;
@@ -83,18 +85,22 @@
     .select {
       border-radius: 999px;
       border: 1px solid var(--border);
-      padding: 0.32rem 0.8rem;
+      padding: 0 0.8rem;
       font-size: 0.85rem;
       background: #fff;
+      height: var(--control-height);
     }
     .btn {
       border-radius: 999px;
       border: 1px solid var(--border);
-      padding: 0.32rem 0.9rem;
+      padding: 0 0.32rem;
       font-size: 0.85rem;
       background: #fff;
       cursor: pointer;
       white-space: nowrap;
+      height: var(--control-height);
+      display: flex;
+      align-items: center;
     }
     .btn-primary {
       background: var(--accent);
@@ -105,6 +111,11 @@
       border-color: var(--accent);
       color: var(--accent);
       background: #fff;
+    }
+    .btn-toggle-active {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .toolbar-row2 {
@@ -188,7 +199,7 @@
       box-shadow: 0 0 0 2px var(--accent-soft);
     }
 
-    /* 圖片：灰邊縮小，高度更緊湊 */
+    /* 圖片：灰邊縮小，高度緊湊 */
     .card-img-wrapper {
       background: #e5e7eb;
       display: flex;
@@ -401,7 +412,6 @@
       }
       .search-box {
         width: 100%;
-        border-radius: 999px;
       }
       .cards-grid,
       .random-grid,
@@ -479,6 +489,7 @@
         <div id="datasetStats"></div>
         <div style="display:flex;gap:0.3rem;align-items:center;flex-wrap:wrap;">
           <div class="toolbar-badges" id="activeFilters"></div>
+          <button id="favFilterBtn" class="btn" type="button">只看收藏</button>
           <button id="downloadFavBtn" class="btn" type="button">下載收藏清單（CSV）</button>
         </div>
       </div>
@@ -597,6 +608,7 @@
     const randomButton     = document.getElementById('randomButton');
     const clearButton      = document.getElementById('clearButton');
     const downloadFavBtn   = document.getElementById('downloadFavBtn');
+    const favFilterBtn     = document.getElementById('favFilterBtn');
 
     const datasetStats     = document.getElementById('datasetStats');
     const activeFilters    = document.getElementById('activeFilters');
@@ -621,6 +633,7 @@
       sortKey: 'name_zh',
       pageSize: 25,
       currentPage: 0,
+      onlyFavorites: false,
     };
 
     // ======= 收藏清單（localStorage） =======
@@ -816,6 +829,9 @@
           const s = new Set(g.mechanisms);
           if (!s.has(mechKey)) return false;
         }
+        if (state.onlyFavorites && !favoriteIds.has(g.id)) {
+          return false;
+        }
         return true;
       });
 
@@ -869,6 +885,9 @@
       if (state.searchText.trim()) {
         parts.push(`搜尋：「${state.searchText.trim()}」`);
       }
+      if (state.onlyFavorites) {
+        parts.push('只看收藏');
+      }
       taxStats.textContent = parts.length ? parts.join(' ｜ ') : '';
 
       activeFilters.innerHTML = '';
@@ -888,6 +907,12 @@
         const b = document.createElement('span');
         b.className = 'badge';
         b.textContent = `搜尋：「${state.searchText.trim()}」`;
+        activeFilters.appendChild(b);
+      }
+      if (state.onlyFavorites) {
+        const b = document.createElement('span');
+        b.className = 'badge';
+        b.textContent = '只看收藏';
         activeFilters.appendChild(b);
       }
     }
@@ -1088,6 +1113,10 @@
           favBtn.classList.remove('is-fav');
           favBtn.textContent = '☆ 收藏';
         }
+        // 如果正在只看收藏，更新篩選
+        if (state.onlyFavorites) {
+          applyFilters();
+        }
       });
       btns.appendChild(favBtn);
 
@@ -1232,6 +1261,17 @@
     }
 
     // ======= 事件 =======
+    function updateFavFilterBtn() {
+      if (!favFilterBtn) return;
+      if (state.onlyFavorites) {
+        favFilterBtn.classList.add('btn-toggle-active');
+        favFilterBtn.textContent = '只看收藏（開）';
+      } else {
+        favFilterBtn.classList.remove('btn-toggle-active');
+        favFilterBtn.textContent = '只看收藏';
+      }
+    }
+
     function setupEvents() {
       searchInput.addEventListener('input', (e) => {
         state.searchText = e.target.value || '';
@@ -1267,12 +1307,14 @@
         state.sortKey = 'name_zh';
         state.pageSize = 25;
         state.currentPage = 0;
+        state.onlyFavorites = false;
 
         searchInput.value = '';
         categorySelect.value = '';
         mechanismSelect.value = '';
         sortSelect.value = 'name_zh';
         pageSizeSelect.value = '25';
+        updateFavFilterBtn();
 
         applyFilters();
       });
@@ -1281,6 +1323,14 @@
         randomVisible = true;   // 手動按鈕才重新開啟
         renderRandomPreview();
       });
+
+      if (favFilterBtn) {
+        favFilterBtn.addEventListener('click', () => {
+          state.onlyFavorites = !state.onlyFavorites;
+          updateFavFilterBtn();
+          applyFilters();
+        });
+      }
 
       prevPageBtn.addEventListener('click', () => {
         if (state.currentPage > 0) {
@@ -1347,6 +1397,7 @@
       const { catMap, mechMap } = buildTaxonomy(allGames);
       initFilterSelects(catMap, mechMap);
       setupEvents();
+      updateFavFilterBtn();
 
       sortGames(allGames, state.sortKey);
       filteredGames = [...allGames];
