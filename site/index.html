@@ -175,19 +175,25 @@
       flex-direction: column;
       font-size: 0.78rem;
     }
+
+    /* ★ 圖片區：固定高度＋等比例縮放置中，不裁切 */
     .card-img-wrapper {
-      position: relative;
-      padding-top: 66%; /* 接近 3:2，比較像原本 BGG 封面比例 */
       background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      height: 190px;      /* 桌機預設高度 */
       overflow: hidden;
     }
     .card-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;   /* 保持滿版，避免變形 */
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain; /* 全圖顯示，不裁掉上下左右 */
     }
+
     .card-body {
       padding: 0.6rem 0.7rem 0.65rem;
       display: flex;
@@ -306,13 +312,16 @@
       gap: 0.3rem;
     }
 
-    /* RWD：平板與手機優化 */
+    /* RWD：平板與手機優化（同步調整圖片高度） */
     @media (max-width: 1024px) {
       .cards-grid {
         grid-template-columns: repeat(auto-fill,minmax(210px,1fr));
       }
       .random-grid {
         grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+      }
+      .card-img-wrapper {
+        height: 180px;
       }
     }
     @media (max-width: 768px) {
@@ -329,7 +338,7 @@
         grid-template-columns: repeat(2,minmax(0,1fr));
       }
       .card-img-wrapper {
-        padding-top: 120%; /* 手機上改成較接近 1:1，比較不會太寬 */
+        height: 170px;
       }
     }
     @media (max-width: 480px) {
@@ -337,6 +346,9 @@
       .random-grid,
       .recommend-grid {
         grid-template-columns: 1fr;
+      }
+      .card-img-wrapper {
+        height: 160px;
       }
     }
   </style>
@@ -473,7 +485,7 @@
         if (!line) continue;
         line = line.trim();
         if (!line || line.startsWith('#')) continue;
-        line = line.replace(/^\uFEFF/, ''); // 去掉 BOM
+        line = line.replace(/^\uFEFF/, '');
 
         const idx = line.lastIndexOf(',');
         if (idx <= 0) continue;
@@ -1070,7 +1082,6 @@
 
     // ======= 初始化 =======
     (async function init() {
-      // 先載入分類／機制對照表
       await Promise.all([
         loadCsvMap('category', ['../data/category_map_zh.csv', 'data/category_map_zh.csv'], CATEGORY_ZH_MAP),
         loadCsvMap('mechanism', ['../data/mechanism_map_zh.csv', 'data/mechanism_map_zh.csv'], MECHANISM_ZH_MAP),
