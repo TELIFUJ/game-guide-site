@@ -1,1025 +1,1334 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Board Game Guide</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-  :root{
-    --c-border:#1e90ff;
-    --c-muted:#6b7280;
-    --c-bg:#fafafa;
-    --chip-bg:#eef6ff;
-    --chip-active:#d9ebff;
-    --chip-active-border:#1e90ff;
-    --card-shadow:0 2px 6px rgba(0,0,0,0.08);
-    --w-max:1280px;
-  }
-
-  /* GLOBAL */
-  *{ box-sizing:border-box; }
-
-  body{
-    font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    margin:0;
-    background:var(--c-bg);
-    color:#1f2937;
-  }
-
-  .container{
-    width:100%;
-    max-width:var(--w-max);
-    margin:0 auto;
-  }
-
-  /* HEADER */
-  header{
-    background:#fff;
-    border-bottom:1px solid var(--c-border);
-    position:sticky;
-    top:0;
-    z-index:20;
-  }
-
-  .header-inner{
-    max-width:var(--w-max);
-    margin:0 auto;
-    padding:10px 12px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    align-items:center;
-  }
-
-  header input,
-  header select,
-  header button,
-  header label{
-    font:inherit;
-  }
-
-  #Q{
-    min-width:220px;
-    padding:6px 10px;
-    border-radius:6px;
-    border:1px solid #d1d5db;
-  }
-
-  header select{
-    padding:6px 10px;
-    border-radius:6px;
-    border:1px solid #d1d5db;
-    background:#fff;
-  }
-
-  header button{
-    padding:6px 10px;
-    border-radius:6px;
-    border:1px solid var(--c-border);
-    background:#fff;
-    color:var(--c-border);
-    cursor:pointer;
-  }
-  header button:hover{
-    background:var(--c-border);
-    color:#fff;
-  }
-
-  #CLEAR_BTN{
-    background:#ffecec;
-    color:#c00;
-    border-color:#c00;
-  }
-  #CLEAR_BTN:hover{
-    background:#c00;
-    color:#fff;
-  }
-
-  .header-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    align-items:center;
-  }
-
-  .header-row-small{
-    margin-top:4px;
-    font-size:14px;
-    color:var(--c-muted);
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    align-items:center;
-  }
-
-  .toggle-group{
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-
-  .toggle-group input{
-    margin-right:4px;
-  }
-
-  /* SUMMARY */
-  #SUMMARY_BAR{
-    padding:6px 12px 0;
-    font-size:14px;
-    color:#374151;
-  }
-
-  /* GRID */
-  #GRID_WRAP{
-    padding:8px 12px 20px;
-  }
-
-  #GRID{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:18px;
-  }
-
-  .card{
-    background:#fff;
-    border-radius:12px;
-    border:1px solid #e5e7eb;
-    padding:10px 10px 12px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    transition:0.15s;
-  }
-
-  .card:hover{
-    border-color:var(--c-border);
-    box-shadow:var(--card-shadow);
-  }
-
-  .cover{
-    width:100%;
-    height:210px;           /* 不要超放大，固定高度＋contain */
-    object-fit:contain;
-    background:#f3f4f6;
-    border-radius:10px;
-  }
-
-  .title-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:6px;
-  }
-
-  .title{
-    font-size:17px;
-    font-weight:700;
-  }
-
-  .badge-dup{
-    font-size:12px;
-    padding:2px 6px;
-    border-radius:999px;
-    background:#fef3c7;
-    border:1px solid #fbbf24;
-    color:#92400e;
-    white-space:nowrap;
-  }
-
-  .subtitle{
-    color:var(--c-muted);
-    font-size:14px;
-  }
-
-  .meta-row{
-    font-size:13px;
-    color:#4b5563;
-  }
-
-  .chips{
-    margin-top:2px;
-  }
-
-  .chip{
-    display:inline-block;
-    padding:3px 7px;
-    border-radius:999px;
-    background:var(--chip-bg);
-    font-size:12px;
-    margin:2px;
-    border:1px solid transparent;
-    cursor:pointer;
-    white-space:nowrap;
-  }
-
-  .chip:hover{
-    background:var(--chip-active);
-    border-color:var(--chip-active-border);
-  }
-
-  .info-row{
-    font-size:13px;
-    margin-top:4px;
-  }
-
-  .info-row a{
-    color:#2563eb;
-    text-decoration:none;
-  }
-  .info-row a:hover{
-    text-decoration:underline;
-  }
-
-  .fav-btn{
-    margin-top:4px;
-    padding:3px 8px;
-    font-size:13px;
-    border-radius:999px;
-    border:1px solid #d1d5db;
-    background:#fff;
-    cursor:pointer;
-    align-self:flex-start;
-  }
-  .fav-btn.fav-on{
-    border-color:#f59e0b;
-    background:#fef3c7;
-    color:#92400e;
-  }
-
-  .empty-msg{
-    font-size:15px;
-    color:#6b7280;
-    padding:24px 4px;
-  }
-
-  /* PAGER */
-  #PAGER{
-    margin-top:8px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    font-size:14px;
-  }
-
-  .page-btn{
-    padding:4px 10px;
-    border-radius:999px;
-    border:1px solid #d1d5db;
-    background:#fff;
-    cursor:pointer;
-  }
-  .page-btn:disabled{
-    opacity:0.5;
-    cursor:default;
-  }
-
-  .page-info{
-    color:#4b5563;
-  }
-
-  /* FOCUS + RECO 區（你可能也會喜歡） */
-  #FOCUS{
-    max-width:var(--w-max);
-    margin:6px auto 0;
-    padding:8px 12px 0;
-  }
-
-  .focus-box{
-    background:#fff;
-    border-radius:12px;
-    border:1px solid #e5e7eb;
-    padding:10px 12px 12px;
-    display:none;
-  }
-
-  .focus-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:8px;
-  }
-
-  .focus-title{
-    font-size:15px;
-    font-weight:600;
-  }
-
-  .focus-main{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-  }
-
-  .focus-main img{
-    width:160px;
-    height:160px;
-    object-fit:contain;
-    border-radius:10px;
-    background:#f3f4f6;
-  }
-
-  .focus-text{
-    flex:1 1 220px;
-    font-size:14px;
-  }
-
-  .focus-reco-grid{
-    margin-top:10px;
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
-    gap:10px;
-  }
-
-  .focus-reco-card{
-    border-radius:10px;
-    border:1px solid #e5e7eb;
-    padding:6px;
-    font-size:13px;
-    cursor:pointer;
-    background:#fafafa;
-  }
-
-  .focus-reco-card:hover{
-    border-color:var(--c-border);
-    background:#f3f4ff;
-  }
-
-  .focus-reco-card img{
-    width:100%;
-    height:110px;
-    object-fit:contain;
-    border-radius:8px;
-    background:#f3f4f6;
-  }
-
-  @media (max-width:640px){
-    .header-inner{
-      padding:8px;
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --chip-bg: #f3f4f6;
+      --chip-selected-bg: #2563eb;
+      --chip-selected-text: #ffffff;
+      --danger: #b91c1c;
     }
-    #GRID_WRAP{
-      padding:8px;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
     }
-    #GRID{
-      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-      gap:12px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(245,245,247,0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
     }
-    .cover{
-      height:190px;
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 1rem;
     }
-  }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-right: 1rem;
+      white-space: nowrap;
+    }
+    .search-input {
+      flex: 1 1 220px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.8rem;
+    }
+    .search-input input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 0.9rem;
+      background: transparent;
+    }
+    .select {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.8rem;
+      background: #fff;
+      font-size: 0.85rem;
+    }
+    .btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .btn-primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-outline {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #fff;
+    }
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 2.5rem;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 280px;
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    /* 左側內容 */
+    section {
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1rem;
+      margin: 0 0 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .section-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* 隨機預覽 */
+    .random-preview {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+    }
+    .random-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+      gap: 0.75rem;
+    }
+
+    /* 卡片 */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+      gap: 0.9rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .card:hover {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .card-img-wrapper {
+      position: relative;
+      padding-top: 70%;
+      overflow: hidden;
+      background: #e5e7eb;
+    }
+    .card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 0.6rem 0.7rem 0.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+    }
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .card-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.8rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .meta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .meta-tag strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .price-stock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      margin-top: 0.15rem;
+    }
+    .price {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .stock {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .stock-zero {
+      color: var(--danger);
+      font-weight: 600;
+    }
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-top: 0.3rem;
+    }
+    .chip {
+      border-radius: 999px;
+      padding: 0.12rem 0.45rem;
+      font-size: 0.68rem;
+      background: var(--chip-bg);
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .chip.selected {
+      background: var(--chip-selected-bg);
+      color: var(--chip-selected-text);
+      border-color: var(--chip-selected-bg);
+    }
+
+    /* 右側篩選面板 */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .panel {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      font-size: 0.8rem;
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.35rem;
+    }
+    .panel-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .panel-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      max-height: 220px;
+      overflow: auto;
+    }
+    .panel-chip {
+      border-radius: 999px;
+      padding: 0.13rem 0.55rem;
+      font-size: 0.68rem;
+      background: var(--chip-bg);
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .panel-chip.selected {
+      background: var(--chip-selected-bg);
+      color: var(--chip-selected-text);
+      border-color: var(--chip-selected-bg);
+    }
+
+    /* 詳細彈出層 */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.45);
+      display: none;
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-backdrop.show {
+      display: flex;
+    }
+    .modal {
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: auto;
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem 1rem;
+      display: grid;
+      grid-template-columns: 280px minmax(0,1fr);
+      gap: 0.9rem;
+    }
+    @media (max-width: 800px) {
+      .modal {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+    .modal-img {
+      width: 100%;
+      border-radius: 0.8rem;
+      border: 1px solid var(--border);
+      max-height: 340px;
+      object-fit: cover;
+      background: #e5e7eb;
+    }
+    .modal-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .modal-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .modal-title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .modal-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .modal-close {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 0.1rem 0.2rem;
+      color: var(--text-muted);
+    }
+    .modal-section-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .similar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+      gap: 0.6rem;
+      margin-top: 0.3rem;
+    }
+    .similar-card {
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #f9fafb;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .similar-img-wrapper {
+      position: relative;
+      padding-top: 60%;
+      overflow: hidden;
+      background: #e5e7eb;
+    }
+    .similar-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .similar-body {
+      padding: 0.35rem 0.45rem 0.45rem;
+      font-size: 0.72rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+    }
+    .similar-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .similar-subtitle {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.05rem 0.35rem;
+      border-radius: 999px;
+      font-size: 0.66rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-left: 0.3rem;
+    }
+
+    /* 工具列狀態 */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin: 0.4rem 0 0.5rem;
+    }
+    .status-left, .status-right {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .active-filter-pill {
+      border-radius: 999px;
+      padding: 0.1rem 0.45rem;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.78rem;
+    }
+    .link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="header-inner">
-    <div class="header-row">
-      <input id="Q" placeholder="搜尋：中文 / 英文 / 原名 / 關鍵字" />
-
-      <select id="CAT"></select>
-      <select id="MECH"></select>
-
-      <select id="SORT">
-        <option value="name_zh">按名稱（中文）</option>
-        <option value="rating_bayes">BGG Bayes</option>
-        <option value="rating_avg">玩家平均</option>
-        <option value="users_rated">評分人數</option>
-        <option value="weight">重量</option>
-        <option value="used_price_twd">二手價格</option>
+  <header>
+    <div class="header-inner">
+      <div class="logo">Board Game Guide</div>
+      <div class="search-input">
+        <span style="font-size:0.8rem;">🔍</span>
+        <input id="searchInput" type="text" placeholder="搜尋遊戲名稱（中／英）…">
+      </div>
+      <select id="sortSelect" class="select">
+        <option value="name_zh">排序：中文名稱</option>
+        <option value="rating_bayes_desc">排序：Bayes 評分（高→低）</option>
+        <option value="rating_avg_desc">排序：平均評分（高→低）</option>
+        <option value="users_rated_desc">排序：評分人數（多→少）</option>
+        <option value="weight_asc">排序：重量（輕→重）</option>
+        <option value="weight_desc">排序：重量（重→輕）</option>
+        <option value="price_asc">排序：價格（低→高）</option>
+        <option value="price_desc">排序：價格（高→低）</option>
       </select>
-
-      <select id="PAGE_SIZE">
-        <option value="15">每頁 15 筆</option>
-        <option value="25" selected>每頁 25 筆</option>
-        <option value="50">每頁 50 筆</option>
-      </select>
-
-      <button id="RANDOM_BTN" type="button">隨機預覽</button>
-      <button id="CLEAR_BTN" type="button">清除篩選</button>
+      <button id="clearFiltersBtn" class="btn">清除篩選</button>
     </div>
+  </header>
 
-    <div class="header-row-small">
-      <div class="toggle-group">
-        <label><input type="checkbox" id="FAV_ONLY" />只看收藏</label>
-        <label><input type="checkbox" id="DUP_ONLY" />只看重複品項</label>
-      </div>
-      <div id="DUP_HINT"></div>
-    </div>
-  </div>
-</header>
+  <main>
+    <div class="layout">
+      <!-- 左側內容 -->
+      <div>
+        <section>
+          <h2>
+            <span>隨機預覽</span>
+            <button id="refreshRandomBtn" class="btn-outline btn" type="button">換一批</button>
+          </h2>
+          <div class="random-preview">
+            <div id="randomContainer" class="random-grid"></div>
+          </div>
+        </section>
 
-<div id="SUMMARY_BAR" class="container"></div>
-
-<div id="FOCUS" class="container">
-  <div id="FOCUS_BOX" class="focus-box">
-    <div class="focus-head">
-      <div class="focus-title">目前選取的遊戲 &amp; 你可能也會喜歡</div>
-      <button id="FOCUS_CLOSE" type="button" class="page-btn">關閉</button>
-    </div>
-    <div class="focus-main">
-      <div id="FOCUS_IMG_WRAP"></div>
-      <div id="FOCUS_TEXT" class="focus-text"></div>
-    </div>
-    <div class="focus-reco-grid" id="FOCUS_RECO"></div>
-  </div>
-</div>
-
-<div id="GRID_WRAP" class="container">
-  <div id="GRID"></div>
-  <div id="PAGER"></div>
-</div>
-
-<script>
-/* ========= 全域狀態 ========= */
-let RAW_DATA = [];
-let DATA = [];               // 正式使用：已 normalize & 過濾掉沒 bgg_id
-let FAVORITES = new Set();   // localStorage 收藏
-let FILTER_CAT = "";
-let FILTER_MECH = "";
-let FILTER_SEARCH = "";
-let SORT_KEY = "name_zh";
-let PAGE_SIZE = 25;
-let CUR_PAGE = 1;
-let SHOW_FAV_ONLY = false;
-let SHOW_DUP_ONLY = false;
-
-/* ========= 工具 ========= */
-const $ = (s)=>document.querySelector(s);
-
-function textMatch(t,q){
-  if(!q) return true;
-  if(!t) return false;
-  q = q.toLowerCase();
-  return t.toLowerCase().includes(q);
-}
-
-function fmtNum(v, decimals=2){
-  if(v === null || v === undefined || Number.isNaN(v)) return "-";
-  const n = Number(v);
-  if(!Number.isFinite(n)) return "-";
-  return n.toFixed(decimals);
-}
-
-function fmtInt(v){
-  if(v === null || v === undefined || Number.isNaN(v)) return "-";
-  const n = parseInt(v,10);
-  if(!Number.isFinite(n)) return "-";
-  return n.toString();
-}
-
-function escapeHtml(str){
-  return (str ?? "").replace(/[&<>"']/g, s=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
-  })[s]);
-}
-
-/* ========= 資料載入 & 正規化 ========= */
-async function loadData(){
-  const paths = [
-    "data/games.json",
-    "./data/games.json",
-    "../data/games.json"
-  ];
-  let loaded = null;
-  for(const p of paths){
-    try{
-      const r = await fetch(p);
-      if(r.ok){
-        loaded = await r.json();
-        console.log("loaded JSON from", p, "rows=", loaded.length);
-        break;
-      }
-    }catch(e){}
-  }
-  if(!loaded){
-    alert("無法載入資料檔 games.json");
-    return;
-  }
-  RAW_DATA = loaded;
-
-  DATA = RAW_DATA.map(normalizeRow)
-                 .filter(g => g.bgg_id);   // 沒有 bgg_id 的先藏起來
-
-  markDuplicates();
-  loadFavorites();
-  buildOptions();
-  renderAll();
-}
-
-/* 把一筆原始 row 轉成統一欄位 */
-function normalizeRow(raw, idx){
-  const g = {...raw};
-
-  if(!g.id){
-    if(g.bgg_id) g.id = "bgg-" + g.bgg_id;
-    else g.id = "row-" + idx;
-  }
-
-  g.name_zh = g.name_zh || g.name || "";
-  g.name_en = g.name_en || g.name_en_override || g.name || "";
-
-  // 分類
-  let cats = [];
-  if(Array.isArray(g.categories_zh)) cats = g.categories_zh.slice();
-  else if(Array.isArray(g.categories)) cats = g.categories.slice();
-  else if(g.category_zh) cats = [g.category_zh];
-  g._cats = cats.filter(Boolean);
-
-  // 機制
-  let mechs = [];
-  if(Array.isArray(g.mechanisms_zh)) mechs = g.mechanisms_zh.slice();
-  else if(Array.isArray(g.mechanisms)) mechs = g.mechanisms.slice();
-  g._mechs = mechs.filter(Boolean);
-
-  // BGG 評分相關（盡量吃常見欄位）
-  const rb = parseFloat(
-    g.rating_bayes ?? g.bayes ?? g.bayesaverage ?? g.geek_rating
-  );
-  g.rating_bayes = Number.isFinite(rb) ? rb : null;
-
-  const ra = parseFloat(
-    g.rating_avg ?? g.average ?? g.avg_rating
-  );
-  g.rating_avg = Number.isFinite(ra) ? ra : null;
-
-  const ur = parseInt(
-    g.users_rated ?? g.usersrated ?? g.numvoters ?? g.votes
-  ,10);
-  g.users_rated = Number.isFinite(ur) ? ur : null;
-
-  const w = parseFloat(
-    g.weight ?? g.weight_avg ?? g.complexity
-  );
-  g.weight = Number.isFinite(w) ? w : null;
-
-  g.mechanism_count = g.mechanism_count ?? g._mechs.length;
-
-  // 價格 / 庫存
-  if(g.used_price_twd !== null && g.used_price_twd !== undefined && g.used_price_twd !== ""){
-    g.used_price_twd = Number(g.used_price_twd);
-  }else{
-    g.used_price_twd = null;
-  }
-  if(g.stock !== null && g.stock !== undefined && g.stock !== ""){
-    g.stock = Number(g.stock);
-  }else{
-    g.stock = null;
-  }
-
-  // 圖片
-  g.image = g.image || g.image_override || g.thumbnail || "";
-
-  return g;
-}
-
-/* 標記重複（以 bgg_id 為主） */
-function markDuplicates(){
-  const counter = new Map();
-  for(const g of DATA){
-    const key = g.bgg_id || g.name_zh || g.name_en || g.name;
-    if(!key) continue;
-    const k = String(key).toLowerCase();
-    counter.set(k, (counter.get(k) || 0) + 1);
-  }
-  let dupCount = 0;
-  for(const g of DATA){
-    const key = g.bgg_id || g.name_zh || g.name_en || g.name;
-    const k = key ? String(key).toLowerCase() : "";
-    g._dup = k && counter.get(k) > 1;
-    if(g._dup) dupCount++;
-  }
-  $("#DUP_HINT").textContent = dupCount ? `偵測到重複品項約 ${dupCount} 筆（以 BGG / 名稱推估）` : "";
-}
-
-/* 收藏（localStorage） */
-function loadFavorites(){
-  try{
-    const raw = localStorage.getItem("bgg_favorites");
-    if(!raw) return;
-    const arr = JSON.parse(raw);
-    if(Array.isArray(arr)){
-      FAVORITES = new Set(arr);
-    }
-  }catch(e){}
-}
-
-function saveFavorites(){
-  localStorage.setItem("bgg_favorites", JSON.stringify([...FAVORITES]));
-}
-
-/* ========= 下拉選單 ========= */
-function buildOptions(){
-  const catMap = new Map();
-  const mechMap = new Map();
-
-  for(const g of DATA){
-    g._cats.forEach(c => catMap.set(c, (catMap.get(c)||0)+1));
-    g._mechs.forEach(m => mechMap.set(m, (mechMap.get(m)||0)+1));
-  }
-
-  const catSel = $("#CAT");
-  const mechSel = $("#MECH");
-
-  catSel.innerHTML =
-    `<option value="">全部分類</option>` +
-    [...catMap.entries()]
-      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .map(([c,n])=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}（${n}）</option>`)
-      .join("");
-
-  mechSel.innerHTML =
-    `<option value="">全部機制</option>` +
-    [...mechMap.entries()]
-      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
-      .map(([m,n])=>`<option value="${escapeHtml(m)}">${escapeHtml(m)}（${n}）</option>`)
-      .join("");
-}
-
-/* ========= 渲染主流程 ========= */
-function getFilteredList(){
-  const q = FILTER_SEARCH.trim();
-
-  let list = DATA.filter(g=>{
-    if(q){
-      const okSearch =
-        textMatch(g.name_zh, q) ||
-        textMatch(g.name_en, q) ||
-        textMatch(g.name, q);
-      if(!okSearch) return false;
-    }
-
-    if(FILTER_CAT && !g._cats.includes(FILTER_CAT)) return false;
-    if(FILTER_MECH && !g._mechs.includes(FILTER_MECH)) return false;
-
-    if(SHOW_FAV_ONLY && !FAVORITES.has(g.id)) return false;
-    if(SHOW_DUP_ONLY && !g._dup) return false;
-
-    return true;
-  });
-
-  // 排序
-  list.sort((a,b)=>{
-    const key = SORT_KEY;
-    const numericDesc = ["rating_bayes","rating_avg","users_rated","weight"];
-    const numericAsc  = ["used_price_twd"];
-
-    if(key === "name_zh"){
-      const A = (a.name_zh || a.name_en || a.name || "").toString();
-      const B = (b.name_zh || b.name_en || b.name || "").toString();
-      return A.localeCompare(B, "zh-Hant");
-    }
-
-    if(numericDesc.includes(key) || numericAsc.includes(key)){
-      let A = a[key];
-      let B = b[key];
-      const asc = numericAsc.includes(key);
-
-      if(A === null || A === undefined || Number.isNaN(A)) A = asc ? Number.POSITIVE_INFINITY : -1e9;
-      if(B === null || B === undefined || Number.isNaN(B)) B = asc ? Number.POSITIVE_INFINITY : -1e9;
-
-      if(A === B) return 0;
-      return asc ? (A > B ? 1 : -1) : (A > B ? -1 : 1);
-    }
-
-    // fallback：其他以字串排序
-    const A = (a[key] ?? "").toString();
-    const B = (b[key] ?? "").toString();
-    return A.localeCompare(B,"zh-Hant");
-  });
-
-  return list;
-}
-
-function renderAll(){
-  const list = getFilteredList();
-  const total = list.length;
-  const totalAll = DATA.length;
-
-  const size = PAGE_SIZE;
-  const totalPages = Math.max(1, Math.ceil(total / size));
-  if(CUR_PAGE > totalPages) CUR_PAGE = totalPages;
-
-  const start = (CUR_PAGE-1)*size;
-  const end = Math.min(start+size, total);
-  const pageItems = list.slice(start, end);
-
-  // Summary
-  $("#SUMMARY_BAR").textContent =
-    `總數 ${totalAll} 款，符合篩選 ${total} 款，` +
-    (total ? `顯示第 ${start+1}–${end} 筆（第 ${CUR_PAGE} / ${totalPages} 頁）` : "目前沒有符合條件的遊戲");
-
-  // Grid
-  const grid = $("#GRID");
-  if(!pageItems.length){
-    grid.innerHTML = `<div class="empty-msg">目前沒有符合條件的遊戲，可以調整搜尋或篩選條件。</div>`;
-  }else{
-    grid.innerHTML = pageItems.map(cardHTML).join("");
-  }
-
-  // Pager
-  renderPager(totalPages);
-}
-
-function cardHTML(g){
-  const img = escapeHtml(g.image || "");
-  const title = escapeHtml(g.name_zh || g.name_en || g.name || "");
-  const sub = escapeHtml(g.name_en || "");
-  const dupBadge = g._dup ? `<span class="badge-dup">重複</span>` : "";
-
-  const cats = g._cats.map(c =>
-    `<button type="button" class="chip chip-cat" data-value="${escapeHtml(c)}">${escapeHtml(c)}</button>`
-  ).join("");
-
-  const mechs = g._mechs.map(m =>
-    `<button type="button" class="chip chip-mech" data-value="${escapeHtml(m)}">${escapeHtml(m)}</button>`
-  ).join("");
-
-  const favOn = FAVORITES.has(g.id);
-  const favClass = favOn ? "fav-btn fav-on" : "fav-btn";
-  const favLabel = favOn ? "★ 已收藏" : "☆ 收藏";
-
-  return `
-    <article class="card" data-id="${escapeHtml(g.id)}">
-      <img class="cover" src="${img}" alt="${title}" onerror="this.style.visibility='hidden';" />
-      <div class="title-row">
-        <div class="title">${title}</div>
-        ${dupBadge}
-      </div>
-      <div class="subtitle">${sub}</div>
-
-      <div class="meta-row">
-        Bayes：${fmtNum(g.rating_bayes)} ｜ 均分：${fmtNum(g.rating_avg)} ｜ 評分人數：${fmtInt(g.users_rated)} ｜ 重度：${fmtNum(g.weight)} ｜ 機制數：${g.mechanism_count ?? (g._mechs.length || "-")}
+        <section>
+          <h2>
+            <span>所有遊戲</span>
+            <span class="section-note" id="totalCountLabel"></span>
+          </h2>
+          <div class="status-bar">
+            <div class="status-left">
+              <span id="resultCountText"></span>
+              <div id="activeFiltersContainer"></div>
+            </div>
+            <div class="status-right">
+              <span id="mechanismFilterSummary"></span>
+            </div>
+          </div>
+          <div id="cardsContainer" class="cards-grid"></div>
+        </section>
       </div>
 
-      <div class="chips">${cats}</div>
-      <div class="chips">${mechs}</div>
+      <!-- 右側篩選面板 -->
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">分類（中文）</div>
+          </div>
+          <div id="categoryPanel" class="panel-chips"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">機制（中文）</div>
+          </div>
+          <div id="mechanismPanel" class="panel-chips"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">說明</div>
+          </div>
+          <p style="margin:0 0 0.25rem;font-size:0.75rem;color:var(--text-muted);">
+            ．點卡片可查看詳細資訊與「你可能也會喜歡」。<br>
+            ．點分類／機制 chips 可直接套用篩選。<br>
+            ．推薦區塊會一次顯示約 5–8 款類似遊戲，並附價格與庫存。
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-      <div class="info-row">
-        二手：${g.used_price_twd ? "NT$" + g.used_price_twd : "-"}
-        ｜ 庫存：${g.stock ?? "-"}
+  <!-- 詳細彈出層 -->
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal">
+      <div>
+        <img id="modalImage" class="modal-img" alt="">
       </div>
-      <div class="info-row">
-        ${g.bgg_url ? `<a href="${escapeHtml(g.bgg_url)}" target="_blank" rel="noopener">前往 BGG</a>` : ""}
-      </div>
+      <div>
+        <div class="modal-header-row">
+          <div class="modal-title-block">
+            <div id="modalTitle" class="modal-title"></div>
+            <div id="modalSubtitle" class="modal-subtitle"></div>
+          </div>
+          <button id="modalCloseBtn" class="modal-close" type="button">✕</button>
+        </div>
 
-      <button type="button" class="${favClass}" data-fav-id="${escapeHtml(g.id)}">${favLabel}</button>
-    </article>
-  `;
-}
+        <div class="meta-row" id="modalMetaRow" style="margin-top:0.5rem;"></div>
 
-/* ========= 分頁 ========= */
-function renderPager(totalPages){
-  const pager = $("#PAGER");
-  if(totalPages <= 1){
-    pager.innerHTML = "";
-    return;
-  }
-  pager.innerHTML = `
-    <button type="button" class="page-btn" data-page="prev" ${CUR_PAGE===1?"disabled":""}>上一頁</button>
-    <span class="page-info">第 ${CUR_PAGE} / ${totalPages} 頁</span>
-    <button type="button" class="page-btn" data-page="next" ${CUR_PAGE===totalPages?"disabled":""}>下一頁</button>
-  `;
-}
+        <div id="modalPriceStock" class="price-stock" style="margin-top:0.35rem;"></div>
 
-/* ========= FOCUS / RECO ========= */
-function openFocus(id){
-  const game = DATA.find(g => g.id === id);
-  if(!game) return;
+        <div>
+          <div class="modal-section-title">分類</div>
+          <div id="modalCategories" class="chips-row"></div>
+        </div>
 
-  const box = $("#FOCUS_BOX");
-  box.style.display = "block";
+        <div>
+          <div class="modal-section-title">機制</div>
+          <div id="modalMechanisms" class="chips-row"></div>
+        </div>
 
-  const imgHtml = `
-    <img src="${escapeHtml(game.image || "")}" alt="${escapeHtml(game.name_zh || game.name_en || "")}"
-      onerror="this.style.visibility='hidden';" />
-  `;
-  $("#FOCUS_IMG_WRAP").innerHTML = imgHtml;
+        <div style="margin-top:0.4rem;">
+          <div class="modal-section-title">
+            你可能也會喜歡
+            <span class="section-note" style="margin-left:0.25rem;">（約 5–8 款，依機制／分類與重量相近排序）</span>
+          </div>
+          <div id="similarContainer" class="similar-grid"></div>
+        </div>
 
-  $("#FOCUS_TEXT").innerHTML = `
-    <div style="font-weight:700;margin-bottom:4px;">
-      ${escapeHtml(game.name_zh || game.name_en || game.name || "")}
-    </div>
-    <div style="color:#6b7280;margin-bottom:6px;">
-      ${escapeHtml(game.name_en || "")}
-    </div>
-    <div style="font-size:13px;margin-bottom:4px;">
-      Bayes：${fmtNum(game.rating_bayes)} ｜ 均分：${fmtNum(game.rating_avg)} ｜ 評分人數：${fmtInt(game.users_rated)} ｜ 重度：${fmtNum(game.weight)}
-    </div>
-    <div style="font-size:13px;margin-bottom:4px;">
-      分類：${game._cats.join("、") || "－"}
-    </div>
-    <div style="font-size:13px;margin-bottom:4px;">
-      機制：${game._mechs.join("、") || "－"}
-    </div>
-    <div style="font-size:13px;">
-      ${game.bgg_url ? `<a href="${escapeHtml(game.bgg_url)}" target="_blank" rel="noopener">在 BGG 查看詳細資訊</a>` : ""}
-    </div>
-  `;
-
-  buildRecommend(game);
-}
-
-function closeFocus(){
-  $("#FOCUS_BOX").style.display = "none";
-  $("#FOCUS_RECO").innerHTML = "";
-}
-
-function buildRecommend(base){
-  const baseCats  = new Set(base.categories   || base.categories_zh   || []);
-  const baseMechs = new Set(base.mechanisms  || base.mechanisms_zh   || []);
-
-  // 依分類／機制算分數
-  const scored = DATA
-    .filter(g => g.id !== base.id)
-    .map(g => {
-      let score = 0;
-
-      (g.mechanisms_zh || g.mechanisms || []).forEach(m => {
-        if (baseMechs.has(m)) score += 3;
-      });
-
-      (g.categories_zh || g.categories || []).forEach(c => {
-        if (baseCats.has(c)) score += 1;
-      });
-
-      return { g, score };
-    })
-    .filter(x => x.score > 0)
-    .sort((a,b) => b.score - a.score)
-    .slice(0, 8);   // 最多顯示 8 款推薦
-
-  const box = document.querySelector("#RECO_LIST");
-  if (!box) return;
-
-  if (!scored.length){
-    box.innerHTML = `<p>暫時沒有明顯相似的遊戲。</p>`;
-    return;
-  }
-
-  box.innerHTML = scored.map(({g}) => {
-    const img = g.image || g.thumbnail || "";
-    const title = g.name_zh || g.name_en || g.name || "";
-    const sub   = g.name_en || "";
-    const used  = g.used_price_twd ? `NT$${g.used_price_twd}` : "-";
-    const stock = (g.stock ?? "") === "" ? "-" : g.stock;
-
-    return `
-      <div class="card" style="max-width:220px; cursor:pointer;"
-           onclick="scrollToCard('${g.id}')">
-        <img class="cover" src="${img}"
-             onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
-        <div class="title" style="font-size:15px;">${title}</div>
-        <div class="subtitle" style="font-size:13px;">${sub}</div>
-        <div style="font-size:13px;color:#444;margin-top:4px;">
-          二手：${used} ｜ 庫存：${stock}
+        <div style="margin-top:0.5rem;font-size:0.72rem;">
+          <a id="modalBggLink" class="link" href="#" target="_blank" rel="noopener noreferrer">前往 BGG 頁面</a>
         </div>
       </div>
-    `;
-  }).join("");
-}
+    </div>
+  </div>
 
+  <script>
+    // 全域狀態
+    let allGames = [];
+    let filteredGames = [];
+    let allCategories = new Map();  // nameZh -> count
+    let allMechanisms = new Map();  // nameZh -> count
+    let currentGame = null;
 
-/* ========= 事件綁定 ========= */
-function bindEvents(){
-  $("#Q").addEventListener("input", e=>{
-    FILTER_SEARCH = e.target.value || "";
-    CUR_PAGE = 1;
-    renderAll();
-  });
+    const state = {
+      searchText: "",
+      sortKey: "name_zh",
+      selectedCategories: new Set(),
+      selectedMechanisms: new Set()
+    };
 
-  $("#CAT").addEventListener("change", e=>{
-    FILTER_CAT = e.target.value || "";
-    CUR_PAGE = 1;
-    renderAll();
-  });
+    // DOM 快取
+    const searchInput = document.getElementById('searchInput');
+    const sortSelect = document.getElementById('sortSelect');
+    const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+    const cardsContainer = document.getElementById('cardsContainer');
+    const randomContainer = document.getElementById('randomContainer');
+    const refreshRandomBtn = document.getElementById('refreshRandomBtn');
+    const totalCountLabel = document.getElementById('totalCountLabel');
+    const resultCountText = document.getElementById('resultCountText');
+    const activeFiltersContainer = document.getElementById('activeFiltersContainer');
+    const mechanismFilterSummary = document.getElementById('mechanismFilterSummary');
+    const categoryPanel = document.getElementById('categoryPanel');
+    const mechanismPanel = document.getElementById('mechanismPanel');
 
-  $("#MECH").addEventListener("change", e=>{
-    FILTER_MECH = e.target.value || "";
-    CUR_PAGE = 1;
-    renderAll();
-  });
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalMetaRow = document.getElementById('modalMetaRow');
+    const modalPriceStock = document.getElementById('modalPriceStock');
+    const modalCategories = document.getElementById('modalCategories');
+    const modalMechanisms = document.getElementById('modalMechanisms');
+    const similarContainer = document.getElementById('similarContainer');
+    const modalBggLink = document.getElementById('modalBggLink');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
 
-  $("#SORT").addEventListener("change", e=>{
-    SORT_KEY = e.target.value;
-    CUR_PAGE = 1;
-    renderAll();
-  });
-
-  $("#PAGE_SIZE").addEventListener("change", e=>{
-    PAGE_SIZE = Number(e.target.value) || 25;
-    CUR_PAGE = 1;
-    renderAll();
-  });
-
-  $("#FAV_ONLY").addEventListener("change", e=>{
-    SHOW_FAV_ONLY = e.target.checked;
-    CUR_PAGE = 1;
-    renderAll();
-  });
-
-  $("#DUP_ONLY").addEventListener("change", e=>{
-    SHOW_DUP_ONLY = e.target.checked;
-    CUR_PAGE = 1;
-    renderAll();
-  });
-
-  $("#RANDOM_BTN").addEventListener("click", ()=>{
-    if(!DATA.length) return;
-    const list = getFilteredList();
-    if(!list.length) return;
-    const r = list[Math.floor(Math.random()*list.length)];
-    openFocus(r.id);
-    window.scrollTo({top:0, behavior:"smooth"});
-  });
-
-  $("#CLEAR_BTN").addEventListener("click", ()=>{
-    FILTER_CAT = "";
-    FILTER_MECH = "";
-    FILTER_SEARCH = "";
-    SORT_KEY = "name_zh";
-    PAGE_SIZE = 25;
-    CUR_PAGE = 1;
-    SHOW_FAV_ONLY = false;
-    SHOW_DUP_ONLY = false;
-
-    $("#Q").value = "";
-    $("#CAT").value = "";
-    $("#MECH").value = "";
-    $("#SORT").value = "name_zh";
-    $("#PAGE_SIZE").value = "25";
-    $("#FAV_ONLY").checked = false;
-    $("#DUP_ONLY").checked = false;
-
-    renderAll();
-  });
-
-  // 卡片點擊事件（事件代理）
-  $("#GRID").addEventListener("click", e=>{
-    const favBtn = e.target.closest("[data-fav-id]");
-    if(favBtn){
-      const id = favBtn.getAttribute("data-fav-id");
-      if(FAVORITES.has(id)) FAVORITES.delete(id);
-      else FAVORITES.add(id);
-      saveFavorites();
-      renderAll();
-      return;
+    // 載入流程
+    async function fetchWithFallback() {
+      const paths = ['data/games.json', 'site/data/games.json'];
+      let lastError = null;
+      for (const p of paths) {
+        try {
+          const res = await fetch(p, { cache: 'no-store' });
+          if (!res.ok) continue;
+          const data = await res.json();
+          return data;
+        } catch (e) {
+          lastError = e;
+        }
+      }
+      console.error('載入 games.json 失敗', lastError);
+      alert('讀取遊戲資料失敗，請檢查 data/games.json / site/data/games.json。');
+      return [];
     }
 
-    const chipCat = e.target.closest(".chip-cat");
-    if(chipCat){
-      FILTER_CAT = chipCat.dataset.value || "";
-      $("#CAT").value = FILTER_CAT;
-      CUR_PAGE = 1;
-      renderAll();
-      return;
+    function normalizeGame(raw) {
+      const categoriesZh = Array.isArray(raw.categories_zh) ? raw.categories_zh : [];
+      const mechanismsZh = Array.isArray(raw.mechanisms_zh || raw.mechanics_zh)
+        ? (raw.mechanisms_zh || raw.mechanics_zh)
+        : [];
+      const categoriesRaw = Array.isArray(raw.categories) ? raw.categories : [];
+      const mechanismsRaw = Array.isArray(raw.mechanisms || raw.mechanics)
+        ? (raw.mechanisms || raw.mechanics)
+        : [];
+
+      const categories = categoriesZh.length > 0 ? categoriesZh : categoriesRaw;
+      const mechanisms = mechanismsZh.length > 0 ? mechanismsZh : mechanismsRaw;
+
+      const game = {
+        id: raw.id || String(raw.bgg_id || ''),
+        nameZh: raw.name_zh || raw.name || '',
+        nameEn: raw.name_en || raw.name || '',
+        year: raw.year || null,
+        minPlayers: raw.min_players ?? raw.minplayers ?? null,
+        maxPlayers: raw.max_players ?? raw.maxplayers ?? null,
+        minPlaytime: raw.min_playtime ?? raw.minplaytime ?? null,
+        maxPlaytime: raw.max_playtime ?? raw.maxplaytime ?? null,
+        ratingBayes: raw.rating_bayes ?? null,
+        ratingAvg: raw.rating_avg ?? raw.rating ?? null,
+        usersRated: raw.users_rated ?? raw.usersrated ?? null,
+        weight: raw.weight_avg ?? raw.weight ?? null,
+        mechanismCount: raw.mechanism_count ?? (Array.isArray(mechanismsRaw) ? mechanismsRaw.length : null),
+        price: raw.used_price_twd ?? null,
+        stock: raw.stock ?? null,
+        image: raw.image || raw.thumbnail || '',
+        bggUrl: raw.bgg_url || (raw.bgg_id ? `https://boardgamegeek.com/boardgame/${raw.bgg_id}` : null),
+        categories,
+        categoriesRaw,
+        mechanisms,
+        mechanismsRaw,
+        source: raw.source || ''
+      };
+      return game;
     }
 
-    const chipMech = e.target.closest(".chip-mech");
-    if(chipMech){
-      FILTER_MECH = chipMech.dataset.value || "";
-      $("#MECH").value = FILTER_MECH;
-      CUR_PAGE = 1;
-      renderAll();
-      return;
+    function buildTaxonomyMaps() {
+      allCategories = new Map();
+      allMechanisms = new Map();
+      for (const g of allGames) {
+        for (const c of g.categories || []) {
+          if (!c) continue;
+          allCategories.set(c, (allCategories.get(c) || 0) + 1);
+        }
+        for (const m of g.mechanisms || []) {
+          if (!m) continue;
+          allMechanisms.set(m, (allMechanisms.get(m) || 0) + 1);
+        }
+      }
     }
 
-    const card = e.target.closest(".card");
-    if(card){
-      const id = card.dataset.id;
-      openFocus(id);
+    function initPanels() {
+      // 分類面板
+      categoryPanel.innerHTML = '';
+      const sortedCats = Array.from(allCategories.entries())
+        .sort((a, b) => b[1] - a[1]);
+      for (const [name, count] of sortedCats) {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'panel-chip';
+        chip.textContent = `${name} (${count})`;
+        chip.dataset.value = name;
+        chip.dataset.type = 'category';
+        chip.addEventListener('click', () => {
+          toggleFilterChip('category', name);
+        });
+        categoryPanel.appendChild(chip);
+      }
+
+      // 機制面板
+      mechanismPanel.innerHTML = '';
+      const sortedMechs = Array.from(allMechanisms.entries())
+        .sort((a, b) => b[1] - a[1]);
+      for (const [name, count] of sortedMechs) {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'panel-chip';
+        chip.textContent = `${name} (${count})`;
+        chip.dataset.value = name;
+        chip.dataset.type = 'mechanism';
+        chip.addEventListener('click', () => {
+          toggleFilterChip('mechanism', name);
+        });
+        mechanismPanel.appendChild(chip);
+      }
     }
-  });
 
-  $("#PAGER").addEventListener("click", e=>{
-    const btn = e.target.closest(".page-btn");
-    if(!btn || btn.disabled) return;
-    const type = btn.dataset.page;
-    const list = getFilteredList();
-    const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+    function toggleFilterChip(kind, value) {
+      if (kind === 'category') {
+        if (state.selectedCategories.has(value)) {
+          state.selectedCategories.delete(value);
+        } else {
+          state.selectedCategories.add(value);
+        }
+      } else if (kind === 'mechanism') {
+        if (state.selectedMechanisms.has(value)) {
+          state.selectedMechanisms.delete(value);
+        } else {
+          state.selectedMechanisms.add(value);
+        }
+      }
+      applyFiltersAndRender();
+      syncPanelChipSelection();
+    }
 
-    if(type === "prev" && CUR_PAGE > 1) CUR_PAGE--;
-    if(type === "next" && CUR_PAGE < totalPages) CUR_PAGE++;
+    function syncPanelChipSelection() {
+      for (const el of categoryPanel.querySelectorAll('.panel-chip')) {
+        const value = el.dataset.value;
+        el.classList.toggle('selected', state.selectedCategories.has(value));
+      }
+      for (const el of mechanismPanel.querySelectorAll('.panel-chip')) {
+        const value = el.dataset.value;
+        el.classList.toggle('selected', state.selectedMechanisms.has(value));
+      }
+    }
 
-    renderAll();
-    window.scrollTo({top:0, behavior:"smooth"});
-  });
+    function applyFiltersAndRender() {
+      const search = state.searchText.trim().toLowerCase();
+      const cats = state.selectedCategories;
+      const mechs = state.selectedMechanisms;
 
-  $("#FOCUS_CLOSE").addEventListener("click", closeFocus);
+      filteredGames = allGames.filter(g => {
+        // 搜尋
+        if (search) {
+          const text = `${g.nameZh || ''} ${g.nameEn || ''}`.toLowerCase();
+          if (!text.includes(search)) return false;
+        }
+        // 分類篩選（AND：選了 N 個，就要全部包含）
+        if (cats.size > 0) {
+          const catSet = new Set(g.categories || []);
+          for (const c of cats) {
+            if (!catSet.has(c)) return false;
+          }
+        }
+        // 機制篩選
+        if (mechs.size > 0) {
+          const mechSet = new Set(g.mechanisms || []);
+          for (const m of mechs) {
+            if (!mechSet.has(m)) return false;
+          }
+        }
+        return true;
+      });
 
-  $("#FOCUS_RECO").addEventListener("click", e=>{
-    const card = e.target.closest(".focus-reco-card");
-    if(!card) return;
-    const id = card.dataset.id;
-    openFocus(id);
-  });
-}
+      // 排序
+      sortGames(filteredGames, state.sortKey);
 
-/* ========= 啟動 ========= */
-bindEvents();
-loadData();
-</script>
+      // 渲染
+      renderCards();
+      renderStatus();
+      renderRandomPreview(); // 每次篩選後隨機區也順便更新一批
+    }
 
+    function sortGames(arr, key) {
+      arr.sort((a, b) => {
+        switch (key) {
+          case 'rating_bayes_desc':
+            return (b.ratingBayes ?? -999) - (a.ratingBayes ?? -999);
+          case 'rating_avg_desc':
+            return (b.ratingAvg ?? -999) - (a.ratingAvg ?? -999);
+          case 'users_rated_desc':
+            return (b.usersRated ?? -999) - (a.usersRated ?? -999);
+          case 'weight_asc':
+            return (a.weight ?? 999) - (b.weight ?? 999);
+          case 'weight_desc':
+            return (b.weight ?? -999) - (a.weight ?? -999);
+          case 'price_asc':
+            return (a.price ?? 9999999) - (b.price ?? 9999999);
+          case 'price_desc':
+            return (b.price ?? -9999999) - (a.price ?? -9999999);
+          case 'name_zh':
+          default: {
+            const aName = (a.nameZh || a.nameEn || '').toString();
+            const bName = (b.nameZh || b.nameEn || '').toString();
+            return aName.localeCompare(bName, 'zh-Hant');
+          }
+        }
+      });
+    }
+
+    function renderStatus() {
+      totalCountLabel.textContent = `資料筆數：${allGames.length} 筆`;
+      resultCountText.textContent = `目前顯示：${filteredGames.length} 筆`;
+
+      activeFiltersContainer.innerHTML = '';
+      if (state.selectedCategories.size > 0) {
+        for (const c of state.selectedCategories) {
+          const pill = document.createElement('span');
+          pill.className = 'active-filter-pill';
+          pill.textContent = `分類：${c}`;
+          activeFiltersContainer.appendChild(pill);
+        }
+      }
+      if (state.selectedMechanisms.size > 0) {
+        for (const m of state.selectedMechanisms) {
+          const pill = document.createElement('span');
+          pill.className = 'active-filter-pill';
+          pill.textContent = `機制：${m}`;
+          activeFiltersContainer.appendChild(pill);
+        }
+      }
+
+      if (state.selectedMechanisms.size > 0) {
+        mechanismFilterSummary.textContent =
+          `已選機制：${state.selectedMechanisms.size} 種`;
+      } else {
+        mechanismFilterSummary.textContent = '';
+      }
+    }
+
+    function renderCards() {
+      cardsContainer.innerHTML = '';
+      for (const g of filteredGames) {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.addEventListener('click', () => openGameModal(g));
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'card-img-wrapper';
+        const img = document.createElement('img');
+        img.className = 'card-img';
+        img.src = g.image || '';
+        img.alt = g.nameZh || g.nameEn || '';
+        imgWrap.appendChild(img);
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+
+        const title = document.createElement('div');
+        title.className = 'card-title';
+        title.textContent = g.nameZh || g.nameEn || '(未命名)';
+        body.appendChild(title);
+
+        const subtitle = document.createElement('div');
+        subtitle.className = 'card-subtitle';
+        const en = g.nameEn ? g.nameEn : '';
+        const year = g.year ? ` · ${g.year}` : '';
+        subtitle.textContent = en + year;
+        body.appendChild(subtitle);
+
+        const metaRow = document.createElement('div');
+        metaRow.className = 'meta-row';
+
+        const playerTag = document.createElement('div');
+        playerTag.className = 'meta-tag';
+        playerTag.innerHTML = `<strong>人數：</strong>${formatRange(g.minPlayers, g.maxPlayers, '人')}`;
+        metaRow.appendChild(playerTag);
+
+        const timeTag = document.createElement('div');
+        timeTag.className = 'meta-tag';
+        timeTag.innerHTML = `<strong>時間：</strong>${formatRange(g.minPlaytime, g.maxPlaytime, '分')}`;
+        metaRow.appendChild(timeTag);
+
+        const ratingTag = document.createElement('div');
+        ratingTag.className = 'meta-tag';
+        ratingTag.innerHTML =
+          `<strong>評分：</strong>${formatNumber(g.ratingBayes)} / ${formatNumber(g.ratingAvg)}（${g.usersRated ?? '-'} 人）`;
+        metaRow.appendChild(ratingTag);
+
+        const weightTag = document.createElement('div');
+        weightTag.className = 'meta-tag';
+        weightTag.innerHTML = `<strong>重量：</strong>${formatNumber(g.weight)}`;
+        metaRow.appendChild(weightTag);
+
+        const mechTag = document.createElement('div');
+        mechTag.className = 'meta-tag';
+        const mc = g.mechanismCount ?? (Array.isArray(g.mechanisms) ? g.mechanisms.length : null);
+        mechTag.innerHTML = `<strong>機制數：</strong>${mc ?? '-'}`;
+        metaRow.appendChild(mechTag);
+
+        body.appendChild(metaRow);
+
+        const priceStock = document.createElement('div');
+        priceStock.className = 'price-stock';
+        const price = document.createElement('div');
+        price.className = 'price';
+        price.textContent = g.price != null ? `NT$ ${g.price}` : '價格未設定';
+        const stock = document.createElement('div');
+        stock.className = 'stock';
+        if (g.stock == null) {
+          stock.textContent = '';
+        } else if (g.stock <= 0) {
+          stock.textContent = '售完';
+          stock.classList.add('stock-zero');
+        } else {
+          stock.textContent = `庫存：${g.stock}`;
+        }
+        priceStock.appendChild(price);
+        priceStock.appendChild(stock);
+        body.appendChild(priceStock);
+
+        // chips：分類 + 機制（中文）
+        const chipsRow = document.createElement('div');
+        chipsRow.className = 'chips-row';
+
+        (g.categories || []).forEach(c => {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'chip';
+          chip.textContent = c;
+          chip.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            toggleFilterChip('category', c);
+          });
+          chipsRow.appendChild(chip);
+        });
+
+        (g.mechanisms || []).forEach(m => {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'chip';
+          chip.textContent = m;
+          chip.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            toggleFilterChip('mechanism', m);
+          });
+          chipsRow.appendChild(chip);
+        });
+
+        body.appendChild(chipsRow);
+
+        card.appendChild(imgWrap);
+        card.appendChild(body);
+        cardsContainer.appendChild(card);
+      }
+    }
+
+    function renderRandomPreview() {
+      randomContainer.innerHTML = '';
+      const n = Math.min(4, allGames.length);
+      const picks = pickRandomGames(allGames, n);
+
+      for (const g of picks) {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.addEventListener('click', () => openGameModal(g));
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'card-img-wrapper';
+        const img = document.createElement('img');
+        img.className = 'card-img';
+        img.src = g.image || '';
+        img.alt = g.nameZh || g.nameEn || '';
+        imgWrap.appendChild(img);
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+        const title = document.createElement('div');
+        title.className = 'card-title';
+        title.textContent = g.nameZh || g.nameEn || '(未命名)';
+        body.appendChild(title);
+
+        const subtitle = document.createElement('div');
+        subtitle.className = 'card-subtitle';
+        const en = g.nameEn ? g.nameEn : '';
+        const year = g.year ? ` · ${g.year}` : '';
+        subtitle.textContent = en + year;
+        body.appendChild(subtitle);
+
+        const metaRow = document.createElement('div');
+        metaRow.className = 'meta-row';
+        const ratingTag = document.createElement('div');
+        ratingTag.className = 'meta-tag';
+        ratingTag.innerHTML =
+          `<strong>評分：</strong>${formatNumber(g.ratingBayes)} / ${formatNumber(g.ratingAvg)}`;
+        metaRow.appendChild(ratingTag);
+        body.appendChild(metaRow);
+
+        const priceStock = document.createElement('div');
+        priceStock.className = 'price-stock';
+        const price = document.createElement('div');
+        price.className = 'price';
+        price.textContent = g.price != null ? `NT$ ${g.price}` : '價格未設定';
+        const stock = document.createElement('div');
+        stock.className = 'stock';
+        if (g.stock == null) {
+          stock.textContent = '';
+        } else if (g.stock <= 0) {
+          stock.textContent = '售完';
+          stock.classList.add('stock-zero');
+        } else {
+          stock.textContent = `庫存：${g.stock}`;
+        }
+        priceStock.appendChild(price);
+        priceStock.appendChild(stock);
+        body.appendChild(priceStock);
+
+        card.appendChild(imgWrap);
+        card.appendChild(body);
+        randomContainer.appendChild(card);
+      }
+    }
+
+    function pickRandomGames(arr, n) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy.slice(0, n);
+    }
+
+    // 詳細彈窗 + 你可能也會喜歡
+    function openGameModal(game) {
+      currentGame = game;
+      modalTitle.textContent = game.nameZh || game.nameEn || '(未命名)';
+      modalSubtitle.textContent = (game.nameEn || '') + (game.year ? ` · ${game.year}` : '');
+      modalImage.src = game.image || '';
+      modalImage.alt = game.nameZh || game.nameEn || '';
+
+      // Meta
+      modalMetaRow.innerHTML = '';
+      const playerTag = document.createElement('div');
+      playerTag.className = 'meta-tag';
+      playerTag.innerHTML = `<strong>人數：</strong>${formatRange(game.minPlayers, game.maxPlayers, '人')}`;
+      modalMetaRow.appendChild(playerTag);
+
+      const timeTag = document.createElement('div');
+      timeTag.className = 'meta-tag';
+      timeTag.innerHTML = `<strong>時間：</strong>${formatRange(game.minPlaytime, game.maxPlaytime, '分')}`;
+      modalMetaRow.appendChild(timeTag);
+
+      const ratingTag = document.createElement('div');
+      ratingTag.className = 'meta-tag';
+      ratingTag.innerHTML =
+        `<strong>評分：</strong>${formatNumber(game.ratingBayes)} / ${formatNumber(game.ratingAvg)}（${game.usersRated ?? '-'} 人）`;
+      modalMetaRow.appendChild(ratingTag);
+
+      const weightTag = document.createElement('div');
+      weightTag.className = 'meta-tag';
+      weightTag.innerHTML = `<strong>重量：</strong>${formatNumber(game.weight)}`;
+      modalMetaRow.appendChild(weightTag);
+
+      const mechTag = document.createElement('div');
+      mechTag.className = 'meta-tag';
+      const mc = game.mechanismCount ?? (Array.isArray(game.mechanisms) ? game.mechanisms.length : null);
+      mechTag.innerHTML = `<strong>機制數：</strong>${mc ?? '-'}`;
+      modalMetaRow.appendChild(mechTag);
+
+      // 價格／庫存
+      modalPriceStock.innerHTML = '';
+      const price = document.createElement('div');
+      price.className = 'price';
+      price.textContent = game.price != null ? `NT$ ${game.price}` : '價格未設定';
+      const stock = document.createElement('div');
+      stock.className = 'stock';
+      if (game.stock == null) {
+        stock.textContent = '';
+      } else if (game.stock <= 0) {
+        stock.textContent = '售完';
+        stock.classList.add('stock-zero');
+      } else {
+        stock.textContent = `庫存：${game.stock}`;
+      }
+      modalPriceStock.appendChild(price);
+      modalPriceStock.appendChild(stock);
+
+      // 分類／機制 chips（中文）
+      modalCategories.innerHTML = '';
+      (game.categories || []).forEach(c => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'chip';
+        chip.textContent = c;
+        chip.addEventListener('click', () => toggleFilterChip('category', c));
+        modalCategories.appendChild(chip);
+      });
+
+      modalMechanisms.innerHTML = '';
+      (game.mechanisms || []).forEach(m => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'chip';
+        chip.textContent = m;
+        chip.addEventListener('click', () => toggleFilterChip('mechanism', m));
+        modalMechanisms.appendChild(chip);
+      });
+
+      // BGG 連結
+      if (game.bggUrl) {
+        modalBggLink.href = game.bggUrl;
+        modalBggLink.style.display = '';
+      } else {
+        modalBggLink.style.display = 'none';
+      }
+
+      // 你可能也會喜歡
+      renderSimilarGames(game);
+
+      modalBackdrop.classList.add('show');
+    }
+
+    function renderSimilarGames(baseGame) {
+      similarContainer.innerHTML = '';
+      if (!allGames || allGames.length === 0) return;
+
+      const sims = computeSimilarGames(baseGame, 8); // 最多 8 個
+      for (const g of sims) {
+        const card = document.createElement('article');
+        card.className = 'similar-card';
+        card.addEventListener('click', () => openGameModal(g));
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'similar-img-wrapper';
+        const img = document.createElement('img');
+        img.className = 'similar-img';
+        img.src = g.image || '';
+        img.alt = g.nameZh || g.nameEn || '';
+        imgWrap.appendChild(img);
+
+        const body = document.createElement('div');
+        body.className = 'similar-body';
+
+        const title = document.createElement('div');
+        title.className = 'similar-title';
+        title.textContent = g.nameZh || g.nameEn || '(未命名)';
+        body.appendChild(title);
+
+        const subtitle = document.createElement('div');
+        subtitle.className = 'similar-subtitle';
+        subtitle.textContent =
+          `評分：${formatNumber(g.ratingBayes)} / ${formatNumber(g.ratingAvg)} · 重量：${formatNumber(g.weight)}`;
+        body.appendChild(subtitle);
+
+        const priceStock = document.createElement('div');
+        priceStock.className = 'price-stock';
+        const price = document.createElement('div');
+        price.className = 'price';
+        price.textContent = g.price != null ? `NT$ ${g.price}` : '價格未設定';
+        const stock = document.createElement('div');
+        stock.className = 'stock';
+        if (g.stock == null) {
+          stock.textContent = '';
+        } else if (g.stock <= 0) {
+          stock.textContent = '售完';
+          stock.classList.add('stock-zero');
+        } else {
+          stock.textContent = `庫存：${g.stock}`;
+        }
+        priceStock.appendChild(price);
+        priceStock.appendChild(stock);
+        body.appendChild(priceStock);
+
+        card.appendChild(imgWrap);
+        card.appendChild(body);
+        similarContainer.appendChild(card);
+      }
+    }
+
+    function computeSimilarGames(baseGame, maxCount) {
+      const baseCats = new Set(
+        (baseGame.categoriesRaw && baseGame.categoriesRaw.length > 0)
+          ? baseGame.categoriesRaw
+          : (baseGame.categories || [])
+      );
+      const baseMechs = new Set(
+        (baseGame.mechanismsRaw && baseGame.mechanismsRaw.length > 0)
+          ? baseGame.mechanismsRaw
+          : (baseGame.mechanisms || [])
+      );
+      const baseWeight = baseGame.weight;
+
+      const scored = [];
+      for (const g of allGames) {
+        if (g.id === baseGame.id) continue;
+        const cats = new Set(
+          (g.categoriesRaw && g.categoriesRaw.length > 0)
+            ? g.categoriesRaw
+            : (g.categories || [])
+        );
+        const mechs = new Set(
+          (g.mechanismsRaw && g.mechanismsRaw.length > 0)
+            ? g.mechanismsRaw
+            : (g.mechanisms || [])
+        );
+
+        let overlapScore = 0;
+        baseCats.forEach(c => { if (cats.has(c)) overlapScore += 2; });
+        baseMechs.forEach(m => { if (mechs.has(m)) overlapScore += 3; });
+
+        let weightPenalty = 0;
+        if (baseWeight != null && g.weight != null) {
+          weightPenalty = Math.abs(baseWeight - g.weight);
+        }
+
+        const finalScore = overlapScore - weightPenalty;
+        scored.push({ game: g, score: finalScore });
+      }
+
+      scored.sort((a, b) => b.score - a.score);
+      let picked = scored.filter(s => s.score > 0).slice(0, maxCount);
+
+      // 至少要 5 個，不足就補
+      if (picked.length < 5) {
+        const usedIds = new Set(picked.map(p => p.game.id));
+        for (const s of scored) {
+          if (picked.length >= maxCount) break;
+          if (usedIds.has(s.game.id)) continue;
+          picked.push(s);
+          usedIds.add(s.game.id);
+        }
+      }
+
+      // 最後再 cut 一次，保證 <= maxCount
+      picked = picked.slice(0, maxCount);
+      return picked.map(p => p.game);
+    }
+
+    function closeModal() {
+      modalBackdrop.classList.remove('show');
+      currentGame = null;
+    }
+
+    // 格式化工具
+    function formatRange(min, max, unit) {
+      if (min == null && max == null) return '-';
+      if (min != null && max != null && min !== max) {
+        return `${min}-${max}${unit}`;
+      }
+      const v = (min != null ? min : max);
+      return `${v}${unit}`;
+    }
+
+    function formatNumber(x) {
+      if (x == null || Number.isNaN(x)) return '-';
+      const n = Number(x);
+      if (!Number.isFinite(n)) return '-';
+      return n.toFixed(2);
+    }
+
+    // 事件繫結
+    function setupEvents() {
+      searchInput.addEventListener('input', (e) => {
+        state.searchText = e.target.value || '';
+        applyFiltersAndRender();
+      });
+
+      sortSelect.addEventListener('change', (e) => {
+        state.sortKey = e.target.value;
+        applyFiltersAndRender();
+      });
+
+      clearFiltersBtn.addEventListener('click', () => {
+        state.searchText = '';
+        state.sortKey = 'name_zh';
+        state.selectedCategories.clear();
+        state.selectedMechanisms.clear();
+        searchInput.value = '';
+        sortSelect.value = 'name_zh';
+        applyFiltersAndRender();
+        syncPanelChipSelection();
+      });
+
+      refreshRandomBtn.addEventListener('click', () => {
+        renderRandomPreview();
+      });
+
+      modalCloseBtn.addEventListener('click', () => {
+        closeModal();
+      });
+
+      modalBackdrop.addEventListener('click', (ev) => {
+        if (ev.target === modalBackdrop) {
+          closeModal();
+        }
+      });
+
+      window.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && modalBackdrop.classList.contains('show')) {
+          closeModal();
+        }
+      });
+    }
+
+    // 初始化
+    (async function init() {
+      setupEvents();
+      const raw = await fetchWithFallback();
+      allGames = (raw || []).map(normalizeGame);
+      buildTaxonomyMaps();
+      initPanels();
+      state.sortKey = 'name_zh';
+      applyFiltersAndRender();
+    })();
+  </script>
 </body>
 </html>
