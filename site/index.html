@@ -60,7 +60,7 @@
       margin-bottom: 0.4rem;
     }
 
-    /* 搜尋框：固定高度，避免變成巨大圓圈 */
+    /* 搜尋框：尺寸跟 select 一樣高 */
     .search-box {
       flex: 2 1 220px;
       min-width: 200px;
@@ -69,9 +69,8 @@
       gap: 0.4rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      padding: 0 0.8rem;
+      padding: 0.32rem 0.8rem;
       background: #f9fafb;
-      height: 44px;
     }
     .search-box input {
       border: none;
@@ -157,7 +156,7 @@
       gap: 0.6rem;
     }
 
-    /* 卡片 */
+    /* 所有遊戲區 */
     .cards-header-row {
       display: flex;
       justify-content: space-between;
@@ -184,20 +183,19 @@
       cursor: pointer;
     }
 
-    /* 被選取的卡片（推薦區第一張） */
     .card-focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 2px var(--accent-soft);
     }
 
-    /* 圖片：灰邊略縮、固定高度 */
+    /* 圖片：灰邊縮小，高度更緊湊 */
     .card-img-wrapper {
       background: #e5e7eb;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
-      height: 170px;
+      padding: 2px;
+      height: 150px;
       overflow: hidden;
     }
     .card-img {
@@ -307,7 +305,7 @@
       cursor: pointer;
     }
 
-    /* 推薦區 */
+    /* 推薦格子（給 modal 用） */
     .recommend-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
@@ -316,7 +314,7 @@
     .recommend-note {
       font-size: 0.76rem;
       color: var(--text-muted);
-      margin-bottom: 0.35rem;
+      margin: 0 0 0.35rem 0;
     }
 
     /* 分頁 */
@@ -333,6 +331,57 @@
       gap: 0.3rem;
     }
 
+    /* Modal（卡片詳細＋推薦） */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3rem 1rem;
+      background: rgba(0,0,0,0.45);
+      z-index: 50;
+    }
+    .modal.show {
+      display: flex;
+    }
+    .modal-dialog {
+      background: #ffffff;
+      max-width: 960px;
+      width: 100%;
+      max-height: calc(100vh - 4rem);
+      overflow-y: auto;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.4);
+      padding: 1rem 1.25rem 1.25rem;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.6rem;
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+    .modal-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 2rem 0.4rem 0;
+    }
+    .modal-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0 0 0.6rem 0;
+    }
+    .modal-section-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.8rem 0 0.3rem;
+    }
+
     /* RWD 調整 */
     @media (max-width: 1024px) {
       .cards-grid {
@@ -342,7 +391,7 @@
         grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
       }
       .card-img-wrapper {
-        height: 160px;
+        height: 140px;
       }
     }
     @media (max-width: 768px) {
@@ -352,9 +401,7 @@
       }
       .search-box {
         width: 100%;
-        border-radius: 16px;
-        padding: 0 0.8rem;
-        height: 40px; /* 手機再縮一點 */
+        border-radius: 999px;
       }
       .cards-grid,
       .random-grid,
@@ -362,7 +409,15 @@
         grid-template-columns: repeat(2,minmax(0,1fr));
       }
       .card-img-wrapper {
-        height: 150px;
+        height: 130px;
+      }
+      .modal {
+        padding: 1.5rem 0.5rem;
+      }
+      .modal-dialog {
+        max-height: 100vh;
+        border-radius: 0.75rem;
+        padding: 0.9rem 0.9rem 1rem;
       }
     }
     @media (max-width: 480px) {
@@ -372,7 +427,7 @@
         grid-template-columns: 1fr;
       }
       .card-img-wrapper {
-        height: 140px;
+        height: 120px;
       }
     }
   </style>
@@ -429,7 +484,7 @@
       </div>
     </section>
 
-    <!-- 隨機預覽：有選中卡片時會收起 -->
+    <!-- 隨機預覽：點卡片後會關閉，之後要按按鈕才會再開 -->
     <section id="randomSection">
       <h2>
         <span>隨機預覽</span>
@@ -462,14 +517,15 @@
         </div>
       </div>
     </section>
-
-    <!-- 你可能也會喜歡 -->
-    <section id="recommendSection">
-      <h2>你可能也會喜歡</h2>
-      <div id="recommendNote" class="recommend-note"></div>
-      <div id="recommendContainer" class="recommend-grid"></div>
-    </section>
   </main>
+
+  <!-- 詳細＋推薦 Modal -->
+  <div id="cardModal" class="modal">
+    <div class="modal-dialog">
+      <button id="cardModalClose" class="modal-close" type="button">✕</button>
+      <div id="cardModalBody"></div>
+    </div>
+  </div>
 
   <script>
     // ======= 中英文對照 MAP（由 CSV 載入） =======
@@ -527,21 +583,10 @@
     let allGames = [];
     let filteredGames = [];
     let favoriteIds = new Set();
+    let randomVisible = true;
+    let focusGame = null;
 
     const FAVORITE_KEY = 'bggFavorites';
-
-    const state = {
-      searchText: '',
-      categoryKey: '',
-      mechanismKey: '',
-      sortKey: 'name_zh',
-      pageSize: 25,
-      currentPage: 0,
-    };
-
-    // 使用者「鎖定」的卡片（點下去的那張）
-    let focusGame = null;
-    let focusLocked = false;
 
     // DOM
     const searchInput      = document.getElementById('searchInput');
@@ -565,10 +610,20 @@
     const prevPageBtn      = document.getElementById('prevPageBtn');
     const nextPageBtn      = document.getElementById('nextPageBtn');
 
-    const recommendNote      = document.getElementById('recommendNote');
-    const recommendContainer = document.getElementById('recommendContainer');
+    const cardModal        = document.getElementById('cardModal');
+    const cardModalBody    = document.getElementById('cardModalBody');
+    const cardModalClose   = document.getElementById('cardModalClose');
 
-    // ======= localStorage 收藏清單 =======
+    const state = {
+      searchText: '',
+      categoryKey: '',
+      mechanismKey: '',
+      sortKey: 'name_zh',
+      pageSize: 25,
+      currentPage: 0,
+    };
+
+    // ======= 收藏清單（localStorage） =======
     function loadFavorites() {
       try {
         const raw = localStorage.getItem(FAVORITE_KEY);
@@ -588,6 +643,14 @@
       } catch (e) {
         console.warn('儲存收藏清單失敗', e);
       }
+    }
+
+    function csvEscape(value) {
+      const s = String(value ?? '');
+      if (/[",\r\n]/.test(s)) {
+        return '"' + s.replace(/"/g, '""') + '"';
+      }
+      return s;
     }
 
     function downloadFavoritesAsCSV() {
@@ -632,14 +695,6 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-    }
-
-    function csvEscape(value) {
-      const s = String(value ?? '');
-      if (/[",\r\n]/.test(s)) {
-        return '"' + s.replace(/"/g, '""') + '"';
-      }
-      return s;
     }
 
     // ======= 載入 JSON =======
@@ -764,12 +819,6 @@
         return true;
       });
 
-      // 如果目前 focus 的遊戲不在結果裡，就取消鎖定
-      if (!(focusGame && filteredGames.some(g => g.id === focusGame.id))) {
-        focusGame = null;
-        focusLocked = false;
-      }
-
       sortGames(filteredGames, state.sortKey);
       state.currentPage = 0;
       renderAll();
@@ -844,11 +893,19 @@
     }
 
     function renderRandomPreview() {
+      if (!randomSection) return;
       randomContainer.innerHTML = '';
+
+      if (!randomVisible) {
+        randomSection.classList.add('collapsed');
+        return;
+      }
+      randomSection.classList.remove('collapsed');
+
       const n = Math.min(4, allGames.length);
       const picks = pickRandom(allGames, n);
       for (const g of picks) {
-        const card = createGameCard(g, {compact: true});
+        const card = createGameCard(g, {compact: true, clickable: true});
         randomContainer.appendChild(card);
       }
     }
@@ -866,7 +923,7 @@
       const slice = filteredGames.slice(start, end);
 
       for (const g of slice) {
-        const card = createGameCard(g, {compact: false});
+        const card = createGameCard(g, {compact: false, clickable: true});
         cardsContainer.appendChild(card);
       }
 
@@ -875,62 +932,9 @@
 
       prevPageBtn.disabled = pageIndex === 0;
       nextPageBtn.disabled = pageIndex >= pageCount - 1;
-
-      let baseForRecommend = null;
-      if (focusLocked && focusGame && filteredGames.some(g => g.id === focusGame.id)) {
-        baseForRecommend = focusGame;
-      } else if (slice.length > 0) {
-        baseForRecommend = slice[0];
-      }
-      renderRecommendations(baseForRecommend);
-      updateRandomVisibility();
     }
 
-    // 根據是否鎖定卡片，決定隨機預覽要不要收起
-    function updateRandomVisibility() {
-      if (!randomSection) return;
-      if (focusLocked && focusGame) {
-        randomSection.classList.add('collapsed');
-      } else {
-        randomSection.classList.remove('collapsed');
-      }
-    }
-
-    // 點任何卡片時的處理
-    function handleCardClick(game) {
-      focusGame = game;
-      focusLocked = true;
-      renderRecommendations(game);
-      updateRandomVisibility();
-      const recSection = document.getElementById('recommendSection');
-      if (recSection) {
-        recSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    // 推薦區：第一張是被點的卡片（加框），下面是 5–8 個相似遊戲
-    function renderRecommendations(baseGame) {
-      recommendContainer.innerHTML = '';
-      if (!baseGame) {
-        recommendNote.textContent = '尚未選擇基準遊戲。';
-        return;
-      }
-
-      recommendNote.textContent =
-        `目前查看：「${baseGame.nameZh || baseGame.nameEn}」，下方列出 5–8 款類似遊戲。`;
-
-      const focusCard = createGameCard(baseGame, {compact: true});
-      focusCard.classList.add('card-focus');
-      recommendContainer.appendChild(focusCard);
-
-      const sims = computeSimilarGames(baseGame, 8);
-      for (const g of sims) {
-        const card = createGameCard(g, {compact: true});
-        recommendContainer.appendChild(card);
-      }
-    }
-
-    function createGameCard(game, {compact}) {
+    function createGameCard(game, {compact, clickable}) {
       const card = document.createElement('article');
       card.className = 'card';
 
@@ -1094,16 +1098,20 @@
         bggLink.target = '_blank';
         bggLink.rel = 'noopener noreferrer';
         bggLink.textContent = 'BGG';
+        bggLink.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+        });
         btns.appendChild(bggLink);
       }
 
       footer.appendChild(btns);
       card.appendChild(footer);
 
-      // 點整張卡片 → 鎖定 Focus + 收起隨機預覽 + 捲到推薦區
-      card.addEventListener('click', () => {
-        handleCardClick(game);
-      });
+      if (clickable) {
+        card.addEventListener('click', () => {
+          openModalForGame(game);
+        });
+      }
 
       if (compact) {
         card.style.fontSize = '0.74rem';
@@ -1173,6 +1181,56 @@
       return `${v}${unit}`;
     }
 
+    // ======= Modal：顯示卡片詳細＋推薦 =======
+    function openModalForGame(game) {
+      focusGame = game;
+      randomVisible = false;            // 一旦看卡片就關掉隨機預覽
+      renderRandomPreview();            // 會根據 randomVisible 自動隱藏
+
+      if (!cardModal || !cardModalBody) return;
+      cardModalBody.innerHTML = '';
+
+      const title = document.createElement('h3');
+      title.className = 'modal-title';
+      title.textContent = game.nameZh || game.nameEn || '(未命名)';
+      cardModalBody.appendChild(title);
+
+      const subtitle = document.createElement('p');
+      subtitle.className = 'modal-subtitle';
+      subtitle.textContent = '詳細資訊與相似推薦';
+      cardModalBody.appendChild(subtitle);
+
+      const focusCard = createGameCard(game, {compact: false, clickable: false});
+      focusCard.classList.add('card-focus');
+      cardModalBody.appendChild(focusCard);
+
+      const secTitle = document.createElement('div');
+      secTitle.className = 'modal-section-title';
+      secTitle.textContent = '你可能也會喜歡';
+      cardModalBody.appendChild(secTitle);
+
+      const note = document.createElement('p');
+      note.className = 'recommend-note';
+      note.textContent = '根據分類與機制挑選 5–8 款相似遊戲。';
+      cardModalBody.appendChild(note);
+
+      const sims = computeSimilarGames(game, 8);
+      const grid = document.createElement('div');
+      grid.className = 'recommend-grid';
+      sims.forEach(g => {
+        const card = createGameCard(g, {compact: true, clickable: true});
+        grid.appendChild(card);
+      });
+      cardModalBody.appendChild(grid);
+
+      cardModal.classList.add('show');
+    }
+
+    function closeModal() {
+      if (!cardModal) return;
+      cardModal.classList.remove('show');
+    }
+
     // ======= 事件 =======
     function setupEvents() {
       searchInput.addEventListener('input', (e) => {
@@ -1210,10 +1268,6 @@
         state.pageSize = 25;
         state.currentPage = 0;
 
-        focusGame = null;
-        focusLocked = false;
-        updateRandomVisibility();
-
         searchInput.value = '';
         categorySelect.value = '';
         mechanismSelect.value = '';
@@ -1224,10 +1278,8 @@
       });
 
       randomButton.addEventListener('click', () => {
+        randomVisible = true;   // 手動按鈕才重新開啟
         renderRandomPreview();
-        focusGame = null;
-        focusLocked = false;
-        updateRandomVisibility();
       });
 
       prevPageBtn.addEventListener('click', () => {
@@ -1251,14 +1303,30 @@
           downloadFavoritesAsCSV();
         });
       }
+
+      if (cardModalClose) {
+        cardModalClose.addEventListener('click', () => {
+          closeModal();
+        });
+      }
+      if (cardModal) {
+        cardModal.addEventListener('click', (e) => {
+          if (e.target === cardModal) {
+            closeModal();
+          }
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
     }
 
     function renderAll() {
       const { catMap, mechMap } = buildTaxonomy(allGames);
       renderStats(catMap, mechMap);
-      if (!focusLocked) {
-        renderRandomPreview();
-      }
+      renderRandomPreview();
       renderCards();
     }
 
