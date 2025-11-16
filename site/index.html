@@ -4,1802 +4,1022 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Board Game Guide</title>
+
   <style>
-    :root {
-      --c-bg: #f5f7fb;
-      --c-surface: #ffffff;
-      --c-border: #d0d7e2;
-      --c-border-strong: #1e90ff;
-      --c-text: #222222;
-      --c-muted: #6b7280;
-      --c-accent: #2563eb;
-      --c-accent-soft: #e0edff;
-      --c-danger: #dc2626;
-      --c-chip-bg: #eef2ff;
-      --c-chip-border: #c7d2fe;
-      --c-chip-active-bg: #2563eb;
-      --c-chip-active-text: #ffffff;
-      --shadow-soft: 0 4px 12px rgba(15, 23, 42, 0.08);
-      --radius-lg: 18px;
-      --radius-xl: 22px;
-      --radius-pill: 999px;
-      --card-img-ratio: 4 / 5;
-      --toolbar-max-width: 1280px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
-      background: var(--c-bg);
-      color: var(--c-text);
-    }
-
-    a {
-      color: var(--c-accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 16px 12px 32px;
-    }
-
-    header.page-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 8px 16px;
-      margin-bottom: 16px;
-    }
-
-    header.page-header h1 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: 0.06em;
-    }
-
-    header.page-header .subtitle {
-      font-size: 13px;
-      color: var(--c-muted);
-    }
-
-    .toolbar {
-      max-width: var(--toolbar-max-width);
-      background: var(--c-surface);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-soft);
-      padding: 10px 14px;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) repeat(4, minmax(0, 1fr)) auto;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .toolbar-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 16px;
-      align-items: center;
-      margin-top: 8px;
-      font-size: 13px;
-      color: var(--c-muted);
-    }
-
-    .toolbar-row label {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .toolbar-row button.small {
-      font-size: 12px;
-      padding: 4px 10px;
-    }
-
-    .search-input {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .search-input input {
-      width: 100%;
-      padding: 8px 10px;
-      padding-left: 28px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-border);
-      font-size: 14px;
-      outline: none;
-    }
-
-    .search-input input:focus {
-      border-color: var(--c-border-strong);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
-    }
-
-    .search-input::before {
-      content: "🔍";
-      position: absolute;
-      left: 8px;
-      font-size: 13px;
-      opacity: 0.6;
-    }
-
-    select,
-    button.toolbar-btn {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-border);
-      background: #ffffff;
-      font-size: 13px;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    button.toolbar-btn.primary {
-      background: var(--c-accent);
-      color: #ffffff;
-      border-color: var(--c-accent);
-      text-align: center;
-    }
-
-    button.toolbar-btn.danger {
-      border-color: var(--c-danger);
-      color: var(--c-danger);
-      text-align: center;
-    }
-
-    button.toolbar-btn.primary:hover {
-      background: #1d4ed8;
-    }
-
-    button.toolbar-btn:hover {
-      border-color: var(--c-border-strong);
-    }
-
-    .stats-bar {
-      margin: 4px 4px 10px;
-      font-size: 13px;
-      color: var(--c-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 16px;
-      align-items: center;
-    }
-
-    .stats-bar .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px 8px;
-      border-radius: var(--radius-pill);
-      background: var(--c-chip-bg);
-      border: 1px solid var(--c-chip-border);
-      font-size: 12px;
-      color: var(--c-muted);
-    }
-
-    .stats-bar .badge strong {
-      color: var(--c-text);
-    }
-
-    /* Recommendation panel */
-
-    .recommendation-panel {
-      background: var(--c-surface);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-soft);
-      padding: 16px 18px 14px;
-      margin-bottom: 16px;
-    }
-
-    .recommendation-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .recommendation-header h2 {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .recommendation-header small {
-      color: var(--c-muted);
-      font-size: 12px;
-    }
-
-    .recommendation-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
-      gap: 16px;
-    }
-
-    .rec-main-game {
-      display: flex;
-      gap: 10px;
-    }
-
-    .rec-main-game img {
-      width: 96px;
-      height: auto;
-      border-radius: 12px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .rec-main-meta {
-      font-size: 13px;
-    }
-
-    .rec-main-meta .title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .rec-main-meta .meta-line {
-      color: var(--c-muted);
-      margin-bottom: 4px;
-    }
-
-    .rec-main-meta .chips-line {
-      margin-top: 4px;
-    }
-
-    .rec-main-meta .price-line {
-      margin-top: 4px;
-      font-size: 13px;
-    }
-
-    .rec-main-meta .price-line strong {
-      margin-right: 6px;
-    }
-
-    .rec-main-actions {
-      margin-top: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .rec-main-actions button {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-border);
-      background: #ffffff;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .rec-main-actions button.primary {
-      border-color: var(--c-accent);
-      background: var(--c-accent-soft);
-      color: var(--c-accent);
-    }
-
-    .rec-main-actions button:hover {
-      border-color: var(--c-border-strong);
-    }
-
-    .rec-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .rec-card {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 8px;
-      border-radius: 14px;
-      border: 1px solid var(--c-border);
-      background: #ffffff;
-      cursor: pointer;
-      transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
-    }
-
-    .rec-card:hover {
-      box-shadow: var(--shadow-soft);
-      transform: translateY(-1px);
-      border-color: var(--c-border-strong);
-    }
-
-    .rec-card img {
-      width: 100%;
-      aspect-ratio: var(--card-img-ratio);
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 4px;
-    }
-
-    .rec-card .name {
-      font-weight: 600;
-      font-size: 13px;
-      margin-bottom: 2px;
-    }
-
-    .rec-card .meta {
-      color: var(--c-muted);
-      font-size: 11px;
-      margin-bottom: 2px;
-    }
-
-    .rec-card .price-stock {
-      font-size: 11px;
-    }
-
-    /* Main grid */
-
-    .grid-toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin: 6px 4px 8px;
-      font-size: 13px;
-      color: var(--c-muted);
-    }
-
-    .pager {
-      display: inline-flex;
-      gap: 4px;
-      align-items: center;
-    }
-
-    .pager button {
-      padding: 3px 8px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-border);
-      background: #ffffff;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .pager button:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-
-    .pager button:not(:disabled):hover {
-      border-color: var(--c-border-strong);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 14px;
-    }
-
-    .game-card {
-      background: var(--c-surface);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-soft);
-      padding: 10px 10px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
-      border: 1px solid transparent;
-    }
-
-    .game-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
-      border-color: var(--c-border-strong);
-    }
-
-    .game-card-header {
-      display: flex;
-      gap: 10px;
-    }
-
-    .game-card img {
-      width: 120px;
-      aspect-ratio: var(--card-img-ratio);
-      border-radius: 14px;
-      object-fit: cover;
-      flex-shrink: 0;
-      background: #e5e7eb;
-    }
-
-    .game-card-main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      min-width: 0;
-    }
-
-    .game-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 2px;
-      line-height: 1.35;
-    }
-
-    .game-title small {
-      font-weight: 400;
-      font-size: 12px;
-      color: var(--c-muted);
-      margin-left: 4px;
-    }
-
-    .rating-line {
-      font-size: 12px;
-      color: var(--c-muted);
-    }
-
-    .rating-line span + span::before {
-      content: "｜";
-      margin: 0 4px;
-      color: #d1d5db;
-    }
-
-    .price-stock-line {
-      font-size: 12px;
-      margin-top: 2px;
-    }
-
-    .price-stock-line span + span::before {
-      content: "｜";
-      margin: 0 4px;
-      color: #d1d5db;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      margin-top: 4px;
-    }
-
-    .chip {
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-chip-border);
-      background: var(--c-chip-bg);
-      padding: 2px 8px;
-      font-size: 11px;
-      color: var(--c-muted);
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .chip.mechanism {
-      border-style: dashed;
-    }
-
-    .chip.active {
-      background: var(--c-chip-active-bg);
-      border-color: var(--c-chip-active-bg);
-      color: var(--c-chip-active-text);
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .card-footer-left {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--c-muted);
-    }
-
-    .card-footer-right {
-      display: flex;
-      gap: 6px;
-    }
-
-    .pill-btn {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-border);
-      background: #ffffff;
-      font-size: 11px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .pill-btn.primary {
-      border-color: var(--c-accent);
-      background: var(--c-accent-soft);
-      color: var(--c-accent);
-    }
-
-    .pill-btn.icon {
-      padding-inline: 8px;
-    }
-
-    .pill-btn[disabled] {
-      opacity: 0.4;
-      cursor: default;
-    }
-
-    .pill-btn:hover:not([disabled]) {
-      border-color: var(--c-border-strong);
-    }
-
-    .pill-btn .star {
-      font-size: 13px;
-    }
-
-    .game-card.favorited {
-      border-color: #facc15;
-    }
-
-    .game-card.duplicate {
-      box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.4), var(--shadow-soft);
-    }
-
-    /* Mechanism bottom sheet */
-
-    .sheet-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.28);
-      display: none;
-      align-items: flex-end;
-      justify-content: center;
-      z-index: 40;
-    }
-
-    .sheet-backdrop.open {
-      display: flex;
-    }
-
-    .sheet {
-      width: 100%;
-      max-width: 900px;
-      max-height: 70vh;
-      background: var(--c-surface);
-      border-radius: 18px 18px 0 0;
-      box-shadow: 0 -6px 16px rgba(15, 23, 42, 0.18);
-      padding: 10px 14px 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .sheet-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-    }
-
-    .sheet-header-title {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .sheet-header-title strong {
-      font-size: 14px;
-    }
-
-    .sheet-header-title span {
-      color: var(--c-muted);
-      font-size: 12px;
-    }
-
-    .sheet-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .sheet-actions button {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-border);
-      background: #ffffff;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .sheet-actions button.primary {
-      border-color: var(--c-accent);
-      background: var(--c-accent-soft);
-      color: var(--c-accent);
-    }
-
-    .sheet-actions button.danger {
-      border-color: var(--c-danger);
-      color: var(--c-danger);
-    }
-
-    .sheet-body {
-      overflow: auto;
-      padding-top: 4px;
-    }
-
-    .sheet-chip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .sheet-chip {
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--c-chip-border);
-      background: var(--c-chip-bg);
-      padding: 3px 9px;
-      font-size: 11px;
-      color: var(--c-muted);
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .sheet-chip strong {
-      color: var(--c-text);
-      margin-right: 4px;
-    }
-
-    .sheet-chip span.count {
-      font-size: 10px;
-      color: var(--c-muted);
-    }
-
-    .sheet-chip.selected {
-      background: var(--c-chip-active-bg);
-      border-color: var(--c-chip-active-bg);
-      color: var(--c-chip-active-text);
-    }
-
-    /* Responsive */
-
-    @media (max-width: 960px) {
-      .toolbar {
-        grid-template-columns: minmax(0, 1.7fr) repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding-inline: 10px;
-      }
-
-      .toolbar {
-        grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.2fr);
-      }
-
-      .recommendation-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .game-card-header {
-        flex-direction: column;
-      }
-
-      .game-card img {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 540px) {
-      header.page-header h1 {
-        font-size: 20px;
-      }
-
-      .toolbar {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .recommendation-panel {
-        padding: 12px 10px 10px;
-      }
-
-      .card-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
+  :root{
+    --c-border:#1e90ff;
+    --c-muted:#6b7280;
+    --c-bg:#fafafa;
+    --chip-bg:#eef6ff;
+    --chip-active:#d9ebff;
+    --chip-active-border:#1e90ff;
+    --card-shadow:0 2px 6px rgba(0,0,0,0.08);
+    --w-max:1280px;
+  }
+
+  /* GLOBAL */
+  *{ box-sizing:border-box; }
+
+  body{
+    font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    margin:0;
+    background:var(--c-bg);
+    color:#1f2937;
+  }
+
+  .container{
+    width:100%;
+    max-width:var(--w-max);
+    margin:0 auto;
+  }
+
+  /* HEADER */
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--c-border);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+
+  .header-inner{
+    max-width:var(--w-max);
+    margin:0 auto;
+    padding:10px 12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+  }
+
+  header input,
+  header select,
+  header button,
+  header label{
+    font:inherit;
+  }
+
+  #Q{
+    min-width:220px;
+    padding:6px 10px;
+    border-radius:6px;
+    border:1px solid #d1d5db;
+  }
+
+  header select{
+    padding:6px 10px;
+    border-radius:6px;
+    border:1px solid #d1d5db;
+    background:#fff;
+  }
+
+  header button{
+    padding:6px 10px;
+    border-radius:6px;
+    border:1px solid var(--c-border);
+    background:#fff;
+    color:var(--c-border);
+    cursor:pointer;
+  }
+  header button:hover{
+    background:var(--c-border);
+    color:#fff;
+  }
+
+  #CLEAR_BTN{
+    background:#ffecec;
+    color:#c00;
+    border-color:#c00;
+  }
+  #CLEAR_BTN:hover{
+    background:#c00;
+    color:#fff;
+  }
+
+  .header-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+  }
+
+  .header-row-small{
+    margin-top:4px;
+    font-size:14px;
+    color:var(--c-muted);
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+  }
+
+  .toggle-group{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .toggle-group input{
+    margin-right:4px;
+  }
+
+  /* SUMMARY */
+  #SUMMARY_BAR{
+    padding:6px 12px 0;
+    font-size:14px;
+    color:#374151;
+  }
+
+  /* GRID */
+  #GRID_WRAP{
+    padding:8px 12px 20px;
+  }
+
+  #GRID{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:18px;
+  }
+
+  .card{
+    background:#fff;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    padding:10px 10px 12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    transition:0.15s;
+  }
+
+  .card:hover{
+    border-color:var(--c-border);
+    box-shadow:var(--card-shadow);
+  }
+
+  .cover{
+    width:100%;
+    height:210px;           /* 不要超放大，固定高度＋contain */
+    object-fit:contain;
+    background:#f3f4f6;
+    border-radius:10px;
+  }
+
+  .title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:6px;
+  }
+
+  .title{
+    font-size:17px;
+    font-weight:700;
+  }
+
+  .badge-dup{
+    font-size:12px;
+    padding:2px 6px;
+    border-radius:999px;
+    background:#fef3c7;
+    border:1px solid #fbbf24;
+    color:#92400e;
+    white-space:nowrap;
+  }
+
+  .subtitle{
+    color:var(--c-muted);
+    font-size:14px;
+  }
+
+  .meta-row{
+    font-size:13px;
+    color:#4b5563;
+  }
+
+  .chips{
+    margin-top:2px;
+  }
+
+  .chip{
+    display:inline-block;
+    padding:3px 7px;
+    border-radius:999px;
+    background:var(--chip-bg);
+    font-size:12px;
+    margin:2px;
+    border:1px solid transparent;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+
+  .chip:hover{
+    background:var(--chip-active);
+    border-color:var(--chip-active-border);
+  }
+
+  .info-row{
+    font-size:13px;
+    margin-top:4px;
+  }
+
+  .info-row a{
+    color:#2563eb;
+    text-decoration:none;
+  }
+  .info-row a:hover{
+    text-decoration:underline;
+  }
+
+  .fav-btn{
+    margin-top:4px;
+    padding:3px 8px;
+    font-size:13px;
+    border-radius:999px;
+    border:1px solid #d1d5db;
+    background:#fff;
+    cursor:pointer;
+    align-self:flex-start;
+  }
+  .fav-btn.fav-on{
+    border-color:#f59e0b;
+    background:#fef3c7;
+    color:#92400e;
+  }
+
+  .empty-msg{
+    font-size:15px;
+    color:#6b7280;
+    padding:24px 4px;
+  }
+
+  /* PAGER */
+  #PAGER{
+    margin-top:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+  }
+
+  .page-btn{
+    padding:4px 10px;
+    border-radius:999px;
+    border:1px solid #d1d5db;
+    background:#fff;
+    cursor:pointer;
+  }
+  .page-btn:disabled{
+    opacity:0.5;
+    cursor:default;
+  }
+
+  .page-info{
+    color:#4b5563;
+  }
+
+  /* FOCUS + RECO 區（你可能也會喜歡） */
+  #FOCUS{
+    max-width:var(--w-max);
+    margin:6px auto 0;
+    padding:8px 12px 0;
+  }
+
+  .focus-box{
+    background:#fff;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    padding:10px 12px 12px;
+    display:none;
+  }
+
+  .focus-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+  }
+
+  .focus-title{
+    font-size:15px;
+    font-weight:600;
+  }
+
+  .focus-main{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+
+  .focus-main img{
+    width:160px;
+    height:160px;
+    object-fit:contain;
+    border-radius:10px;
+    background:#f3f4f6;
+  }
+
+  .focus-text{
+    flex:1 1 220px;
+    font-size:14px;
+  }
+
+  .focus-reco-grid{
+    margin-top:10px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+    gap:10px;
+  }
+
+  .focus-reco-card{
+    border-radius:10px;
+    border:1px solid #e5e7eb;
+    padding:6px;
+    font-size:13px;
+    cursor:pointer;
+    background:#fafafa;
+  }
+
+  .focus-reco-card:hover{
+    border-color:var(--c-border);
+    background:#f3f4ff;
+  }
+
+  .focus-reco-card img{
+    width:100%;
+    height:110px;
+    object-fit:contain;
+    border-radius:8px;
+    background:#f3f4f6;
+  }
+
+  @media (max-width:640px){
+    .header-inner{
+      padding:8px;
+    }
+    #GRID_WRAP{
+      padding:8px;
+    }
+    #GRID{
+      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+      gap:12px;
+    }
+    .cover{
+      height:190px;
+    }
+  }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="page-header">
-      <h1>Board Game Guide</h1>
-      <div class="subtitle">逢甲桌遊店｜租借與二手清單導覽（本地 CSV ＋ BGG 評分資料）</div>
-    </header>
 
-    <section class="toolbar" aria-label="篩選與排序">
-      <div class="search-input">
-        <input id="search-input" type="search" placeholder="搜尋：中文／英文／原名／分類／機制" />
-      </div>
+<header>
+  <div class="header-inner">
+    <div class="header-row">
+      <input id="Q" placeholder="搜尋：中文 / 英文 / 原名 / 關鍵字" />
 
-      <select id="category-select" title="分類">
-        <option value="ALL">全部分類</option>
+      <select id="CAT"></select>
+      <select id="MECH"></select>
+
+      <select id="SORT">
+        <option value="name_zh">按名稱（中文）</option>
+        <option value="rating_bayes">BGG Bayes</option>
+        <option value="rating_avg">玩家平均</option>
+        <option value="users_rated">評分人數</option>
+        <option value="weight">重量</option>
+        <option value="used_price_twd">二手價格</option>
       </select>
 
-      <button id="mechanism-button" class="toolbar-btn" type="button">全部機制</button>
-
-      <select id="sort-select" title="排序">
-        <option value="name_zh,asc">按名稱（中文）</option>
-        <option value="rating_bayes,desc">Bayes 評分（高→低）</option>
-        <option value="rating_avg,desc">均分（高→低）</option>
-        <option value="users_rated,desc">評分人數（多→少）</option>
-        <option value="weight,asc">重度（輕→重）</option>
-        <option value="weight,desc">重度（重→輕）</option>
-        <option value="used_price_twd,asc">二手價（低→高）</option>
-        <option value="used_price_twd,desc">二手價（高→低）</option>
-      </select>
-
-      <select id="page-size-select" title="每頁筆數">
-        <option value="25">每頁 25 筆</option>
+      <select id="PAGE_SIZE">
+        <option value="15">每頁 15 筆</option>
+        <option value="25" selected>每頁 25 筆</option>
         <option value="50">每頁 50 筆</option>
-        <option value="100">每頁 100 筆</option>
       </select>
 
-      <button id="random-button" class="toolbar-btn primary" type="button">隨機預覽</button>
-
-      <div class="toolbar-row">
-        <label><input id="only-fav-checkbox" type="checkbox" /> 只看收藏</label>
-        <label><input id="only-dup-checkbox" type="checkbox" /> 只看重複品項</label>
-        <button id="download-fav-btn" class="small pill-btn" type="button">下載收藏清單（CSV）</button>
-        <button id="clear-filter-btn" class="small pill-btn" type="button">清除篩選</button>
-        <span id="dup-stat" class="badge"></span>
-      </div>
-    </section>
-
-    <div class="stats-bar">
-      <span>總數 <strong id="total-count">0</strong> 款，符合篩選
-        <strong id="filtered-count">0</strong> 款，顯示第
-        <strong id="range-from">0</strong>–<strong id="range-to">0</strong>
-        筆（第 <strong id="page-index">1</strong> / <strong id="page-count">1</strong> 頁）</span>
-      <span id="mechanism-stat" class="badge"></span>
-      <span id="category-stat" class="badge"></span>
+      <button id="RANDOM_BTN" type="button">隨機預覽</button>
+      <button id="CLEAR_BTN" type="button">清除篩選</button>
     </div>
 
-    <section class="recommendation-panel" aria-label="目前選取的遊戲與推薦">
-      <div class="recommendation-header">
-        <div>
-          <h2>目前選取的遊戲 &amp; 你可能也會喜歡</h2>
-          <small id="rec-subtitle">請先從下方卡片點選一款遊戲，或使用「隨機預覽」。</small>
-        </div>
-        <button id="close-rec-btn" class="pill-btn icon" type="button">關閉</button>
+    <div class="header-row-small">
+      <div class="toggle-group">
+        <label><input type="checkbox" id="FAV_ONLY" />只看收藏</label>
+        <label><input type="checkbox" id="DUP_ONLY" />只看重複品項</label>
       </div>
-      <div class="recommendation-layout">
-        <div id="rec-main" class="rec-main-game"></div>
-        <div id="rec-list" class="rec-list"></div>
-      </div>
-    </section>
-
-    <div class="grid-toolbar">
-      <div class="pager">
-        <button id="prev-page-btn" type="button">上一頁</button>
-        <span id="page-label">第 1 / 1 頁</span>
-        <button id="next-page-btn" type="button">下一頁</button>
-      </div>
-      <div>點擊卡片可更新上方「你可能也會喜歡」的推薦結果。</div>
-    </div>
-
-    <section id="card-grid" class="card-grid" aria-label="遊戲清單"></section>
-
-    <div class="grid-toolbar">
-      <div class="pager">
-        <button id="prev-page-btn-bottom" type="button">上一頁</button>
-        <span id="page-label-bottom">第 1 / 1 頁</span>
-        <button id="next-page-btn-bottom" type="button">下一頁</button>
-      </div>
-      <div></div>
+      <div id="DUP_HINT"></div>
     </div>
   </div>
+</header>
 
-  <!-- Mechanism bottom sheet -->
-  <div id="sheet-backdrop" class="sheet-backdrop" aria-hidden="true">
-    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
-      <div class="sheet-header">
-        <div class="sheet-header-title">
-          <strong id="sheet-title">選擇機制（可複選）</strong>
-          <span id="sheet-subtitle">點選機制 chips 以加入或移除篩選條件。</span>
-        </div>
-        <div class="sheet-actions">
-          <button id="sheet-clear-btn" class="danger" type="button">全部清除</button>
-          <button id="sheet-apply-btn" class="primary" type="button">套用</button>
-          <button id="sheet-close-btn" type="button">關閉</button>
-        </div>
-      </div>
-      <div class="sheet-body">
-        <div id="sheet-chip-grid" class="sheet-chip-grid"></div>
-      </div>
+<div id="SUMMARY_BAR" class="container"></div>
+
+<div id="FOCUS" class="container">
+  <div id="FOCUS_BOX" class="focus-box">
+    <div class="focus-head">
+      <div class="focus-title">目前選取的遊戲 &amp; 你可能也會喜歡</div>
+      <button id="FOCUS_CLOSE" type="button" class="page-btn">關閉</button>
     </div>
+    <div class="focus-main">
+      <div id="FOCUS_IMG_WRAP"></div>
+      <div id="FOCUS_TEXT" class="focus-text"></div>
+    </div>
+    <div class="focus-reco-grid" id="FOCUS_RECO"></div>
   </div>
+</div>
 
-  <script>
-    // -----------------------------
-    // 全域狀態
-    // -----------------------------
-    let ALL_GAMES = [];
-    let FILTERED = [];
-    let CURRENT_PAGE = 1;
-    let PAGE_SIZE = 25;
+<div id="GRID_WRAP" class="container">
+  <div id="GRID"></div>
+  <div id="PAGER"></div>
+</div>
 
-    let SELECTED_CATEGORY = "ALL";
-    let SELECTED_MECHANISMS = new Set();
-    let SEARCH_TEXT = "";
-    let SORT_KEY = "name_zh";
-    let SORT_DIR = "asc";
-    let ONLY_FAVORITES = false;
-    let ONLY_DUPLICATES = false;
+<script>
+/* ========= 全域狀態 ========= */
+let RAW_DATA = [];
+let DATA = [];               // 正式使用：已 normalize & 過濾掉沒 bgg_id
+let FAVORITES = new Set();   // localStorage 收藏
+let FILTER_CAT = "";
+let FILTER_MECH = "";
+let FILTER_SEARCH = "";
+let SORT_KEY = "name_zh";
+let PAGE_SIZE = 25;
+let CUR_PAGE = 1;
+let SHOW_FAV_ONLY = false;
+let SHOW_DUP_ONLY = false;
 
-    let FAVORITE_IDS = new Set();
-    let MECHANISM_STATS = {};
-    let CATEGORY_STATS = {};
-    let DUPLICATE_IDS = new Set();
+/* ========= 工具 ========= */
+const $ = (s)=>document.querySelector(s);
 
-    let CURRENT_SELECTED_GAME = null;
+function textMatch(t,q){
+  if(!q) return true;
+  if(!t) return false;
+  q = q.toLowerCase();
+  return t.toLowerCase().includes(q);
+}
 
-    const FAV_KEY = "bgg_favorites_v1";
+function fmtNum(v, decimals=2){
+  if(v === null || v === undefined || Number.isNaN(v)) return "-";
+  const n = Number(v);
+  if(!Number.isFinite(n)) return "-";
+  return n.toFixed(decimals);
+}
 
-    // -----------------------------
-    // 初始化
-    // -----------------------------
-    document.addEventListener("DOMContentLoaded", () => {
-      initFavorites();
-      loadGames()
-        .then((games) => {
-          ALL_GAMES = games;
-          enrichGames(ALL_GAMES);
-          buildStats(ALL_GAMES);
-          initControls();
-          applyFiltersAndRender();
-        })
-        .catch((err) => {
-          console.error(err);
-          alert("載入 data/games.json 失敗，請稍後再試。");
-        });
-    });
+function fmtInt(v){
+  if(v === null || v === undefined || Number.isNaN(v)) return "-";
+  const n = parseInt(v,10);
+  if(!Number.isFinite(n)) return "-";
+  return n.toString();
+}
 
-    // -----------------------------
-    // 載入 JSON（支援 /data 與 /site/data）
-    // -----------------------------
-    async function loadGames() {
-      const candidates = [
-        "data/games.json",
-        "site/data/games.json",
-        "/data/games.json",
-        "/site/data/games.json",
-      ];
+function escapeHtml(str){
+  return (str ?? "").replace(/[&<>"']/g, s=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  })[s]);
+}
 
-      for (const url of candidates) {
-        try {
-          const resp = await fetch(url, { cache: "no-store" });
-          if (resp.ok) {
-            const data = await resp.json();
-            console.log("[INFO] Loaded games from", url, "rows=", data.length);
-            return data;
-          }
-        } catch (e) {
-          console.warn("[WARN] load failed for", url, e);
-        }
+/* ========= 資料載入 & 正規化 ========= */
+async function loadData(){
+  const paths = [
+    "data/games.json",
+    "./data/games.json",
+    "../data/games.json"
+  ];
+  let loaded = null;
+  for(const p of paths){
+    try{
+      const r = await fetch(p);
+      if(r.ok){
+        loaded = await r.json();
+        console.log("loaded JSON from", p, "rows=", loaded.length);
+        break;
       }
-      throw new Error("找不到任何 games.json（已嘗試 data/ 與 site/data/）");
+    }catch(e){}
+  }
+  if(!loaded){
+    alert("無法載入資料檔 games.json");
+    return;
+  }
+  RAW_DATA = loaded;
+
+  DATA = RAW_DATA.map(normalizeRow)
+                 .filter(g => g.bgg_id);   // 沒有 bgg_id 的先藏起來
+
+  markDuplicates();
+  loadFavorites();
+  buildOptions();
+  renderAll();
+}
+
+/* 把一筆原始 row 轉成統一欄位 */
+function normalizeRow(raw, idx){
+  const g = {...raw};
+
+  if(!g.id){
+    if(g.bgg_id) g.id = "bgg-" + g.bgg_id;
+    else g.id = "row-" + idx;
+  }
+
+  g.name_zh = g.name_zh || g.name || "";
+  g.name_en = g.name_en || g.name_en_override || g.name || "";
+
+  // 分類
+  let cats = [];
+  if(Array.isArray(g.categories_zh)) cats = g.categories_zh.slice();
+  else if(Array.isArray(g.categories)) cats = g.categories.slice();
+  else if(g.category_zh) cats = [g.category_zh];
+  g._cats = cats.filter(Boolean);
+
+  // 機制
+  let mechs = [];
+  if(Array.isArray(g.mechanisms_zh)) mechs = g.mechanisms_zh.slice();
+  else if(Array.isArray(g.mechanisms)) mechs = g.mechanisms.slice();
+  g._mechs = mechs.filter(Boolean);
+
+  // BGG 評分相關（盡量吃常見欄位）
+  const rb = parseFloat(
+    g.rating_bayes ?? g.bayes ?? g.bayesaverage ?? g.geek_rating
+  );
+  g.rating_bayes = Number.isFinite(rb) ? rb : null;
+
+  const ra = parseFloat(
+    g.rating_avg ?? g.average ?? g.avg_rating
+  );
+  g.rating_avg = Number.isFinite(ra) ? ra : null;
+
+  const ur = parseInt(
+    g.users_rated ?? g.usersrated ?? g.numvoters ?? g.votes
+  ,10);
+  g.users_rated = Number.isFinite(ur) ? ur : null;
+
+  const w = parseFloat(
+    g.weight ?? g.weight_avg ?? g.complexity
+  );
+  g.weight = Number.isFinite(w) ? w : null;
+
+  g.mechanism_count = g.mechanism_count ?? g._mechs.length;
+
+  // 價格 / 庫存
+  if(g.used_price_twd !== null && g.used_price_twd !== undefined && g.used_price_twd !== ""){
+    g.used_price_twd = Number(g.used_price_twd);
+  }else{
+    g.used_price_twd = null;
+  }
+  if(g.stock !== null && g.stock !== undefined && g.stock !== ""){
+    g.stock = Number(g.stock);
+  }else{
+    g.stock = null;
+  }
+
+  // 圖片
+  g.image = g.image || g.image_override || g.thumbnail || "";
+
+  return g;
+}
+
+/* 標記重複（以 bgg_id 為主） */
+function markDuplicates(){
+  const counter = new Map();
+  for(const g of DATA){
+    const key = g.bgg_id || g.name_zh || g.name_en || g.name;
+    if(!key) continue;
+    const k = String(key).toLowerCase();
+    counter.set(k, (counter.get(k) || 0) + 1);
+  }
+  let dupCount = 0;
+  for(const g of DATA){
+    const key = g.bgg_id || g.name_zh || g.name_en || g.name;
+    const k = key ? String(key).toLowerCase() : "";
+    g._dup = k && counter.get(k) > 1;
+    if(g._dup) dupCount++;
+  }
+  $("#DUP_HINT").textContent = dupCount ? `偵測到重複品項約 ${dupCount} 筆（以 BGG / 名稱推估）` : "";
+}
+
+/* 收藏（localStorage） */
+function loadFavorites(){
+  try{
+    const raw = localStorage.getItem("bgg_favorites");
+    if(!raw) return;
+    const arr = JSON.parse(raw);
+    if(Array.isArray(arr)){
+      FAVORITES = new Set(arr);
+    }
+  }catch(e){}
+}
+
+function saveFavorites(){
+  localStorage.setItem("bgg_favorites", JSON.stringify([...FAVORITES]));
+}
+
+/* ========= 下拉選單 ========= */
+function buildOptions(){
+  const catMap = new Map();
+  const mechMap = new Map();
+
+  for(const g of DATA){
+    g._cats.forEach(c => catMap.set(c, (catMap.get(c)||0)+1));
+    g._mechs.forEach(m => mechMap.set(m, (mechMap.get(m)||0)+1));
+  }
+
+  const catSel = $("#CAT");
+  const mechSel = $("#MECH");
+
+  catSel.innerHTML =
+    `<option value="">全部分類</option>` +
+    [...catMap.entries()]
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .map(([c,n])=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}（${n}）</option>`)
+      .join("");
+
+  mechSel.innerHTML =
+    `<option value="">全部機制</option>` +
+    [...mechMap.entries()]
+      .sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant'))
+      .map(([m,n])=>`<option value="${escapeHtml(m)}">${escapeHtml(m)}（${n}）</option>`)
+      .join("");
+}
+
+/* ========= 渲染主流程 ========= */
+function getFilteredList(){
+  const q = FILTER_SEARCH.trim();
+
+  let list = DATA.filter(g=>{
+    if(q){
+      const okSearch =
+        textMatch(g.name_zh, q) ||
+        textMatch(g.name_en, q) ||
+        textMatch(g.name, q);
+      if(!okSearch) return false;
     }
 
-    // -----------------------------
-    // 資料增補：顯示名稱、機制數等
-    // -----------------------------
-    function enrichGames(list) {
-      for (const g of list) {
-        g.name_zh = g.name_zh || g.name || g.name_en || "";
-        g.name_en = g.name_en || g.name || "";
-        g.display_name = g.name_zh || g.name_en || "";
-        g.categories = Array.isArray(g.categories) ? g.categories : [];
-        g.mechanisms = Array.isArray(g.mechanisms) ? g.mechanisms : [];
-        g.mechanism_count = g.mechanism_count || g.mechanisms.length || 0;
-        g.weight = typeof g.weight === "number" ? g.weight : null;
-        g.rating_bayes = typeof g.rating_bayes === "number" ? g.rating_bayes : null;
-        g.rating_avg = typeof g.rating_avg === "number"
-          ? g.rating_avg
-          : (typeof g.rating === "number" ? g.rating : null);
-        if (g.users_rated == null && g.usersrated != null) g.users_rated = g.usersrated;
-        g.users_rated = typeof g.users_rated === "number" ? g.users_rated : null;
-        g.used_price_twd = g.used_price_twd != null ? g.used_price_twd : null;
-        g.stock = g.stock != null ? g.stock : null;
-        g.bgg_id = g.bgg_id || g.id_bgg || null;
-        if (!g.bgg_url && g.bgg_id) {
-          g.bgg_url = "https://boardgamegeek.com/boardgame/" + g.bgg_id;
-        }
-      }
+    if(FILTER_CAT && !g._cats.includes(FILTER_CAT)) return false;
+    if(FILTER_MECH && !g._mechs.includes(FILTER_MECH)) return false;
+
+    if(SHOW_FAV_ONLY && !FAVORITES.has(g.id)) return false;
+    if(SHOW_DUP_ONLY && !g._dup) return false;
+
+    return true;
+  });
+
+  // 排序
+  list.sort((a,b)=>{
+    const key = SORT_KEY;
+    const numericDesc = ["rating_bayes","rating_avg","users_rated","weight"];
+    const numericAsc  = ["used_price_twd"];
+
+    if(key === "name_zh"){
+      const A = (a.name_zh || a.name_en || a.name || "").toString();
+      const B = (b.name_zh || b.name_en || b.name || "").toString();
+      return A.localeCompare(B, "zh-Hant");
     }
 
-    // -----------------------------
-    // 統計分類／機制／重複品項
-    // -----------------------------
-    function buildStats(list) {
-      MECHANISM_STATS = {};
-      CATEGORY_STATS = {};
-      const duplicateKeyCount = {};
+    if(numericDesc.includes(key) || numericAsc.includes(key)){
+      let A = a[key];
+      let B = b[key];
+      const asc = numericAsc.includes(key);
 
-      for (const g of list) {
-        const mechSet = new Set(g.mechanisms || []);
-        for (const m of mechSet) {
-          MECHANISM_STATS[m] = (MECHANISM_STATS[m] || 0) + 1;
-        }
-        const catSet = new Set(g.categories || []);
-        for (const c of catSet) {
-          CATEGORY_STATS[c] = (CATEGORY_STATS[c] || 0) + 1;
-        }
-        const key = g.bgg_id || g.name_zh || g.name_en || g.name || "";
-        if (key) {
-          duplicateKeyCount[key] = (duplicateKeyCount[key] || 0) + 1;
-        }
-      }
+      if(A === null || A === undefined || Number.isNaN(A)) A = asc ? Number.POSITIVE_INFINITY : -1e9;
+      if(B === null || B === undefined || Number.isNaN(B)) B = asc ? Number.POSITIVE_INFINITY : -1e9;
 
-      DUPLICATE_IDS = new Set();
-      const approx = new Set();
-      for (const g of list) {
-        const key = g.bgg_id || g.name_zh || g.name_en || g.name || "";
-        if (key && duplicateKeyCount[key] > 1) {
-          DUPLICATE_IDS.add(g.id);
-          approx.add(key);
-        }
-      }
-
-      const dupStat = document.getElementById("dup-stat");
-      const dupKinds = approx.size;
-      if (dupStat) {
-        dupStat.textContent = `偵測到重複品項約 ${dupKinds} 筆（以 BGG／名稱推估）`;
-      }
-
-      const mechStatEl = document.getElementById("mechanism-stat");
-      if (mechStatEl) {
-        const mechCount = Object.keys(MECHANISM_STATS).length;
-        mechStatEl.innerHTML = `機制 <strong>${mechCount}</strong> 種`;
-      }
-      const catStatEl = document.getElementById("category-stat");
-      if (catStatEl) {
-        const catCount = Object.keys(CATEGORY_STATS).length;
-        catStatEl.innerHTML = `分類 <strong>${catCount}</strong> 種`;
-      }
+      if(A === B) return 0;
+      return asc ? (A > B ? 1 : -1) : (A > B ? -1 : 1);
     }
 
-    // -----------------------------
-    // 收藏（localStorage）
-    // -----------------------------
-    function initFavorites() {
-      try {
-        const raw = localStorage.getItem(FAV_KEY);
-        if (!raw) return;
-        const arr = JSON.parse(raw);
-        if (Array.isArray(arr)) {
-          FAVORITE_IDS = new Set(arr);
-        }
-      } catch (e) {
-        console.warn("load favorites failed", e);
-      }
-    }
+    // fallback：其他以字串排序
+    const A = (a[key] ?? "").toString();
+    const B = (b[key] ?? "").toString();
+    return A.localeCompare(B,"zh-Hant");
+  });
 
-    function saveFavorites() {
-      try {
-        const arr = Array.from(FAVORITE_IDS);
-        localStorage.setItem(FAV_KEY, JSON.stringify(arr));
-      } catch (e) {
-        console.warn("save favorites failed", e);
-      }
-    }
+  return list;
+}
 
-    function toggleFavorite(id) {
-      if (FAVORITE_IDS.has(id)) {
-        FAVORITE_IDS.delete(id);
-      } else {
-        FAVORITE_IDS.add(id);
-      }
+function renderAll(){
+  const list = getFilteredList();
+  const total = list.length;
+  const totalAll = DATA.length;
+
+  const size = PAGE_SIZE;
+  const totalPages = Math.max(1, Math.ceil(total / size));
+  if(CUR_PAGE > totalPages) CUR_PAGE = totalPages;
+
+  const start = (CUR_PAGE-1)*size;
+  const end = Math.min(start+size, total);
+  const pageItems = list.slice(start, end);
+
+  // Summary
+  $("#SUMMARY_BAR").textContent =
+    `總數 ${totalAll} 款，符合篩選 ${total} 款，` +
+    (total ? `顯示第 ${start+1}–${end} 筆（第 ${CUR_PAGE} / ${totalPages} 頁）` : "目前沒有符合條件的遊戲");
+
+  // Grid
+  const grid = $("#GRID");
+  if(!pageItems.length){
+    grid.innerHTML = `<div class="empty-msg">目前沒有符合條件的遊戲，可以調整搜尋或篩選條件。</div>`;
+  }else{
+    grid.innerHTML = pageItems.map(cardHTML).join("");
+  }
+
+  // Pager
+  renderPager(totalPages);
+}
+
+function cardHTML(g){
+  const img = escapeHtml(g.image || "");
+  const title = escapeHtml(g.name_zh || g.name_en || g.name || "");
+  const sub = escapeHtml(g.name_en || "");
+  const dupBadge = g._dup ? `<span class="badge-dup">重複</span>` : "";
+
+  const cats = g._cats.map(c =>
+    `<button type="button" class="chip chip-cat" data-value="${escapeHtml(c)}">${escapeHtml(c)}</button>`
+  ).join("");
+
+  const mechs = g._mechs.map(m =>
+    `<button type="button" class="chip chip-mech" data-value="${escapeHtml(m)}">${escapeHtml(m)}</button>`
+  ).join("");
+
+  const favOn = FAVORITES.has(g.id);
+  const favClass = favOn ? "fav-btn fav-on" : "fav-btn";
+  const favLabel = favOn ? "★ 已收藏" : "☆ 收藏";
+
+  return `
+    <article class="card" data-id="${escapeHtml(g.id)}">
+      <img class="cover" src="${img}" alt="${title}" onerror="this.style.visibility='hidden';" />
+      <div class="title-row">
+        <div class="title">${title}</div>
+        ${dupBadge}
+      </div>
+      <div class="subtitle">${sub}</div>
+
+      <div class="meta-row">
+        Bayes：${fmtNum(g.rating_bayes)} ｜ 均分：${fmtNum(g.rating_avg)} ｜ 評分人數：${fmtInt(g.users_rated)} ｜ 重度：${fmtNum(g.weight)} ｜ 機制數：${g.mechanism_count ?? (g._mechs.length || "-")}
+      </div>
+
+      <div class="chips">${cats}</div>
+      <div class="chips">${mechs}</div>
+
+      <div class="info-row">
+        二手：${g.used_price_twd ? "NT$" + g.used_price_twd : "-"}
+        ｜ 庫存：${g.stock ?? "-"}
+      </div>
+      <div class="info-row">
+        ${g.bgg_url ? `<a href="${escapeHtml(g.bgg_url)}" target="_blank" rel="noopener">前往 BGG</a>` : ""}
+      </div>
+
+      <button type="button" class="${favClass}" data-fav-id="${escapeHtml(g.id)}">${favLabel}</button>
+    </article>
+  `;
+}
+
+/* ========= 分頁 ========= */
+function renderPager(totalPages){
+  const pager = $("#PAGER");
+  if(totalPages <= 1){
+    pager.innerHTML = "";
+    return;
+  }
+  pager.innerHTML = `
+    <button type="button" class="page-btn" data-page="prev" ${CUR_PAGE===1?"disabled":""}>上一頁</button>
+    <span class="page-info">第 ${CUR_PAGE} / ${totalPages} 頁</span>
+    <button type="button" class="page-btn" data-page="next" ${CUR_PAGE===totalPages?"disabled":""}>下一頁</button>
+  `;
+}
+
+/* ========= FOCUS / RECO ========= */
+function openFocus(id){
+  const game = DATA.find(g => g.id === id);
+  if(!game) return;
+
+  const box = $("#FOCUS_BOX");
+  box.style.display = "block";
+
+  const imgHtml = `
+    <img src="${escapeHtml(game.image || "")}" alt="${escapeHtml(game.name_zh || game.name_en || "")}"
+      onerror="this.style.visibility='hidden';" />
+  `;
+  $("#FOCUS_IMG_WRAP").innerHTML = imgHtml;
+
+  $("#FOCUS_TEXT").innerHTML = `
+    <div style="font-weight:700;margin-bottom:4px;">
+      ${escapeHtml(game.name_zh || game.name_en || game.name || "")}
+    </div>
+    <div style="color:#6b7280;margin-bottom:6px;">
+      ${escapeHtml(game.name_en || "")}
+    </div>
+    <div style="font-size:13px;margin-bottom:4px;">
+      Bayes：${fmtNum(game.rating_bayes)} ｜ 均分：${fmtNum(game.rating_avg)} ｜ 評分人數：${fmtInt(game.users_rated)} ｜ 重度：${fmtNum(game.weight)}
+    </div>
+    <div style="font-size:13px;margin-bottom:4px;">
+      分類：${game._cats.join("、") || "－"}
+    </div>
+    <div style="font-size:13px;margin-bottom:4px;">
+      機制：${game._mechs.join("、") || "－"}
+    </div>
+    <div style="font-size:13px;">
+      ${game.bgg_url ? `<a href="${escapeHtml(game.bgg_url)}" target="_blank" rel="noopener">在 BGG 查看詳細資訊</a>` : ""}
+    </div>
+  `;
+
+  buildRecommend(game);
+}
+
+function closeFocus(){
+  $("#FOCUS_BOX").style.display = "none";
+  $("#FOCUS_RECO").innerHTML = "";
+}
+
+function buildRecommend(base){
+  const baseCats  = new Set(base.categories   || base.categories_zh   || []);
+  const baseMechs = new Set(base.mechanisms  || base.mechanisms_zh   || []);
+
+  // 依分類／機制算分數
+  const scored = DATA
+    .filter(g => g.id !== base.id)
+    .map(g => {
+      let score = 0;
+
+      (g.mechanisms_zh || g.mechanisms || []).forEach(m => {
+        if (baseMechs.has(m)) score += 3;
+      });
+
+      (g.categories_zh || g.categories || []).forEach(c => {
+        if (baseCats.has(c)) score += 1;
+      });
+
+      return { g, score };
+    })
+    .filter(x => x.score > 0)
+    .sort((a,b) => b.score - a.score)
+    .slice(0, 8);   // 最多顯示 8 款推薦
+
+  const box = document.querySelector("#RECO_LIST");
+  if (!box) return;
+
+  if (!scored.length){
+    box.innerHTML = `<p>暫時沒有明顯相似的遊戲。</p>`;
+    return;
+  }
+
+  box.innerHTML = scored.map(({g}) => {
+    const img = g.image || g.thumbnail || "";
+    const title = g.name_zh || g.name_en || g.name || "";
+    const sub   = g.name_en || "";
+    const used  = g.used_price_twd ? `NT$${g.used_price_twd}` : "-";
+    const stock = (g.stock ?? "") === "" ? "-" : g.stock;
+
+    return `
+      <div class="card" style="max-width:220px; cursor:pointer;"
+           onclick="scrollToCard('${g.id}')">
+        <img class="cover" src="${img}"
+             onerror="this.src='https://cf.geekdo-images.com/images/pic1657689_t.jpg'" />
+        <div class="title" style="font-size:15px;">${title}</div>
+        <div class="subtitle" style="font-size:13px;">${sub}</div>
+        <div style="font-size:13px;color:#444;margin-top:4px;">
+          二手：${used} ｜ 庫存：${stock}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+
+/* ========= 事件綁定 ========= */
+function bindEvents(){
+  $("#Q").addEventListener("input", e=>{
+    FILTER_SEARCH = e.target.value || "";
+    CUR_PAGE = 1;
+    renderAll();
+  });
+
+  $("#CAT").addEventListener("change", e=>{
+    FILTER_CAT = e.target.value || "";
+    CUR_PAGE = 1;
+    renderAll();
+  });
+
+  $("#MECH").addEventListener("change", e=>{
+    FILTER_MECH = e.target.value || "";
+    CUR_PAGE = 1;
+    renderAll();
+  });
+
+  $("#SORT").addEventListener("change", e=>{
+    SORT_KEY = e.target.value;
+    CUR_PAGE = 1;
+    renderAll();
+  });
+
+  $("#PAGE_SIZE").addEventListener("change", e=>{
+    PAGE_SIZE = Number(e.target.value) || 25;
+    CUR_PAGE = 1;
+    renderAll();
+  });
+
+  $("#FAV_ONLY").addEventListener("change", e=>{
+    SHOW_FAV_ONLY = e.target.checked;
+    CUR_PAGE = 1;
+    renderAll();
+  });
+
+  $("#DUP_ONLY").addEventListener("change", e=>{
+    SHOW_DUP_ONLY = e.target.checked;
+    CUR_PAGE = 1;
+    renderAll();
+  });
+
+  $("#RANDOM_BTN").addEventListener("click", ()=>{
+    if(!DATA.length) return;
+    const list = getFilteredList();
+    if(!list.length) return;
+    const r = list[Math.floor(Math.random()*list.length)];
+    openFocus(r.id);
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  $("#CLEAR_BTN").addEventListener("click", ()=>{
+    FILTER_CAT = "";
+    FILTER_MECH = "";
+    FILTER_SEARCH = "";
+    SORT_KEY = "name_zh";
+    PAGE_SIZE = 25;
+    CUR_PAGE = 1;
+    SHOW_FAV_ONLY = false;
+    SHOW_DUP_ONLY = false;
+
+    $("#Q").value = "";
+    $("#CAT").value = "";
+    $("#MECH").value = "";
+    $("#SORT").value = "name_zh";
+    $("#PAGE_SIZE").value = "25";
+    $("#FAV_ONLY").checked = false;
+    $("#DUP_ONLY").checked = false;
+
+    renderAll();
+  });
+
+  // 卡片點擊事件（事件代理）
+  $("#GRID").addEventListener("click", e=>{
+    const favBtn = e.target.closest("[data-fav-id]");
+    if(favBtn){
+      const id = favBtn.getAttribute("data-fav-id");
+      if(FAVORITES.has(id)) FAVORITES.delete(id);
+      else FAVORITES.add(id);
       saveFavorites();
-      applyFiltersAndRender(false); // 不重置頁數
+      renderAll();
+      return;
     }
 
-    // -----------------------------
-    // UI 控制項初始化
-    // -----------------------------
-    function initControls() {
-      const totalCountEl = document.getElementById("total-count");
-      totalCountEl.textContent = ALL_GAMES.length.toString();
-
-      // 分類下拉
-      const catSelect = document.getElementById("category-select");
-      const cats = Object.keys(CATEGORY_STATS).sort((a, b) =>
-        a.localeCompare(b, "zh-Hant")
-      );
-      for (const c of cats) {
-        const opt = document.createElement("option");
-        opt.value = c;
-        opt.textContent = c;
-        catSelect.appendChild(opt);
-      }
-
-      catSelect.addEventListener("change", () => {
-        SELECTED_CATEGORY = catSelect.value || "ALL";
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-      });
-
-      // 搜尋
-      const searchInput = document.getElementById("search-input");
-      searchInput.addEventListener("input", () => {
-        SEARCH_TEXT = searchInput.value.trim();
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-      });
-
-      // 排序
-      const sortSelect = document.getElementById("sort-select");
-      sortSelect.addEventListener("change", () => {
-        const val = sortSelect.value || "name_zh,asc";
-        const [key, dir] = val.split(",");
-        SORT_KEY = key;
-        SORT_DIR = dir || "asc";
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-      });
-
-      // 每頁筆數
-      const pageSizeSelect = document.getElementById("page-size-select");
-      PAGE_SIZE = parseInt(pageSizeSelect.value, 10) || 25;
-      pageSizeSelect.addEventListener("change", () => {
-        PAGE_SIZE = parseInt(pageSizeSelect.value, 10) || 25;
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-      });
-
-      // 只看收藏／只看重複
-      const favCheckbox = document.getElementById("only-fav-checkbox");
-      favCheckbox.addEventListener("change", () => {
-        ONLY_FAVORITES = favCheckbox.checked;
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-      });
-
-      const dupCheckbox = document.getElementById("only-dup-checkbox");
-      dupCheckbox.addEventListener("change", () => {
-        ONLY_DUPLICATES = dupCheckbox.checked;
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-      });
-
-      // 清除篩選
-      const clearBtn = document.getElementById("clear-filter-btn");
-      clearBtn.addEventListener("click", () => {
-        SEARCH_TEXT = "";
-        SELECTED_CATEGORY = "ALL";
-        SELECTED_MECHANISMS.clear();
-        ONLY_FAVORITES = false;
-        ONLY_DUPLICATES = false;
-        SORT_KEY = "name_zh";
-        SORT_DIR = "asc";
-        PAGE_SIZE = 25;
-        CURRENT_PAGE = 1;
-
-        searchInput.value = "";
-        catSelect.value = "ALL";
-        sortSelect.value = "name_zh,asc";
-        pageSizeSelect.value = "25";
-        favCheckbox.checked = false;
-        dupCheckbox.checked = false;
-
-        updateMechanismButtonLabel();
-        syncSheetChipSelection();
-
-        applyFiltersAndRender();
-      });
-
-      // 隨機預覽
-      const randomBtn = document.getElementById("random-button");
-      randomBtn.addEventListener("click", () => {
-        if (!FILTERED.length) return;
-        const idx = Math.floor(Math.random() * FILTERED.length);
-        const game = FILTERED[idx];
-        CURRENT_SELECTED_GAME = game;
-        renderRecommendation();
-        const indexInFiltered = FILTERED.findIndex((g) => g.id === game.id);
-        if (indexInFiltered >= 0) {
-          CURRENT_PAGE = Math.floor(indexInFiltered / PAGE_SIZE) + 1;
-          renderGrid();
-          updateStatsBar();
-        }
-      });
-
-      // 頁面切換（上方與下方）
-      const prevBtn = document.getElementById("prev-page-btn");
-      const nextBtn = document.getElementById("next-page-btn");
-      const prevBtnBottom = document.getElementById("prev-page-btn-bottom");
-      const nextBtnBottom = document.getElementById("next-page-btn-bottom");
-
-      function go(delta) {
-        const pageCount = Math.max(1, Math.ceil(FILTERED.length / PAGE_SIZE));
-        let next = CURRENT_PAGE + delta;
-        if (next < 1) next = 1;
-        if (next > pageCount) next = pageCount;
-        if (next !== CURRENT_PAGE) {
-          CURRENT_PAGE = next;
-          renderGrid();
-          updateStatsBar();
-        }
-      }
-
-      prevBtn.addEventListener("click", () => go(-1));
-      nextBtn.addEventListener("click", () => go(1));
-      prevBtnBottom.addEventListener("click", () => go(-1));
-      nextBtnBottom.addEventListener("click", () => go(1));
-
-      // 收藏下載
-      const downloadBtn = document.getElementById("download-fav-btn");
-      downloadBtn.addEventListener("click", downloadFavoritesCsv);
-
-      // 推薦區關閉
-      const closeRecBtn = document.getElementById("close-rec-btn");
-      closeRecBtn.addEventListener("click", () => {
-        CURRENT_SELECTED_GAME = null;
-        renderRecommendation();
-      });
-
-      // 機制 bottom sheet
-      initMechanismSheet();
+    const chipCat = e.target.closest(".chip-cat");
+    if(chipCat){
+      FILTER_CAT = chipCat.dataset.value || "";
+      $("#CAT").value = FILTER_CAT;
+      CUR_PAGE = 1;
+      renderAll();
+      return;
     }
 
-    // -----------------------------
-    // 機制 bottom sheet
-    // -----------------------------
-    function initMechanismSheet() {
-      const backdrop = document.getElementById("sheet-backdrop");
-      const grid = document.getElementById("sheet-chip-grid");
-      grid.innerHTML = "";
-
-      const entries = Object.entries(MECHANISM_STATS).sort((a, b) => {
-        if (b[1] !== a[1]) return b[1] - a[1];
-        return a[0].localeCompare(b[0], "en");
-      });
-
-      for (const [name, count] of entries) {
-        const chip = document.createElement("button");
-        chip.type = "button";
-        chip.className = "sheet-chip";
-        chip.dataset.mechanism = name;
-        chip.innerHTML = `<strong>${name}</strong><span class="count">${count}</span>`;
-        chip.addEventListener("click", () => {
-          const key = chip.dataset.mechanism;
-          if (SELECTED_MECHANISMS.has(key)) {
-            SELECTED_MECHANISMS.delete(key);
-          } else {
-            SELECTED_MECHANISMS.add(key);
-          }
-          chip.classList.toggle("selected", SELECTED_MECHANISMS.has(key));
-          updateMechanismButtonLabel();
-        });
-        grid.appendChild(chip);
-      }
-
-      const mechBtn = document.getElementById("mechanism-button");
-      mechBtn.addEventListener("click", () => {
-        backdrop.classList.add("open");
-        backdrop.setAttribute("aria-hidden", "false");
-        syncSheetChipSelection();
-      });
-
-      const closeBtn = document.getElementById("sheet-close-btn");
-      const applyBtn = document.getElementById("sheet-apply-btn");
-      const clearBtn = document.getElementById("sheet-clear-btn");
-
-      function closeSheet() {
-        backdrop.classList.remove("open");
-        backdrop.setAttribute("aria-hidden", "true");
-      }
-
-      closeBtn.addEventListener("click", closeSheet);
-
-      applyBtn.addEventListener("click", () => {
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-        closeSheet();
-      });
-
-      clearBtn.addEventListener("click", () => {
-        SELECTED_MECHANISMS.clear();
-        syncSheetChipSelection();
-        updateMechanismButtonLabel();
-        CURRENT_PAGE = 1;
-        applyFiltersAndRender();
-      });
-
-      backdrop.addEventListener("click", (ev) => {
-        if (ev.target === backdrop) {
-          closeSheet();
-        }
-      });
-
-      updateMechanismButtonLabel();
-      syncSheetChipSelection();
+    const chipMech = e.target.closest(".chip-mech");
+    if(chipMech){
+      FILTER_MECH = chipMech.dataset.value || "";
+      $("#MECH").value = FILTER_MECH;
+      CUR_PAGE = 1;
+      renderAll();
+      return;
     }
 
-    function syncSheetChipSelection() {
-      const chips = document.querySelectorAll(".sheet-chip");
-      chips.forEach((chip) => {
-        const key = chip.dataset.mechanism;
-        chip.classList.toggle("selected", SELECTED_MECHANISMS.has(key));
-      });
+    const card = e.target.closest(".card");
+    if(card){
+      const id = card.dataset.id;
+      openFocus(id);
     }
+  });
+
+  $("#PAGER").addEventListener("click", e=>{
+    const btn = e.target.closest(".page-btn");
+    if(!btn || btn.disabled) return;
+    const type = btn.dataset.page;
+    const list = getFilteredList();
+    const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+
+    if(type === "prev" && CUR_PAGE > 1) CUR_PAGE--;
+    if(type === "next" && CUR_PAGE < totalPages) CUR_PAGE++;
+
+    renderAll();
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  $("#FOCUS_CLOSE").addEventListener("click", closeFocus);
+
+  $("#FOCUS_RECO").addEventListener("click", e=>{
+    const card = e.target.closest(".focus-reco-card");
+    if(!card) return;
+    const id = card.dataset.id;
+    openFocus(id);
+  });
+}
+
+/* ========= 啟動 ========= */
+bindEvents();
+loadData();
+</script>
 
-    function updateMechanismButtonLabel() {
-      const mechBtn = document.getElementById("mechanism-button");
-      if (!SELECTED_MECHANISMS.size) {
-        mechBtn.textContent = "全部機制";
-      } else if (SELECTED_MECHANISMS.size <= 3) {
-        mechBtn.textContent = Array.from(SELECTED_MECHANISMS).join("、");
-      } else {
-        const first = Array.from(SELECTED_MECHANISMS).slice(0, 3).join("、");
-        mechBtn.textContent = `${first} 等 ${SELECTED_MECHANISMS.size} 種`;
-      }
-    }
-
-    // -----------------------------
-    // 篩選＋排序＋渲染主流程
-    // -----------------------------
-    function applyFiltersAndRender(resetPage = true) {
-      FILTERED = ALL_GAMES.filter((g) => {
-        if (SELECTED_CATEGORY !== "ALL") {
-          const cats = g.categories || [];
-          if (!cats.includes(SELECTED_CATEGORY)) return false;
-        }
-
-        if (SELECTED_MECHANISMS.size) {
-          const mechs = new Set(g.mechanisms || []);
-          let matched = false;
-          for (const m of SELECTED_MECHANISMS) {
-            if (mechs.has(m)) {
-              matched = true;
-              break;
-            }
-          }
-          if (!matched) return false;
-        }
-
-        if (ONLY_FAVORITES && !FAVORITE_IDS.has(g.id)) return false;
-        if (ONLY_DUPLICATES && !DUPLICATE_IDS.has(g.id)) return false;
-
-        if (SEARCH_TEXT) {
-          const q = SEARCH_TEXT.toLowerCase();
-          const fields = [
-            g.name_zh || "",
-            g.name_en || "",
-            g.name || "",
-            (g.categories || []).join(" "),
-            (g.mechanisms || []).join(" "),
-          ];
-          const hay = fields.join(" ").toLowerCase();
-          if (!hay.includes(q)) return false;
-        }
-
-        return true;
-      });
-
-      FILTERED.sort((a, b) => {
-        const key = SORT_KEY;
-        let va = a[key];
-        let vb = b[key];
-
-        if (key === "name_zh") {
-          const na = a.name_zh || a.name_en || a.name || "";
-          const nb = b.name_zh || b.name_en || b.name || "";
-          const cmp = na.localeCompare(nb, "zh-Hant");
-          return SORT_DIR === "asc" ? cmp : -cmp;
-        }
-
-        if (va == null && vb == null) return 0;
-        if (va == null) return 1;
-        if (vb == null) return -1;
-
-        if (typeof va === "string" || typeof vb === "string") {
-          const cmp = String(va).localeCompare(String(vb), "zh-Hant");
-          return SORT_DIR === "asc" ? cmp : -cmp;
-        }
-
-        if (SORT_DIR === "asc") return va - vb;
-        return vb - va;
-      });
-
-      if (resetPage) CURRENT_PAGE = 1;
-
-      renderGrid();
-      updateStatsBar();
-    }
-
-    function updateStatsBar() {
-      const total = ALL_GAMES.length;
-      const filtered = FILTERED.length;
-      const totalEl = document.getElementById("total-count");
-      const filteredEl = document.getElementById("filtered-count");
-      const fromEl = document.getElementById("range-from");
-      const toEl = document.getElementById("range-to");
-      const pageIndexEl = document.getElementById("page-index");
-      const pageCountEl = document.getElementById("page-count");
-
-      totalEl.textContent = total.toString();
-      filteredEl.textContent = filtered.toString();
-
-      const pageCount = Math.max(1, Math.ceil(filtered / PAGE_SIZE));
-      if (CURRENT_PAGE > pageCount) CURRENT_PAGE = pageCount;
-
-      const from = filtered === 0 ? 0 : (CURRENT_PAGE - 1) * PAGE_SIZE + 1;
-      const to = Math.min(filtered, CURRENT_PAGE * PAGE_SIZE);
-
-      fromEl.textContent = from.toString();
-      toEl.textContent = to.toString();
-      pageIndexEl.textContent = pageCount === 0 ? "0" : CURRENT_PAGE.toString();
-      pageCountEl.textContent = pageCount.toString();
-
-      const labelTop = document.getElementById("page-label");
-      const labelBottom = document.getElementById("page-label-bottom");
-      const labelText = `第 ${pageCount === 0 ? 0 : CURRENT_PAGE} / ${pageCount} 頁`;
-      labelTop.textContent = labelText;
-      labelBottom.textContent = labelText;
-
-      const prevBtn = document.getElementById("prev-page-btn");
-      const nextBtn = document.getElementById("next-page-btn");
-      const prevBtnBottom = document.getElementById("prev-page-btn-bottom");
-      const nextBtnBottom = document.getElementById("next-page-btn-bottom");
-
-      const canPrev = CURRENT_PAGE > 1;
-      const canNext = CURRENT_PAGE < pageCount;
-
-      prevBtn.disabled = !canPrev;
-      prevBtnBottom.disabled = !canPrev;
-      nextBtn.disabled = !canNext;
-      nextBtnBottom.disabled = !canNext;
-    }
-
-    // -----------------------------
-    // 渲染主卡片
-    // -----------------------------
-    function renderGrid() {
-      const grid = document.getElementById("card-grid");
-      grid.innerHTML = "";
-
-      if (!FILTERED.length) {
-        const empty = document.createElement("div");
-        empty.textContent = "目前沒有符合篩選條件的遊戲。";
-        empty.style.padding = "16px";
-        empty.style.color = "#6b7280";
-        grid.appendChild(empty);
-        return;
-      }
-
-      const start = (CURRENT_PAGE - 1) * PAGE_SIZE;
-      const end = Math.min(FILTERED.length, CURRENT_PAGE * PAGE_SIZE);
-      const slice = FILTERED.slice(start, end);
-
-      for (const g of slice) {
-        const card = document.createElement("article");
-        card.className = "game-card";
-        card.dataset.id = g.id;
-        if (FAVORITE_IDS.has(g.id)) card.classList.add("favorited");
-        if (DUPLICATE_IDS.has(g.id)) card.classList.add("duplicate");
-
-        card.addEventListener("click", (ev) => {
-          if (ev.target.closest("button")) return;
-          CURRENT_SELECTED_GAME = g;
-          renderRecommendation();
-        });
-
-        const header = document.createElement("div");
-        header.className = "game-card-header";
-
-        const img = document.createElement("img");
-        img.loading = "lazy";
-        img.src = g.image || g.thumbnail || "";
-        img.alt = g.display_name;
-        header.appendChild(img);
-
-        const main = document.createElement("div");
-        main.className = "game-card-main";
-
-        const title = document.createElement("div");
-        title.className = "game-title";
-        const yearText = g.year ? `(${g.year})` : "";
-        const minP = g.min_players ?? g.minplayers;
-        const maxP = g.max_players ?? g.maxplayers;
-        const playersText = (minP && maxP) ? `${minP}–${maxP}人` : "";
-        title.textContent = g.name_zh || g.name_en || g.name || "";
-        if (yearText || playersText) {
-          const small = document.createElement("small");
-          small.textContent = [yearText, playersText].filter(Boolean).join("／");
-          title.appendChild(small);
-        }
-        main.appendChild(title);
-
-        const ratingLine = document.createElement("div");
-        ratingLine.className = "rating-line";
-        ratingLine.innerHTML = `
-          <span>Bayes：<strong>${fmtNum(g.rating_bayes, 2)}</strong></span>
-          <span>均分：<strong>${fmtNum(g.rating_avg, 2)}</strong></span>
-          <span>評分人數：<strong>${fmtInt(g.users_rated)}</strong></span>
-          <span>重度：<strong>${fmtNum(g.weight, 2)}</strong></span>
-          <span>機制數：<strong>${g.mechanism_count || g.mechanisms.length || 0}</strong></span>
-        `;
-        main.appendChild(ratingLine);
-
-        const priceLine = document.createElement("div");
-        priceLine.className = "price-stock-line";
-        priceLine.innerHTML = `
-          <span>二手：${g.used_price_twd != null ? "NT$" + g.used_price_twd : "－"}</span>
-          <span>庫存：${g.stock != null ? g.stock : "－"}</span>
-        `;
-        main.appendChild(priceLine);
-
-        const chipRow = document.createElement("div");
-        chipRow.className = "chip-row";
-
-        for (const cat of g.categories || []) {
-          const chip = document.createElement("button");
-          chip.type = "button";
-          chip.className = "chip category";
-          chip.textContent = cat;
-          chip.addEventListener("click", (ev) => {
-            ev.stopPropagation();
-            const catSelect = document.getElementById("category-select");
-            SELECTED_CATEGORY = cat;
-            catSelect.value = cat;
-            CURRENT_PAGE = 1;
-            applyFiltersAndRender();
-          });
-          chipRow.appendChild(chip);
-        }
-
-        for (const mech of g.mechanisms || []) {
-          const chip = document.createElement("button");
-          chip.type = "button";
-          chip.className = "chip mechanism";
-          chip.textContent = mech;
-          chip.addEventListener("click", (ev) => {
-            ev.stopPropagation();
-            if (SELECTED_MECHANISMS.has(mech)) {
-              SELECTED_MECHANISMS.delete(mech);
-            } else {
-              SELECTED_MECHANISMS.add(mech);
-            }
-            updateMechanismButtonLabel();
-            syncSheetChipSelection();
-            CURRENT_PAGE = 1;
-            applyFiltersAndRender();
-          });
-          chipRow.appendChild(chip);
-        }
-
-        main.appendChild(chipRow);
-        header.appendChild(main);
-        card.appendChild(header);
-
-        const footer = document.createElement("div");
-        footer.className = "card-footer";
-
-        const footerLeft = document.createElement("div");
-        footerLeft.className = "card-footer-left";
-        const mechCnt = g.mechanism_count || g.mechanisms.length || 0;
-        footerLeft.innerHTML = `<span>BGG ID：${g.bgg_id || "－"}</span><span>機制數：${mechCnt}</span>`;
-        footer.appendChild(footerLeft);
-
-        const footerRight = document.createElement("div");
-        footerRight.className = "card-footer-right";
-
-        const favBtn = document.createElement("button");
-        favBtn.type = "button";
-        favBtn.className = "pill-btn icon";
-        favBtn.innerHTML = `<span class="star">${FAVORITE_IDS.has(g.id) ? "★" : "☆"}</span>收藏`;
-        favBtn.addEventListener("click", (ev) => {
-          ev.stopPropagation();
-          toggleFavorite(g.id);
-        });
-        footerRight.appendChild(favBtn);
-
-        const bggBtn = document.createElement("button");
-        bggBtn.type = "button";
-        bggBtn.className = "pill-btn icon";
-        bggBtn.textContent = "BGG";
-        bggBtn.disabled = !g.bgg_url;
-        bggBtn.addEventListener("click", (ev) => {
-          ev.stopPropagation();
-          if (g.bgg_url) window.open(g.bgg_url, "_blank");
-        });
-        footerRight.appendChild(bggBtn);
-
-        footer.appendChild(footerRight);
-        card.appendChild(footer);
-
-        grid.appendChild(card);
-      }
-    }
-
-    // -----------------------------
-    // 推薦區（你可能也會喜歡）
-    // -----------------------------
-    function renderRecommendation() {
-      const mainEl = document.getElementById("rec-main");
-      const listEl = document.getElementById("rec-list");
-      const subtitleEl = document.getElementById("rec-subtitle");
-
-      mainEl.innerHTML = "";
-      listEl.innerHTML = "";
-
-      if (!CURRENT_SELECTED_GAME) {
-        subtitleEl.textContent = "請先從下方卡片點選一款遊戲，或使用「隨機預覽」。";
-        return;
-      }
-
-      const g = CURRENT_SELECTED_GAME;
-      subtitleEl.textContent = "根據分類／機制與重度，從目前資料中推薦相近的遊戲。";
-
-      const img = document.createElement("img");
-      img.src = g.image || g.thumbnail || "";
-      img.alt = g.display_name;
-      img.loading = "lazy";
-      mainEl.appendChild(img);
-
-      const meta = document.createElement("div");
-      meta.className = "rec-main-meta";
-
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = g.name_zh || g.name_en || g.name || "";
-      meta.appendChild(title);
-
-      const metaLine = document.createElement("div");
-      metaLine.className = "meta-line";
-      metaLine.innerHTML = `
-        Bayes：<strong>${fmtNum(g.rating_bayes, 2)}</strong>　
-        均分：<strong>${fmtNum(g.rating_avg, 2)}</strong>　
-        評分人數：<strong>${fmtInt(g.users_rated)}</strong>　
-        重度：<strong>${fmtNum(g.weight, 2)}</strong>
-      `;
-      meta.appendChild(metaLine);
-
-      const chipsLine = document.createElement("div");
-      chipsLine.className = "chips-line";
-      chipsLine.innerHTML = `
-        <div>分類：<span>${(g.categories || []).join(" ／ ") || "－"}</span></div>
-        <div>機制：<span>${((g.mechanisms || []).length ? g.mechanisms : []).join(" ／ ") || "－"}</span></div>
-      `;
-      meta.appendChild(chipsLine);
-
-      const priceLine = document.createElement("div");
-      priceLine.className = "price-line";
-      priceLine.innerHTML = `
-        <strong>二手：</strong>${g.used_price_twd != null ? "NT$" + g.used_price_twd : "－"}
-        <strong>庫存：</strong>${g.stock != null ? g.stock : "－"}
-      `;
-      meta.appendChild(priceLine);
-
-      const actions = document.createElement("div");
-      actions.className = "rec-main-actions";
-
-      const favBtn = document.createElement("button");
-      favBtn.type = "button";
-      favBtn.className = "primary";
-      favBtn.textContent = FAVORITE_IDS.has(g.id) ? "已收藏" : "加入收藏";
-      favBtn.addEventListener("click", () => {
-        toggleFavorite(g.id);
-        favBtn.textContent = FAVORITE_IDS.has(g.id) ? "已收藏" : "加入收藏";
-      });
-      actions.appendChild(favBtn);
-
-      const bggBtn = document.createElement("button");
-      bggBtn.type = "button";
-      bggBtn.textContent = "在 BGG 查看";
-      bggBtn.disabled = !g.bgg_url;
-      bggBtn.addEventListener("click", () => {
-        if (g.bgg_url) window.open(g.bgg_url, "_blank");
-      });
-      actions.appendChild(bggBtn);
-
-      meta.appendChild(actions);
-      mainEl.appendChild(meta);
-
-      const recommendations = computeRecommendations(g, ALL_GAMES, 8);
-
-      if (!recommendations.length) {
-        const empty = document.createElement("div");
-        empty.style.fontSize = "12px";
-        empty.style.color = "#6b7280";
-        empty.textContent = "暫時沒有明顯相似的遊戲。";
-        listEl.appendChild(empty);
-        return;
-      }
-
-      for (const rec of recommendations) {
-        const card = document.createElement("div");
-        card.className = "rec-card";
-        card.dataset.id = rec.game.id;
-
-        card.addEventListener("click", () => {
-          CURRENT_SELECTED_GAME = rec.game;
-          renderRecommendation();
-          const idx = FILTERED.findIndex((x) => x.id === rec.game.id);
-          if (idx >= 0) {
-            CURRENT_PAGE = Math.floor(idx / PAGE_SIZE) + 1;
-            renderGrid();
-            updateStatsBar();
-          }
-        });
-
-        const img2 = document.createElement("img");
-        img2.src = rec.game.image || rec.game.thumbnail || "";
-        img2.alt = rec.game.display_name;
-        img2.loading = "lazy";
-        card.appendChild(img2);
-
-        const name = document.createElement("div");
-        name.className = "name";
-        name.textContent = rec.game.name_zh || rec.game.name_en || rec.game.name || "";
-        card.appendChild(name);
-
-        const metaLine2 = document.createElement("div");
-        metaLine2.className = "meta";
-        metaLine2.textContent =
-          `Bayes ${fmtNum(rec.game.rating_bayes, 2)}｜重度 ${fmtNum(rec.game.weight, 2)}｜機制數 ${rec.game.mechanism_count || rec.game.mechanisms.length || 0}`;
-        card.appendChild(metaLine2);
-
-        const priceStock = document.createElement("div");
-        priceStock.className = "price-stock";
-        priceStock.textContent =
-          `二手 ${rec.game.used_price_twd != null ? "NT$" + rec.game.used_price_twd : "－"}／庫存 ${rec.game.stock != null ? rec.game.stock : "－"}`;
-        card.appendChild(priceStock);
-
-        const cats = (rec.game.categories || []).slice(0, 2).join("／");
-        const mechs = (rec.game.mechanisms || []).slice(0, 2).join("／");
-        if (cats || mechs) {
-          const cm = document.createElement("div");
-          cm.className = "meta";
-          cm.textContent = [cats, mechs].filter(Boolean).join("｜");
-          card.appendChild(cm);
-        }
-
-        listEl.appendChild(card);
-      }
-    }
-
-    function computeRecommendations(target, all, maxCount) {
-      const tCats = new Set(target.categories || []);
-      const tMechs = new Set(target.mechanisms || []);
-      const tWeight = typeof target.weight === "number" ? target.weight : null;
-
-      const scored = [];
-      for (const g of all) {
-        if (g.id === target.id) continue;
-        if (!g.mechanisms || !g.mechanisms.length) continue;
-
-        const gCats = new Set(g.categories || []);
-        const gMechs = new Set(g.mechanisms || []);
-
-        let mechOverlap = 0;
-        for (const m of tMechs) if (gMechs.has(m)) mechOverlap++;
-
-        let catOverlap = 0;
-        for (const c of tCats) if (gCats.has(c)) catOverlap++;
-
-        if (mechOverlap === 0 && catOverlap === 0) continue;
-
-        let weightScore = 0;
-        if (tWeight != null && typeof g.weight === "number") {
-          const diff = Math.abs(tWeight - g.weight);
-          weightScore = Math.max(0, 2.5 - diff);
-        }
-
-        const score = mechOverlap * 3 + catOverlap * 1.5 + weightScore;
-        if (score <= 0) continue;
-
-        scored.push({ game: g, score });
-      }
-
-      scored.sort((a, b) => b.score - a.score);
-      return scored.slice(0, maxCount);
-    }
-
-    // -----------------------------
-    // 收藏清單下載
-    // -----------------------------
-    function downloadFavoritesCsv() {
-      if (!FAVORITE_IDS.size) {
-        alert("目前沒有收藏任何遊戲。");
-        return;
-      }
-
-      const header = [
-        "id",
-        "name_zh",
-        "name_en",
-        "bgg_id",
-        "used_price_twd",
-        "stock",
-        "rating_bayes",
-        "rating_avg",
-        "users_rated",
-        "weight",
-        "categories",
-        "mechanisms",
-      ];
-
-      const rows = [header.join(",")];
-
-      for (const id of FAVORITE_IDS) {
-        const g = ALL_GAMES.find((x) => x.id === id);
-        if (!g) continue;
-        const row = [
-          safeCsv(g.id),
-          safeCsv(g.name_zh || ""),
-          safeCsv(g.name_en || g.name || ""),
-          safeCsv(g.bgg_id || ""),
-          g.used_price_twd != null ? g.used_price_twd : "",
-          g.stock != null ? g.stock : "",
-          g.rating_bayes != null ? g.rating_bayes : "",
-          g.rating_avg != null ? g.rating_avg : "",
-          g.users_rated != null ? g.users_rated : "",
-          g.weight != null ? g.weight : "",
-          safeCsv((g.categories || []).join(" / ")),
-          safeCsv((g.mechanisms || []).join(" / ")),
-        ];
-        rows.push(row.join(","));
-      }
-
-      const csv = rows.join("\r\n");
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      const now = new Date();
-      const ts =
-        now.getFullYear().toString() +
-        String(now.getMonth() + 1).padStart(2, "0") +
-        String(now.getDate()).padStart(2, "0");
-      a.download = `boardgame_favorites_${ts}.csv`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-
-    function safeCsv(value) {
-      const s = String(value ?? "");
-      if (s.includes(",") || s.includes("\"") || s.includes("\n")) {
-        return "\"" + s.replace(/\"/g, "\"\"") + "\"";
-      }
-      return s;
-    }
-
-    // -----------------------------
-    // 小工具
-    // -----------------------------
-    function fmtNum(v, digits) {
-      if (v == null || isNaN(v)) return "－";
-      return Number(v).toFixed(digits);
-    }
-
-    function fmtInt(v) {
-      if (v == null || isNaN(v)) return "－";
-      return Math.round(v).toString();
-    }
-  </script>
 </body>
 </html>
