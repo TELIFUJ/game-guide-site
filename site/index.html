@@ -529,6 +529,7 @@
   </div>
 
   <script>
+    // ===== 中文對照表（分類／機制） =====
     const CATEGORY_ZH_MAP = {};
     const MECHANISM_ZH_MAP = {};
 
@@ -541,6 +542,17 @@
       return MECHANISM_ZH_MAP[name] || name;
     }
 
+    function stripQuotes(s) {
+      if (s == null) return s;
+      let t = String(s).trim();
+      if (!t) return t;
+      if ((t.startsWith('"') && t.endsWith('"')) ||
+          (t.startsWith("'") && t.endsWith("'"))) {
+        t = t.slice(1, -1).trim();
+      }
+      return t;
+    }
+
     async function loadCsvMap(label, paths, targetMap) {
       let lastError = null;
       for (const p of paths) {
@@ -549,13 +561,13 @@
           if (!res.ok) continue;
           const text = await res.text();
           parseCsvToMap(text, targetMap);
-          console.log(`載入 ${label} 對照表：${Object.keys(targetMap).length} 筆（${p}）`);
+          console.log(`[載入] ${label} 對照表：${Object.keys(targetMap).length} 筆（${p}）`);
           return;
         } catch (e) {
           lastError = e;
         }
       }
-      console.warn(`載入 ${label} 對照表失敗`, lastError);
+      console.warn(`[警告] 載入 ${label} 對照表失敗`, lastError);
     }
 
     function parseCsvToMap(text, targetMap) {
@@ -572,13 +584,18 @@
 
         const idx = line.lastIndexOf(',');
         if (idx <= 0) continue;
-        const en = line.slice(0, idx).trim();
-        const zh = line.slice(idx + 1).trim();
+        let en = line.slice(0, idx).trim();
+        let zh = line.slice(idx + 1).trim();
+
+        en = stripQuotes(en);
+        zh = stripQuotes(zh);
+
         if (!en || !zh) continue;
         targetMap[en] = zh;
       }
     }
 
+    // ===== 讀取遊戲資料與收藏 =====
     let allGames = [];
     let filteredGames = [];
     let favoriteIds = new Set();
@@ -704,6 +721,7 @@
           const res = await fetch(p, { cache: 'no-store' });
           if (!res.ok) continue;
           const data = await res.json();
+          console.log(`[載入] games.json：${p}（筆數：${Array.isArray(data) ? data.length : 'N/A'}）`);
           return data;
         } catch (e) {
           lastError = e;
@@ -717,34 +735,108 @@
     function filterByManualOverride(rawList) {
       const hasManual = rawList.some(r => r.manual_override !== undefined && r.manual_override !== null);
       if (!hasManual) return rawList;
-      return rawList.filter(r => r.manual_override === 1 || r.manual_override === "1");
+      return rawList.filter(r => r.manual_override === 1 || r.manual_override === '1');
     }
 
+    // ===== 圖片路徑轉換 =====
+    function resolveImageUrl(url) {
+      if (!url) return '';
+      let u = String(url).trim();
+      if (!u) return '';
+      if (/^https?:\/\//i.test(u) || u.startsWith('//')) {
+        return u;
+      }
+
+      // 去掉開頭的 "./"
+      if (u.startsWith('./')) {
+        u = u.slice(2);
+      }
+
+      const pathname = window.location.pathname || '/';
+      const underSite = pathname.includes('/site/');
+
+      // /assets/... → 在 /site/ 下要轉為 assets/...
+      if (u.startsWith('/assets/')) {
+        if (underSite) {
+          return 'assets/' + u.slice('/assets/'.length);
+        }
+        return u;
+      }
+
+      // assets/... → 如果頁面掛在根目錄，要補 site/
+      if (u.startsWith('assets/')) {
+        if (underSite) return u;
+        return 'site/' + u;
+      }
+
+      // 其他相對路徑（例如 img/...）直接回傳
+      return u;
+    }
+
+    // ===== 資料標準化 =====
     function normalizeGame(raw) {
-      const categories = Array.isArray(raw.categories) ? raw.categories : [];
+      const categoriesRaw = Array.isArray(raw.categories) ? raw.categories : [];
       const mechsField = raw.mechanisms || raw.mechanics;
-      const mechanisms = Array.isArray(mechsField) ? mechsField : [];
+      const mechanismsRaw = Array.isArray(mechsField) ? mechsField : [];
+
+      const categories = categoriesRaw
+        .map(c => stripQuotes(String(c || '').trim()))
+        .filter(Boolean);
+      const mechanisms = mechanismsRaw
+        .map(m => stripQuotes(String(m || '').trim()))
+        .filter(Boolean);
+
+      const id = raw.id || String(raw.bgg_id || '');
+
+      let image = raw.image || raw.thumbnail || '';
+      image = resolveImageUrl(image);
+
+      let usedPrice = raw.used_price_twd;
+      if (typeof usedPrice === 'string' && usedPrice.trim() !== '') {
+        const n = Number(usedPrice);
+        usedPrice = Number.isFinite(n) ? n : null;
+      }
+
+      let stock = raw.stock;
+      if (typeof stock === 'string' && stock.trim() !== '') {
+        const n = Number(stock);
+        stock = Number.isFinite(n) ? n : null;
+      }
+
+      const ratingBayes = raw.rating_bayes ?? null;
+      const ratingAvg = raw.rating_avg ?? raw.rating ?? null;
+      const usersRated = raw.users_rated ?? raw.usersrated ?? null;
+
+      const weight = raw.weight_avg ?? raw.weight ?? null;
+      const mechanismCount = raw.mechanism_count ??
+        (Array.isArray(mechanisms) ? mechanisms.length : null);
+
+      const nameZh = raw.name_zh || raw.nameZh || '';
+      const nameEn = raw.name_en || raw.nameEn || raw.name || '';
+
+      const bggUrl = raw.bgg_url ||
+        (raw.bgg_id ? `https://boardgamegeek.com/boardgame/${raw.bgg_id}` : null);
 
       return {
-        id: raw.id || String(raw.bgg_id || ''),
-        nameZh: raw.name_zh || raw.name || '',
-        nameEn: raw.name_en || raw.name || '',
+        id,
+        nameZh,
+        nameEn,
         year: raw.year || null,
         minPlayers: raw.min_players ?? raw.minplayers ?? null,
         maxPlayers: raw.max_players ?? raw.maxplayers ?? null,
         minPlaytime: raw.min_playtime ?? raw.minplaytime ?? null,
         maxPlaytime: raw.max_playtime ?? raw.maxplaytime ?? null,
-        ratingBayes: raw.rating_bayes ?? null,
-        ratingAvg: raw.rating_avg ?? raw.rating ?? null,
-        usersRated: raw.users_rated ?? raw.usersrated ?? null,
-        weight: raw.weight_avg ?? raw.weight ?? null,
-        mechanismCount: raw.mechanism_count ?? (Array.isArray(mechanisms) ? mechanisms.length : null),
-        price: raw.used_price_twd ?? null,
-        stock: raw.stock ?? null,
-        image: raw.image || raw.thumbnail || '',
-        bggUrl: raw.bgg_url || (raw.bgg_id ? `https://boardgamegeek.com/boardgame/${raw.bgg_id}` : null),
+        ratingBayes,
+        ratingAvg,
+        usersRated,
+        weight,
+        mechanismCount,
+        price: usedPrice ?? null,
+        stock,
+        image,
+        bggUrl,
         categories,
-        mechanisms,
+        mechanisms
       };
     }
 
@@ -795,6 +887,7 @@
       }
     }
 
+    // ===== 篩選與排序 =====
     function applyFilters() {
       const text = state.searchText.trim().toLowerCase();
       const catKey = state.categoryKey;
@@ -851,6 +944,7 @@
       });
     }
 
+    // ===== 統計與 UI =====
     function renderStats(catMap, mechMap) {
       datasetStats.textContent =
         `資料總數：${allGames.length} 筆（CSV 標記後）｜分類 ${catMap.size} 種｜機制 ${mechMap.size} 種`;
@@ -952,6 +1046,10 @@
       img.className = 'card-img';
       img.src = game.image || '';
       img.alt = game.nameZh || game.nameEn || '';
+      img.loading = 'lazy';
+      img.onerror = () => {
+        img.style.display = 'none';
+      };
       imgWrap.appendChild(img);
       card.appendChild(imgWrap);
 
@@ -995,6 +1093,11 @@
       wTag.className = 'meta-tag';
       wTag.innerHTML = `<strong>重量：</strong>${formatNumber(game.weight)}`;
       metaRow.appendChild(wTag);
+
+      const mTag = document.createElement('span');
+      mTag.className = 'meta-tag';
+      mTag.innerHTML = `<strong>機制數：</strong>${game.mechanismCount ?? '-'}`;
+      metaRow.appendChild(mTag);
 
       body.appendChild(metaRow);
 
@@ -1187,6 +1290,7 @@
       return `${v}${unit}`;
     }
 
+    // ===== Modal =====
     function openModalForGame(game) {
       focusGame = game;
       randomVisible = false;
@@ -1355,6 +1459,7 @@
       renderCards();
     }
 
+    // ===== 初始化 =====
     (async function init() {
       loadFavorites();
 
