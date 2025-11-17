@@ -21,21 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      # 只從 CSV 產生網站資料（安全版，不打 BGG）
-      - name: Install deps
-        run: |
-          pip install pillow requests
-
-      - name: Build from CSV
-        run: |
-          python3 scripts/build_from_csv.py
-          ls -lh site/data/games.json
-
+      # 直接把 repo 裡的 ./site 當成要發佈的網站
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
