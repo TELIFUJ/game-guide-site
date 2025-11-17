@@ -738,38 +738,23 @@
       return rawList.filter(r => r.manual_override === 1 || r.manual_override === '1');
     }
 
-    // ===== 圖片路徑轉換 =====
+    // ===== 圖片路徑轉換（已簡化，不再加 /site/）=====
     function resolveImageUrl(url) {
       if (!url) return '';
       let u = String(url).trim();
       if (!u) return '';
+      // 絕對網址：直接用
       if (/^https?:\/\//i.test(u) || u.startsWith('//')) {
         return u;
       }
-
-      // 去掉開頭的 "./"
+      // 去掉開頭的 ./ 或 /
       if (u.startsWith('./')) {
         u = u.slice(2);
       }
-
-      const pathname = window.location.pathname || '/';
-      const underSite = pathname.includes('/site/');
-
-      // /assets/... → 在 /site/ 下要轉為 assets/...
-      if (u.startsWith('/assets/')) {
-        if (underSite) {
-          return 'assets/' + u.slice('/assets/'.length);
-        }
-        return u;
+      while (u.startsWith('/')) {
+        u = u.slice(1);
       }
-
-      // assets/... → 如果頁面掛在根目錄，要補 site/
-      if (u.startsWith('assets/')) {
-        if (underSite) return u;
-        return 'site/' + u;
-      }
-
-      // 其他相對路徑（例如 img/...）直接回傳
+      // 保留相對路徑，例如 assets/img/xxx.jpg
       return u;
     }
 
