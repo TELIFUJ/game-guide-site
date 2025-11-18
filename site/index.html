@@ -553,6 +553,17 @@
       return t;
     }
 
+    function toNumberOrNull(value) {
+      if (value == null) return null;
+      if (typeof value === 'number') {
+        return Number.isFinite(value) ? value : null;
+      }
+      const s = String(value).trim();
+      if (!s) return null;
+      const n = Number(s);
+      return Number.isFinite(n) ? n : null;
+    }
+
     async function loadCsvMap(label, paths, targetMap) {
       let lastError = null;
       for (const p of paths) {
@@ -680,6 +691,7 @@
         'id',
         'name_zh',
         'name_en',
+        'price_used_twd',
         'price_twd',
         'stock',
         'categories',
@@ -691,7 +703,8 @@
         g.id,
         g.nameZh || '',
         g.nameEn || '',
-        g.price != null ? g.price : '',
+        g.priceUsed != null ? g.priceUsed : '',
+        g.priceRaw != null ? g.priceRaw : '',
         g.stock != null ? g.stock : '',
         (g.categories || []).join('; '),
         (g.mechanisms || []).join('; '),
@@ -733,28 +746,43 @@
     }
 
     function filterByManualOverride(rawList) {
-      const hasManual = rawList.some(r => r.manual_override !== undefined && r.manual_override !== null);
+      const hasManual = rawList.some(
+        r => r.manual_override !== undefined &&
+             r.manual_override !== null &&
+             String(r.manual_override).trim() !== ''
+      );
       if (!hasManual) return rawList;
-      return rawList.filter(r => r.manual_override === 1 || r.manual_override === '1');
+      return rawList.filter(r => String(r.manual_override).trim() === '1');
     }
 
-    // ===== 圖片路徑轉換（已簡化，不再加 /site/）=====
+    // ===== 圖片路徑轉換 =====
     function resolveImageUrl(url) {
       if (!url) return '';
       let u = String(url).trim();
       if (!u) return '';
-      // 絕對網址：直接用
       if (/^https?:\/\//i.test(u) || u.startsWith('//')) {
         return u;
       }
-      // 去掉開頭的 ./ 或 /
+
       if (u.startsWith('./')) {
         u = u.slice(2);
       }
-      while (u.startsWith('/')) {
-        u = u.slice(1);
+
+      const pathname = window.location.pathname || '/';
+      const underSite = pathname.includes('/site/');
+
+      if (u.startsWith('/assets/')) {
+        if (underSite) {
+          return 'assets/' + u.slice('/assets/'.length);
+        }
+        return u;
       }
-      // 保留相對路徑，例如 assets/img/xxx.jpg
+
+      if (u.startsWith('assets/')) {
+        if (underSite) return u;
+        return 'site/' + u;
+      }
+
       return u;
     }
 
@@ -773,14 +801,14 @@
 
       const id = raw.id || String(raw.bgg_id || '');
 
-      let image = raw.image || raw.thumbnail || '';
+      // 圖片：CSV image_override > image > thumbnail
+      let image = raw.image_override || raw.image || raw.thumbnail || '';
       image = resolveImageUrl(image);
 
-      let usedPrice = raw.used_price_twd;
-      if (typeof usedPrice === 'string' && usedPrice.trim() !== '') {
-        const n = Number(usedPrice);
-        usedPrice = Number.isFinite(n) ? n : null;
-      }
+      const usedPrice = toNumberOrNull(raw.used_price_twd);
+      const priceTwd  = toNumberOrNull(raw.price_twd ?? raw.price);
+      const priceMsrp = toNumberOrNull(raw.price_msrp_twd);
+      const finalPrice = usedPrice != null ? usedPrice : priceTwd;
 
       let stock = raw.stock;
       if (typeof stock === 'string' && stock.trim() !== '') {
@@ -816,7 +844,10 @@
         usersRated,
         weight,
         mechanismCount,
-        price: usedPrice ?? null,
+        price: finalPrice,
+        priceUsed: usedPrice,
+        priceRaw: priceTwd,
+        priceMsrp,
         stock,
         image,
         bggUrl,
@@ -1126,7 +1157,16 @@
 
       const price = document.createElement('div');
       price.className = 'price';
-      price.textContent = game.price != null ? `二手：NT$${game.price}` : '價格未設定';
+      if (game.priceUsed != null) {
+        price.textContent = `二手：NT$${game.priceUsed}`;
+      } else if (game.price != null) {
+        price.textContent = `售價：NT$${game.price}`;
+      } else {
+        price.textContent = '價格未設定';
+      }
+      if (game.priceMsrp != null) {
+        price.title = `建議售價：NT$${game.priceMsrp}`;
+      }
       priceStock.appendChild(price);
 
       const stock = document.createElement('div');

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-fetch_bgg.py — 用 XML API2 取回 BGG 資料（含評分／分類／機制）
+fetch_bgg.py — 用 XML API2 取回 BGG 資料（含評分／分類／機制／人數／時間）
 
 流程：
 1) 從 data/bgg_ids.txt 讀取所有 BGG ID（由 extract_from_csv.py 產生）
@@ -119,6 +119,12 @@ def fetch_batch(session: requests.Session, token: Optional[str], batch_ids: List
 
 
 def parse_xml(xml_bytes: bytes) -> List[Dict]:
+    """
+    把 XML bytes 轉成 list[dict]：
+    - 包含：評分、分類、機制
+    - 新增：min_players / max_players / min_playtime / max_playtime
+    - 圖片：image_url = image or thumbnail
+    """
     root = etree.fromstring(xml_bytes)
     out: List[Dict] = []
 
@@ -131,6 +137,16 @@ def parse_xml(xml_bytes: bytes) -> List[Dict]:
 
         year_node = item.find("yearpublished")
         year = _safe_int(year_node.get("value")) if year_node is not None else None
+
+        # 玩家數與時間
+        def _get_int(tag: str) -> Optional[int]:
+            node = item.find(tag)
+            return _safe_int(node.get("value")) if node is not None else None
+
+        min_players = _get_int("minplayers")
+        max_players = _get_int("maxplayers")
+        min_playtime = _get_int("minplaytime")
+        max_playtime = _get_int("maxplaytime")
 
         # 評分區塊
         stats = item.find("statistics/ratings")
@@ -155,20 +171,34 @@ def parse_xml(xml_bytes: bytes) -> List[Dict]:
         image_node = item.find("image")
         thumbnail = thumb_node.text if thumb_node is not None else None
         image = image_node.text if image_node is not None else None
+        image_url = image or thumbnail
 
         out.append(
             {
                 "bgg_id": bid,
                 "name": name,
                 "year": year,
+                # 玩家數／時間（新欄位 + 舊名字一起寫，給後面相容）
+                "min_players": min_players,
+                "max_players": max_players,
+                "min_playtime": min_playtime,
+                "max_playtime": max_playtime,
+                "minplayers": min_players,
+                "maxplayers": max_players,
+                "minplaytime": min_playtime,
+                "maxplaytime": max_playtime,
+                # 評分
                 "rating_bayes": rating_bayes,
                 "rating_avg": rating_avg,
                 "users_rated": users_rated,
                 "weight": weight,
+                # 類別／機制
                 "categories": categories,
                 "mechanisms": mechanisms,
+                # 圖片
                 "thumbnail": thumbnail,
-                "image": image,
+                "image": image_url,
+                "image_url": image_url,
             }
         )
 
